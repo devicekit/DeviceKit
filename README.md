@@ -14,4 +14,4 @@ if device == .iPhone6Plus {
 } else {
     // Do something else
 }
-
+```
