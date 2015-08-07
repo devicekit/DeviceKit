@@ -7,29 +7,29 @@
 //
 
 import XCTest
-import Basics
+@testable import Basics
 
 class DeviceTests: XCTestCase {
-    
-    func testDeviceSimulator() {
-        let device = Device()
-        XCTAssert(device == Device.Simulator)
-    }
-    
-    func testDeviceDescription() {
-        XCTAssert(Device().description == "Simulator")
-    }
-    
-    func testOperator1() {
-        XCTAssert(Device.BatteryState.Full > Device.BatteryState.Charging(100))
-    }
-    
-    func testOperator2() {
-        XCTAssert(Device.BatteryState.Charging(75) != Device.BatteryState.Unplugged(75))
-    }
-    
-    func testOperator3() {
-        XCTAssert(Device.BatteryState.Unplugged(2) > Device.BatteryState.Charging(1))
-    }
-    
+
+	func testDeviceSimulator() {
+		let device = Device()
+		XCTAssert(device == Device.Simulator)
+	}
+
+	func testDeviceDescription() {
+		XCTAssert(Device().description == "Simulator")
+	}
+
+	func testOperator1() {
+		XCTAssert(Device.BatteryState.Full > Device.BatteryState.Charging(100))
+	}
+
+	func testOperator2() {
+		XCTAssert(Device.BatteryState.Charging(75) != Device.BatteryState.Unplugged(75))
+	}
+
+	func testOperator3() {
+		XCTAssert(Device.BatteryState.Unplugged(2) > Device.BatteryState.Charging(1))
+	}
+
 }

@@ -2,7 +2,7 @@
 Basic Swift classes, structs, enums and other data structures
 
 ## Requirements
-Swift 1.2 (Xcode 6.3)
+Swift 2.0 (≥Xcode 7.0 β 5)
 
 ## Usage
 For usage details please see the according comments.
