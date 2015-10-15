@@ -183,7 +183,7 @@ public enum Device {
         case "iPad3,1", "iPad3,2", "iPad3,3":           self = iPad3
         case "iPad3,4", "iPad3,5", "iPad3,6":           self = iPad4
         case "iPad4,1", "iPad4,2", "iPad4,3":           self = iPadAir
-        case "iPad5,1", "iPad5,3", "iPad5,4":           self = iPadAir2
+        case "iPad5,3", "iPad5,4":                      self = iPadAir2
         case "iPad2,5", "iPad2,6", "iPad2,7":           self = iPadMini
         case "iPad4,4", "iPad4,5", "iPad4,6":           self = iPadMini2
         case "iPad4,7", "iPad4,8", "iPad4,9":           self = iPadMini3
