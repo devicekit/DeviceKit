@@ -1,4 +1,6 @@
-[![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/dennisweissmann/Device/master/LICENSE) [![Build Status](https://travis-ci.org/dennisweissmann/Device.svg)](https://travis-ci.org/dennisweissmann/Device) [![CocoaPods]https://img.shields.io/cocoapods/p/Device.svg)
+[![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/dennisweissmann/Device/master/LICENSE)
+[![Build Status](https://travis-ci.org/dennisweissmann/Device.svg)](https://travis-ci.org/dennisweissmann/Device)
+[![CocoaPods](https://img.shields.io/cocoapods/p/Device.svg)](https://travis-ci.org/dennisweissmann/Device)
 
 # What is this?
 `Device` is a value-type wrapper and extension of [`UIDevice`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/).
