@@ -1,11 +1,34 @@
+[![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/dennisweissmann/Device/master/LICENSE) [![Build Status](https://travis-ci.org/dennisweissmann/Device.svg)](https://travis-ci.org/dennisweissmann/Device) [![CocoaPods]https://img.shields.io/cocoapods/p/Device.svg)
+
 # What is this?
-Basic Swift classes, structs, enums and other data structures
+`Device` is a value-type wrapper and extension of [`UIDevice`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/).
 
 ## Requirements
-Swift 2.0 (≥Xcode 7.0 β 5)
+Swift 2.0
 
 ## Usage
-For usage details please see the according comments.
+```
+let device = Device()
 
-## Contents
-* `Device`: value-type wrapper and extension of [`UIDevice`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/)
+print(device)     // prints for example "iPhone 6 Plus"
+
+if device == .iPhone6Plus {
+    // Do something
+} else {
+    // Do something else
+}
+
+...
+
+if device.batteryState == .Full || device.batteryState >= .Charging(75) {
+    print("Your battery is happy! 😊")
+}
+
+...
+
+if device.batteryLevel >= 50 {
+    install_iOS()
+} else {
+    showError()
+}
+```

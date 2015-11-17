@@ -7,14 +7,14 @@
 //
 
 import XCTest
-@testable import Basics
+@testable import Device
 
 class DeviceTests: XCTestCase {
 
-	func testDeviceSimulator() {
-		let device = Device()
-		XCTAssert(device == Device.Simulator)
-	}
+    func testDeviceSimulator() {
+        let device = Device()
+        XCTAssert(device == Device.Simulator)
+    }
 
 	func testDeviceDescription() {
 		XCTAssert(Device().description == "Simulator")
