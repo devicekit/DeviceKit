@@ -17,5 +17,5 @@ Pod::Spec.new do |s|
   s.tvos.deployment_target  = '9.0'
 
   s.source                  = { :git => 'https://github.com/dennisweissmann/Device.git', :tag => s.version.to_s }
-  s.source_files            = 'Device/**/*.swift'
+  s.source_files            = 'Device_iOS', 'Device_tvOS', 'SharedCode'
 end
