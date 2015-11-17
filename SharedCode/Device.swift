@@ -1,6 +1,6 @@
 //
 //  Device.swift
-//  Basics
+//  Device
 //
 //  Created by Dennis Weissmann on 11/16/14.
 //  Copyright (c) 2014 Hot Action Studios. All rights reserved.
@@ -46,7 +46,7 @@ import func Darwin.round
 ///     }
 ///
 public enum Device {
-    
+#if os(iOS)
     /// Device is an [iPod Touch (5th generation)](https://support.apple.com/kb/SP657)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP657/sp657_ipod-touch_size.jpg)
@@ -152,16 +152,18 @@ public enum Device {
     /// ![Image](http://images.apple.com/v/ipad-pro/c/images/shared/buystrip/ipad_pro_large_2x.png)
     case iPadPro
     
+#elseif os(tvOS)
     /// Device is an [Apple TV](http://www.apple.com/tv/)
     ///
     /// ![Image](http://images.apple.com/v/tv/c/images/overview/buy_tv_large_2x.jpg)
-    case AppleTV
-
+    case AppleTV4
+#endif
+    
     /// Device is [Simulator](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/Introduction/Introduction.html)
     ///
     /// ![Image](https://developer.apple.com/assets/elements/icons/256x256/xcode-6.png)
     case Simulator
-    
+
     /// Device is not yet known (implemented)
     /// You can still use this enum as before but the description equals the identifier (you can get multiple identifiers for the same product class (e.g. "iPhone6,1" or "iPhone 6,2" do both mean "iPhone 5s))
     case UnknownDevice(String)
@@ -177,32 +179,39 @@ public enum Device {
             return identifier + String(UnicodeScalar(UInt8(value)))
         }
         
-        switch identifier {
-        case "iPod5,1":                                 self = iPodTouch5
-        case "iPod7,1":                                 self = iPodTouch6
-        case "iPhone3,1", "iPhone3,2", "iPhone3,3":     self = iPhone4
-        case "iPhone4,1":                               self = iPhone4s
-        case "iPhone5,1", "iPhone5,2":                  self = iPhone5
-        case "iPhone5,3", "iPhone5,4":                  self = iPhone5c
-        case "iPhone6,1", "iPhone6,2":                  self = iPhone5s
-        case "iPhone7,2":                               self = iPhone6
-        case "iPhone7,1":                               self = iPhone6Plus
-        case "iPhone8,1":                               self = iPhone6s
-        case "iPhone8,2":                               self = iPhone6sPlus
-        case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4":self = iPad2
-        case "iPad3,1", "iPad3,2", "iPad3,3":           self = iPad3
-        case "iPad3,4", "iPad3,5", "iPad3,6":           self = iPad4
-        case "iPad4,1", "iPad4,2", "iPad4,3":           self = iPadAir
-        case "iPad5,3", "iPad5,4":                      self = iPadAir2
-        case "iPad2,5", "iPad2,6", "iPad2,7":           self = iPadMini
-        case "iPad4,4", "iPad4,5", "iPad4,6":           self = iPadMini2
-        case "iPad4,7", "iPad4,8", "iPad4,9":           self = iPadMini3
-        case "iPad5,1", "iPad5,2":                      self = iPadMini4
-        case "iPad6,7", "iPad6,8":                      self = iPadPro
-        case "AppleTV5,3":                              self = AppleTV
-        case "i386", "x86_64":                          self = Simulator
-        default:                                        self = UnknownDevice(identifier)
-        }
+        #if os(iOS)
+            switch identifier {
+            case "iPod5,1":                                 self = iPodTouch5
+            case "iPod7,1":                                 self = iPodTouch6
+            case "iPhone3,1", "iPhone3,2", "iPhone3,3":     self = iPhone4
+            case "iPhone4,1":                               self = iPhone4s
+            case "iPhone5,1", "iPhone5,2":                  self = iPhone5
+            case "iPhone5,3", "iPhone5,4":                  self = iPhone5c
+            case "iPhone6,1", "iPhone6,2":                  self = iPhone5s
+            case "iPhone7,2":                               self = iPhone6
+            case "iPhone7,1":                               self = iPhone6Plus
+            case "iPhone8,1":                               self = iPhone6s
+            case "iPhone8,2":                               self = iPhone6sPlus
+            case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4":self = iPad2
+            case "iPad3,1", "iPad3,2", "iPad3,3":           self = iPad3
+            case "iPad3,4", "iPad3,5", "iPad3,6":           self = iPad4
+            case "iPad4,1", "iPad4,2", "iPad4,3":           self = iPadAir
+            case "iPad5,3", "iPad5,4":                      self = iPadAir2
+            case "iPad2,5", "iPad2,6", "iPad2,7":           self = iPadMini
+            case "iPad4,4", "iPad4,5", "iPad4,6":           self = iPadMini2
+            case "iPad4,7", "iPad4,8", "iPad4,9":           self = iPadMini3
+            case "iPad5,1", "iPad5,2":                      self = iPadMini4
+            case "iPad6,7", "iPad6,8":                      self = iPadPro
+            case "i386", "x86_64":                          self = Simulator
+            default:                                        self = UnknownDevice(identifier)
+            }
+        #elseif os(tvOS)
+            switch identifier {
+            case "AppleTV5,3":                              self = AppleTV4
+            case "i386", "x86_64":                          self = Simulator
+            default:                                        self = UnknownDevice(identifier)
+            }
+        #endif
     }
     
     /// The style of interface to use on the current device.
@@ -261,6 +270,53 @@ public enum Device {
     
 }
 
+// MARK: - CustomStringConvertible
+extension Device: CustomStringConvertible {
+    
+    public var description: String {
+        #if os(iOS)
+            switch self {
+            case .iPodTouch5:                   return "iPod Touch 5"
+            case .iPodTouch6:                   return "iPod Touch 6"
+            case .iPhone4:                      return "iPhone 4"
+            case .iPhone4s:                     return "iPhone 4s"
+            case .iPhone5:                      return "iPhone 5"
+            case .iPhone5c:                     return "iPhone 5c"
+            case .iPhone5s:                     return "iPhone 5s"
+            case .iPhone6:                      return "iPhone 6"
+            case .iPhone6Plus:                  return "iPhone 6 Plus"
+            case .iPhone6s:                     return "iPhone 6s"
+            case .iPhone6sPlus:                 return "iPhone 6s Plus"
+            case .iPad2:                        return "iPad 2"
+            case .iPad3:                        return "iPad 3"
+            case .iPad4:                        return "iPad 4"
+            case .iPadAir:                      return "iPad Air"
+            case .iPadAir2:                     return "iPad Air 2"
+            case .iPadMini:                     return "iPad Mini"
+            case .iPadMini2:                    return "iPad Mini 2"
+            case .iPadMini3:                    return "iPad Mini 3"
+            case .iPadMini4:                    return "iPad Mini 4"
+            case .iPadPro:                      return "iPad Pro"
+            case .Simulator:                    return "Simulator"
+            case .UnknownDevice(let identifier):return identifier
+            }
+        #elseif os(tvOS)
+            switch self {
+            case .AppleTV4:                     return "Apple TV 4"
+            case .Simulator:                    return "Simulator"
+            case .UnknownDevice(let identifier):return identifier
+            }
+        #endif
+    }
+}
+// MARK: - Equatable
+extension Device: Equatable {}
+
+public func ==(lhs: Device, rhs: Device) -> Bool {
+    return lhs.description == rhs.description
+}
+
+#if os(iOS)
 // MARK: - Battery
 extension Device {
     /**
@@ -319,46 +375,6 @@ extension Device {
     
 }
 
-// MARK: - CustomStringConvertible
-extension Device: CustomStringConvertible {
-    
-    public var description: String {
-        switch self {
-        case .iPodTouch5:                   return "iPod Touch 5"
-        case .iPodTouch6:                   return "iPod Touch 6"
-        case .iPhone4:                      return "iPhone 4"
-        case .iPhone4s:                     return "iPhone 4s"
-        case .iPhone5:                      return "iPhone 5"
-        case .iPhone5c:                     return "iPhone 5c"
-        case .iPhone5s:                     return "iPhone 5s"
-        case .iPhone6:                      return "iPhone 6"
-        case .iPhone6Plus:                  return "iPhone 6 Plus"
-        case .iPhone6s:                     return "iPhone 6s"
-        case .iPhone6sPlus:                 return "iPhone 6s Plus"
-        case .iPad2:                        return "iPad 2"
-        case .iPad3:                        return "iPad 3"
-        case .iPad4:                        return "iPad 4"
-        case .iPadAir:                      return "iPad Air"
-        case .iPadAir2:                     return "iPad Air 2"
-        case .iPadMini:                     return "iPad Mini"
-        case .iPadMini2:                    return "iPad Mini 2"
-        case .iPadMini3:                    return "iPad Mini 3"
-        case .iPadMini4:                    return "iPad Mini 4"
-        case .iPadPro:                      return "iPad Pro"
-        case .AppleTV:                      return "Apple TV"
-        case .Simulator:                    return "Simulator"
-        case .UnknownDevice(let identifier):return identifier
-        }
-    }
-    
-}
-
-// MARK: - Equatable
-extension Device: Equatable {}
-
-public func ==(lhs: Device, rhs: Device) -> Bool {
-    return lhs.description == rhs.description
-}
 
 // MARK: - Device.Batterystate: Comparable
 extension Device.BatteryState: Comparable {}
@@ -378,3 +394,4 @@ public func <(lhs: Device.BatteryState, rhs: Device.BatteryState) -> Bool {
     default:                                                    return false                // compiler won't compile without it, though it cannot happen
     }
 }
+#endif
