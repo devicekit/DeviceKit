@@ -1,5 +1,5 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/dennisweissmann/DeviceKit/master/LICENSE)
-[![Build Status](https://travis-ci.org/dennisweissmann/Device.svg)](https://travis-ci.org/dennisweissmann/DeviceKit)
+[![Build Status](https://travis-ci.org/dennisweissmann/DeviceKit.svg)](https://travis-ci.org/dennisweissmann/DeviceKit)
 [![CocoaPods](https://img.shields.io/cocoapods/p/Device.svg)](https://travis-ci.org/dennisweissmann/DeviceKit)
 
 # What is this?
