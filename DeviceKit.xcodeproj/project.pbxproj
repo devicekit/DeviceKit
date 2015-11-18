@@ -7,146 +7,146 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		95AC5B851BFB9DCF006D55D9 /* Device_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 95AC5B841BFB9DCF006D55D9 /* Device_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		95AC5B8C1BFB9DCF006D55D9 /* Device.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95AC5B811BFB9DCF006D55D9 /* Device.framework */; };
-		95AC5BA11BFB9DE9006D55D9 /* Device_tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 95AC5BA01BFB9DE9006D55D9 /* Device_tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		95AC5BA81BFB9DE9006D55D9 /* Device.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95AC5B9E1BFB9DE9006D55D9 /* Device.framework */; };
-		95AC5BAD1BFB9DE9006D55D9 /* Device_tvOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AC5BAC1BFB9DE9006D55D9 /* Device_tvOSTests.swift */; };
-		95AC5BBD1BFBA5D2006D55D9 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AC5BBC1BFBA5D2006D55D9 /* Device.swift */; };
-		95AC5BBE1BFBA5D2006D55D9 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AC5BBC1BFBA5D2006D55D9 /* Device.swift */; };
-		95B600A91BFBC60900E9EAF6 /* Device_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B600A81BFBC60900E9EAF6 /* Device_iOSTests.swift */; };
+		95CBDB731BFD2B5F0065FC66 /* DeviceKit-iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 95CBDB721BFD2B5F0065FC66 /* DeviceKit-iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95CBDB7A1BFD2B5F0065FC66 /* DeviceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CBDB6F1BFD2B5F0065FC66 /* DeviceKit.framework */; };
+		95CBDB7F1BFD2B5F0065FC66 /* DeviceKit_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CBDB7E1BFD2B5F0065FC66 /* DeviceKit_iOSTests.swift */; };
+		95CBDB8F1BFD2B720065FC66 /* DeviceKit-tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 95CBDB8E1BFD2B720065FC66 /* DeviceKit-tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95CBDB961BFD2B720065FC66 /* DeviceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CBDB8C1BFD2B720065FC66 /* DeviceKit.framework */; };
+		95CBDB9B1BFD2B720065FC66 /* DeviceKit_tvOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CBDB9A1BFD2B720065FC66 /* DeviceKit_tvOSTests.swift */; };
+		95CBDBA51BFD2BCA0065FC66 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CBDBA41BFD2BCA0065FC66 /* Device.swift */; };
+		95CBDBA61BFD2BCA0065FC66 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CBDBA41BFD2BCA0065FC66 /* Device.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		95AC5B8D1BFB9DCF006D55D9 /* PBXContainerItemProxy */ = {
+		95CBDB7B1BFD2B5F0065FC66 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 95AC5B761BFB9DB7006D55D9 /* Project object */;
+			containerPortal = 95CBDB641BFD2B440065FC66 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 95AC5B801BFB9DCF006D55D9;
-			remoteInfo = Device_iOS;
+			remoteGlobalIDString = 95CBDB6E1BFD2B5F0065FC66;
+			remoteInfo = "DeviceKit-iOS";
 		};
-		95AC5BA91BFB9DE9006D55D9 /* PBXContainerItemProxy */ = {
+		95CBDB971BFD2B720065FC66 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 95AC5B761BFB9DB7006D55D9 /* Project object */;
+			containerPortal = 95CBDB641BFD2B440065FC66 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 95AC5B9D1BFB9DE9006D55D9;
-			remoteInfo = Device_tvOS;
+			remoteGlobalIDString = 95CBDB8B1BFD2B720065FC66;
+			remoteInfo = "DeviceKit-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		95AC5B811BFB9DCF006D55D9 /* Device.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Device.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		95AC5B841BFB9DCF006D55D9 /* Device_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Device_iOS.h; sourceTree = "<group>"; };
-		95AC5B861BFB9DCF006D55D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		95AC5B8B1BFB9DCF006D55D9 /* Device_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Device_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		95AC5B921BFB9DCF006D55D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		95AC5B9E1BFB9DE9006D55D9 /* Device.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Device.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		95AC5BA01BFB9DE9006D55D9 /* Device_tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Device_tvOS.h; sourceTree = "<group>"; };
-		95AC5BA21BFB9DE9006D55D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		95AC5BA71BFB9DE9006D55D9 /* Device_tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Device_tvOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		95AC5BAC1BFB9DE9006D55D9 /* Device_tvOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device_tvOSTests.swift; sourceTree = "<group>"; };
-		95AC5BAE1BFB9DE9006D55D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		95AC5BBC1BFBA5D2006D55D9 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Device.swift; path = SharedCode/Device.swift; sourceTree = "<group>"; };
-		95B600A81BFBC60900E9EAF6 /* Device_iOSTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device_iOSTests.swift; sourceTree = "<group>"; };
+		95CBDB6F1BFD2B5F0065FC66 /* DeviceKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeviceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95CBDB721BFD2B5F0065FC66 /* DeviceKit-iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DeviceKit-iOS.h"; sourceTree = "<group>"; };
+		95CBDB741BFD2B5F0065FC66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95CBDB791BFD2B5F0065FC66 /* DeviceKit-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DeviceKit-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		95CBDB7E1BFD2B5F0065FC66 /* DeviceKit_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceKit_iOSTests.swift; sourceTree = "<group>"; };
+		95CBDB801BFD2B5F0065FC66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95CBDB8C1BFD2B720065FC66 /* DeviceKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeviceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95CBDB8E1BFD2B720065FC66 /* DeviceKit-tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DeviceKit-tvOS.h"; sourceTree = "<group>"; };
+		95CBDB901BFD2B720065FC66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95CBDB951BFD2B720065FC66 /* DeviceKit-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DeviceKit-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		95CBDB9A1BFD2B720065FC66 /* DeviceKit_tvOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceKit_tvOSTests.swift; sourceTree = "<group>"; };
+		95CBDB9C1BFD2B720065FC66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95CBDBA41BFD2BCA0065FC66 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Device.swift; path = SharedCode/Device.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		95AC5B7D1BFB9DCF006D55D9 /* Frameworks */ = {
+		95CBDB6B1BFD2B5F0065FC66 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		95AC5B881BFB9DCF006D55D9 /* Frameworks */ = {
+		95CBDB761BFD2B5F0065FC66 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95AC5B8C1BFB9DCF006D55D9 /* Device.framework in Frameworks */,
+				95CBDB7A1BFD2B5F0065FC66 /* DeviceKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		95AC5B9A1BFB9DE9006D55D9 /* Frameworks */ = {
+		95CBDB881BFD2B720065FC66 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		95AC5BA41BFB9DE9006D55D9 /* Frameworks */ = {
+		95CBDB921BFD2B720065FC66 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95AC5BA81BFB9DE9006D55D9 /* Device.framework in Frameworks */,
+				95CBDB961BFD2B720065FC66 /* DeviceKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		95AC5B751BFB9DB7006D55D9 = {
+		95CBDB631BFD2B440065FC66 = {
 			isa = PBXGroup;
 			children = (
-				95AC5BB81BFBA54F006D55D9 /* Shared Code */,
-				95AC5B831BFB9DCF006D55D9 /* Device_iOS */,
-				95AC5B8F1BFB9DCF006D55D9 /* Device_iOSTests */,
-				95AC5B9F1BFB9DE9006D55D9 /* Device_tvOS */,
-				95AC5BAB1BFB9DE9006D55D9 /* Device_tvOSTests */,
-				95AC5B821BFB9DCF006D55D9 /* Products */,
+				95CBDBA31BFD2BB80065FC66 /* Shared Code */,
+				95CBDB711BFD2B5F0065FC66 /* DeviceKit-iOS */,
+				95CBDB7D1BFD2B5F0065FC66 /* DeviceKit-iOSTests */,
+				95CBDB8D1BFD2B720065FC66 /* DeviceKit-tvOS */,
+				95CBDB991BFD2B720065FC66 /* DeviceKit-tvOSTests */,
+				95CBDB701BFD2B5F0065FC66 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		95AC5B821BFB9DCF006D55D9 /* Products */ = {
+		95CBDB701BFD2B5F0065FC66 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				95AC5B811BFB9DCF006D55D9 /* Device.framework */,
-				95AC5B8B1BFB9DCF006D55D9 /* Device_iOSTests.xctest */,
-				95AC5B9E1BFB9DE9006D55D9 /* Device.framework */,
-				95AC5BA71BFB9DE9006D55D9 /* Device_tvOSTests.xctest */,
+				95CBDB6F1BFD2B5F0065FC66 /* DeviceKit.framework */,
+				95CBDB791BFD2B5F0065FC66 /* DeviceKit-iOSTests.xctest */,
+				95CBDB8C1BFD2B720065FC66 /* DeviceKit.framework */,
+				95CBDB951BFD2B720065FC66 /* DeviceKit-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		95AC5B831BFB9DCF006D55D9 /* Device_iOS */ = {
+		95CBDB711BFD2B5F0065FC66 /* DeviceKit-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				95AC5B841BFB9DCF006D55D9 /* Device_iOS.h */,
-				95AC5B861BFB9DCF006D55D9 /* Info.plist */,
+				95CBDB721BFD2B5F0065FC66 /* DeviceKit-iOS.h */,
+				95CBDB741BFD2B5F0065FC66 /* Info.plist */,
 			);
-			path = Device_iOS;
+			path = "DeviceKit-iOS";
 			sourceTree = "<group>";
 		};
-		95AC5B8F1BFB9DCF006D55D9 /* Device_iOSTests */ = {
+		95CBDB7D1BFD2B5F0065FC66 /* DeviceKit-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				95B600A81BFBC60900E9EAF6 /* Device_iOSTests.swift */,
-				95AC5B921BFB9DCF006D55D9 /* Info.plist */,
+				95CBDB7E1BFD2B5F0065FC66 /* DeviceKit_iOSTests.swift */,
+				95CBDB801BFD2B5F0065FC66 /* Info.plist */,
 			);
-			path = Device_iOSTests;
+			path = "DeviceKit-iOSTests";
 			sourceTree = "<group>";
 		};
-		95AC5B9F1BFB9DE9006D55D9 /* Device_tvOS */ = {
+		95CBDB8D1BFD2B720065FC66 /* DeviceKit-tvOS */ = {
 			isa = PBXGroup;
 			children = (
-				95AC5BA01BFB9DE9006D55D9 /* Device_tvOS.h */,
-				95AC5BA21BFB9DE9006D55D9 /* Info.plist */,
+				95CBDB8E1BFD2B720065FC66 /* DeviceKit-tvOS.h */,
+				95CBDB901BFD2B720065FC66 /* Info.plist */,
 			);
-			path = Device_tvOS;
+			path = "DeviceKit-tvOS";
 			sourceTree = "<group>";
 		};
-		95AC5BAB1BFB9DE9006D55D9 /* Device_tvOSTests */ = {
+		95CBDB991BFD2B720065FC66 /* DeviceKit-tvOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				95AC5BAC1BFB9DE9006D55D9 /* Device_tvOSTests.swift */,
-				95AC5BAE1BFB9DE9006D55D9 /* Info.plist */,
+				95CBDB9A1BFD2B720065FC66 /* DeviceKit_tvOSTests.swift */,
+				95CBDB9C1BFD2B720065FC66 /* Info.plist */,
 			);
-			path = Device_tvOSTests;
+			path = "DeviceKit-tvOSTests";
 			sourceTree = "<group>";
 		};
-		95AC5BB81BFBA54F006D55D9 /* Shared Code */ = {
+		95CBDBA31BFD2BB80065FC66 /* Shared Code */ = {
 			isa = PBXGroup;
 			children = (
-				95AC5BBC1BFBA5D2006D55D9 /* Device.swift */,
+				95CBDBA41BFD2BCA0065FC66 /* Device.swift */,
 			);
 			name = "Shared Code";
 			sourceTree = "<group>";
@@ -154,163 +154,163 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		95AC5B7E1BFB9DCF006D55D9 /* Headers */ = {
+		95CBDB6C1BFD2B5F0065FC66 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95AC5B851BFB9DCF006D55D9 /* Device_iOS.h in Headers */,
+				95CBDB731BFD2B5F0065FC66 /* DeviceKit-iOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		95AC5B9B1BFB9DE9006D55D9 /* Headers */ = {
+		95CBDB891BFD2B720065FC66 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95AC5BA11BFB9DE9006D55D9 /* Device_tvOS.h in Headers */,
+				95CBDB8F1BFD2B720065FC66 /* DeviceKit-tvOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		95AC5B801BFB9DCF006D55D9 /* Device_iOS */ = {
+		95CBDB6E1BFD2B5F0065FC66 /* DeviceKit-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 95AC5B931BFB9DCF006D55D9 /* Build configuration list for PBXNativeTarget "Device_iOS" */;
+			buildConfigurationList = 95CBDB811BFD2B5F0065FC66 /* Build configuration list for PBXNativeTarget "DeviceKit-iOS" */;
 			buildPhases = (
-				95AC5B7C1BFB9DCF006D55D9 /* Sources */,
-				95AC5B7D1BFB9DCF006D55D9 /* Frameworks */,
-				95AC5B7E1BFB9DCF006D55D9 /* Headers */,
-				95AC5B7F1BFB9DCF006D55D9 /* Resources */,
+				95CBDB6A1BFD2B5F0065FC66 /* Sources */,
+				95CBDB6B1BFD2B5F0065FC66 /* Frameworks */,
+				95CBDB6C1BFD2B5F0065FC66 /* Headers */,
+				95CBDB6D1BFD2B5F0065FC66 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Device_iOS;
-			productName = Device_iOS;
-			productReference = 95AC5B811BFB9DCF006D55D9 /* Device.framework */;
+			name = "DeviceKit-iOS";
+			productName = "DeviceKit-iOS";
+			productReference = 95CBDB6F1BFD2B5F0065FC66 /* DeviceKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		95AC5B8A1BFB9DCF006D55D9 /* Device_iOSTests */ = {
+		95CBDB781BFD2B5F0065FC66 /* DeviceKit-iOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 95AC5B961BFB9DCF006D55D9 /* Build configuration list for PBXNativeTarget "Device_iOSTests" */;
+			buildConfigurationList = 95CBDB841BFD2B5F0065FC66 /* Build configuration list for PBXNativeTarget "DeviceKit-iOSTests" */;
 			buildPhases = (
-				95AC5B871BFB9DCF006D55D9 /* Sources */,
-				95AC5B881BFB9DCF006D55D9 /* Frameworks */,
-				95AC5B891BFB9DCF006D55D9 /* Resources */,
+				95CBDB751BFD2B5F0065FC66 /* Sources */,
+				95CBDB761BFD2B5F0065FC66 /* Frameworks */,
+				95CBDB771BFD2B5F0065FC66 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				95AC5B8E1BFB9DCF006D55D9 /* PBXTargetDependency */,
+				95CBDB7C1BFD2B5F0065FC66 /* PBXTargetDependency */,
 			);
-			name = Device_iOSTests;
-			productName = Device_iOSTests;
-			productReference = 95AC5B8B1BFB9DCF006D55D9 /* Device_iOSTests.xctest */;
+			name = "DeviceKit-iOSTests";
+			productName = "DeviceKit-iOSTests";
+			productReference = 95CBDB791BFD2B5F0065FC66 /* DeviceKit-iOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		95AC5B9D1BFB9DE9006D55D9 /* Device_tvOS */ = {
+		95CBDB8B1BFD2B720065FC66 /* DeviceKit-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 95AC5BAF1BFB9DE9006D55D9 /* Build configuration list for PBXNativeTarget "Device_tvOS" */;
+			buildConfigurationList = 95CBDB9D1BFD2B720065FC66 /* Build configuration list for PBXNativeTarget "DeviceKit-tvOS" */;
 			buildPhases = (
-				95AC5B991BFB9DE9006D55D9 /* Sources */,
-				95AC5B9A1BFB9DE9006D55D9 /* Frameworks */,
-				95AC5B9B1BFB9DE9006D55D9 /* Headers */,
-				95AC5B9C1BFB9DE9006D55D9 /* Resources */,
+				95CBDB871BFD2B720065FC66 /* Sources */,
+				95CBDB881BFD2B720065FC66 /* Frameworks */,
+				95CBDB891BFD2B720065FC66 /* Headers */,
+				95CBDB8A1BFD2B720065FC66 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Device_tvOS;
-			productName = Device_tvOS;
-			productReference = 95AC5B9E1BFB9DE9006D55D9 /* Device.framework */;
+			name = "DeviceKit-tvOS";
+			productName = "DeviceKit-tvOS";
+			productReference = 95CBDB8C1BFD2B720065FC66 /* DeviceKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		95AC5BA61BFB9DE9006D55D9 /* Device_tvOSTests */ = {
+		95CBDB941BFD2B720065FC66 /* DeviceKit-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 95AC5BB21BFB9DE9006D55D9 /* Build configuration list for PBXNativeTarget "Device_tvOSTests" */;
+			buildConfigurationList = 95CBDBA01BFD2B720065FC66 /* Build configuration list for PBXNativeTarget "DeviceKit-tvOSTests" */;
 			buildPhases = (
-				95AC5BA31BFB9DE9006D55D9 /* Sources */,
-				95AC5BA41BFB9DE9006D55D9 /* Frameworks */,
-				95AC5BA51BFB9DE9006D55D9 /* Resources */,
+				95CBDB911BFD2B720065FC66 /* Sources */,
+				95CBDB921BFD2B720065FC66 /* Frameworks */,
+				95CBDB931BFD2B720065FC66 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				95AC5BAA1BFB9DE9006D55D9 /* PBXTargetDependency */,
+				95CBDB981BFD2B720065FC66 /* PBXTargetDependency */,
 			);
-			name = Device_tvOSTests;
-			productName = Device_tvOSTests;
-			productReference = 95AC5BA71BFB9DE9006D55D9 /* Device_tvOSTests.xctest */;
+			name = "DeviceKit-tvOSTests";
+			productName = "DeviceKit-tvOSTests";
+			productReference = 95CBDB951BFD2B720065FC66 /* DeviceKit-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		95AC5B761BFB9DB7006D55D9 /* Project object */ = {
+		95CBDB641BFD2B440065FC66 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0710;
 				TargetAttributes = {
-					95AC5B801BFB9DCF006D55D9 = {
+					95CBDB6E1BFD2B5F0065FC66 = {
 						CreatedOnToolsVersion = 7.1.1;
 					};
-					95AC5B8A1BFB9DCF006D55D9 = {
+					95CBDB781BFD2B5F0065FC66 = {
 						CreatedOnToolsVersion = 7.1.1;
 					};
-					95AC5B9D1BFB9DE9006D55D9 = {
+					95CBDB8B1BFD2B720065FC66 = {
 						CreatedOnToolsVersion = 7.1.1;
 					};
-					95AC5BA61BFB9DE9006D55D9 = {
+					95CBDB941BFD2B720065FC66 = {
 						CreatedOnToolsVersion = 7.1.1;
 					};
 				};
 			};
-			buildConfigurationList = 95AC5B791BFB9DB7006D55D9 /* Build configuration list for PBXProject "Device" */;
+			buildConfigurationList = 95CBDB671BFD2B440065FC66 /* Build configuration list for PBXProject "DeviceKit" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 95AC5B751BFB9DB7006D55D9;
-			productRefGroup = 95AC5B821BFB9DCF006D55D9 /* Products */;
+			mainGroup = 95CBDB631BFD2B440065FC66;
+			productRefGroup = 95CBDB701BFD2B5F0065FC66 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				95AC5B801BFB9DCF006D55D9 /* Device_iOS */,
-				95AC5B8A1BFB9DCF006D55D9 /* Device_iOSTests */,
-				95AC5B9D1BFB9DE9006D55D9 /* Device_tvOS */,
-				95AC5BA61BFB9DE9006D55D9 /* Device_tvOSTests */,
+				95CBDB6E1BFD2B5F0065FC66 /* DeviceKit-iOS */,
+				95CBDB781BFD2B5F0065FC66 /* DeviceKit-iOSTests */,
+				95CBDB8B1BFD2B720065FC66 /* DeviceKit-tvOS */,
+				95CBDB941BFD2B720065FC66 /* DeviceKit-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		95AC5B7F1BFB9DCF006D55D9 /* Resources */ = {
+		95CBDB6D1BFD2B5F0065FC66 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		95AC5B891BFB9DCF006D55D9 /* Resources */ = {
+		95CBDB771BFD2B5F0065FC66 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		95AC5B9C1BFB9DE9006D55D9 /* Resources */ = {
+		95CBDB8A1BFD2B720065FC66 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		95AC5BA51BFB9DE9006D55D9 /* Resources */ = {
+		95CBDB931BFD2B720065FC66 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -320,67 +320,67 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		95AC5B7C1BFB9DCF006D55D9 /* Sources */ = {
+		95CBDB6A1BFD2B5F0065FC66 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95AC5BBD1BFBA5D2006D55D9 /* Device.swift in Sources */,
+				95CBDBA51BFD2BCA0065FC66 /* Device.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		95AC5B871BFB9DCF006D55D9 /* Sources */ = {
+		95CBDB751BFD2B5F0065FC66 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95B600A91BFBC60900E9EAF6 /* Device_iOSTests.swift in Sources */,
+				95CBDB7F1BFD2B5F0065FC66 /* DeviceKit_iOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		95AC5B991BFB9DE9006D55D9 /* Sources */ = {
+		95CBDB871BFD2B720065FC66 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95AC5BBE1BFBA5D2006D55D9 /* Device.swift in Sources */,
+				95CBDBA61BFD2BCA0065FC66 /* Device.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		95AC5BA31BFB9DE9006D55D9 /* Sources */ = {
+		95CBDB911BFD2B720065FC66 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95AC5BAD1BFB9DE9006D55D9 /* Device_tvOSTests.swift in Sources */,
+				95CBDB9B1BFD2B720065FC66 /* DeviceKit_tvOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		95AC5B8E1BFB9DCF006D55D9 /* PBXTargetDependency */ = {
+		95CBDB7C1BFD2B5F0065FC66 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 95AC5B801BFB9DCF006D55D9 /* Device_iOS */;
-			targetProxy = 95AC5B8D1BFB9DCF006D55D9 /* PBXContainerItemProxy */;
+			target = 95CBDB6E1BFD2B5F0065FC66 /* DeviceKit-iOS */;
+			targetProxy = 95CBDB7B1BFD2B5F0065FC66 /* PBXContainerItemProxy */;
 		};
-		95AC5BAA1BFB9DE9006D55D9 /* PBXTargetDependency */ = {
+		95CBDB981BFD2B720065FC66 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 95AC5B9D1BFB9DE9006D55D9 /* Device_tvOS */;
-			targetProxy = 95AC5BA91BFB9DE9006D55D9 /* PBXContainerItemProxy */;
+			target = 95CBDB8B1BFD2B720065FC66 /* DeviceKit-tvOS */;
+			targetProxy = 95CBDB971BFD2B720065FC66 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		95AC5B7A1BFB9DB7006D55D9 /* Debug */ = {
+		95CBDB681BFD2B440065FC66 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 			};
 			name = Debug;
 		};
-		95AC5B7B1BFB9DB7006D55D9 /* Release */ = {
+		95CBDB691BFD2B440065FC66 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 			};
 			name = Release;
 		};
-		95AC5B941BFB9DCF006D55D9 /* Debug */ = {
+		95CBDB821BFD2B5F0065FC66 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -421,15 +421,15 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Device_iOS/Info.plist;
+				INFOPLIST_FILE = "DeviceKit-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hotactionstudios.Device-iOS";
-				PRODUCT_MODULE_NAME = Device;
-				PRODUCT_NAME = Device;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hotactionstudios.DeviceKit-iOS";
+				PRODUCT_MODULE_NAME = DeviceKit;
+				PRODUCT_NAME = DeviceKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -439,7 +439,7 @@
 			};
 			name = Debug;
 		};
-		95AC5B951BFB9DCF006D55D9 /* Release */ = {
+		95CBDB831BFD2B5F0065FC66 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -474,14 +474,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Device_iOS/Info.plist;
+				INFOPLIST_FILE = "DeviceKit-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hotactionstudios.Device-iOS";
-				PRODUCT_MODULE_NAME = Device;
-				PRODUCT_NAME = Device;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hotactionstudios.DeviceKit-iOS";
+				PRODUCT_MODULE_NAME = DeviceKit;
+				PRODUCT_NAME = DeviceKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -491,7 +491,7 @@
 			};
 			name = Release;
 		};
-		95AC5B971BFB9DCF006D55D9 /* Debug */ = {
+		95CBDB851BFD2B5F0065FC66 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -527,19 +527,19 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Device_iOSTests/Info.plist;
+				INFOPLIST_FILE = "DeviceKit-iOSTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hotactionstudios.Device-iOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hotactionstudios.DeviceKit-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		95AC5B981BFB9DCF006D55D9 /* Release */ = {
+		95CBDB861BFD2B5F0065FC66 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -569,18 +569,18 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Device_iOSTests/Info.plist;
+				INFOPLIST_FILE = "DeviceKit-iOSTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hotactionstudios.Device-iOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hotactionstudios.DeviceKit-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		95AC5BB01BFB9DE9006D55D9 /* Debug */ = {
+		95CBDB9E1BFD2B720065FC66 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -620,14 +620,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Device_tvOS/Info.plist;
+				INFOPLIST_FILE = "DeviceKit-tvOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hotactionstudios.Device-tvOS";
-				PRODUCT_MODULE_NAME = Device;
-				PRODUCT_NAME = Device;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hotactionstudios.DeviceKit-tvOS";
+				PRODUCT_MODULE_NAME = DeviceKit;
+				PRODUCT_NAME = DeviceKit;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -638,7 +638,7 @@
 			};
 			name = Debug;
 		};
-		95AC5BB11BFB9DE9006D55D9 /* Release */ = {
+		95CBDB9F1BFD2B720065FC66 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -672,13 +672,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Device_tvOS/Info.plist;
+				INFOPLIST_FILE = "DeviceKit-tvOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hotactionstudios.Device-tvOS";
-				PRODUCT_MODULE_NAME = Device;
-				PRODUCT_NAME = Device;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hotactionstudios.DeviceKit-tvOS";
+				PRODUCT_MODULE_NAME = DeviceKit;
+				PRODUCT_NAME = DeviceKit;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -689,7 +689,7 @@
 			};
 			name = Release;
 		};
-		95AC5BB31BFB9DE9006D55D9 /* Debug */ = {
+		95CBDBA11BFD2B720065FC66 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -724,11 +724,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Device_tvOSTests/Info.plist;
+				INFOPLIST_FILE = "DeviceKit-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hotactionstudios.Device-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hotactionstudios.DeviceKit-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -736,7 +736,7 @@
 			};
 			name = Debug;
 		};
-		95AC5BB41BFB9DE9006D55D9 /* Release */ = {
+		95CBDBA21BFD2B720065FC66 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -765,10 +765,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Device_tvOSTests/Info.plist;
+				INFOPLIST_FILE = "DeviceKit-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hotactionstudios.Device-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hotactionstudios.DeviceKit-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
@@ -779,52 +779,48 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		95AC5B791BFB9DB7006D55D9 /* Build configuration list for PBXProject "Device" */ = {
+		95CBDB671BFD2B440065FC66 /* Build configuration list for PBXProject "DeviceKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				95AC5B7A1BFB9DB7006D55D9 /* Debug */,
-				95AC5B7B1BFB9DB7006D55D9 /* Release */,
+				95CBDB681BFD2B440065FC66 /* Debug */,
+				95CBDB691BFD2B440065FC66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		95AC5B931BFB9DCF006D55D9 /* Build configuration list for PBXNativeTarget "Device_iOS" */ = {
+		95CBDB811BFD2B5F0065FC66 /* Build configuration list for PBXNativeTarget "DeviceKit-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				95AC5B941BFB9DCF006D55D9 /* Debug */,
-				95AC5B951BFB9DCF006D55D9 /* Release */,
+				95CBDB821BFD2B5F0065FC66 /* Debug */,
+				95CBDB831BFD2B5F0065FC66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
-		95AC5B961BFB9DCF006D55D9 /* Build configuration list for PBXNativeTarget "Device_iOSTests" */ = {
+		95CBDB841BFD2B5F0065FC66 /* Build configuration list for PBXNativeTarget "DeviceKit-iOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				95AC5B971BFB9DCF006D55D9 /* Debug */,
-				95AC5B981BFB9DCF006D55D9 /* Release */,
+				95CBDB851BFD2B5F0065FC66 /* Debug */,
+				95CBDB861BFD2B5F0065FC66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
-		95AC5BAF1BFB9DE9006D55D9 /* Build configuration list for PBXNativeTarget "Device_tvOS" */ = {
+		95CBDB9D1BFD2B720065FC66 /* Build configuration list for PBXNativeTarget "DeviceKit-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				95AC5BB01BFB9DE9006D55D9 /* Debug */,
-				95AC5BB11BFB9DE9006D55D9 /* Release */,
+				95CBDB9E1BFD2B720065FC66 /* Debug */,
+				95CBDB9F1BFD2B720065FC66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
-		95AC5BB21BFB9DE9006D55D9 /* Build configuration list for PBXNativeTarget "Device_tvOSTests" */ = {
+		95CBDBA01BFD2B720065FC66 /* Build configuration list for PBXNativeTarget "DeviceKit-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				95AC5BB31BFB9DE9006D55D9 /* Debug */,
-				95AC5BB41BFB9DE9006D55D9 /* Release */,
+				95CBDBA11BFD2B720065FC66 /* Debug */,
+				95CBDBA21BFD2B720065FC66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 95AC5B761BFB9DB7006D55D9 /* Project object */;
+	rootObject = 95CBDB641BFD2B440065FC66 /* Project object */;
 }

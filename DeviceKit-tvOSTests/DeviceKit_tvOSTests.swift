@@ -1,15 +1,15 @@
 //
-//  Device_tvOSTests.swift
-//  Device_tvOSTests
+//  DeviceKit_tvOSTests.swift
+//  DeviceKit_tvOSTests
 //
 //  Created by Dennis Weissmann on 11/17/15.
 //
 //
 
 import XCTest
-@testable import Device
+@testable import DeviceKit
 
-class Device_tvOSTests: XCTestCase {
+class DeviceKitTests: XCTestCase {
     
     func testDeviceSimulator() {
         let device = Device()

@@ -1,6 +1,6 @@
 //
 //  Device.swift
-//  Device
+//  DeviceKit
 //
 //  Created by Dennis Weissmann on 11/16/14.
 //  Copyright (c) 2014 Hot Action Studios. All rights reserved.

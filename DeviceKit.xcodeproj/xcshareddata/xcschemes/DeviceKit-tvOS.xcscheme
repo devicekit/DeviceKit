@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "95AC5B9D1BFB9DE9006D55D9"
-               BuildableName = "Device.framework"
-               BlueprintName = "Device_tvOS"
-               ReferencedContainer = "container:Device.xcodeproj">
+               BlueprintIdentifier = "95CBDB8B1BFD2B720065FC66"
+               BuildableName = "DeviceKit.framework"
+               BlueprintName = "DeviceKit-tvOS"
+               ReferencedContainer = "container:DeviceKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,20 +32,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "95AC5BA61BFB9DE9006D55D9"
-               BuildableName = "Device_tvOSTests.xctest"
-               BlueprintName = "Device_tvOSTests"
-               ReferencedContainer = "container:Device.xcodeproj">
+               BlueprintIdentifier = "95CBDB941BFD2B720065FC66"
+               BuildableName = "DeviceKit-tvOSTests.xctest"
+               BlueprintName = "DeviceKit-tvOSTests"
+               ReferencedContainer = "container:DeviceKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "95AC5B9D1BFB9DE9006D55D9"
-            BuildableName = "Device.framework"
-            BlueprintName = "Device_tvOS"
-            ReferencedContainer = "container:Device.xcodeproj">
+            BlueprintIdentifier = "95CBDB8B1BFD2B720065FC66"
+            BuildableName = "DeviceKit.framework"
+            BlueprintName = "DeviceKit-tvOS"
+            ReferencedContainer = "container:DeviceKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -64,10 +64,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "95AC5B9D1BFB9DE9006D55D9"
-            BuildableName = "Device.framework"
-            BlueprintName = "Device_tvOS"
-            ReferencedContainer = "container:Device.xcodeproj">
+            BlueprintIdentifier = "95CBDB8B1BFD2B720065FC66"
+            BuildableName = "DeviceKit.framework"
+            BlueprintName = "DeviceKit-tvOS"
+            ReferencedContainer = "container:DeviceKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -82,10 +82,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "95AC5B9D1BFB9DE9006D55D9"
-            BuildableName = "Device.framework"
-            BlueprintName = "Device_tvOS"
-            ReferencedContainer = "container:Device.xcodeproj">
+            BlueprintIdentifier = "95CBDB8B1BFD2B720065FC66"
+            BuildableName = "DeviceKit.framework"
+            BlueprintName = "DeviceKit-tvOS"
+            ReferencedContainer = "container:DeviceKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
