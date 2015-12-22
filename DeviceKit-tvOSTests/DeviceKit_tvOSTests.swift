@@ -10,14 +10,14 @@ import XCTest
 @testable import DeviceKit
 
 class DeviceKitTests: XCTestCase {
-    
+
     func testDeviceSimulator() {
         let device = Device()
-        XCTAssert(device == .Simulator)
+        XCTAssert(device.isOneOf(Device.allSimulatorTVs))
     }
-    
+
     func testDeviceDescription() {
-        XCTAssert(Device().description == "Simulator")
+        XCTAssert(Device().description.hasPrefix("Simulator"))
     }
-    
+
 }

@@ -35,6 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		957D18251C28C1E90067D203 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		957D18261C28C1F30067D203 /* DeviceKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = DeviceKit.podspec; sourceTree = "<group>"; };
+		957D18271C28C1FC0067D203 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		95CBDB6F1BFD2B5F0065FC66 /* DeviceKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeviceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CBDB721BFD2B5F0065FC66 /* DeviceKit-iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DeviceKit-iOS.h"; sourceTree = "<group>"; };
 		95CBDB741BFD2B5F0065FC66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -87,6 +90,9 @@
 		95CBDB631BFD2B440065FC66 = {
 			isa = PBXGroup;
 			children = (
+				957D18251C28C1E90067D203 /* README.md */,
+				957D18261C28C1F30067D203 /* DeviceKit.podspec */,
+				957D18271C28C1FC0067D203 /* .travis.yml */,
 				95CBDBA31BFD2BB80065FC66 /* Shared Code */,
 				95CBDB711BFD2B5F0065FC66 /* DeviceKit-iOS */,
 				95CBDB7D1BFD2B5F0065FC66 /* DeviceKit-iOSTests */,
@@ -795,6 +801,7 @@
 				95CBDB831BFD2B5F0065FC66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		95CBDB841BFD2B5F0065FC66 /* Build configuration list for PBXNativeTarget "DeviceKit-iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -803,6 +810,7 @@
 				95CBDB861BFD2B5F0065FC66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		95CBDB9D1BFD2B720065FC66 /* Build configuration list for PBXNativeTarget "DeviceKit-tvOS" */ = {
 			isa = XCConfigurationList;
@@ -811,6 +819,7 @@
 				95CBDB9F1BFD2B720065FC66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		95CBDBA01BFD2B720065FC66 /* Build configuration list for PBXNativeTarget "DeviceKit-tvOSTests" */ = {
 			isa = XCConfigurationList;
@@ -819,6 +828,7 @@
 				95CBDBA21BFD2B720065FC66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'DeviceKit'
-  s.version      = '0.0.1'
+  s.version      = '0.1.0'
   s.summary      = 'DeviceKit is a µ-framework that provides a value-type wrapper of UIDevice.'
 
   s.description             = <<-DESC
@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
                               DESC
 
   s.homepage                = 'https://github.com/dennisweissmann/DeviceKit'
-  s.license                 = { :type => 'MIT', :file => 'LICENSE' }
+  s.license                 = 'MIT'
   s.author                  = 'Dennis Weissmann'
   s.social_media_url        = 'https://twitter.com/dennis_weissman'
 
@@ -16,6 +16,8 @@ Pod::Spec.new do |s|
   s.ios.deployment_target   = '8.0'
   s.tvos.deployment_target  = '9.0'
 
-  s.source                  = { :git => 'https://github.com/dennisweissmann/DeviceKit.git', :tag => s.version.to_s }
+  s.source                  = { :git => 'https://github.com/dennisweissmann/DeviceKit.git', :tag => s.version }
   s.source_files            = 'DeviceKit-iOS', 'DeviceKit-tvOS', 'SharedCode'
+
+  s.requires_arc = true
 end
