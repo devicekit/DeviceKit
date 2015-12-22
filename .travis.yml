@@ -1,5 +1,53 @@
 language: objective-c
-osx_image: xcode7.1
-xcode_project: DeviceKit.xcodeproj
-xcode_scheme: DeviceKit-iOS
-xcode_sdk:  iphonesimulator9.1
+osx_image: xcode7.2
+
+env:
+    global:
+        - LC_CTYPE=en_US.UTF-8
+        - LANG=en_US.UTF-8
+        - PROJECT=DeviceKit.xcodeproj
+        - IOS_FRAMEWORK_SCHEME="DeviceKit-iOS"
+        - OSX_FRAMEWORK_SCHEME="DeviceKit-OSX"
+        - TVOS_FRAMEWORK_SCHEME="DeviceKit-tvOS"
+        - IOS_SDK=iphonesimulator9.2
+        - OSX_SDK=macosx10.11
+        - TVOS_SDK=appletvsimulator9.1
+        - WATCHOS_SDK=watchsimulator2.1
+    matrix:
+        - DESTINATION="OS=8.1,name=iPhone 4S"          SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"  POD_LINT="YES"
+        - DESTINATION="OS=8.2,name=iPhone 5"           SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"  POD_LINT="NO"
+        - DESTINATION="OS=8.3,name=iPhone 5S"          SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"  POD_LINT="NO"
+        - DESTINATION="OS=8.4,name=iPhone 6"           SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"  POD_LINT="NO"
+        - DESTINATION="OS=9.0,name=iPhone 6 Plus"      SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"  POD_LINT="NO"
+        - DESTINATION="OS=9.1,name=iPhone 6S"          SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"  POD_LINT="NO"
+        - DESTINATION="OS=9.2,name=iPhone 6S Plus"     SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"  POD_LINT="NO"
+        - DESTINATION="OS=9.1,name=Apple TV 1080p"     SCHEME="$TVOS_FRAMEWORK_SCHEME"    SDK="$TVOS_SDK"    RUN_TESTS="YES"  POD_LINT="NO"
+
+# Build Framework in Debug and Run Tests if specified
+- if [ $RUN_TESTS == "YES" ]; then
+xcodebuild -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO test | xcpretty -c;
+else
+xcodebuild -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO build | xcpretty -c;
+fi
+
+# Build Framework in ReleaseTest and Run Tests if specified
+- if [ $RUN_TESTS == "YES" ]; then
+xcodebuild -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration ReleaseTest ONLY_ACTIVE_ARCH=NO test | xcpretty -c;
+else
+xcodebuild -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration ReleaseTest ONLY_ACTIVE_ARCH=NO build | xcpretty -c;
+fi
+
+# Build Example in Debug if specified
+- if [ $BUILD_EXAMPLE == "YES" ]; then
+xcodebuild -project "$PROJECT" -scheme "$EXAMPLE_SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO build | xcpretty -c;
+fi
+
+# Build Example in Release if specified
+- if [ $BUILD_EXAMPLE == "YES" ]; then
+xcodebuild -project "$PROJECT" -scheme "$EXAMPLE_SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Release ONLY_ACTIVE_ARCH=NO build | xcpretty -c;
+fi
+
+# Run `pod lib lint` if specified
+- if [ $POD_LINT == "YES" ]; then
+pod lib lint;
+fi
