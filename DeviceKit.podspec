@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = 'DeviceKit'
-  s.version      = '0.1.0'
-  s.summary      = 'DeviceKit is a µ-framework that provides a value-type wrapper of UIDevice.'
+  s.version      = '0.1.1'
+  s.summary      = 'DeviceKit is a µ-framework that provides a value-type replacement of UIDevice.'
 
   s.description             = <<-DESC
                                 `DeviceKit` is a value-type wrapper and extension of [`UIDevice`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/).
