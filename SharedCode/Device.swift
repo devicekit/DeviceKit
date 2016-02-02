@@ -266,7 +266,7 @@ public enum Device {
     */
     ///
     public var isSimulator: Bool {
-        return self.isOneOf(Device.allSimulators) //|| self.isOneOf(Device.allSimulatorPhones) || self.isOneOf(Device.allSimulatorPads)
+        return self.isOneOf(Device.allSimulators)
     }
     
    
