@@ -261,6 +261,15 @@ public enum Device {
         return self.isOneOf(Device.allPads) || self.isOneOf(Device.allSimulatorPads)
     }
 
+    /*  Return whether the device is any of the simulator
+    *   Useful when there is a need to check and skip running a portion of code (location request or others)
+    */
+    ///
+    public var isSimulator: Bool {
+        return self.isOneOf(Device.allSimulators)
+    }
+    
+   
     #elseif os(tvOS)
     /// All TVs
     public static var allTVs: [Device] {

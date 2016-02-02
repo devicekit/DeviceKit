@@ -14,6 +14,10 @@ class DeviceKitTests: XCTestCase {
     func testDeviceSimulator() {
         XCTAssert(Device().isOneOf(Device.allSimulators))
     }
+    
+    func testIsSimulator() {
+        XCTAssert(Device().isSimulator)
+    }
 
     func testDeviceDescription() {
         XCTAssert(Device().description.hasPrefix("Simulator"))
