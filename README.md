@@ -79,6 +79,15 @@ if device.isPod {
    // iPad (real or simulator)
 }
 ```
+### To check if running on Simulator
+```swift
+let device = Device()
+if device.isSimulator {
+    // Running on one of the simulators(iPod/iPhone/iPad) 
+    // Skip doing something irrelevant for Simulator
+} 
+```
+
 
 ### Get the Simulator Device
 ```swift
