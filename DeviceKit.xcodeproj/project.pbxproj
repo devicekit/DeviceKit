@@ -3,18 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		95CBDB731BFD2B5F0065FC66 /* DeviceKit-iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 95CBDB721BFD2B5F0065FC66 /* DeviceKit-iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95C7E8391C6122AF00B0189E /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C7E8381C6122AF00B0189E /* Device.swift */; };
+		95C7E83A1C6122B800B0189E /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C7E8381C6122AF00B0189E /* Device.swift */; };
+		95C7E8441C61252100B0189E /* Tests_tvOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C7E8431C61252100B0189E /* Tests_tvOS.swift */; };
+		95C7E8461C61253900B0189E /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C7E8451C61253900B0189E /* Tests_iOS.swift */; };
 		95CBDB7A1BFD2B5F0065FC66 /* DeviceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CBDB6F1BFD2B5F0065FC66 /* DeviceKit.framework */; };
-		95CBDB7F1BFD2B5F0065FC66 /* DeviceKit_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CBDB7E1BFD2B5F0065FC66 /* DeviceKit_iOSTests.swift */; };
-		95CBDB8F1BFD2B720065FC66 /* DeviceKit-tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 95CBDB8E1BFD2B720065FC66 /* DeviceKit-tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95CBDB961BFD2B720065FC66 /* DeviceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CBDB8C1BFD2B720065FC66 /* DeviceKit.framework */; };
-		95CBDB9B1BFD2B720065FC66 /* DeviceKit_tvOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CBDB9A1BFD2B720065FC66 /* DeviceKit_tvOSTests.swift */; };
-		95CBDBA51BFD2BCA0065FC66 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CBDBA41BFD2BCA0065FC66 /* Device.swift */; };
-		95CBDBA61BFD2BCA0065FC66 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CBDBA41BFD2BCA0065FC66 /* Device.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,19 +36,18 @@
 		957D18251C28C1E90067D203 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		957D18261C28C1F30067D203 /* DeviceKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = DeviceKit.podspec; sourceTree = "<group>"; };
 		957D18271C28C1FC0067D203 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
+		95C7E8381C6122AF00B0189E /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Device.swift; path = ../../DeviceKit/Sources/Device.swift; sourceTree = "<group>"; };
+		95C7E83F1C61239D00B0189E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		95C7E8431C61252100B0189E /* Tests_tvOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tests_tvOS.swift; path = Tests/Tests_tvOS.swift; sourceTree = "<group>"; };
+		95C7E8451C61253900B0189E /* Tests_iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tests_iOS.swift; path = Tests/Tests_iOS.swift; sourceTree = "<group>"; };
+		95C7E8471C612ABA00B0189E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = "<group>"; };
+		95C7E84A1C612EE500B0189E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../DeviceKit/Sources/Info.plist; sourceTree = "<group>"; };
+		95C7E84D1C6130DB00B0189E /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		95C7E84E1C61332300B0189E /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		95CBDB6F1BFD2B5F0065FC66 /* DeviceKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeviceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		95CBDB721BFD2B5F0065FC66 /* DeviceKit-iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DeviceKit-iOS.h"; sourceTree = "<group>"; };
-		95CBDB741BFD2B5F0065FC66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95CBDB791BFD2B5F0065FC66 /* DeviceKit-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DeviceKit-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		95CBDB7E1BFD2B5F0065FC66 /* DeviceKit_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceKit_iOSTests.swift; sourceTree = "<group>"; };
-		95CBDB801BFD2B5F0065FC66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95CBDB8C1BFD2B720065FC66 /* DeviceKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeviceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		95CBDB8E1BFD2B720065FC66 /* DeviceKit-tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DeviceKit-tvOS.h"; sourceTree = "<group>"; };
-		95CBDB901BFD2B720065FC66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95CBDB951BFD2B720065FC66 /* DeviceKit-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DeviceKit-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		95CBDB9A1BFD2B720065FC66 /* DeviceKit_tvOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceKit_tvOSTests.swift; sourceTree = "<group>"; };
-		95CBDB9C1BFD2B720065FC66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		95CBDBA41BFD2BCA0065FC66 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Device.swift; path = SharedCode/Device.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,17 +84,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		95C7E83B1C6122BF00B0189E /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				95C7E84A1C612EE500B0189E /* Info.plist */,
+				95C7E8381C6122AF00B0189E /* Device.swift */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		95C7E8411C61241200B0189E /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				95C7E8471C612ABA00B0189E /* Info.plist */,
+				95C7E8431C61252100B0189E /* Tests_tvOS.swift */,
+				95C7E8451C61253900B0189E /* Tests_iOS.swift */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
 		95CBDB631BFD2B440065FC66 = {
 			isa = PBXGroup;
 			children = (
+				95C7E83B1C6122BF00B0189E /* Source */,
+				95C7E8411C61241200B0189E /* Tests */,
 				957D18251C28C1E90067D203 /* README.md */,
+				95C7E84E1C61332300B0189E /* Package.swift */,
 				957D18261C28C1F30067D203 /* DeviceKit.podspec */,
 				957D18271C28C1FC0067D203 /* .travis.yml */,
-				95CBDBA31BFD2BB80065FC66 /* Shared Code */,
-				95CBDB711BFD2B5F0065FC66 /* DeviceKit-iOS */,
-				95CBDB7D1BFD2B5F0065FC66 /* DeviceKit-iOSTests */,
-				95CBDB8D1BFD2B720065FC66 /* DeviceKit-tvOS */,
-				95CBDB991BFD2B720065FC66 /* DeviceKit-tvOSTests */,
+				95C7E84D1C6130DB00B0189E /* .swiftlint.yml */,
+				95C7E83F1C61239D00B0189E /* .gitignore */,
 				95CBDB701BFD2B5F0065FC66 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,50 +129,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		95CBDB711BFD2B5F0065FC66 /* DeviceKit-iOS */ = {
-			isa = PBXGroup;
-			children = (
-				95CBDB721BFD2B5F0065FC66 /* DeviceKit-iOS.h */,
-				95CBDB741BFD2B5F0065FC66 /* Info.plist */,
-			);
-			path = "DeviceKit-iOS";
-			sourceTree = "<group>";
-		};
-		95CBDB7D1BFD2B5F0065FC66 /* DeviceKit-iOSTests */ = {
-			isa = PBXGroup;
-			children = (
-				95CBDB7E1BFD2B5F0065FC66 /* DeviceKit_iOSTests.swift */,
-				95CBDB801BFD2B5F0065FC66 /* Info.plist */,
-			);
-			path = "DeviceKit-iOSTests";
-			sourceTree = "<group>";
-		};
-		95CBDB8D1BFD2B720065FC66 /* DeviceKit-tvOS */ = {
-			isa = PBXGroup;
-			children = (
-				95CBDB8E1BFD2B720065FC66 /* DeviceKit-tvOS.h */,
-				95CBDB901BFD2B720065FC66 /* Info.plist */,
-			);
-			path = "DeviceKit-tvOS";
-			sourceTree = "<group>";
-		};
-		95CBDB991BFD2B720065FC66 /* DeviceKit-tvOSTests */ = {
-			isa = PBXGroup;
-			children = (
-				95CBDB9A1BFD2B720065FC66 /* DeviceKit_tvOSTests.swift */,
-				95CBDB9C1BFD2B720065FC66 /* Info.plist */,
-			);
-			path = "DeviceKit-tvOSTests";
-			sourceTree = "<group>";
-		};
-		95CBDBA31BFD2BB80065FC66 /* Shared Code */ = {
-			isa = PBXGroup;
-			children = (
-				95CBDBA41BFD2BCA0065FC66 /* Device.swift */,
-			);
-			name = "Shared Code";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -164,7 +136,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95CBDB731BFD2B5F0065FC66 /* DeviceKit-iOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,7 +143,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95CBDB8F1BFD2B720065FC66 /* DeviceKit-tvOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +153,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 95CBDB811BFD2B5F0065FC66 /* Build configuration list for PBXNativeTarget "DeviceKit-iOS" */;
 			buildPhases = (
+				95C7E84B1C61307400B0189E /* Run swiftlint */,
 				95CBDB6A1BFD2B5F0065FC66 /* Sources */,
 				95CBDB6B1BFD2B5F0065FC66 /* Frameworks */,
 				95CBDB6C1BFD2B5F0065FC66 /* Headers */,
@@ -219,6 +190,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 95CBDB9D1BFD2B720065FC66 /* Build configuration list for PBXNativeTarget "DeviceKit-tvOS" */;
 			buildPhases = (
+				95C7E84C1C61309300B0189E /* Run swiftlint */,
 				95CBDB871BFD2B720065FC66 /* Sources */,
 				95CBDB881BFD2B720065FC66 /* Frameworks */,
 				95CBDB891BFD2B720065FC66 /* Headers */,
@@ -257,7 +229,7 @@
 		95CBDB641BFD2B440065FC66 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				TargetAttributes = {
 					95CBDB6E1BFD2B5F0065FC66 = {
@@ -275,7 +247,7 @@
 				};
 			};
 			buildConfigurationList = 95CBDB671BFD2B440065FC66 /* Build configuration list for PBXProject "DeviceKit" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -325,12 +297,43 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		95C7E84B1C61307400B0189E /* Run swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run swiftlint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		95C7E84C1C61309300B0189E /* Run swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run swiftlint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		95CBDB6A1BFD2B5F0065FC66 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95CBDBA51BFD2BCA0065FC66 /* Device.swift in Sources */,
+				95C7E8391C6122AF00B0189E /* Device.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,7 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95CBDB7F1BFD2B5F0065FC66 /* DeviceKit_iOSTests.swift in Sources */,
+				95C7E8461C61253900B0189E /* Tests_iOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,7 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95CBDBA61BFD2BCA0065FC66 /* Device.swift in Sources */,
+				95C7E83A1C6122B800B0189E /* Device.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,7 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95CBDB9B1BFD2B720065FC66 /* DeviceKit_tvOSTests.swift in Sources */,
+				95C7E8441C61252100B0189E /* Tests_tvOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +395,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -429,7 +433,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "DeviceKit-iOS/Info.plist";
+				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -451,6 +455,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -482,7 +487,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "DeviceKit-iOS/Info.plist";
+				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -535,7 +540,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "DeviceKit-iOSTests/Info.plist";
+				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -577,7 +582,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "DeviceKit-iOSTests/Info.plist";
+				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -592,6 +597,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -628,7 +634,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "DeviceKit-tvOS/Info.plist";
+				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -650,6 +656,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -680,7 +687,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "DeviceKit-tvOS/Info.plist";
+				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -732,13 +739,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "DeviceKit-tvOSTests/Info.plist";
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hotactionstudios.DeviceKit-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -773,12 +781,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "DeviceKit-tvOSTests/Info.plist";
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hotactionstudios.DeviceKit-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VALIDATE_PRODUCT = YES;
 			};

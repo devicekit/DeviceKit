@@ -14,7 +14,8 @@ import func Darwin.getenv
 
 // MARK: - Device
 
-/// This enum is a value-type wrapper around and extension of [`UIDevice`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/).
+/// This enum is a value-type wrapper around and extension of
+/// [`UIDevice`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/).
 ///
 /// This port is not yet complete and will be extended as I need further functionality. Feel free to extend it and send a pull request. Thanks! :)
 ///
@@ -266,8 +267,8 @@ public enum Device {
     public var isSimulator: Bool {
         return self.isOneOf(Device.allSimulators)
     }
-    
-   
+
+
     #elseif os(tvOS)
     /// All TVs
     public static var allTVs: [Device] {
@@ -328,7 +329,8 @@ public enum Device {
     }
 
     /// The style of interface to use on the current device.
-    /// This is pretty useless right now since it does not add any further functionality to the existing [UIUserInterfaceIdiom](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/#//apple_ref/c/tdef/UIUserInterfaceIdiom) enum.
+    /// This is pretty useless right now since it does not add any further functionality to the existing
+    /// [UIUserInterfaceIdiom](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/#//apple_ref/c/tdef/UIUserInterfaceIdiom) enum.
     public enum UserInterfaceIdiom {
 
         /// The user interface should be designed for iPhone and iPod touch.
@@ -427,85 +429,85 @@ extension Device: CustomStringConvertible {
 // MARK: - Equatable
 extension Device: Equatable {}
 
-public func ==(lhs: Device, rhs: Device) -> Bool {
+public func == (lhs: Device, rhs: Device) -> Bool {
     return lhs.description == rhs.description
 }
 
 #if os(iOS)
-    // MARK: - Battery
-    extension Device {
-        /**
-         This enum describes the state of the battery.
+// MARK: - Battery
+extension Device {
+    /**
+     This enum describes the state of the battery.
 
-         - Full:      The device is plugged into power and the battery is 100% charged or the device is the iOS Simulator.
-         - Charging:  The device is plugged into power and the battery is less than 100% charged.
-         - Unplugged: The device is not plugged into power; the battery is discharging.
-         */
-        public enum BatteryState: CustomStringConvertible, Equatable {
-            /// The device is plugged into power and the battery is 100% charged or the device is the iOS Simulator.
-            case Full
-            /// The device is plugged into power and the battery is less than 100% charged.
-            /// The associated value is in percent (0-100).
-            case Charging(Int)
-            /// The device is not plugged into power; the battery is discharging.
-            /// The associated value is in percent (0-100).
-            case Unplugged(Int)
+     - Full:      The device is plugged into power and the battery is 100% charged or the device is the iOS Simulator.
+     - Charging:  The device is plugged into power and the battery is less than 100% charged.
+     - Unplugged: The device is not plugged into power; the battery is discharging.
+     */
+    public enum BatteryState: CustomStringConvertible, Equatable {
+        /// The device is plugged into power and the battery is 100% charged or the device is the iOS Simulator.
+        case Full
+        /// The device is plugged into power and the battery is less than 100% charged.
+        /// The associated value is in percent (0-100).
+        case Charging(Int)
+        /// The device is not plugged into power; the battery is discharging.
+        /// The associated value is in percent (0-100).
+        case Unplugged(Int)
 
-            private init() {
-                UIDevice.currentDevice().batteryMonitoringEnabled = true
-                let batteryLevel = Int(round(UIDevice.currentDevice().batteryLevel * 100))  // round() is actually not needed anymore since -[batteryLevel] seems to always return a two-digit precision number
-                                                                                            // but maybe that changes in the future.
-                switch UIDevice.currentDevice().batteryState {
-                case .Charging: self = .Charging(batteryLevel)
-                case .Full:     self = .Full
-                case .Unplugged:self = .Unplugged(batteryLevel)
-                case .Unknown:  self = .Full    // Should never happen since `batteryMonitoring` is enabled.
-                }
-                UIDevice.currentDevice().batteryMonitoringEnabled = false
+        private init() {
+            UIDevice.currentDevice().batteryMonitoringEnabled = true
+            let batteryLevel = Int(round(UIDevice.currentDevice().batteryLevel * 100))  // round() is actually not needed anymore since -[batteryLevel] seems to always return a two-digit precision number
+                                                                                        // but maybe that changes in the future.
+            switch UIDevice.currentDevice().batteryState {
+            case .Charging: self = .Charging(batteryLevel)
+            case .Full:     self = .Full
+            case .Unplugged:self = .Unplugged(batteryLevel)
+            case .Unknown:  self = .Full    // Should never happen since `batteryMonitoring` is enabled.
             }
-
-            public var description: String {
-                switch self {
-                case .Charging(let batteryLevel):   return "Battery level: \(batteryLevel)%, device is plugged in."
-                case .Full:                         return "Battery level: 100 % (Full), device is plugged in."
-                case .Unplugged(let batteryLevel):  return "Battery level: \(batteryLevel)%, device is unplugged."
-                }
-            }
-
+            UIDevice.currentDevice().batteryMonitoringEnabled = false
         }
 
-        /// The state of the battery
-        public var batteryState: BatteryState {
-            return BatteryState()
-        }
-
-        /// Battery level ranges from 0 (fully discharged) to 100 (100% charged).
-        public var batteryLevel: Int {
-            switch BatteryState() {
-            case .Charging(let value):  return value
-            case .Full:                 return 100
-            case .Unplugged(let value): return value
+        public var description: String {
+            switch self {
+            case .Charging(let batteryLevel):   return "Battery level: \(batteryLevel)%, device is plugged in."
+            case .Full:                         return "Battery level: 100 % (Full), device is plugged in."
+            case .Unplugged(let batteryLevel):  return "Battery level: \(batteryLevel)%, device is unplugged."
             }
         }
 
     }
 
-    // MARK: - Device.Batterystate: Comparable
-    extension Device.BatteryState: Comparable {}
-
-    public func ==(lhs: Device.BatteryState, rhs: Device.BatteryState) -> Bool {
-        return lhs.description == rhs.description
+    /// The state of the battery
+    public var batteryState: BatteryState {
+        return BatteryState()
     }
 
-    public func <(lhs: Device.BatteryState, rhs: Device.BatteryState) -> Bool {
-        switch (lhs, rhs) {
-        case (.Full, _):                                            return false                // return false (even if both are `.Full` -> they are equal)
-        case (_, .Full):                                            return true                 // lhs is *not* `.Full`, rhs is
-        case (.Charging(let lhsLevel), .Charging(let rhsLevel)):    return lhsLevel < rhsLevel
-        case (.Charging(let lhsLevel), .Unplugged(let rhsLevel)):   return lhsLevel < rhsLevel
-        case (.Unplugged(let lhsLevel), .Charging(let rhsLevel)):   return lhsLevel < rhsLevel
-        case (.Unplugged(let lhsLevel), .Unplugged(let rhsLevel)):  return lhsLevel < rhsLevel
-        default:                                                    return false                // compiler won't compile without it, though it cannot happen
+    /// Battery level ranges from 0 (fully discharged) to 100 (100% charged).
+    public var batteryLevel: Int {
+        switch BatteryState() {
+        case .Charging(let value):  return value
+        case .Full:                 return 100
+        case .Unplugged(let value): return value
         }
     }
+
+}
+
+// MARK: - Device.Batterystate: Comparable
+extension Device.BatteryState: Comparable {}
+
+public func == (lhs: Device.BatteryState, rhs: Device.BatteryState) -> Bool {
+    return lhs.description == rhs.description
+}
+
+public func < (lhs: Device.BatteryState, rhs: Device.BatteryState) -> Bool {
+    switch (lhs, rhs) {
+    case (.Full, _):                                            return false                // return false (even if both are `.Full` -> they are equal)
+    case (_, .Full):                                            return true                 // lhs is *not* `.Full`, rhs is
+    case (.Charging(let lhsLevel), .Charging(let rhsLevel)):    return lhsLevel < rhsLevel
+    case (.Charging(let lhsLevel), .Unplugged(let rhsLevel)):   return lhsLevel < rhsLevel
+    case (.Unplugged(let lhsLevel), .Charging(let rhsLevel)):   return lhsLevel < rhsLevel
+    case (.Unplugged(let lhsLevel), .Unplugged(let rhsLevel)):  return lhsLevel < rhsLevel
+    default:                                                    return false                // compiler won't compile without it, though it cannot happen
+    }
+}
 #endif
