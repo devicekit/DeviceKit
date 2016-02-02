@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary      = 'DeviceKit is a µ-framework that provides a value-type replacement of UIDevice.'
 
   s.description             = <<-DESC
-                                `DeviceKit` is a value-type wrapper and extension of [`UIDevice`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/).
+                                `DeviceKit` is a value-type wrapper and extension of [`UIDevice`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/). It detects both devices and different simulators.
                               DESC
 
   s.homepage                = 'https://github.com/dennisweissmann/DeviceKit'
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.tvos.deployment_target  = '9.0'
 
   s.source                  = { :git => 'https://github.com/dennisweissmann/DeviceKit.git', :tag => s.version }
-  s.source_files            = 'DeviceKit-iOS', 'DeviceKit-tvOS', 'SharedCode'
+  s.source_files            = 'Source'
 
   s.requires_arc = true
 end
