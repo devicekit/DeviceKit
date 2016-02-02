@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		95C7E8391C6122AF00B0189E /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C7E8381C6122AF00B0189E /* Device.swift */; };
-		95C7E83A1C6122B800B0189E /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C7E8381C6122AF00B0189E /* Device.swift */; };
+		951E3A0F1C61549400261610 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951E3A0D1C61549400261610 /* Device.swift */; };
+		951E3A101C61549400261610 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951E3A0D1C61549400261610 /* Device.swift */; };
 		95C7E8441C61252100B0189E /* Tests_tvOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C7E8431C61252100B0189E /* Tests_tvOS.swift */; };
 		95C7E8461C61253900B0189E /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C7E8451C61253900B0189E /* Tests_iOS.swift */; };
 		95CBDB7A1BFD2B5F0065FC66 /* DeviceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CBDB6F1BFD2B5F0065FC66 /* DeviceKit.framework */; };
@@ -33,15 +33,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		951E3A0D1C61549400261610 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Device.swift; path = Source/Device.swift; sourceTree = "<group>"; };
+		951E3A0E1C61549400261610 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Source/Info.plist; sourceTree = "<group>"; };
 		957D18251C28C1E90067D203 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		957D18261C28C1F30067D203 /* DeviceKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = DeviceKit.podspec; sourceTree = "<group>"; };
 		957D18271C28C1FC0067D203 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
-		95C7E8381C6122AF00B0189E /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Device.swift; path = ../../DeviceKit/Sources/Device.swift; sourceTree = "<group>"; };
 		95C7E83F1C61239D00B0189E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		95C7E8431C61252100B0189E /* Tests_tvOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tests_tvOS.swift; path = Tests/Tests_tvOS.swift; sourceTree = "<group>"; };
 		95C7E8451C61253900B0189E /* Tests_iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tests_iOS.swift; path = Tests/Tests_iOS.swift; sourceTree = "<group>"; };
 		95C7E8471C612ABA00B0189E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = "<group>"; };
-		95C7E84A1C612EE500B0189E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../DeviceKit/Sources/Info.plist; sourceTree = "<group>"; };
 		95C7E84D1C6130DB00B0189E /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		95C7E84E1C61332300B0189E /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		95CBDB6F1BFD2B5F0065FC66 /* DeviceKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeviceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,8 +87,8 @@
 		95C7E83B1C6122BF00B0189E /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				95C7E84A1C612EE500B0189E /* Info.plist */,
-				95C7E8381C6122AF00B0189E /* Device.swift */,
+				951E3A0D1C61549400261610 /* Device.swift */,
+				951E3A0E1C61549400261610 /* Info.plist */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -333,7 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95C7E8391C6122AF00B0189E /* Device.swift in Sources */,
+				951E3A0F1C61549400261610 /* Device.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,7 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95C7E83A1C6122B800B0189E /* Device.swift in Sources */,
+				951E3A101C61549400261610 /* Device.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
