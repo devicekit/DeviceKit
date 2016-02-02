@@ -30,13 +30,13 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 use_frameworks!
 
-pod 'DeviceKit', '~> 0.1.1'
+pod 'DeviceKit', '~> 0.2.0'
 ```
 
 ### Carthage
 
 ```ogdl
-github "dennisweissmann/DeviceKit" ~> 0.1.1
+github "dennisweissmann/DeviceKit" ~> 0.2.0
 ```
 
 ### Manually
