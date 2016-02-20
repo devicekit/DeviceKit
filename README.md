@@ -19,7 +19,7 @@
 ## Requirements
 
 - iOS 8.0+ / tvOS 9.0+
-- Xcode 7.2+
+- Xcode 7.3+
 
 ## Installation
 DeviceKit can be installed in various ways.
@@ -30,13 +30,13 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 use_frameworks!
 
-pod 'DeviceKit', '~> 0.3.0'
+pod 'DeviceKit', '~> 0.3.1'
 ```
 
 ### Carthage
 
 ```ogdl
-github "dennisweissmann/DeviceKit" ~> 0.3.0
+github "dennisweissmann/DeviceKit" ~> 0.3.1
 ```
 
 ### Manually
