@@ -339,6 +339,8 @@ public enum Device {
         case Pad
         /// The user interface should be designed for TV
         case TV
+        /// The user interface should be designed for Car
+        case CarPlay
         /// Used when an object has a trait collection, but it is not in an environment yet. For example, a view that is created, but not put into a view hierarchy.
         case Unspecified
 
@@ -347,6 +349,7 @@ public enum Device {
             case .Pad:          self = .Pad
             case .Phone:        self = .Phone
             case .TV:           self = .TV
+            case .CarPlay:      self = .CarPlay
             case .Unspecified:  self = .Unspecified
             }
         }
@@ -376,12 +379,6 @@ public enum Device {
     /// The model of the device as a localized string.
     public var localizedModel: String {
         return UIDevice.currentDevice().localizedModel
-    }
-
-    /// The model of the device including the generation (if != 1).
-    @available(*, deprecated=0.2.0, obsoleted=0.3.0, message="Use `description` instead.")
-    public var detailedModel: String {
-        return description
     }
 
 }

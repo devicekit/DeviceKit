@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode7.2
+osx_image: xcode7.3
 
 env:
     global:
@@ -9,10 +9,10 @@ env:
         - IOS_FRAMEWORK_SCHEME="DeviceKit-iOS"
         - OSX_FRAMEWORK_SCHEME="DeviceKit-OSX"
         - TVOS_FRAMEWORK_SCHEME="DeviceKit-tvOS"
-        - IOS_SDK=iphonesimulator9.2
+        - IOS_SDK=iphonesimulator9.3
         - OSX_SDK=macosx10.11
-        - TVOS_SDK=appletvsimulator9.1
-        - WATCHOS_SDK=watchsimulator2.1
+        - TVOS_SDK=appletvsimulator9.2
+        - WATCHOS_SDK=watchsimulator2.2
     matrix:
         - DESTINATION="OS=9.1,name=iPhone 4S"          SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"  POD_LINT="YES"
         - DESTINATION="OS=9.1,name=iPhone 5"           SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"  POD_LINT="NO"
