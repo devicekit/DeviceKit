@@ -22,7 +22,7 @@
 - Xcode 7.3+
 
 ### Note:
-Version 0.3.1 requires Xcode 7.3 because it contains a fix for the `UIUserInterfaceIdiom` wrapper enum that would not build otherwise. If you still use Xcode 7.2.1 or lower please use version 0.3.0.
+**Version 0.3.1 requires Xcode 7.3** because it contains a fix for the `UIUserInterfaceIdiom` wrapper enum that would not build otherwise (specifically you need to link against the iOS 9.3 SDK). If you still use Xcode 7.2.1 or lower (and do not link against the latest SDK) please use version 0.3.0.
 
 
 ## Installation
