@@ -21,6 +21,10 @@
 - iOS 8.0+ / tvOS 9.0+
 - Xcode 7.3+
 
+### Note:
+Version 0.3.1 requires Xcode 7.3 because it contains a fix for the `UIUserInterfaceIdiom` wrapper enum that would not build otherwise. If you still use Xcode 7.2.1 or lower please use version 0.3.0.
+
+
 ## Installation
 DeviceKit can be installed in various ways.
 ### CocoaPods
