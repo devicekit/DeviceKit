@@ -102,6 +102,11 @@ public enum Device {
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP727/SP727-iphone6s-plus-gray-select-2015.png)
     case iPhone6sPlus
 
+    /// Device is an [iPhone SE](https://support.apple.com/kb/SP738???) TODO: Spec page not posted yet
+    ///
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/???) TODO: Image page not posted yet
+    case iPhoneSE
+    
     /// Device is an [iPad 2](https://support.apple.com/kb/SP622)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP622/SP622_01-ipad2-mul.png)
@@ -193,6 +198,7 @@ public enum Device {
                 case "iPhone7,1":                               return iPhone6Plus
                 case "iPhone8,1":                               return iPhone6s
                 case "iPhone8,2":                               return iPhone6sPlus
+                case "iPhone8,4":                               return iPhoneSE
                 case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4":return iPad2
                 case "iPad3,1", "iPad3,2", "iPad3,3":           return iPad3
                 case "iPad3,4", "iPad3,5", "iPad3,6":           return iPad4
@@ -202,7 +208,7 @@ public enum Device {
                 case "iPad4,4", "iPad4,5", "iPad4,6":           return iPadMini2
                 case "iPad4,7", "iPad4,8", "iPad4,9":           return iPadMini3
                 case "iPad5,1", "iPad5,2":                      return iPadMini4
-                case "iPad6,7", "iPad6,8":                      return iPadPro
+                case "iPad6,3", "iPad6,4", "iPad6,7", "iPad6,8":return iPadPro
                 case "i386", "x86_64":                          return Simulator(mapIdentifierToDevice(String(UTF8String: getenv("SIMULATOR_MODEL_IDENTIFIER"))!))
                 default:                                        return UnknownDevice(identifier)
                 }
@@ -224,7 +230,7 @@ public enum Device {
 
     /// All iPhones
     public static var allPhones: [Device] {
-        return [.iPhone4, iPhone4s, .iPhone5, .iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus]
+        return [.iPhone4, iPhone4s, .iPhone5, .iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhoneSE]
     }
 
     /// All iPads
@@ -302,7 +308,7 @@ public enum Device {
      ```
      switch Device() {
      case .iPodTouch5, .iPodTouch6: callMethodOnIPods()
-     case .iPhone4, iPhone4s, .iPhone5, .iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus: callMethodOnIPhones()
+     case .iPhone4, iPhone4s, .iPhone5, .iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhoneSE: callMethodOnIPhones()
      case .iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadPro: callMethodOnIPads()
      default: break
      }
@@ -400,6 +406,7 @@ extension Device: CustomStringConvertible {
             case .iPhone6Plus:                  return "iPhone 6 Plus"
             case .iPhone6s:                     return "iPhone 6s"
             case .iPhone6sPlus:                 return "iPhone 6s Plus"
+            case .iPhoneSE:                     return "iPhone SE"
             case .iPad2:                        return "iPad 2"
             case .iPad3:                        return "iPad 3"
             case .iPad4:                        return "iPad 4"
