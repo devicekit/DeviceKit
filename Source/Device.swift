@@ -357,6 +357,7 @@ public enum Device {
             case .TV:           self = .TV
             case .CarPlay:      self = .CarPlay
             case .Unspecified:  self = .Unspecified
+            default:            self = .Unspecified
             }
         }
 
