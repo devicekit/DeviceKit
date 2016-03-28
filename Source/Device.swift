@@ -184,7 +184,6 @@ public enum Device {
             return identifier + String(UnicodeScalar(UInt8(value)))
         }
 
-        //swiftlint:disable cyclomatic_complexity
         func mapIdentifierToDevice(identifier: String) -> Device {
             #if os(iOS)
                 switch identifier {
@@ -221,7 +220,6 @@ public enum Device {
                 }
             #endif
         }
-        //swiftlint:enable cyclomatic_complexity
         self = mapIdentifierToDevice(identifier)
     }
 
