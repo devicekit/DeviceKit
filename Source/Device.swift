@@ -106,7 +106,7 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/???) TODO: Image page not posted yet
     case iPhoneSE
-    
+
     /// Device is an [iPad 2](https://support.apple.com/kb/SP622)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP622/SP622_01-ipad2-mul.png)
@@ -184,6 +184,7 @@ public enum Device {
             return identifier + String(UnicodeScalar(UInt8(value)))
         }
 
+        //swiftlint:disable cyclomatic_complexity
         func mapIdentifierToDevice(identifier: String) -> Device {
             #if os(iOS)
                 switch identifier {
@@ -220,6 +221,7 @@ public enum Device {
                 }
             #endif
         }
+        //swiftlint:enable cyclomatic_complexity
         self = mapIdentifierToDevice(identifier)
     }
 
