@@ -18,12 +18,8 @@
 
 ## Requirements
 
-- iOS 8.0+ / tvOS 9.0+
+- iOS 8.0+ / tvOS 9.0+ (linking against iOS 9.3 and tvOS 9.2 required)
 - Xcode 7.3+
-
-### Note:
-**Version 0.3.1 requires Xcode 7.3** because it contains a fix for the `UIUserInterfaceIdiom` wrapper enum that would not build otherwise (specifically you need to link against the iOS 9.3 SDK). If you still use Xcode 7.2.1 or lower (and do not link against the latest SDK) please use version 0.3.0.
-
 
 ## Installation
 DeviceKit can be installed in various ways.
@@ -34,13 +30,13 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 use_frameworks!
 
-pod 'DeviceKit', '~> 0.3.1'
+pod 'DeviceKit', '~> 0.3.2'
 ```
 
 ### Carthage
 
 ```ogdl
-github "dennisweissmann/DeviceKit" ~> 0.3.1
+github "dennisweissmann/DeviceKit" ~> 0.3.2
 ```
 
 ### Manually
