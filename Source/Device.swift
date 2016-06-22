@@ -186,32 +186,75 @@ public enum Device {
 
         func mapIdentifierToDevice(identifier: String) -> Device {
             #if os(iOS)
-                switch identifier {
-                case "iPod5,1":                                 return iPodTouch5
-                case "iPod7,1":                                 return iPodTouch6
-                case "iPhone3,1", "iPhone3,2", "iPhone3,3":     return iPhone4
-                case "iPhone4,1":                               return iPhone4s
-                case "iPhone5,1", "iPhone5,2":                  return iPhone5
-                case "iPhone5,3", "iPhone5,4":                  return iPhone5c
-                case "iPhone6,1", "iPhone6,2":                  return iPhone5s
-                case "iPhone7,2":                               return iPhone6
-                case "iPhone7,1":                               return iPhone6Plus
-                case "iPhone8,1":                               return iPhone6s
-                case "iPhone8,2":                               return iPhone6sPlus
-                case "iPhone8,4":                               return iPhoneSE
-                case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4":return iPad2
-                case "iPad3,1", "iPad3,2", "iPad3,3":           return iPad3
-                case "iPad3,4", "iPad3,5", "iPad3,6":           return iPad4
-                case "iPad4,1", "iPad4,2", "iPad4,3":           return iPadAir
-                case "iPad5,3", "iPad5,4":                      return iPadAir2
-                case "iPad2,5", "iPad2,6", "iPad2,7":           return iPadMini
-                case "iPad4,4", "iPad4,5", "iPad4,6":           return iPadMini2
-                case "iPad4,7", "iPad4,8", "iPad4,9":           return iPadMini3
-                case "iPad5,1", "iPad5,2":                      return iPadMini4
-                case "iPad6,3", "iPad6,4", "iPad6,7", "iPad6,8":return iPadPro
-                case "i386", "x86_64":                          return Simulator(mapIdentifierToDevice(String(UTF8String: getenv("SIMULATOR_MODEL_IDENTIFIER"))!))
-                default:                                        return UnknownDevice(identifier)
-                }
+              
+                #if swift(>=2.3)
+                   
+                    switch identifier {
+                    case "iPod5,1":                                 return iPodTouch5
+                    case "iPod7,1":                                 return iPodTouch6
+                    case "iPhone3,1", "iPhone3,2", "iPhone3,3":     return iPhone4
+                    case "iPhone4,1":                               return iPhone4s
+                    case "iPhone5,1", "iPhone5,2":                  return iPhone5
+                    case "iPhone5,3", "iPhone5,4":                  return iPhone5c
+                    case "iPhone6,1", "iPhone6,2":                  return iPhone5s
+                    case "iPhone7,2":                               return iPhone6
+                    case "iPhone7,1":                               return iPhone6Plus
+                    case "iPhone8,1":                               return iPhone6s
+                    case "iPhone8,2":                               return iPhone6sPlus
+                    case "iPhone8,4":                               return iPhoneSE
+                    case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4":return iPad2
+                    case "iPad3,1", "iPad3,2", "iPad3,3":           return iPad3
+                    case "iPad3,4", "iPad3,5", "iPad3,6":           return iPad4
+                    case "iPad4,1", "iPad4,2", "iPad4,3":           return iPadAir
+                    case "iPad5,3", "iPad5,4":                      return iPadAir2
+                    case "iPad2,5", "iPad2,6", "iPad2,7":           return iPadMini
+                    case "iPad4,4", "iPad4,5", "iPad4,6":           return iPadMini2
+                    case "iPad4,7", "iPad4,8", "iPad4,9":           return iPadMini3
+                    case "iPad5,1", "iPad5,2":                      return iPadMini4
+                    case "iPad6,3", "iPad6,4", "iPad6,7", "iPad6,8":return iPadPro
+                        
+                        
+                    case "i386", "x86_64":                          return Simulator(mapIdentifierToDevice(identifier: String(utf8String: getenv("SIMULATOR_MODEL_IDENTIFIER"))!))
+                    default:                                        return UnknownDevice(identifier)
+                    }
+
+                    
+                #elseif swift(>=2.2)
+                   
+                    switch identifier {
+                    case "iPod5,1":                                 return iPodTouch5
+                    case "iPod7,1":                                 return iPodTouch6
+                    case "iPhone3,1", "iPhone3,2", "iPhone3,3":     return iPhone4
+                    case "iPhone4,1":                               return iPhone4s
+                    case "iPhone5,1", "iPhone5,2":                  return iPhone5
+                    case "iPhone5,3", "iPhone5,4":                  return iPhone5c
+                    case "iPhone6,1", "iPhone6,2":                  return iPhone5s
+                    case "iPhone7,2":                               return iPhone6
+                    case "iPhone7,1":                               return iPhone6Plus
+                    case "iPhone8,1":                               return iPhone6s
+                    case "iPhone8,2":                               return iPhone6sPlus
+                    case "iPhone8,4":                               return iPhoneSE
+                    case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4":return iPad2
+                    case "iPad3,1", "iPad3,2", "iPad3,3":           return iPad3
+                    case "iPad3,4", "iPad3,5", "iPad3,6":           return iPad4
+                    case "iPad4,1", "iPad4,2", "iPad4,3":           return iPadAir
+                    case "iPad5,3", "iPad5,4":                      return iPadAir2
+                    case "iPad2,5", "iPad2,6", "iPad2,7":           return iPadMini
+                    case "iPad4,4", "iPad4,5", "iPad4,6":           return iPadMini2
+                    case "iPad4,7", "iPad4,8", "iPad4,9":           return iPadMini3
+                    case "iPad5,1", "iPad5,2":                      return iPadMini4
+                    case "iPad6,3", "iPad6,4", "iPad6,7", "iPad6,8":return iPadPro
+                        
+                        
+                    case "i386", "x86_64":                          return Simulator(mapIdentifierToDevice(String(UTF8String: getenv("SIMULATOR_MODEL_IDENTIFIER"))!))
+                    default:                                        return UnknownDevice(identifier)
+                    }
+
+                    
+                #endif
+                
+                
+                
             #elseif os(tvOS)
                 switch identifier {
                 case "AppleTV5,3":                              return AppleTV4
@@ -220,7 +263,12 @@ public enum Device {
                 }
             #endif
         }
-        self = mapIdentifierToDevice(identifier)
+    
+        #if swift(>=2.3)
+            self = mapIdentifierToDevice(identifier: identifier)
+        #elseif swift(>=2.2)
+            self = mapIdentifierToDevice(identifier)
+        #endif
     }
 
     #if os(iOS)
@@ -255,23 +303,46 @@ public enum Device {
 
     /// Return whether the device is an iPod (real or simulator)
     public var isPod: Bool {
-        return self.isOneOf(Device.allPods) || self.isOneOf(Device.allSimulatorPods)
+        
+        #if swift(>=2.3)
+            return self.isOneOf(devices: Device.allPods) || self.isOneOf(devices: Device.allSimulatorPods)
+        #elseif swift(>=2.2)
+            return self.isOneOf(Device.allPods) || self.isOneOf(Device.allSimulatorPods)
+        #endif
+        
+        
     }
 
     /// Return whether the device is an iPhone (real or simulator)
     public var isPhone: Bool {
-        return self.isOneOf(Device.allPhones) || self.isOneOf(Device.allSimulatorPhones)
+        
+        #if swift(>=2.3)
+            return self.isOneOf(devices: Device.allPhones) || self.isOneOf(devices: Device.allSimulatorPhones)
+        #elseif swift(>=2.2)
+            return self.isOneOf(Device.allPhones) || self.isOneOf(Device.allSimulatorPhones)
+        #endif
     }
 
     /// Return whether the device is an iPad (real or simulator)
     public var isPad: Bool {
-        return self.isOneOf(Device.allPads) || self.isOneOf(Device.allSimulatorPads)
+        
+        
+        #if swift(>=2.3)
+            return self.isOneOf(devices: Device.allPads) || self.isOneOf(devices: Device.allSimulatorPads)
+        #elseif swift(>=2.2)
+            return self.isOneOf(Device.allPads) || self.isOneOf(Device.allSimulatorPads)
+        #endif
     }
 
     /// Return whether the device is any of the simulator
     /// Useful when there is a need to check and skip running a portion of code (location request or others)
     public var isSimulator: Bool {
-        return self.isOneOf(Device.allSimulators)
+        
+        #if swift(>=2.3)
+           return self.isOneOf(devices: Device.allSimulators)
+        #elseif swift(>=2.2)
+          return self.isOneOf(Device.allSimulators)
+        #endif
     }
 
 
@@ -351,40 +422,83 @@ public enum Device {
         case Unspecified
 
         private init() {
-            switch UIDevice.currentDevice().userInterfaceIdiom {
-            case .Pad:          self = .Pad
-            case .Phone:        self = .Phone
-            case .TV:           self = .TV
-            case .CarPlay:      self = .CarPlay
-            default:            self = .Unspecified
-            }
+            
+            #if swift(>=2.3)
+                
+                switch UIDevice.current().userInterfaceIdiom {
+                case .pad:          self = .Pad
+                case .phone:        self = .Phone
+                case .TV:           self = .TV
+                case .carPlay:      self = .CarPlay
+                default:            self = .Unspecified
+                }
+                
+            #elseif swift(>=2.2)
+               
+                switch UIDevice.currentDevice().userInterfaceIdiom {
+                case .Pad:          self = .Pad
+                case .Phone:        self = .Phone
+                case .TV:           self = .TV
+                case .CarPlay:      self = .CarPlay
+                default:            self = .Unspecified
+                }
+                
+            #endif
+            
+            
         }
 
     }
 
     /// The name identifying the device (e.g. "Dennis' iPhone").
     public var name: String {
-        return UIDevice.currentDevice().name
+        
+        #if swift(>=2.3)
+            return UIDevice.current().name
+        #elseif swift(>=2.2)
+            return UIDevice.currentDevice().name
+        #endif
+        
     }
 
     /// The name of the operating system running on the device represented by the receiver (e.g. "iPhone OS" or "tvOS").
     public var systemName: String {
-        return UIDevice.currentDevice().systemName
+        
+        #if swift(>=2.3)
+            return UIDevice.current().systemName
+        #elseif swift(>=2.2)
+            return UIDevice.currentDevice().systemName
+        #endif
     }
 
     /// The current version of the operating system (e.g. 8.4 or 9.2).
     public var systemVersion: String {
-        return UIDevice.currentDevice().systemVersion
+        
+        #if swift(>=2.3)
+            return UIDevice.current().systemVersion
+        #elseif swift(>=2.2)
+            return UIDevice.currentDevice().systemVersion
+        #endif
     }
 
     /// The model of the device (e.g. "iPhone" or "iPod Touch").
     public var model: String {
-        return UIDevice.currentDevice().model
+        
+        #if swift(>=2.3)
+            return UIDevice.current().model
+        #elseif swift(>=2.2)
+            return UIDevice.currentDevice().model
+        #endif
     }
 
     /// The model of the device as a localized string.
     public var localizedModel: String {
-        return UIDevice.currentDevice().localizedModel
+        
+        #if swift(>=2.3)
+            return UIDevice.current().localizedModel
+        #elseif swift(>=2.2)
+            return UIDevice.currentDevice().localizedModel
+        #endif
     }
 
 }
@@ -458,16 +572,37 @@ extension Device {
         case Unplugged(Int)
 
         private init() {
-            UIDevice.currentDevice().batteryMonitoringEnabled = true
-            let batteryLevel = Int(round(UIDevice.currentDevice().batteryLevel * 100))  // round() is actually not needed anymore since -[batteryLevel] seems to always return a two-digit precision number
-                                                                                        // but maybe that changes in the future.
-            switch UIDevice.currentDevice().batteryState {
-            case .Charging: self = .Charging(batteryLevel)
-            case .Full:     self = .Full
-            case .Unplugged:self = .Unplugged(batteryLevel)
-            case .Unknown:  self = .Full    // Should never happen since `batteryMonitoring` is enabled.
-            }
-            UIDevice.currentDevice().batteryMonitoringEnabled = false
+            
+            #if swift(>=2.3)
+                
+                UIDevice.current().isBatteryMonitoringEnabled = true
+                let batteryLevel = Int(round(UIDevice.current().batteryLevel * 100))  // round() is actually not needed anymore since -[batteryLevel] seems to always return a two-digit precision number
+                // but maybe that changes in the future.
+                switch UIDevice.current().batteryState {
+                case .charging: self = .Charging(batteryLevel)
+                case .full:     self = .Full
+                case .unplugged:self = .Unplugged(batteryLevel)
+                case .unknown:  self = .Full    // Should never happen since `batteryMonitoring` is enabled.
+                }
+                UIDevice.current().isBatteryMonitoringEnabled = false
+                
+            #elseif swift(>=2.2)
+                
+                UIDevice.currentDevice().batteryMonitoringEnabled = true
+                
+                let batLevel = Int(round(UIDevice.currentDevice().batteryLevel * 100))  // round() is actually not needed anymore since -[batteryLevel] seems to always return a two-digit precision number
+                // but maybe that changes in the future.
+                switch UIDevice.currentDevice().batLevel {
+                case .Charging: self = .Charging(batLevel)
+                case .Full:     self = .Full
+                case .Unplugged:self = .Unplugged(batLevel)
+                case .Unknown:  self = .Full    // Should never happen since `batteryMonitoring` is enabled.
+                }
+                UIDevice.currentDevice().batteryMonitoringEnabled = false
+                
+            #endif
+            
+ 
         }
 
         public var description: String {
