@@ -219,7 +219,7 @@ public enum Device {
                     }
 
                     
-                #elseif swift(>=2.2)
+                    #else
                    
                     switch identifier {
                     case "iPod5,1":                                 return iPodTouch5
@@ -266,7 +266,7 @@ public enum Device {
     
         #if swift(>=2.3)
             self = mapIdentifierToDevice(identifier: identifier)
-        #elseif swift(>=2.2)
+       #else
             self = mapIdentifierToDevice(identifier)
         #endif
     }
@@ -306,7 +306,7 @@ public enum Device {
         
         #if swift(>=2.3)
             return self.isOneOf(devices: Device.allPods) || self.isOneOf(devices: Device.allSimulatorPods)
-        #elseif swift(>=2.2)
+       #else
             return self.isOneOf(Device.allPods) || self.isOneOf(Device.allSimulatorPods)
         #endif
         
@@ -318,7 +318,7 @@ public enum Device {
         
         #if swift(>=2.3)
             return self.isOneOf(devices: Device.allPhones) || self.isOneOf(devices: Device.allSimulatorPhones)
-        #elseif swift(>=2.2)
+       #else
             return self.isOneOf(Device.allPhones) || self.isOneOf(Device.allSimulatorPhones)
         #endif
     }
@@ -329,7 +329,7 @@ public enum Device {
         
         #if swift(>=2.3)
             return self.isOneOf(devices: Device.allPads) || self.isOneOf(devices: Device.allSimulatorPads)
-        #elseif swift(>=2.2)
+       #else
             return self.isOneOf(Device.allPads) || self.isOneOf(Device.allSimulatorPads)
         #endif
     }
@@ -340,7 +340,7 @@ public enum Device {
         
         #if swift(>=2.3)
            return self.isOneOf(devices: Device.allSimulators)
-        #elseif swift(>=2.2)
+       #else
           return self.isOneOf(Device.allSimulators)
         #endif
     }
@@ -433,7 +433,7 @@ public enum Device {
                 default:            self = .Unspecified
                 }
                 
-            #elseif swift(>=2.2)
+           #else
                
                 switch UIDevice.currentDevice().userInterfaceIdiom {
                 case .Pad:          self = .Pad
@@ -455,7 +455,7 @@ public enum Device {
         
         #if swift(>=2.3)
             return UIDevice.current().name
-        #elseif swift(>=2.2)
+       #else
             return UIDevice.currentDevice().name
         #endif
         
@@ -466,7 +466,7 @@ public enum Device {
         
         #if swift(>=2.3)
             return UIDevice.current().systemName
-        #elseif swift(>=2.2)
+       #else
             return UIDevice.currentDevice().systemName
         #endif
     }
@@ -476,7 +476,7 @@ public enum Device {
         
         #if swift(>=2.3)
             return UIDevice.current().systemVersion
-        #elseif swift(>=2.2)
+       #else
             return UIDevice.currentDevice().systemVersion
         #endif
     }
@@ -486,7 +486,7 @@ public enum Device {
         
         #if swift(>=2.3)
             return UIDevice.current().model
-        #elseif swift(>=2.2)
+       #else
             return UIDevice.currentDevice().model
         #endif
     }
@@ -496,7 +496,7 @@ public enum Device {
         
         #if swift(>=2.3)
             return UIDevice.current().localizedModel
-        #elseif swift(>=2.2)
+       #else
             return UIDevice.currentDevice().localizedModel
         #endif
     }
@@ -574,7 +574,6 @@ extension Device {
         private init() {
             
             #if swift(>=2.3)
-                
                 UIDevice.current().isBatteryMonitoringEnabled = true
                 let batteryLevel = Int(round(UIDevice.current().batteryLevel * 100))  // round() is actually not needed anymore since -[batteryLevel] seems to always return a two-digit precision number
                 // but maybe that changes in the future.
@@ -585,14 +584,13 @@ extension Device {
                 case .unknown:  self = .Full    // Should never happen since `batteryMonitoring` is enabled.
                 }
                 UIDevice.current().isBatteryMonitoringEnabled = false
-                
-            #elseif swift(>=2.2)
+           #else
                 
                 UIDevice.currentDevice().batteryMonitoringEnabled = true
                 
                 let batLevel = Int(round(UIDevice.currentDevice().batteryLevel * 100))  // round() is actually not needed anymore since -[batteryLevel] seems to always return a two-digit precision number
                 // but maybe that changes in the future.
-                switch UIDevice.currentDevice().batLevel {
+                switch UIDevice.currentDevice().batteryState {
                 case .Charging: self = .Charging(batLevel)
                 case .Full:     self = .Full
                 case .Unplugged:self = .Unplugged(batLevel)
