@@ -12,7 +12,7 @@ import XCTest
 class DeviceKitTests: XCTestCase {
 
     func testDeviceSimulator() {
-        XCTAssert(Device().isOneOf(Device.allSimulators))
+        XCTAssert(Device().isOneOf(devices: Device.allSimulators))
     }
 
     func testIsSimulator() {
