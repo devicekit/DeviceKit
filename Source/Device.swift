@@ -46,7 +46,7 @@ import func Darwin.getenv
 ///     }
 ///
 public enum Device {
-#if os(iOS)
+    #if os(iOS)
     /// Device is an [iPod Touch (5th generation)](https://support.apple.com/kb/SP657)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP657/sp657_ipod-touch_size.jpg)
@@ -157,12 +157,12 @@ public enum Device {
     /// ![Image](http://images.apple.com/v/ipad-pro/c/images/shared/buystrip/ipad_pro_large_2x.png)
     case iPadPro
 
-#elseif os(tvOS)
+    #elseif os(tvOS)
     /// Device is an [Apple TV](http://www.apple.com/tv/)
     ///
     /// ![Image](http://images.apple.com/v/tv/c/images/overview/buy_tv_large_2x.jpg)
     case AppleTV4
-#endif
+    #endif
 
     /// Device is [Simulator](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/Introduction/Introduction.html)
     ///
@@ -209,18 +209,18 @@ public enum Device {
                 case "iPad4,7", "iPad4,8", "iPad4,9":           return iPadMini3
                 case "iPad5,1", "iPad5,2":                      return iPadMini4
                 case "iPad6,3", "iPad6,4", "iPad6,7", "iPad6,8":return iPadPro
-                case "i386", "x86_64":                          return Simulator(mapIdentifierToDevice(String(UTF8String: getenv("SIMULATOR_MODEL_IDENTIFIER"))!))
+                case "i386", "x86_64":                          return Simulator(mapIdentifierToDevice(identifier: String(utf8String: getenv("SIMULATOR_MODEL_IDENTIFIER"))!))
                 default:                                        return UnknownDevice(identifier)
                 }
             #elseif os(tvOS)
                 switch identifier {
                 case "AppleTV5,3":                              return AppleTV4
-                case "i386", "x86_64":                          return Simulator(mapIdentifierToDevice(String(UTF8String: getenv("SIMULATOR_MODEL_IDENTIFIER"))!))
+                case "i386", "x86_64":                          return Simulator(mapIdentifierToDevice(identifier: String(utf8String: getenv("SIMULATOR_MODEL_IDENTIFIER"))!))
                 default:                                        return UnknownDevice(identifier)
                 }
             #endif
         }
-        self = mapIdentifierToDevice(identifier)
+        self = mapIdentifierToDevice(identifier: identifier)
     }
 
     #if os(iOS)
@@ -255,35 +255,33 @@ public enum Device {
 
     /// Return whether the device is an iPod (real or simulator)
     public var isPod: Bool {
-        return self.isOneOf(Device.allPods) || self.isOneOf(Device.allSimulatorPods)
+        return self.isOneOf(devices: Device.allPods) || self.isOneOf(devices: Device.allSimulatorPods)
     }
 
     /// Return whether the device is an iPhone (real or simulator)
     public var isPhone: Bool {
-        return self.isOneOf(Device.allPhones) || self.isOneOf(Device.allSimulatorPhones)
+        return self.isOneOf(devices: Device.allPhones) || self.isOneOf(devices: Device.allSimulatorPhones)
     }
 
     /// Return whether the device is an iPad (real or simulator)
     public var isPad: Bool {
-        return self.isOneOf(Device.allPads) || self.isOneOf(Device.allSimulatorPads)
+        return self.isOneOf(devices: Device.allPads) || self.isOneOf(devices: Device.allSimulatorPads)
     }
 
     /// Return whether the device is any of the simulator
     /// Useful when there is a need to check and skip running a portion of code (location request or others)
     public var isSimulator: Bool {
-        return self.isOneOf(Device.allSimulators)
+        return self.isOneOf(devices: Device.allSimulators)
     }
-
-
     #elseif os(tvOS)
     /// All TVs
     public static var allTVs: [Device] {
-        return [.AppleTV4]
+    return [.AppleTV4]
     }
 
     /// All simulator TVs
     public static var allSimulatorTVs: [Device] {
-        return allTVs.map(Device.Simulator)
+    return allTVs.map(Device.Simulator)
     }
     #endif
 
@@ -327,7 +325,6 @@ public enum Device {
      ```
 
      - parameter devices: An array of devices.
-
      - returns: Returns whether the current device is one of the passed in ones.
      */
     public func isOneOf(devices: [Device]) -> Bool {
@@ -351,11 +348,11 @@ public enum Device {
         case Unspecified
 
         private init() {
-            switch UIDevice.currentDevice().userInterfaceIdiom {
-            case .Pad:          self = .Pad
-            case .Phone:        self = .Phone
+            switch UIDevice.current().userInterfaceIdiom {
+            case .pad:          self = .Pad
+            case .phone:        self = .Phone
             case .TV:           self = .TV
-            case .CarPlay:      self = .CarPlay
+            case .carPlay:      self = .CarPlay
             default:            self = .Unspecified
             }
         }
@@ -364,27 +361,27 @@ public enum Device {
 
     /// The name identifying the device (e.g. "Dennis' iPhone").
     public var name: String {
-        return UIDevice.currentDevice().name
+        return UIDevice.current().name
     }
 
     /// The name of the operating system running on the device represented by the receiver (e.g. "iPhone OS" or "tvOS").
     public var systemName: String {
-        return UIDevice.currentDevice().systemName
+        return UIDevice.current().systemName
     }
 
     /// The current version of the operating system (e.g. 8.4 or 9.2).
     public var systemVersion: String {
-        return UIDevice.currentDevice().systemVersion
+        return UIDevice.current().systemVersion
     }
 
     /// The model of the device (e.g. "iPhone" or "iPod Touch").
     public var model: String {
-        return UIDevice.currentDevice().model
+        return UIDevice.current().model
     }
 
     /// The model of the device as a localized string.
     public var localizedModel: String {
-        return UIDevice.currentDevice().localizedModel
+        return UIDevice.current().localizedModel
     }
 
 }
@@ -438,80 +435,80 @@ public func == (lhs: Device, rhs: Device) -> Bool {
 }
 
 #if os(iOS)
-// MARK: - Battery
-extension Device {
-    /**
-     This enum describes the state of the battery.
+    // MARK: - Battery
+    extension Device {
+        /**
+         This enum describes the state of the battery.
 
-     - Full:      The device is plugged into power and the battery is 100% charged or the device is the iOS Simulator.
-     - Charging:  The device is plugged into power and the battery is less than 100% charged.
-     - Unplugged: The device is not plugged into power; the battery is discharging.
-     */
-    public enum BatteryState: CustomStringConvertible, Equatable {
-        /// The device is plugged into power and the battery is 100% charged or the device is the iOS Simulator.
-        case Full
-        /// The device is plugged into power and the battery is less than 100% charged.
-        /// The associated value is in percent (0-100).
-        case Charging(Int)
-        /// The device is not plugged into power; the battery is discharging.
-        /// The associated value is in percent (0-100).
-        case Unplugged(Int)
+         - Full:      The device is plugged into power and the battery is 100% charged or the device is the iOS Simulator.
+         - Charging:  The device is plugged into power and the battery is less than 100% charged.
+         - Unplugged: The device is not plugged into power; the battery is discharging.
+         */
+        public enum BatteryState: CustomStringConvertible, Equatable {
+            /// The device is plugged into power and the battery is 100% charged or the device is the iOS Simulator.
+            case Full
+            /// The device is plugged into power and the battery is less than 100% charged.
+            /// The associated value is in percent (0-100).
+            case Charging(Int)
+            /// The device is not plugged into power; the battery is discharging.
+            /// The associated value is in percent (0-100).
+            case Unplugged(Int)
 
-        private init() {
-            UIDevice.currentDevice().batteryMonitoringEnabled = true
-            let batteryLevel = Int(round(UIDevice.currentDevice().batteryLevel * 100))  // round() is actually not needed anymore since -[batteryLevel] seems to always return a two-digit precision number
-                                                                                        // but maybe that changes in the future.
-            switch UIDevice.currentDevice().batteryState {
-            case .Charging: self = .Charging(batteryLevel)
-            case .Full:     self = .Full
-            case .Unplugged:self = .Unplugged(batteryLevel)
-            case .Unknown:  self = .Full    // Should never happen since `batteryMonitoring` is enabled.
+            private init() {
+                UIDevice.current().isBatteryMonitoringEnabled = true
+                let batteryLevel = Int(round(UIDevice.current().batteryLevel * 100))  // round() is actually not needed anymore since -[batteryLevel] seems to always return a two-digit precision number
+                // but maybe that changes in the future.
+                switch UIDevice.current().batteryState {
+                case .charging: self = .Charging(batteryLevel)
+                case .full:     self = .Full
+                case .unplugged:self = .Unplugged(batteryLevel)
+                case .unknown:  self = .Full    // Should never happen since `batteryMonitoring` is enabled.
+                }
+                UIDevice.current().isBatteryMonitoringEnabled = false
             }
-            UIDevice.currentDevice().batteryMonitoringEnabled = false
+
+            public var description: String {
+                switch self {
+                case .Charging(let batteryLevel):   return "Battery level: \(batteryLevel)%, device is plugged in."
+                case .Full:                         return "Battery level: 100 % (Full), device is plugged in."
+                case .Unplugged(let batteryLevel):  return "Battery level: \(batteryLevel)%, device is unplugged."
+                }
+            }
+
         }
 
-        public var description: String {
-            switch self {
-            case .Charging(let batteryLevel):   return "Battery level: \(batteryLevel)%, device is plugged in."
-            case .Full:                         return "Battery level: 100 % (Full), device is plugged in."
-            case .Unplugged(let batteryLevel):  return "Battery level: \(batteryLevel)%, device is unplugged."
+        /// The state of the battery
+        public var batteryState: BatteryState {
+            return BatteryState()
+        }
+
+        /// Battery level ranges from 0 (fully discharged) to 100 (100% charged).
+        public var batteryLevel: Int {
+            switch BatteryState() {
+            case .Charging(let value):  return value
+            case .Full:                 return 100
+            case .Unplugged(let value): return value
             }
         }
 
     }
 
-    /// The state of the battery
-    public var batteryState: BatteryState {
-        return BatteryState()
+    // MARK: - Device.Batterystate: Comparable
+    extension Device.BatteryState: Comparable {}
+
+    public func == (lhs: Device.BatteryState, rhs: Device.BatteryState) -> Bool {
+        return lhs.description == rhs.description
     }
 
-    /// Battery level ranges from 0 (fully discharged) to 100 (100% charged).
-    public var batteryLevel: Int {
-        switch BatteryState() {
-        case .Charging(let value):  return value
-        case .Full:                 return 100
-        case .Unplugged(let value): return value
+    public func < (lhs: Device.BatteryState, rhs: Device.BatteryState) -> Bool {
+        switch (lhs, rhs) {
+        case (.Full, _):                                            return false                // return false (even if both are `.Full` -> they are equal)
+        case (_, .Full):                                            return true                 // lhs is *not* `.Full`, rhs is
+        case (.Charging(let lhsLevel), .Charging(let rhsLevel)):    return lhsLevel < rhsLevel
+        case (.Charging(let lhsLevel), .Unplugged(let rhsLevel)):   return lhsLevel < rhsLevel
+        case (.Unplugged(let lhsLevel), .Charging(let rhsLevel)):   return lhsLevel < rhsLevel
+        case (.Unplugged(let lhsLevel), .Unplugged(let rhsLevel)):  return lhsLevel < rhsLevel
+        default:                                                    return false                // compiler won't compile without it, though it cannot happen
         }
     }
-
-}
-
-// MARK: - Device.Batterystate: Comparable
-extension Device.BatteryState: Comparable {}
-
-public func == (lhs: Device.BatteryState, rhs: Device.BatteryState) -> Bool {
-    return lhs.description == rhs.description
-}
-
-public func < (lhs: Device.BatteryState, rhs: Device.BatteryState) -> Bool {
-    switch (lhs, rhs) {
-    case (.Full, _):                                            return false                // return false (even if both are `.Full` -> they are equal)
-    case (_, .Full):                                            return true                 // lhs is *not* `.Full`, rhs is
-    case (.Charging(let lhsLevel), .Charging(let rhsLevel)):    return lhsLevel < rhsLevel
-    case (.Charging(let lhsLevel), .Unplugged(let rhsLevel)):   return lhsLevel < rhsLevel
-    case (.Unplugged(let lhsLevel), .Charging(let rhsLevel)):   return lhsLevel < rhsLevel
-    case (.Unplugged(let lhsLevel), .Unplugged(let rhsLevel)):  return lhsLevel < rhsLevel
-    default:                                                    return false                // compiler won't compile without it, though it cannot happen
-    }
-}
 #endif
