@@ -215,7 +215,7 @@ public enum Device {
             #elseif os(tvOS)
                 switch identifier {
                 case "AppleTV5,3":                              return AppleTV4
-                case "i386", "x86_64":                          return Simulator(mapIdentifierToDevice(String(UTF8String: getenv("SIMULATOR_MODEL_IDENTIFIER"))!))
+                case "i386", "x86_64":                          return Simulator(mapIdentifierToDevice(identifier: String(utf8String: getenv("SIMULATOR_MODEL_IDENTIFIER"))!))
                 default:                                        return UnknownDevice(identifier)
                 }
             #endif
