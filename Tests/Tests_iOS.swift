@@ -24,15 +24,15 @@ class DeviceKitTests: XCTestCase {
     }
 
     func testOperator1() {
-        XCTAssert(Device.BatteryState.Full > Device.BatteryState.Charging(100))
+        XCTAssert(Device.BatteryState.full > Device.BatteryState.charging(100))
     }
 
     func testOperator2() {
-        XCTAssert(Device.BatteryState.Charging(75) != Device.BatteryState.Unplugged(75))
+        XCTAssert(Device.BatteryState.charging(75) != Device.BatteryState.unplugged(75))
     }
 
     func testOperator3() {
-        XCTAssert(Device.BatteryState.Unplugged(2) > Device.BatteryState.Charging(1))
+        XCTAssert(Device.BatteryState.unplugged(2) > Device.BatteryState.charging(1))
     }
 
 }
