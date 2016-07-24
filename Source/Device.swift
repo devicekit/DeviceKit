@@ -278,12 +278,12 @@ public enum Device {
     #elseif os(tvOS)
     /// All TVs
     public static var allTVs: [Device] {
-        return [.AppleTV4]
+        return [.appleTV4]
     }
 
     /// All simulator TVs
     public static var allSimulatorTVs: [Device] {
-        return allTVs.map(Device.Simulator)
+        return allTVs.map(Device.simulator)
     }
     #endif
 
@@ -422,9 +422,9 @@ extension Device: CustomStringConvertible {
             }
         #elseif os(tvOS)
             switch self {
-            case .AppleTV4:                     return "Apple TV 4"
-            case .Simulator(let model):         return "Simulator (\(model))"
-            case .UnknownDevice(let identifier):return identifier
+            case .appleTV4:                     return "Apple TV 4"
+            case .simulator(let model):         return "Simulator (\(model))"
+            case .unknownDevice(let identifier):return identifier
             }
         #endif
     }
