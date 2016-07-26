@@ -161,7 +161,7 @@ public enum Device {
     /// Device is an [Apple TV](http://www.apple.com/tv/)
     ///
     /// ![Image](http://images.apple.com/v/tv/c/images/overview/buy_tv_large_2x.jpg)
-    case AppleTV4
+    case appleTV4
 #endif
 
     /// Device is [Simulator](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/Introduction/Introduction.html)
@@ -214,9 +214,9 @@ public enum Device {
                 }
             #elseif os(tvOS)
                 switch identifier {
-                case "AppleTV5,3":                              return AppleTV4
-                case "i386", "x86_64":                          return Simulator(mapIdentifierToDevice(String(UTF8String: getenv("SIMULATOR_MODEL_IDENTIFIER"))!))
-                default:                                        return UnknownDevice(identifier)
+                case "AppleTV5,3":                              return appleTV4
+                case "i386", "x86_64":                          return simulator(mapIdentifierToDevice(String(validatingUTF8: getenv("SIMULATOR_MODEL_IDENTIFIER"))!))
+                default:                                        return unknownDevice(identifier)
                 }
             #endif
         }
@@ -278,12 +278,12 @@ public enum Device {
     #elseif os(tvOS)
     /// All TVs
     public static var allTVs: [Device] {
-        return [.AppleTV4]
+        return [.appleTV4]
     }
 
     /// All simulator TVs
     public static var allSimulatorTVs: [Device] {
-        return allTVs.map(Device.Simulator)
+        return allTVs.map(Device.simulator)
     }
     #endif
 
@@ -422,9 +422,9 @@ extension Device: CustomStringConvertible {
             }
         #elseif os(tvOS)
             switch self {
-            case .AppleTV4:                     return "Apple TV 4"
-            case .Simulator(let model):         return "Simulator (\(model))"
-            case .UnknownDevice(let identifier):return identifier
+            case .appleTV4:                     return "Apple TV 4"
+            case .simulator(let model):         return "Simulator (\(model))"
+            case .unknownDevice(let identifier):return identifier
             }
         #endif
     }
