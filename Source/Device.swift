@@ -7,6 +7,7 @@
 //
 
 import class UIKit.UIDevice
+import class UIKit.UIScreen
 import struct Darwin.utsname
 import func Darwin.uname
 import func Darwin.round
@@ -254,27 +255,30 @@ public enum Device {
         return allPads.map(Device.simulator)
     }
 
-    /// Return whether the device is an iPod (real or simulator)
+    /// Returns whether the device is an iPod (real or simulator)
     public var isPod: Bool {
         return self.isOneOf(Device.allPods) || self.isOneOf(Device.allSimulatorPods)
     }
 
-    /// Return whether the device is an iPhone (real or simulator)
+    /// Returns whether the device is an iPhone (real or simulator)
     public var isPhone: Bool {
         return self.isOneOf(Device.allPhones) || self.isOneOf(Device.allSimulatorPhones)
     }
 
-    /// Return whether the device is an iPad (real or simulator)
+    /// Returns whether the device is an iPad (real or simulator)
     public var isPad: Bool {
         return self.isOneOf(Device.allPads) || self.isOneOf(Device.allSimulatorPads)
     }
 
-    /// Return whether the device is any of the simulator
+    /// Returns whether the device is any of the simulator
     /// Useful when there is a need to check and skip running a portion of code (location request or others)
     public var isSimulator: Bool {
         return self.isOneOf(Device.allSimulators)
     }
 
+    public var isZoomed: Bool {
+        return UIScreen.main().scale < UIScreen.main().nativeScale
+    }
 
     #elseif os(tvOS)
     /// All TVs
