@@ -7,6 +7,7 @@
 //
 
 import class UIKit.UIDevice
+import class UIKit.UIScreen
 import struct Darwin.utsname
 import func Darwin.uname
 import func Darwin.round
@@ -161,7 +162,7 @@ public enum Device {
     /// Device is an [Apple TV](http://www.apple.com/tv/)
     ///
     /// ![Image](http://images.apple.com/v/tv/c/images/overview/buy_tv_large_2x.jpg)
-    case AppleTV4
+    case appleTV4
 #endif
 
     /// Device is [Simulator](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/Introduction/Introduction.html)
@@ -180,43 +181,44 @@ public enum Device {
 
         // I know that reduce is O(n^2) (see http://airspeedvelocity.net/2015/08/03/arrays-linked-lists-and-performance/) but it's *so* nice ❤️ and since we are working with very short strings it shouldn't matter.
         let identifier = mirror.children.reduce("") { identifier, element in
-            guard let value = element.value as? Int8, value != 0 else { return identifier }
+            guard let value = element.value as? Int8,
+                      value != 0 else { return identifier }
             return identifier + String(UnicodeScalar(UInt8(value)))
         }
 
         func mapIdentifierToDevice(_ identifier: String) -> Device {
             #if os(iOS)
                 switch identifier {
-                case "iPod5,1":                                 return Device.iPodTouch5
-                case "iPod7,1":                                 return Device.iPodTouch6
-                case "iPhone3,1", "iPhone3,2", "iPhone3,3":     return Device.iPhone4
-                case "iPhone4,1":                               return Device.iPhone4s
-                case "iPhone5,1", "iPhone5,2":                  return Device.iPhone5
-                case "iPhone5,3", "iPhone5,4":                  return Device.iPhone5c
-                case "iPhone6,1", "iPhone6,2":                  return Device.iPhone5s
-                case "iPhone7,2":                               return Device.iPhone6
-                case "iPhone7,1":                               return Device.iPhone6Plus
-                case "iPhone8,1":                               return Device.iPhone6s
-                case "iPhone8,2":                               return Device.iPhone6sPlus
-                case "iPhone8,4":                               return Device.iPhoneSE
-                case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4":return Device.iPad2
-                case "iPad3,1", "iPad3,2", "iPad3,3":           return Device.iPad3
-                case "iPad3,4", "iPad3,5", "iPad3,6":           return Device.iPad4
-                case "iPad4,1", "iPad4,2", "iPad4,3":           return Device.iPadAir
-                case "iPad5,3", "iPad5,4":                      return Device.iPadAir2
-                case "iPad2,5", "iPad2,6", "iPad2,7":           return Device.iPadMini
-                case "iPad4,4", "iPad4,5", "iPad4,6":           return Device.iPadMini2
-                case "iPad4,7", "iPad4,8", "iPad4,9":           return Device.iPadMini3
-                case "iPad5,1", "iPad5,2":                      return Device.iPadMini4
-                case "iPad6,3", "iPad6,4", "iPad6,7", "iPad6,8":return Device.iPadPro
-                case "i386", "x86_64":                          return Device.simulator(mapIdentifierToDevice(String(validatingUTF8: getenv("SIMULATOR_MODEL_IDENTIFIER"))!))
-                default:                                        return Device.unknownDevice(identifier)
+                case "iPod5,1":                                 return .iPodTouch5
+                case "iPod7,1":                                 return .iPodTouch6
+                case "iPhone3,1", "iPhone3,2", "iPhone3,3":     return .iPhone4
+                case "iPhone4,1":                               return .iPhone4s
+                case "iPhone5,1", "iPhone5,2":                  return .iPhone5
+                case "iPhone5,3", "iPhone5,4":                  return .iPhone5c
+                case "iPhone6,1", "iPhone6,2":                  return .iPhone5s
+                case "iPhone7,2":                               return .iPhone6
+                case "iPhone7,1":                               return .iPhone6Plus
+                case "iPhone8,1":                               return .iPhone6s
+                case "iPhone8,2":                               return .iPhone6sPlus
+                case "iPhone8,4":                               return .iPhoneSE
+                case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4":return .iPad2
+                case "iPad3,1", "iPad3,2", "iPad3,3":           return .iPad3
+                case "iPad3,4", "iPad3,5", "iPad3,6":           return .iPad4
+                case "iPad4,1", "iPad4,2", "iPad4,3":           return .iPadAir
+                case "iPad5,3", "iPad5,4":                      return .iPadAir2
+                case "iPad2,5", "iPad2,6", "iPad2,7":           return .iPadMini
+                case "iPad4,4", "iPad4,5", "iPad4,6":           return .iPadMini2
+                case "iPad4,7", "iPad4,8", "iPad4,9":           return .iPadMini3
+                case "iPad5,1", "iPad5,2":                      return .iPadMini4
+                case "iPad6,3", "iPad6,4", "iPad6,7", "iPad6,8":return .iPadPro
+                case "i386", "x86_64":                          return .simulator(mapIdentifierToDevice(String(validatingUTF8: getenv("SIMULATOR_MODEL_IDENTIFIER"))!))
+                default:                                        return .unknownDevice(identifier)
                 }
             #elseif os(tvOS)
                 switch identifier {
-                case "AppleTV5,3":                              return AppleTV4
-                case "i386", "x86_64":                          return Simulator(mapIdentifierToDevice(String(UTF8String: getenv("SIMULATOR_MODEL_IDENTIFIER"))!))
-                default:                                        return UnknownDevice(identifier)
+                case "AppleTV5,3":                              return .appleTV4
+                case "i386", "x86_64":                          return .simulator(mapIdentifierToDevice(String(validatingUTF8: getenv("SIMULATOR_MODEL_IDENTIFIER"))!))
+                default:                                        return .unknownDevice(identifier)
                 }
             #endif
         }
@@ -253,37 +255,40 @@ public enum Device {
         return allPads.map(Device.simulator)
     }
 
-    /// Return whether the device is an iPod (real or simulator)
+    /// Returns whether the device is an iPod (real or simulator)
     public var isPod: Bool {
         return self.isOneOf(Device.allPods) || self.isOneOf(Device.allSimulatorPods)
     }
 
-    /// Return whether the device is an iPhone (real or simulator)
+    /// Returns whether the device is an iPhone (real or simulator)
     public var isPhone: Bool {
         return self.isOneOf(Device.allPhones) || self.isOneOf(Device.allSimulatorPhones)
     }
 
-    /// Return whether the device is an iPad (real or simulator)
+    /// Returns whether the device is an iPad (real or simulator)
     public var isPad: Bool {
         return self.isOneOf(Device.allPads) || self.isOneOf(Device.allSimulatorPads)
     }
 
-    /// Return whether the device is any of the simulator
+    /// Returns whether the device is any of the simulator
     /// Useful when there is a need to check and skip running a portion of code (location request or others)
     public var isSimulator: Bool {
         return self.isOneOf(Device.allSimulators)
     }
 
+    public var isZoomed: Bool {
+        return UIScreen.main().scale < UIScreen.main().nativeScale
+    }
 
     #elseif os(tvOS)
     /// All TVs
     public static var allTVs: [Device] {
-        return [.AppleTV4]
+        return [.appleTV4]
     }
 
     /// All simulator TVs
     public static var allSimulatorTVs: [Device] {
-        return allTVs.map(Device.Simulator)
+        return allTVs.map(Device.simulator)
     }
     #endif
 
@@ -351,7 +356,7 @@ public enum Device {
         case unspecified
 
         private init() {
-            switch UIDevice.current.userInterfaceIdiom {
+            switch UIDevice.current().userInterfaceIdiom {
             case .pad:          self = .pad
             case .phone:        self = .phone
             case .tv:           self = .tv
@@ -364,27 +369,27 @@ public enum Device {
 
     /// The name identifying the device (e.g. "Dennis' iPhone").
     public var name: String {
-        return UIDevice.current.name
+        return UIDevice.current().name
     }
 
     /// The name of the operating system running on the device represented by the receiver (e.g. "iPhone OS" or "tvOS").
     public var systemName: String {
-        return UIDevice.current.systemName
+        return UIDevice.current().systemName
     }
 
     /// The current version of the operating system (e.g. 8.4 or 9.2).
     public var systemVersion: String {
-        return UIDevice.current.systemVersion
+        return UIDevice.current().systemVersion
     }
 
     /// The model of the device (e.g. "iPhone" or "iPod Touch").
     public var model: String {
-        return UIDevice.current.model
+        return UIDevice.current().model
     }
 
     /// The model of the device as a localized string.
     public var localizedModel: String {
-        return UIDevice.current.localizedModel
+        return UIDevice.current().localizedModel
     }
 
 }
@@ -422,9 +427,9 @@ extension Device: CustomStringConvertible {
             }
         #elseif os(tvOS)
             switch self {
-            case .AppleTV4:                     return "Apple TV 4"
-            case .Simulator(let model):         return "Simulator (\(model))"
-            case .UnknownDevice(let identifier):return identifier
+            case .appleTV4:                     return "Apple TV 4"
+            case .simulator(let model):         return "Simulator (\(model))"
+            case .unknownDevice(let identifier):return identifier
             }
         #endif
     }
@@ -457,17 +462,17 @@ extension Device {
         /// The associated value is in percent (0-100).
         case unplugged(Int)
 
-        private init() {
-            UIDevice.current.isBatteryMonitoringEnabled = true
-            let batteryLevel = Int(round(UIDevice.current.batteryLevel * 100))  // round() is actually not needed anymore since -[batteryLevel] seems to always return a two-digit precision number
+        fileprivate init() {
+            UIDevice.current().isBatteryMonitoringEnabled = true
+            let batteryLevel = Int(round(UIDevice.current().batteryLevel * 100))  // round() is actually not needed anymore since -[batteryLevel] seems to always return a two-digit precision number
                                                                                         // but maybe that changes in the future.
-            switch UIDevice.current.batteryState {
+            switch UIDevice.current().batteryState {
             case .charging: self = .charging(batteryLevel)
             case .full:     self = .full
             case .unplugged:self = .unplugged(batteryLevel)
             case .unknown:  self = .full    // Should never happen since `batteryMonitoring` is enabled.
             }
-            UIDevice.current.isBatteryMonitoringEnabled = false
+            UIDevice.current().isBatteryMonitoringEnabled = false
         }
 
         public var description: String {
