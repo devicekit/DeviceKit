@@ -277,7 +277,7 @@ public enum Device {
     }
 
     public var isZoomed: Bool {
-        return UIScreen.main().scale < UIScreen.main().nativeScale
+        return UIScreen.main.scale < UIScreen.main.nativeScale
     }
 
     #elseif os(tvOS)
@@ -356,7 +356,7 @@ public enum Device {
         case unspecified
 
         private init() {
-            switch UIDevice.current().userInterfaceIdiom {
+            switch UIDevice.current.userInterfaceIdiom {
             case .pad:          self = .pad
             case .phone:        self = .phone
             case .tv:           self = .tv
@@ -369,27 +369,27 @@ public enum Device {
 
     /// The name identifying the device (e.g. "Dennis' iPhone").
     public var name: String {
-        return UIDevice.current().name
+        return UIDevice.current.name
     }
 
     /// The name of the operating system running on the device represented by the receiver (e.g. "iPhone OS" or "tvOS").
     public var systemName: String {
-        return UIDevice.current().systemName
+        return UIDevice.current.systemName
     }
 
     /// The current version of the operating system (e.g. 8.4 or 9.2).
     public var systemVersion: String {
-        return UIDevice.current().systemVersion
+        return UIDevice.current.systemVersion
     }
 
     /// The model of the device (e.g. "iPhone" or "iPod Touch").
     public var model: String {
-        return UIDevice.current().model
+        return UIDevice.current.model
     }
 
     /// The model of the device as a localized string.
     public var localizedModel: String {
-        return UIDevice.current().localizedModel
+        return UIDevice.current.localizedModel
     }
 
 }
@@ -463,16 +463,16 @@ extension Device {
         case unplugged(Int)
 
         fileprivate init() {
-            UIDevice.current().isBatteryMonitoringEnabled = true
-            let batteryLevel = Int(round(UIDevice.current().batteryLevel * 100))  // round() is actually not needed anymore since -[batteryLevel] seems to always return a two-digit precision number
+            UIDevice.current.isBatteryMonitoringEnabled = true
+            let batteryLevel = Int(round(UIDevice.current.batteryLevel * 100))  // round() is actually not needed anymore since -[batteryLevel] seems to always return a two-digit precision number
                                                                                         // but maybe that changes in the future.
-            switch UIDevice.current().batteryState {
+            switch UIDevice.current.batteryState {
             case .charging: self = .charging(batteryLevel)
             case .full:     self = .full
             case .unplugged:self = .unplugged(batteryLevel)
             case .unknown:  self = .full    // Should never happen since `batteryMonitoring` is enabled.
             }
-            UIDevice.current().isBatteryMonitoringEnabled = false
+            UIDevice.current.isBatteryMonitoringEnabled = false
         }
 
         public var description: String {
