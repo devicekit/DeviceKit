@@ -155,8 +155,9 @@ public enum Device {
     /// Device is an [iPad Pro](http://www.apple.com/ipad-pro/)
     ///
     /// ![Image](http://images.apple.com/v/ipad-pro/c/images/shared/buystrip/ipad_pro_large_2x.png)
-    case iPadPro
-
+    case iPadPro9Inch
+    case iPadPro12Inch
+    
 #elseif os(tvOS)
     /// Device is an [Apple TV](http://www.apple.com/tv/)
     ///
@@ -208,7 +209,8 @@ public enum Device {
                 case "iPad4,4", "iPad4,5", "iPad4,6":           return iPadMini2
                 case "iPad4,7", "iPad4,8", "iPad4,9":           return iPadMini3
                 case "iPad5,1", "iPad5,2":                      return iPadMini4
-                case "iPad6,3", "iPad6,4", "iPad6,7", "iPad6,8":return iPadPro
+                case "iPad6,3", "iPad6,4":                      return iPadPro9Inch
+                case "iPad6,7", "iPad6,8":                      return iPadPro12Inch
                 case "i386", "x86_64":                          return Simulator(mapIdentifierToDevice(String(UTF8String: getenv("SIMULATOR_MODEL_IDENTIFIER"))!))
                 default:                                        return UnknownDevice(identifier)
                 }
@@ -235,7 +237,7 @@ public enum Device {
 
     /// All iPads
     public static var allPads: [Device] {
-        return [.iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadPro]
+        return [.iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadPro9Inch, .iPadPro12Inch]
     }
 
     /// All simulator iPods
@@ -416,7 +418,8 @@ extension Device: CustomStringConvertible {
             case .iPadMini2:                    return "iPad Mini 2"
             case .iPadMini3:                    return "iPad Mini 3"
             case .iPadMini4:                    return "iPad Mini 4"
-            case .iPadPro:                      return "iPad Pro"
+            case .iPadPro9Inch:                 return "9.7-inch iPad Pro"
+            case .iPadPro12Inch:                return "12.9-inch iPad Pro"
             case .Simulator(let model):         return "Simulator (\(model))"
             case .UnknownDevice(let identifier):return identifier
             }
