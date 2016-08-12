@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "95CBDB6E1BFD2B5F0065FC66"
+               BlueprintIdentifier = "955EE5991D5E581B008C3DA8"
                BuildableName = "DeviceKit.framework"
-               BlueprintName = "DeviceKit-iOS"
+               BlueprintName = "DeviceKit"
                ReferencedContainer = "container:DeviceKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "95CBDB781BFD2B5F0065FC66"
-               BuildableName = "DeviceKit-iOSTests.xctest"
-               BlueprintName = "DeviceKit-iOSTests"
+               BlueprintIdentifier = "955EE5A11D5E581B008C3DA8"
+               BuildableName = "DeviceKitTests.xctest"
+               BlueprintName = "DeviceKitTests"
                ReferencedContainer = "container:DeviceKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -42,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "95CBDB6E1BFD2B5F0065FC66"
+            BlueprintIdentifier = "955EE5991D5E581B008C3DA8"
             BuildableName = "DeviceKit.framework"
-            BlueprintName = "DeviceKit-iOS"
+            BlueprintName = "DeviceKit"
             ReferencedContainer = "container:DeviceKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -64,9 +64,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "95CBDB6E1BFD2B5F0065FC66"
+            BlueprintIdentifier = "955EE5991D5E581B008C3DA8"
             BuildableName = "DeviceKit.framework"
-            BlueprintName = "DeviceKit-iOS"
+            BlueprintName = "DeviceKit"
             ReferencedContainer = "container:DeviceKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -82,9 +82,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "95CBDB6E1BFD2B5F0065FC66"
+            BlueprintIdentifier = "955EE5991D5E581B008C3DA8"
             BuildableName = "DeviceKit.framework"
-            BlueprintName = "DeviceKit-iOS"
+            BlueprintName = "DeviceKit"
             ReferencedContainer = "container:DeviceKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
