@@ -178,51 +178,56 @@ public enum Device {
         var systemInfo = utsname()
         uname(&systemInfo)
         let mirror = Mirror(reflecting: systemInfo.machine)
-
+        
         // I know that reduce is O(n^2) (see http://airspeedvelocity.net/2015/08/03/arrays-linked-lists-and-performance/) but it's *so* nice ❤️ and since we are working with very short strings it shouldn't matter.
         let identifier = mirror.children.reduce("") { identifier, element in
             guard let value = element.value as? Int8 where value != 0 else { return identifier }
             return identifier + String(UnicodeScalar(UInt8(value)))
         }
-
-        func mapIdentifierToDevice(identifier: String) -> Device {
-            #if os(iOS)
-                switch identifier {
-                case "iPod5,1":                                 return iPodTouch5
-                case "iPod7,1":                                 return iPodTouch6
-                case "iPhone3,1", "iPhone3,2", "iPhone3,3":     return iPhone4
-                case "iPhone4,1":                               return iPhone4s
-                case "iPhone5,1", "iPhone5,2":                  return iPhone5
-                case "iPhone5,3", "iPhone5,4":                  return iPhone5c
-                case "iPhone6,1", "iPhone6,2":                  return iPhone5s
-                case "iPhone7,2":                               return iPhone6
-                case "iPhone7,1":                               return iPhone6Plus
-                case "iPhone8,1":                               return iPhone6s
-                case "iPhone8,2":                               return iPhone6sPlus
-                case "iPhone8,4":                               return iPhoneSE
-                case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4":return iPad2
-                case "iPad3,1", "iPad3,2", "iPad3,3":           return iPad3
-                case "iPad3,4", "iPad3,5", "iPad3,6":           return iPad4
-                case "iPad4,1", "iPad4,2", "iPad4,3":           return iPadAir
-                case "iPad5,3", "iPad5,4":                      return iPadAir2
-                case "iPad2,5", "iPad2,6", "iPad2,7":           return iPadMini
-                case "iPad4,4", "iPad4,5", "iPad4,6":           return iPadMini2
-                case "iPad4,7", "iPad4,8", "iPad4,9":           return iPadMini3
-                case "iPad5,1", "iPad5,2":                      return iPadMini4
-                case "iPad6,3", "iPad6,4":                      return iPadPro9Inch
-                case "iPad6,7", "iPad6,8":                      return iPadPro12Inch
-                case "i386", "x86_64":                          return Simulator(mapIdentifierToDevice(String(UTF8String: getenv("SIMULATOR_MODEL_IDENTIFIER"))!))
-                default:                                        return UnknownDevice(identifier)
-                }
-            #elseif os(tvOS)
-                switch identifier {
-                case "AppleTV5,3":                              return AppleTV4
-                case "i386", "x86_64":                          return Simulator(mapIdentifierToDevice(String(UTF8String: getenv("SIMULATOR_MODEL_IDENTIFIER"))!))
-                default:                                        return UnknownDevice(identifier)
-                }
-            #endif
-        }
-        self = mapIdentifierToDevice(identifier)
+        
+        self = Device.mapIdentifierToDevice(identifier)
+    }
+    
+    public static func descriptionForDeviceIdentifier(identifier: String) -> String {
+        return mapIdentifierToDevice(identifier).description
+    }
+    
+    public static func mapIdentifierToDevice(identifier: String) -> Device {
+        #if os(iOS)
+            switch identifier {
+            case "iPod5,1":                                 return iPodTouch5
+            case "iPod7,1":                                 return iPodTouch6
+            case "iPhone3,1", "iPhone3,2", "iPhone3,3":     return iPhone4
+            case "iPhone4,1":                               return iPhone4s
+            case "iPhone5,1", "iPhone5,2":                  return iPhone5
+            case "iPhone5,3", "iPhone5,4":                  return iPhone5c
+            case "iPhone6,1", "iPhone6,2":                  return iPhone5s
+            case "iPhone7,2":                               return iPhone6
+            case "iPhone7,1":                               return iPhone6Plus
+            case "iPhone8,1":                               return iPhone6s
+            case "iPhone8,2":                               return iPhone6sPlus
+            case "iPhone8,4":                               return iPhoneSE
+            case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4":return iPad2
+            case "iPad3,1", "iPad3,2", "iPad3,3":           return iPad3
+            case "iPad3,4", "iPad3,5", "iPad3,6":           return iPad4
+            case "iPad4,1", "iPad4,2", "iPad4,3":           return iPadAir
+            case "iPad5,3", "iPad5,4":                      return iPadAir2
+            case "iPad2,5", "iPad2,6", "iPad2,7":           return iPadMini
+            case "iPad4,4", "iPad4,5", "iPad4,6":           return iPadMini2
+            case "iPad4,7", "iPad4,8", "iPad4,9":           return iPadMini3
+            case "iPad5,1", "iPad5,2":                      return iPadMini4
+            case "iPad6,3", "iPad6,4":                      return iPadPro9Inch
+            case "iPad6,7", "iPad6,8":                      return iPadPro12Inch
+            case "i386", "x86_64":                          return Simulator(mapIdentifierToDevice(String(UTF8String: getenv("SIMULATOR_MODEL_IDENTIFIER"))!))
+            default:                                        return UnknownDevice(identifier)
+            }
+        #elseif os(tvOS)
+            switch identifier {
+            case "AppleTV5,3":                              return AppleTV4
+            case "i386", "x86_64":                          return Simulator(mapIdentifierToDevice(String(UTF8String: getenv("SIMULATOR_MODEL_IDENTIFIER"))!))
+            default:                                        return UnknownDevice(identifier)
+            }
+        #endif
     }
 
     #if os(iOS)
