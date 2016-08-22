@@ -175,17 +175,21 @@ public enum Device {
     case UnknownDevice(String)
 
     public init() {
+        self = Device.mapIdentifierToDevice(Device.identifier())
+    }
+    
+    public static func identifier() -> String {
         var systemInfo = utsname()
         uname(&systemInfo)
         let mirror = Mirror(reflecting: systemInfo.machine)
-
+        
         // I know that reduce is O(n^2) (see http://airspeedvelocity.net/2015/08/03/arrays-linked-lists-and-performance/) but it's *so* nice ❤️ and since we are working with very short strings it shouldn't matter.
         let identifier = mirror.children.reduce("") { identifier, element in
             guard let value = element.value as? Int8 where value != 0 else { return identifier }
             return identifier + String(UnicodeScalar(UInt8(value)))
         }
-
-        self = Device.mapIdentifierToDevice(identifier)
+        
+        return identifier
     }
 
     public static func mapIdentifierToDevice(identifier: String) -> Device {
