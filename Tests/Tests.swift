@@ -1,6 +1,6 @@
 //
-//  DeviceKit_iOSTests.swift
-//  DeviceKit_iOSTests
+//  Tests.swift
+//  DeviceKit
 //
 //  Created by Dennis Weissmann on 11/16/14.
 //  Copyright (c) 2015 Hot Action Studios. All rights reserved.
@@ -36,6 +36,11 @@ class DeviceKitTests: XCTestCase {
   func testOperator3() {
     XCTAssert(Device.BatteryState.unplugged(2) > Device.BatteryState.charging(1))
   }
+
+  func testDescriptionFromIdentifier() {
+    XCTAssert(Device.mapToDevice(identifier: "iPhone3,1").description == "iPhone 4")
+  }
+
   #endif
 
   // MARK: - tvOS
@@ -43,6 +48,10 @@ class DeviceKitTests: XCTestCase {
   func testIsSimulator() {
     XCTAssert(Device().isOneOf(Device.allSimulatorTVs))
   }
-  #endif
 
+  func testDescriptionFromIdentifier() {
+    XCTAssert(Device.mapToDevice(identifier: "AppleTV5,3").description == "Apple TV 4")
+  }
+  #endif
+  
 }

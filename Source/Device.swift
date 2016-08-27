@@ -103,9 +103,9 @@ public enum Device {
   /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP727/SP727-iphone6s-plus-gray-select-2015.png)
   case iPhone6sPlus
 
-  /// Device is an [iPhone SE](https://support.apple.com/kb/SP738???) TODO: Spec page not posted yet
+  /// Device is an [iPhone SE](https://support.apple.com/kb/SP738)
   ///
-  /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/???) TODO: Image page not posted yet
+  /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP738/SP738.png)
   case iPhoneSE
 
   /// Device is an [iPad 2](https://support.apple.com/kb/SP622)
@@ -172,60 +172,73 @@ public enum Device {
   indirect case simulator(Device)
 
   /// Device is not yet known (implemented)
-  /// You can still use this enum as before but the description equals the identifier (you can get multiple identifiers for the same product class (e.g. "iPhone6,1" or "iPhone 6,2" do both mean "iPhone 5s))
+  /// You can still use this enum as before but the description equals the identifier (you can get multiple identifiers for the same product class
+  /// (e.g. "iPhone6,1" or "iPhone 6,2" do both mean "iPhone 5s))
   case unknown(String)
 
+  /// Initializes a `Device` representing the current device this software runs on.
+  ///
+  /// - returns: An initialized `Device`
   public init() {
+    self = Device.mapToDevice(identifier: Device.identifier)
+  }
+
+  /// Gets the identifier from the system, such as "iPhone7,1".
+  public static var identifier: String {
     var systemInfo = utsname()
     uname(&systemInfo)
     let mirror = Mirror(reflecting: systemInfo.machine)
 
-    // I know that reduce is O(n^2) (see http://airspeedvelocity.net/2015/08/03/arrays-linked-lists-and-performance/) but it's *so* nice ❤️ and since we are working with very short strings it shouldn't matter.
     let identifier = mirror.children.reduce("") { identifier, element in
       guard let value = element.value as? Int8, value != 0 else { return identifier }
       return identifier + String(UnicodeScalar(UInt8(value)))
     }
+    return identifier
+  }
 
-    func mapIdentifierToDevice(_ identifier: String) -> Device {
-      #if os(iOS)
-        switch identifier {
-        case "iPod5,1":                                 return .iPodTouch5
-        case "iPod7,1":                                 return .iPodTouch6
-        case "iPhone3,1", "iPhone3,2", "iPhone3,3":     return .iPhone4
-        case "iPhone4,1":                               return .iPhone4s
-        case "iPhone5,1", "iPhone5,2":                  return .iPhone5
-        case "iPhone5,3", "iPhone5,4":                  return .iPhone5c
-        case "iPhone6,1", "iPhone6,2":                  return .iPhone5s
-        case "iPhone7,2":                               return .iPhone6
-        case "iPhone7,1":                               return .iPhone6Plus
-        case "iPhone8,1":                               return .iPhone6s
-        case "iPhone8,2":                               return .iPhone6sPlus
-        case "iPhone8,4":                               return .iPhoneSE
-        case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4":return .iPad2
-        case "iPad3,1", "iPad3,2", "iPad3,3":           return .iPad3
-        case "iPad3,4", "iPad3,5", "iPad3,6":           return .iPad4
-        case "iPad4,1", "iPad4,2", "iPad4,3":           return .iPadAir
-        case "iPad5,3", "iPad5,4":                      return .iPadAir2
-        case "iPad2,5", "iPad2,6", "iPad2,7":           return .iPadMini
-        case "iPad4,4", "iPad4,5", "iPad4,6":           return .iPadMini2
-        case "iPad4,7", "iPad4,8", "iPad4,9":           return .iPadMini3
-        case "iPad5,1", "iPad5,2":                      return .iPadMini4
-        case "iPad6,3", "iPad6,4":                      return .iPadPro9Inch
-        case "iPad6,7", "iPad6,8":                      return .iPadPro12Inch
-        case "i386", "x86_64":                          return .simulator(mapIdentifierToDevice(String(validatingUTF8:
-          getenv("SIMULATOR_MODEL_IDENTIFIER"))!))
-        default:                                        return .unknown(identifier)
-        }
-      #elseif os(tvOS)
-        switch identifier {
-        case "AppleTV5,3":                              return .appleTV4
-        case "i386", "x86_64":                          return .simulator(mapIdentifierToDevice(String(validatingUTF8:
-          getenv("SIMULATOR_MODEL_IDENTIFIER"))!))
-        default:                                        return .unknown(identifier)
-        }
-      #endif
-    }
-    self = mapIdentifierToDevice(identifier)
+  /// Maps an identifier to a Device. If the identifier can not be mapped to an existing device, `UnknownDevice(identifier)` is returned.
+  ///
+  /// - parameter identifier: The device identifier, e.g. "iPhone7,1". Can be obtained from `Device.identifier`.
+  ///
+  /// - returns: An initialized `Device`.
+  public static func mapToDevice(identifier: String) -> Device {  // swiftlint:disable:this cyclomatic_complexity
+    #if os(iOS)
+      switch identifier {
+      case "iPod5,1":                                 return iPodTouch5
+      case "iPod7,1":                                 return iPodTouch6
+      case "iPhone3,1", "iPhone3,2", "iPhone3,3":     return iPhone4
+      case "iPhone4,1":                               return iPhone4s
+      case "iPhone5,1", "iPhone5,2":                  return iPhone5
+      case "iPhone5,3", "iPhone5,4":                  return iPhone5c
+      case "iPhone6,1", "iPhone6,2":                  return iPhone5s
+      case "iPhone7,2":                               return iPhone6
+      case "iPhone7,1":                               return iPhone6Plus
+      case "iPhone8,1":                               return iPhone6s
+      case "iPhone8,2":                               return iPhone6sPlus
+      case "iPhone8,4":                               return iPhoneSE
+      case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4":return iPad2
+      case "iPad3,1", "iPad3,2", "iPad3,3":           return iPad3
+      case "iPad3,4", "iPad3,5", "iPad3,6":           return iPad4
+      case "iPad4,1", "iPad4,2", "iPad4,3":           return iPadAir
+      case "iPad5,3", "iPad5,4":                      return iPadAir2
+      case "iPad2,5", "iPad2,6", "iPad2,7":           return iPadMini
+      case "iPad4,4", "iPad4,5", "iPad4,6":           return iPadMini2
+      case "iPad4,7", "iPad4,8", "iPad4,9":           return iPadMini3
+      case "iPad5,1", "iPad5,2":                      return iPadMini4
+      case "iPad6,3", "iPad6,4":                      return iPadPro9Inch
+      case "iPad6,7", "iPad6,8":                      return iPadPro12Inch
+      // swiftlint:disable:next force_unwrapping
+      case "i386", "x86_64":                          return simulator(mapToDevice(identifier: String(validatingUTF8: getenv("SIMULATOR_MODEL_IDENTIFIER"))!))
+      default:                                        return unknown(identifier)
+      }
+    #elseif os(tvOS)
+      switch identifier {
+      case "AppleTV5,3":                              return appleTV4
+      // swiftlint:disable:next force_unwrapping
+      case "i386", "x86_64":                          return simulator(mapToDevice(identifier: String(validatingUTF8: getenv("SIMULATOR_MODEL_IDENTIFIER"))!))
+      default:                                        return unknown(identifier)
+      }
+    #endif
   }
 
   #if os(iOS)
@@ -303,7 +316,6 @@ public enum Device {
       return allTVs
     #endif
   }
-
   /// All simulators
   public static var allSimulators: [Device] {
     return allRealDevices.map(Device.simulator)
@@ -400,6 +412,7 @@ public enum Device {
 // MARK: - CustomStringConvertible
 extension Device: CustomStringConvertible {
 
+  /// A textual representation of the device.
   public var description: String {
     #if os(iOS)
       switch self {
@@ -424,8 +437,8 @@ extension Device: CustomStringConvertible {
       case .iPadMini2:                    return "iPad Mini 2"
       case .iPadMini3:                    return "iPad Mini 3"
       case .iPadMini4:                    return "iPad Mini 4"
-      case .iPadPro9Inch:                 return "9.7-inch iPad Pro"
-      case .iPadPro12Inch:                return "12.9-inch iPad Pro"
+      case .iPadPro9Inch:                 return "iPad Pro (9.7-inch)"
+      case .iPadPro12Inch:                return "iPad Pro (12.9-inch)"
       case .simulator(let model):         return "Simulator (\(model))"
       case .unknown(let identifier):      return identifier
       }
@@ -442,6 +455,12 @@ extension Device: CustomStringConvertible {
 // MARK: - Equatable
 extension Device: Equatable {}
 
+/// Compares two devices
+///
+/// - parameter lhs: A device.
+/// - parameter rhs: Another device.
+///
+/// - returns: `true` iff the underlying identifier is the same.
 public func == (lhs: Device, rhs: Device) -> Bool {
   return lhs.description == rhs.description
 }
@@ -479,6 +498,13 @@ public func == (lhs: Device, rhs: Device) -> Bool {
         UIDevice.current.isBatteryMonitoringEnabled = false
       }
 
+      /// Provides a textual representation of the battery state.
+      /// Examples:
+      /// ```
+      /// Battery level: 90%, device is plugged in.
+      /// Battery level: 100 % (Full), device is plugged in.
+      /// Battery level: \(batteryLevel)%, device is unplugged.
+      /// ```
       public var description: String {
         switch self {
         case .charging(let batteryLevel):   return "Battery level: \(batteryLevel)%, device is plugged in."
@@ -508,10 +534,22 @@ public func == (lhs: Device, rhs: Device) -> Bool {
   // MARK: - Device.Batterystate: Comparable
   extension Device.BatteryState: Comparable {}
 
+  /// Tells if two battery states are equal.
+  ///
+  /// - parameter lhs: A battery state.
+  /// - parameter rhs: Another battery state.
+  ///
+  /// - returns: `true` iff they are equal, otherwise `false`
   public func == (lhs: Device.BatteryState, rhs: Device.BatteryState) -> Bool {
     return lhs.description == rhs.description
   }
 
+  /// Compares two battery states.
+  ///
+  /// - parameter lhs: A battery state.
+  /// - parameter rhs: Another battery state.
+  ///
+  /// - returns: `true` if rhs is `.Full`, `false` when lhs is `.Full` otherwise their battery level is compared.
   public func < (lhs: Device.BatteryState, rhs: Device.BatteryState) -> Bool {
     switch (lhs, rhs) {
     case (.full, _):                                            return false                // return false (even if both are `.Full` -> they are equal)

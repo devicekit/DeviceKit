@@ -2,6 +2,11 @@ language: objective-c
 osx_image: xcode8
 
 env:
+  - DESTINATION='platform=iOS Simulator,name=iPad Air'
+  - DESTINATION='platform=iOS Simulator,name=iPad Air 2'
+  - DESTINATION='platform=iOS Simulator,name=iPad Pro (9.7 inch)'
+  - DESTINATION='platform=iOS Simulator,name=iPad Pro (12.9 inch)'
+  - DESTINATION='platform=iOS Simulator,name=iPad Retina'
   - DESTINATION='platform=iOS Simulator,name=iPhone 5'
   - DESTINATION='platform=iOS Simulator,name=iPhone 5s'
   - DESTINATION='platform=iOS Simulator,name=iPhone 6'
@@ -9,13 +14,7 @@ env:
   - DESTINATION='platform=iOS Simulator,name=iPhone 6s'
   - DESTINATION='platform=iOS Simulator,name=iPhone 6s Plus'
   - DESTINATION='platform=iOS Simulator,name=iPhone SE'
-  - DESTINATION='platform=iOS Simulator,name=iPad Air'
-  - DESTINATION='platform=iOS Simulator,name=iPad Air'
-  - DESTINATION='platform=iOS Simulator,name=iPad Air 2'
-  - DESTINATION='platform=iOS Simulator,name=iPad Pro (9.7 inch)'
-  - DESTINATION='platform=iOS Simulator,name=iPad Pro (12.9 inch)'
-  - DESTINATION='platform=iOS Simulator,name=iPad Retina'
-  - DESTINATION='platform=iOS Simulator,name=iPad Air'
+
   - DESTINATION='platform=tvOS Simulator,name=Apple TV 1080p'
 
 script:

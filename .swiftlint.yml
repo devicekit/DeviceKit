@@ -1,5 +1,11 @@
-excluded: # paths to ignore during linting. overridden by `included`.
+opt_in_rules:
+ - empty_count
+ - missing_docs
+ - force_unwrapping
 
-disabled_rules: 
-  - line_length
-  - file_length
+disabled_rules:
+ - file_length
+
+line_length:
+ - 160
+ - 160
