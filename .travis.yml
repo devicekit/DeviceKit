@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode7.3
+osx_image: xcode8
 
 env:
     global:
@@ -21,6 +21,8 @@ env:
         - DESTINATION="OS=9.2,name=iPhone 6 Plus"      SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"  POD_LINT="NO"
         - DESTINATION="OS=9.2,name=iPhone 6S"          SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"  POD_LINT="NO"
         - DESTINATION="OS=9.2,name=iPhone 6S Plus"     SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"  POD_LINT="NO"
+        - DESTINATION="OS=9.2,name=iPhone 7"           SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"  POD_LINT="NO"
+        - DESTINATION="OS=9.2,name=iPhone 7 Plus"      SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"  POD_LINT="NO"
         - DESTINATION="OS=9.1,name=Apple TV 1080p"     SCHEME="$TVOS_FRAMEWORK_SCHEME"    SDK="$TVOS_SDK"    RUN_TESTS="YES"  POD_LINT="NO"
 
 script:
