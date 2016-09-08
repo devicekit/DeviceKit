@@ -103,6 +103,16 @@ public enum Device {
   /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP727/SP727-iphone6s-plus-gray-select-2015.png)
   case iPhone6sPlus
 
+  /// Device is an [iPhone 7](https://support.apple.com/kb/SP) // TODO: Enter correct SP and image
+  ///
+  /// ![Image]
+  case iPhone7
+
+  /// Device is an [iPhone 7 Plus](https://support.apple.com/kb/SP)  // TODO: Enter correct SP and image
+  ///
+  /// ![Image]
+  case iPhone7Plus
+
   /// Device is an [iPhone SE](https://support.apple.com/kb/SP738)
   ///
   /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP738/SP738.png)
@@ -215,6 +225,8 @@ public enum Device {
       case "iPhone7,1":                               return iPhone6Plus
       case "iPhone8,1":                               return iPhone6s
       case "iPhone8,2":                               return iPhone6sPlus
+      case "iPhone9,1":                               return iPhone7
+      case "iPhone9,2":                               return iPhone7Plus
       case "iPhone8,4":                               return iPhoneSE
       case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4":return iPad2
       case "iPad3,1", "iPad3,2", "iPad3,3":           return iPad3
@@ -248,7 +260,7 @@ public enum Device {
 
   /// All iPhones
   public static var allPhones: [Device] {
-    return [.iPhone4, iPhone4s, .iPhone5, .iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhoneSE]
+    return [.iPhone4, iPhone4s, .iPhone5, .iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE]
   }
 
   /// All iPads
@@ -328,7 +340,7 @@ public enum Device {
    ```
    switch Device() {
    case .iPodTouch5, .iPodTouch6: callMethodOnIPods()
-   case .iPhone4, iPhone4s, .iPhone5, .iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhoneSE: callMethodOnIPhones()
+   case .iPhone4, iPhone4s, .iPhone5, .iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE: callMethodOnIPhones()
    case .iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadPro: callMethodOnIPads()
    default: break
    }
@@ -427,6 +439,8 @@ extension Device: CustomStringConvertible {
       case .iPhone6Plus:                  return "iPhone 6 Plus"
       case .iPhone6s:                     return "iPhone 6s"
       case .iPhone6sPlus:                 return "iPhone 6s Plus"
+      case .iPhone7:                      return "iPhone 7"
+      case .iPhone7Plus:                  return "iPhone 7 Plus"
       case .iPhoneSE:                     return "iPhone SE"
       case .iPad2:                        return "iPad 2"
       case .iPad3:                        return "iPad 3"
