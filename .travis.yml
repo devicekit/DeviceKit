@@ -9,7 +9,7 @@ env:
         - IOS_FRAMEWORK_SCHEME="DeviceKit-iOS"
         - OSX_FRAMEWORK_SCHEME="DeviceKit-OSX"
         - TVOS_FRAMEWORK_SCHEME="DeviceKit-tvOS"
-        - IOS_SDK=iphonesimulator10
+        - IOS_SDK=iphonesimulator10.0
         - OSX_SDK=macosx10.11
         - TVOS_SDK=appletvsimulator10
         - WATCHOS_SDK=watchsimulator2.2
