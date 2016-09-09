@@ -13,6 +13,8 @@ env:
   - DESTINATION='platform=iOS Simulator,name=iPhone 6 Plus'
   - DESTINATION='platform=iOS Simulator,name=iPhone 6s'
   - DESTINATION='platform=iOS Simulator,name=iPhone 6s Plus'
+  - DESTINATION='platform=iOS Simulator,name=iPhone 7'
+  - DESTINATION='platform=iOS Simulator,name=iPhone 7 Plus'
   - DESTINATION='platform=iOS Simulator,name=iPhone SE'
 
   - DESTINATION='platform=tvOS Simulator,name=Apple TV 1080p'
