@@ -225,8 +225,8 @@ public enum Device {
       case "iPhone7,1":                               return iPhone6Plus
       case "iPhone8,1":                               return iPhone6s
       case "iPhone8,2":                               return iPhone6sPlus
-      case "iPhone9,1":                               return iPhone7
-      case "iPhone9,2":                               return iPhone7Plus
+      case "iPhone9,1", "iPhone9,3":                  return iPhone7
+      case "iPhone9,2", "iPhone9,4":                  return iPhone7Plus
       case "iPhone8,4":                               return iPhoneSE
       case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4":return iPad2
       case "iPad3,1", "iPad3,2", "iPad3,3":           return iPad3
