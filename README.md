@@ -19,25 +19,31 @@
 ## Requirements
 
 - iOS 8.0+ / tvOS 9.0+ (linking against iOS 9.3 and tvOS 9.2 required)
-- Xcode 7.3+
-- A Swift 3 version can the found in the swift-3 branch (should run with the latest beta, if not please open an issue)
+- Xcode 8.0+
 
 ## Installation
 DeviceKit can be installed in various ways.
+
 ### CocoaPods
 
+#### Swift 3.0
 ```ruby
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '8.0'
-use_frameworks!
-
-pod 'DeviceKit', '~> 0.3.4'
+pod 'DeviceKit', '~> 1.0'
+```
+#### Swift 2.3 (Unsupported)
+```ruby
+pod 'DeviceKit', :git => 'https://github.com/dennisweissmann/DeviceKit.git', :branch => 'swift-2.3-unsupported'
 ```
 
 ### Carthage
 
+#### Swift 3.0
 ```ogdl
-github "dennisweissmann/DeviceKit" ~> 0.3.4
+github "dennisweissmann/DeviceKit" "HEAD"
+```
+#### Swift 2.3 (Unsupported)
+```ogdl
+github "dennisweissmann/DeviceKit" "swift-2.3-unsupported"
 ```
 
 ### Manually
