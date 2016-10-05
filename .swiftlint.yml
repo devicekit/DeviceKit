@@ -5,6 +5,7 @@ opt_in_rules:
 
 disabled_rules:
  - file_length
+ - type_name
 
 line_length:
  - 160
