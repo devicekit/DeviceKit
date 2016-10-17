@@ -19,6 +19,18 @@ class DeviceKitTests: XCTestCase {
     XCTAssert(Device().description.hasPrefix("Simulator"))
   }
 
+  func testDiskSize() {
+    XCTAssert(Device().diskSize != nil)
+  }
+
+  func testFreeDiskSize() {
+    XCTAssert(Device().diskFreeSize != nil)
+  }
+
+  func testUsedDiskSize() {
+    XCTAssert(Device().diskUsedSize != nil)
+  }
+
   // MARK: - iOS
   #if os(iOS)
   func testIsSimulator() {
