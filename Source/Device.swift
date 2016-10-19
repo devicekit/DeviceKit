@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Hot Action Studios. All rights reserved.
 //
 
+import struct UIKit.CGSize
+import struct UIKit.CGFloat
 import class UIKit.UIDevice
 import class UIKit.UIScreen
 import struct Darwin.utsname
@@ -418,7 +420,70 @@ public enum Device {
   public var localizedModel: String {
     return UIDevice.current.localizedModel
   }
-
+    
+  public var diagonal: CGFloat {
+    switch self {
+    case .iPodTouch5:                   return 4
+    case .iPodTouch6:                   return 4
+    case .iPhone4:                      return 4
+    case .iPhone4s:                     return 4
+    case .iPhone5:                      return 4
+    case .iPhone5c:                     return 4
+    case .iPhone5s:                     return 4
+    case .iPhone6:                      return 4.7
+    case .iPhone6Plus:                  return 5.5
+    case .iPhone6s:                     return 4.7
+    case .iPhone6sPlus:                 return 5.5
+    case .iPhone7:                      return 4.7
+    case .iPhone7Plus:                  return 5.5
+    case .iPhoneSE:                     return 4
+    case .iPad2:                        return 9.7
+    case .iPad3:                        return 9.7
+    case .iPad4:                        return 9.7
+    case .iPadAir:                      return 9.7
+    case .iPadAir2:                     return 9.7
+    case .iPadMini:                     return 7.9
+    case .iPadMini2:                    return 7.9
+    case .iPadMini3:                    return 7.9
+    case .iPadMini4:                    return 7.9
+    case .iPadPro9Inch:                 return 9.7
+    case .iPadPro12Inch:                return 12.9
+    case .simulator(let model):         return model.diagonal
+    default:                            return 1
+    }
+  }
+    
+  public var screenRatio: CGSize {
+    switch self {
+    case .iPodTouch5:                   return CGSize(width: 9, height: 16)
+    case .iPodTouch6:                   return CGSize(width: 9, height: 16)
+    case .iPhone4:                      return CGSize(width: 2, height: 3)
+    case .iPhone4s:                     return CGSize(width: 2, height: 3)
+    case .iPhone5:                      return CGSize(width: 9, height: 16)
+    case .iPhone5c:                     return CGSize(width: 9, height: 16)
+    case .iPhone5s:                     return CGSize(width: 9, height: 16)
+    case .iPhone6:                      return CGSize(width: 9, height: 16)
+    case .iPhone6Plus:                  return CGSize(width: 9, height: 16)
+    case .iPhone6s:                     return CGSize(width: 9, height: 16)
+    case .iPhone6sPlus:                 return CGSize(width: 9, height: 16)
+    case .iPhone7:                      return CGSize(width: 9, height: 16)
+    case .iPhone7Plus:                  return CGSize(width: 9, height: 16)
+    case .iPhoneSE:                     return CGSize(width: 9, height: 16)
+    case .iPad2:                        return CGSize(width: 3, height: 4)
+    case .iPad3:                        return CGSize(width: 3, height: 4)
+    case .iPad4:                        return CGSize(width: 3, height: 4)
+    case .iPadAir:                      return CGSize(width: 3, height: 4)
+    case .iPadAir2:                     return CGSize(width: 3, height: 4)
+    case .iPadMini:                     return CGSize(width: 3, height: 4)
+    case .iPadMini2:                    return CGSize(width: 3, height: 4)
+    case .iPadMini3:                    return CGSize(width: 3, height: 4)
+    case .iPadMini4:                    return CGSize(width: 3, height: 4)
+    case .iPadPro9Inch:                 return CGSize(width: 3, height: 4)
+    case .iPadPro12Inch:                return CGSize(width: 3, height: 4)
+    case .simulator(let model):         return model.screenRatio
+    default:                            return CGSize(width: 1, height: 1)
+    }
+  }
 }
 
 // MARK: - CustomStringConvertible
