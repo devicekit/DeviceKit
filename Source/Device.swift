@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 Hot Action Studios. All rights reserved.
 //
 
-import struct UIKit.CGSize
-import struct UIKit.CGFloat
 import class UIKit.UIDevice
 import class UIKit.UIScreen
 import struct Darwin.utsname
@@ -310,8 +308,8 @@ public enum Device {
     return UIScreen.main.scale < UIScreen.main.nativeScale
   }
 
-  /// Returns diagonal screen length in inch as CGFloat
-  public var diagonal: CGFloat {
+  /// Returns diagonal screen length in inch as Float
+  public var diagonal: Float {
         switch self {
         case .iPodTouch5:                   return 4
         case .iPodTouch6:                   return 4
@@ -339,40 +337,40 @@ public enum Device {
         case .iPadPro9Inch:                 return 9.7
         case .iPadPro12Inch:                return 12.9
         case .simulator(let model):         return model.diagonal
-        default:                            return 1
+        case .unknown(let identifier):      return -1
         }
   }
 
-  /// Returns screen ratio as CGSize
-  public var screenRatio: CGSize {
+  /// Returns screen ratio as a tuple (width: Float, height: Float)
+    public var screenRatio: (width: Float, height: Float) {
     switch self {
-    case .iPodTouch5:                   return CGSize(width: 9, height: 16)
-    case .iPodTouch6:                   return CGSize(width: 9, height: 16)
-    case .iPhone4:                      return CGSize(width: 2, height: 3)
-    case .iPhone4s:                     return CGSize(width: 2, height: 3)
-    case .iPhone5:                      return CGSize(width: 9, height: 16)
-    case .iPhone5c:                     return CGSize(width: 9, height: 16)
-    case .iPhone5s:                     return CGSize(width: 9, height: 16)
-    case .iPhone6:                      return CGSize(width: 9, height: 16)
-    case .iPhone6Plus:                  return CGSize(width: 9, height: 16)
-    case .iPhone6s:                     return CGSize(width: 9, height: 16)
-    case .iPhone6sPlus:                 return CGSize(width: 9, height: 16)
-    case .iPhone7:                      return CGSize(width: 9, height: 16)
-    case .iPhone7Plus:                  return CGSize(width: 9, height: 16)
-    case .iPhoneSE:                     return CGSize(width: 9, height: 16)
-    case .iPad2:                        return CGSize(width: 3, height: 4)
-    case .iPad3:                        return CGSize(width: 3, height: 4)
-    case .iPad4:                        return CGSize(width: 3, height: 4)
-    case .iPadAir:                      return CGSize(width: 3, height: 4)
-    case .iPadAir2:                     return CGSize(width: 3, height: 4)
-    case .iPadMini:                     return CGSize(width: 3, height: 4)
-    case .iPadMini2:                    return CGSize(width: 3, height: 4)
-    case .iPadMini3:                    return CGSize(width: 3, height: 4)
-    case .iPadMini4:                    return CGSize(width: 3, height: 4)
-    case .iPadPro9Inch:                 return CGSize(width: 3, height: 4)
-    case .iPadPro12Inch:                return CGSize(width: 3, height: 4)
+    case .iPodTouch5:                   return (width: 9, height: 16)
+    case .iPodTouch6:                   return (width: 9, height: 16)
+    case .iPhone4:                      return (width: 2, height: 3)
+    case .iPhone4s:                     return (width: 2, height: 3)
+    case .iPhone5:                      return (width: 9, height: 16)
+    case .iPhone5c:                     return (width: 9, height: 16)
+    case .iPhone5s:                     return (width: 9, height: 16)
+    case .iPhone6:                      return (width: 9, height: 16)
+    case .iPhone6Plus:                  return (width: 9, height: 16)
+    case .iPhone6s:                     return (width: 9, height: 16)
+    case .iPhone6sPlus:                 return (width: 9, height: 16)
+    case .iPhone7:                      return (width: 9, height: 16)
+    case .iPhone7Plus:                  return (width: 9, height: 16)
+    case .iPhoneSE:                     return (width: 9, height: 16)
+    case .iPad2:                        return (width: 3, height: 4)
+    case .iPad3:                        return (width: 3, height: 4)
+    case .iPad4:                        return (width: 3, height: 4)
+    case .iPadAir:                      return (width: 3, height: 4)
+    case .iPadAir2:                     return (width: 3, height: 4)
+    case .iPadMini:                     return (width: 3, height: 4)
+    case .iPadMini2:                    return (width: 3, height: 4)
+    case .iPadMini3:                    return (width: 3, height: 4)
+    case .iPadMini4:                    return (width: 3, height: 4)
+    case .iPadPro9Inch:                 return (width: 3, height: 4)
+    case .iPadPro12Inch:                return (width: 3, height: 4)
     case .simulator(let model):         return model.screenRatio
-    default:                            return CGSize(width: 1, height: 1)
+    case .unknown(let identifier):      return (width: -1, height: -1)
     }
   }
     
