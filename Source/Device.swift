@@ -308,6 +308,72 @@ public enum Device {
     return UIScreen.main.scale < UIScreen.main.nativeScale
   }
 
+  /// Returns diagonal screen length in inch as Float
+  public var diagonal: Float {
+        switch self {
+        case .iPodTouch5:                   return 4
+        case .iPodTouch6:                   return 4
+        case .iPhone4:                      return 4
+        case .iPhone4s:                     return 4
+        case .iPhone5:                      return 4
+        case .iPhone5c:                     return 4
+        case .iPhone5s:                     return 4
+        case .iPhone6:                      return 4.7
+        case .iPhone6Plus:                  return 5.5
+        case .iPhone6s:                     return 4.7
+        case .iPhone6sPlus:                 return 5.5
+        case .iPhone7:                      return 4.7
+        case .iPhone7Plus:                  return 5.5
+        case .iPhoneSE:                     return 4
+        case .iPad2:                        return 9.7
+        case .iPad3:                        return 9.7
+        case .iPad4:                        return 9.7
+        case .iPadAir:                      return 9.7
+        case .iPadAir2:                     return 9.7
+        case .iPadMini:                     return 7.9
+        case .iPadMini2:                    return 7.9
+        case .iPadMini3:                    return 7.9
+        case .iPadMini4:                    return 7.9
+        case .iPadPro9Inch:                 return 9.7
+        case .iPadPro12Inch:                return 12.9
+        case .simulator(let model):         return model.diagonal
+        case .unknown(let identifier):      return -1
+        }
+  }
+
+  /// Returns screen ratio as a tuple (width: Float, height: Float)
+    public var screenRatio: (width: Float, height: Float) {
+    switch self {
+    case .iPodTouch5:                   return (width: 9, height: 16)
+    case .iPodTouch6:                   return (width: 9, height: 16)
+    case .iPhone4:                      return (width: 2, height: 3)
+    case .iPhone4s:                     return (width: 2, height: 3)
+    case .iPhone5:                      return (width: 9, height: 16)
+    case .iPhone5c:                     return (width: 9, height: 16)
+    case .iPhone5s:                     return (width: 9, height: 16)
+    case .iPhone6:                      return (width: 9, height: 16)
+    case .iPhone6Plus:                  return (width: 9, height: 16)
+    case .iPhone6s:                     return (width: 9, height: 16)
+    case .iPhone6sPlus:                 return (width: 9, height: 16)
+    case .iPhone7:                      return (width: 9, height: 16)
+    case .iPhone7Plus:                  return (width: 9, height: 16)
+    case .iPhoneSE:                     return (width: 9, height: 16)
+    case .iPad2:                        return (width: 3, height: 4)
+    case .iPad3:                        return (width: 3, height: 4)
+    case .iPad4:                        return (width: 3, height: 4)
+    case .iPadAir:                      return (width: 3, height: 4)
+    case .iPadAir2:                     return (width: 3, height: 4)
+    case .iPadMini:                     return (width: 3, height: 4)
+    case .iPadMini2:                    return (width: 3, height: 4)
+    case .iPadMini3:                    return (width: 3, height: 4)
+    case .iPadMini4:                    return (width: 3, height: 4)
+    case .iPadPro9Inch:                 return (width: 3, height: 4)
+    case .iPadPro12Inch:                return (width: 3, height: 4)
+    case .simulator(let model):         return model.screenRatio
+    case .unknown(let identifier):      return (width: -1, height: -1)
+    }
+  }
+    
   #elseif os(tvOS)
   /// All TVs
   public static var allTVs: [Device] {
@@ -418,7 +484,6 @@ public enum Device {
   public var localizedModel: String {
     return UIDevice.current.localizedModel
   }
-
 }
 
 // MARK: - CustomStringConvertible
