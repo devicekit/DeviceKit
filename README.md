@@ -54,13 +54,16 @@ $ git submodule add https://github.com/dennisweissmann/DeviceKit.git
 ```
 
 ## Usage
+First make sure to import the framework:
+```swift
+import DeviceKit
+```
+
 Here are some usage examples. All devices are also available as simulators:
 ```swift
-.iPhone6 => .Simulator(.iPhone6)
-.iPhone6s => .Simualtor(.iPhone6s)
+.iPhone6 => .simulator(.iPhone6)
+.iPhone6s => .simulator(.iPhone6s)
 ```
- 
-etc.
 
 ### Get the Device You're Running On
 ```swift
@@ -69,9 +72,9 @@ let device = Device()
 print(device)     // prints, for example, "iPhone 6 Plus"
 
 if device == .iPhone6Plus {
-    // Do something
+  // Do something
 } else {
-    // Do something else
+  // Do something else
 }
 ```
 
@@ -79,56 +82,56 @@ if device == .iPhone6Plus {
 ```swift
 let device = Device()
 if device.isPod {
-    // iPods (real or simulator)
+  // iPods (real or simulator)
 } else if device.isPhone {
-   // iPhone (real or simulator)
+  // iPhone (real or simulator)
 } else if device.isPad {
-   // iPad (real or simulator)
+  // iPad (real or simulator)
 }
 ```
-### To check if running on Simulator
+
+### Check If Running on Simulator
 ```swift
 let device = Device()
 if device.isSimulator {
-    // Running on one of the simulators(iPod/iPhone/iPad) 
-    // Skip doing something irrelevant for Simulator
+  // Running on one of the simulators(iPod/iPhone/iPad) 
+  // Skip doing something irrelevant for Simulator
 } 
 ```
-
 
 ### Get the Simulator Device
 ```swift
 let device = Device()
 switch device {
-case .Simulator(.iPhone6s): break // You're running on the iPhone 6s simulator
-case .Simulator(.iPadAir2): break // You're running on the iPad Air 2 simulator
+case .simulator(.iPhone6s): break // You're running on the iPhone 6s simulator
+case .simulator(.iPadAir2): break // You're running on the iPad Air 2 simulator
 default: break
 }
 ```
  
 ### Make Sure the Device Is Contained in a Preconfigured Group
 ```swift
-let groupOfAllowedDevices: [Device] = [.iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .Simulator(.iPhone6), .Simulator(.iPhone6Plus), .Simulator(.iPhone6s), .Simulator(.iPhone6sPlus)]
+let groupOfAllowedDevices: [Device] = [.iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .simulator(.iPhone6), .simulator(.iPhone6Plus), .simulator(.iPhone6s), .simulator(.iPhone6sPlus)]
 let device = Device()
  
 if device.isOneOf(groupOfAllowedDevices) {
-    // Do you action
+  // Do you action
 }
 ```
 
 ### Get the Current Battery State
 ```swift
-if device.batteryState == .Full || device.batteryState >= .Charging(75) {
-    print("Your battery is happy! 😊")
+if device.batteryState == .full || device.batteryState >= .charging(75) {
+  print("Your battery is happy! 😊")
 }
 ```
 
 ### Get the Current Battery Level
 ```swift
 if device.batteryLevel >= 50 {
-    install_iOS()
+  install_iOS()
 } else {
-    showError()
+  showError()
 }
 ```
 
