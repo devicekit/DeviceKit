@@ -260,7 +260,7 @@ public enum Device {
 
   /// All iPhones
   public static var allPhones: [Device] {
-    return [.iPhone4, iPhone4s, .iPhone5, .iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE]
+    return [.iPhone4, iPhone4s, .iPhone5, .iPhone5s, .iPhone5c, .iPhone6, .iPhone6Plus, .iPhoneSE, .iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus]
   }
 
   /// All iPads
