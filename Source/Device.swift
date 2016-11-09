@@ -496,19 +496,19 @@ public enum Device {
   }
 
   /// The total disk size of the device in bytes, or `nil` if it could not be determined.
-  public var diskSize: Int64? {
+  public var diskSize: Int? {
     guard let fileSystemAttributes = self.fileSystemAttributes else { return nil }
-    return (fileSystemAttributes[FileAttributeKey.systemSize] as? NSNumber)?.int64Value
+    return (fileSystemAttributes[FileAttributeKey.systemSize] as? NSNumber)?.intValue
   }
 
   /// The available disk space of the device in bytes, or `nil` if it could not be determined.
-  public var diskFreeSize: Int64? {
+  public var diskFreeSize: Int? {
     guard let fileSystemAttributes = self.fileSystemAttributes else { return nil }
-    return (fileSystemAttributes[FileAttributeKey.systemFreeSize] as? NSNumber)?.int64Value
+    return (fileSystemAttributes[FileAttributeKey.systemFreeSize] as? NSNumber)?.intValue
   }
 
   /// The used disk space of the device in bytes, or `nil` if it could not be determined.
-  public var diskUsedSize: Int64? {
+  public var diskUsedSize: Int? {
     guard let diskSize = self.diskSize, let diskFreeSize = self.diskFreeSize else { return nil }
     return diskSize - diskFreeSize
   }
