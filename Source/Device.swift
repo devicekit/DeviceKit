@@ -190,7 +190,7 @@ public enum Device {
   ///
   /// - returns: An initialized `Device`
   public init() {
-    self = Device.mapToDevice(identifier: Device.identifier)
+    self = Device.mapToDevice(Device.identifier)
   }
 
   /// Gets the identifier from the system, such as "iPhone7,1".
@@ -211,7 +211,7 @@ public enum Device {
   /// - parameter identifier: The device identifier, e.g. "iPhone7,1". Can be obtained from `Device.identifier`.
   ///
   /// - returns: An initialized `Device`.
-  public static func mapToDevice(identifier: String) -> Device {  // swiftlint:disable:this cyclomatic_complexity
+  public static func mapToDevice(_ identifier: String) -> Device {  // swiftlint:disable:this cyclomatic_complexity
     #if os(iOS)
       switch identifier {
       case "iPod5,1":                                 return iPodTouch5
@@ -240,7 +240,7 @@ public enum Device {
       case "iPad6,3", "iPad6,4":                      return iPadPro9Inch
       case "iPad6,7", "iPad6,8":                      return iPadPro12Inch
       // swiftlint:disable:next force_unwrapping
-      case "i386", "x86_64":                          return simulator(mapToDevice(identifier: String(validatingUTF8: getenv("SIMULATOR_MODEL_IDENTIFIER"))!))
+      case "i386", "x86_64":                          return simulator(mapToDevice(String(validatingUTF8: getenv("SIMULATOR_MODEL_IDENTIFIER"))!))
       default:                                        return unknown(identifier)
       }
     #elseif os(tvOS)
@@ -448,7 +448,7 @@ public enum Device {
     /// Used when an object has a trait collection, but it is not in an environment yet. For example, a view that is created, but not put into a view hierarchy.
     case unspecified
 
-    private init() {
+    fileprivate init() {
       switch UIDevice.current.userInterfaceIdiom {
       case .pad:          self = .pad
       case .phone:        self = .phone

@@ -162,10 +162,12 @@
 				TargetAttributes = {
 					955EE5991D5E581B008C3DA8 = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					955EE5A11D5E581B008C3DA8 = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 				};
