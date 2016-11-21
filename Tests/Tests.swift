@@ -38,7 +38,7 @@ class DeviceKitTests: XCTestCase {
   }
 
   func testDescriptionFromIdentifier() {
-    XCTAssert(Device.mapToDevice(identifier: "iPhone3,1").description == "iPhone 4")
+    XCTAssert(Device.mapToDevice("iPhone3,1").description == "iPhone 4")
   }
 
   #endif
