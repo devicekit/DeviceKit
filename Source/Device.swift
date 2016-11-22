@@ -247,7 +247,7 @@ public enum Device {
       switch identifier {
       case "AppleTV5,3":                              return appleTV4
       // swiftlint:disable:next force_unwrapping
-      case "i386", "x86_64":                          return simulator(mapToDevice(identifier: String(validatingUTF8: getenv("SIMULATOR_MODEL_IDENTIFIER"))!))
+      case "i386", "x86_64":                          return simulator(mapToDevice(String(validatingUTF8: getenv("SIMULATOR_MODEL_IDENTIFIER"))!))
       default:                                        return unknown(identifier)
       }
     #endif
