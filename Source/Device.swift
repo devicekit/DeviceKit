@@ -313,8 +313,8 @@ public enum Device {
         switch self {
         case .iPodTouch5:                   return 4
         case .iPodTouch6:                   return 4
-        case .iPhone4:                      return 4
-        case .iPhone4s:                     return 4
+        case .iPhone4:                      return 3.5
+        case .iPhone4s:                     return 3.5
         case .iPhone5:                      return 4
         case .iPhone5c:                     return 4
         case .iPhone5s:                     return 4
