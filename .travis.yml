@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode8
+osx_image: xcode8.2
 
 env:
   - DESTINATION='platform=iOS Simulator,name=iPad Air'

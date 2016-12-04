@@ -8,6 +8,7 @@
 
 import class UIKit.UIDevice
 import class UIKit.UIScreen
+import class Foundation.FileManager
 import struct Darwin.utsname
 import func Darwin.uname
 import func Darwin.round
@@ -337,7 +338,7 @@ public enum Device {
         case .iPadPro9Inch:                 return 9.7
         case .iPadPro12Inch:                return 12.9
         case .simulator(let model):         return model.diagonal
-        case .unknown(let identifier):      return -1
+        case .unknown(_):                   return -1
         }
   }
 
@@ -370,19 +371,19 @@ public enum Device {
     case .iPadPro9Inch:                 return (width: 3, height: 4)
     case .iPadPro12Inch:                return (width: 3, height: 4)
     case .simulator(let model):         return model.screenRatio
-    case .unknown(let identifier):      return (width: -1, height: -1)
+    case .unknown(_):                   return (width: -1, height: -1)
     }
   }
     
   #elseif os(tvOS)
   /// All TVs
   public static var allTVs: [Device] {
-  return [.appleTV4]
+    return [.appleTV4]
   }
 
   /// All simulator TVs
   public static var allSimulatorTVs: [Device] {
-  return allTVs.map(Device.simulator)
+    return allTVs.map(Device.simulator)
   }
   #endif
 
@@ -484,6 +485,29 @@ public enum Device {
   public var localizedModel: String {
     return UIDevice.current.localizedModel
   }
+
+  // MARK: - FileSystem
+
+  private var fileSystemAttributes: [FileAttributeKey: Any]? {
+    return try? FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory())
+  }
+
+  /// The total disk size of the device in bytes, or `nil` if it could not be determined.
+  public var diskSize: Int? {
+    return (fileSystemAttributes?[FileAttributeKey.systemSize] as? NSNumber)?.intValue
+  }
+
+  /// The available disk space of the device in bytes, or `nil` if it could not be determined.
+  public var diskFreeSize: Int? {
+    return (fileSystemAttributes?[FileAttributeKey.systemFreeSize] as? NSNumber)?.intValue
+  }
+
+  /// The used disk space of the device in bytes, or `nil` if it could not be determined.
+  public var diskUsedSize: Int? {
+    guard let diskSize = diskSize, let diskFreeSize = diskFreeSize else { return nil }
+    return diskSize - diskFreeSize
+  }
+
 }
 
 // MARK: - CustomStringConvertible
