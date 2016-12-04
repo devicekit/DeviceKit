@@ -337,7 +337,7 @@ public enum Device {
         case .iPadPro9Inch:                 return 9.7
         case .iPadPro12Inch:                return 12.9
         case .simulator(let model):         return model.diagonal
-        case .unknown(let identifier):      return -1
+        case .unknown(_):                   return -1
         }
   }
 
@@ -370,7 +370,7 @@ public enum Device {
     case .iPadPro9Inch:                 return (width: 3, height: 4)
     case .iPadPro12Inch:                return (width: 3, height: 4)
     case .simulator(let model):         return model.screenRatio
-    case .unknown(let identifier):      return (width: -1, height: -1)
+    case .unknown(_):                   return (width: -1, height: -1)
     }
   }
     
