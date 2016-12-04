@@ -104,14 +104,14 @@ public enum Device {
   /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP727/SP727-iphone6s-plus-gray-select-2015.png)
   case iPhone6sPlus
 
-  /// Device is an [iPhone 7](https://support.apple.com/kb/SP) // TODO: Enter correct SP and image
+  /// Device is an [iPhone 7](https://support.apple.com/kb/SP743)
   ///
-  /// ![Image]
+  /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP743/iphone7-black.png)
   case iPhone7
 
-  /// Device is an [iPhone 7 Plus](https://support.apple.com/kb/SP)  // TODO: Enter correct SP and image
+  /// Device is an [iPhone 7 Plus](https://support.apple.com/kb/SP744)
   ///
-  /// ![Image]
+  /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP744/iphone7-plus-black.png)
   case iPhone7Plus
 
   /// Device is an [iPhone SE](https://support.apple.com/kb/SP738)
