@@ -7,10 +7,11 @@
 //
 
 import class UIKit.UIDevice
+import class Foundation.NSProcessInfo
 import struct Darwin.utsname
 import func Darwin.uname
 import func Darwin.round
-import func Darwin.getenv
+
 
 // MARK: - Device
 
@@ -240,15 +241,17 @@ public enum Device {
       case "iPad5,1", "iPad5,2":                      return iPadMini4
       case "iPad6,3", "iPad6,4":                      return iPadPro9Inch
       case "iPad6,7", "iPad6,8":                      return iPadPro12Inch
-      // swiftlint:disable:next force_unwrapping
-      case "i386", "x86_64":                          return Simulator(mapIdentifierToDevice(String(UTF8String: getenv("SIMULATOR_MODEL_IDENTIFIER"))!))
+      case "i386", "x86_64":                          return Simulator(mapIdentifierToDevice(
+                                                        NSProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "iOS"
+                                                      ))
       default:                                        return UnknownDevice(identifier)
       }
     #elseif os(tvOS)
       switch identifier {
       case "AppleTV5,3":                              return AppleTV4
-      // swiftlint:disable:next force_unwrapping
-      case "i386", "x86_64":                          return Simulator(mapIdentifierToDevice(String(UTF8String: getenv("SIMULATOR_MODEL_IDENTIFIER"))!))
+      case "i386", "x86_64":                          return Simulator(mapIdentifierToDevice(
+                                                        NSProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "tvOS"
+                                                      ))
       default:                                        return UnknownDevice(identifier)
       }
     #endif
