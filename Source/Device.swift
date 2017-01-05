@@ -7,10 +7,11 @@
 //
 
 import class UIKit.UIDevice
+import class Foundation.NSProcessInfo
 import struct Darwin.utsname
 import func Darwin.uname
 import func Darwin.round
-import func Darwin.getenv
+
 
 // MARK: - Device
 
