@@ -240,13 +240,17 @@ public enum Device {
       case "iPad5,1", "iPad5,2":                      return iPadMini4
       case "iPad6,3", "iPad6,4":                      return iPadPro9Inch
       case "iPad6,7", "iPad6,8":                      return iPadPro12Inch
-      case "i386", "x86_64":                          return Simulator(mapIdentifierToDevice(NSProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "iOS"))
+      case "i386", "x86_64":                          return Simulator(mapIdentifierToDevice(
+                                                        NSProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "iOS"
+                                                      ))
       default:                                        return UnknownDevice(identifier)
       }
     #elseif os(tvOS)
       switch identifier {
       case "AppleTV5,3":                              return AppleTV4
-      case "i386", "x86_64":                          return Simulator(mapIdentifierToDevice(NSProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "tvOS"))
+      case "i386", "x86_64":                          return Simulator(mapIdentifierToDevice(
+                                                        NSProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "tvOS"
+                                                      ))
       default:                                        return UnknownDevice(identifier)
       }
     #endif
