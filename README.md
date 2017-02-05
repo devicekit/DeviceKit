@@ -152,6 +152,6 @@ The following people (in alphabetical order) contributed to this project - it wo
 - [phiren](https://github.com/phiren)
 - [Prakash Rajendran](https://github.com/dearprakash)
 - [Trey Richards](https://github.com/treyrich)
+- [Tillman Swinke](https://github.com/tswinke)
 - [Kraig Wastlund](https://github.com/KraigWastlund)
 - [Kaden Wilkinson](https://github.com/kdawgwilk)
-- [Tillman Swinke](https://github.com/tswinke)
