@@ -26,6 +26,7 @@
 /* Begin PBXFileReference section */
 		951E3A0D1C61549400261610 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Device.swift; path = Source/Device.swift; sourceTree = "<group>"; };
 		951E3A0E1C61549400261610 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Source/Info.plist; sourceTree = "<group>"; };
+		954977FA1E748DC600D6FAEB /* push.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = push.sh; path = Scripts/push.sh; sourceTree = "<group>"; };
 		955EE59A1D5E581B008C3DA8 /* DeviceKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeviceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		955EE5A21D5E581B008C3DA8 /* DeviceKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeviceKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		955EE5B51D5E5E6C008C3DA8 /* DeviceKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceKit.h; sourceTree = "<group>"; };
@@ -58,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		954977F91E748DB000D6FAEB /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				954977FA1E748DC600D6FAEB /* push.sh */,
+			);
+			name = Scripts;
+			sourceTree = "<group>";
+		};
 		95C7E83B1C6122BF00B0189E /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +90,7 @@
 			children = (
 				95C7E83B1C6122BF00B0189E /* Source */,
 				95C7E8411C61241200B0189E /* Tests */,
+				954977F91E748DB000D6FAEB /* Scripts */,
 				957D18251C28C1E90067D203 /* README.md */,
 				95C7E84E1C61332300B0189E /* Package.swift */,
 				955EE5B51D5E5E6C008C3DA8 /* DeviceKit.h */,
