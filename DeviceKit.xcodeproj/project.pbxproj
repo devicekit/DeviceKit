@@ -26,6 +26,7 @@
 /* Begin PBXFileReference section */
 		951E3A0D1C61549400261610 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Device.swift; path = Source/Device.swift; sourceTree = "<group>"; };
 		951E3A0E1C61549400261610 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Source/Info.plist; sourceTree = "<group>"; };
+		954977FA1E748DC600D6FAEB /* push.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = push.sh; path = Scripts/push.sh; sourceTree = "<group>"; };
 		955EE59A1D5E581B008C3DA8 /* DeviceKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeviceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		955EE5A21D5E581B008C3DA8 /* DeviceKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeviceKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		955EE5B51D5E5E6C008C3DA8 /* DeviceKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceKit.h; sourceTree = "<group>"; };
@@ -58,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		954977F91E748DB000D6FAEB /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				954977FA1E748DC600D6FAEB /* push.sh */,
+			);
+			name = Scripts;
+			sourceTree = "<group>";
+		};
 		95C7E83B1C6122BF00B0189E /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +90,7 @@
 			children = (
 				95C7E83B1C6122BF00B0189E /* Source */,
 				95C7E8411C61241200B0189E /* Tests */,
+				954977F91E748DB000D6FAEB /* Scripts */,
 				957D18251C28C1E90067D203 /* README.md */,
 				95C7E84E1C61332300B0189E /* Package.swift */,
 				955EE5B51D5E5E6C008C3DA8 /* DeviceKit.h */,
@@ -90,7 +100,10 @@
 				95C7E83F1C61239D00B0189E /* .gitignore */,
 				95CBDB701BFD2B5F0065FC66 /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
+			usesTabs = 0;
 		};
 		95CBDB701BFD2B5F0065FC66 /* Products */ = {
 			isa = PBXGroup;
@@ -119,6 +132,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 955EE5AB1D5E581B008C3DA8 /* Build configuration list for PBXNativeTarget "DeviceKit" */;
 			buildPhases = (
+				958E8B081E2B7A70008C3B1B /* Code Formatting and Linting */,
 				955EE5951D5E581B008C3DA8 /* Sources */,
 				955EE5961D5E581B008C3DA8 /* Frameworks */,
 				955EE5971D5E581B008C3DA8 /* Headers */,
@@ -158,7 +172,8 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Dennis Weissmann";
 				TargetAttributes = {
 					955EE5991D5E581B008C3DA8 = {
 						CreatedOnToolsVersion = 8.0;
@@ -205,6 +220,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		958E8B081E2B7A70008C3B1B /* Code Formatting and Linting */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Code Formatting and Linting";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "command -v swiftformat >/dev/null 2>&1 || {\n    echo >&2 \"swiftformat not found. Trying to install it via Homebrew...\"\n    command -v brew >/dev/null 2>&1 || {\n        echo >&2 \"Installing swiftformat via homebrew failed. Homebrew not found. Aborting.\"; exit 1;\n    }\n    echo >&2 \"Homebrew found, trying to install swiftformat.\";\n    brew update && brew install swiftformat\n}\nswiftformat ${SRCROOT}/ --indent 2 --removelines disabled --disable trailingCommas\n\ncommand -v swiftlint >/dev/null 2>&1 || {\n    echo >&2 \"swiftlint not found. Trying to install it via Homebrew...\"\n    command -v brew >/dev/null 2>&1 || {\n        echo >&2 \"Installing swiftlint via homebrew failed. Homebrew not found. Aborting.\"; exit 1;\n    }\n    echo >&2 \"Homebrew found, trying to install swiftlint.\";\n    brew update && brew install swiftlint\n}\nswiftlint autocorrect\n\nswiftlint";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		955EE5951D5E581B008C3DA8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -237,18 +269,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_STATIC_ANALYZER_MODE = deep;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -273,13 +307,14 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = me.dennisweissmann.DeviceKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,3";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -290,18 +325,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_STATIC_ANALYZER_MODE = deep;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -321,12 +358,13 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = me.dennisweissmann.DeviceKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,3";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -418,7 +456,9 @@
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -444,7 +484,9 @@
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

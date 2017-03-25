@@ -1,11 +1,15 @@
 opt_in_rules:
  - empty_count
- - missing_docs
+ #- missing_docs
  - force_unwrapping
+ - overridden_super_call
+ - redundant_nil_coalescing
+ - redundant_optional_initialization
+ - redundant_void_return
+ - sorted_imports
+ - object_literal
 
 disabled_rules:
  - file_length
+ - line_length
 
-line_length:
- - 160
- - 160

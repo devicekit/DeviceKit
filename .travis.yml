@@ -21,3 +21,9 @@ env:
 
 script:
   - set -o pipefail && xcodebuild -scheme DeviceKit -destination "$DESTINATION" test | xcpretty
+
+deploy:
+  provider: script
+  script: ./Scripts/push.sh
+  on:
+    tags: true
