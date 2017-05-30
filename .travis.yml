@@ -22,6 +22,7 @@ env:
 
 install:
   - brew update && brew upgrade swiftlint
+  - bundle install
 
 script:
   - set -o pipefail && xcodebuild -scheme DeviceKit -destination "$DESTINATION" test | xcpretty
