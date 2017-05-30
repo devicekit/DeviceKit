@@ -25,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		6DAAE66C1EDDC53800074892 /* Dangerfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Dangerfile; sourceTree = "<group>"; };
+		6DAAE66D1EDDF06700074892 /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
 		951E3A0D1C61549400261610 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Device.swift; path = Source/Device.swift; sourceTree = "<group>"; };
 		951E3A0E1C61549400261610 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Source/Info.plist; sourceTree = "<group>"; };
 		954977FA1E748DC600D6FAEB /* push.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = push.sh; path = Scripts/push.sh; sourceTree = "<group>"; };
@@ -99,6 +100,7 @@
 				957D18271C28C1FC0067D203 /* .travis.yml */,
 				95C7E84D1C6130DB00B0189E /* .swiftlint.yml */,
 				6DAAE66C1EDDC53800074892 /* Dangerfile */,
+				6DAAE66D1EDDF06700074892 /* Gemfile */,
 				95C7E83F1C61239D00B0189E /* .gitignore */,
 				95CBDB701BFD2B5F0065FC66 /* Products */,
 			);
