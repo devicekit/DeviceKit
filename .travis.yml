@@ -1,5 +1,6 @@
 language: objective-c
 osx_image: xcode8
+rvm: 2.0.0
 
 env:
   - DESTINATION='platform=iOS Simulator,name=iPad Air'
@@ -19,8 +20,12 @@ env:
 
   - DESTINATION='platform=tvOS Simulator,name=Apple TV 1080p'
 
+install:
+  - ./Scripts/install_swiftlint.sh
+
 script:
   - set -o pipefail && xcodebuild -scheme DeviceKit -destination "$DESTINATION" test | xcpretty
+  - bundle exec danger
 
 deploy:
   provider: script
