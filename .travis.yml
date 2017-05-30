@@ -21,7 +21,7 @@ env:
   - DESTINATION='platform=tvOS Simulator,name=Apple TV 1080p'
 
 install:
-  - brew update && brew install swiftlint
+  - brew update && brew upgrade swiftlint
 
 script:
   - set -o pipefail && xcodebuild -scheme DeviceKit -destination "$DESTINATION" test | xcpretty
