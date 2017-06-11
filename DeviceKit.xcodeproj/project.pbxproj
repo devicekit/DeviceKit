@@ -24,6 +24,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6D8442931EED755900F2864D /* Gemfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile.lock; sourceTree = "<group>"; };
 		6DAAE66C1EDDC53800074892 /* Dangerfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Dangerfile; sourceTree = "<group>"; };
 		6DAAE66D1EDDF06700074892 /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
 		951E3A0D1C61549400261610 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Device.swift; path = Source/Device.swift; sourceTree = "<group>"; };
@@ -101,6 +102,7 @@
 				95C7E84D1C6130DB00B0189E /* .swiftlint.yml */,
 				6DAAE66C1EDDC53800074892 /* Dangerfile */,
 				6DAAE66D1EDDF06700074892 /* Gemfile */,
+				6D8442931EED755900F2864D /* Gemfile.lock */,
 				95C7E83F1C61239D00B0189E /* .gitignore */,
 				95CBDB701BFD2B5F0065FC66 /* Products */,
 			);
