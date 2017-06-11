@@ -24,6 +24,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6D8442931EED755900F2864D /* Gemfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile.lock; sourceTree = "<group>"; };
+		6DAAE66C1EDDC53800074892 /* Dangerfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Dangerfile; sourceTree = "<group>"; };
+		6DAAE66D1EDDF06700074892 /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
 		951E3A0D1C61549400261610 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Device.swift; path = Source/Device.swift; sourceTree = "<group>"; };
 		951E3A0E1C61549400261610 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Source/Info.plist; sourceTree = "<group>"; };
 		954977FA1E748DC600D6FAEB /* push.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = push.sh; path = Scripts/push.sh; sourceTree = "<group>"; };
@@ -97,6 +100,9 @@
 				957D18261C28C1F30067D203 /* DeviceKit.podspec */,
 				957D18271C28C1FC0067D203 /* .travis.yml */,
 				95C7E84D1C6130DB00B0189E /* .swiftlint.yml */,
+				6DAAE66C1EDDC53800074892 /* Dangerfile */,
+				6DAAE66D1EDDF06700074892 /* Gemfile */,
+				6D8442931EED755900F2864D /* Gemfile.lock */,
 				95C7E83F1C61239D00B0189E /* .gitignore */,
 				95CBDB701BFD2B5F0065FC66 /* Products */,
 			);
@@ -132,7 +138,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 955EE5AB1D5E581B008C3DA8 /* Build configuration list for PBXNativeTarget "DeviceKit" */;
 			buildPhases = (
-				958E8B081E2B7A70008C3B1B /* Code Formatting and Linting */,
 				955EE5951D5E581B008C3DA8 /* Sources */,
 				955EE5961D5E581B008C3DA8 /* Frameworks */,
 				955EE5971D5E581B008C3DA8 /* Headers */,
@@ -219,23 +224,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		958E8B081E2B7A70008C3B1B /* Code Formatting and Linting */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Code Formatting and Linting";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "command -v swiftformat >/dev/null 2>&1 || {\n    echo >&2 \"swiftformat not found. Trying to install it via Homebrew...\"\n    command -v brew >/dev/null 2>&1 || {\n        echo >&2 \"Installing swiftformat via homebrew failed. Homebrew not found. Aborting.\"; exit 1;\n    }\n    echo >&2 \"Homebrew found, trying to install swiftformat.\";\n    brew update && brew install swiftformat\n}\nswiftformat ${SRCROOT}/ --indent 2 --removelines disabled --disable trailingCommas\n\ncommand -v swiftlint >/dev/null 2>&1 || {\n    echo >&2 \"swiftlint not found. Trying to install it via Homebrew...\"\n    command -v brew >/dev/null 2>&1 || {\n        echo >&2 \"Installing swiftlint via homebrew failed. Homebrew not found. Aborting.\"; exit 1;\n    }\n    echo >&2 \"Homebrew found, trying to install swiftlint.\";\n    brew update && brew install swiftlint\n}\nswiftlint autocorrect\n\nswiftlint";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		955EE5951D5E581B008C3DA8 /* Sources */ = {

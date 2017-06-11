@@ -138,6 +138,11 @@ public enum Device {
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP708/SP708-space_gray.jpeg)
     case iPadAir2
 
+    /// Device is an [iPad 5](https://support.apple.com/kb/SP751)
+    ///
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP751/ipad_5th_generation.png)
+    case iPad5
+
     /// Device is an [iPad Mini](https://support.apple.com/kb/SP661)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP661/sp661_ipad_mini_color.jpg)
@@ -158,11 +163,25 @@ public enum Device {
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP725/SP725ipad-mini-4.png)
     case iPadMini4
 
-    /// Device is an [iPad Pro](http://www.apple.com/ipad-pro/)
+    /// Device is an [iPad Pro](https://support.apple.com/kb/SP739)
+    ///
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP739/SP739.png)
+    case iPadPro9Inch
+
+    /// Device is an [iPad Pro](https://support.apple.com/kb/sp723)
     ///
     /// ![Image](http://images.apple.com/v/ipad-pro/c/images/shared/buystrip/ipad_pro_large_2x.png)
-    case iPadPro9Inch
     case iPadPro12Inch
+
+    /// Device is an [iPad Pro](https://support.apple.com/kb/SP761)
+    ///
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP761/ipad-pro-12in-hero-201706.png)
+    case iPadPro12Inch2
+
+    /// Device is an [iPad Pro 10.5](https://support.apple.com/kb/SP762)
+    ///
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP761/ipad-pro-10in-hero-201706.png)
+    case iPadPro10Inch
 
   #elseif os(tvOS)
     /// Device is an [Apple TV](http://www.apple.com/tv/)
@@ -226,12 +245,15 @@ public enum Device {
       case "iPad3,4", "iPad3,5", "iPad3,6": return iPad4
       case "iPad4,1", "iPad4,2", "iPad4,3": return iPadAir
       case "iPad5,3", "iPad5,4": return iPadAir2
+      case "iPad6,11", "iPad6,12": return iPad5
       case "iPad2,5", "iPad2,6", "iPad2,7": return iPadMini
       case "iPad4,4", "iPad4,5", "iPad4,6": return iPadMini2
       case "iPad4,7", "iPad4,8", "iPad4,9": return iPadMini3
       case "iPad5,1", "iPad5,2": return iPadMini4
       case "iPad6,3", "iPad6,4": return iPadPro9Inch
       case "iPad6,7", "iPad6,8": return iPadPro12Inch
+      case "iPad7,1", "iPad7,2": return iPadPro12Inch2
+      case "iPad7,3", "iPad7,4": return iPadPro10Inch
       case "i386", "x86_64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "iOS"))
       default: return unknown(identifier)
       }
@@ -258,7 +280,7 @@ public enum Device {
 
     /// All iPads
     public static var allPads: [Device] {
-      return [.iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadPro9Inch, .iPadPro12Inch]
+      return [.iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPad5, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch]
     }
 
     /// All simulator iPods
@@ -306,41 +328,33 @@ public enum Device {
       }
     }
 
-    /// Returns diagonal screen length in inch as Float
-    public var diagonal: Float {
+    /// Returns diagonal screen length in inches
+    public var diagonal: Double {
       switch self {
-      case .iPodTouch5: return 4
-      case .iPodTouch6: return 4
-      case .iPhone4: return 3.5
-      case .iPhone4s: return 3.5
-      case .iPhone5: return 4
-      case .iPhone5c: return 4
-      case .iPhone5s: return 4
-      case .iPhone6: return 4.7
-      case .iPhone6Plus: return 5.5
-      case .iPhone6s: return 4.7
-      case .iPhone6sPlus: return 5.5
-      case .iPhone7: return 4.7
-      case .iPhone7Plus: return 5.5
-      case .iPhoneSE: return 4
-      case .iPad2: return 9.7
-      case .iPad3: return 9.7
-      case .iPad4: return 9.7
-      case .iPadAir: return 9.7
-      case .iPadAir2: return 9.7
-      case .iPadMini: return 7.9
-      case .iPadMini2: return 7.9
-      case .iPadMini3: return 7.9
-      case .iPadMini4: return 7.9
+      // 3.5-inch phones
+      case .iPhone4, .iPhone4s: return 3.5
+      // 4-inch phones
+      case .iPodTouch5, .iPodTouch6, .iPhone5, .iPhone5c, .iPhone5s, .iPhoneSE: return 4
+      // 4.7-inch phones
+      case .iPhone6, .iPhone6s, .iPhone7: return 4.7
+      // 5.5-inch phones
+      case .iPhone6Plus, .iPhone6sPlus, .iPhone7Plus: return 5.5
+      // iPads
+      case .iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPad5: return 9.7
+      // iPad Minis
+      case .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4: return 7.9
+      // iPad Pros
       case .iPadPro9Inch: return 9.7
-      case .iPadPro12Inch: return 12.9
+      case .iPadPro12Inch, .iPadPro12Inch2: return 12.9
+      case .iPadPro10Inch: return 10.5
+
       case .simulator(let model): return model.diagonal
       case .unknown: return -1
       }
     }
 
-    /// Returns screen ratio as a tuple (width: Float, height: Float)
-    public var screenRatio: (width: Float, height: Float) {
+    /// Returns screen ratio as a tuple
+    public var screenRatio: (width: Double, height: Double) {
       switch self {
       case .iPodTouch5: return (width: 9, height: 16)
       case .iPodTouch6: return (width: 9, height: 16)
@@ -361,12 +375,15 @@ public enum Device {
       case .iPad4: return (width: 3, height: 4)
       case .iPadAir: return (width: 3, height: 4)
       case .iPadAir2: return (width: 3, height: 4)
+      case .iPad5: return (width: 3, height: 4)
       case .iPadMini: return (width: 3, height: 4)
       case .iPadMini2: return (width: 3, height: 4)
       case .iPadMini3: return (width: 3, height: 4)
       case .iPadMini4: return (width: 3, height: 4)
       case .iPadPro9Inch: return (width: 3, height: 4)
       case .iPadPro12Inch: return (width: 3, height: 4)
+      case .iPadPro12Inch2: return (width: 3, height: 4)
+      case .iPadPro10Inch: return (width: 3, height: 4)
       case .simulator(let model): return model.screenRatio
       case .unknown: return (width: -1, height: -1)
       }
@@ -540,12 +557,15 @@ extension Device: CustomStringConvertible {
       case .iPad4: return "iPad 4"
       case .iPadAir: return "iPad Air"
       case .iPadAir2: return "iPad Air 2"
+      case .iPad5: return "iPad 5"
       case .iPadMini: return "iPad Mini"
       case .iPadMini2: return "iPad Mini 2"
       case .iPadMini3: return "iPad Mini 3"
       case .iPadMini4: return "iPad Mini 4"
       case .iPadPro9Inch: return "iPad Pro (9.7-inch)"
       case .iPadPro12Inch: return "iPad Pro (12.9-inch)"
+      case .iPadPro12Inch2: return "iPad Pro (12.9-inch) 2"
+      case .iPadPro10Inch: return "iPad Pro (10.5-inch)"
       case .simulator(let model): return "Simulator (\(model))"
       case .unknown(let identifier): return identifier
       }
