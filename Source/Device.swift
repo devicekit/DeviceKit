@@ -500,6 +500,35 @@ public enum Device {
   public var localizedModel: String {
     return UIDevice.current.localizedModel
   }
+
+  // MARK: - FileSystem
+
+  private var fileSystemAttributes: [FileAttributeKey : Any]? {
+    do {
+      return try FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory())
+    } catch {
+      return nil
+    }
+  }
+
+  /// The total disk size of the device in bytes, or `nil` if it could not be determined.
+  public var diskSize: Int? {
+    guard let fileSystemAttributes = self.fileSystemAttributes else { return nil }
+    return (fileSystemAttributes[FileAttributeKey.systemSize] as? NSNumber)?.intValue
+  }
+
+  /// The available disk space of the device in bytes, or `nil` if it could not be determined.
+  public var diskFreeSize: Int? {
+    guard let fileSystemAttributes = self.fileSystemAttributes else { return nil }
+    return (fileSystemAttributes[FileAttributeKey.systemFreeSize] as? NSNumber)?.intValue
+  }
+
+  /// The used disk space of the device in bytes, or `nil` if it could not be determined.
+  public var diskUsedSize: Int? {
+    guard let diskSize = self.diskSize, let diskFreeSize = self.diskFreeSize else { return nil }
+    return diskSize - diskFreeSize
+  }
+
 }
 
 // MARK: - CustomStringConvertible
