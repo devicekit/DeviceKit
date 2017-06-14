@@ -30,6 +30,7 @@ script:
   - bundle exec danger
 
 deploy:
+  deploy.skip_cleanup: true
   provider: script
   script: ./Scripts/push.sh
   on:
