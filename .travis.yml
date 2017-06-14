@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode9
+osx_image: xcode8.3
 rvm: 2.0.0
 
 env:
@@ -30,7 +30,6 @@ script:
   - bundle exec danger
 
 deploy:
-  deploy.skip_cleanup: true
   provider: script
   script: ./Scripts/push.sh
   on:
