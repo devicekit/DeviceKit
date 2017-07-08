@@ -1,14 +1,14 @@
 language: objective-c
-osx_image: xcode8
-rvm: 2.0.0
+osx_image: xcode9
 
 env:
+  - DESTINATION='platform=iOS Simulator,name=iPad (5th generation)'
   - DESTINATION='platform=iOS Simulator,name=iPad Air'
   - DESTINATION='platform=iOS Simulator,name=iPad Air 2'
-  - DESTINATION='platform=iOS Simulator,name=iPad Pro (9.7 inch)'
-  - DESTINATION='platform=iOS Simulator,name=iPad Pro (12.9 inch)'
-  - DESTINATION='platform=iOS Simulator,name=iPad Retina'
-  - DESTINATION='platform=iOS Simulator,name=iPhone 5'
+  - DESTINATION='platform=iOS Simulator,name=iPad Pro (9.7-inch)'
+  - DESTINATION='platform=iOS Simulator,name=iPad Pro (10.5-inch)'
+  - DESTINATION='platform=iOS Simulator,name=iPad Pro (12.9-inch)'
+  - DESTINATION='platform=iOS Simulator,name=iPad Pro (12.9-inch) (2nd generation)'
   - DESTINATION='platform=iOS Simulator,name=iPhone 5s'
   - DESTINATION='platform=iOS Simulator,name=iPhone 6'
   - DESTINATION='platform=iOS Simulator,name=iPhone 6 Plus'
@@ -21,20 +21,17 @@ env:
   - DESTINATION='platform=tvOS Simulator,name=Apple TV 1080p'
 
 install:
-  - brew update && brew upgrade swiftlint
   - bundle install
 
 script:
-  - set -o pipefail && xcodebuild -scheme DeviceKit -destination "$DESTINATION" test
+  - set -o pipefail && travis_retry xcodebuild -scheme DeviceKit -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES test
   - bundle exec danger
-  - xcodebuild -project DeviceKit.xcodeproj -scheme DeviceKit -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 7" -configuration Debug ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES test
 
 deploy:
-  deploy.skip_cleanup: true
   provider: script
   script: ./Scripts/push.sh
   on:
     tags: true
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+- bash <(curl -s https://codecov.io/bash)
