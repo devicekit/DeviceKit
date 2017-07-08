@@ -25,8 +25,9 @@ install:
   - bundle install
 
 script:
-  - set -o pipefail && xcodebuild -scheme DeviceKit -destination "$DESTINATION" test | xcpretty
+  - set -o pipefail && xcodebuild -scheme DeviceKit -destination "$DESTINATION" test
   - bundle exec danger
+  - xcodebuild -project DeviceKit.xcodeproj -scheme DeviceKit -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 7" -configuration Debug ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES test
 
 deploy:
   deploy.skip_cleanup: true
@@ -34,3 +35,6 @@ deploy:
   script: ./Scripts/push.sh
   on:
     tags: true
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

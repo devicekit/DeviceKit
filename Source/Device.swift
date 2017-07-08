@@ -240,7 +240,7 @@ public enum Device {
       case "iPhone9,1", "iPhone9,3": return iPhone7
       case "iPhone9,2", "iPhone9,4": return iPhone7Plus
       case "iPhone8,4": return iPhoneSE
-      case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4":return iPad2
+      case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4": return iPad2
       case "iPad3,1", "iPad3,2", "iPad3,3": return iPad3
       case "iPad3,4", "iPad3,5", "iPad3,6": return iPad4
       case "iPad4,1", "iPad4,2", "iPad4,3": return iPadAir
@@ -481,7 +481,7 @@ public enum Device {
     return UIDevice.current.name
   }
 
-  /// The name of the operating system running on the device represented by the receiver (e.g. "iPhone OS" or "tvOS").
+  /// The name of the operating system running on the device represented by the receiver (e.g. "iOS" or "tvOS").
   public var systemName: String {
     return UIDevice.current.systemName
   }
