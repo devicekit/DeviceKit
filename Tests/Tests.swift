@@ -214,11 +214,11 @@ class DeviceKitTests: XCTestCase {
   // MARK: - tvOS
   #if os(tvOS)
   func testIsSimulator() {
-    XCTAssert(Device().isOneOf(Device.allSimulatorTVs))
+    XCTAssertTrue(Device().isOneOf(Device.allSimulatorTVs))
   }
 
   func testDescriptionFromIdentifier() {
-    XCTAssert(Device.mapToDevice(identifier: "AppleTV5,3").description, "Apple TV 4")
+    XCTAssertEqual(Device.mapToDevice(identifier: "AppleTV5,3").description, "Apple TV 4")
   }
   #endif
 
