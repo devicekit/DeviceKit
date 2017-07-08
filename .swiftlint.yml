@@ -12,4 +12,8 @@ opt_in_rules:
 disabled_rules:
  - file_length
  - line_length
+ - function_body_length
 
+identifier_name:
+  excluded:
+    - tv

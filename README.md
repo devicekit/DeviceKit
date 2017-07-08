@@ -3,6 +3,7 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/dennisweissmann/DeviceKit/master/LICENSE)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/DeviceKit.svg)](https://cocoapods.org/pods/DeviceKit)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![codecov](https://codecov.io/gh/dennisweissmann/DeviceKit/branch/master/graph/badge.svg)](https://codecov.io/gh/dennisweissmann/DeviceKit)
 [![Platform](https://img.shields.io/cocoapods/p/DeviceKit.svg?style=flat)](http://cocoadocs.org/docsets/DeviceKit)
 
 
@@ -12,7 +13,7 @@
 | **Swift 3** |[![Build Status](https://travis-ci.org/dennisweissmann/DeviceKit.svg?branch=swift-3.0)](https://travis-ci.org/dennisweissmann/DeviceKit)| >= 1.0 |
 | **Swift 2.3** |[![Build Status](https://travis-ci.org/dennisweissmann/DeviceKit.svg?branch=swift-2.3-unsupported)](https://travis-ci.org/dennisweissmann/DeviceKit)| < 1.0 |
 
-`Device` is a value-type replacement of [`UIDevice`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/).
+`DeviceKit` is a value-type replacement of [`UIDevice`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/).
 
 ## Features
 
