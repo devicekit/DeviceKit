@@ -500,6 +500,42 @@ public enum Device {
   public var localizedModel: String {
     return UIDevice.current.localizedModel
   }
+  
+  /// PPI (Pixels per Inch) on the current device's screen (if applicable). When not applicable the value is nil
+  public var ppi: Int? {
+    switch self {
+    case .iPodTouch5: return 326
+    case .iPodTouch6: return 326
+    case .iPhone4: return 326
+    case .iPhone4s: return 326
+    case .iPhone5: return 326
+    case .iPhone5c: return 326
+    case .iPhone5s: return 326
+    case .iPhone6: return 326
+    case .iPhone6Plus: return 326
+    case .iPhone6s: return 326
+    case .iPhone6sPlus: return 326
+    case .iPhone7: return 326
+    case .iPhone7Plus: return 326
+    case .iPhoneSE: return 326
+    case .iPad2: return 132
+    case .iPad3: return 264
+    case .iPad4: return 264
+    case .iPadAir: return 264
+    case .iPadAir2: return 264
+    case .iPad5: return 264
+    case .iPadMini: return 163
+    case .iPadMini2: return 326
+    case .iPadMini3: return 326
+    case .iPadMini4: return 326
+    case .iPadPro9Inch: return 264
+    case .iPadPro12Inch: return 264
+    case .iPadPro12Inch2: return 264
+    case .iPadPro10Inch: return 264
+    default:
+      return nil
+    }
+  }
 }
 
 // MARK: - CustomStringConvertible
