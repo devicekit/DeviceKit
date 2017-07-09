@@ -305,12 +305,12 @@ public enum Device {
 
     /// Returns whether the device is an iPhone (real or simulator)
     public var isPhone: Bool {
-      return self.isOneOf(Device.allPhones) || self.isOneOf(Device.allSimulatorPhones)
+      return UIDevice.current.userInterfaceIdiom == .phone && !isPod
     }
 
     /// Returns whether the device is an iPad (real or simulator)
     public var isPad: Bool {
-      return self.isOneOf(Device.allPads) || self.isOneOf(Device.allSimulatorPads)
+      return UIDevice.current.userInterfaceIdiom == .pad
     }
 
     /// Returns whether the device is any of the simulator
