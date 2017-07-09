@@ -8,6 +8,8 @@
 ## Build generated
 build/
 DerivedData
+*.profraw
+*.profdata
 
 ## Various settings
 *.pbxuser
