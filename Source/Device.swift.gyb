@@ -1,10 +1,13 @@
+//===----------------------------------------------------------------------===//
 //
-//  Device.swift
-//  DeviceKit
+// This source file is part of the DeviceKit open source project
 //
-//  Created by Dennis Weissmann on 11/16/14.
-//  Copyright (c) 2014 Hot Action Studios. All rights reserved.
+// Copyright © 2014 - 2017 Dennis Weissmann and the DeviceKit project authors
 //
+// License: https://github.com/dennisweissmann/DeviceKit/blob/master/LICENSE
+// Contributors: https://github.com/dennisweissmann/DeviceKit#contributors
+//
+//===----------------------------------------------------------------------===//
 
 import UIKit
 
@@ -12,8 +15,6 @@ import UIKit
 
 /// This enum is a value-type wrapper around and extension of
 /// [`UIDevice`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/).
-///
-/// This port is not yet complete and will be extended as I need further functionality. Feel free to extend it and send a pull request. Thanks! :)
 ///
 /// Usage:
 ///

@@ -1,10 +1,13 @@
+//===----------------------------------------------------------------------===//
 //
-//  Tests.swift
-//  DeviceKit
+// This source file is part of the DeviceKit open source project
 //
-//  Created by Dennis Weissmann on 11/16/14.
-//  Copyright (c) 2015 Hot Action Studios. All rights reserved.
+// Copyright © 2014 - 2017 Dennis Weissmann and the DeviceKit project authors
 //
+// License: https://github.com/dennisweissmann/DeviceKit/blob/master/LICENSE
+// Contributors: https://github.com/dennisweissmann/DeviceKit#contributors
+//
+//===----------------------------------------------------------------------===//
 
 @testable import DeviceKit
 import XCTest

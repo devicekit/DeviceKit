@@ -1,9 +1,13 @@
+//===----------------------------------------------------------------------===//
 //
-//  Package.swift
-//  DeviceKit
+// This source file is part of the DeviceKit open source project
 //
-//  Created by Dennis Weissmann on 2/2/16.
+// Copyright © 2014 - 2017 Dennis Weissmann and the DeviceKit project authors
 //
+// License: https://github.com/dennisweissmann/DeviceKit/blob/master/LICENSE
+// Contributors: https://github.com/dennisweissmann/DeviceKit#contributors
+//
+//===----------------------------------------------------------------------===//
 
 import PackageDescription
 

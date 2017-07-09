@@ -27,3 +27,7 @@ xcuserdata
 *.moved-aside
 *.xcuserstate
 *.DS_Store
+Utils/gyb.pyc
+
+## Generated Files
+*.generated.swift
