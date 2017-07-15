@@ -9,6 +9,64 @@
 //
 //===----------------------------------------------------------------------===//
 
+%{
+class Device:
+
+  def __init__(self, caseName, comment, imageURL, identifiers, diagonal, screenRatio, description):
+    self.caseName = caseName
+    self.comment = comment
+    self.imageURL = imageURL
+    self.identifiers = identifiers
+    self.diagonal = diagonal
+    self.screenRatio = screenRatio
+    self.description = description
+
+# iOS
+iPods = [
+            Device("iPodTouch5",      "Device is an [iPod Touch (5th generation)](https://support.apple.com/kb/SP657)", "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP657/sp657_ipod-touch_size.jpg",                ["iPod5,1"],                                  4,    (9, 16),  "iPod Touch 5"),
+            Device("iPodTouch6",      "Device is an [iPod Touch (6th generation)](https://support.apple.com/kb/SP720)", "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP720/SP720-ipod-touch-specs-color-sg-2015.jpg", ["iPod7,1"],                                  4,    (9, 16),  "iPod Touch 6")
+        ]
+
+iPhones = [
+            Device("iPhone4",         "Device is an [iPhone 4](https://support.apple.com/kb/SP587)",                    "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP643/sp643_iphone4s_color_black.jpg",           ["iPhone3,1", "iPhone3,2", "iPhone3,3"],      3.5,  (2, 3),   "iPhone 4"),
+            Device("iPhone4s",        "Device is an [iPhone 4s](https://support.apple.com/kb/SP643)",                   "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/iphone/iphone5s/iphone_4s.png",  ["iPhone4,1"],                                3.5,  (2, 3),   "iPhone 4s"),
+            Device("iPhone5",         "Device is an [iPhone 5](https://support.apple.com/kb/SP655)",                    "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP655/sp655_iphone5_color.jpg",                  ["iPhone5,1", "iPhone5,2"],                   4,    (9, 16),  "iPhone 5"),
+            Device("iPhone5c",        "Device is an [iPhone 5c](https://support.apple.com/kb/SP684)",                   "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP684/SP684-color_yellow.jpg",                   ["iPhone5,3", "iPhone5,4"],                   4,    (9, 16),  "iPhone 5c"),
+            Device("iPhone5s",        "Device is an [iPhone 5s](https://support.apple.com/kb/SP685)",                   "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP685/SP685-color_black.jpg",                    ["iPhone6,1", "iPhone6,2"],                   4,    (9, 16),  "iPhone 5s"),
+            Device("iPhone6",         "Device is an [iPhone 6](https://support.apple.com/kb/SP705)",                    "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP705/SP705-iphone_6-mul.png",                   ["iPhone7,2"],                                4.7,  (9, 16),  "iPhone 6"),
+            Device("iPhone6Plus",     "Device is an [iPhone 6 Plus](https://support.apple.com/kb/SP706)",               "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP706/SP706-iphone_6_plus-mul.png",              ["iPhone7,1"],                                5.5,  (9, 16),  "iPhone 6 Plus"),
+            Device("iPhone6s",        "Device is an [iPhone 6s](https://support.apple.com/kb/SP726)",                   "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP726/SP726-iphone6s-gray-select-2015.png",      ["iPhone8,1"],                                4.7,  (9, 16),  "iPhone 6s"),
+            Device("iPhone6sPlus",    "Device is an [iPhone 6s Plus](https://support.apple.com/kb/SP727)",              "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP727/SP727-iphone6s-plus-gray-select-2015.png", ["iPhone8,2"],                                5.5,  (9, 16),  "iPhone 6s Plus"),
+            Device("iPhone7",         "Device is an [iPhone 7](https://support.apple.com/kb/SP743)",                    "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP743/iphone7-black.png",                        ["iPhone9,1", "iPhone9,3"],                   4.7,  (9, 16),  "iPhone 7"),
+            Device("iPhone7Plus",     "Device is an [iPhone 7 Plus](https://support.apple.com/kb/SP744)",               "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP744/iphone7-plus-black.png",                   ["iPhone9,2", "iPhone9,4"],                   5.5,  (9, 16),  "iPhone 7 Plus"),
+            Device("iPhoneSE",        "Device is an [iPhone SE](https://support.apple.com/kb/SP738)",                   "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP738/SP738.png",                                ["iPhone8,4"],                                4,    (9, 16),  "iPhone SE")
+          ]
+
+iPads = [
+            Device("iPad2",           "Device is an [iPad 2](https://support.apple.com/kb/SP622)",                      "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP622/SP622_01-ipad2-mul.png",                   ["iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4"], 9.7,  (3, 4),   "iPad 2"),
+            Device("iPad3",           "Device is an [iPad (3rd generation)](https://support.apple.com/kb/SP647)",       "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP662/sp662_ipad-4th-gen_color.jpg",             ["iPad3,1", "iPad3,2", "iPad3,3"],            9.7,  (3, 4),   "iPad 3"),
+            Device("iPad4",           "Device is an [iPad (4th generation)](https://support.apple.com/kb/SP662)",       "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP662/sp662_ipad-4th-gen_color.jpg",             ["iPad3,4", "iPad3,5", "iPad3,6"],            9.7,  (3, 4),   "iPad 4"),
+            Device("iPadAir",         "Device is an [iPad Air](https://support.apple.com/kb/SP692)",                    "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP692/SP692-specs_color-mul.png",                ["iPad4,1", "iPad4,2", "iPad4,3"],            9.7,  (3, 4),   "iPad Air"),
+            Device("iPadAir2",        "Device is an [iPad Air 2](https://support.apple.com/kb/SP708)",                  "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP708/SP708-space_gray.jpeg",                    ["iPad5,3", "iPad5,4"],                       9.7,  (3, 4),   "iPad Air 2"),
+            Device("iPad5",           "Device is an [iPad 5](https://support.apple.com/kb/SP751)",                      "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP751/ipad_5th_generation.png",                  ["iPad6,11", "iPad6,12"],                     9.7,  (3, 4),   "iPad 5"),
+            Device("iPadMini",        "Device is an [iPad Mini](https://support.apple.com/kb/SP661)",                   "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP661/sp661_ipad_mini_color.jpg",                ["iPad2,5", "iPad2,6", "iPad2,7"],            7.9,  (3, 4),   "iPad Mini"),
+            Device("iPadMini2",       "Device is an [iPad Mini 2](https://support.apple.com/kb/SP693)",                 "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP693/SP693-specs_color-mul.png",                ["iPad4,4", "iPad4,5", "iPad4,6"],            7.9,  (3, 4),   "iPad Mini 2"),
+            Device("iPadMini3",       "Device is an [iPad Mini 3](https://support.apple.com/kb/SP709)",                 "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP709/SP709-space_gray.jpeg",                    ["iPad4,7", "iPad4,8", "iPad4,9"],            7.9,  (3, 4),   "iPad Mini 3"),
+            Device("iPadMini4",       "Device is an [iPad Mini 4](https://support.apple.com/kb/SP725)",                 "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP725/SP725ipad-mini-4.png",                     ["iPad5,1", "iPad5,2"],                       7.9,  (3, 4),   "iPad Mini 4"),
+            Device("iPadPro9Inch",    "Device is an [iPad Pro](https://support.apple.com/kb/SP739)",                    "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP739/SP739.png",                                ["iPad6,3", "iPad6,4"],                       9.7,  (3, 4),   "iPad Pro (9.7-inch)"),
+            Device("iPadPro12Inch",   "Device is an [iPad Pro](https://support.apple.com/kb/sp723)",                    "http://images.apple.com/v/ipad-pro/c/images/shared/buystrip/ipad_pro_large_2x.png",                        ["iPad6,7", "iPad6,8"],                       12.9, (3, 4),   "iPad Pro (12.9-inch)"),
+            Device("iPadPro12Inch2",  "Device is an [iPad Pro](https://support.apple.com/kb/SP761)",                    "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP761/ipad-pro-12in-hero-201706.png",            ["iPad7,1", "iPad7,2"],                       12.9, (3, 4),   "iPad Pro (12.9-inch) 2"),
+            Device("iPadPro10Inch",   "Device is an [iPad Pro 10.5](https://support.apple.com/kb/SP762)",               "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP761/ipad-pro-10in-hero-201706.png",            ["iPad7,3", "iPad7,4"],                       10.5, (3, 4),   "iPad Pro (10.5-inch)")
+        ]
+
+# tvOS
+tvs = [
+            Device("appleTV4",        "Device is an [Apple TV](http://www.apple.com/tv/)",                              "http://images.apple.com/v/tv/c/images/overview/buy_tv_large_2x.jpg",                                       ["AppleTV5,3"],                               0,    (),       "Apple TV 4")
+      ]
+
+iOSDevices = iPods + iPhones + iPads
+tvOSDevices = tvs
+}%
 import UIKit
 
 // MARK: - Device
@@ -44,151 +102,19 @@ import UIKit
 ///
 public enum Device {
   #if os(iOS)
-    /// Device is an [iPod Touch (5th generation)](https://support.apple.com/kb/SP657)
+% for device in iOSDevices:
+    /// ${device.comment}
     ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP657/sp657_ipod-touch_size.jpg)
-    case iPodTouch5
-
-    /// Device is an [iPod Touch (6th generation)](https://support.apple.com/kb/SP720)
-    ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP720/SP720-ipod-touch-specs-color-sg-2015.jpg)
-    case iPodTouch6
-
-    /// Device is an [iPhone 4](https://support.apple.com/kb/SP587)
-    ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP643/sp643_iphone4s_color_black.jpg)
-    case iPhone4
-
-    /// Device is an [iPhone 4s](https://support.apple.com/kb/SP643)
-    ///
-    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/iphone/iphone5s/iphone_4s.png)
-    case iPhone4s
-
-    /// Device is an [iPhone 5](https://support.apple.com/kb/SP655)
-    ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP655/sp655_iphone5_color.jpg)
-    case iPhone5
-
-    /// Device is an [iPhone 5c](https://support.apple.com/kb/SP684)
-    ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP684/SP684-color_yellow.jpg)
-    case iPhone5c
-
-    /// Device is an [iPhone 5s](https://support.apple.com/kb/SP685)
-    ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP685/SP685-color_black.jpg)
-    case iPhone5s
-
-    /// Device is an [iPhone 6](https://support.apple.com/kb/SP705)
-    ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP705/SP705-iphone_6-mul.png)
-    case iPhone6
-
-    /// Device is an [iPhone 6 Plus](https://support.apple.com/kb/SP706)
-    ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP706/SP706-iphone_6_plus-mul.png)
-    case iPhone6Plus
-
-    /// Device is an [iPhone 6s](https://support.apple.com/kb/SP726)
-    ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP726/SP726-iphone6s-gray-select-2015.png)
-    case iPhone6s
-
-    /// Device is an [iPhone 6s Plus](https://support.apple.com/kb/SP727)
-    ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP727/SP727-iphone6s-plus-gray-select-2015.png)
-    case iPhone6sPlus
-
-    /// Device is an [iPhone 7](https://support.apple.com/kb/SP743)
-    ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP743/iphone7-black.png)
-    case iPhone7
-
-    /// Device is an [iPhone 7 Plus](https://support.apple.com/kb/SP744)
-    ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP744/iphone7-plus-black.png)
-    case iPhone7Plus
-
-    /// Device is an [iPhone SE](https://support.apple.com/kb/SP738)
-    ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP738/SP738.png)
-    case iPhoneSE
-
-    /// Device is an [iPad 2](https://support.apple.com/kb/SP622)
-    ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP622/SP622_01-ipad2-mul.png)
-    case iPad2
-
-    /// Device is an [iPad (3rd generation)](https://support.apple.com/kb/SP647)
-    ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP662/sp662_ipad-4th-gen_color.jpg)
-    case iPad3
-
-    /// Device is an [iPad (4th generation)](https://support.apple.com/kb/SP662)
-    ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP662/sp662_ipad-4th-gen_color.jpg)
-    case iPad4
-
-    /// Device is an [iPad Air](https://support.apple.com/kb/SP692)
-    ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP692/SP692-specs_color-mul.png)
-    case iPadAir
-
-    /// Device is an [iPad Air 2](https://support.apple.com/kb/SP708)
-    ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP708/SP708-space_gray.jpeg)
-    case iPadAir2
-
-    /// Device is an [iPad 5](https://support.apple.com/kb/SP751)
-    ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP751/ipad_5th_generation.png)
-    case iPad5
-
-    /// Device is an [iPad Mini](https://support.apple.com/kb/SP661)
-    ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP661/sp661_ipad_mini_color.jpg)
-    case iPadMini
-
-    /// Device is an [iPad Mini 2](https://support.apple.com/kb/SP693)
-    ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP693/SP693-specs_color-mul.png)
-    case iPadMini2
-
-    /// Device is an [iPad Mini 3](https://support.apple.com/kb/SP709)
-    ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP709/SP709-space_gray.jpeg)
-    case iPadMini3
-
-    /// Device is an [iPad Mini 4](https://support.apple.com/kb/SP725)
-    ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP725/SP725ipad-mini-4.png)
-    case iPadMini4
-
-    /// Device is an [iPad Pro](https://support.apple.com/kb/SP739)
-    ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP739/SP739.png)
-    case iPadPro9Inch
-
-    /// Device is an [iPad Pro](https://support.apple.com/kb/sp723)
-    ///
-    /// ![Image](http://images.apple.com/v/ipad-pro/c/images/shared/buystrip/ipad_pro_large_2x.png)
-    case iPadPro12Inch
-
-    /// Device is an [iPad Pro](https://support.apple.com/kb/SP761)
-    ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP761/ipad-pro-12in-hero-201706.png)
-    case iPadPro12Inch2
-
-    /// Device is an [iPad Pro 10.5](https://support.apple.com/kb/SP762)
-    ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP761/ipad-pro-10in-hero-201706.png)
-    case iPadPro10Inch
-
+    /// ![Image](${device.imageURL})
+    case ${device.caseName}
+% end
   #elseif os(tvOS)
-    /// Device is an [Apple TV](http://www.apple.com/tv/)
+% for device in tvOSDevices:
+    /// ${device.comment}
     ///
-    /// ![Image](http://images.apple.com/v/tv/c/images/overview/buy_tv_large_2x.jpg)
-    case appleTV4
+    /// ![Image](${device.imageURL})
+    case ${device.caseName}
+% end
   #endif
 
   /// Device is [Simulator](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/Introduction/Introduction.html)
@@ -227,40 +153,17 @@ public enum Device {
   public static func mapToDevice(identifier: String) -> Device { // swiftlint:disable:this cyclomatic_complexity
     #if os(iOS)
       switch identifier {
-      case "iPod5,1": return iPodTouch5
-      case "iPod7,1": return iPodTouch6
-      case "iPhone3,1", "iPhone3,2", "iPhone3,3": return iPhone4
-      case "iPhone4,1": return iPhone4s
-      case "iPhone5,1", "iPhone5,2": return iPhone5
-      case "iPhone5,3", "iPhone5,4": return iPhone5c
-      case "iPhone6,1", "iPhone6,2": return iPhone5s
-      case "iPhone7,2": return iPhone6
-      case "iPhone7,1": return iPhone6Plus
-      case "iPhone8,1": return iPhone6s
-      case "iPhone8,2": return iPhone6sPlus
-      case "iPhone9,1", "iPhone9,3": return iPhone7
-      case "iPhone9,2", "iPhone9,4": return iPhone7Plus
-      case "iPhone8,4": return iPhoneSE
-      case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4": return iPad2
-      case "iPad3,1", "iPad3,2", "iPad3,3": return iPad3
-      case "iPad3,4", "iPad3,5", "iPad3,6": return iPad4
-      case "iPad4,1", "iPad4,2", "iPad4,3": return iPadAir
-      case "iPad5,3", "iPad5,4": return iPadAir2
-      case "iPad6,11", "iPad6,12": return iPad5
-      case "iPad2,5", "iPad2,6", "iPad2,7": return iPadMini
-      case "iPad4,4", "iPad4,5", "iPad4,6": return iPadMini2
-      case "iPad4,7", "iPad4,8", "iPad4,9": return iPadMini3
-      case "iPad5,1", "iPad5,2": return iPadMini4
-      case "iPad6,3", "iPad6,4": return iPadPro9Inch
-      case "iPad6,7", "iPad6,8": return iPadPro12Inch
-      case "iPad7,1", "iPad7,2": return iPadPro12Inch2
-      case "iPad7,3", "iPad7,4": return iPadPro10Inch
+% for device in iOSDevices:
+      case ${', '.join(list(map(lambda device: "\"" + device + "\"", device.identifiers)))}: return ${device.caseName}
+% end
       case "i386", "x86_64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "iOS"))
       default: return unknown(identifier)
       }
     #elseif os(tvOS)
       switch identifier {
-      case "AppleTV5,3": return appleTV4
+% for device in tvOSDevices:
+      case ${', '.join(list(map(lambda device: "\"" + device + "\"", device.identifiers)))}: return ${device.caseName}
+% end
       case "i386", "x86_64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "tvOS"))
       default: return unknown(identifier)
       }
@@ -268,20 +171,19 @@ public enum Device {
   }
 
   #if os(iOS)
-
     /// All iPods
     public static var allPods: [Device] {
-      return [.iPodTouch5, .iPodTouch6]
+      return [${', '.join(list(map(lambda device: "." + device.caseName, iPods)))}]
     }
 
     /// All iPhones
     public static var allPhones: [Device] {
-      return [.iPhone4, iPhone4s, .iPhone5, .iPhone5s, .iPhone5c, .iPhone6, .iPhone6Plus, .iPhoneSE, .iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus]
+       return [${', '.join(list(map(lambda device: "." + device.caseName, iPhones)))}]
     }
 
     /// All iPads
     public static var allPads: [Device] {
-      return [.iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPad5, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch]
+       return [${', '.join(list(map(lambda device: "." + device.caseName, iPads)))}]
     }
 
     /// All simulator iPods
@@ -301,23 +203,23 @@ public enum Device {
 
     /// Returns whether the device is an iPod (real or simulator)
     public var isPod: Bool {
-      return self.isOneOf(Device.allPods) || self.isOneOf(Device.allSimulatorPods)
+      return isOneOf(Device.allPods) || isOneOf(Device.allSimulatorPods)
     }
 
     /// Returns whether the device is an iPhone (real or simulator)
     public var isPhone: Bool {
-      return self.isOneOf(Device.allPhones) || self.isOneOf(Device.allSimulatorPhones)
+      return isOneOf(Device.allPhones) || isOneOf(Device.allSimulatorPhones)
     }
 
     /// Returns whether the device is an iPad (real or simulator)
     public var isPad: Bool {
-      return self.isOneOf(Device.allPads) || self.isOneOf(Device.allSimulatorPads)
+      return isOneOf(Device.allPads) || isOneOf(Device.allSimulatorPads)
     }
 
     /// Returns whether the device is any of the simulator
     /// Useful when there is a need to check and skip running a portion of code (location request or others)
     public var isSimulator: Bool {
-      return self.isOneOf(Device.allSimulators)
+      return isOneOf(Device.allSimulators)
     }
 
     public var isZoomed: Bool {
@@ -331,24 +233,10 @@ public enum Device {
 
     /// Returns diagonal screen length in inches
     public var diagonal: Double {
-      switch self {
-      // 3.5-inch phones
-      case .iPhone4, .iPhone4s: return 3.5
-      // 4-inch phones
-      case .iPodTouch5, .iPodTouch6, .iPhone5, .iPhone5c, .iPhone5s, .iPhoneSE: return 4
-      // 4.7-inch phones
-      case .iPhone6, .iPhone6s, .iPhone7: return 4.7
-      // 5.5-inch phones
-      case .iPhone6Plus, .iPhone6sPlus, .iPhone7Plus: return 5.5
-      // iPads
-      case .iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPad5: return 9.7
-      // iPad Minis
-      case .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4: return 7.9
-      // iPad Pros
-      case .iPadPro9Inch: return 9.7
-      case .iPadPro12Inch, .iPadPro12Inch2: return 12.9
-      case .iPadPro10Inch: return 10.5
-
+       switch self {
+% for device in iOSDevices:
+      case .${device.caseName}: return ${device.diagonal}
+% end
       case .simulator(let model): return model.diagonal
       case .unknown: return -1
       }
@@ -357,43 +245,17 @@ public enum Device {
     /// Returns screen ratio as a tuple
     public var screenRatio: (width: Double, height: Double) {
       switch self {
-      case .iPodTouch5: return (width: 9, height: 16)
-      case .iPodTouch6: return (width: 9, height: 16)
-      case .iPhone4: return (width: 2, height: 3)
-      case .iPhone4s: return (width: 2, height: 3)
-      case .iPhone5: return (width: 9, height: 16)
-      case .iPhone5c: return (width: 9, height: 16)
-      case .iPhone5s: return (width: 9, height: 16)
-      case .iPhone6: return (width: 9, height: 16)
-      case .iPhone6Plus: return (width: 9, height: 16)
-      case .iPhone6s: return (width: 9, height: 16)
-      case .iPhone6sPlus: return (width: 9, height: 16)
-      case .iPhone7: return (width: 9, height: 16)
-      case .iPhone7Plus: return (width: 9, height: 16)
-      case .iPhoneSE: return (width: 9, height: 16)
-      case .iPad2: return (width: 3, height: 4)
-      case .iPad3: return (width: 3, height: 4)
-      case .iPad4: return (width: 3, height: 4)
-      case .iPadAir: return (width: 3, height: 4)
-      case .iPadAir2: return (width: 3, height: 4)
-      case .iPad5: return (width: 3, height: 4)
-      case .iPadMini: return (width: 3, height: 4)
-      case .iPadMini2: return (width: 3, height: 4)
-      case .iPadMini3: return (width: 3, height: 4)
-      case .iPadMini4: return (width: 3, height: 4)
-      case .iPadPro9Inch: return (width: 3, height: 4)
-      case .iPadPro12Inch: return (width: 3, height: 4)
-      case .iPadPro12Inch2: return (width: 3, height: 4)
-      case .iPadPro10Inch: return (width: 3, height: 4)
+% for device in iOSDevices:
+      case .${device.caseName}: return (width: ${device.screenRatio[0]}, height: ${device.screenRatio[1]})
+% end
       case .simulator(let model): return model.screenRatio
       case .unknown: return (width: -1, height: -1)
       }
     }
-
   #elseif os(tvOS)
     /// All TVs
     public static var allTVs: [Device] {
-      return [.appleTV4]
+       return [${', '.join(list(map(lambda device: "." + device.caseName, tvOSDevices)))}]
     }
 
     /// All simulator TVs
@@ -510,40 +372,17 @@ extension Device: CustomStringConvertible {
   public var description: String {
     #if os(iOS)
       switch self {
-      case .iPodTouch5: return "iPod Touch 5"
-      case .iPodTouch6: return "iPod Touch 6"
-      case .iPhone4: return "iPhone 4"
-      case .iPhone4s: return "iPhone 4s"
-      case .iPhone5: return "iPhone 5"
-      case .iPhone5c: return "iPhone 5c"
-      case .iPhone5s: return "iPhone 5s"
-      case .iPhone6: return "iPhone 6"
-      case .iPhone6Plus: return "iPhone 6 Plus"
-      case .iPhone6s: return "iPhone 6s"
-      case .iPhone6sPlus: return "iPhone 6s Plus"
-      case .iPhone7: return "iPhone 7"
-      case .iPhone7Plus: return "iPhone 7 Plus"
-      case .iPhoneSE: return "iPhone SE"
-      case .iPad2: return "iPad 2"
-      case .iPad3: return "iPad 3"
-      case .iPad4: return "iPad 4"
-      case .iPadAir: return "iPad Air"
-      case .iPadAir2: return "iPad Air 2"
-      case .iPad5: return "iPad 5"
-      case .iPadMini: return "iPad Mini"
-      case .iPadMini2: return "iPad Mini 2"
-      case .iPadMini3: return "iPad Mini 3"
-      case .iPadMini4: return "iPad Mini 4"
-      case .iPadPro9Inch: return "iPad Pro (9.7-inch)"
-      case .iPadPro12Inch: return "iPad Pro (12.9-inch)"
-      case .iPadPro12Inch2: return "iPad Pro (12.9-inch) 2"
-      case .iPadPro10Inch: return "iPad Pro (10.5-inch)"
+% for device in iOSDevices:
+      case .${device.caseName}: return "${device.description}"
+% end
       case .simulator(let model): return "Simulator (\(model))"
       case .unknown(let identifier): return identifier
       }
     #elseif os(tvOS)
       switch self {
-      case .appleTV4: return "Apple TV 4"
+% for device in tvOSDevices:
+      case .${device.caseName}: return "${device.description}"
+% end
       case .simulator(let model): return "Simulator (\(model))"
       case .unknown(let identifier): return identifier
       }

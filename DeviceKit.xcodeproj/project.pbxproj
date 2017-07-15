@@ -6,6 +6,20 @@
 	objectVersion = 48;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		6D7666191F1A083200F59630 /* Run SwiftLint */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 6D76661A1F1A083300F59630 /* Build configuration list for PBXAggregateTarget "Run SwiftLint" */;
+			buildPhases = (
+				6D76661D1F1A083A00F59630 /* Run SwiftLint */,
+			);
+			dependencies = (
+			);
+			name = "Run SwiftLint";
+			productName = "Run SwiftLint";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		6D29C0C01F122C7A005B52BD /* Device.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D29C0BF1F122C77005B52BD /* Device.generated.swift */; };
 		955EE5A31D5E581B008C3DA8 /* DeviceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 955EE59A1D5E581B008C3DA8 /* DeviceKit.framework */; };
@@ -24,9 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6D29C0BC1F122863005B52BD /* Device.swift.gyb */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; lineEnding = 0; name = Device.swift.gyb; path = Source/Device.swift.gyb; sourceTree = "<group>"; };
+		6D29C0BC1F122863005B52BD /* Device.swift.gyb */ = {isa = PBXFileReference; explicitFileType = text.script.python; fileEncoding = 4; lineEnding = 0; name = Device.swift.gyb; path = Source/Device.swift.gyb; sourceTree = "<group>"; };
 		6D29C0BF1F122C77005B52BD /* Device.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Device.generated.swift; path = Source/Device.generated.swift; sourceTree = "<group>"; };
 		6D8442931EED755900F2864D /* Gemfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile.lock; sourceTree = "<group>"; };
+		6D9B30FC1F1A2DC50008F7E0 /* gyb.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = gyb.py; sourceTree = "<group>"; };
+		6D9B30FD1F1A2DC50008F7E0 /* gyb */ = {isa = PBXFileReference; lastKnownFileType = text; path = gyb; sourceTree = "<group>"; };
 		6DAAE66C1EDDC53800074892 /* Dangerfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Dangerfile; sourceTree = "<group>"; };
 		6DAAE66D1EDDF06700074892 /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
 		951E3A0E1C61549400261610 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Source/Info.plist; sourceTree = "<group>"; };
@@ -63,6 +79,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D9B30FB1F1A2DC50008F7E0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6D9B30FC1F1A2DC50008F7E0 /* gyb.py */,
+				6D9B30FD1F1A2DC50008F7E0 /* gyb */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		954977F91E748DB000D6FAEB /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +131,7 @@
 				6DAAE66D1EDDF06700074892 /* Gemfile */,
 				6D8442931EED755900F2864D /* Gemfile.lock */,
 				95C7E83F1C61239D00B0189E /* .gitignore */,
+				6D9B30FB1F1A2DC50008F7E0 /* Utils */,
 				95CBDB701BFD2B5F0065FC66 /* Products */,
 			);
 			indentWidth = 2;
@@ -183,6 +209,9 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Dennis Weissmann";
 				TargetAttributes = {
+					6D7666191F1A083200F59630 = {
+						CreatedOnToolsVersion = 9.0;
+					};
 					955EE5991D5E581B008C3DA8 = {
 						CreatedOnToolsVersion = 8.0;
 						LastSwiftMigration = 0900;
@@ -209,6 +238,7 @@
 			targets = (
 				955EE5991D5E581B008C3DA8 /* DeviceKit */,
 				955EE5A11D5E581B008C3DA8 /* DeviceKitTests */,
+				6D7666191F1A083200F59630 /* Run SwiftLint */,
 			);
 		};
 /* End PBXProject section */
@@ -247,6 +277,20 @@
 			shellPath = /bin/sh;
 			shellScript = "./Utils/gyb --line-directive '' -o ./Source/Device.generated.swift ./Source/Device.swift.gyb";
 		};
+		6D76661D1F1A083A00F59630 /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -277,6 +321,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		6D76661B1F1A083300F59630 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6D76661C1F1A083300F59630 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		955EE5AC1D5E581B008C3DA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -326,7 +384,6 @@
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -377,7 +434,6 @@
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VALIDATE_PRODUCT = YES;
@@ -425,7 +481,6 @@
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -462,7 +517,6 @@
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -497,7 +551,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/Frameworks @executable_path/Frameworks @loader_path/../Frameworks @executable_path/../Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos appletvos appletvsimulator";
-				SWIFT_VERSION = 3.0;
+				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = "compile-time";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -529,13 +584,24 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/Frameworks @executable_path/Frameworks @loader_path/../Frameworks @executable_path/../Frameworks";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos appletvos appletvsimulator";
-				SWIFT_VERSION = 3.0;
+				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = "compile-time";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6D76661A1F1A083300F59630 /* Build configuration list for PBXAggregateTarget "Run SwiftLint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D76661B1F1A083300F59630 /* Debug */,
+				6D76661C1F1A083300F59630 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		955EE5AB1D5E581B008C3DA8 /* Build configuration list for PBXNativeTarget "DeviceKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
