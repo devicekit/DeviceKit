@@ -237,9 +237,11 @@
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/Source/Device.swift.gyb",
 			);
 			name = "Generate Device";
 			outputPaths = (
+				"$(SRCROOT)/Source/Device.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
