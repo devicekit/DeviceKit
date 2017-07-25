@@ -165,3 +165,4 @@ The following people (in alphabetical order) contributed to this project - it wo
 - [Tillman Swinke](https://github.com/tswinke)
 - [Kraig Wastlund](https://github.com/KraigWastlund)
 - [Kaden Wilkinson](https://github.com/kdawgwilk)
+- [Juan Carlos Ospina Gonzalez](https://github.com/piterwilson)
