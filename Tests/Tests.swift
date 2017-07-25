@@ -211,18 +211,15 @@ class DeviceKitTests: XCTestCase {
   func testIsPad() {
     Device.allPads.forEach { XCTAssertTrue($0.isPad) }
   }
-  
-  /// * Test that all the ppi values for applicable devices match the public information available at wikipedia.
-  /// * Test non-applicable devices return nil.
+
+   /// Test that all the ppi values for applicable devices match the public information available at wikipedia. Test non-applicable devices return nil.
   func testPPI() {
     // Devices
-  
     // IPods
     // source: https://en.wikipedia.org/wiki/IPod_Touch_(5th_generation)
     XCTAssertEqual(Device.iPodTouch5.ppi, 326)
     // source: https://en.wikipedia.org/wiki/IPod_Touch_(6th_generation)
     XCTAssertEqual(Device.iPodTouch5.ppi, 326)
-  
     // Iphones
     // source: https://en.wikipedia.org/wiki/IPhone_4
     XCTAssertEqual(Device.iPhone4.ppi, 326)
@@ -248,7 +245,6 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.iPhone7Plus.ppi, 401)
     // source: https://en.wikipedia.org/wiki/IPhone_SE
     XCTAssertEqual(Device.iPhoneSE.ppi, 326)
-  
     // Ipads
     // source: https://en.wikipedia.org/wiki/IPad_2
     XCTAssertEqual(Device.iPad2.ppi, 132)
@@ -278,9 +274,7 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.iPadPro12Inch2.ppi, 264)
     // source: https://en.wikipedia.org/wiki/IPad_Pro
     XCTAssertEqual(Device.iPadPro10Inch.ppi, 264)
-  
     // Non-applicable devices:
-  
     // Simulators
     XCTAssertEqual(Device.simulator(Device.iPhone4).ppi, nil)
     XCTAssertEqual(Device.simulator(Device.iPhone4s).ppi, nil)
@@ -321,15 +315,12 @@ class DeviceKitTests: XCTestCase {
   func testDescriptionFromIdentifier() {
     XCTAssertEqual(Device.mapToDevice(identifier: "AppleTV5,3").description, "Apple TV 4")
   }
-  
-  /// * Test that all the ppi values for applicable devices match the public information available at wikipedia.
-  /// * Test non-applicable devices return nil.
+
+  /// Test that all the ppi values for applicable devices match the public information available at wikipedia. Test non-applicable devices return nil.
   func testPPI() {
     // Non-applicable devices:
-    
     // Apple TV
     XCTAssertEqual(Device.appleTV4.ppi, nil)
-    
     // Simulators
     XCTAssertEqual(Device.simulator(Device.appleTV4).ppi, nil)
   }
