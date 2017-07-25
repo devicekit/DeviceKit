@@ -12,7 +12,7 @@
 %{
 class Device:
 
-  def __init__(self, caseName, comment, imageURL, identifiers, diagonal, screenRatio, description):
+  def __init__(self, caseName, comment, imageURL, identifiers, diagonal, screenRatio, description, ppi):
     self.caseName = caseName
     self.comment = comment
     self.imageURL = imageURL
@@ -20,48 +20,49 @@ class Device:
     self.diagonal = diagonal
     self.screenRatio = screenRatio
     self.description = description
+    self.ppi = ppi
 
 # iOS
 iPods = [
-            Device("iPodTouch5",      "Device is an [iPod Touch (5th generation)](https://support.apple.com/kb/SP657)", "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP657/sp657_ipod-touch_size.jpg",                ["iPod5,1"],                                  4,    (9, 16),  "iPod Touch 5"),
-            Device("iPodTouch6",      "Device is an [iPod Touch (6th generation)](https://support.apple.com/kb/SP720)", "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP720/SP720-ipod-touch-specs-color-sg-2015.jpg", ["iPod7,1"],                                  4,    (9, 16),  "iPod Touch 6")
+            Device("iPodTouch5",      "Device is an [iPod Touch (5th generation)](https://support.apple.com/kb/SP657)", "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP657/sp657_ipod-touch_size.jpg",                ["iPod5,1"],                                  4,    (9, 16),  "iPod Touch 5", 326),
+            Device("iPodTouch6",      "Device is an [iPod Touch (6th generation)](https://support.apple.com/kb/SP720)", "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP720/SP720-ipod-touch-specs-color-sg-2015.jpg", ["iPod7,1"],                                  4,    (9, 16),  "iPod Touch 6", 326)
         ]
 
 iPhones = [
-            Device("iPhone4",         "Device is an [iPhone 4](https://support.apple.com/kb/SP587)",                    "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP643/sp643_iphone4s_color_black.jpg",           ["iPhone3,1", "iPhone3,2", "iPhone3,3"],      3.5,  (2, 3),   "iPhone 4"),
-            Device("iPhone4s",        "Device is an [iPhone 4s](https://support.apple.com/kb/SP643)",                   "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/iphone/iphone5s/iphone_4s.png",  ["iPhone4,1"],                                3.5,  (2, 3),   "iPhone 4s"),
-            Device("iPhone5",         "Device is an [iPhone 5](https://support.apple.com/kb/SP655)",                    "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP655/sp655_iphone5_color.jpg",                  ["iPhone5,1", "iPhone5,2"],                   4,    (9, 16),  "iPhone 5"),
-            Device("iPhone5c",        "Device is an [iPhone 5c](https://support.apple.com/kb/SP684)",                   "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP684/SP684-color_yellow.jpg",                   ["iPhone5,3", "iPhone5,4"],                   4,    (9, 16),  "iPhone 5c"),
-            Device("iPhone5s",        "Device is an [iPhone 5s](https://support.apple.com/kb/SP685)",                   "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP685/SP685-color_black.jpg",                    ["iPhone6,1", "iPhone6,2"],                   4,    (9, 16),  "iPhone 5s"),
-            Device("iPhone6",         "Device is an [iPhone 6](https://support.apple.com/kb/SP705)",                    "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP705/SP705-iphone_6-mul.png",                   ["iPhone7,2"],                                4.7,  (9, 16),  "iPhone 6"),
-            Device("iPhone6Plus",     "Device is an [iPhone 6 Plus](https://support.apple.com/kb/SP706)",               "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP706/SP706-iphone_6_plus-mul.png",              ["iPhone7,1"],                                5.5,  (9, 16),  "iPhone 6 Plus"),
-            Device("iPhone6s",        "Device is an [iPhone 6s](https://support.apple.com/kb/SP726)",                   "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP726/SP726-iphone6s-gray-select-2015.png",      ["iPhone8,1"],                                4.7,  (9, 16),  "iPhone 6s"),
-            Device("iPhone6sPlus",    "Device is an [iPhone 6s Plus](https://support.apple.com/kb/SP727)",              "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP727/SP727-iphone6s-plus-gray-select-2015.png", ["iPhone8,2"],                                5.5,  (9, 16),  "iPhone 6s Plus"),
-            Device("iPhone7",         "Device is an [iPhone 7](https://support.apple.com/kb/SP743)",                    "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP743/iphone7-black.png",                        ["iPhone9,1", "iPhone9,3"],                   4.7,  (9, 16),  "iPhone 7"),
-            Device("iPhone7Plus",     "Device is an [iPhone 7 Plus](https://support.apple.com/kb/SP744)",               "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP744/iphone7-plus-black.png",                   ["iPhone9,2", "iPhone9,4"],                   5.5,  (9, 16),  "iPhone 7 Plus"),
-            Device("iPhoneSE",        "Device is an [iPhone SE](https://support.apple.com/kb/SP738)",                   "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP738/SP738.png",                                ["iPhone8,4"],                                4,    (9, 16),  "iPhone SE")
+            Device("iPhone4",         "Device is an [iPhone 4](https://support.apple.com/kb/SP587)",                    "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP643/sp643_iphone4s_color_black.jpg",           ["iPhone3,1", "iPhone3,2", "iPhone3,3"],      3.5,  (2, 3),   "iPhone 4", 326),
+            Device("iPhone4s",        "Device is an [iPhone 4s](https://support.apple.com/kb/SP643)",                   "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/iphone/iphone5s/iphone_4s.png",  ["iPhone4,1"],                                3.5,  (2, 3),   "iPhone 4s", 326),
+            Device("iPhone5",         "Device is an [iPhone 5](https://support.apple.com/kb/SP655)",                    "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP655/sp655_iphone5_color.jpg",                  ["iPhone5,1", "iPhone5,2"],                   4,    (9, 16),  "iPhone 5", 326),
+            Device("iPhone5c",        "Device is an [iPhone 5c](https://support.apple.com/kb/SP684)",                   "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP684/SP684-color_yellow.jpg",                   ["iPhone5,3", "iPhone5,4"],                   4,    (9, 16),  "iPhone 5c", 326),
+            Device("iPhone5s",        "Device is an [iPhone 5s](https://support.apple.com/kb/SP685)",                   "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP685/SP685-color_black.jpg",                    ["iPhone6,1", "iPhone6,2"],                   4,    (9, 16),  "iPhone 5s", 326),
+            Device("iPhone6",         "Device is an [iPhone 6](https://support.apple.com/kb/SP705)",                    "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP705/SP705-iphone_6-mul.png",                   ["iPhone7,2"],                                4.7,  (9, 16),  "iPhone 6", 326),
+            Device("iPhone6Plus",     "Device is an [iPhone 6 Plus](https://support.apple.com/kb/SP706)",               "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP706/SP706-iphone_6_plus-mul.png",              ["iPhone7,1"],                                5.5,  (9, 16),  "iPhone 6 Plus", 401),
+            Device("iPhone6s",        "Device is an [iPhone 6s](https://support.apple.com/kb/SP726)",                   "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP726/SP726-iphone6s-gray-select-2015.png",      ["iPhone8,1"],                                4.7,  (9, 16),  "iPhone 6s", 326),
+            Device("iPhone6sPlus",    "Device is an [iPhone 6s Plus](https://support.apple.com/kb/SP727)",              "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP727/SP727-iphone6s-plus-gray-select-2015.png", ["iPhone8,2"],                                5.5,  (9, 16),  "iPhone 6s Plus", 401),
+            Device("iPhone7",         "Device is an [iPhone 7](https://support.apple.com/kb/SP743)",                    "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP743/iphone7-black.png",                        ["iPhone9,1", "iPhone9,3"],                   4.7,  (9, 16),  "iPhone 7", 326),
+            Device("iPhone7Plus",     "Device is an [iPhone 7 Plus](https://support.apple.com/kb/SP744)",               "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP744/iphone7-plus-black.png",                   ["iPhone9,2", "iPhone9,4"],                   5.5,  (9, 16),  "iPhone 7 Plus", 401),
+            Device("iPhoneSE",        "Device is an [iPhone SE](https://support.apple.com/kb/SP738)",                   "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP738/SP738.png",                                ["iPhone8,4"],                                4,    (9, 16),  "iPhone SE", 326)
           ]
 
 iPads = [
-            Device("iPad2",           "Device is an [iPad 2](https://support.apple.com/kb/SP622)",                      "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP622/SP622_01-ipad2-mul.png",                   ["iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4"], 9.7,  (3, 4),   "iPad 2"),
-            Device("iPad3",           "Device is an [iPad (3rd generation)](https://support.apple.com/kb/SP647)",       "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP662/sp662_ipad-4th-gen_color.jpg",             ["iPad3,1", "iPad3,2", "iPad3,3"],            9.7,  (3, 4),   "iPad 3"),
-            Device("iPad4",           "Device is an [iPad (4th generation)](https://support.apple.com/kb/SP662)",       "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP662/sp662_ipad-4th-gen_color.jpg",             ["iPad3,4", "iPad3,5", "iPad3,6"],            9.7,  (3, 4),   "iPad 4"),
-            Device("iPadAir",         "Device is an [iPad Air](https://support.apple.com/kb/SP692)",                    "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP692/SP692-specs_color-mul.png",                ["iPad4,1", "iPad4,2", "iPad4,3"],            9.7,  (3, 4),   "iPad Air"),
-            Device("iPadAir2",        "Device is an [iPad Air 2](https://support.apple.com/kb/SP708)",                  "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP708/SP708-space_gray.jpeg",                    ["iPad5,3", "iPad5,4"],                       9.7,  (3, 4),   "iPad Air 2"),
-            Device("iPad5",           "Device is an [iPad 5](https://support.apple.com/kb/SP751)",                      "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP751/ipad_5th_generation.png",                  ["iPad6,11", "iPad6,12"],                     9.7,  (3, 4),   "iPad 5"),
-            Device("iPadMini",        "Device is an [iPad Mini](https://support.apple.com/kb/SP661)",                   "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP661/sp661_ipad_mini_color.jpg",                ["iPad2,5", "iPad2,6", "iPad2,7"],            7.9,  (3, 4),   "iPad Mini"),
-            Device("iPadMini2",       "Device is an [iPad Mini 2](https://support.apple.com/kb/SP693)",                 "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP693/SP693-specs_color-mul.png",                ["iPad4,4", "iPad4,5", "iPad4,6"],            7.9,  (3, 4),   "iPad Mini 2"),
-            Device("iPadMini3",       "Device is an [iPad Mini 3](https://support.apple.com/kb/SP709)",                 "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP709/SP709-space_gray.jpeg",                    ["iPad4,7", "iPad4,8", "iPad4,9"],            7.9,  (3, 4),   "iPad Mini 3"),
-            Device("iPadMini4",       "Device is an [iPad Mini 4](https://support.apple.com/kb/SP725)",                 "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP725/SP725ipad-mini-4.png",                     ["iPad5,1", "iPad5,2"],                       7.9,  (3, 4),   "iPad Mini 4"),
-            Device("iPadPro9Inch",    "Device is an [iPad Pro](https://support.apple.com/kb/SP739)",                    "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP739/SP739.png",                                ["iPad6,3", "iPad6,4"],                       9.7,  (3, 4),   "iPad Pro (9.7-inch)"),
-            Device("iPadPro12Inch",   "Device is an [iPad Pro](https://support.apple.com/kb/sp723)",                    "http://images.apple.com/v/ipad-pro/c/images/shared/buystrip/ipad_pro_large_2x.png",                        ["iPad6,7", "iPad6,8"],                       12.9, (3, 4),   "iPad Pro (12.9-inch)"),
-            Device("iPadPro12Inch2",  "Device is an [iPad Pro](https://support.apple.com/kb/SP761)",                    "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP761/ipad-pro-12in-hero-201706.png",            ["iPad7,1", "iPad7,2"],                       12.9, (3, 4),   "iPad Pro (12.9-inch) 2"),
-            Device("iPadPro10Inch",   "Device is an [iPad Pro 10.5](https://support.apple.com/kb/SP762)",               "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP761/ipad-pro-10in-hero-201706.png",            ["iPad7,3", "iPad7,4"],                       10.5, (3, 4),   "iPad Pro (10.5-inch)")
+            Device("iPad2",           "Device is an [iPad 2](https://support.apple.com/kb/SP622)",                      "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP622/SP622_01-ipad2-mul.png",                   ["iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4"], 9.7,  (3, 4),   "iPad 2", 132),
+            Device("iPad3",           "Device is an [iPad (3rd generation)](https://support.apple.com/kb/SP647)",       "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP662/sp662_ipad-4th-gen_color.jpg",             ["iPad3,1", "iPad3,2", "iPad3,3"],            9.7,  (3, 4),   "iPad 3", 264),
+            Device("iPad4",           "Device is an [iPad (4th generation)](https://support.apple.com/kb/SP662)",       "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP662/sp662_ipad-4th-gen_color.jpg",             ["iPad3,4", "iPad3,5", "iPad3,6"],            9.7,  (3, 4),   "iPad 4", 264),
+            Device("iPadAir",         "Device is an [iPad Air](https://support.apple.com/kb/SP692)",                    "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP692/SP692-specs_color-mul.png",                ["iPad4,1", "iPad4,2", "iPad4,3"],            9.7,  (3, 4),   "iPad Air", 264),
+            Device("iPadAir2",        "Device is an [iPad Air 2](https://support.apple.com/kb/SP708)",                  "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP708/SP708-space_gray.jpeg",                    ["iPad5,3", "iPad5,4"],                       9.7,  (3, 4),   "iPad Air 2", 264),
+            Device("iPad5",           "Device is an [iPad 5](https://support.apple.com/kb/SP751)",                      "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP751/ipad_5th_generation.png",                  ["iPad6,11", "iPad6,12"],                     9.7,  (3, 4),   "iPad 5", 264),
+            Device("iPadMini",        "Device is an [iPad Mini](https://support.apple.com/kb/SP661)",                   "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP661/sp661_ipad_mini_color.jpg",                ["iPad2,5", "iPad2,6", "iPad2,7"],            7.9,  (3, 4),   "iPad Mini", 163),
+            Device("iPadMini2",       "Device is an [iPad Mini 2](https://support.apple.com/kb/SP693)",                 "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP693/SP693-specs_color-mul.png",                ["iPad4,4", "iPad4,5", "iPad4,6"],            7.9,  (3, 4),   "iPad Mini 2", 326),
+            Device("iPadMini3",       "Device is an [iPad Mini 3](https://support.apple.com/kb/SP709)",                 "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP709/SP709-space_gray.jpeg",                    ["iPad4,7", "iPad4,8", "iPad4,9"],            7.9,  (3, 4),   "iPad Mini 3", 326),
+            Device("iPadMini4",       "Device is an [iPad Mini 4](https://support.apple.com/kb/SP725)",                 "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP725/SP725ipad-mini-4.png",                     ["iPad5,1", "iPad5,2"],                       7.9,  (3, 4),   "iPad Mini 4", 326),
+            Device("iPadPro9Inch",    "Device is an [iPad Pro](https://support.apple.com/kb/SP739)",                    "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP739/SP739.png",                                ["iPad6,3", "iPad6,4"],                       9.7,  (3, 4),   "iPad Pro (9.7-inch)", 264),
+            Device("iPadPro12Inch",   "Device is an [iPad Pro](https://support.apple.com/kb/sp723)",                    "http://images.apple.com/v/ipad-pro/c/images/shared/buystrip/ipad_pro_large_2x.png",                        ["iPad6,7", "iPad6,8"],                       12.9, (3, 4),   "iPad Pro (12.9-inch)", 264),
+            Device("iPadPro12Inch2",  "Device is an [iPad Pro](https://support.apple.com/kb/SP761)",                    "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP761/ipad-pro-12in-hero-201706.png",            ["iPad7,1", "iPad7,2"],                       12.9, (3, 4),   "iPad Pro (12.9-inch) 2", 264),
+            Device("iPadPro10Inch",   "Device is an [iPad Pro 10.5](https://support.apple.com/kb/SP762)",               "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP761/ipad-pro-10in-hero-201706.png",            ["iPad7,3", "iPad7,4"],                       10.5, (3, 4),   "iPad Pro (10.5-inch)", 264)
         ]
 
 # tvOS
 tvs = [
-            Device("appleTV4",        "Device is an [Apple TV](http://www.apple.com/tv/)",                              "http://images.apple.com/v/tv/c/images/overview/buy_tv_large_2x.jpg",                                       ["AppleTV5,3"],                               0,    (),       "Apple TV 4")
+            Device("appleTV4",        "Device is an [Apple TV](http://www.apple.com/tv/)",                              "http://images.apple.com/v/tv/c/images/overview/buy_tv_large_2x.jpg",                                       ["AppleTV5,3"],                               0,    (),       "Apple TV 4", -1)
       ]
 
 iOSDevices = iPods + iPhones + iPads
@@ -363,6 +364,23 @@ public enum Device {
   public var localizedModel: String {
     return UIDevice.current.localizedModel
   }
+  
+  /// PPI (Pixels per Inch) on the current device's screen (if applicable). When not applicable the property returns nil.
+  
+  public var ppi: Int? {
+    #if os(iOS)
+    switch self {
+      % for device in iOSDevices:
+      case .${device.caseName}: return ${device.ppi}
+      % end
+      default:
+        return nil
+    }
+    #elseif os(tvOS)
+    return nil
+    #endif
+  }
+  
 }
 
 // MARK: - CustomStringConvertible
