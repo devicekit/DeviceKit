@@ -364,9 +364,8 @@ public enum Device {
   public var localizedModel: String {
     return UIDevice.current.localizedModel
   }
-  
+
   /// PPI (Pixels per Inch) on the current device's screen (if applicable). When not applicable the property returns nil.
-  
   public var ppi: Int? {
     #if os(iOS)
     switch self {
@@ -380,7 +379,6 @@ public enum Device {
     return nil
     #endif
   }
-  
 }
 
 // MARK: - CustomStringConvertible
