@@ -365,15 +365,15 @@ public enum Device {
     return UIDevice.current.localizedModel
   }
 
-  /// PPI (Pixels per Inch) on the current device's screen (if applicable). When not applicable the property returns nil.
+  /// PPI (Pixels per Inch) on the current device's screen (if applicable). When the device is not applicable this property returns nil.
   public var ppi: Int? {
     #if os(iOS)
     switch self {
       % for device in iOSDevices:
       case .${device.caseName}: return ${device.ppi}
       % end
-      default:
-        return nil
+      case .simulator(let model): return model.ppi
+      case .unknown: return nil
     }
     #elseif os(tvOS)
     return nil

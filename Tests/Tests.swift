@@ -274,34 +274,66 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.iPadPro12Inch2.ppi, 264)
     // source: https://en.wikipedia.org/wiki/IPad_Pro
     XCTAssertEqual(Device.iPadPro10Inch.ppi, 264)
-    // Non-applicable devices:
+
     // Simulators
-    XCTAssertEqual(Device.simulator(Device.iPhone4).ppi, nil)
-    XCTAssertEqual(Device.simulator(Device.iPhone4s).ppi, nil)
-    XCTAssertEqual(Device.simulator(Device.iPhone5).ppi, nil)
-    XCTAssertEqual(Device.simulator(Device.iPhone5c).ppi, nil)
-    XCTAssertEqual(Device.simulator(Device.iPhone5s).ppi, nil)
-    XCTAssertEqual(Device.simulator(Device.iPhone6).ppi, nil)
-    XCTAssertEqual(Device.simulator(Device.iPhone6Plus).ppi, nil)
-    XCTAssertEqual(Device.simulator(Device.iPhone6s).ppi, nil)
-    XCTAssertEqual(Device.simulator(Device.iPhone6sPlus).ppi, nil)
-    XCTAssertEqual(Device.simulator(Device.iPhone7).ppi, nil)
-    XCTAssertEqual(Device.simulator(Device.iPhone7Plus).ppi, nil)
-    XCTAssertEqual(Device.simulator(Device.iPhoneSE).ppi, nil)
-    XCTAssertEqual(Device.simulator(Device.iPad2).ppi, nil)
-    XCTAssertEqual(Device.simulator(Device.iPad3).ppi, nil)
-    XCTAssertEqual(Device.simulator(Device.iPad4).ppi, nil)
-    XCTAssertEqual(Device.simulator(Device.iPadAir).ppi, nil)
-    XCTAssertEqual(Device.simulator(Device.iPadAir2).ppi, nil)
-    XCTAssertEqual(Device.simulator(Device.iPad5).ppi, nil)
-    XCTAssertEqual(Device.simulator(Device.iPadMini).ppi, nil)
-    XCTAssertEqual(Device.simulator(Device.iPadMini2).ppi, nil)
-    XCTAssertEqual(Device.simulator(Device.iPadMini3).ppi, nil)
-    XCTAssertEqual(Device.simulator(Device.iPadMini4).ppi, nil)
-    XCTAssertEqual(Device.simulator(Device.iPadPro9Inch).ppi, nil)
-    XCTAssertEqual(Device.simulator(Device.iPadPro10Inch).ppi, nil)
-    XCTAssertEqual(Device.simulator(Device.iPadPro12Inch).ppi, nil)
-    XCTAssertEqual(Device.simulator(Device.iPadPro12Inch2).ppi, nil)
+    // IPods
+    XCTAssertEqual(Device.simulator(.iPodTouch5).ppi, 326)
+    // source: https://en.wikipedia.org/wiki/IPod_Touch_(6th_generation)
+    XCTAssertEqual(Device.simulator(.iPodTouch5).ppi, 326)
+    // Iphones
+    // source: https://en.wikipedia.org/wiki/IPhone_4
+    XCTAssertEqual(Device.simulator(.iPhone4).ppi, 326)
+    // source: https://en.wikipedia.org/wiki/IPhone_4S
+    XCTAssertEqual(Device.simulator(.iPhone4s).ppi, 326)
+    // source: https://en.wikipedia.org/wiki/IPhone_5
+    XCTAssertEqual(Device.simulator(.iPhone5).ppi, 326)
+    // source: https://en.wikipedia.org/wiki/IPhone_5C
+    XCTAssertEqual(Device.simulator(.iPhone5c).ppi, 326)
+    // source: https://en.wikipedia.org/wiki/IPhone_5S
+    XCTAssertEqual(Device.simulator(.iPhone5s).ppi, 326)
+    // source: https://en.wikipedia.org/wiki/IPhone_6
+    XCTAssertEqual(Device.simulator(.iPhone6).ppi, 326)
+    // source: https://en.wikipedia.org/wiki/IPhone_6
+    XCTAssertEqual(Device.simulator(.iPhone6Plus).ppi, 401)
+    // source: https://en.wikipedia.org/wiki/IPhone_6S
+    XCTAssertEqual(Device.simulator(.iPhone6s).ppi, 326)
+    // source: https://en.wikipedia.org/wiki/IPhone_6S
+    XCTAssertEqual(Device.simulator(.iPhone6sPlus).ppi, 401)
+    // source: https://en.wikipedia.org/wiki/IPhone_7
+    XCTAssertEqual(Device.simulator(.iPhone7).ppi, 326)
+    // source: https://en.wikipedia.org/wiki/IPhone_7
+    XCTAssertEqual(Device.simulator(.iPhone7Plus).ppi, 401)
+    // source: https://en.wikipedia.org/wiki/IPhone_SE
+    XCTAssertEqual(Device.simulator(.iPhoneSE).ppi, 326)
+    // Ipads
+    // source: https://en.wikipedia.org/wiki/IPad_2
+    XCTAssertEqual(Device.simulator(.iPad2).ppi, 132)
+    // source: https://en.wikipedia.org/wiki/IPad_(3rd_generation)
+    XCTAssertEqual(Device.simulator(.iPad3).ppi, 264)
+    // source: https://en.wikipedia.org/wiki/IPad_(4th_generation)
+    XCTAssertEqual(Device.simulator(.iPad4).ppi, 264)
+    // source: https://en.wikipedia.org/wiki/IPad_Air
+    XCTAssertEqual(Device.simulator(.iPadAir).ppi, 264)
+    // source: https://en.wikipedia.org/wiki/IPad_Air_2
+    XCTAssertEqual(Device.simulator(.iPadAir2).ppi, 264)
+    // source: https://en.wikipedia.org/wiki/IPad_Air
+    XCTAssertEqual(Device.simulator(.iPad5).ppi, 264)
+    // source: https://en.wikipedia.org/wiki/IPad_Air
+    XCTAssertEqual(Device.simulator(.iPadMini).ppi, 163)
+    // source: https://en.wikipedia.org/wiki/IPad_Mini_2
+    XCTAssertEqual(Device.simulator(.iPadMini2).ppi, 326)
+    // source: https://en.wikipedia.org/wiki/IPad_Mini_3
+    XCTAssertEqual(Device.simulator(.iPadMini3).ppi, 326)
+    // source: https://en.wikipedia.org/wiki/IPad_Mini_4
+    XCTAssertEqual(Device.simulator(.iPadMini4).ppi, 326)
+    // source: https://en.wikipedia.org/wiki/IPad_Pro
+    XCTAssertEqual(Device.simulator(.iPadPro9Inch).ppi, 264)
+    // source: https://en.wikipedia.org/wiki/IPad_Pro
+    XCTAssertEqual(Device.simulator(.iPadPro12Inch).ppi, 264)
+    // source: https://en.wikipedia.org/wiki/IPad_Pro
+    XCTAssertEqual(Device.simulator(.iPadPro12Inch2).ppi, 264)
+    // source: https://en.wikipedia.org/wiki/IPad_Pro
+    XCTAssertEqual(Device.simulator(.iPadPro10Inch).ppi, 264)
   }
 
   #endif
