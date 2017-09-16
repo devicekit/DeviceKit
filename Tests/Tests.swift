@@ -122,7 +122,7 @@ class DeviceKitTests: XCTestCase {
     XCTAssertTrue(Device.iPhoneSE.screenRatio == (width: 9, height: 16))
     XCTAssertTrue(Device.iPhone8.screenRatio == (width: 9, height: 16))
     XCTAssertTrue(Device.iPhone8Plus.screenRatio == (width: 9, height: 16))
-    XCTAssertTrue(Device.iPhoneX.screenRatio == (width: 9, height: 16))
+    XCTAssertTrue(Device.iPhoneX.screenRatio == (width: 9, height: 19.5))
     XCTAssertTrue(Device.iPad2.screenRatio == (width: 3, height: 4))
     XCTAssertTrue(Device.iPad3.screenRatio == (width: 3, height: 4))
     XCTAssertTrue(Device.iPad4.screenRatio == (width: 3, height: 4))
@@ -161,7 +161,6 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.iPhone6sPlus.diagonal, 5.5)
     XCTAssertEqual(Device.iPhone7Plus.diagonal, 5.5)
     XCTAssertEqual(Device.iPhone8Plus.diagonal, 5.5)
-    
     XCTAssertEqual(Device.iPhoneX.diagonal, 5.8)
 
     XCTAssertEqual(Device.iPad2.diagonal, 9.7)
