@@ -17,8 +17,7 @@ Pod::Spec.new do |s|
   s.tvos.deployment_target  = '9.0'
 
   s.source                  = { :git => 'https://github.com/dennisweissmann/DeviceKit.git', :tag => s.version }
-  s.source_files            = 'Source/*'
-  s.source_files            = 'Utils/*'
+s.source_files              = '**/*{.gyb,.py,gyb}'
 
   s.requires_arc = true
 end
