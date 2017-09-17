@@ -100,6 +100,18 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP738/SP738.png)
     case iPhoneSE
+    /// Device is an [iPhone 8](https://support.apple.com/kb/SP767)
+    ///
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP767/iphone8.png)
+    case iPhone8
+    /// Device is an [iPhone 8 Plus](https://support.apple.com/kb/SP768)
+    ///
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP768/iphone8plus.png)
+    case iPhone8Plus
+    /// Device is an [iPhone X](https://support.apple.com/kb/SP770)
+    ///
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP770/iphonex.png)
+    case iPhoneX
     /// Device is an [iPad 2](https://support.apple.com/kb/SP622)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP622/SP622_01-ipad2-mul.png)
@@ -213,6 +225,9 @@ public enum Device {
       case "iPhone9,1", "iPhone9,3": return iPhone7
       case "iPhone9,2", "iPhone9,4": return iPhone7Plus
       case "iPhone8,4": return iPhoneSE
+      case "iPhone10,4": return iPhone8
+      case "iPhone10,5": return iPhone8Plus
+      case "iPhone10,3": return iPhoneX
       case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4": return iPad2
       case "iPad3,1", "iPad3,2", "iPad3,3": return iPad3
       case "iPad3,4", "iPad3,5", "iPad3,6": return iPad4
@@ -247,7 +262,7 @@ public enum Device {
 
     /// All iPhones
     public static var allPhones: [Device] {
-       return [.iPhone4, .iPhone4s, .iPhone5, .iPhone5c, .iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE]
+       return [.iPhone4, .iPhone4s, .iPhone5, .iPhone5c, .iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE, .iPhone8, .iPhone8Plus, .iPhoneX]
     }
 
     /// All iPads
@@ -317,6 +332,9 @@ public enum Device {
       case .iPhone7: return 4.7
       case .iPhone7Plus: return 5.5
       case .iPhoneSE: return 4
+      case .iPhone8: return 4.7
+      case .iPhone8Plus: return 5.5
+      case .iPhoneX: return 5.8
       case .iPad2: return 9.7
       case .iPad3: return 9.7
       case .iPad4: return 9.7
@@ -353,6 +371,9 @@ public enum Device {
       case .iPhone7: return (width: 9, height: 16)
       case .iPhone7Plus: return (width: 9, height: 16)
       case .iPhoneSE: return (width: 9, height: 16)
+      case .iPhone8: return (width: 9, height: 16)
+      case .iPhone8Plus: return (width: 9, height: 16)
+      case .iPhoneX: return (width: 9, height: 19.5)
       case .iPad2: return (width: 3, height: 4)
       case .iPad3: return (width: 3, height: 4)
       case .iPad4: return (width: 3, height: 4)
@@ -404,7 +425,7 @@ public enum Device {
    ```
    switch Device() {
    case .iPodTouch5, .iPodTouch6: callMethodOnIPods()
-   case .iPhone4, iPhone4s, .iPhone5, .iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE: callMethodOnIPhones()
+   case .iPhone4, iPhone4s, .iPhone5, .iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE, .iPhone8, .iPhone8Plus, .iPhoneX: callMethodOnIPhones()
    case .iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadPro: callMethodOnIPads()
    default: break
    }
@@ -473,6 +494,9 @@ public enum Device {
       case .iPhone7: return 326
       case .iPhone7Plus: return 401
       case .iPhoneSE: return 326
+      case .iPhone8: return 326
+      case .iPhone8Plus: return 401
+      case .iPhoneX: return 458
       case .iPad2: return 132
       case .iPad3: return 264
       case .iPad4: return 264
@@ -517,6 +541,9 @@ extension Device: CustomStringConvertible {
       case .iPhone7: return "iPhone 7"
       case .iPhone7Plus: return "iPhone 7 Plus"
       case .iPhoneSE: return "iPhone SE"
+      case .iPhone8: return "iPhone 8"
+      case .iPhone8Plus: return "iPhone 8 Plus"
+      case .iPhoneX: return "iPhone X"
       case .iPad2: return "iPad 2"
       case .iPad3: return "iPad 3"
       case .iPad4: return "iPad 4"
