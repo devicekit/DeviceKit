@@ -21,7 +21,6 @@ env:
   - DESTINATION='platform=tvOS Simulator,name=Apple TV 1080p'
 
 install:
-  - brew update && brew upgrade swiftlint
   - bundle install
 
 script:
