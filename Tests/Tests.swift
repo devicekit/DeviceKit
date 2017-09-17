@@ -218,7 +218,7 @@ class DeviceKitTests: XCTestCase {
   }
 
   func testDescriptionFromIdentifier() {
-    XCTAssert(Device.mapToDevice(identifier: "AppleTV5,3").description, "Apple TV 4")
+    XCTAssertEqual(Device.mapToDevice(identifier: "AppleTV5,3").description, "Apple TV 4")
   }
   #endif
 
