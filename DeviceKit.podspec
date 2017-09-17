@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'DeviceKit'
-  s.version      = '1.2.3'
+  s.version      = '1.3.0'
   s.summary      = 'DeviceKit is a µ-framework that provides a value-type replacement of UIDevice.'
 
   s.description             = <<-DESC
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.tvos.deployment_target  = '9.0'
 
   s.source                  = { :git => 'https://github.com/dennisweissmann/DeviceKit.git', :tag => s.version }
-  s.source_files            = 'Source'
+  s.source_files              = 'Source/Device.generated.swift'
 
   s.requires_arc = true
 end
