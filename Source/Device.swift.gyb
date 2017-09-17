@@ -75,7 +75,7 @@ import UIKit
 
 // MARK: - Device
 
-/// This enum is a value-type wrapper around and extension of
+/// This enum is a value-type wrapper and extension of
 /// [`UIDevice`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/).
 ///
 /// Usage:
@@ -128,7 +128,7 @@ public enum Device {
 
   /// Device is not yet known (implemented)
   /// You can still use this enum as before but the description equals the identifier (you can get multiple identifiers for the same product class
-  /// (e.g. "iPhone6,1" or "iPhone 6,2" do both mean "iPhone 5s))
+  /// (e.g. "iPhone6,1" or "iPhone 6,2" do both mean "iPhone 5s"))
   case unknown(String)
 
   /// Initializes a `Device` representing the current device this software runs on.
@@ -212,12 +212,12 @@ public enum Device {
 
     /// Returns whether the device is an iPhone (real or simulator)
     public var isPhone: Bool {
-      return isOneOf(Device.allPhones) || isOneOf(Device.allSimulatorPhones)
+      return isOneOf(Device.allPhones) || isOneOf(Device.allSimulatorPhones) || UIDevice.current.userInterfaceIdiom == .phone
     }
 
     /// Returns whether the device is an iPad (real or simulator)
     public var isPad: Bool {
-      return isOneOf(Device.allPads) || isOneOf(Device.allSimulatorPads)
+      return isOneOf(Device.allPads) || isOneOf(Device.allSimulatorPads) || UIDevice.current.userInterfaceIdiom == .pad
     }
 
     /// Returns whether the device is any of the simulator
@@ -299,11 +299,11 @@ public enum Device {
    ```
    let device = Device()
    if device.isOneOf(Device.allPods) {
-   callMethodOnIPods()
+     callMethodOnIPods()
    } else if device.isOneOf(Device.allPhones) {
-   callMethodOnIPhones()
+     callMethodOnIPhones()
    } else if device.isOneOf(Device.allPads) {
-   callMethodOnIPads()
+     callMethodOnIPads()
    }
    ```
 
@@ -313,34 +313,6 @@ public enum Device {
    */
   public func isOneOf(_ devices: [Device]) -> Bool {
     return devices.contains(self)
-  }
-
-  /// The style of interface to use on the current device.
-  /// This is pretty useless right now since it does not add any further functionality to the existing
-  /// [UIUserInterfaceIdiom](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/#//apple_ref/c/tdef/UIUserInterfaceIdiom) enum.
-  public enum UserInterfaceIdiom {
-
-    /// The user interface should be designed for iPhone and iPod touch.
-    case phone
-    /// The user interface should be designed for iPad.
-    case pad
-    /// The user interface should be designed for TV
-    case tv
-    /// The user interface should be designed for Car
-    case carPlay
-    /// Used when an object has a trait collection, but it is not in an environment yet. For example, a view that is created, but not put into a view hierarchy.
-    case unspecified
-
-    private init() {
-      switch UIDevice.current.userInterfaceIdiom {
-      case .pad: self = .pad
-      case .phone: self = .phone
-      case .tv: self = .tv
-      case .carPlay: self = .carPlay
-      default: self = .unspecified
-      }
-    }
-
   }
 
   /// The name identifying the device (e.g. "Dennis' iPhone").
