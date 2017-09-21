@@ -30,4 +30,4 @@ xcuserdata
 Utils/gyb.pyc
 
 ## Generated Files
-*.generated.swift
+# *.generated.swift # we have to check it in because of CocoaPods ...
