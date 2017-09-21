@@ -40,7 +40,10 @@ iPhones = [
             Device("iPhone6sPlus",    "Device is an [iPhone 6s Plus](https://support.apple.com/kb/SP727)",              "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP727/SP727-iphone6s-plus-gray-select-2015.png", ["iPhone8,2"],                                5.5,  (9, 16),  "iPhone 6s Plus", 401),
             Device("iPhone7",         "Device is an [iPhone 7](https://support.apple.com/kb/SP743)",                    "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP743/iphone7-black.png",                        ["iPhone9,1", "iPhone9,3"],                   4.7,  (9, 16),  "iPhone 7", 326),
             Device("iPhone7Plus",     "Device is an [iPhone 7 Plus](https://support.apple.com/kb/SP744)",               "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP744/iphone7-plus-black.png",                   ["iPhone9,2", "iPhone9,4"],                   5.5,  (9, 16),  "iPhone 7 Plus", 401),
-            Device("iPhoneSE",        "Device is an [iPhone SE](https://support.apple.com/kb/SP738)",                   "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP738/SP738.png",                                ["iPhone8,4"],                                4,    (9, 16),  "iPhone SE", 326)
+            Device("iPhoneSE",        "Device is an [iPhone SE](https://support.apple.com/kb/SP738)",                   "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP738/SP738.png",                                ["iPhone8,4"],                                4,    (9, 16),  "iPhone SE", 326),
+            Device("iPhone8",         "Device is an [iPhone 8](https://support.apple.com/kb/SP767)",                    "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP767/iphone8.png",                              ["iPhone10,4"],                               4.7,  (9, 16),  "iPhone 8", 326),
+            Device("iPhone8Plus",     "Device is an [iPhone 8 Plus](https://support.apple.com/kb/SP768)",               "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP768/iphone8plus.png",                          ["iPhone10,5"],                               5.5,  (9, 16),  "iPhone 8 Plus", 401),
+            Device("iPhoneX",         "Device is an [iPhone X](https://support.apple.com/kb/SP770)",                    "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP770/iphonex.png",                              ["iPhone10,3"],                               5.8,  (9, 19.5),  "iPhone X", 458)
           ]
 
 iPads = [
@@ -72,7 +75,7 @@ import UIKit
 
 // MARK: - Device
 
-/// This enum is a value-type wrapper around and extension of
+/// This enum is a value-type wrapper and extension of
 /// [`UIDevice`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/).
 ///
 /// Usage:
@@ -125,7 +128,7 @@ public enum Device {
 
   /// Device is not yet known (implemented)
   /// You can still use this enum as before but the description equals the identifier (you can get multiple identifiers for the same product class
-  /// (e.g. "iPhone6,1" or "iPhone 6,2" do both mean "iPhone 5s))
+  /// (e.g. "iPhone6,1" or "iPhone 6,2" do both mean "iPhone 5s"))
   case unknown(String)
 
   /// Initializes a `Device` representing the current device this software runs on.
@@ -209,12 +212,12 @@ public enum Device {
 
     /// Returns whether the device is an iPhone (real or simulator)
     public var isPhone: Bool {
-      return isOneOf(Device.allPhones) || isOneOf(Device.allSimulatorPhones)
+      return isOneOf(Device.allPhones) || isOneOf(Device.allSimulatorPhones) || UIDevice.current.userInterfaceIdiom == .phone
     }
 
     /// Returns whether the device is an iPad (real or simulator)
     public var isPad: Bool {
-      return isOneOf(Device.allPads) || isOneOf(Device.allSimulatorPads)
+      return isOneOf(Device.allPads) || isOneOf(Device.allSimulatorPads) || UIDevice.current.userInterfaceIdiom == .pad
     }
 
     /// Returns whether the device is any of the simulator
@@ -286,7 +289,7 @@ public enum Device {
    ```
    switch Device() {
    case .iPodTouch5, .iPodTouch6: callMethodOnIPods()
-   case .iPhone4, iPhone4s, .iPhone5, .iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE: callMethodOnIPhones()
+   case .iPhone4, iPhone4s, .iPhone5, .iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE, .iPhone8, .iPhone8Plus, .iPhoneX: callMethodOnIPhones()
    case .iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadPro: callMethodOnIPads()
    default: break
    }
@@ -296,11 +299,11 @@ public enum Device {
    ```
    let device = Device()
    if device.isOneOf(Device.allPods) {
-   callMethodOnIPods()
+     callMethodOnIPods()
    } else if device.isOneOf(Device.allPhones) {
-   callMethodOnIPhones()
+     callMethodOnIPhones()
    } else if device.isOneOf(Device.allPads) {
-   callMethodOnIPads()
+     callMethodOnIPads()
    }
    ```
 
@@ -310,34 +313,6 @@ public enum Device {
    */
   public func isOneOf(_ devices: [Device]) -> Bool {
     return devices.contains(self)
-  }
-
-  /// The style of interface to use on the current device.
-  /// This is pretty useless right now since it does not add any further functionality to the existing
-  /// [UIUserInterfaceIdiom](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/#//apple_ref/c/tdef/UIUserInterfaceIdiom) enum.
-  public enum UserInterfaceIdiom {
-
-    /// The user interface should be designed for iPhone and iPod touch.
-    case phone
-    /// The user interface should be designed for iPad.
-    case pad
-    /// The user interface should be designed for TV
-    case tv
-    /// The user interface should be designed for Car
-    case carPlay
-    /// Used when an object has a trait collection, but it is not in an environment yet. For example, a view that is created, but not put into a view hierarchy.
-    case unspecified
-
-    private init() {
-      switch UIDevice.current.userInterfaceIdiom {
-      case .pad: self = .pad
-      case .phone: self = .phone
-      case .tv: self = .tv
-      case .carPlay: self = .carPlay
-      default: self = .unspecified
-      }
-    }
-
   }
 
   /// The name identifying the device (e.g. "Dennis' iPhone").
