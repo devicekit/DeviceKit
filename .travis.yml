@@ -22,6 +22,7 @@ env:
 
 install:
   - bundle install
+  - rvm get stable
 
 script:
   - set -o pipefail && xcodebuild -scheme DeviceKit -destination "$DESTINATION" test
