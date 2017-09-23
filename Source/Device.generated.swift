@@ -171,7 +171,7 @@ public enum Device {
     /// Device is a [HomePod](https://www.apple.com/homepod/)
     ///
     /// ![Image](https://images.apple.com/v/homepod/d/images/overview/homepod_side_dark_large_2x.jpg)
-    case HomePod
+    case homePod
   #elseif os(tvOS)
     /// Device is an [Apple TV 4](https://support.apple.com/kb/SP724)
     ///
@@ -250,7 +250,7 @@ public enum Device {
       case "iPad6,7", "iPad6,8": return iPadPro12Inch
       case "iPad7,1", "iPad7,2": return iPadPro12Inch2
       case "iPad7,3", "iPad7,4": return iPadPro10Inch
-      case "AudioAccessory1,1": return HomePod
+      case "AudioAccessory1,1": return homePod
       case "i386", "x86_64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "iOS"))
       default: return unknown(identifier)
       }
@@ -369,7 +369,7 @@ public enum Device {
       case .iPadPro12Inch: return 12.9
       case .iPadPro12Inch2: return 12.9
       case .iPadPro10Inch: return 10.5
-      case .HomePod: return -1
+      case .homePod: return -1
       case .simulator(let model): return model.diagonal
       case .unknown: return -1
       }
@@ -409,7 +409,7 @@ public enum Device {
       case .iPadPro12Inch: return (width: 3, height: 4)
       case .iPadPro12Inch2: return (width: 3, height: 4)
       case .iPadPro10Inch: return (width: 3, height: 4)
-      case .HomePod: return (width: 4, height: 5)
+      case .homePod: return (width: 4, height: 5)
       case .simulator(let model): return model.screenRatio
       case .unknown: return (width: -1, height: -1)
       }
@@ -533,7 +533,7 @@ public enum Device {
       case .iPadPro12Inch: return 264
       case .iPadPro12Inch2: return 264
       case .iPadPro10Inch: return 264
-      case .HomePod: return -1
+      case .homePod: return -1
       case .simulator(let model): return model.ppi
       case .unknown: return nil
     }
@@ -581,7 +581,7 @@ extension Device: CustomStringConvertible {
       case .iPadPro12Inch: return "iPad Pro (12.9-inch)"
       case .iPadPro12Inch2: return "iPad Pro (12.9-inch) 2"
       case .iPadPro10Inch: return "iPad Pro (10.5-inch)"
-      case .HomePod: return "HomePod"
+      case .homePod: return "HomePod"
       case .simulator(let model): return "Simulator (\(model))"
       case .unknown(let identifier): return identifier
       }

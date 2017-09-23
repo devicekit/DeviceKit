@@ -66,7 +66,7 @@ iPads = [
         ]
 
 homePods =  [
-            Device("HomePod",         "Device is a [HomePod](https://www.apple.com/homepod/)",                          "https://images.apple.com/v/homepod/d/images/overview/homepod_side_dark_large_2x.jpg",                     ["AudioAccessory1,1"], -1,  (4, 5),   "HomePod", -1, False, False),
+            Device("homePod",         "Device is a [HomePod](https://www.apple.com/homepod/)",                          "https://images.apple.com/v/homepod/d/images/overview/homepod_side_dark_large_2x.jpg",                     ["AudioAccessory1,1"], -1,  (4, 5),   "HomePod", -1, False, False),
             ]
 # tvOS
 tvs = [
