@@ -168,11 +168,19 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP761/ipad-pro-10in-hero-201706.png)
     case iPadPro10Inch
+    /// Device is a [HomePod](https://www.apple.com/homepod/)
+    ///
+    /// ![Image](https://images.apple.com/v/homepod/d/images/overview/homepod_side_dark_large_2x.jpg)
+    case HomePod
   #elseif os(tvOS)
-    /// Device is an [Apple TV](http://www.apple.com/tv/)
+    /// Device is an [Apple TV 4](https://support.apple.com/kb/SP724)
     ///
     /// ![Image](http://images.apple.com/v/tv/c/images/overview/buy_tv_large_2x.jpg)
     case appleTV4
+    /// Device is an [Apple TV 4K](https://support.apple.com/kb/SP769)
+    ///
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP769/appletv4k.png)
+    case appleTV4K
   #endif
 
   /// Device is [Simulator](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/Introduction/Introduction.html)
@@ -225,9 +233,9 @@ public enum Device {
       case "iPhone9,1", "iPhone9,3": return iPhone7
       case "iPhone9,2", "iPhone9,4": return iPhone7Plus
       case "iPhone8,4": return iPhoneSE
-      case "iPhone10,4": return iPhone8
-      case "iPhone10,5": return iPhone8Plus
-      case "iPhone10,3": return iPhoneX
+      case "iPhone10,1", "iPhone10,4": return iPhone8
+      case "iPhone10,2", "iPhone10,5": return iPhone8Plus
+      case "iPhone10,3", "iPhone10,6": return iPhoneX
       case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4": return iPad2
       case "iPad3,1", "iPad3,2", "iPad3,3": return iPad3
       case "iPad3,4", "iPad3,5", "iPad3,6": return iPad4
@@ -242,12 +250,14 @@ public enum Device {
       case "iPad6,7", "iPad6,8": return iPadPro12Inch
       case "iPad7,1", "iPad7,2": return iPadPro12Inch2
       case "iPad7,3", "iPad7,4": return iPadPro10Inch
+      case "AudioAccessory1,1": return HomePod
       case "i386", "x86_64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "iOS"))
       default: return unknown(identifier)
       }
     #elseif os(tvOS)
       switch identifier {
       case "AppleTV5,3": return appleTV4
+      case "AppleTV6,2": return appleTV4K
       case "i386", "x86_64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "tvOS"))
       default: return unknown(identifier)
       }
@@ -268,6 +278,16 @@ public enum Device {
     /// All iPads
     public static var allPads: [Device] {
        return [.iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPad5, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch]
+    }
+
+    /// All Plus-Sized Devices
+    public static var allPlusSizedDevices: [Device] {
+      return [.iPhone6Plus, .iPhone6sPlus, .iPhone7Plus, .iPhone8Plus]
+    }
+
+    /// All Plus-Sized Devices
+    public static var allProDevices: [Device] {
+      return [.iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch]
     }
 
     /// All simulator iPods
@@ -349,6 +369,7 @@ public enum Device {
       case .iPadPro12Inch: return 12.9
       case .iPadPro12Inch2: return 12.9
       case .iPadPro10Inch: return 10.5
+      case .HomePod: return -1
       case .simulator(let model): return model.diagonal
       case .unknown: return -1
       }
@@ -388,6 +409,7 @@ public enum Device {
       case .iPadPro12Inch: return (width: 3, height: 4)
       case .iPadPro12Inch2: return (width: 3, height: 4)
       case .iPadPro10Inch: return (width: 3, height: 4)
+      case .HomePod: return (width: 4, height: 5)
       case .simulator(let model): return model.screenRatio
       case .unknown: return (width: -1, height: -1)
       }
@@ -395,7 +417,7 @@ public enum Device {
   #elseif os(tvOS)
     /// All TVs
     public static var allTVs: [Device] {
-       return [.appleTV4]
+       return [.appleTV4, .appleTV4K]
     }
 
     /// All simulator TVs
@@ -511,6 +533,7 @@ public enum Device {
       case .iPadPro12Inch: return 264
       case .iPadPro12Inch2: return 264
       case .iPadPro10Inch: return 264
+      case .HomePod: return -1
       case .simulator(let model): return model.ppi
       case .unknown: return nil
     }
@@ -558,12 +581,14 @@ extension Device: CustomStringConvertible {
       case .iPadPro12Inch: return "iPad Pro (12.9-inch)"
       case .iPadPro12Inch2: return "iPad Pro (12.9-inch) 2"
       case .iPadPro10Inch: return "iPad Pro (10.5-inch)"
+      case .HomePod: return "HomePod"
       case .simulator(let model): return "Simulator (\(model))"
       case .unknown(let identifier): return identifier
       }
     #elseif os(tvOS)
       switch self {
       case .appleTV4: return "Apple TV 4"
+      case .appleTV4K: return "Apple TV 4K"
       case .simulator(let model): return "Simulator (\(model))"
       case .unknown(let identifier): return identifier
       }

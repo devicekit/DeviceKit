@@ -64,9 +64,12 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.mapToDevice(identifier: "iPhone9,2"), .iPhone7Plus)
     XCTAssertEqual(Device.mapToDevice(identifier: "iPhone9,4"), .iPhone7Plus)
     XCTAssertEqual(Device.mapToDevice(identifier: "iPhone8,4"), .iPhoneSE)
+    XCTAssertEqual(Device.mapToDevice(identifier: "iPhone10,1"), .iPhone8)
     XCTAssertEqual(Device.mapToDevice(identifier: "iPhone10,4"), .iPhone8)
+    XCTAssertEqual(Device.mapToDevice(identifier: "iPhone10,2"), .iPhone8Plus)
     XCTAssertEqual(Device.mapToDevice(identifier: "iPhone10,5"), .iPhone8Plus)
     XCTAssertEqual(Device.mapToDevice(identifier: "iPhone10,3"), .iPhoneX)
+    XCTAssertEqual(Device.mapToDevice(identifier: "iPhone10,6"), .iPhoneX)
     XCTAssertEqual(Device.mapToDevice(identifier: "iPad2,1"), .iPad2)
     XCTAssertEqual(Device.mapToDevice(identifier: "iPad2,2"), .iPad2)
     XCTAssertEqual(Device.mapToDevice(identifier: "iPad2,3"), .iPad2)
@@ -354,6 +357,14 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.simulator(.iPadPro10Inch).ppi, 264)
   }
 
+  func testIsPlusSized() {
+    XCTAssertEqual(Device.allPlusSizedDevices, [.iPhone6Plus, .iPhone6sPlus, .iPhone7Plus, .iPhone8Plus])
+  }
+
+  func testIsPro() {
+    XCTAssertEqual(Device.allProDevices, [.iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch])
+  }
+
   #endif
 
   // MARK: - tvOS
@@ -363,7 +374,8 @@ class DeviceKitTests: XCTestCase {
   }
 
   func testDescriptionFromIdentifier() {
-    XCTAssertEqual(Device.mapToDevice(identifier: "AppleTV5,3").description, "Apple TV 4")
+  XCTAssertEqual(Device.mapToDevice(identifier: "AppleTV5,3").description, "Apple TV 4")
+  XCTAssertEqual(Device.mapToDevice(identifier: "AppleTV6,2").description, "Apple TV 4K")
   }
 
   /// Test that all the ppi values for applicable devices match the public information available at wikipedia. Test non-applicable devices return nil.
@@ -371,8 +383,10 @@ class DeviceKitTests: XCTestCase {
     // Non-applicable devices:
     // Apple TV
     XCTAssertEqual(Device.appleTV4.ppi, nil)
+    XCTAssertEqual(Device.appleTV4K.ppi, nil)
     // Simulators
     XCTAssertEqual(Device.simulator(Device.appleTV4).ppi, nil)
+    XCTAssertEqual(Device.simulator(Device.appleTV4K).ppi, nil)
   }
   #endif
 
