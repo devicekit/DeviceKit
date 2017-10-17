@@ -228,7 +228,7 @@ public enum Device {
 
     /// Returns whether the device is an iPhone (real or simulator)
     public var isPhone: Bool {
-      return isOneOf(Device.allPhones) || isOneOf(Device.allSimulatorPhones) || UIDevice.current.userInterfaceIdiom == .phone
+      return (isOneOf(Device.allPhones) || isOneOf(Device.allSimulatorPhones) || UIDevice.current.userInterfaceIdiom == .phone) && !isPod
     }
 
     /// Returns whether the device is an iPad (real or simulator)
