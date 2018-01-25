@@ -643,7 +643,12 @@ extension Device: Equatable {
         }
         UIDevice.current.isBatteryMonitoringEnabled = false
       }
-
+      
+      /// The user enabled Low Power mode
+      public var lowPowerMode: Bool {
+        return ProcessInfo.processInfo.isLowPowerModeEnabled
+      }
+        
       /// Provides a textual representation of the battery state.
       /// Examples:
       /// ```
