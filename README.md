@@ -145,6 +145,15 @@ if device.batteryLevel >= 50 {
 }
 ```
 
+### Get Low Power mode status
+```swift
+if device.batteryState.lowPowerMode {
+  print("Low Power mode is enabled! 🔋")
+} else {
+  print("Low Power mode is disabled! 😊")
+}
+```
+
 ## Source of Information
 All model identifiers are taken from the following website: https://www.theiphonewiki.com/wiki/Models or extracted from the simulator app bundled with Xcode.
 
