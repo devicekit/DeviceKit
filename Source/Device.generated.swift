@@ -541,6 +541,15 @@ public enum Device {
     return nil
     #endif
   }
+
+  /// True when a Guided Access session is currently active; otherwise, false.
+  public var isGuidedAccessSessionActive: Bool {
+    #if os(iOS)
+    return UIAccessibilityIsGuidedAccessEnabled()
+    #else
+    return false
+    #endif
+  }
 }
 
 // MARK: - CustomStringConvertible
@@ -643,12 +652,16 @@ extension Device: Equatable {
         }
         UIDevice.current.isBatteryMonitoringEnabled = false
       }
-      
+
       /// The user enabled Low Power mode
       public var lowPowerMode: Bool {
-        return ProcessInfo.processInfo.isLowPowerModeEnabled
+        if #available(iOSApplicationExtension 9.0, *) {
+          return ProcessInfo.processInfo.isLowPowerModeEnabled
+        } else {
+          return false
+        }
       }
-        
+
       /// Provides a textual representation of the battery state.
       /// Examples:
       /// ```
