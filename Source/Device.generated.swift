@@ -550,6 +550,14 @@ public enum Device {
     return false
     #endif
   }
+
+  public var screenBrightness: Int {
+    #if os(iOS)
+    return Int(UIScreen.main.brightness * 100)
+    #else
+    return 100
+    #endif
+  }
 }
 
 // MARK: - CustomStringConvertible
