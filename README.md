@@ -154,6 +154,15 @@ if device.batteryState.lowPowerMode {
 }
 ```
 
+### Check if a Guided Access session is currently active
+```swift
+if device.isGuidedAccessSessionActive {
+  print("Guided Access session is currently active")
+} else {
+  print("No Guided Access session is currently active")
+}
+```
+
 ## Source of Information
 All model identifiers are taken from the following website: https://www.theiphonewiki.com/wiki/Models or extracted from the simulator app bundled with Xcode.
 

@@ -365,6 +365,10 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.allProDevices, [.iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch])
   }
 
+  func testGuidedAccessSession() {
+    XCTAssertFalse(Device().isGuidedAccessSessionActive)
+  }
+
   #endif
 
   // MARK: - tvOS
