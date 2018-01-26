@@ -370,6 +370,15 @@ public enum Device {
     return nil
     #endif
   }
+
+  /// True when a Guided Access session is currently active; otherwise, false.
+  public var isGuidedAccessSessionActive: Bool {
+    #if os(iOS)
+    return UIAccessibilityIsGuidedAccessEnabled()
+    #else
+    return false
+    #endif
+  }
 }
 
 // MARK: - CustomStringConvertible
