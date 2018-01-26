@@ -456,7 +456,7 @@ extension Device: Equatable {
 
       /// The user enabled Low Power mode
       public var lowPowerMode: Bool {
-        if #available(iOSApplicationExtension 9.0, *) {
+        if #available(iOS 9.0, *) {
           return ProcessInfo.processInfo.isLowPowerModeEnabled
         } else {
           return false
