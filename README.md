@@ -163,6 +163,13 @@ if device.isGuidedAccessSessionActive {
 }
 ```
 
+### Get Screen Brightness
+```swift
+if device.screenBrightness < 50 {
+  print("Take care of your eyes!")
+}
+```
+
 ## Source of Information
 All model identifiers are taken from the following website: https://www.theiphonewiki.com/wiki/Models or extracted from the simulator app bundled with Xcode.
 
