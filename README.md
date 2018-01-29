@@ -36,6 +36,10 @@ DeviceKit can be installed in various ways.
 
 ### CocoaPods
 
+#### Swift 4
+```ruby
+pod 'DeviceKit', '~> 1.3.0'
+```
 #### Swift 3
 ```ruby
 pod 'DeviceKit', '~> 1.0'
@@ -47,6 +51,10 @@ pod 'DeviceKit', :git => 'https://github.com/dennisweissmann/DeviceKit.git', :br
 
 ### Carthage
 
+#### Swift 4
+```ogdl
+github "dennisweissmann/DeviceKit" ~> 1.3.0
+```
 #### Swift 3
 ```ogdl
 github "dennisweissmann/DeviceKit" ~> 1.0
@@ -183,12 +191,14 @@ The following people (in alphabetical order) contributed to this project - it wo
 - [chappieee](https://github.com/chappieee)
 - [Rui Costa](https://github.com/ruipfcosta)
 - [elgordino](https://github.com/elgordino)
+- [Martin Imobersteg](https://github.com/bugix)
 - [Genie Jhang](https://github.com/geniejhang)
 - [Steve Moser](https://github.com/stevemoser)
 - [Juan Carlos Ospina Gonzalez](https://github.com/piterwilson)
 - [phiren](https://github.com/phiren)
 - [Prakash Rajendran](https://github.com/dearprakash)
 - [Trey Richards](https://github.com/treyrich)
+- [Gianpiero Spinelli](https://github.com/gianpispi)
 - [Tillman Swinke](https://github.com/tswinke)
 - [Kraig Wastlund](https://github.com/KraigWastlund)
 - [Kaden Wilkinson](https://github.com/kdawgwilk)
