@@ -551,6 +551,7 @@ public enum Device {
     #endif
   }
 
+  /// The brightness level of the screen.
   public var screenBrightness: Int {
     #if os(iOS)
     return Int(UIScreen.main.brightness * 100)
