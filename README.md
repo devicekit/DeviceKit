@@ -139,6 +139,10 @@ if device.isOneOf(groupOfAllowedDevices) {
 ```
 
 ### Get the Current Battery State
+**Note:**
+
+> To get the current battery state we need to set `UIDevice.current.isBatteryMonitoringEnabled` to `true`. To avoid any issues with your code we read the current setting and reset it when we're done to what it was before..
+
 ```swift
 if device.batteryState == .full || device.batteryState >= .charging(75) {
   print("Your battery is happy! 😊")

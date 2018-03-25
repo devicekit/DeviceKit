@@ -2,7 +2,7 @@
 //
 // This source file is part of the DeviceKit open source project
 //
-// Copyright © 2014 - 2017 Dennis Weissmann and the DeviceKit project authors
+// Copyright © 2014 - 2018 Dennis Weissmann and the DeviceKit project authors
 //
 // License: https://github.com/dennisweissmann/DeviceKit/blob/master/LICENSE
 // Contributors: https://github.com/dennisweissmann/DeviceKit#contributors
@@ -660,6 +660,7 @@ extension Device: Equatable {
       case unplugged(Int)
 
       fileprivate init() {
+        let wasBatteryMonitoringEnabled = UIDevice.current.isBatteryMonitoringEnabled
         UIDevice.current.isBatteryMonitoringEnabled = true
         let batteryLevel = Int(round(UIDevice.current.batteryLevel * 100)) // round() is actually not needed anymore since -[batteryLevel] seems to always return a two-digit precision number
         // but maybe that changes in the future.
@@ -669,7 +670,7 @@ extension Device: Equatable {
         case .unplugged:self = .unplugged(batteryLevel)
         case .unknown: self = .full // Should never happen since `batteryMonitoring` is enabled.
         }
-        UIDevice.current.isBatteryMonitoringEnabled = false
+        UIDevice.current.isBatteryMonitoringEnabled = wasBatteryMonitoringEnabled
       }
 
       /// The user enabled Low Power mode

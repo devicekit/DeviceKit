@@ -369,6 +369,18 @@ class DeviceKitTests: XCTestCase {
     XCTAssertFalse(Device().isGuidedAccessSessionActive)
   }
 
+  // enable once unit tests can be run on device
+  func testKeepsBatteryMonitoringState() {
+    UIDevice.current.isBatteryMonitoringEnabled = true
+    XCTAssertTrue(UIDevice.current.isBatteryMonitoringEnabled)
+    _ = Device().batteryState
+    XCTAssertTrue(UIDevice.current.isBatteryMonitoringEnabled)
+
+    UIDevice.current.isBatteryMonitoringEnabled = false
+    _ = Device().batteryState
+    XCTAssertFalse(UIDevice.current.isBatteryMonitoringEnabled)
+  }
+
   #endif
 
   // MARK: - tvOS

@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode9
+osx_image: xcode9.3beta
 
 env:
   - DESTINATION='platform=iOS Simulator,name=iPad (5th generation)'
