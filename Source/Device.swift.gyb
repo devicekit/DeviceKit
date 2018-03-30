@@ -221,7 +221,17 @@ public enum Device {
       return allPads.map(Device.simulator)
     }
 
-    /// Returns whether the device is an iPod (real or simulator)
+   /// All simulator Plus-Sized Devices
+   public static var allSimulatorPlusSizedDevices: [Device] {
+     return allPlusSizedDevices.map(Device.simulator)
+   }
+
+   /// All simulator Pro Devices
+   public static var allSimulatorProDevices: [Device] {
+     return allProDevices.map(Device.simulator)
+   }
+
+   /// Returns whether the device is an iPod (real or simulator)
     public var isPod: Bool {
       return isOneOf(Device.allPods) || isOneOf(Device.allSimulatorPods)
     }
