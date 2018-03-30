@@ -201,7 +201,7 @@ public enum Device {
       return [${', '.join(list(map(lambda device: "." + device.caseName, list(filter(lambda device: device.isPlusFormFactor == True, iOSDevices)))))}]
     }
 
-    /// All Plus-Sized Devices
+    /// All Pro Devices
     public static var allProDevices: [Device] {
       return [${', '.join(list(map(lambda device: "." + device.caseName, list(filter(lambda device: device.isPro == True, iOSDevices)))))}]
     }

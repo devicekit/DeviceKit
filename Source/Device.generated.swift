@@ -285,7 +285,7 @@ public enum Device {
       return [.iPhone6Plus, .iPhone6sPlus, .iPhone7Plus, .iPhone8Plus]
     }
 
-    /// All Plus-Sized Devices
+    /// All Pro Devices
     public static var allProDevices: [Device] {
       return [.iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch]
     }
