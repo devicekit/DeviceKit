@@ -136,6 +136,10 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP751/ipad_5th_generation.png)
     case iPad5
+    /// Device is an [iPad 6](https://support.apple.com/kb/NotYetAvailable)
+    ///
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP751/ipad_5th_generation.png)
+    case iPad6
     /// Device is an [iPad Mini](https://support.apple.com/kb/SP661)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP661/sp661_ipad_mini_color.jpg)
@@ -242,6 +246,7 @@ public enum Device {
       case "iPad4,1", "iPad4,2", "iPad4,3": return iPadAir
       case "iPad5,3", "iPad5,4": return iPadAir2
       case "iPad6,11", "iPad6,12": return iPad5
+      case "iPad7,5", "iPad7,6": return iPad6
       case "iPad2,5", "iPad2,6", "iPad2,7": return iPadMini
       case "iPad4,4", "iPad4,5", "iPad4,6": return iPadMini2
       case "iPad4,7", "iPad4,8", "iPad4,9": return iPadMini3
@@ -277,7 +282,7 @@ public enum Device {
 
     /// All iPads
     public static var allPads: [Device] {
-       return [.iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPad5, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch]
+       return [.iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPad5, .iPad6, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch]
     }
 
     /// All Plus-Sized Devices
@@ -373,6 +378,7 @@ public enum Device {
       case .iPadAir: return 9.7
       case .iPadAir2: return 9.7
       case .iPad5: return 9.7
+      case .iPad6: return 9.7
       case .iPadMini: return 7.9
       case .iPadMini2: return 7.9
       case .iPadMini3: return 7.9
@@ -413,6 +419,7 @@ public enum Device {
       case .iPadAir: return (width: 3, height: 4)
       case .iPadAir2: return (width: 3, height: 4)
       case .iPad5: return (width: 3, height: 4)
+      case .iPad6: return (width: 3, height: 4)
       case .iPadMini: return (width: 3, height: 4)
       case .iPadMini2: return (width: 3, height: 4)
       case .iPadMini3: return (width: 3, height: 4)
@@ -537,6 +544,7 @@ public enum Device {
       case .iPadAir: return 264
       case .iPadAir2: return 264
       case .iPad5: return 264
+      case .iPad6: return 264
       case .iPadMini: return 163
       case .iPadMini2: return 326
       case .iPadMini3: return 326
@@ -603,6 +611,7 @@ extension Device: CustomStringConvertible {
       case .iPadAir: return "iPad Air"
       case .iPadAir2: return "iPad Air 2"
       case .iPad5: return "iPad 5"
+      case .iPad6: return "iPad 6"
       case .iPadMini: return "iPad Mini"
       case .iPadMini2: return "iPad Mini 2"
       case .iPadMini3: return "iPad Mini 3"
