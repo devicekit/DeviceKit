@@ -39,11 +39,11 @@ DeviceKit can be installed in various ways.
 
 #### Swift 4
 ```ruby
-pod 'DeviceKit', '~> 1.3.0'
+pod 'DeviceKit', '~> 1.6.0'
 ```
 #### Swift 3
 ```ruby
-pod 'DeviceKit', '~> 1.0'
+pod 'DeviceKit', '~> 1.2.3'
 ```
 #### Swift 2.3 (Unsupported)
 ```ruby
@@ -54,11 +54,11 @@ pod 'DeviceKit', :git => 'https://github.com/dennisweissmann/DeviceKit.git', :br
 
 #### Swift 4
 ```ogdl
-github "dennisweissmann/DeviceKit" ~> 1.3.0
+github "dennisweissmann/DeviceKit" ~> 1.6.0
 ```
 #### Swift 3
 ```ogdl
-github "dennisweissmann/DeviceKit" ~> 1.0
+github "dennisweissmann/DeviceKit" ~> 1.2.3
 ```
 #### Swift 2.3 (Unsupported)
 ```ogdl
