@@ -758,3 +758,32 @@ extension Device: Equatable {
   }
 
 #endif
+
+#if os(iOS)
+  extension Device {
+    // MARK: - Orientation
+    
+    /**
+     This enum describes the state of the orientation.
+     
+     - Landscape: The device is in Landscape Orientation
+     - Portrait:  The device is in Portrait Orientation
+     */
+    
+    public enum Orientation {
+      case landscape
+      case portrait
+    }
+    
+    public var orientation: Orientation {
+      get {
+        if UIDevice.current.orientation.isLandscape {
+          return .landscape
+        } else {
+          return .portrait
+        }
+      }
+    }
+  }
+  
+#endif
