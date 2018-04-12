@@ -390,10 +390,10 @@ class DeviceKitTests: XCTestCase {
   }
 
   func testDescriptionFromIdentifier() {
-  XCTAssertEqual(Device.mapToDevice(identifier: "AppleTV5,3").description, "Apple TV 4")
-  XCTAssertEqual(Device.mapToDevice(identifier: "AppleTV6,2").description, "Apple TV 4K")
+    XCTAssertEqual(Device.mapToDevice(identifier: "AppleTV5,3").description, "Apple TV 4")
+    XCTAssertEqual(Device.mapToDevice(identifier: "AppleTV6,2").description, "Apple TV 4K")
   }
-
+  
   /// Test that all the ppi values for applicable devices match the public information available at wikipedia. Test non-applicable devices return nil.
   func testPPI() {
     // Non-applicable devices:
@@ -405,5 +405,31 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.simulator(Device.appleTV4K).ppi, nil)
   }
   #endif
+
+  // MARK: - volumes
+  @available(iOS 11.0, *)
+  func testVolumeTotalCapacity() {
+    XCTAssertNotNil(Device.volumeTotalCapacity)
+  }
+
+  @available(iOS 11.0, *)
+  func testVolumeAvailableCapacity() {
+    XCTAssertNotNil(Device.volumeAvailableCapacity)
+  }
+
+  @available(iOS 11.0, *)
+  func testVolumeAvailableCapacityForImportantUsage() {
+    XCTAssertNotNil(Device.volumeAvailableCapacityForImportantUsage)
+  }
+
+  @available(iOS 11.0, *)
+  func testVolumeAvailableCapacityForOpportunisticUsage() {
+    XCTAssertNotNil(Device.volumeAvailableCapacityForOpportunisticUsage)
+  }
+
+  @available(iOS 11.0, *)
+  func testVolumes() {
+    XCTAssertNotNil(Device.volumes)
+  }
 
 }
