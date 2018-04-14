@@ -66,8 +66,7 @@ github "dennisweissmann/DeviceKit" "swift-2.3-unsupported"
 ```
 
 ### Manually
-To install it manually drag the DeviceKit project into your app project in Xcode or add it as a git submodule.
-In your project folder enter:
+To install it manually, drag the `DeviceKit` project into your app project in Xcode. Or add it as a git submodule by running:
 ```bash
 $ git submodule add https://github.com/dennisweissmann/DeviceKit.git
 ```
@@ -113,7 +112,7 @@ if device.isPod {
 ```swift
 let device = Device()
 if device.isSimulator {
-  // Running on one of the simulators(iPod/iPhone/iPad) 
+  // Running on one of the simulators(iPod/iPhone/iPad)
   // Skip doing something irrelevant for Simulator
 } 
 ```
@@ -134,14 +133,14 @@ let groupOfAllowedDevices: [Device] = [.iPhone6, .iPhone6Plus, .iPhone6s, .iPhon
 let device = Device()
  
 if device.isOneOf(groupOfAllowedDevices) {
-  // Do you action
+  // Do your action
 }
 ```
 
 ### Get the Current Battery State
 **Note:**
 
-> To get the current battery state we need to set `UIDevice.current.isBatteryMonitoringEnabled` to `true`. To avoid any issues with your code we read the current setting and reset it when we're done to what it was before..
+> To get the current battery state we need to set `UIDevice.current.isBatteryMonitoringEnabled` to `true`. To avoid any issues with your code, we read the current setting and reset it to what it was before when we're done.
 
 ```swift
 if device.batteryState == .full || device.batteryState >= .charging(75) {
@@ -178,7 +177,7 @@ if device.isGuidedAccessSessionActive {
 
 ### Get Screen Brightness
 ```swift
-if device.screenBrightness < 50 {
+if device.screenBrightness > 50 {
   print("Take care of your eyes!")
 }
 ```
@@ -192,4 +191,3 @@ If you extended the functionality of DeviceKit yourself and want others to use i
 
 ## Contributors
 The complete list of people who contributed to this project is available [here](https://github.com/dennisweissmann/DeviceKit/graphs/contributors). DeviceKit wouldn't be what it is without you! Thank you very much! 🙏
-
