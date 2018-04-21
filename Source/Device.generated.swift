@@ -136,9 +136,9 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP751/ipad_5th_generation.png)
     case iPad5
-    /// Device is an [iPad 6](https://support.apple.com/kb/NotYetAvailable)
+    /// Device is an [iPad 6](https://support.apple.com/kb/SP774)
     ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP751/ipad_5th_generation.png)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP774/sp774-ipad-6-gen.png)
     case iPad6
     /// Device is an [iPad Mini](https://support.apple.com/kb/SP661)
     ///
