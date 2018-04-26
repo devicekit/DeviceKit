@@ -7,7 +7,7 @@ import UIKit
 public extension Sequence where Iterator.Element == Device {
 
     var simulators: [Device] {
-        return map { .simulator($0) }
+        return map(Device.simulator)
     }
 
     var andSimulators: [Device] {
