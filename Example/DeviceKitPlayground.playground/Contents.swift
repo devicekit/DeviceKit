@@ -1,8 +1,8 @@
 //: Playground - noun: a place where people can play
 // To use this playground, build DeviceKit.framework for any simulator first.
 
-import UIKit
 import DeviceKit
+import UIKit
 
 let device = Device()
 
