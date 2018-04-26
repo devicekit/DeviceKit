@@ -381,6 +381,11 @@ class DeviceKitTests: XCTestCase {
     XCTAssertFalse(UIDevice.current.isBatteryMonitoringEnabled)
   }
 
+  func testSimilatorExtension() {
+    XCTAssertEqual(Device.allPads.simulators, Device.allSimulatorPads)
+    XCTAssertEqual(Device.allPads.andSimulators, Device.allPads + Device.allSimulatorPads)
+  }
+
   // MARK: - volumes
   @available(iOS 11.0, *)
   func testVolumeTotalCapacity() {

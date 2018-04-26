@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		066BAE0C209179DA00C83F4B /* Device+Simulators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066BAE0B209179DA00C83F4B /* Device+Simulators.swift */; };
 		6D29C0C01F122C7A005B52BD /* Device.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D29C0BF1F122C77005B52BD /* Device.generated.swift */; };
 		955EE5A31D5E581B008C3DA8 /* DeviceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 955EE59A1D5E581B008C3DA8 /* DeviceKit.framework */; };
 		955EE5B41D5E5A90008C3DA8 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C7E8451C61253900B0189E /* Tests.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		066BAE0B209179DA00C83F4B /* Device+Simulators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Device+Simulators.swift"; sourceTree = "<group>"; };
 		6D29C0BC1F122863005B52BD /* Device.swift.gyb */ = {isa = PBXFileReference; explicitFileType = text.script.python; fileEncoding = 4; lineEnding = 0; name = Device.swift.gyb; path = Source/Device.swift.gyb; sourceTree = "<group>"; };
 		6D29C0BF1F122C77005B52BD /* Device.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Device.generated.swift; path = Source/Device.generated.swift; sourceTree = "<group>"; };
 		6D8442931EED755900F2864D /* Gemfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile.lock; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				6D29C0BF1F122C77005B52BD /* Device.generated.swift */,
+				066BAE0B209179DA00C83F4B /* Device+Simulators.swift */,
 				6D29C0BC1F122863005B52BD /* Device.swift.gyb */,
 				951E3A0E1C61549400261610 /* Info.plist */,
 			);
@@ -298,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				066BAE0C209179DA00C83F4B /* Device+Simulators.swift in Sources */,
 				6D29C0C01F122C7A005B52BD /* Device.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
