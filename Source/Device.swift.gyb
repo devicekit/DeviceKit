@@ -12,7 +12,7 @@
 %{
 class Device:
 
-  def __init__(self, caseName, comment, imageURL, identifiers, diagonal, screenRatio, description, ppi, isPlusFormFactor, isPro):
+  def __init__(self, caseName, comment, imageURL, identifiers, diagonal, screenRatio, description, ppi, isPlusFormFactor, isPadMiniFormFactor, isPro):
     self.caseName = caseName
     self.comment = comment
     self.imageURL = imageURL
@@ -22,6 +22,7 @@ class Device:
     self.description = description
     self.ppi = ppi
     self.isPlusFormFactor = isPlusFormFactor
+    self.isPadMiniFormFactor = isPadMiniFormFactor
     self.isPro = isPro
 
 # iOS
@@ -207,6 +208,11 @@ public enum Device {
       return [${', '.join(list(map(lambda device: "." + device.caseName, list(filter(lambda device: device.isPro == True, iOSDevices)))))}]
     }
 
+    /// All mini Devices
+    public static var allMiniDevices: [Device] {
+      return [${', '.join(list(map(lambda device: "." + device.caseName, list(filter(lambda device: device.isPadMiniFormFactor == True, iOSDevices)))))}]
+    }
+
     /// All simulator iPods
     public static var allSimulatorPods: [Device] {
       return allPods.map(Device.simulator)
@@ -220,6 +226,11 @@ public enum Device {
     /// All simulator iPads
     public static var allSimulatorPads: [Device] {
       return allPads.map(Device.simulator)
+    }
+
+    /// All simulator iPad mini
+    public static var allSimulatorMiniDevices: [Device] {
+      return allMiniDevices.map(Device.simulator)
     }
 
    /// All simulator Plus-Sized Devices
