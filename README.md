@@ -83,6 +83,12 @@ Here are some usage examples. All devices are also available as simulators:
 .iPhone6s => .simulator(.iPhone6s)
 ```
 
+You can try these examples in Playground.
+
+**Note:**
+
+> To try DeviceKit in playground, open the `DeviceKit.xcworkspace` and build DeviceKit.framework for any simulator first.
+
 ### Get the Device You're Running On
 ```swift
 let device = Device()
