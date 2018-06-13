@@ -565,7 +565,7 @@ public enum Device {
   /// True when a Guided Access session is currently active; otherwise, false.
   public var isGuidedAccessSessionActive: Bool {
     #if os(iOS)
-    return UIAccessibilityIsGuidedAccessEnabled()
+    return UIAccessibility.isGuidedAccessEnabled
     #else
     return false
     #endif
