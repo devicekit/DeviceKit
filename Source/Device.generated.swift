@@ -795,7 +795,6 @@ extension Device {
 
 #if os(iOS)
 // MARK: - DiskSpace
-@available(iOS 11.0, *)
 extension Device {
 
   /// Return the root url
@@ -826,6 +825,7 @@ extension Device {
   }
 
   /// The volume’s available capacity in bytes for storing important resources.
+  @available(iOS 11.0, *)
   public static var volumeAvailableCapacityForImportantUsage: Int64? {
     do {
       let values = try rootURL.resourceValues(forKeys: [.volumeAvailableCapacityForImportantUsageKey])
@@ -836,6 +836,7 @@ extension Device {
   }
 
   /// The volume’s available capacity in bytes for storing nonessential resources.
+  @available(iOS 11.0, *)
   public static var volumeAvailableCapacityForOpportunisticUsage: Int64? { //swiftlint:disable:this identifier_name
     do {
       let values = try rootURL.resourceValues(forKeys: [.volumeAvailableCapacityForOpportunisticUsageKey])
@@ -846,6 +847,7 @@ extension Device {
   }
 
   /// All volumes capacity information in bytes.
+  @available(iOS 11.0, *)
   public static var volumes: [URLResourceKey: Int64]? {
     do {
       let values = try rootURL.resourceValues(forKeys: [
