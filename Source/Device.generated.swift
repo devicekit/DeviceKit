@@ -294,6 +294,11 @@ public enum Device {
     public static var allProDevices: [Device] {
       return [.iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch]
     }
+    
+    /// All mini Devices
+    public static var allMiniDevices: [Device] {
+      return [.iPadMini, .iPadMini2, .iPadMini3, .iPadMini4]
+    }
 
     /// All mini Devices
     public static var allMiniDevices: [Device] {
@@ -313,6 +318,11 @@ public enum Device {
     /// All simulator iPads
     public static var allSimulatorPads: [Device] {
       return allPads.map(Device.simulator)
+    }
+    
+    /// All simulator iPad mini
+    public static var allSimulatorMiniDevices: [Device] {
+      return allMiniDevices.map(Device.simulator)
     }
 
     /// All simulator iPad mini
