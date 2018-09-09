@@ -206,11 +206,11 @@ if device.screenBrightness > 50 {
 
 ### Get Available Disk Space
 ```swift
-if Device.volumeAvailableCapacityForOpportunisticUsage > Int64(1_000_000) {
+if Device.volumeAvailableCapacityForOpportunisticUsage ?? 0 > Int64(1_000_000) {
   // download that nice-to-have huge file
 }
 
-if Device.volumeAvailableCapacityForImportantUsage > Int64(1_000) {
+if Device.volumeAvailableCapacityForImportantUsage ?? 0 > Int64(1_000) {
   // download that file you really need
 }
 ```

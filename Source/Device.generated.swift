@@ -269,6 +269,20 @@ public enum Device {
     #endif
   }
 
+  /// Get the real device from a device. If the device is a an iPhone8Plus simulator this function returns .iPhone8Plus (the real device).
+  /// If the parameter is a real device, this function returns just that passed parameter.
+  ///
+  /// - parameter device: A device.
+  ///
+  /// - returns: the underlying device If the `device` is a `simulator`,
+  /// otherwise return the `device`.
+  public static func realDevice(from device: Device) -> Device {
+    if case let .simulator(model) = device {
+      return model
+    }
+    return device
+  }
+
   #if os(iOS)
     /// All iPods
     public static var allPods: [Device] {
@@ -349,6 +363,12 @@ public enum Device {
     /// Useful when there is a need to check and skip running a portion of code (location request or others)
     public var isSimulator: Bool {
       return isOneOf(Device.allSimulators)
+    }
+
+    /// If this device is a simulator return the underlying device,
+    /// otherwise return `self`.
+    public var realDevice: Device {
+      return Device.realDevice(from: self)
     }
 
     public var isZoomed: Bool {
