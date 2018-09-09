@@ -320,17 +320,17 @@ public enum Device {
       return allMiniDevices.map(Device.simulator)
     }
 
-   /// All simulator Plus-Sized Devices
-   public static var allSimulatorPlusSizedDevices: [Device] {
-     return allPlusSizedDevices.map(Device.simulator)
-   }
+    /// All simulator Plus-Sized Devices
+    public static var allSimulatorPlusSizedDevices: [Device] {
+      return allPlusSizedDevices.map(Device.simulator)
+    }
 
-   /// All simulator Pro Devices
-   public static var allSimulatorProDevices: [Device] {
-     return allProDevices.map(Device.simulator)
-   }
+    /// All simulator Pro Devices
+    public static var allSimulatorProDevices: [Device] {
+      return allProDevices.map(Device.simulator)
+    }
 
-   /// Returns whether the device is an iPod (real or simulator)
+    /// Returns whether the device is an iPod (real or simulator)
     public var isPod: Bool {
       return isOneOf(Device.allPods) || isOneOf(Device.allSimulatorPods)
     }
@@ -443,6 +443,32 @@ public enum Device {
       case .unknown: return (width: -1, height: -1)
       }
     }
+
+    /// All Touch ID Capable Devices
+    static var allTouchIDCapableDevices: [Device] {
+      return [.iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE, .iPhone8, .iPhone8Plus, .iPadAir2, .iPad5, .iPad6, .iPadMini3, .iPadMini4, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch]
+    }
+
+    /// All Face ID Capable Devices
+    static var allFaceIDCapableDevices: [Device] {
+      return [.iPhoneX]
+    }
+
+    /// Returns whether or not the device has Touch ID
+    var isTouchIDCapable: Bool {
+      return isOneOf(Device.allTouchIDCapableDevices)
+    }
+
+    /// Returns whether or not the device has Face ID
+    var isFaceIDCapable: Bool {
+      return isOneOf(Device.allFaceIDCapableDevices)
+    }
+
+    /// Returns whether or not the device has any biometric sensor (i.e. Touch ID or Face ID)
+    var hasBiometricSensor: Bool {
+      return isTouchIDCapable || isFaceIDCapable
+    }
+
   #elseif os(tvOS)
     /// All TVs
     public static var allTVs: [Device] {
