@@ -19,13 +19,21 @@
 
 ## Features
 
+- [x] Equatable
 - [x] Device identification
 - [x] Device family detection
 - [x] Device group detection
 - [x] Simulator detection
 - [x] Battery state
 - [x] Battery level
-- [x] Equatable
+- [x] Various device metrics (e.g. screen size, screen ratio, PPI)
+- [x] Low Power Mode detection
+- [x] Guided Access Session detection
+- [x] Screen brightness
+- [x] Display Zoom detection
+- [x] Detect available sensors (Touch ID, Face ID)
+- [x] Detect available disk space
+
 
 ## Requirements
 
@@ -37,7 +45,11 @@ DeviceKit can be installed in various ways.
 
 ### CocoaPods
 
-#### Swift 4
+#### Swift 4.2 (Pre-Release)
+```ruby
+pod 'DeviceKit', :git => 'https://github.com/dennisweissmann/DeviceKit.git', :branch => 'master'
+```
+#### Swift 4.0 - Swift 4.1
 ```ruby
 pod 'DeviceKit', '~> 1.3'
 ```
@@ -52,7 +64,11 @@ pod 'DeviceKit', :git => 'https://github.com/dennisweissmann/DeviceKit.git', :br
 
 ### Carthage
 
-#### Swift 4
+#### Swift 4.2 (Pre-Release)
+```ogdl
+github "dennisweissmann/DeviceKit" "master"
+```
+#### Swift 4.0 - Swift 4.1
 ```ogdl
 github "dennisweissmann/DeviceKit" ~> 1.3
 ```
@@ -87,7 +103,7 @@ You can try these examples in Playground.
 
 **Note:**
 
-> To try DeviceKit in playground, open the `DeviceKit.xcworkspace` and build DeviceKit.framework for any simulator first.
+> To try DeviceKit in the playground, open the `DeviceKit.xcworkspace` and build DeviceKit.framework for any simulator first by selecting "DeviceKit" as your current scheme.
 
 ### Get the Device You're Running On
 ```swift
@@ -185,6 +201,17 @@ if device.isGuidedAccessSessionActive {
 ```swift
 if device.screenBrightness > 50 {
   print("Take care of your eyes!")
+}
+```
+
+### Get Available Disk Space
+```swift
+if Device.volumeAvailableCapacityForOpportunisticUsage > Int64(1_000_000) {
+  // download that nice-to-have huge file
+}
+
+if Device.volumeAvailableCapacityForImportantUsage > Int64(1_000) {
+  // download that file you really need
 }
 ```
 
