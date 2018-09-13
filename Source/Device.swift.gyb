@@ -323,27 +323,27 @@ public enum Device {
     }
 
     /// All Touch ID Capable Devices
-    static var allTouchIDCapableDevices: [Device] {
+    static public var allTouchIDCapableDevices: [Device] {
       return [${', '.join(list(map(lambda device: "." + device.caseName, list(filter(lambda device: device.hasTouchID == True, iOSDevices)))))}]
     }
 
     /// All Face ID Capable Devices
-    static var allFaceIDCapableDevices: [Device] {
+    static public var allFaceIDCapableDevices: [Device] {
       return [${', '.join(list(map(lambda device: "." + device.caseName, list(filter(lambda device: device.hasFaceID == True, iOSDevices)))))}]
     }
 
     /// Returns whether or not the device has Touch ID
-    var isTouchIDCapable: Bool {
+    public var isTouchIDCapable: Bool {
       return isOneOf(Device.allTouchIDCapableDevices)
     }
 
     /// Returns whether or not the device has Face ID
-    var isFaceIDCapable: Bool {
+    public var isFaceIDCapable: Bool {
       return isOneOf(Device.allFaceIDCapableDevices)
     }
 
     /// Returns whether or not the device has any biometric sensor (i.e. Touch ID or Face ID)
-    var hasBiometricSensor: Bool {
+    public var hasBiometricSensor: Bool {
       return isTouchIDCapable || isFaceIDCapable
     }
 
