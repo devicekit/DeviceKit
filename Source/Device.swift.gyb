@@ -146,11 +146,11 @@ public enum Device {
 
   /// Initializes a `Device` representing the current device this software runs on.
   public init() {
-    self = Device.mapToDevice(identifier: Device.identifier)
+    self = Device.instance
   }
 
   /// Gets the identifier from the system, such as "iPhone7,1".
-  public static var identifier: String {
+  public static var identifier: String = {
     var systemInfo = utsname()
     uname(&systemInfo)
     let mirror = Mirror(reflecting: systemInfo.machine)
@@ -160,7 +160,9 @@ public enum Device {
       return identifier + String(UnicodeScalar(UInt8(value)))
     }
     return identifier
-  }
+  }()
+
+  public static var instance = Device.mapToDevice(identifier: Device.identifier)
 
   /// Maps an identifier to a Device. If the identifier can not be mapped to an existing device, `UnknownDevice(identifier)` is returned.
   ///
