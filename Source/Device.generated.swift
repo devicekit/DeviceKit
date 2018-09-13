@@ -112,6 +112,18 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP770/iphonex.png)
     case iPhoneX
+    /// Device is an [iPhone XS](https://support.apple.com/kb/SP779)
+    ///
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP779/SP779-iphone-xs.jpg)
+    case iPhoneXS
+    /// Device is an [iPhone XS Max](https://support.apple.com/kb/SP780)
+    ///
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP780/SP780-iPhone-Xs-Max.jpg)
+    case iPhoneXSMax
+    /// Device is an [iPhone XR](https://support.apple.com/kb/SP781)
+    ///
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP781/SP781-iPhone-xr.jpg)
+    case iPhoneXR
     /// Device is an [iPad 2](https://support.apple.com/kb/SP622)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP622/SP622_01-ipad2-mul.png)
@@ -240,6 +252,9 @@ public enum Device {
       case "iPhone10,1", "iPhone10,4": return iPhone8
       case "iPhone10,2", "iPhone10,5": return iPhone8Plus
       case "iPhone10,3", "iPhone10,6": return iPhoneX
+      case "iPhone11,2": return iPhoneXS
+      case "iPhone11,4", "iPhone11,6": return iPhoneXSMax
+      case "iPhone11,8": return iPhoneXR
       case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4": return iPad2
       case "iPad3,1", "iPad3,2", "iPad3,3": return iPad3
       case "iPad3,4", "iPad3,5", "iPad3,6": return iPad4
@@ -291,7 +306,7 @@ public enum Device {
 
     /// All iPhones
     public static var allPhones: [Device] {
-      return [.iPhone4, .iPhone4s, .iPhone5, .iPhone5c, .iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE, .iPhone8, .iPhone8Plus, .iPhoneX]
+      return [.iPhone4, .iPhone4s, .iPhone5, .iPhone5c, .iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE, .iPhone8, .iPhone8Plus, .iPhoneX, .iPhoneXS, .iPhoneXSMax, .iPhoneXR]
     }
 
     /// All iPads
@@ -402,6 +417,9 @@ public enum Device {
       case .iPhone8: return 4.7
       case .iPhone8Plus: return 5.5
       case .iPhoneX: return 5.8
+      case .iPhoneXS: return 5.8
+      case .iPhoneXSMax: return 6.5
+      case .iPhoneXR: return 6.1
       case .iPad2: return 9.7
       case .iPad3: return 9.7
       case .iPad4: return 9.7
@@ -443,6 +461,9 @@ public enum Device {
       case .iPhone8: return (width: 9, height: 16)
       case .iPhone8Plus: return (width: 9, height: 16)
       case .iPhoneX: return (width: 9, height: 19.5)
+      case .iPhoneXS: return (width: 9, height: 19.5)
+      case .iPhoneXSMax: return (width: 9, height: 19.5)
+      case .iPhoneXR: return (width: 9, height: 19.5)
       case .iPad2: return (width: 3, height: 4)
       case .iPad3: return (width: 3, height: 4)
       case .iPad4: return (width: 3, height: 4)
@@ -471,7 +492,7 @@ public enum Device {
 
     /// All Face ID Capable Devices
     static var allFaceIDCapableDevices: [Device] {
-      return [.iPhoneX]
+      return [.iPhoneX, .iPhoneXS, .iPhoneXSMax, .iPhoneXR]
     }
 
     /// Returns whether or not the device has Touch ID
@@ -594,6 +615,9 @@ public enum Device {
       case .iPhone8: return 326
       case .iPhone8Plus: return 401
       case .iPhoneX: return 458
+      case .iPhoneXS: return 458
+      case .iPhoneXSMax: return 458
+      case .iPhoneXR: return 326
       case .iPad2: return 132
       case .iPad3: return 264
       case .iPad4: return 264
@@ -661,6 +685,9 @@ extension Device: CustomStringConvertible {
       case .iPhone8: return "iPhone 8"
       case .iPhone8Plus: return "iPhone 8 Plus"
       case .iPhoneX: return "iPhone X"
+      case .iPhoneXS: return "iPhone XS"
+      case .iPhoneXSMax: return "iPhone XS Max"
+      case .iPhoneXR: return "iPhone XR"
       case .iPad2: return "iPad 2"
       case .iPad3: return "iPad 3"
       case .iPad4: return "iPad 4"
