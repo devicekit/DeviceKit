@@ -24,7 +24,6 @@
 		6D29C0C01F122C7A005B52BD /* Device.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D29C0BF1F122C77005B52BD /* Device.generated.swift */; };
 		955EE5A31D5E581B008C3DA8 /* DeviceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 955EE59A1D5E581B008C3DA8 /* DeviceKit.framework */; };
 		955EE5B41D5E5A90008C3DA8 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C7E8451C61253900B0189E /* Tests.swift */; };
-		955EE5B61D5E5E6C008C3DA8 /* DeviceKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 955EE5B51D5E5E6C008C3DA8 /* DeviceKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +48,6 @@
 		954977FA1E748DC600D6FAEB /* push.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = push.sh; path = Scripts/push.sh; sourceTree = "<group>"; };
 		955EE59A1D5E581B008C3DA8 /* DeviceKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeviceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		955EE5A21D5E581B008C3DA8 /* DeviceKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeviceKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		955EE5B51D5E5E6C008C3DA8 /* DeviceKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceKit.h; sourceTree = "<group>"; };
 		957D18251C28C1E90067D203 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		957D18261C28C1F30067D203 /* DeviceKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = DeviceKit.podspec; sourceTree = "<group>"; };
 		957D18271C28C1FC0067D203 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
@@ -123,7 +121,6 @@
 				954977F91E748DB000D6FAEB /* Scripts */,
 				957D18251C28C1E90067D203 /* README.md */,
 				95C7E84E1C61332300B0189E /* Package.swift */,
-				955EE5B51D5E5E6C008C3DA8 /* DeviceKit.h */,
 				957D18261C28C1F30067D203 /* DeviceKit.podspec */,
 				957D18271C28C1FC0067D203 /* .travis.yml */,
 				95C7E84D1C6130DB00B0189E /* .swiftlint.yml */,
@@ -155,7 +152,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				955EE5B61D5E5E6C008C3DA8 /* DeviceKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +384,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.2;
@@ -444,6 +441,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.2;

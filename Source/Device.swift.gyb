@@ -49,9 +49,9 @@ iPhones = [
             Device("iPhone8",         "Device is an [iPhone 8](https://support.apple.com/kb/SP767)",                    "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP767/iphone8.png",                              ["iPhone10,1", "iPhone10,4"],                 4.7,  (9, 16),  "iPhone 8", 326, False, False, False, True, False),
             Device("iPhone8Plus",     "Device is an [iPhone 8 Plus](https://support.apple.com/kb/SP768)",               "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP768/iphone8plus.png",                          ["iPhone10,2", "iPhone10,5"],                 5.5,  (9, 16),  "iPhone 8 Plus", 401, True, False, False, True, False),
             Device("iPhoneX",         "Device is an [iPhone X](https://support.apple.com/kb/SP770)",                    "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP770/iphonex.png",                              ["iPhone10,3", "iPhone10,6"],                 5.8,  (9, 19.5),  "iPhone X", 458, False, False, False, False, True),
-            Device("iPhoneXS",        "Device is an [iPhone XS](https://support.apple.com/kb/SP779)",                   "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP779/SP779-iphone-xs.jpg",                      ["iPhone11,2"],                               5.8,  (9, 19.5),  "iPhone XS", 458, False, False, False, False, True),
-            Device("iPhoneXSMax",     "Device is an [iPhone XS Max](https://support.apple.com/kb/SP780)",               "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP780/SP780-iPhone-Xs-Max.jpg",                  ["iPhone11,4", "iPhone11,6"],                 6.5,  (9, 19.5),  "iPhone XS Max", 458, False, False, False, False, True),
-            Device("iPhoneXR",        "Device is an [iPhone XR](https://support.apple.com/kb/SP781)",                   "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP781/SP781-iPhone-xr.jpg",                      ["iPhone11,8"],                               6.1,  (9, 19.5),  "iPhone XR", 326, False, False, False, False, True)
+            Device("iPhoneXs",        "Device is an [iPhone Xs](https://support.apple.com/kb/SP779)",                   "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP779/SP779-iphone-xs.jpg",                      ["iPhone11,2"],                               5.8,  (9, 19.5),  "iPhone Xs", 458, False, False, False, False, True),
+            Device("iPhoneXsMax",     "Device is an [iPhone Xs Max](https://support.apple.com/kb/SP780)",               "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP780/SP780-iPhone-Xs-Max.jpg",                  ["iPhone11,4", "iPhone11,6"],                 6.5,  (9, 19.5),  "iPhone Xs Max", 458, False, False, False, False, True),
+            Device("iPhoneXr",        "Device is an [iPhone Xr](https://support.apple.com/kb/SP781)",                   "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP781/SP781-iPhone-xr.jpg",                      ["iPhone11,8"],                               6.1,  (9, 19.5),  "iPhone Xr", 326, False, False, False, False, True)
           ]
 
 iPads = [
@@ -162,7 +162,7 @@ public enum Device {
     return identifier
   }()
 
-  public static var instance = Device.mapToDevice(identifier: Device.identifier)
+  private static let instance = Device.mapToDevice(identifier: Device.identifier)
 
   /// Maps an identifier to a Device. If the identifier can not be mapped to an existing device, `UnknownDevice(identifier)` is returned.
   ///
@@ -293,7 +293,7 @@ public enum Device {
 
     public var isZoomed: Bool {
       // TODO: Longterm we need a better solution for this!
-      guard self != .iPhoneX && self != .iPhoneXS else { return false }
+      guard self != .iPhoneX && self != .iPhoneXs else { return false }
       if Int(UIScreen.main.scale.rounded()) == 3 {
         // Plus-sized
         return UIScreen.main.nativeScale > 2.7

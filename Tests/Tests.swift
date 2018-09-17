@@ -70,6 +70,10 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.mapToDevice(identifier: "iPhone10,5"), .iPhone8Plus)
     XCTAssertEqual(Device.mapToDevice(identifier: "iPhone10,3"), .iPhoneX)
     XCTAssertEqual(Device.mapToDevice(identifier: "iPhone10,6"), .iPhoneX)
+    XCTAssertEqual(Device.mapToDevice(identifier: "iPhone11,2"), .iPhoneXs)
+    XCTAssertEqual(Device.mapToDevice(identifier: "iPhone11,4"), .iPhoneXsMax)
+    XCTAssertEqual(Device.mapToDevice(identifier: "iPhone11,6"), .iPhoneXsMax)
+    XCTAssertEqual(Device.mapToDevice(identifier: "iPhone11,8"), .iPhoneXr)
     XCTAssertEqual(Device.mapToDevice(identifier: "iPad2,1"), .iPad2)
     XCTAssertEqual(Device.mapToDevice(identifier: "iPad2,2"), .iPad2)
     XCTAssertEqual(Device.mapToDevice(identifier: "iPad2,3"), .iPad2)
@@ -126,6 +130,9 @@ class DeviceKitTests: XCTestCase {
     XCTAssertTrue(Device.iPhone8.screenRatio == (width: 9, height: 16))
     XCTAssertTrue(Device.iPhone8Plus.screenRatio == (width: 9, height: 16))
     XCTAssertTrue(Device.iPhoneX.screenRatio == (width: 9, height: 19.5))
+    XCTAssertTrue(Device.iPhoneXs.screenRatio == (width: 9, height: 19.5))
+    XCTAssertTrue(Device.iPhoneXsMax.screenRatio == (width: 9, height: 19.5))
+    XCTAssertTrue(Device.iPhoneXr.screenRatio == (width: 9, height: 19.5))
     XCTAssertTrue(Device.iPad2.screenRatio == (width: 3, height: 4))
     XCTAssertTrue(Device.iPad3.screenRatio == (width: 3, height: 4))
     XCTAssertTrue(Device.iPad4.screenRatio == (width: 3, height: 4))
@@ -165,6 +172,9 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.iPhone7Plus.diagonal, 5.5)
     XCTAssertEqual(Device.iPhone8Plus.diagonal, 5.5)
     XCTAssertEqual(Device.iPhoneX.diagonal, 5.8)
+    XCTAssertEqual(Device.iPhoneXs.diagonal, 5.8)
+    XCTAssertEqual(Device.iPhoneXsMax.diagonal, 6.5)
+    XCTAssertEqual(Device.iPhoneXr.diagonal, 6.1)
 
     XCTAssertEqual(Device.iPad2.diagonal, 9.7)
     XCTAssertEqual(Device.iPad3.diagonal, 9.7)
@@ -205,6 +215,9 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.iPhone8.description, "iPhone 8")
     XCTAssertEqual(Device.iPhone8Plus.description, "iPhone 8 Plus")
     XCTAssertEqual(Device.iPhoneX.description, "iPhone X")
+    XCTAssertEqual(Device.iPhoneXs.description, "iPhone Xs")
+    XCTAssertEqual(Device.iPhoneXsMax.description, "iPhone Xs Max")
+    XCTAssertEqual(Device.iPhoneXr.description, "iPhone Xr")
     XCTAssertEqual(Device.iPad2.description, "iPad 2")
     XCTAssertEqual(Device.iPad3.description, "iPad 3")
     XCTAssertEqual(Device.iPad4.description, "iPad 4")
@@ -297,11 +310,11 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.iPadPro10Inch.ppi, 264)
 
     // Simulators
-    // IPods
+    // iPods
     XCTAssertEqual(Device.simulator(.iPodTouch5).ppi, 326)
     // source: https://en.wikipedia.org/wiki/IPod_Touch_(6th_generation)
     XCTAssertEqual(Device.simulator(.iPodTouch5).ppi, 326)
-    // Iphones
+    // iPhones
     // source: https://en.wikipedia.org/wiki/IPhone_4
     XCTAssertEqual(Device.simulator(.iPhone4).ppi, 326)
     // source: https://en.wikipedia.org/wiki/IPhone_4S
@@ -326,7 +339,14 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.simulator(.iPhone7Plus).ppi, 401)
     // source: https://en.wikipedia.org/wiki/IPhone_SE
     XCTAssertEqual(Device.simulator(.iPhoneSE).ppi, 326)
-    // Ipads
+    XCTAssertEqual(Device.simulator(.iPhone8).ppi, 326)
+    XCTAssertEqual(Device.simulator(.iPhone8Plus).ppi, 401)
+    XCTAssertEqual(Device.simulator(.iPhoneX).ppi, 458)
+    XCTAssertEqual(Device.simulator(.iPhoneXs).ppi, 458)
+    XCTAssertEqual(Device.simulator(.iPhoneXsMax).ppi, 458)
+    XCTAssertEqual(Device.simulator(.iPhoneXr).ppi, 326)
+
+    // iPads
     // source: https://en.wikipedia.org/wiki/IPad_2
     XCTAssertEqual(Device.simulator(.iPad2).ppi, 132)
     // source: https://en.wikipedia.org/wiki/IPad_(3rd_generation)
