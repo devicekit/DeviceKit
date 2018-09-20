@@ -315,6 +315,11 @@ public enum Device {
     public static var allPads: [Device] {
       return [.iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPad5, .iPad6, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch]
     }
+    
+    /// All X-Series Devices
+    public static var allXSeriesDevices: [Device] {
+      return [.iPhoneX, .iPhoneXs, .iPhoneXsMax, .iPhoneXr]
+    }
 
     /// All Plus-Sized Devices
     public static var allPlusSizedDevices: [Device] {
@@ -349,6 +354,11 @@ public enum Device {
     /// All simulator iPad mini
     public static var allSimulatorMiniDevices: [Device] {
       return allMiniDevices.map(Device.simulator)
+    }
+
+    /// All simulator Plus-Sized Devices
+    public static var allSimulatorXSeriesDevices: [Device] {
+      return allXSeriesDevices.map(Device.simulator)
     }
 
     /// All simulator Plus-Sized Devices
