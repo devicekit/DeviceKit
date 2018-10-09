@@ -158,7 +158,11 @@ iOSDevices = iPods + iPhones + iPads + homePods
 tvOSDevices = tvs
 watchOSDevices = watches
 }%
+#if os(watchOS)
+import WatchKit
+#else
 import UIKit
+#endif
 
 // MARK: - Device
 
@@ -206,6 +210,13 @@ public enum Device {
     /// ![Image](${device.imageURL})
     case ${device.caseName}
 % end
+  #elseif os(watchOS)
+  % for device in watchOSDevices:
+    /// ${device.comment}
+      ///
+      /// ![Image](${device.imageURL})
+      case ${device.caseName}
+  % end
   #endif
 
   /// Device is [Simulator](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/Introduction/Introduction.html)
@@ -258,6 +269,14 @@ public enum Device {
       case ${', '.join(list(map(lambda device: "\"" + device + "\"", device.identifiers)))}: return ${device.caseName}
 % end
       case "i386", "x86_64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "tvOS"))
+      default: return unknown(identifier)
+      }
+    #elseif os(watchOS)
+    switch identifier {
+% for device in watchOSDevices:
+      case ${', '.join(list(map(lambda device: "\"" + device + "\"", device.identifiers)))}: return ${device.caseName}
+% end
+      case "i386", "x86_64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "watchOS"))
       default: return unknown(identifier)
       }
     #endif
@@ -506,27 +525,47 @@ public enum Device {
 
   /// The name identifying the device (e.g. "Dennis' iPhone").
   public var name: String {
+    #if os(watchOS)
+    return WKInterfaceDevice.current().name
+    #else
     return UIDevice.current.name
+    #endif
   }
 
   /// The name of the operating system running on the device represented by the receiver (e.g. "iOS" or "tvOS").
   public var systemName: String {
+    #if os(watchOS)
+    return WKInterfaceDevice.current().systemName
+    #else
     return UIDevice.current.systemName
+    #endif
   }
 
   /// The current version of the operating system (e.g. 8.4 or 9.2).
   public var systemVersion: String {
+    #if os(watchOS)
+    return WKInterfaceDevice.current().systemVersion
+    #else
     return UIDevice.current.systemVersion
+    #endif
   }
 
   /// The model of the device (e.g. "iPhone" or "iPod Touch").
   public var model: String {
+    #if os(watchOS)
+    return WKInterfaceDevice.current().model
+    #else
     return UIDevice.current.model
+    #endif
   }
 
   /// The model of the device as a localized string.
   public var localizedModel: String {
+    #if os(watchOS)
+    return WKInterfaceDevice.current().localizedModel
+    #else
     return UIDevice.current.localizedModel
+    #endif
   }
 
   /// PPI (Pixels per Inch) on the current device's screen (if applicable). When the device is not applicable this property returns nil.
@@ -588,7 +627,7 @@ extension Device: CustomStringConvertible {
       case .simulator(let model): return "Simulator (\(model))"
       case .unknown(let identifier): return identifier
       }
-    #if os(watchOS)
+    #elseif os(watchOS)
       switch self {
 % for device in watchOSDevices:
       case .${device.caseName}: return "${device.description}"

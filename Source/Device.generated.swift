@@ -1,4 +1,3 @@
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 1)
 //===----------------------------------------------------------------------===//
 //
 // This source file is part of the DeviceKit open source project
@@ -10,8 +9,11 @@
 //
 //===----------------------------------------------------------------------===//
 
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 161)
+#if os(watchOS)
+import WatchKit
+#else
 import UIKit
+#endif
 
 // MARK: - Device
 
@@ -46,199 +48,200 @@ import UIKit
 ///
 public enum Device {
   #if os(iOS)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPod Touch (5th generation)](https://support.apple.com/kb/SP657)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP657/sp657_ipod-touch_size.jpg)
     case iPodTouch5
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPod Touch (6th generation)](https://support.apple.com/kb/SP720)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP720/SP720-ipod-touch-specs-color-sg-2015.jpg)
     case iPodTouch6
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPhone 4](https://support.apple.com/kb/SP587)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP643/sp643_iphone4s_color_black.jpg)
     case iPhone4
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPhone 4s](https://support.apple.com/kb/SP643)
     ///
     /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/iphone/iphone5s/iphone_4s.png)
     case iPhone4s
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPhone 5](https://support.apple.com/kb/SP655)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP655/sp655_iphone5_color.jpg)
     case iPhone5
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPhone 5c](https://support.apple.com/kb/SP684)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP684/SP684-color_yellow.jpg)
     case iPhone5c
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPhone 5s](https://support.apple.com/kb/SP685)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP685/SP685-color_black.jpg)
     case iPhone5s
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPhone 6](https://support.apple.com/kb/SP705)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP705/SP705-iphone_6-mul.png)
     case iPhone6
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPhone 6 Plus](https://support.apple.com/kb/SP706)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP706/SP706-iphone_6_plus-mul.png)
     case iPhone6Plus
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPhone 6s](https://support.apple.com/kb/SP726)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP726/SP726-iphone6s-gray-select-2015.png)
     case iPhone6s
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPhone 6s Plus](https://support.apple.com/kb/SP727)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP727/SP727-iphone6s-plus-gray-select-2015.png)
     case iPhone6sPlus
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPhone 7](https://support.apple.com/kb/SP743)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP743/iphone7-black.png)
     case iPhone7
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPhone 7 Plus](https://support.apple.com/kb/SP744)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP744/iphone7-plus-black.png)
     case iPhone7Plus
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPhone SE](https://support.apple.com/kb/SP738)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP738/SP738.png)
     case iPhoneSE
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPhone 8](https://support.apple.com/kb/SP767)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP767/iphone8.png)
     case iPhone8
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPhone 8 Plus](https://support.apple.com/kb/SP768)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP768/iphone8plus.png)
     case iPhone8Plus
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPhone X](https://support.apple.com/kb/SP770)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP770/iphonex.png)
     case iPhoneX
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPhone Xs](https://support.apple.com/kb/SP779)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP779/SP779-iphone-xs.jpg)
     case iPhoneXs
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPhone Xs Max](https://support.apple.com/kb/SP780)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP780/SP780-iPhone-Xs-Max.jpg)
     case iPhoneXsMax
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPhone Xr](https://support.apple.com/kb/SP781)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP781/SP781-iPhone-xr.jpg)
     case iPhoneXr
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPad 2](https://support.apple.com/kb/SP622)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP622/SP622_01-ipad2-mul.png)
     case iPad2
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPad (3rd generation)](https://support.apple.com/kb/SP647)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP662/sp662_ipad-4th-gen_color.jpg)
     case iPad3
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPad (4th generation)](https://support.apple.com/kb/SP662)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP662/sp662_ipad-4th-gen_color.jpg)
     case iPad4
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPad Air](https://support.apple.com/kb/SP692)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP692/SP692-specs_color-mul.png)
     case iPadAir
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPad Air 2](https://support.apple.com/kb/SP708)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP708/SP708-space_gray.jpeg)
     case iPadAir2
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPad 5](https://support.apple.com/kb/SP751)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP751/ipad_5th_generation.png)
     case iPad5
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPad 6](https://support.apple.com/kb/NotYetAvailable)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP751/ipad_5th_generation.png)
     case iPad6
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPad Mini](https://support.apple.com/kb/SP661)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP661/sp661_ipad_mini_color.jpg)
     case iPadMini
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPad Mini 2](https://support.apple.com/kb/SP693)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP693/SP693-specs_color-mul.png)
     case iPadMini2
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPad Mini 3](https://support.apple.com/kb/SP709)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP709/SP709-space_gray.jpeg)
     case iPadMini3
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPad Mini 4](https://support.apple.com/kb/SP725)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP725/SP725ipad-mini-4.png)
     case iPadMini4
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPad Pro](https://support.apple.com/kb/SP739)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP739/SP739.png)
     case iPadPro9Inch
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPad Pro](https://support.apple.com/kb/sp723)
     ///
     /// ![Image](http://images.apple.com/v/ipad-pro/c/images/shared/buystrip/ipad_pro_large_2x.png)
     case iPadPro12Inch
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPad Pro](https://support.apple.com/kb/SP761)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP761/ipad-pro-12in-hero-201706.png)
     case iPadPro12Inch2
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is an [iPad Pro 10.5](https://support.apple.com/kb/SP762)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP761/ipad-pro-10in-hero-201706.png)
     case iPadPro10Inch
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 197)
     /// Device is a [HomePod](https://www.apple.com/homepod/)
     ///
     /// ![Image](https://images.apple.com/v/homepod/d/images/overview/homepod_side_dark_large_2x.jpg)
     case homePod
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 202)
   #elseif os(tvOS)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 204)
     /// Device is an [Apple TV 4](https://support.apple.com/kb/SP724)
     ///
     /// ![Image](http://images.apple.com/v/tv/c/images/overview/buy_tv_large_2x.jpg)
     case appleTV4
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 204)
     /// Device is an [Apple TV 4K](https://support.apple.com/kb/SP769)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP769/appletv4k.png)
     case appleTV4K
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 209)
+  #elseif os(watchOS)
+    /// Device is an [Apple Watch (1st generation)](https://support.apple.com/kb/SP735)
+      ///
+      /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM784/en_US/apple_watch_sport-240.png)
+      case appleWatchSeries0_38mm
+    /// Device is an [Apple Watch (1st generation)](https://support.apple.com/kb/SP735)
+      ///
+      /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM784/en_US/apple_watch_sport-240.png)
+      case appleWatchSeries0_42mm
+    /// Device is an [Apple Watch Series 1](https://support.apple.com/kb/SP745)
+      ///
+      /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM848/en_US/applewatch-series2-aluminum-temp-240.png)
+      case appleWatchSeries1_38mm
+    /// Device is an [Apple Watch Series 1](https://support.apple.com/kb/SP745)
+      ///
+      /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM848/en_US/applewatch-series2-aluminum-temp-240.png)
+      case appleWatchSeries1_42mm
+    /// Device is an [Apple Watch Series 2](https://support.apple.com/kb/SP746)
+      ///
+      /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM852/en_US/applewatch-series2-hermes-240.png)
+      case appleWatchSeries2_38mm
+    /// Device is an [Apple Watch Series 2](https://support.apple.com/kb/SP746)
+      ///
+      /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM852/en_US/applewatch-series2-hermes-240.png)
+      case appleWatchSeries2_42mm
+    /// Device is an [Apple Watch Series 3](https://support.apple.com/kb/SP766)
+      ///
+      /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM893/en_US/apple-watch-s3-nikeplus-240.png)
+      case appleWatchSeries3_38mm
+    /// Device is an [Apple Watch Series 3](https://support.apple.com/kb/SP766)
+      ///
+      /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM893/en_US/apple-watch-s3-nikeplus-240.png)
+      case appleWatchSeries3_42mm
+    /// Device is an [Apple Watch Series 4](https://support.apple.com/kb/SP778)
+      ///
+      /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM911/en_US/aw-series4-nike-240.png)
+      case appleWatchSeries4_40mm
+    /// Device is an [Apple Watch Series 4](https://support.apple.com/kb/SP778)
+      ///
+      /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM911/en_US/aw-series4-nike-240.png)
+      case appleWatchSeries4_44mm
   #endif
 
   /// Device is [Simulator](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/Introduction/Introduction.html)
@@ -279,90 +282,65 @@ public enum Device {
   public static func mapToDevice(identifier: String) -> Device { // swiftlint:disable:this cyclomatic_complexity
     #if os(iOS)
       switch identifier {
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPod5,1": return iPodTouch5
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPod7,1": return iPodTouch6
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPhone3,1", "iPhone3,2", "iPhone3,3": return iPhone4
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPhone4,1": return iPhone4s
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPhone5,1", "iPhone5,2": return iPhone5
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPhone5,3", "iPhone5,4": return iPhone5c
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPhone6,1", "iPhone6,2": return iPhone5s
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPhone7,2": return iPhone6
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPhone7,1": return iPhone6Plus
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPhone8,1": return iPhone6s
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPhone8,2": return iPhone6sPlus
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPhone9,1", "iPhone9,3": return iPhone7
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPhone9,2", "iPhone9,4": return iPhone7Plus
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPhone8,4": return iPhoneSE
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPhone10,1", "iPhone10,4": return iPhone8
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPhone10,2", "iPhone10,5": return iPhone8Plus
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPhone10,3", "iPhone10,6": return iPhoneX
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPhone11,2": return iPhoneXs
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPhone11,4", "iPhone11,6": return iPhoneXsMax
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPhone11,8": return iPhoneXr
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4": return iPad2
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPad3,1", "iPad3,2", "iPad3,3": return iPad3
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPad3,4", "iPad3,5", "iPad3,6": return iPad4
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPad4,1", "iPad4,2", "iPad4,3": return iPadAir
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPad5,3", "iPad5,4": return iPadAir2
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPad6,11", "iPad6,12": return iPad5
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPad7,5", "iPad7,6": return iPad6
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPad2,5", "iPad2,6", "iPad2,7": return iPadMini
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPad4,4", "iPad4,5", "iPad4,6": return iPadMini2
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPad4,7", "iPad4,8", "iPad4,9": return iPadMini3
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPad5,1", "iPad5,2": return iPadMini4
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPad6,3", "iPad6,4": return iPadPro9Inch
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPad6,7", "iPad6,8": return iPadPro12Inch
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPad7,1", "iPad7,2": return iPadPro12Inch2
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "iPad7,3", "iPad7,4": return iPadPro10Inch
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 250)
       case "AudioAccessory1,1": return homePod
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 252)
       case "i386", "x86_64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "iOS"))
       default: return unknown(identifier)
       }
     #elseif os(tvOS)
       switch identifier {
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 258)
       case "AppleTV5,3": return appleTV4
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 258)
       case "AppleTV6,2": return appleTV4K
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 260)
       case "i386", "x86_64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "tvOS"))
+      default: return unknown(identifier)
+      }
+    #elseif os(watchOS)
+    switch identifier {
+      case "Watch1,1": return appleWatchSeries0_38mm
+      case "Watch1,2": return appleWatchSeries0_42mm
+      case "Watch2,6": return appleWatchSeries1_38mm
+      case "Watch2,7": return appleWatchSeries1_42mm
+      case "Watch2,3": return appleWatchSeries2_38mm
+      case "Watch2,4": return appleWatchSeries2_42mm
+      case "Watch3,1", "Watch3,3": return appleWatchSeries3_38mm
+      case "Watch3,2", "Watch3,4": return appleWatchSeries3_42mm
+      case "Watch4,1", "Watch4,3": return appleWatchSeries4_40mm
+      case "Watch4,2", "Watch4,4": return appleWatchSeries4_44mm
+      case "i386", "x86_64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "watchOS"))
       default: return unknown(identifier)
       }
     #endif
@@ -494,79 +472,42 @@ public enum Device {
     /// Returns diagonal screen length in inches
     public var diagonal: Double {
        switch self {
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPodTouch5: return 4
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPodTouch6: return 4
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPhone4: return 3.5
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPhone4s: return 3.5
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPhone5: return 4
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPhone5c: return 4
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPhone5s: return 4
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPhone6: return 4.7
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPhone6Plus: return 5.5
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPhone6s: return 4.7
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPhone6sPlus: return 5.5
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPhone7: return 4.7
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPhone7Plus: return 5.5
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPhoneSE: return 4
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPhone8: return 4.7
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPhone8Plus: return 5.5
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPhoneX: return 5.8
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPhoneXs: return 5.8
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPhoneXsMax: return 6.5
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPhoneXr: return 6.1
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPad2: return 9.7
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPad3: return 9.7
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPad4: return 9.7
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPadAir: return 9.7
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPadAir2: return 9.7
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPad5: return 9.7
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPad6: return 9.7
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPadMini: return 7.9
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPadMini2: return 7.9
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPadMini3: return 7.9
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPadMini4: return 7.9
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPadPro9Inch: return 9.7
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPadPro12Inch: return 12.9
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPadPro12Inch2: return 12.9
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .iPadPro10Inch: return 10.5
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 393)
       case .homePod: return -1
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 395)
       case .simulator(let model): return model.diagonal
       case .unknown: return -1
       }
@@ -575,79 +516,42 @@ public enum Device {
     /// Returns screen ratio as a tuple
     public var screenRatio: (width: Double, height: Double) {
       switch self {
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPodTouch5: return (width: 9, height: 16)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPodTouch6: return (width: 9, height: 16)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPhone4: return (width: 2, height: 3)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPhone4s: return (width: 2, height: 3)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPhone5: return (width: 9, height: 16)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPhone5c: return (width: 9, height: 16)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPhone5s: return (width: 9, height: 16)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPhone6: return (width: 9, height: 16)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPhone6Plus: return (width: 9, height: 16)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPhone6s: return (width: 9, height: 16)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPhone6sPlus: return (width: 9, height: 16)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPhone7: return (width: 9, height: 16)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPhone7Plus: return (width: 9, height: 16)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPhoneSE: return (width: 9, height: 16)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPhone8: return (width: 9, height: 16)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPhone8Plus: return (width: 9, height: 16)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPhoneX: return (width: 9, height: 19.5)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPhoneXs: return (width: 9, height: 19.5)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPhoneXsMax: return (width: 9, height: 19.5)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPhoneXr: return (width: 9, height: 19.5)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPad2: return (width: 3, height: 4)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPad3: return (width: 3, height: 4)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPad4: return (width: 3, height: 4)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPadAir: return (width: 3, height: 4)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPadAir2: return (width: 3, height: 4)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPad5: return (width: 3, height: 4)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPad6: return (width: 3, height: 4)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPadMini: return (width: 3, height: 4)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPadMini2: return (width: 3, height: 4)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPadMini3: return (width: 3, height: 4)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPadMini4: return (width: 3, height: 4)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPadPro9Inch: return (width: 3, height: 4)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPadPro12Inch: return (width: 3, height: 4)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPadPro12Inch2: return (width: 3, height: 4)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .iPadPro10Inch: return (width: 3, height: 4)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 404)
       case .homePod: return (width: 4, height: 5)
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 406)
       case .simulator(let model): return model.screenRatio
       case .unknown: return (width: -1, height: -1)
       }
@@ -751,132 +655,104 @@ public enum Device {
 
   /// The name identifying the device (e.g. "Dennis' iPhone").
   public var name: String {
+    #if os(watchOS)
+    return WKInterfaceDevice.current().name
+    #else
     return UIDevice.current.name
+    #endif
   }
 
   /// The name of the operating system running on the device represented by the receiver (e.g. "iOS" or "tvOS").
   public var systemName: String {
+    #if os(watchOS)
+    return WKInterfaceDevice.current().systemName
+    #else
     return UIDevice.current.systemName
+    #endif
   }
 
   /// The current version of the operating system (e.g. 8.4 or 9.2).
   public var systemVersion: String {
+    #if os(watchOS)
+    return WKInterfaceDevice.current().systemVersion
+    #else
     return UIDevice.current.systemVersion
+    #endif
   }
 
   /// The model of the device (e.g. "iPhone" or "iPod Touch").
   public var model: String {
+    #if os(watchOS)
+    return WKInterfaceDevice.current().model
+    #else
     return UIDevice.current.model
+    #endif
   }
 
   /// The model of the device as a localized string.
   public var localizedModel: String {
+    #if os(watchOS)
+    return WKInterfaceDevice.current().localizedModel
+    #else
     return UIDevice.current.localizedModel
+    #endif
   }
 
   /// PPI (Pixels per Inch) on the current device's screen (if applicable). When the device is not applicable this property returns nil.
   public var ppi: Int? {
     #if os(iOS)
     switch self {
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPodTouch5: return 326
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPodTouch6: return 326
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPhone4: return 326
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPhone4s: return 326
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPhone5: return 326
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPhone5c: return 326
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPhone5s: return 326
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPhone6: return 326
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPhone6Plus: return 401
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPhone6s: return 326
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPhone6sPlus: return 401
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPhone7: return 326
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPhone7Plus: return 401
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPhoneSE: return 326
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPhone8: return 326
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPhone8Plus: return 401
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPhoneX: return 458
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPhoneXs: return 458
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPhoneXsMax: return 458
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPhoneXr: return 326
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPad2: return 132
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPad3: return 264
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPad4: return 264
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPadAir: return 264
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPadAir2: return 264
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPad5: return 264
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPad6: return 264
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPadMini: return 163
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPadMini2: return 326
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPadMini3: return 326
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPadMini4: return 326
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPadPro9Inch: return 264
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPadPro12Inch: return 264
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPadPro12Inch2: return 264
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .iPadPro10Inch: return 264
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 537)
       case .homePod: return -1
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 539)
       case .simulator(let model): return model.ppi
       case .unknown: return nil
     }
     #elseif os(watchOS)
     switch self {
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 545)
     case .appleWatchSeries0_38mm: return 290
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 545)
     case .appleWatchSeries0_42mm: return 303
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 545)
     case .appleWatchSeries1_38mm: return 290
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 545)
     case .appleWatchSeries1_42mm: return 303
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 545)
     case .appleWatchSeries2_38mm: return 290
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 545)
     case .appleWatchSeries2_42mm: return 303
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 545)
     case .appleWatchSeries3_38mm: return 290
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 545)
     case .appleWatchSeries3_42mm: return 303
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 545)
     case .appleWatchSeries4_40mm: return 326
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 545)
     case .appleWatchSeries4_44mm: return 326
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 547)
     case .simulator(let model): return model.ppi
     case .unknown: return nil
     }
@@ -915,115 +791,64 @@ extension Device: CustomStringConvertible {
   public var description: String {
     #if os(iOS)
       switch self {
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPodTouch5: return "iPod Touch 5"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPodTouch6: return "iPod Touch 6"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPhone4: return "iPhone 4"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPhone4s: return "iPhone 4s"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPhone5: return "iPhone 5"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPhone5c: return "iPhone 5c"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPhone5s: return "iPhone 5s"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPhone6: return "iPhone 6"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPhone6Plus: return "iPhone 6 Plus"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPhone6s: return "iPhone 6s"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPhone6sPlus: return "iPhone 6s Plus"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPhone7: return "iPhone 7"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPhone7Plus: return "iPhone 7 Plus"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPhoneSE: return "iPhone SE"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPhone8: return "iPhone 8"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPhone8Plus: return "iPhone 8 Plus"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPhoneX: return "iPhone X"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPhoneXs: return "iPhone Xs"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPhoneXsMax: return "iPhone Xs Max"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPhoneXr: return "iPhone Xr"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPad2: return "iPad 2"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPad3: return "iPad 3"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPad4: return "iPad 4"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPadAir: return "iPad Air"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPadAir2: return "iPad Air 2"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPad5: return "iPad 5"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPad6: return "iPad 6"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPadMini: return "iPad Mini"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPadMini2: return "iPad Mini 2"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPadMini3: return "iPad Mini 3"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPadMini4: return "iPad Mini 4"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPadPro9Inch: return "iPad Pro (9.7-inch)"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPadPro12Inch: return "iPad Pro (12.9-inch)"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPadPro12Inch2: return "iPad Pro (12.9-inch) 2"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .iPadPro10Inch: return "iPad Pro (10.5-inch)"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 586)
       case .homePod: return "HomePod"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 588)
       case .simulator(let model): return "Simulator (\(model))"
       case .unknown(let identifier): return identifier
       }
-    #if os(watchOS)
+    #elseif os(watchOS)
       switch self {
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 594)
       case .appleWatchSeries0_38mm: return "Apple Watch (1st generation) 38mm"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 594)
       case .appleWatchSeries0_42mm: return "Apple Watch (1st generation) 42mm"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 594)
       case .appleWatchSeries1_38mm: return "Apple Watch Series 1 38mm"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 594)
       case .appleWatchSeries1_42mm: return "Apple Watch Series 1 42mm"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 594)
       case .appleWatchSeries2_38mm: return "Apple Watch Series 2 38mm"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 594)
       case .appleWatchSeries2_42mm: return "Apple Watch Series 2 42mm"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 594)
       case .appleWatchSeries3_38mm: return "Apple Watch Series 3 38mm"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 594)
       case .appleWatchSeries3_42mm: return "Apple Watch Series 3 42mm"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 594)
       case .appleWatchSeries4_40mm: return "Apple Watch Series 4 40mm"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 594)
       case .appleWatchSeries4_44mm: return "Apple Watch Series 4 44mm"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 596)
       case .simulator(let model): return "Simulator (\(model))"
       case .unknown(let identifier): return identifier
       }
     #elseif os(tvOS)
       switch self {
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 602)
       case .appleTV4: return "Apple TV 4"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 602)
       case .appleTV4K: return "Apple TV 4K"
-// ###sourceLocation(file: "/Users/robbiet480/Repos/HomeAssistant/DeviceKit/Source/Device.swift.gyb", line: 604)
       case .simulator(let model): return "Simulator (\(model))"
       case .unknown(let identifier): return identifier
       }
