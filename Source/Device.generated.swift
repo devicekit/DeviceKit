@@ -360,6 +360,130 @@ public enum Device {
     return device
   }
 
+  /// Returns diagonal screen length in inches
+  public var diagonal: Double? {
+    #if os(iOS)
+      switch self {
+        case .iPodTouch5: return 4
+        case .iPodTouch6: return 4
+        case .iPhone4: return 3.5
+        case .iPhone4s: return 3.5
+        case .iPhone5: return 4
+        case .iPhone5c: return 4
+        case .iPhone5s: return 4
+        case .iPhone6: return 4.7
+        case .iPhone6Plus: return 5.5
+        case .iPhone6s: return 4.7
+        case .iPhone6sPlus: return 5.5
+        case .iPhone7: return 4.7
+        case .iPhone7Plus: return 5.5
+        case .iPhoneSE: return 4
+        case .iPhone8: return 4.7
+        case .iPhone8Plus: return 5.5
+        case .iPhoneX: return 5.8
+        case .iPhoneXs: return 5.8
+        case .iPhoneXsMax: return 6.5
+        case .iPhoneXr: return 6.1
+        case .iPad2: return 9.7
+        case .iPad3: return 9.7
+        case .iPad4: return 9.7
+        case .iPadAir: return 9.7
+        case .iPadAir2: return 9.7
+        case .iPad5: return 9.7
+        case .iPad6: return 9.7
+        case .iPadMini: return 7.9
+        case .iPadMini2: return 7.9
+        case .iPadMini3: return 7.9
+        case .iPadMini4: return 7.9
+        case .iPadPro9Inch: return 9.7
+        case .iPadPro12Inch: return 12.9
+        case .iPadPro12Inch2: return 12.9
+        case .iPadPro10Inch: return 10.5
+        case .homePod: return -1
+        case .simulator(let model): return model.diagonal
+        case .unknown: return nil
+      }
+    #elseif os(watchOS)
+      switch self {
+      case .appleWatchSeries0_38mm: return 1.5
+      case .appleWatchSeries0_42mm: return 1.6
+      case .appleWatchSeries1_38mm: return 1.5
+      case .appleWatchSeries1_42mm: return 1.6
+      case .appleWatchSeries2_38mm: return 1.5
+      case .appleWatchSeries2_42mm: return 1.6
+      case .appleWatchSeries3_38mm: return 1.5
+      case .appleWatchSeries3_42mm: return 1.6
+      case .appleWatchSeries4_40mm: return 1.8
+      case .appleWatchSeries4_44mm: return 2.0
+      case .simulator(let model): return model.diagonal
+      case .unknown: return nil
+      }
+    #elseif os(tvOS)
+      return nil
+    #endif
+  }
+
+  /// Returns screen ratio as a tuple
+  public var screenRatio: (width: Double, height: Double) {
+    #if os(iOS)
+      switch self {
+      case .iPodTouch5: return (width: 9, height: 16)
+      case .iPodTouch6: return (width: 9, height: 16)
+      case .iPhone4: return (width: 2, height: 3)
+      case .iPhone4s: return (width: 2, height: 3)
+      case .iPhone5: return (width: 9, height: 16)
+      case .iPhone5c: return (width: 9, height: 16)
+      case .iPhone5s: return (width: 9, height: 16)
+      case .iPhone6: return (width: 9, height: 16)
+      case .iPhone6Plus: return (width: 9, height: 16)
+      case .iPhone6s: return (width: 9, height: 16)
+      case .iPhone6sPlus: return (width: 9, height: 16)
+      case .iPhone7: return (width: 9, height: 16)
+      case .iPhone7Plus: return (width: 9, height: 16)
+      case .iPhoneSE: return (width: 9, height: 16)
+      case .iPhone8: return (width: 9, height: 16)
+      case .iPhone8Plus: return (width: 9, height: 16)
+      case .iPhoneX: return (width: 9, height: 19.5)
+      case .iPhoneXs: return (width: 9, height: 19.5)
+      case .iPhoneXsMax: return (width: 9, height: 19.5)
+      case .iPhoneXr: return (width: 9, height: 19.5)
+      case .iPad2: return (width: 3, height: 4)
+      case .iPad3: return (width: 3, height: 4)
+      case .iPad4: return (width: 3, height: 4)
+      case .iPadAir: return (width: 3, height: 4)
+      case .iPadAir2: return (width: 3, height: 4)
+      case .iPad5: return (width: 3, height: 4)
+      case .iPad6: return (width: 3, height: 4)
+      case .iPadMini: return (width: 3, height: 4)
+      case .iPadMini2: return (width: 3, height: 4)
+      case .iPadMini3: return (width: 3, height: 4)
+      case .iPadMini4: return (width: 3, height: 4)
+      case .iPadPro9Inch: return (width: 3, height: 4)
+      case .iPadPro12Inch: return (width: 3, height: 4)
+      case .iPadPro12Inch2: return (width: 3, height: 4)
+      case .iPadPro10Inch: return (width: 3, height: 4)
+      case .homePod: return (width: 4, height: 5)
+      case .simulator(let model): return model.screenRatio
+      case .unknown: return (width: -1, height: -1)
+      }
+    #elseif os(watchOS)
+      switch self {
+      case .appleWatchSeries0_38mm: return (width: 4, height: 5)
+      case .appleWatchSeries0_42mm: return (width: 4, height: 5)
+      case .appleWatchSeries1_38mm: return (width: 4, height: 5)
+      case .appleWatchSeries1_42mm: return (width: 4, height: 5)
+      case .appleWatchSeries2_38mm: return (width: 4, height: 5)
+      case .appleWatchSeries2_42mm: return (width: 4, height: 5)
+      case .appleWatchSeries3_38mm: return (width: 4, height: 5)
+      case .appleWatchSeries3_42mm: return (width: 4, height: 5)
+      case .appleWatchSeries4_40mm: return (width: 4, height: 5)
+      case .appleWatchSeries4_44mm: return (width: 4, height: 5)
+      case .simulator(let model): return model.screenRatio
+      case .unknown: return (width: -1, height: -1)
+      }
+    #endif
+  }
+
   #if os(iOS)
     /// All iPods
     public static var allPods: [Device] {
@@ -466,94 +590,6 @@ public enum Device {
         return UIScreen.main.nativeScale > 2.7
       } else {
         return UIScreen.main.nativeScale > UIScreen.main.scale
-      }
-    }
-
-    /// Returns diagonal screen length in inches
-    public var diagonal: Double {
-       switch self {
-      case .iPodTouch5: return 4
-      case .iPodTouch6: return 4
-      case .iPhone4: return 3.5
-      case .iPhone4s: return 3.5
-      case .iPhone5: return 4
-      case .iPhone5c: return 4
-      case .iPhone5s: return 4
-      case .iPhone6: return 4.7
-      case .iPhone6Plus: return 5.5
-      case .iPhone6s: return 4.7
-      case .iPhone6sPlus: return 5.5
-      case .iPhone7: return 4.7
-      case .iPhone7Plus: return 5.5
-      case .iPhoneSE: return 4
-      case .iPhone8: return 4.7
-      case .iPhone8Plus: return 5.5
-      case .iPhoneX: return 5.8
-      case .iPhoneXs: return 5.8
-      case .iPhoneXsMax: return 6.5
-      case .iPhoneXr: return 6.1
-      case .iPad2: return 9.7
-      case .iPad3: return 9.7
-      case .iPad4: return 9.7
-      case .iPadAir: return 9.7
-      case .iPadAir2: return 9.7
-      case .iPad5: return 9.7
-      case .iPad6: return 9.7
-      case .iPadMini: return 7.9
-      case .iPadMini2: return 7.9
-      case .iPadMini3: return 7.9
-      case .iPadMini4: return 7.9
-      case .iPadPro9Inch: return 9.7
-      case .iPadPro12Inch: return 12.9
-      case .iPadPro12Inch2: return 12.9
-      case .iPadPro10Inch: return 10.5
-      case .homePod: return -1
-      case .simulator(let model): return model.diagonal
-      case .unknown: return -1
-      }
-    }
-
-    /// Returns screen ratio as a tuple
-    public var screenRatio: (width: Double, height: Double) {
-      switch self {
-      case .iPodTouch5: return (width: 9, height: 16)
-      case .iPodTouch6: return (width: 9, height: 16)
-      case .iPhone4: return (width: 2, height: 3)
-      case .iPhone4s: return (width: 2, height: 3)
-      case .iPhone5: return (width: 9, height: 16)
-      case .iPhone5c: return (width: 9, height: 16)
-      case .iPhone5s: return (width: 9, height: 16)
-      case .iPhone6: return (width: 9, height: 16)
-      case .iPhone6Plus: return (width: 9, height: 16)
-      case .iPhone6s: return (width: 9, height: 16)
-      case .iPhone6sPlus: return (width: 9, height: 16)
-      case .iPhone7: return (width: 9, height: 16)
-      case .iPhone7Plus: return (width: 9, height: 16)
-      case .iPhoneSE: return (width: 9, height: 16)
-      case .iPhone8: return (width: 9, height: 16)
-      case .iPhone8Plus: return (width: 9, height: 16)
-      case .iPhoneX: return (width: 9, height: 19.5)
-      case .iPhoneXs: return (width: 9, height: 19.5)
-      case .iPhoneXsMax: return (width: 9, height: 19.5)
-      case .iPhoneXr: return (width: 9, height: 19.5)
-      case .iPad2: return (width: 3, height: 4)
-      case .iPad3: return (width: 3, height: 4)
-      case .iPad4: return (width: 3, height: 4)
-      case .iPadAir: return (width: 3, height: 4)
-      case .iPadAir2: return (width: 3, height: 4)
-      case .iPad5: return (width: 3, height: 4)
-      case .iPad6: return (width: 3, height: 4)
-      case .iPadMini: return (width: 3, height: 4)
-      case .iPadMini2: return (width: 3, height: 4)
-      case .iPadMini3: return (width: 3, height: 4)
-      case .iPadMini4: return (width: 3, height: 4)
-      case .iPadPro9Inch: return (width: 3, height: 4)
-      case .iPadPro12Inch: return (width: 3, height: 4)
-      case .iPadPro12Inch2: return (width: 3, height: 4)
-      case .iPadPro10Inch: return (width: 3, height: 4)
-      case .homePod: return (width: 4, height: 5)
-      case .simulator(let model): return model.screenRatio
-      case .unknown: return (width: -1, height: -1)
       }
     }
 

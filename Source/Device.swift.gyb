@@ -296,6 +296,50 @@ public enum Device {
     return device
   }
 
+  /// Returns diagonal screen length in inches
+  public var diagonal: Double? {
+    #if os(iOS)
+      switch self {
+        % for device in iOSDevices:
+        case .${device.caseName}: return ${device.diagonal}
+        % end
+        case .simulator(let model): return model.diagonal
+        case .unknown: return nil
+      }
+    #elseif os(watchOS)
+      switch self {
+        % for device in watchOSDevices:
+      case .${device.caseName}: return ${device.diagonal}
+        % end
+      case .simulator(let model): return model.diagonal
+      case .unknown: return nil
+      }
+    #elseif os(tvOS)
+      return nil
+    #endif
+  }
+
+  /// Returns screen ratio as a tuple
+  public var screenRatio: (width: Double, height: Double) {
+    #if os(iOS)
+      switch self {
+  % for device in iOSDevices:
+      case .${device.caseName}: return (width: ${device.screenRatio[0]}, height: ${device.screenRatio[1]})
+  % end
+      case .simulator(let model): return model.screenRatio
+      case .unknown: return (width: -1, height: -1)
+      }
+    #elseif os(watchOS)
+      switch self {
+  % for device in watchOSDevices:
+      case .${device.caseName}: return (width: ${device.screenRatio[0]}, height: ${device.screenRatio[1]})
+  % end
+      case .simulator(let model): return model.screenRatio
+      case .unknown: return (width: -1, height: -1)
+      }
+    #endif
+  }
+
   #if os(iOS)
     /// All iPods
     public static var allPods: [Device] {
@@ -402,28 +446,6 @@ public enum Device {
         return UIScreen.main.nativeScale > 2.7
       } else {
         return UIScreen.main.nativeScale > UIScreen.main.scale
-      }
-    }
-
-    /// Returns diagonal screen length in inches
-    public var diagonal: Double {
-       switch self {
-% for device in iOSDevices:
-      case .${device.caseName}: return ${device.diagonal}
-% end
-      case .simulator(let model): return model.diagonal
-      case .unknown: return -1
-      }
-    }
-
-    /// Returns screen ratio as a tuple
-    public var screenRatio: (width: Double, height: Double) {
-      switch self {
-% for device in iOSDevices:
-      case .${device.caseName}: return (width: ${device.screenRatio[0]}, height: ${device.screenRatio[1]})
-% end
-      case .simulator(let model): return model.screenRatio
-      case .unknown: return (width: -1, height: -1)
       }
     }
 
