@@ -37,7 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6D29C0BC1F122863005B52BD /* Device.swift.gyb */ = {isa = PBXFileReference; explicitFileType = text.script.python; fileEncoding = 4; lineEnding = 0; name = Device.swift.gyb; path = Source/Device.swift.gyb; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		6D29C0BC1F122863005B52BD /* Device.swift.gyb */ = {isa = PBXFileReference; explicitFileType = text.script.python; fileEncoding = 4; lineEnding = 0; name = Device.swift.gyb; path = Source/Device.swift.gyb; sourceTree = "<group>"; };
 		6D29C0BF1F122C77005B52BD /* Device.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Device.generated.swift; path = Source/Device.generated.swift; sourceTree = "<group>"; };
 		6D8442931EED755900F2864D /* Gemfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile.lock; sourceTree = "<group>"; };
 		6D9B30FC1F1A2DC50008F7E0 /* gyb.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = gyb.py; sourceTree = "<group>"; };
