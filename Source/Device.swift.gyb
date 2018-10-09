@@ -82,8 +82,81 @@ tvs = [
             Device("appleTV4K",       "Device is an [Apple TV 4K](https://support.apple.com/kb/SP769)",                 "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP769/appletv4k.png",                            ["AppleTV6,2"],                               0,    (),       "Apple TV 4K", -1, False, False, False, False, False, False)
       ]
 
+# watchOS
+watches = [
+            Device(
+            "appleWatchSeries0_38mm",
+            "Device is an [Apple Watch (1st generation)](https://support.apple.com/kb/SP735)",
+            "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM784/en_US/apple_watch_sport-240.png",
+            ["Watch1,1"], 1.5, (4,5), "Apple Watch (1st generation) 38mm", 290, False, False, False, False, False, False),
+
+
+            Device(
+            "appleWatchSeries0_42mm",
+            "Device is an [Apple Watch (1st generation)](https://support.apple.com/kb/SP735)",
+            "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM784/en_US/apple_watch_sport-240.png",
+            ["Watch1,2"], 1.6, (4,5), "Apple Watch (1st generation) 42mm", 303, False, False, False, False, False, False),
+
+
+            Device(
+            "appleWatchSeries1_38mm",
+            "Device is an [Apple Watch Series 1](https://support.apple.com/kb/SP745)",
+            "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM848/en_US/applewatch-series2-aluminum-temp-240.png",
+            ["Watch2,6"], 1.5, (4,5), "Apple Watch Series 1 38mm", 290, False, False, False, False, False, False),
+
+
+            Device(
+            "appleWatchSeries1_42mm",
+            "Device is an [Apple Watch Series 1](https://support.apple.com/kb/SP745)",
+            "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM848/en_US/applewatch-series2-aluminum-temp-240.png",
+            ["Watch2,7"], 1.6, (4,5), "Apple Watch Series 1 42mm", 303, False, False, False, False, False, False),
+
+
+            Device(
+            "appleWatchSeries2_38mm",
+            "Device is an [Apple Watch Series 2](https://support.apple.com/kb/SP746)",
+            "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM852/en_US/applewatch-series2-hermes-240.png",
+            ["Watch2,3"], 1.5, (4,5), "Apple Watch Series 2 38mm", 290, False, False, False, False, False, False),
+
+
+            Device(
+            "appleWatchSeries2_42mm",
+            "Device is an [Apple Watch Series 2](https://support.apple.com/kb/SP746)",
+            "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM852/en_US/applewatch-series2-hermes-240.png",
+            ["Watch2,4"], 1.6, (4,5), "Apple Watch Series 2 42mm", 303, False, False, False, False, False, False),
+
+
+            Device(
+            "appleWatchSeries3_38mm",
+            "Device is an [Apple Watch Series 3](https://support.apple.com/kb/SP766)",
+            "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM893/en_US/apple-watch-s3-nikeplus-240.png",
+            ["Watch3,1", "Watch3,3"], 1.5, (4,5), "Apple Watch Series 3 38mm", 290, False, False, False, False, False, False),
+
+
+            Device(
+            "appleWatchSeries3_42mm",
+            "Device is an [Apple Watch Series 3](https://support.apple.com/kb/SP766)",
+            "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM893/en_US/apple-watch-s3-nikeplus-240.png",
+            ["Watch3,2", "Watch3,4"], 1.6, (4,5), "Apple Watch Series 3 42mm", 303, False, False, False, False, False, False),
+
+
+            Device(
+            "appleWatchSeries4_40mm",
+            "Device is an [Apple Watch Series 4](https://support.apple.com/kb/SP778)",
+            "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM911/en_US/aw-series4-nike-240.png",
+            ["Watch4,1", "Watch4,3"], 1.8, (4,5), "Apple Watch Series 4 40mm", 326, False, False, False, False, False, False),
+
+
+            Device(
+            "appleWatchSeries4_44mm",
+            "Device is an [Apple Watch Series 4](https://support.apple.com/kb/SP778)",
+            "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM911/en_US/aw-series4-nike-240.png",
+            ["Watch4,2", "Watch4,4"], 2.0, (4,5), "Apple Watch Series 4 44mm", 326, False, False, False, False, False, False),
+  ]
+
 iOSDevices = iPods + iPhones + iPads + homePods
 tvOSDevices = tvs
+watchOSDevices = watches
 }%
 import UIKit
 
@@ -370,6 +443,16 @@ public enum Device {
     public static var allSimulatorTVs: [Device] {
       return allTVs.map(Device.simulator)
     }
+  #elseif os(watchOS)
+    /// All Watches
+    public static var allWatches: [Device] {
+       return [${', '.join(list(map(lambda device: "." + device.caseName, watchOSDevices)))}]
+    }
+
+    /// All simulator Watches
+    public static var allSimulatorWatches: [Device] {
+      return allWatches.map(Device.simulator)
+    }
   #endif
 
   /// All real devices (i.e. all devices except for all simulators)
@@ -378,6 +461,8 @@ public enum Device {
       return allPods + allPhones + allPads
     #elseif os(tvOS)
       return allTVs
+    #elseif os(watchOS)
+      return allWatches
     #endif
   }
 
@@ -454,6 +539,14 @@ public enum Device {
       case .simulator(let model): return model.ppi
       case .unknown: return nil
     }
+    #elseif os(watchOS)
+    switch self {
+      % for device in watchOSDevices:
+    case .${device.caseName}: return ${device.ppi}
+      % end
+    case .simulator(let model): return model.ppi
+    case .unknown: return nil
+    }
     #elseif os(tvOS)
     return nil
     #endif
@@ -495,6 +588,14 @@ extension Device: CustomStringConvertible {
       case .simulator(let model): return "Simulator (\(model))"
       case .unknown(let identifier): return identifier
       }
+    #if os(watchOS)
+      switch self {
+% for device in watchOSDevices:
+      case .${device.caseName}: return "${device.description}"
+% end
+      case .simulator(let model): return "Simulator (\(model))"
+      case .unknown(let identifier): return identifier
+      }
     #elseif os(tvOS)
       switch self {
 % for device in tvOSDevices:
@@ -522,7 +623,7 @@ extension Device: Equatable {
 
 }
 
-#if os(iOS)
+#if os(iOS) || os(watchOS)
   // MARK: - Battery
   extension Device {
     /**
@@ -542,19 +643,35 @@ extension Device: Equatable {
       /// The associated value is in percent (0-100).
       case unplugged(Int)
 
-      fileprivate init() {
-        let wasBatteryMonitoringEnabled = UIDevice.current.isBatteryMonitoringEnabled
-        UIDevice.current.isBatteryMonitoringEnabled = true
-        let batteryLevel = Int(round(UIDevice.current.batteryLevel * 100)) // round() is actually not needed anymore since -[batteryLevel] seems to always return a two-digit precision number
-        // but maybe that changes in the future.
-        switch UIDevice.current.batteryState {
-        case .charging: self = .charging(batteryLevel)
-        case .full: self = .full
-        case .unplugged:self = .unplugged(batteryLevel)
-        case .unknown: self = .full // Should never happen since `batteryMonitoring` is enabled.
+      #if os(iOS)
+        fileprivate init() {
+          let wasBatteryMonitoringEnabled = UIDevice.current.isBatteryMonitoringEnabled
+          UIDevice.current.isBatteryMonitoringEnabled = true
+          let batteryLevel = Int(round(UIDevice.current.batteryLevel * 100)) // round() is actually not needed anymore since -[batteryLevel] seems to always return a two-digit precision number
+          // but maybe that changes in the future.
+          switch UIDevice.current.batteryState {
+          case .charging: self = .charging(batteryLevel)
+          case .full: self = .full
+          case .unplugged:self = .unplugged(batteryLevel)
+          case .unknown: self = .full // Should never happen since `batteryMonitoring` is enabled.
+          }
+          UIDevice.current.isBatteryMonitoringEnabled = wasBatteryMonitoringEnabled
         }
-        UIDevice.current.isBatteryMonitoringEnabled = wasBatteryMonitoringEnabled
-      }
+      #elseif os(watchOS)
+        fileprivate init() {
+          let wasBatteryMonitoringEnabled = WKInterfaceDevice.current().isBatteryMonitoringEnabled
+          WKInterfaceDevice.current().isBatteryMonitoringEnabled = true
+          let batteryLevel = Int(round(WKInterfaceDevice.current().batteryLevel * 100)) // round() is actually not needed anymore since -[batteryLevel] seems to always return a two-digit precision number
+          // but maybe that changes in the future.
+          switch WKInterfaceDevice.current().batteryState {
+          case .charging: self = .charging(batteryLevel)
+          case .full: self = .full
+          case .unplugged:self = .unplugged(batteryLevel)
+          case .unknown: self = .full // Should never happen since `batteryMonitoring` is enabled.
+          }
+          WKInterfaceDevice.current().isBatteryMonitoringEnabled = wasBatteryMonitoringEnabled
+        }
+      #endif
 
       /// The user enabled Low Power mode
       public var lowPowerMode: Bool {
