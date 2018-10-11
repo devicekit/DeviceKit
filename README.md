@@ -37,8 +37,9 @@
 
 ## Requirements
 
-- iOS 8.0+ / tvOS 9.0+ (linking against iOS 9.3 and tvOS 9.2 required)
-- Xcode 8.0+
+- iOS 8.0+ (linking against iOS 9.3 required)
+- tvOS 9.0+ (linking against tvOS 9.2 required)
+- watchOS 2.0+
 
 ## Installation
 DeviceKit can be installed in various ways.
