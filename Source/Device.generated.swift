@@ -481,6 +481,8 @@ public enum Device {
       case .simulator(let model): return model.screenRatio
       case .unknown: return (width: -1, height: -1)
       }
+    #elseif os(tvOS)
+      return (width: -1, height: -1)
     #endif
   }
 
@@ -908,6 +910,7 @@ extension Device: Equatable {
 }
 
 // MARK: - Battery
+#if os(iOS) || os(watchOS)
 @available(iOS 8.0, watchOS 4.0, *)
 extension Device {
   /**
@@ -998,8 +1001,10 @@ extension Device {
   }
 
 }
+#endif
 
 // MARK: - Device.Batterystate: Comparable
+#if os(iOS) || os(watchOS)
 @available(iOS 8.0, watchOS 4.0, *)
 extension Device.BatteryState: Comparable {
   /// Tells if two battery states are equal.
@@ -1030,6 +1035,7 @@ extension Device.BatteryState: Comparable {
     }
   }
 }
+#endif
 
 #if os(iOS)
 extension Device {
