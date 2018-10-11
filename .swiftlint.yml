@@ -14,6 +14,7 @@ disabled_rules:
  - function_body_length
  - type_body_length
  - switch_case_alignment
+ - identifier_name
 
 identifier_name:
   excluded:

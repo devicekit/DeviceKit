@@ -357,7 +357,7 @@ public enum Device {
     public static var allPads: [Device] {
       return [${', '.join(list(map(lambda device: "." + device.caseName, iPads)))}]
     }
-    
+
     /// All X-Series Devices
     public static var allXSeriesDevices: [Device] {
       return [${', '.join(list(map(lambda device: "." + device.caseName, list(filter(lambda device: device.isXSeries == True, iOSDevices)))))}]
