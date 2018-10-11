@@ -1031,7 +1031,6 @@ extension Device.BatteryState: Comparable {
   }
 }
 
-
 #if os(iOS)
 extension Device {
   // MARK: - Orientation
@@ -1053,7 +1052,6 @@ extension Device {
       }
     }
 }
-
 #endif
 
 #if os(iOS)
@@ -1110,6 +1108,5 @@ extension Device {
       return nil
     }
   }
-
 }
 #endif
