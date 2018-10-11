@@ -203,45 +203,45 @@ public enum Device {
     case appleTV4K
   #elseif os(watchOS)
     /// Device is an [Apple Watch (1st generation)](https://support.apple.com/kb/SP735)
-      ///
-      /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM784/en_US/apple_watch_sport-240.png)
-      case appleWatchSeries0_38mm
+    ///
+    /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM784/en_US/apple_watch_sport-240.png)
+    case appleWatchSeries0_38mm
     /// Device is an [Apple Watch (1st generation)](https://support.apple.com/kb/SP735)
-      ///
-      /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM784/en_US/apple_watch_sport-240.png)
-      case appleWatchSeries0_42mm
+    ///
+    /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM784/en_US/apple_watch_sport-240.png)
+    case appleWatchSeries0_42mm
     /// Device is an [Apple Watch Series 1](https://support.apple.com/kb/SP745)
-      ///
-      /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM848/en_US/applewatch-series2-aluminum-temp-240.png)
-      case appleWatchSeries1_38mm
+    ///
+    /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM848/en_US/applewatch-series2-aluminum-temp-240.png)
+    case appleWatchSeries1_38mm
     /// Device is an [Apple Watch Series 1](https://support.apple.com/kb/SP745)
-      ///
-      /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM848/en_US/applewatch-series2-aluminum-temp-240.png)
-      case appleWatchSeries1_42mm
+    ///
+    /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM848/en_US/applewatch-series2-aluminum-temp-240.png)
+    case appleWatchSeries1_42mm
     /// Device is an [Apple Watch Series 2](https://support.apple.com/kb/SP746)
-      ///
-      /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM852/en_US/applewatch-series2-hermes-240.png)
-      case appleWatchSeries2_38mm
+    ///
+    /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM852/en_US/applewatch-series2-hermes-240.png)
+    case appleWatchSeries2_38mm
     /// Device is an [Apple Watch Series 2](https://support.apple.com/kb/SP746)
-      ///
-      /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM852/en_US/applewatch-series2-hermes-240.png)
-      case appleWatchSeries2_42mm
+    ///
+    /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM852/en_US/applewatch-series2-hermes-240.png)
+    case appleWatchSeries2_42mm
     /// Device is an [Apple Watch Series 3](https://support.apple.com/kb/SP766)
-      ///
-      /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM893/en_US/apple-watch-s3-nikeplus-240.png)
-      case appleWatchSeries3_38mm
+    ///
+    /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM893/en_US/apple-watch-s3-nikeplus-240.png)
+    case appleWatchSeries3_38mm
     /// Device is an [Apple Watch Series 3](https://support.apple.com/kb/SP766)
-      ///
-      /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM893/en_US/apple-watch-s3-nikeplus-240.png)
-      case appleWatchSeries3_42mm
+    ///
+    /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM893/en_US/apple-watch-s3-nikeplus-240.png)
+    case appleWatchSeries3_42mm
     /// Device is an [Apple Watch Series 4](https://support.apple.com/kb/SP778)
-      ///
-      /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM911/en_US/aw-series4-nike-240.png)
-      case appleWatchSeries4_40mm
+    ///
+    /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM911/en_US/aw-series4-nike-240.png)
+    case appleWatchSeries4_40mm
     /// Device is an [Apple Watch Series 4](https://support.apple.com/kb/SP778)
-      ///
-      /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM911/en_US/aw-series4-nike-240.png)
-      case appleWatchSeries4_44mm
+    ///
+    /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM911/en_US/aw-series4-nike-240.png)
+    case appleWatchSeries4_44mm
   #endif
 
   /// Device is [Simulator](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/Introduction/Introduction.html)

@@ -211,12 +211,12 @@ public enum Device {
     case ${device.caseName}
 % end
   #elseif os(watchOS)
-  % for device in watchOSDevices:
+% for device in watchOSDevices:
     /// ${device.comment}
-      ///
-      /// ![Image](${device.imageURL})
-      case ${device.caseName}
-  % end
+    ///
+    /// ![Image](${device.imageURL})
+    case ${device.caseName}
+% end
   #endif
 
   /// Device is [Simulator](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/Introduction/Introduction.html)
