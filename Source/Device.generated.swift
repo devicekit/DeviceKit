@@ -346,7 +346,8 @@ public enum Device {
     #endif
   }
 
-  /// Get the real device from a device. If the device is a an iPhone8Plus simulator this function returns .iPhone8Plus (the real device).
+  /// Get the real device from a device.
+  /// If the device is a an iPhone8Plus simulator this function returns .iPhone8Plus (the real device).
   /// If the parameter is a real device, this function returns just that passed parameter.
   ///
   /// - parameter device: A device.
@@ -564,12 +565,16 @@ public enum Device {
 
     /// Returns whether the device is an iPhone (real or simulator)
     public var isPhone: Bool {
-      return (isOneOf(Device.allPhones) || isOneOf(Device.allSimulatorPhones) || UIDevice.current.userInterfaceIdiom == .phone) && !isPod
+      return (isOneOf(Device.allPhones)
+              || isOneOf(Device.allSimulatorPhones)
+              || UIDevice.current.userInterfaceIdiom == .phone) && !isPod
     }
 
     /// Returns whether the device is an iPad (real or simulator)
     public var isPad: Bool {
-      return isOneOf(Device.allPads) || isOneOf(Device.allSimulatorPads) || UIDevice.current.userInterfaceIdiom == .pad
+      return isOneOf(Device.allPads)
+              || isOneOf(Device.allSimulatorPads)
+              || UIDevice.current.userInterfaceIdiom == .pad
     }
 
     /// Returns whether the device is any of the simulator
@@ -596,12 +601,12 @@ public enum Device {
     }
 
     /// All Touch ID Capable Devices
-    static public var allTouchIDCapableDevices: [Device] {
+    public static var allTouchIDCapableDevices: [Device] {
       return [.iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE, .iPhone8, .iPhone8Plus, .iPadAir2, .iPad5, .iPad6, .iPadMini3, .iPadMini4, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch]
     }
 
     /// All Face ID Capable Devices
-    static public var allFaceIDCapableDevices: [Device] {
+    public static var allFaceIDCapableDevices: [Device] {
       return [.iPhoneX, .iPhoneXs, .iPhoneXsMax, .iPhoneXr]
     }
 
@@ -1027,10 +1032,10 @@ extension Device.BatteryState: Comparable {
     switch (lhs, rhs) {
     case (.full, _): return false // return false (even if both are `.Full` -> they are equal)
     case (_, .full): return true // lhs is *not* `.Full`, rhs is
-    case (.charging(let lhsLevel), .charging(let rhsLevel)): return lhsLevel < rhsLevel
-    case (.charging(let lhsLevel), .unplugged(let rhsLevel)): return lhsLevel < rhsLevel
-    case (.unplugged(let lhsLevel), .charging(let rhsLevel)): return lhsLevel < rhsLevel
-    case (.unplugged(let lhsLevel), .unplugged(let rhsLevel)): return lhsLevel < rhsLevel
+    case let (.charging(lhsLevel), .charging(rhsLevel)): return lhsLevel < rhsLevel
+    case let (.charging(lhsLevel), .unplugged(rhsLevel)): return lhsLevel < rhsLevel
+    case let (.unplugged(lhsLevel), .charging(rhsLevel)): return lhsLevel < rhsLevel
+    case let (.unplugged(lhsLevel), .unplugged(rhsLevel)): return lhsLevel < rhsLevel
     default: return false // compiler won't compile without it, though it cannot happen
     }
   }
@@ -1095,12 +1100,11 @@ extension Device {
   @available(iOS 11.0, *)
   public static var volumes: [URLResourceKey: Int64]? {
     do {
-      let values = try rootURL.resourceValues(forKeys: [
-        .volumeAvailableCapacityForImportantUsageKey,
-        .volumeAvailableCapacityKey,
-        .volumeAvailableCapacityForOpportunisticUsageKey,
-        .volumeTotalCapacityKey
-        ])
+      let values = try rootURL.resourceValues(forKeys: [.volumeAvailableCapacityForImportantUsageKey,
+                                                        .volumeAvailableCapacityKey,
+                                                        .volumeAvailableCapacityForOpportunisticUsageKey,
+                                                        .volumeTotalCapacityKey
+                                                       ])
       return values.allValues.mapValues {
         if let int = $0 as? Int64 {
           return int

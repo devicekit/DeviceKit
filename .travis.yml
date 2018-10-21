@@ -3,6 +3,7 @@ osx_image: xcode10
 
 env:
   - DESTINATION='platform=iOS Simulator,name=iPad (5th generation)'
+  - DESTINATION='platform=iOS Simulator,name=iPad (6th generation)'
   - DESTINATION='platform=iOS Simulator,name=iPad Air'
   - DESTINATION='platform=iOS Simulator,name=iPad Air 2'
   - DESTINATION='platform=iOS Simulator,name=iPad Pro (9.7-inch)'
@@ -20,6 +21,9 @@ env:
   - DESTINATION='platform=iOS Simulator,name=iPhone 8 Plus'
   - DESTINATION='platform=iOS Simulator,name=iPhone SE'
   - DESTINATION='platform=iOS Simulator,name=iPhone X'
+  - DESTINATION='platform=iOS Simulator,name=iPhone XR'
+  - DESTINATION='platform=iOS Simulator,name=iPhone XS'
+  - DESTINATION='platform=iOS Simulator,name=iPhone XS Max'
 
   - DESTINATION='platform=tvOS Simulator,name=Apple TV'
   - DESTINATION='platform=tvOS Simulator,name=Apple TV 4K'
@@ -38,4 +42,4 @@ deploy:
     tags: true
 
 after_success:
-- bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash)

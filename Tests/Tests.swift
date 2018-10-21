@@ -14,12 +14,7 @@ import XCTest
 
 class DeviceKitTests: XCTestCase {
 
-  var device: Device!
-
-  override func setUp() {
-    super.setUp()
-    device = Device()
-  }
+  let device = Device()
 
   func testDeviceSimulator() {
     XCTAssertTrue(device.isOneOf(Device.allSimulators))
@@ -27,7 +22,10 @@ class DeviceKitTests: XCTestCase {
 
   func testDeviceDescription() {
     XCTAssertTrue(device.description.hasPrefix("Simulator"))
-    XCTAssertTrue(device.description.contains("iPhone") || device.description.contains("iPad") || device.description.contains("iPod") || device.description.contains("TV"))
+    XCTAssertTrue(device.description.contains("iPhone")
+      || device.description.contains("iPad")
+      || device.description.contains("iPod")
+      || device.description.contains("TV"))
   }
 
   // MARK: - iOS
@@ -42,7 +40,7 @@ class DeviceKitTests: XCTestCase {
     XCTAssertTrue(Device.BatteryState.unplugged(2) > Device.BatteryState.charging(1))
   }
 
-  func testMapFromIdentifier() {
+  func testMapFromIdentifier() { // swiftlint:disable:this function_body_length
     XCTAssertEqual(Device.mapToDevice(identifier: "iPod5,1"), .iPodTouch5)
     XCTAssertEqual(Device.mapToDevice(identifier: "iPod7,1"), .iPodTouch6)
     XCTAssertEqual(Device.mapToDevice(identifier: "iPhone3,1"), .iPhone4)
@@ -148,7 +146,7 @@ class DeviceKitTests: XCTestCase {
     XCTAssertTrue(Device.iPadPro12Inch2.screenRatio == (width: 3, height: 4))
     XCTAssertTrue(Device.iPadPro10Inch.screenRatio == (width: 3, height: 4))
     XCTAssertTrue(Device.simulator(device).screenRatio == device.screenRatio)
-    XCTAssertTrue(Device.unknown("Not a device.").screenRatio == (width: -1, height: -1))
+    XCTAssertTrue(Device.unknown(UUID().uuidString).screenRatio == (width: -1, height: -1))
   }
 
   func testDiagonal() {
@@ -194,7 +192,7 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.iPadPro10Inch.diagonal, 10.5)
 
     XCTAssertEqual(Device.simulator(.iPadPro10Inch).diagonal, 10.5)
-    XCTAssertEqual(Device.unknown("Not a device.").diagonal, nil)
+    XCTAssertEqual(Device.unknown(UUID().uuidString).diagonal, nil)
   }
 
   func testDescription() {
@@ -232,149 +230,69 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.iPadPro12Inch.description, "iPad Pro (12.9-inch)")
     XCTAssertEqual(Device.iPadPro12Inch2.description, "iPad Pro (12.9-inch) 2")
     XCTAssertEqual(Device.iPadPro10Inch.description, "iPad Pro (10.5-inch)")
-    XCTAssertEqual(Device.simulator(Device.iPadPro10Inch).description, "Simulator (\(Device.iPadPro10Inch.description))")
-    XCTAssertEqual(Device.unknown("Not a device.").description, "Not a device.")
+    XCTAssertEqual(Device.simulator(Device.iPadPro10Inch).description, "Simulator (\(Device.iPadPro10Inch))")
+    let uuid = UUID().uuidString
+    XCTAssertEqual(Device.unknown(uuid).description, uuid)
   }
 
   func testIsPad() {
     Device.allPads.forEach { XCTAssertTrue($0.isPad) }
   }
 
-   /// Test that all the ppi values for applicable devices match the public information available at wikipedia. Test non-applicable devices return nil.
+  // Test that all the ppi values for applicable devices match the public information available at wikipedia.
+  // Non-applicable devices return nil.
   func testPPI() {
-    // Devices
-    // IPods
-    // source: https://en.wikipedia.org/wiki/IPod_Touch_(5th_generation)
-    XCTAssertEqual(Device.iPodTouch5.ppi, 326)
-    // source: https://en.wikipedia.org/wiki/IPod_Touch_(6th_generation)
-    XCTAssertEqual(Device.iPodTouch5.ppi, 326)
-    // Iphones
-    // source: https://en.wikipedia.org/wiki/IPhone_4
-    XCTAssertEqual(Device.iPhone4.ppi, 326)
-    // source: https://en.wikipedia.org/wiki/IPhone_4S
-    XCTAssertEqual(Device.iPhone4s.ppi, 326)
-    // source: https://en.wikipedia.org/wiki/IPhone_5
-    XCTAssertEqual(Device.iPhone5.ppi, 326)
-    // source: https://en.wikipedia.org/wiki/IPhone_5C
-    XCTAssertEqual(Device.iPhone5c.ppi, 326)
-    // source: https://en.wikipedia.org/wiki/IPhone_5S
-    XCTAssertEqual(Device.iPhone5s.ppi, 326)
-    // source: https://en.wikipedia.org/wiki/IPhone_6
-    XCTAssertEqual(Device.iPhone6.ppi, 326)
-    // source: https://en.wikipedia.org/wiki/IPhone_6
-    XCTAssertEqual(Device.iPhone6Plus.ppi, 401)
-    // source: https://en.wikipedia.org/wiki/IPhone_6S
-    XCTAssertEqual(Device.iPhone6s.ppi, 326)
-    // source: https://en.wikipedia.org/wiki/IPhone_6S
-    XCTAssertEqual(Device.iPhone6sPlus.ppi, 401)
-    // source: https://en.wikipedia.org/wiki/IPhone_7
-    XCTAssertEqual(Device.iPhone7.ppi, 326)
-    // source: https://en.wikipedia.org/wiki/IPhone_7
-    XCTAssertEqual(Device.iPhone7Plus.ppi, 401)
-    // source: https://en.wikipedia.org/wiki/IPhone_SE
-    XCTAssertEqual(Device.iPhoneSE.ppi, 326)
-    // source: https://en.wikipedia.org/wiki/IPhone_8
-    XCTAssertEqual(Device.iPhone8.ppi, 326)
-    // source: https://en.wikipedia.org/wiki/IPhone_8
-    XCTAssertEqual(Device.iPhone8Plus.ppi, 401)
-    // source: https://en.wikipedia.org/wiki/IPhone_X
-    XCTAssertEqual(Device.iPhoneX.ppi, 458)
-    // Ipads
-    // source: https://en.wikipedia.org/wiki/IPad_2
-    XCTAssertEqual(Device.iPad2.ppi, 132)
-    // source: https://en.wikipedia.org/wiki/IPad_(3rd_generation)
-    XCTAssertEqual(Device.iPad3.ppi, 264)
-    // source: https://en.wikipedia.org/wiki/IPad_(4th_generation)
-    XCTAssertEqual(Device.iPad4.ppi, 264)
-    // source: https://en.wikipedia.org/wiki/IPad_Air
-    XCTAssertEqual(Device.iPadAir.ppi, 264)
-    // source: https://en.wikipedia.org/wiki/IPad_Air_2
-    XCTAssertEqual(Device.iPadAir2.ppi, 264)
-    // source: https://en.wikipedia.org/wiki/IPad_Air
-    XCTAssertEqual(Device.iPad5.ppi, 264)
-    // source: https://en.wikipedia.org/wiki/IPad_Air
-    XCTAssertEqual(Device.iPadMini.ppi, 163)
-    // source: https://en.wikipedia.org/wiki/IPad_Mini_2
-    XCTAssertEqual(Device.iPadMini2.ppi, 326)
-    // source: https://en.wikipedia.org/wiki/IPad_Mini_3
-    XCTAssertEqual(Device.iPadMini3.ppi, 326)
-    // source: https://en.wikipedia.org/wiki/IPad_Mini_4
-    XCTAssertEqual(Device.iPadMini4.ppi, 326)
-    // source: https://en.wikipedia.org/wiki/IPad_Pro
-    XCTAssertEqual(Device.iPadPro9Inch.ppi, 264)
-    // source: https://en.wikipedia.org/wiki/IPad_Pro
-    XCTAssertEqual(Device.iPadPro12Inch.ppi, 264)
-    // source: https://en.wikipedia.org/wiki/IPad_Pro
-    XCTAssertEqual(Device.iPadPro12Inch2.ppi, 264)
-    // source: https://en.wikipedia.org/wiki/IPad_Pro
-    XCTAssertEqual(Device.iPadPro10Inch.ppi, 264)
+    // swiftlint:disable comma
+    assertEqualDeviceAndSimulator(device: Device.iPodTouch5,      property: \Device.ppi, value: 326)
+    assertEqualDeviceAndSimulator(device: Device.iPodTouch6,      property: \Device.ppi, value: 326)
 
-    // Simulators
-    // iPods
-    XCTAssertEqual(Device.simulator(.iPodTouch5).ppi, 326)
-    // source: https://en.wikipedia.org/wiki/IPod_Touch_(6th_generation)
-    XCTAssertEqual(Device.simulator(.iPodTouch5).ppi, 326)
-    // iPhones
-    // source: https://en.wikipedia.org/wiki/IPhone_4
-    XCTAssertEqual(Device.simulator(.iPhone4).ppi, 326)
-    // source: https://en.wikipedia.org/wiki/IPhone_4S
-    XCTAssertEqual(Device.simulator(.iPhone4s).ppi, 326)
-    // source: https://en.wikipedia.org/wiki/IPhone_5
-    XCTAssertEqual(Device.simulator(.iPhone5).ppi, 326)
-    // source: https://en.wikipedia.org/wiki/IPhone_5C
-    XCTAssertEqual(Device.simulator(.iPhone5c).ppi, 326)
-    // source: https://en.wikipedia.org/wiki/IPhone_5S
-    XCTAssertEqual(Device.simulator(.iPhone5s).ppi, 326)
-    // source: https://en.wikipedia.org/wiki/IPhone_6
-    XCTAssertEqual(Device.simulator(.iPhone6).ppi, 326)
-    // source: https://en.wikipedia.org/wiki/IPhone_6
-    XCTAssertEqual(Device.simulator(.iPhone6Plus).ppi, 401)
-    // source: https://en.wikipedia.org/wiki/IPhone_6S
-    XCTAssertEqual(Device.simulator(.iPhone6s).ppi, 326)
-    // source: https://en.wikipedia.org/wiki/IPhone_6S
-    XCTAssertEqual(Device.simulator(.iPhone6sPlus).ppi, 401)
-    // source: https://en.wikipedia.org/wiki/IPhone_7
-    XCTAssertEqual(Device.simulator(.iPhone7).ppi, 326)
-    // source: https://en.wikipedia.org/wiki/IPhone_7
-    XCTAssertEqual(Device.simulator(.iPhone7Plus).ppi, 401)
-    // source: https://en.wikipedia.org/wiki/IPhone_SE
-    XCTAssertEqual(Device.simulator(.iPhoneSE).ppi, 326)
-    XCTAssertEqual(Device.simulator(.iPhone8).ppi, 326)
-    XCTAssertEqual(Device.simulator(.iPhone8Plus).ppi, 401)
-    XCTAssertEqual(Device.simulator(.iPhoneX).ppi, 458)
-    XCTAssertEqual(Device.simulator(.iPhoneXs).ppi, 458)
-    XCTAssertEqual(Device.simulator(.iPhoneXsMax).ppi, 458)
-    XCTAssertEqual(Device.simulator(.iPhoneXr).ppi, 326)
+    assertEqualDeviceAndSimulator(device: Device.iPhone4,         property: \Device.ppi, value: 326)
+    assertEqualDeviceAndSimulator(device: Device.iPhone4s,        property: \Device.ppi, value: 326)
+    assertEqualDeviceAndSimulator(device: Device.iPhone5,         property: \Device.ppi, value: 326)
+    assertEqualDeviceAndSimulator(device: Device.iPhone5c,        property: \Device.ppi, value: 326)
+    assertEqualDeviceAndSimulator(device: Device.iPhone5s,        property: \Device.ppi, value: 326)
+    assertEqualDeviceAndSimulator(device: Device.iPhone6,         property: \Device.ppi, value: 326)
+    assertEqualDeviceAndSimulator(device: Device.iPhone6Plus,     property: \Device.ppi, value: 401)
+    assertEqualDeviceAndSimulator(device: Device.iPhone6s,        property: \Device.ppi, value: 326)
+    assertEqualDeviceAndSimulator(device: Device.iPhone6sPlus,    property: \Device.ppi, value: 401)
+    assertEqualDeviceAndSimulator(device: Device.iPhone7,         property: \Device.ppi, value: 326)
+    assertEqualDeviceAndSimulator(device: Device.iPhone7Plus,     property: \Device.ppi, value: 401)
+    assertEqualDeviceAndSimulator(device: Device.iPhoneSE,        property: \Device.ppi, value: 326)
+    assertEqualDeviceAndSimulator(device: Device.iPhone8,         property: \Device.ppi, value: 326)
+    assertEqualDeviceAndSimulator(device: Device.iPhone8Plus,     property: \Device.ppi, value: 401)
+    assertEqualDeviceAndSimulator(device: Device.iPhoneX,         property: \Device.ppi, value: 458)
+    assertEqualDeviceAndSimulator(device: Device.iPhoneXr,        property: \Device.ppi, value: 326)
+    assertEqualDeviceAndSimulator(device: Device.iPhoneXs,        property: \Device.ppi, value: 458)
+    assertEqualDeviceAndSimulator(device: Device.iPhoneXsMax,     property: \Device.ppi, value: 458)
 
-    // iPads
-    // source: https://en.wikipedia.org/wiki/IPad_2
-    XCTAssertEqual(Device.simulator(.iPad2).ppi, 132)
-    // source: https://en.wikipedia.org/wiki/IPad_(3rd_generation)
-    XCTAssertEqual(Device.simulator(.iPad3).ppi, 264)
-    // source: https://en.wikipedia.org/wiki/IPad_(4th_generation)
-    XCTAssertEqual(Device.simulator(.iPad4).ppi, 264)
-    // source: https://en.wikipedia.org/wiki/IPad_Air
-    XCTAssertEqual(Device.simulator(.iPadAir).ppi, 264)
-    // source: https://en.wikipedia.org/wiki/IPad_Air_2
-    XCTAssertEqual(Device.simulator(.iPadAir2).ppi, 264)
-    // source: https://en.wikipedia.org/wiki/IPad_Air
-    XCTAssertEqual(Device.simulator(.iPad5).ppi, 264)
-    // source: https://en.wikipedia.org/wiki/IPad_Air
-    XCTAssertEqual(Device.simulator(.iPadMini).ppi, 163)
-    // source: https://en.wikipedia.org/wiki/IPad_Mini_2
-    XCTAssertEqual(Device.simulator(.iPadMini2).ppi, 326)
-    // source: https://en.wikipedia.org/wiki/IPad_Mini_3
-    XCTAssertEqual(Device.simulator(.iPadMini3).ppi, 326)
-    // source: https://en.wikipedia.org/wiki/IPad_Mini_4
-    XCTAssertEqual(Device.simulator(.iPadMini4).ppi, 326)
-    // source: https://en.wikipedia.org/wiki/IPad_Pro
-    XCTAssertEqual(Device.simulator(.iPadPro9Inch).ppi, 264)
-    // source: https://en.wikipedia.org/wiki/IPad_Pro
-    XCTAssertEqual(Device.simulator(.iPadPro12Inch).ppi, 264)
-    // source: https://en.wikipedia.org/wiki/IPad_Pro
-    XCTAssertEqual(Device.simulator(.iPadPro12Inch2).ppi, 264)
-    // source: https://en.wikipedia.org/wiki/IPad_Pro
-    XCTAssertEqual(Device.simulator(.iPadPro10Inch).ppi, 264)
+    assertEqualDeviceAndSimulator(device: Device.iPad2,           property: \Device.ppi, value: 132)
+    assertEqualDeviceAndSimulator(device: Device.iPad3,           property: \Device.ppi, value: 264)
+    assertEqualDeviceAndSimulator(device: Device.iPad4,           property: \Device.ppi, value: 264)
+    assertEqualDeviceAndSimulator(device: Device.iPadAir,         property: \Device.ppi, value: 264)
+    assertEqualDeviceAndSimulator(device: Device.iPadAir2,        property: \Device.ppi, value: 264)
+    assertEqualDeviceAndSimulator(device: Device.iPad5,           property: \Device.ppi, value: 264)
+    assertEqualDeviceAndSimulator(device: Device.iPad6,           property: \Device.ppi, value: 264)
+    assertEqualDeviceAndSimulator(device: Device.iPadMini,        property: \Device.ppi, value: 163)
+    assertEqualDeviceAndSimulator(device: Device.iPadMini2,       property: \Device.ppi, value: 326)
+    assertEqualDeviceAndSimulator(device: Device.iPadMini3,       property: \Device.ppi, value: 326)
+    assertEqualDeviceAndSimulator(device: Device.iPadMini4,       property: \Device.ppi, value: 326)
+    assertEqualDeviceAndSimulator(device: Device.iPadPro9Inch,    property: \Device.ppi, value: 264)
+    assertEqualDeviceAndSimulator(device: Device.iPadPro12Inch,   property: \Device.ppi, value: 264)
+    assertEqualDeviceAndSimulator(device: Device.iPadPro12Inch2,  property: \Device.ppi, value: 264)
+    assertEqualDeviceAndSimulator(device: Device.iPadPro10Inch,   property: \Device.ppi, value: 264)
+    assertEqualDeviceAndSimulator(device: Device.iPadPro9Inch,    property: \Device.ppi, value: 264)
+    assertEqualDeviceAndSimulator(device: Device.iPadPro9Inch,    property: \Device.ppi, value: 264)
+    // swiftlint:enable comma
+  }
+
+  func assertEqualDeviceAndSimulator<Value>(device: Device,
+                                            property: KeyPath<Device, Value>,
+                                            value: Value,
+                                            file: StaticString = #file,
+                                            line: UInt = #line) where Value: Equatable {
+    let simulator = Device.simulator(device)
+    XCTAssertTrue(device[keyPath: property] == value, file: file, line: line)
+    XCTAssertTrue(simulator[keyPath: property] == value, file: file, line: line)
   }
 
   func testIsPlusSized() {
