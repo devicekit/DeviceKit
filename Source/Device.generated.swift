@@ -172,22 +172,30 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP725/SP725ipad-mini-4.png)
     case iPadMini4
-    /// Device is an [iPad Pro](https://support.apple.com/kb/SP739)
+    /// Device is an [iPad Pro 9.7-inch](https://support.apple.com/kb/SP739)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP739/SP739.png)
     case iPadPro9Inch
-    /// Device is an [iPad Pro](https://support.apple.com/kb/sp723)
+    /// Device is an [iPad Pro 12-inch](https://support.apple.com/kb/sp723)
     ///
     /// ![Image](http://images.apple.com/v/ipad-pro/c/images/shared/buystrip/ipad_pro_large_2x.png)
     case iPadPro12Inch
-    /// Device is an [iPad Pro](https://support.apple.com/kb/SP761)
+    /// Device is an [iPad Pro 12-inch (2nd generation)](https://support.apple.com/kb/SP761)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP761/ipad-pro-12in-hero-201706.png)
     case iPadPro12Inch2
-    /// Device is an [iPad Pro 10.5](https://support.apple.com/kb/SP762)
+    /// Device is an [iPad Pro 10.5-inch](https://support.apple.com/kb/SP762)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP761/ipad-pro-10in-hero-201706.png)
     case iPadPro10Inch
+    /// Device is an [iPad Pro 11-inch](https://support.apple.com/kb/not-published-yet)
+    ///
+    /// ![Image](https://support.apple.com/not-published-yet)
+    case iPadPro11Inch
+    /// Device is an [iPad Pro 12.9-inch (3rd generation)](https://support.apple.com/kb/not-published-yet)
+    ///
+    /// ![Image](https://support.apple.com/not-published-yet)
+    case iPadPro12Inch3
     /// Device is a [HomePod](https://www.apple.com/homepod/)
     ///
     /// ![Image](https://images.apple.com/v/homepod/d/images/overview/homepod_side_dark_large_2x.jpg)
@@ -317,6 +325,8 @@ public enum Device {
       case "iPad6,7", "iPad6,8": return iPadPro12Inch
       case "iPad7,1", "iPad7,2": return iPadPro12Inch2
       case "iPad7,3", "iPad7,4": return iPadPro10Inch
+      case "iPad8,1", "iPad8,2", "iPad8,3", "iPad8,4": return iPadPro11Inch
+      case "iPad8,5", "iPad8,6", "iPad8,7", "iPad8,8": return iPadPro12Inch3
       case "AudioAccessory1,1": return homePod
       case "i386", "x86_64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "iOS"))
       default: return unknown(identifier)
@@ -401,6 +411,8 @@ public enum Device {
         case .iPadPro12Inch: return 12.9
         case .iPadPro12Inch2: return 12.9
         case .iPadPro10Inch: return 10.5
+        case .iPadPro11Inch: return 11.0
+        case .iPadPro12Inch3: return 12.9
         case .homePod: return -1
         case .simulator(let model): return model.diagonal
         case .unknown: return -1
@@ -463,6 +475,8 @@ public enum Device {
       case .iPadPro12Inch: return (width: 3, height: 4)
       case .iPadPro12Inch2: return (width: 3, height: 4)
       case .iPadPro10Inch: return (width: 3, height: 4)
+      case .iPadPro11Inch: return (width: 139, height: 199)
+      case .iPadPro12Inch3: return (width: 512, height: 683)
       case .homePod: return (width: 4, height: 5)
       case .simulator(let model): return model.screenRatio
       case .unknown: return (width: -1, height: -1)
@@ -500,7 +514,7 @@ public enum Device {
 
     /// All iPads
     public static var allPads: [Device] {
-      return [.iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPad5, .iPad6, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch]
+      return [.iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPad5, .iPad6, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3]
     }
 
     /// All X-Series Devices
@@ -515,7 +529,7 @@ public enum Device {
 
     /// All Pro Devices
     public static var allProDevices: [Device] {
-      return [.iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch]
+      return [.iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3]
     }
 
     /// All mini Devices
@@ -607,7 +621,7 @@ public enum Device {
 
     /// All Face ID Capable Devices
     public static var allFaceIDCapableDevices: [Device] {
-      return [.iPhoneX, .iPhoneXs, .iPhoneXsMax, .iPhoneXr]
+      return [.iPhoneX, .iPhoneXs, .iPhoneXsMax, .iPhoneXr, .iPadPro11Inch, .iPadPro12Inch3]
     }
 
     /// Returns whether or not the device has Touch ID
@@ -780,6 +794,8 @@ public enum Device {
       case .iPadPro12Inch: return 264
       case .iPadPro12Inch2: return 264
       case .iPadPro10Inch: return 264
+      case .iPadPro11Inch: return 264
+      case .iPadPro12Inch3: return 264
       case .homePod: return -1
       case .simulator(let model): return model.ppi
       case .unknown: return nil
@@ -867,8 +883,10 @@ extension Device: CustomStringConvertible {
       case .iPadMini4: return "iPad Mini 4"
       case .iPadPro9Inch: return "iPad Pro (9.7-inch)"
       case .iPadPro12Inch: return "iPad Pro (12.9-inch)"
-      case .iPadPro12Inch2: return "iPad Pro (12.9-inch) 2"
+      case .iPadPro12Inch2: return "iPad Pro (12.9-inch) (2nd generation)"
       case .iPadPro10Inch: return "iPad Pro (10.5-inch)"
+      case .iPadPro11Inch: return "iPad Pro (11-inch)"
+      case .iPadPro12Inch3: return "iPad Pro (12.9-inch) (3rd generation)"
       case .homePod: return "HomePod"
       case .simulator(let model): return "Simulator (\(model))"
       case .unknown(let identifier): return identifier

@@ -108,6 +108,14 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.mapToDevice(identifier: "iPad7,2"), .iPadPro12Inch2)
     XCTAssertEqual(Device.mapToDevice(identifier: "iPad7,3"), .iPadPro10Inch)
     XCTAssertEqual(Device.mapToDevice(identifier: "iPad7,4"), .iPadPro10Inch)
+    XCTAssertEqual(Device.mapToDevice(identifier: "iPad8,1"), .iPadPro11Inch)
+    XCTAssertEqual(Device.mapToDevice(identifier: "iPad8,2"), .iPadPro11Inch)
+    XCTAssertEqual(Device.mapToDevice(identifier: "iPad8,3"), .iPadPro11Inch)
+    XCTAssertEqual(Device.mapToDevice(identifier: "iPad8,4"), .iPadPro11Inch)
+    XCTAssertEqual(Device.mapToDevice(identifier: "iPad8,5"), .iPadPro12Inch3)
+    XCTAssertEqual(Device.mapToDevice(identifier: "iPad8,6"), .iPadPro12Inch3)
+    XCTAssertEqual(Device.mapToDevice(identifier: "iPad8,7"), .iPadPro12Inch3)
+    XCTAssertEqual(Device.mapToDevice(identifier: "iPad8,8"), .iPadPro12Inch3)
   }
 
   func testScreenRatio() {
@@ -145,6 +153,9 @@ class DeviceKitTests: XCTestCase {
     XCTAssertTrue(Device.iPadPro12Inch.screenRatio == (width: 3, height: 4))
     XCTAssertTrue(Device.iPadPro12Inch2.screenRatio == (width: 3, height: 4))
     XCTAssertTrue(Device.iPadPro10Inch.screenRatio == (width: 3, height: 4))
+    XCTAssertTrue(Device.iPadPro11Inch.screenRatio == (width: 139, height: 199))
+    XCTAssertTrue(Device.iPadPro12Inch3.screenRatio == (width: 512, height: 683))
+
     XCTAssertTrue(Device.simulator(device).screenRatio == device.screenRatio)
     XCTAssertTrue(Device.unknown(UUID().uuidString).screenRatio == (width: -1, height: -1))
   }
@@ -190,6 +201,8 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.iPadPro12Inch.diagonal, 12.9)
     XCTAssertEqual(Device.iPadPro12Inch2.diagonal, 12.9)
     XCTAssertEqual(Device.iPadPro10Inch.diagonal, 10.5)
+    XCTAssertEqual(Device.iPadPro11Inch.diagonal, 11.0)
+    XCTAssertEqual(Device.iPadPro12Inch3.diagonal, 12.9)
 
     XCTAssertEqual(Device.simulator(.iPadPro10Inch).diagonal, 10.5)
     XCTAssertEqual(Device.unknown(UUID().uuidString).diagonal, -1)
@@ -228,8 +241,10 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.iPadMini4.description, "iPad Mini 4")
     XCTAssertEqual(Device.iPadPro9Inch.description, "iPad Pro (9.7-inch)")
     XCTAssertEqual(Device.iPadPro12Inch.description, "iPad Pro (12.9-inch)")
-    XCTAssertEqual(Device.iPadPro12Inch2.description, "iPad Pro (12.9-inch) 2")
+    XCTAssertEqual(Device.iPadPro12Inch2.description, "iPad Pro (12.9-inch) (2nd generation)")
     XCTAssertEqual(Device.iPadPro10Inch.description, "iPad Pro (10.5-inch)")
+    XCTAssertEqual(Device.iPadPro11Inch.description, "iPad Pro (11-inch)")
+    XCTAssertEqual(Device.iPadPro12Inch3.description, "iPad Pro (12.9-inch) (3rd generation)")
     XCTAssertEqual(Device.simulator(Device.iPadPro10Inch).description, "Simulator (\(Device.iPadPro10Inch))")
     let uuid = UUID().uuidString
     XCTAssertEqual(Device.unknown(uuid).description, uuid)
@@ -280,8 +295,8 @@ class DeviceKitTests: XCTestCase {
     assertEqualDeviceAndSimulator(device: Device.iPadPro12Inch,   property: \Device.ppi, value: 264)
     assertEqualDeviceAndSimulator(device: Device.iPadPro12Inch2,  property: \Device.ppi, value: 264)
     assertEqualDeviceAndSimulator(device: Device.iPadPro10Inch,   property: \Device.ppi, value: 264)
-    assertEqualDeviceAndSimulator(device: Device.iPadPro9Inch,    property: \Device.ppi, value: 264)
-    assertEqualDeviceAndSimulator(device: Device.iPadPro9Inch,    property: \Device.ppi, value: 264)
+    assertEqualDeviceAndSimulator(device: Device.iPadPro11Inch,   property: \Device.ppi, value: 264)
+    assertEqualDeviceAndSimulator(device: Device.iPadPro12Inch3,  property: \Device.ppi, value: 264)
     // swiftlint:enable comma
   }
 
@@ -300,7 +315,7 @@ class DeviceKitTests: XCTestCase {
   }
 
   func testIsPro() {
-    XCTAssertEqual(Device.allProDevices, [.iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch])
+    XCTAssertEqual(Device.allProDevices, [.iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3])
   }
 
   func testGuidedAccessSession() {
