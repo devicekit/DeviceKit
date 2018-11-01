@@ -192,7 +192,7 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.iPadPro10Inch.diagonal, 10.5)
 
     XCTAssertEqual(Device.simulator(.iPadPro10Inch).diagonal, 10.5)
-    XCTAssertEqual(Device.unknown(UUID().uuidString).diagonal, nil)
+    XCTAssertEqual(Device.unknown(UUID().uuidString).diagonal, -1)
   }
 
   func testDescription() {

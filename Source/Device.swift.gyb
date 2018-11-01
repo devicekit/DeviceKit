@@ -297,15 +297,16 @@ public enum Device {
     return device
   }
 
+  #if os(iOS) || os(watchOS)
   /// Returns diagonal screen length in inches
-  public var diagonal: Double? {
+  public var diagonal: Double {
     #if os(iOS)
       switch self {
         % for device in iOSDevices:
         case .${device.caseName}: return ${device.diagonal}
         % end
         case .simulator(let model): return model.diagonal
-        case .unknown: return nil
+        case .unknown: return -1
       }
     #elseif os(watchOS)
       switch self {
@@ -313,12 +314,11 @@ public enum Device {
       case .${device.caseName}: return ${device.diagonal}
         % end
       case .simulator(let model): return model.diagonal
-      case .unknown: return nil
+      case .unknown: return -1
       }
-    #elseif os(tvOS)
-      return nil
     #endif
   }
+  #endif
 
   /// Returns screen ratio as a tuple
   public var screenRatio: (width: Double, height: Double) {
