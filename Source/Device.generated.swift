@@ -1065,19 +1065,49 @@ extension Device {
   // MARK: - Orientation
     /**
       This enum describes the state of the orientation.
-      - Landscape: The device is in Landscape Orientation
-      - Portrait:  The device is in Portrait Orientation
+      - Landscape Left: The device is in Landscape Left Orientation.
+      - Landscape Right: The device is in Landscape Right Orientation.
+      - Portrait:  The device is in Portrait Orientation.
+      - Portrait Upside Down:  The device is in Portrait Upside Down Orientation.
+      - Face Up: The device is in Face Up Orientation.
+      - Face Down: The device is in Face Down Orientation.
+      - Unknown: The device is in an Unknown orientation.
     */
     public enum Orientation {
-      case landscape
+      case landscapeLeft
+      case landscapeRight
       case portrait
+      case portraitUpsideDown
+      case faceUp
+      case faceDown
+      case unknown
+
+      var isLandscape: Bool {
+        switch self {
+        case .landscapeLeft, .landscapeRight:
+            return true
+        case .portrait, .portraitUpsideDown, .faceDown, .faceUp, .unknown:
+            return false
+        }
+      }
     }
 
     public var orientation: Orientation {
-      if UIDevice.current.orientation.isLandscape {
-        return .landscape
-      } else {
-        return .portrait
+      switch UIDevice.current.orientation {
+      case .landscapeRight:
+          return .landscapeRight
+      case .landscapeLeft:
+          return .landscapeLeft
+      case .portrait:
+          return .portrait
+      case .portraitUpsideDown:
+          return .portraitUpsideDown
+      case .faceUp:
+          return .faceUp
+      case .faceDown:
+          return .faceDown
+      case .unknown:
+          return .unknown
       }
     }
 }
