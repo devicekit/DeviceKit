@@ -623,11 +623,6 @@ public enum Device {
     public static var allFaceIDCapableDevices: [Device] {
       return [.iPhoneX, .iPhoneXs, .iPhoneXsMax, .iPhoneXr, .iPadPro11Inch, .iPadPro12Inch3]
     }
-  
-    /// All devices that feature a sensor housing in the screen
-    public static var allDevicesWithASensorHousing: [Device] {
-      return [.iPhoneX, .iPhoneXs, .iPhoneXsMax, .iPhoneXr]
-    }
 
     /// Returns whether or not the device has Touch ID
     public var isTouchIDCapable: Bool {
@@ -638,15 +633,20 @@ public enum Device {
     public var isFaceIDCapable: Bool {
       return isOneOf(Device.allFaceIDCapableDevices)
     }
-  
-    /// Returns whether or not the device has a sensor housing
-    public var hasSensorHousing: Bool {
-      return isOneOf(Device.allDevicesWithASensorHousing)
-    }
 
     /// Returns whether or not the device has any biometric sensor (i.e. Touch ID or Face ID)
     public var hasBiometricSensor: Bool {
       return isTouchIDCapable || isFaceIDCapable
+    }
+  
+    /// All devices that feature a sensor housing in the screen
+    public static var allDevicesWithASensorHousing: [Device] {
+      return [.iPhoneX, .iPhoneXs, .iPhoneXsMax, .iPhoneXr]
+    }
+  
+    /// Returns whether or not the device has a sensor housing
+    public var hasSensorHousing: Bool {
+      return isOneOf(Device.allDevicesWithASensorHousing)
     }
 
   #elseif os(tvOS)
