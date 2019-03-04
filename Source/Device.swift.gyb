@@ -449,7 +449,10 @@ public enum Device {
       return Device.realDevice(from: self)
     }
 
-    public var isZoomed: Bool {
+    public var isZoomed: Bool? {
+      if !isCurrent {
+        return nil
+      }
       // TODO: Longterm we need a better solution for this!
       guard self != .iPhoneX && self != .iPhoneXS else { return false }
       if Int(UIScreen.main.scale.rounded()) == 3 {
