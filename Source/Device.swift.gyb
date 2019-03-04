@@ -569,6 +569,7 @@ public enum Device {
     return devices.contains(self)
   }
   
+  /// Whether or not the current device is the current device.
   private var isCurrent: Bool {
     return self == Device.instance
   }
