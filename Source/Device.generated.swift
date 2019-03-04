@@ -640,13 +640,13 @@ public enum Device {
     }
   
     /// All devices that feature a sensor housing in the screen
-    public static var allDevicesWithASensorHousing: [Device] {
+    public static var allDevicesWithSensorHousing: [Device] {
       return [.iPhoneX, .iPhoneXs, .iPhoneXsMax, .iPhoneXr]
     }
   
     /// Returns whether or not the device has a sensor housing
     public var hasSensorHousing: Bool {
-      return isOneOf(Device.allDevicesWithASensorHousing)
+      return isOneOf(Device.allDevicesWithSensorHousing)
     }
 
   #elseif os(tvOS)
