@@ -219,3 +219,4 @@ If you extended the functionality of DeviceKit yourself and want others to use i
 
 ## Contributors
 The complete list of people who contributed to this project is available [here](https://github.com/dennisweissmann/DeviceKit/graphs/contributors). DeviceKit wouldn't be what it is without you! Thank you very much! 🙏
+ 
