@@ -991,7 +991,7 @@ extension Device {
         switch UIDevice.current.batteryState {
         case .charging: self = .charging(batteryLevel)
         case .full: self = .full
-        case .unplugged:self = .unplugged(batteryLevel)
+        case .unplugged: self = .unplugged(batteryLevel)
         case .unknown: self = .full // Should never happen since `batteryMonitoring` is enabled.
         }
         UIDevice.current.isBatteryMonitoringEnabled = wasBatteryMonitoringEnabled
@@ -1005,7 +1005,7 @@ extension Device {
         switch WKInterfaceDevice.current().batteryState {
         case .charging: self = .charging(batteryLevel)
         case .full: self = .full
-        case .unplugged:self = .unplugged(batteryLevel)
+        case .unplugged: self = .unplugged(batteryLevel)
         case .unknown: self = .full // Should never happen since `batteryMonitoring` is enabled.
         }
         WKInterfaceDevice.current().isBatteryMonitoringEnabled = wasBatteryMonitoringEnabled
