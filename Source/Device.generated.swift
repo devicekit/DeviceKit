@@ -263,8 +263,13 @@ public enum Device {
   case unknown(String)
 
   /// Initializes a `Device` representing the current device this software runs on.
-  public init() {
+  private init() {
     self = Device.instance
+  }
+  
+  /// Return the current device instance.
+  public static var current: Device {
+    return Device()
   }
 
   /// Gets the identifier from the system, such as "iPhone7,1".
