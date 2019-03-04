@@ -145,7 +145,7 @@ default: break
  
 ### Make Sure the Device Is Contained in a Preconfigured Group
 ```swift
-let groupOfAllowedDevices: [Device] = [.iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .simulator(.iPhone6), .simulator(.iPhone6Plus),.simulator(.iPhone6s),.simulator(.iPhone6sPlus).simulator(.iPhone8),.simulator(.iPhone8Plus),.simulator(.iPhoneX),.simulator(.iPhoneXs),.simulator(.iPhoneXsMax),.simulator(.iPhoneXr)]
+let groupOfAllowedDevices: [Device] = [.iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .simulator(.iPhone6), .simulator(.iPhone6Plus),.simulator(.iPhone6s),.simulator(.iPhone6sPlus).simulator(.iPhone8),.simulator(.iPhone8Plus),.simulator(.iPhoneX),.simulator(.iPhoneXS),.simulator(.iPhoneXSMax),.simulator(.iPhoneXR)]
 
 let device = Device()
  
