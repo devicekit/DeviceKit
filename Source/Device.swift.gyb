@@ -232,15 +232,10 @@ public enum Device {
   /// You can still use this enum as before but the description equals the identifier (you can get multiple identifiers for the same product class
   /// (e.g. "iPhone6,1" or "iPhone 6,2" do both mean "iPhone 5s"))
   case unknown(String)
-
-  /// Initializes a `Device` representing the current device this software runs on.
-  private init() {
-    self = Device.instance
-  }
   
-  /// Return the current device instance.
+  /// Returns a `Device` representing the current device this software runs on.
   public static var current: Device {
-    return Device()
+    return Device.mapToDevice(identifier: Device.identifier)
   }
 
   /// Gets the identifier from the system, such as "iPhone7,1".
@@ -255,8 +250,6 @@ public enum Device {
     }
     return identifier
   }()
-
-  private static let instance = Device.mapToDevice(identifier: Device.identifier)
 
   /// Maps an identifier to a Device. If the identifier can not be mapped to an existing device, `UnknownDevice(identifier)` is returned.
   ///
@@ -574,7 +567,7 @@ public enum Device {
   
   /// Whether or not the current device is the current device.
   private var isCurrent: Bool {
-    return self == Device.instance
+    return self == Device.current
   }
 
   /// The name identifying the device (e.g. "Dennis' iPhone").
