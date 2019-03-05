@@ -148,11 +148,11 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP708/SP708-space_gray.jpeg)
     case iPadAir2
-    /// Device is an [iPad 5](https://support.apple.com/kb/SP751)
+    /// Device is an [iPad (5th generation)](https://support.apple.com/kb/SP751)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP751/ipad_5th_generation.png)
     case iPad5
-    /// Device is an [iPad 6](https://support.apple.com/kb/NotYetAvailable)
+    /// Device is an [iPad (6th generation)](https://support.apple.com/kb/NotYetAvailable)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP751/ipad_5th_generation.png)
     case iPad6
@@ -890,12 +890,12 @@ extension Device: CustomStringConvertible {
       case .iPhoneXSMax: return "iPhone Xs Max"
       case .iPhoneXR: return "iPhone Xʀ"
       case .iPad2: return "iPad 2"
-      case .iPad3: return "iPad 3"
-      case .iPad4: return "iPad 4"
+      case .iPad3: return "iPad (3rd generation)"
+      case .iPad4: return "iPad (4th generation)"
       case .iPadAir: return "iPad Air"
       case .iPadAir2: return "iPad Air 2"
-      case .iPad5: return "iPad 5"
-      case .iPad6: return "iPad 6"
+      case .iPad5: return "iPad (5th generation)"
+      case .iPad6: return "iPad (6th generation)"
       case .iPadMini: return "iPad Mini"
       case .iPadMini2: return "iPad Mini 2"
       case .iPadMini3: return "iPad Mini 3"
