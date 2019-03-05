@@ -609,9 +609,7 @@ public enum Device {
     }
 
     public var isZoomed: Bool? {
-      if !isCurrent {
-        return nil
-      }
+      guard isCurrent else { return nil }
       // TODO: Longterm we need a better solution for this!
       guard self != .iPhoneX && self != .iPhoneXS else { return false }
       if Int(UIScreen.main.scale.rounded()) == 3 {
@@ -735,9 +733,7 @@ public enum Device {
 
   /// The name identifying the device (e.g. "Dennis' iPhone").
   public var name: String? {
-    if !isCurrent {
-      return nil
-    }
+    guard isCurrent else { return nil }
     #if os(watchOS)
     return WKInterfaceDevice.current().name
     #else
@@ -747,9 +743,7 @@ public enum Device {
 
   /// The name of the operating system running on the device represented by the receiver (e.g. "iOS" or "tvOS").
   public var systemName: String? {
-    if !isCurrent {
-      return nil
-    }
+    guard isCurrent else { return nil }
     #if os(watchOS)
     return WKInterfaceDevice.current().systemName
     #else
@@ -759,9 +753,7 @@ public enum Device {
 
   /// The current version of the operating system (e.g. 8.4 or 9.2).
   public var systemVersion: String? {
-    if !isCurrent {
-      return nil
-    }
+    guard isCurrent else { return nil }
     #if os(watchOS)
     return WKInterfaceDevice.current().systemVersion
     #else
@@ -771,9 +763,7 @@ public enum Device {
 
   /// The model of the device (e.g. "iPhone" or "iPod Touch").
   public var model: String? {
-    if !isCurrent {
-      return nil
-    }
+    guard isCurrent else { return nil }
     #if os(watchOS)
     return WKInterfaceDevice.current().model
     #else
@@ -783,9 +773,7 @@ public enum Device {
 
   /// The model of the device as a localized string.
   public var localizedModel: String? {
-    if !isCurrent {
-      return nil
-    }
+    guard isCurrent else { return nil }
     #if os(watchOS)
     return WKInterfaceDevice.current().localizedModel
     #else
@@ -1049,17 +1037,13 @@ extension Device {
 
   /// The state of the battery
   public var batteryState: BatteryState? {
-    if !isCurrent {
-      return nil
-    }
+    guard isCurrent else { return nil }
     return BatteryState()
   }
 
   /// Battery level ranges from 0 (fully discharged) to 100 (100% charged).
   public var batteryLevel: Int? {
-    if !isCurrent {
-      return nil
-    }
+    guard isCurrent else { return nil }
     switch BatteryState() {
     case .charging(let value): return value
     case .full: return 100
