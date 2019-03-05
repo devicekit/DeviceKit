@@ -116,15 +116,15 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP770/iphonex.png)
     case iPhoneX
-    /// Device is an [iPhone XS](https://support.apple.com/kb/SP779)
+    /// Device is an [iPhone Xs](https://support.apple.com/kb/SP779)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP779/SP779-iphone-xs.jpg)
     case iPhoneXS
-    /// Device is an [iPhone XS Max](https://support.apple.com/kb/SP780)
+    /// Device is an [iPhone Xs Max](https://support.apple.com/kb/SP780)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP780/SP780-iPhone-Xs-Max.jpg)
     case iPhoneXSMax
-    /// Device is an [iPhone XR](https://support.apple.com/kb/SP781)
+    /// Device is an [iPhone Xʀ](https://support.apple.com/kb/SP781)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP781/SP781-iPhone-xr.jpg)
     case iPhoneXR
@@ -905,9 +905,9 @@ extension Device: CustomStringConvertible {
       case .iPhone8: return "iPhone 8"
       case .iPhone8Plus: return "iPhone 8 Plus"
       case .iPhoneX: return "iPhone X"
-      case .iPhoneXS: return "iPhone XS"
-      case .iPhoneXSMax: return "iPhone XS Max"
-      case .iPhoneXR: return "iPhone XR"
+      case .iPhoneXS: return "iPhone Xs"
+      case .iPhoneXSMax: return "iPhone Xs Max"
+      case .iPhoneXR: return "iPhone Xʀ"
       case .iPad2: return "iPad 2"
       case .iPad3: return "iPad 3"
       case .iPad4: return "iPad 4"
