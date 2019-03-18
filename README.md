@@ -101,7 +101,7 @@ You can try these examples in Playground.
 
 ### Get the Device You're Running On
 ```swift
-let device = Device()
+let device = Device.current
 
 print(device)     // prints, for example, "iPhone 6 Plus"
 
@@ -114,7 +114,7 @@ if device == .iPhone6Plus {
 
 ### Get the Device Family
 ```swift
-let device = Device()
+let device = Device.current
 if device.isPod {
   // iPods (real or simulator)
 } else if device.isPhone {
@@ -126,7 +126,7 @@ if device.isPod {
 
 ### Check If Running on Simulator
 ```swift
-let device = Device()
+let device = Device.current
 if device.isSimulator {
   // Running on one of the simulators(iPod/iPhone/iPad)
   // Skip doing something irrelevant for Simulator
@@ -135,7 +135,7 @@ if device.isSimulator {
 
 ### Get the Simulator Device
 ```swift
-let device = Device()
+let device = Device.current
 switch device {
 case .simulator(.iPhone6s): break // You're running on the iPhone 6s simulator
 case .simulator(.iPadAir2): break // You're running on the iPad Air 2 simulator
@@ -147,7 +147,7 @@ default: break
 ```swift
 let groupOfAllowedDevices: [Device] = [.iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .simulator(.iPhone6), .simulator(.iPhone6Plus),.simulator(.iPhone6s),.simulator(.iPhone6sPlus).simulator(.iPhone8),.simulator(.iPhone8Plus),.simulator(.iPhoneX),.simulator(.iPhoneXS),.simulator(.iPhoneXSMax),.simulator(.iPhoneXR)]
 
-let device = Device()
+let device = Device.current
  
 if device.isOneOf(groupOfAllowedDevices) {
   // Do your action
