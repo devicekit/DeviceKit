@@ -637,7 +637,7 @@ public enum Device {
     public var hasBiometricSensor: Bool {
       return isTouchIDCapable || isFaceIDCapable
     }
-    
+
     /// All devices that feature a sensor housing in the screen
     public static var allDevicesWithSensorHousing: [Device] {
       return [.iPhoneX, .iPhoneXS, .iPhoneXSMax, .iPhoneXR]
@@ -646,6 +646,16 @@ public enum Device {
     /// Returns whether or not the device has a sensor housing
     public var hasSensorHousing: Bool {
       return isOneOf(Device.allDevicesWithSensorHousing)
+    }
+
+    /// All devices that feature a screen with rounded corners.
+    public static var allDevicesWithRoundedDisplayCorners: [Device] {
+      return [.iPhoneX, .iPhoneXS, .iPhoneXSMax, .iPhoneXR, .iPadPro11Inch, .iPadPro12Inch3]
+    }
+
+    /// Returns whether or not the device has a screen with rounded corners.
+    public var hasRoundedDisplayCorners: Bool {
+      return isOneOf(Device.allDevicesWithRoundedDisplayCorners)
     }
 
   #elseif os(tvOS)
