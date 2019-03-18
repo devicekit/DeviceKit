@@ -22,7 +22,7 @@ import UIKit
 ///
 /// Usage:
 ///
-///     let device = Device()
+///     let device = Device.current
 ///
 ///     print(device)     // prints, for example, "iPhone 6 Plus"
 ///
@@ -701,7 +701,7 @@ public enum Device {
    Most uses for an enum like this are the following:
 
    ```
-   switch Device() {
+   switch Device.current {
    case .iPodTouch5, .iPodTouch6: callMethodOnIPods()
    case .iPhone4, iPhone4s, .iPhone5, .iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE, .iPhone8, .iPhone8Plus, .iPhoneX: callMethodOnIPhones()
    case .iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadPro: callMethodOnIPads()
@@ -711,7 +711,7 @@ public enum Device {
    This code can now be replaced with
 
    ```
-   let device = Device()
+   let device = Device.current
    if device.isOneOf(Device.allPods) {
      callMethodOnIPods()
    } else if device.isOneOf(Device.allPhones) {
