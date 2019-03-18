@@ -148,10 +148,6 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP708/SP708-space_gray.jpeg)
     case iPadAir2
-    /// Device is an [iPad Air (3th generation)](INSERT LINK)
-    ///
-    /// ![Image](https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/image/AppleInc/aos/published/images/i/pa/ipad/mini/ipad-mini-compare-201903)
-    case iPadAir3
     /// Device is an [iPad (5th generation)](https://support.apple.com/kb/SP751)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP751/ipad_5th_generation.png)
@@ -176,10 +172,6 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP725/SP725ipad-mini-4.png)
     case iPadMini4
-    /// Device is an [iPad Mini (5th generation)](INSERT LINK)
-    ///
-    /// ![Image](https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/image/AppleInc/aos/published/images/i/pa/ipad/air/ipad-air-compare-201903)
-    case iPadMini5
     /// Device is an [iPad Pro 9.7-inch](https://support.apple.com/kb/SP739)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP739/SP739.png)
@@ -321,14 +313,12 @@ public enum Device {
       case "iPad3,4", "iPad3,5", "iPad3,6": return iPad4
       case "iPad4,1", "iPad4,2", "iPad4,3": return iPadAir
       case "iPad5,3", "iPad5,4": return iPadAir2
-      case "": return iPadAir3
       case "iPad6,11", "iPad6,12": return iPad5
       case "iPad7,5", "iPad7,6": return iPad6
       case "iPad2,5", "iPad2,6", "iPad2,7": return iPadMini
       case "iPad4,4", "iPad4,5", "iPad4,6": return iPadMini2
       case "iPad4,7", "iPad4,8", "iPad4,9": return iPadMini3
       case "iPad5,1", "iPad5,2": return iPadMini4
-      case "": return iPadMini5
       case "iPad6,3", "iPad6,4": return iPadPro9Inch
       case "iPad6,7", "iPad6,8": return iPadPro12Inch
       case "iPad7,1", "iPad7,2": return iPadPro12Inch2
@@ -409,14 +399,12 @@ public enum Device {
         case .iPad4: return 9.7
         case .iPadAir: return 9.7
         case .iPadAir2: return 9.7
-        case .iPadAir3: return 10.5
         case .iPad5: return 9.7
         case .iPad6: return 9.7
         case .iPadMini: return 7.9
         case .iPadMini2: return 7.9
         case .iPadMini3: return 7.9
         case .iPadMini4: return 7.9
-        case .iPadMini5: return 7.9
         case .iPadPro9Inch: return 9.7
         case .iPadPro12Inch: return 12.9
         case .iPadPro12Inch2: return 12.9
@@ -475,14 +463,12 @@ public enum Device {
       case .iPad4: return (width: 3, height: 4)
       case .iPadAir: return (width: 3, height: 4)
       case .iPadAir2: return (width: 3, height: 4)
-      case .iPadAir3: return (width: 3, height: 4)
       case .iPad5: return (width: 3, height: 4)
       case .iPad6: return (width: 3, height: 4)
       case .iPadMini: return (width: 3, height: 4)
       case .iPadMini2: return (width: 3, height: 4)
       case .iPadMini3: return (width: 3, height: 4)
       case .iPadMini4: return (width: 3, height: 4)
-      case .iPadMini5: return (width: 3, height: 4)
       case .iPadPro9Inch: return (width: 3, height: 4)
       case .iPadPro12Inch: return (width: 3, height: 4)
       case .iPadPro12Inch2: return (width: 3, height: 4)
@@ -526,7 +512,7 @@ public enum Device {
 
     /// All iPads
     public static var allPads: [Device] {
-      return [.iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPadAir3, .iPad5, .iPad6, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadMini5, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3]
+      return [.iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPad5, .iPad6, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3]
     }
 
     /// All X-Series Devices
@@ -541,12 +527,12 @@ public enum Device {
 
     /// All Pro Devices
     public static var allProDevices: [Device] {
-      return [.iPadAir3, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3]
+      return [.iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3]
     }
 
     /// All mini Devices
     public static var allMiniDevices: [Device] {
-      return [.iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadMini5]
+      return [.iPadMini, .iPadMini2, .iPadMini3, .iPadMini4]
     }
 
     /// All simulator iPods
@@ -629,7 +615,7 @@ public enum Device {
 
     /// All Touch ID Capable Devices
     public static var allTouchIDCapableDevices: [Device] {
-      return [.iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE, .iPhone8, .iPhone8Plus, .iPadAir2, .iPadAir3, .iPad5, .iPad6, .iPadMini3, .iPadMini4, .iPadMini5, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch]
+      return [.iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE, .iPhone8, .iPhone8Plus, .iPadAir2, .iPad5, .iPad6, .iPadMini3, .iPadMini4, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch]
     }
 
     /// All Face ID Capable Devices
@@ -827,14 +813,12 @@ public enum Device {
       case .iPad4: return 264
       case .iPadAir: return 264
       case .iPadAir2: return 264
-      case .iPadAir3: return 264
       case .iPad5: return 264
       case .iPad6: return 264
       case .iPadMini: return 163
       case .iPadMini2: return 326
       case .iPadMini3: return 326
       case .iPadMini4: return 326
-      case .iPadMini5: return 326
       case .iPadPro9Inch: return 264
       case .iPadPro12Inch: return 264
       case .iPadPro12Inch2: return 264
@@ -920,14 +904,12 @@ extension Device: CustomStringConvertible {
       case .iPad4: return "iPad (4th generation)"
       case .iPadAir: return "iPad Air"
       case .iPadAir2: return "iPad Air 2"
-      case .iPadAir3: return "iPad Air (3th generation)"
       case .iPad5: return "iPad (5th generation)"
       case .iPad6: return "iPad (6th generation)"
       case .iPadMini: return "iPad Mini"
       case .iPadMini2: return "iPad Mini 2"
       case .iPadMini3: return "iPad Mini 3"
       case .iPadMini4: return "iPad Mini 4"
-      case .iPadMini5: return "iPad Mini (5th generation)"
       case .iPadPro9Inch: return "iPad Pro (9.7-inch)"
       case .iPadPro12Inch: return "iPad Pro (12.9-inch)"
       case .iPadPro12Inch2: return "iPad Pro (12.9-inch) (2nd generation)"
