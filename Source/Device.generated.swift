@@ -543,7 +543,7 @@ public enum Device {
 
     /// All Pro Devices
     public static var allProDevices: [Device] {
-      return [.iPadAir3, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3]
+      return [.iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3]
     }
 
     /// All mini Devices
