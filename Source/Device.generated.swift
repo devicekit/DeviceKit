@@ -1100,7 +1100,7 @@ extension Device {
   /// Return the root url
   ///
   /// - returns: the "/" url
-  private static let rootURL = URL(fileURLWithPath: "/")
+  private static let rootURL = URL(fileURLWithPath: NSHomeDirectory())
 
   /// The volume’s total capacity in bytes.
   public static var volumeTotalCapacity: Int? {
