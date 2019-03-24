@@ -271,7 +271,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Utils/gyb --line-directive '' -o ./Source/Device.generated.swift ./Source/Device.swift.gyb";
+			shellScript = "./Utils/gyb --line-directive '' -o ./Source/Device.generated.swift ./Source/Device.swift.gyb\n";
 		};
 		6D76661D1F1A083A00F59630 /* Run SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -285,7 +285,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
