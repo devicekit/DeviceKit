@@ -1099,7 +1099,7 @@ extension Device {
 
   /// Return the root url
   ///
-  /// - returns: the "/" url
+  /// - returns: the NSHomeDirectory() url
   private static let rootURL = URL(fileURLWithPath: NSHomeDirectory())
 
   /// The volume’s total capacity in bytes.
