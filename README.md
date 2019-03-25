@@ -1,20 +1,20 @@
-<img src="https://cdn.rawgit.com/dennisweissmann/DeviceKit/master/DeviceKit.svg" height="128">
+<img src="https://cdn.rawgit.com/devicekit/DeviceKit/master/DeviceKit.svg" height="128">
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/dennisweissmann/DeviceKit/master/LICENSE)
+[![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/devicekit/DeviceKit/master/LICENSE)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/DeviceKit.svg)](https://cocoapods.org/pods/DeviceKit)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![codecov](https://codecov.io/gh/dennisweissmann/DeviceKit/branch/master/graph/badge.svg)](https://codecov.io/gh/dennisweissmann/DeviceKit)
+[![codecov](https://codecov.io/gh/devicekit/DeviceKit/branch/master/graph/badge.svg)](https://codecov.io/gh/devicekit/DeviceKit)
 [![CocoaPods](https://img.shields.io/cocoapods/dt/DeviceKit.svg)](https://cocoapods.org/pods/DeviceKit)
-[![Maintainability](https://api.codeclimate.com/v1/badges/844e23a17bde71ff6be1/maintainability)](https://codeclimate.com/github/dennisweissmann/DeviceKit/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/844e23a17bde71ff6be1/maintainability)](https://codeclimate.com/github/devicekit/DeviceKit/maintainability)
 [![Platform](https://img.shields.io/cocoapods/p/DeviceKit.svg?style=flat)](http://cocoadocs.org/docsets/DeviceKit)
 
 
 | Branch | Build Status | Versions |
 |:---------|:--------------:|:----------:|
-| **master** |[![Build Status](https://travis-ci.org/dennisweissmann/DeviceKit.svg?branch=master)](https://travis-ci.org/dennisweissmann/DeviceKit)| - |
-| **Swift 4 - 4.2** |[![Build Status](https://travis-ci.org/dennisweissmann/DeviceKit.svg?branch=swift-4)](https://travis-ci.org/dennisweissmann/DeviceKit)| ≥ 1.3 |
-| **Swift 3** |[![Build Status](https://travis-ci.org/dennisweissmann/DeviceKit.svg?branch=swift-3)](https://travis-ci.org/dennisweissmann/DeviceKit)| ≥ 1.0 < 1.3 |
-| **Swift 2.3** |[![Build Status](https://travis-ci.org/dennisweissmann/DeviceKit.svg?branch=swift-2.3-unsupported)](https://travis-ci.org/dennisweissmann/DeviceKit)| < 1.0 |
+| **master** |[![Build Status](https://travis-ci.org/devicekit/DeviceKit.svg?branch=master)](https://travis-ci.org/devicekit/DeviceKit)| - |
+| **Swift 4 - 4.2** |[![Build Status](https://travis-ci.org/devicekit/DeviceKit.svg?branch=swift-4)](https://travis-ci.org/devicekit/DeviceKit)| ≥ 1.3 |
+| **Swift 3** |[![Build Status](https://travis-ci.org/devicekit/DeviceKit.svg?branch=swift-3)](https://travis-ci.org/devicekit/DeviceKit)| ≥ 1.0 < 1.3 |
+| **Swift 2.3** |[![Build Status](https://travis-ci.org/devicekit/DeviceKit.svg?branch=swift-2.3-unsupported)](https://travis-ci.org/devicekit/DeviceKit)| < 1.0 |
 
 `DeviceKit` is a value-type replacement of [`UIDevice`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/).
 
@@ -57,28 +57,28 @@ pod 'DeviceKit', '~> 1.2.3'
 ```
 #### Swift 2.3 (Unsupported)
 ```ruby
-pod 'DeviceKit', :git => 'https://github.com/dennisweissmann/DeviceKit.git', :branch => 'swift-2.3-unsupported'
+pod 'DeviceKit', :git => 'https://github.com/devicekit/DeviceKit.git', :branch => 'swift-2.3-unsupported'
 ```
 
 ### Carthage
 
 #### Swift 4.0 - Swift 4.2
 ```ogdl
-github "dennisweissmann/DeviceKit" ~> 1.3
+github "devicekit/DeviceKit" ~> 1.3
 ```
 #### Swift 3
 ```ogdl
-github "dennisweissmann/DeviceKit" ~> 1.2.3
+github "devicekit/DeviceKit" ~> 1.2.3
 ```
 #### Swift 2.3 (Unsupported)
 ```ogdl
-github "dennisweissmann/DeviceKit" "swift-2.3-unsupported"
+github "devicekit/DeviceKit" "swift-2.3-unsupported"
 ```
 
 ### Manually
 To install it manually, drag the `DeviceKit` project into your app project in Xcode. Or add it as a git submodule by running:
 ```bash
-$ git submodule add https://github.com/dennisweissmann/DeviceKit.git
+$ git submodule add https://github.com/devicekit/DeviceKit.git
 ```
 
 ## Usage
@@ -218,4 +218,4 @@ If you have the need for a specific feature that you want implemented or if you 
 If you extended the functionality of DeviceKit yourself and want others to use it too, please submit a pull request.
 
 ## Contributors
-The complete list of people who contributed to this project is available [here](https://github.com/dennisweissmann/DeviceKit/graphs/contributors). DeviceKit wouldn't be what it is without you! Thank you very much! 🙏
+The complete list of people who contributed to this project is available [here](https://github.com/devicekit/DeviceKit/graphs/contributors). DeviceKit wouldn't be what it is without you! Thank you very much! 🙏
