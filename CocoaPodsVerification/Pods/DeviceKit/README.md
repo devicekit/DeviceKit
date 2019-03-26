@@ -1,4 +1,4 @@
-<img src="/DeviceKit.svg" height="128">
+<img src="https://cdn.rawgit.com/devicekit/DeviceKit/master/DeviceKit.svg" height="128">
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/devicekit/DeviceKit/master/LICENSE)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/DeviceKit.svg)](https://cocoapods.org/pods/DeviceKit)
