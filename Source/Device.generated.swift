@@ -156,7 +156,7 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP751/ipad_5th_generation.png)
     case iPad6
-    /// Device is an [iPad Air (3th generation)](INSERT LINK)
+    /// Device is an [iPad Air (3rd generation)](INSERT LINK)
     ///
     /// ![Image](https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/image/AppleInc/aos/published/images/i/pa/ipad/mini/ipad-mini-compare-201903)
     case iPadAir3
@@ -893,7 +893,7 @@ extension Device: CustomStringConvertible {
       case .iPadAir2: return "iPad Air 2"
       case .iPad5: return "iPad 5"
       case .iPad6: return "iPad 6"
-      case .iPadAir3: return "iPad Air (3th generation)"
+      case .iPadAir3: return "iPad Air (3rd generation)"
       case .iPadMini: return "iPad Mini"
       case .iPadMini2: return "iPad Mini 2"
       case .iPadMini3: return "iPad Mini 3"
