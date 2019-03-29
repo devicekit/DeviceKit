@@ -269,7 +269,7 @@ public enum Device {
   /// You can still use this enum as before but the description equals the identifier (you can get multiple identifiers for the same product class
   /// (e.g. "iPhone6,1" or "iPhone 6,2" do both mean "iPhone 5s"))
   case unknown(String)
-  
+
   /// Returns a `Device` representing the current device this software runs on.
   public static var current: Device {
     return Device.mapToDevice(identifier: Device.identifier)
@@ -742,7 +742,7 @@ public enum Device {
   public func isOneOf(_ devices: [Device]) -> Bool {
     return devices.contains(self)
   }
-  
+
   /// Whether or not the current device is the current device.
   private var isCurrent: Bool {
     return self == Device.current
