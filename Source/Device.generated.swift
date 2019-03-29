@@ -647,6 +647,16 @@ public enum Device {
     public var hasSensorHousing: Bool {
       return isOneOf(Device.allDevicesWithSensorHousing)
     }
+  
+    /// All devices that feature a screen with rounded corners.
+    public static var allDevicesWithRoundedDisplayCorners: [Device] {
+      return [.iPhoneX, .iPhoneXs, .iPhoneXsMax, .iPhoneXr, .iPadPro11Inch, .iPadPro12Inch3]
+    }
+  
+    /// Returns whether or not the device has a screen with rounded corners.
+    public var hasRoundedDisplayCorners: Bool {
+      return isOneOf(Device.allDevicesWithRoundedDisplayCorners)
+    }
 
     /// All devices that feature a screen with rounded corners.
     public static var allDevicesWithRoundedDisplayCorners: [Device] {
