@@ -14,7 +14,7 @@ import XCTest
 
 class DeviceKitTests: XCTestCase {
 
-  let device = Device()
+  let device = Device.current
 
   func testDeviceSimulator() {
     XCTAssertTrue(device.isOneOf(Device.allSimulators))
@@ -68,10 +68,10 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.mapToDevice(identifier: "iPhone10,5"), .iPhone8Plus)
     XCTAssertEqual(Device.mapToDevice(identifier: "iPhone10,3"), .iPhoneX)
     XCTAssertEqual(Device.mapToDevice(identifier: "iPhone10,6"), .iPhoneX)
-    XCTAssertEqual(Device.mapToDevice(identifier: "iPhone11,2"), .iPhoneXs)
-    XCTAssertEqual(Device.mapToDevice(identifier: "iPhone11,4"), .iPhoneXsMax)
-    XCTAssertEqual(Device.mapToDevice(identifier: "iPhone11,6"), .iPhoneXsMax)
-    XCTAssertEqual(Device.mapToDevice(identifier: "iPhone11,8"), .iPhoneXr)
+    XCTAssertEqual(Device.mapToDevice(identifier: "iPhone11,2"), .iPhoneXS)
+    XCTAssertEqual(Device.mapToDevice(identifier: "iPhone11,4"), .iPhoneXSMax)
+    XCTAssertEqual(Device.mapToDevice(identifier: "iPhone11,6"), .iPhoneXSMax)
+    XCTAssertEqual(Device.mapToDevice(identifier: "iPhone11,8"), .iPhoneXR)
     XCTAssertEqual(Device.mapToDevice(identifier: "iPad2,1"), .iPad2)
     XCTAssertEqual(Device.mapToDevice(identifier: "iPad2,2"), .iPad2)
     XCTAssertEqual(Device.mapToDevice(identifier: "iPad2,3"), .iPad2)
@@ -136,9 +136,9 @@ class DeviceKitTests: XCTestCase {
     XCTAssertTrue(Device.iPhone8.screenRatio == (width: 9, height: 16))
     XCTAssertTrue(Device.iPhone8Plus.screenRatio == (width: 9, height: 16))
     XCTAssertTrue(Device.iPhoneX.screenRatio == (width: 9, height: 19.5))
-    XCTAssertTrue(Device.iPhoneXs.screenRatio == (width: 9, height: 19.5))
-    XCTAssertTrue(Device.iPhoneXsMax.screenRatio == (width: 9, height: 19.5))
-    XCTAssertTrue(Device.iPhoneXr.screenRatio == (width: 9, height: 19.5))
+    XCTAssertTrue(Device.iPhoneXS.screenRatio == (width: 9, height: 19.5))
+    XCTAssertTrue(Device.iPhoneXSMax.screenRatio == (width: 9, height: 19.5))
+    XCTAssertTrue(Device.iPhoneXR.screenRatio == (width: 9, height: 19.5))
     XCTAssertTrue(Device.iPad2.screenRatio == (width: 3, height: 4))
     XCTAssertTrue(Device.iPad3.screenRatio == (width: 3, height: 4))
     XCTAssertTrue(Device.iPad4.screenRatio == (width: 3, height: 4))
@@ -181,9 +181,9 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.iPhone7Plus.diagonal, 5.5)
     XCTAssertEqual(Device.iPhone8Plus.diagonal, 5.5)
     XCTAssertEqual(Device.iPhoneX.diagonal, 5.8)
-    XCTAssertEqual(Device.iPhoneXs.diagonal, 5.8)
-    XCTAssertEqual(Device.iPhoneXsMax.diagonal, 6.5)
-    XCTAssertEqual(Device.iPhoneXr.diagonal, 6.1)
+    XCTAssertEqual(Device.iPhoneXS.diagonal, 5.8)
+    XCTAssertEqual(Device.iPhoneXSMax.diagonal, 6.5)
+    XCTAssertEqual(Device.iPhoneXR.diagonal, 6.1)
 
     XCTAssertEqual(Device.iPad2.diagonal, 9.7)
     XCTAssertEqual(Device.iPad3.diagonal, 9.7)
@@ -226,9 +226,9 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.iPhone8.description, "iPhone 8")
     XCTAssertEqual(Device.iPhone8Plus.description, "iPhone 8 Plus")
     XCTAssertEqual(Device.iPhoneX.description, "iPhone X")
-    XCTAssertEqual(Device.iPhoneXs.description, "iPhone Xs")
-    XCTAssertEqual(Device.iPhoneXsMax.description, "iPhone Xs Max")
-    XCTAssertEqual(Device.iPhoneXr.description, "iPhone Xr")
+    XCTAssertEqual(Device.iPhoneXS.description, "iPhone Xs")
+    XCTAssertEqual(Device.iPhoneXSMax.description, "iPhone Xs Max")
+    XCTAssertEqual(Device.iPhoneXR.description, "iPhone Xʀ")
     XCTAssertEqual(Device.iPad2.description, "iPad 2")
     XCTAssertEqual(Device.iPad3.description, "iPad 3")
     XCTAssertEqual(Device.iPad4.description, "iPad 4")
@@ -276,9 +276,9 @@ class DeviceKitTests: XCTestCase {
     assertEqualDeviceAndSimulator(device: Device.iPhone8,         property: \Device.ppi, value: 326)
     assertEqualDeviceAndSimulator(device: Device.iPhone8Plus,     property: \Device.ppi, value: 401)
     assertEqualDeviceAndSimulator(device: Device.iPhoneX,         property: \Device.ppi, value: 458)
-    assertEqualDeviceAndSimulator(device: Device.iPhoneXr,        property: \Device.ppi, value: 326)
-    assertEqualDeviceAndSimulator(device: Device.iPhoneXs,        property: \Device.ppi, value: 458)
-    assertEqualDeviceAndSimulator(device: Device.iPhoneXsMax,     property: \Device.ppi, value: 458)
+    assertEqualDeviceAndSimulator(device: Device.iPhoneXR,        property: \Device.ppi, value: 326)
+    assertEqualDeviceAndSimulator(device: Device.iPhoneXS,        property: \Device.ppi, value: 458)
+    assertEqualDeviceAndSimulator(device: Device.iPhoneXSMax,     property: \Device.ppi, value: 458)
 
     assertEqualDeviceAndSimulator(device: Device.iPad2,           property: \Device.ppi, value: 132)
     assertEqualDeviceAndSimulator(device: Device.iPad3,           property: \Device.ppi, value: 264)
@@ -319,18 +319,18 @@ class DeviceKitTests: XCTestCase {
   }
 
   func testGuidedAccessSession() {
-    XCTAssertFalse(Device().isGuidedAccessSessionActive)
+    XCTAssertFalse(Device.current.isGuidedAccessSessionActive)
   }
 
   // enable once unit tests can be run on device
   func testKeepsBatteryMonitoringState() {
     UIDevice.current.isBatteryMonitoringEnabled = true
     XCTAssertTrue(UIDevice.current.isBatteryMonitoringEnabled)
-    _ = Device().batteryState
+    _ = Device.current.batteryState
     XCTAssertTrue(UIDevice.current.isBatteryMonitoringEnabled)
 
     UIDevice.current.isBatteryMonitoringEnabled = false
-    _ = Device().batteryState
+    _ = Device.current.batteryState
     XCTAssertFalse(UIDevice.current.isBatteryMonitoringEnabled)
   }
 
