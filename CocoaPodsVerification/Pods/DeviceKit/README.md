@@ -1,4 +1,4 @@
-<img src="/DeviceKit.svg" height="128">
+<img src="https://cdn.rawgit.com/devicekit/DeviceKit/master/DeviceKit.svg" height="128">
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/devicekit/DeviceKit/master/LICENSE)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/DeviceKit.svg)](https://cocoapods.org/pods/DeviceKit)
@@ -101,7 +101,7 @@ You can try these examples in Playground.
 
 ### Get the Device You're Running On
 ```swift
-let device = Device.current
+let device = Device()
 
 print(device)     // prints, for example, "iPhone 6 Plus"
 
@@ -114,7 +114,7 @@ if device == .iPhone6Plus {
 
 ### Get the Device Family
 ```swift
-let device = Device.current
+let device = Device()
 if device.isPod {
   // iPods (real or simulator)
 } else if device.isPhone {
@@ -126,7 +126,7 @@ if device.isPod {
 
 ### Check If Running on Simulator
 ```swift
-let device = Device.current
+let device = Device()
 if device.isSimulator {
   // Running on one of the simulators(iPod/iPhone/iPad)
   // Skip doing something irrelevant for Simulator
@@ -135,7 +135,7 @@ if device.isSimulator {
 
 ### Get the Simulator Device
 ```swift
-let device = Device.current
+let device = Device()
 switch device {
 case .simulator(.iPhone6s): break // You're running on the iPhone 6s simulator
 case .simulator(.iPadAir2): break // You're running on the iPad Air 2 simulator
@@ -145,9 +145,9 @@ default: break
  
 ### Make Sure the Device Is Contained in a Preconfigured Group
 ```swift
-let groupOfAllowedDevices: [Device] = [.iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .simulator(.iPhone6), .simulator(.iPhone6Plus),.simulator(.iPhone6s),.simulator(.iPhone6sPlus).simulator(.iPhone8),.simulator(.iPhone8Plus),.simulator(.iPhoneX),.simulator(.iPhoneXS),.simulator(.iPhoneXSMax),.simulator(.iPhoneXR)]
+let groupOfAllowedDevices: [Device] = [.iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .simulator(.iPhone6), .simulator(.iPhone6Plus),.simulator(.iPhone6s),.simulator(.iPhone6sPlus).simulator(.iPhone8),.simulator(.iPhone8Plus),.simulator(.iPhoneX),.simulator(.iPhoneXs),.simulator(.iPhoneXsMax),.simulator(.iPhoneXr)]
 
-let device = Device.current
+let device = Device()
  
 if device.isOneOf(groupOfAllowedDevices) {
   // Do your action
