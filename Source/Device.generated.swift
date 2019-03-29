@@ -993,6 +993,8 @@ extension Device {
         case .full: self = .full
         case .unplugged: self = .unplugged(batteryLevel)
         case .unknown: self = .full // Should never happen since `batteryMonitoring` is enabled.
+        @unknown default:
+          self = .full // To cover any future additions for which DeviceKit might not have updated yet.
         }
         UIDevice.current.isBatteryMonitoringEnabled = wasBatteryMonitoringEnabled
       }
