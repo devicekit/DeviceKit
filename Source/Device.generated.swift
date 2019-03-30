@@ -184,9 +184,9 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP739/SP739.png)
     case iPadPro9Inch
-    /// Device is an [iPad Pro 12-inch](https://support.apple.com/kb/sp723)
+    /// Device is an [iPad Pro 12-inch](https://support.apple.com/kb/SP723)
     ///
-    /// ![Image](http://images.apple.com/v/ipad-pro/c/images/shared/buystrip/ipad_pro_large_2x.png)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP723/SP723-iPad_Pro_2x.png)
     case iPadPro12Inch
     /// Device is an [iPad Pro 12-inch (2nd generation)](https://support.apple.com/kb/SP761)
     ///
@@ -204,9 +204,9 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP785/ipad-pro-12-2018_2x.png)
     case iPadPro12Inch3
-    /// Device is a [HomePod](https://www.apple.com/homepod/)
+    /// Device is a [HomePod](https://support.apple.com/kb/SP773)
     ///
-    /// ![Image](https://images.apple.com/v/homepod/d/images/overview/homepod_side_dark_large_2x.jpg)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP773/homepod_space_gray_large_2x.jpg)
     case homePod
   #elseif os(tvOS)
     /// Device is an [Apple TV 4](https://support.apple.com/kb/SP724)
