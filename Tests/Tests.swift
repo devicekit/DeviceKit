@@ -368,7 +368,7 @@ class DeviceKitTests: XCTestCase {
   // MARK: - tvOS
   #if os(tvOS)
   func testIsSimulator() {
-    XCTAssertTrue(Device().isOneOf(Device.allSimulatorTVs))
+    XCTAssertTrue(Device.current.isOneOf(Device.allSimulatorTVs))
   }
 
   func testDescriptionFromIdentifier() {
