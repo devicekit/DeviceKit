@@ -34,6 +34,27 @@ class DeviceKitTests: XCTestCase {
     XCTAssertTrue(device.isSimulator)
   }
 
+  func testIsPhoneIsPad() {
+    // Test for https://github.com/devicekit/DeviceKit/issues/165 to prevent it from happening in the future.
+
+    if UIDevice.current.userInterfaceIdiom == .pad {
+      XCTAssertTrue(device.isPad)
+      XCTAssertFalse(device.isPhone)
+    } else if UIDevice.current.userInterfaceIdiom == .phone {
+      XCTAssertFalse(device.isPad)
+      XCTAssertTrue(device.isPhone)
+    }
+
+    for pad in Device.allPads {
+      XCTAssertTrue(pad.isPad)
+      XCTAssertFalse(pad.isPhone)
+    }
+    for phone in Device.allPhones {
+      XCTAssertFalse(phone.isPad)
+      XCTAssertTrue(phone.isPhone)
+    }
+  }
+
   func testBattery() {
     XCTAssertTrue(Device.BatteryState.full > Device.BatteryState.charging(100))
     XCTAssertTrue(Device.BatteryState.charging(75) != Device.BatteryState.unplugged(75))
