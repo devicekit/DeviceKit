@@ -152,13 +152,13 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP751/ipad_5th_generation.png)
     case iPad5
-    /// Device is an [iPad (6th generation)](https://support.apple.com/kb/NotYetAvailable)
+    /// Device is an [iPad (6th generation)](https://support.apple.com/kb/SP774)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP751/ipad_5th_generation.png)
     case iPad6
-    /// Device is an [iPad Air (3rd generation)](INSERT LINK)
+    /// Device is an [iPad Air (3rd generation)](https://support.apple.com/kb/SP787)
     ///
-    /// ![Image](https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/image/AppleInc/aos/published/images/i/pa/ipad/mini/ipad-mini-compare-201903)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP787/ipad-air-2019.jpg)
     case iPadAir3
     /// Device is an [iPad Mini](https://support.apple.com/kb/SP661)
     ///
@@ -176,9 +176,9 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP725/SP725ipad-mini-4.png)
     case iPadMini4
-    /// Device is an [iPad Mini (5th generation)](INSERT LINK)
+    /// Device is an [iPad Mini (5th generation)](https://support.apple.com/kb/SP788)
     ///
-    /// ![Image](https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/image/AppleInc/aos/published/images/i/pa/ipad/air/ipad-air-compare-201903)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP788/ipad-mini-2019.jpg)
     case iPadMini5
     /// Device is an [iPad Pro 9.7-inch](https://support.apple.com/kb/SP739)
     ///
@@ -196,13 +196,13 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP761/ipad-pro-10in-hero-201706.png)
     case iPadPro10Inch
-    /// Device is an [iPad Pro 11-inch](https://support.apple.com/kb/not-published-yet)
+    /// Device is an [iPad Pro 11-inch](https://support.apple.com/kb/SP784)
     ///
-    /// ![Image](https://support.apple.com/not-published-yet)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP784/ipad-pro-11-2018_2x.png)
     case iPadPro11Inch
-    /// Device is an [iPad Pro 12.9-inch (3rd generation)](https://support.apple.com/kb/not-published-yet)
+    /// Device is an [iPad Pro 12.9-inch (3rd generation)](https://support.apple.com/kb/SP785)
     ///
-    /// ![Image](https://support.apple.com/not-published-yet)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP785/ipad-pro-12-2018_2x.png)
     case iPadPro12Inch3
     /// Device is a [HomePod](https://www.apple.com/homepod/)
     ///
