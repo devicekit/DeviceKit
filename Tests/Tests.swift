@@ -229,7 +229,7 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.unknown(UUID().uuidString).diagonal, -1)
   }
 
-  func testDescription() {
+  func testDescription() { // swiftlint:disable:this function_body_length
     XCTAssertEqual(Device.iPodTouch5.description, "iPod Touch 5")
     XCTAssertEqual(Device.iPodTouch6.description, "iPod Touch 6")
     XCTAssertEqual(Device.iPhone4.description, "iPhone 4")
