@@ -38,7 +38,14 @@ default: break
 }
 
 /// Make Sure the Device Is Contained in a Preconfigured Group
-let groupOfAllowedDevices: [Device] = [.iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .simulator(.iPhone6), .simulator(.iPhone6Plus), .simulator(.iPhone6s), .simulator(.iPhone6sPlus)]
+let groupOfAllowedDevices: [Device] = [.iPhone6,
+                                       .iPhone6Plus,
+                                       .iPhone6s,
+                                       .iPhone6sPlus,
+                                       .simulator(.iPhone6),
+                                       .simulator(.iPhone6Plus),
+                                       .simulator(.iPhone6s),
+                                       .simulator(.iPhone6sPlus)]
 
 if device.isOneOf(groupOfAllowedDevices) {
     // Do your action
