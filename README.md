@@ -12,7 +12,8 @@
 | Branch | Build Status | Versions |
 |:---------|:--------------:|:----------:|
 | **master** |[![Build Status](https://travis-ci.org/devicekit/DeviceKit.svg?branch=master)](https://travis-ci.org/devicekit/DeviceKit)| - |
-| **Swift 4 - 4.2** |[![Build Status](https://travis-ci.org/devicekit/DeviceKit.svg?branch=swift-4)](https://travis-ci.org/devicekit/DeviceKit)| ≥ 1.3 |
+| **Swift 5** |[![Build Status](https://travis-ci.org/devicekit/DeviceKit.svg?branch=swift-5)](https://travis-ci.org/devicekit/DeviceKit)| ≥ 2.0 |
+| **Swift 4 - 4.2** |[![Build Status](https://travis-ci.org/devicekit/DeviceKit.svg?branch=swift-4)](https://travis-ci.org/devicekit/DeviceKit)| ≥ 1.3 < 1.13 |
 | **Swift 3** |[![Build Status](https://travis-ci.org/devicekit/DeviceKit.svg?branch=swift-3)](https://travis-ci.org/devicekit/DeviceKit)| ≥ 1.0 < 1.3 |
 | **Swift 2.3** |[![Build Status](https://travis-ci.org/devicekit/DeviceKit.svg?branch=swift-2.3-unsupported)](https://travis-ci.org/devicekit/DeviceKit)| < 1.0 |
 
@@ -47,6 +48,10 @@ DeviceKit can be installed in various ways.
 
 ### CocoaPods
 
+#### Swift 5
+```ruby
+pod 'DeviceKit', '~> 2.0'
+```
 #### Swift 4.0 - Swift 4.2
 ```ruby
 pod 'DeviceKit', '~> 1.3'
@@ -62,6 +67,10 @@ pod 'DeviceKit', :git => 'https://github.com/devicekit/DeviceKit.git', :branch =
 
 ### Carthage
 
+#### Swift 5
+```ogdl
+github "devicekit/DeviceKit" ~> 2.0
+```
 #### Swift 4.0 - Swift 4.2
 ```ogdl
 github "devicekit/DeviceKit" ~> 1.3
