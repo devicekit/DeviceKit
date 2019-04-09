@@ -638,6 +638,11 @@ public enum Device {
       return [.iPhoneX, .iPhoneXs, .iPhoneXsMax, .iPhoneXr, .iPadPro11Inch, .iPadPro12Inch3]
     }
 
+    /// All Apple Pencil Capable Devices
+    public static var allApplePencilCapableDevices: [Device] {
+      return [.iPad6, .iPadAir3, .iPadMini5, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3]
+    }
+
     /// Returns whether or not the device has Touch ID
     public var isTouchIDCapable: Bool {
       return isOneOf(Device.allTouchIDCapableDevices)
@@ -653,6 +658,10 @@ public enum Device {
       return isTouchIDCapable || isFaceIDCapable
     }
 
+    /// Returns whether or not the device is compatible with Apple Pencil
+    public var isApplePencilCapable: Bool {
+      return isOneOf(Device.allApplePencilCapableDevices)
+    }
   #elseif os(tvOS)
     /// All TVs
     public static var allTVs: [Device] {
