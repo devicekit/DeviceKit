@@ -1168,6 +1168,7 @@ extension Device {
   public struct ApplePencilSupport: OptionSet {
 
     public var rawValue: UInt
+    
     public init(rawValue: UInt) {
       self.rawValue = rawValue
     }
