@@ -381,7 +381,7 @@ class DeviceKitTests: XCTestCase {
     XCTAssertFalse(UIDevice.current.isBatteryMonitoringEnabled)
   }
 
-  func testSimilatorExtension() {
+  func testSimulatorExtension() {
     XCTAssertEqual(Device.allPads.simulators, Device.allSimulatorPads)
     XCTAssertEqual(Device.allPads.andSimulators, Device.allPads + Device.allSimulatorPads)
   }
