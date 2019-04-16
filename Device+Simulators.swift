@@ -1,4 +1,3 @@
-//
 //===----------------------------------------------------------------------===//
 //
 // This source file is part of the DeviceKit open source project
@@ -9,7 +8,6 @@
 // Contributors: https://github.com/dennisweissmann/DeviceKit#contributors
 //
 //===----------------------------------------------------------------------===//
-//
 
 import UIKit
 
@@ -22,4 +20,5 @@ public extension Sequence where Iterator.Element == Device {
     var andSimulators: [Device] {
         return self + simulators
     }
+
 }
