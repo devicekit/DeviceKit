@@ -671,6 +671,16 @@ public enum Device {
     public var hasRoundedDisplayCorners: Bool {
       return isOneOf(Device.allDevicesWithRoundedDisplayCorners)
     }
+
+    /// All devices that have 3D Touch support.
+    public static var allDevicesWith3dTouchSupport: [Device] {
+      return [.iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE, .iPhone8, .iPhone8Plus, .iPhoneX, .iPhoneXS, .iPhoneXSMax]
+    }
+
+    /// Returns whether or not the device has a screen with rounded corners.
+    public var has3dTouchSupport: Bool {
+      return isOneOf(Device.allDevicesWith3dTouchSupport)
+    }
   #elseif os(tvOS)
     /// All TVs
     public static var allTVs: [Device] {
