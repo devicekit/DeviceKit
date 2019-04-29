@@ -513,7 +513,7 @@ public enum Device {
       return [${', '.join(list(map(lambda device: "." + device.caseName, list(filter(lambda device: device.hasForce3dTouchSupport == True, iOSDevices)))))}]
     }
 
-    /// Returns whether or not the device has a screen with rounded corners.
+    /// Returns whether or not the device has 3D Touch support.
     public var has3dTouchSupport: Bool {
       return isOneOf(Device.allDevicesWith3dTouchSupport)
     }
@@ -536,6 +536,16 @@ public enum Device {
     /// All simulator Watches
     public static var allSimulatorWatches: [Device] {
       return allWatches.map(Device.simulator)
+    }
+
+    /// All watches that have Force Touch support.
+    public static var allWatchesWithForceTouchSupport: [Device] {
+      return [${', '.join(list(map(lambda device: "." + device.caseName, list(filter(lambda device: device.hasForce3dTouchSupport == True, watchOSDevices)))))}]
+    }
+
+    /// Returns whether or not the device has Force Touch support.
+    public var hasForceTouchSupport: Bool {
+      return isOneOf(Device.allWatchesWithForceTouchSupport)
     }
   #endif
 
