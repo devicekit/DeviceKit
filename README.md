@@ -18,9 +18,9 @@
 
 `DeviceKit` is a value-type replacement of [`UIDevice`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/).
 
-## Changelog
+## Changelog 2.0
 Here you find an overview about all the latest features, bugfixes and breaking changes shipped with version 2.0 which was released on 10<sup>th</sup> April 2019.
-### Breaking changes version 2.0
+### Breaking changes
 - The original `Device()` constructor has been made private in favour of using `Device.current` to match `UIDevice.current`.
 - The enum values for the iPhone Xs, iPhone Xs Max and iPhone Xʀ have been renamed to be `.iPhoneXS`, `.iPhoneXSMax` and `.iPhoneXR` to match proper formatting.
 - `.description` for the iPhone Xs, iPhone Xs Max and iPhone Xʀ have been changed to contain small caps formatting for the s and the ʀ part.
@@ -51,7 +51,7 @@ Here you find an overview about all the latest features, bugfixes and breaking c
 - [x] Display Zoom detection
 - [x] Detect available sensors (Touch ID, Face ID)
 - [x] Detect available disk space
-
+- [x] Apple Pencil support detection
 
 ## Requirements
 
