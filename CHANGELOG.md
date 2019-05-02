@@ -2,6 +2,8 @@
 
 ## Version 2.1.0 (Unreleased)
 
+Releasedate: TBD
+
 ```ruby
 pod 'DeviceKit', :git => 'https://github.com/devicekit/DeviceKit.git', :branch => 'master'
 ```
@@ -18,6 +20,8 @@ pod 'DeviceKit', :git => 'https://github.com/devicekit/DeviceKit.git', :branch =
     - `Device.current.hasForceTouchSupport`
 
 ## Version 2.0.0
+
+Releasedate: 2019-04-10
 
 ```ruby
 pod 'DeviceKit', '~> 2.0'
@@ -39,6 +43,8 @@ pod 'DeviceKit', '~> 2.0'
 - `.isPad` and `.isPhone` are now giving correct outputs again.
 
 ## Version 1.13.0 (Last Swift 4.2 release)
+
+Releasedate: 2019-03-29
 
 ```ruby
 pod 'DeviceKit', '~> 1.13'
