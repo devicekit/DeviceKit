@@ -671,6 +671,16 @@ public enum Device {
     public var hasRoundedDisplayCorners: Bool {
       return isOneOf(Device.allDevicesWithRoundedDisplayCorners)
     }
+
+    /// All devices that have 3D Touch support.
+    public static var allDevicesWith3dTouchSupport: [Device] {
+      return [.iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE, .iPhone8, .iPhone8Plus, .iPhoneX, .iPhoneXS, .iPhoneXSMax]
+    }
+
+    /// Returns whether or not the device has 3D Touch support.
+    public var has3dTouchSupport: Bool {
+      return isOneOf(Device.allDevicesWith3dTouchSupport)
+    }
   #elseif os(tvOS)
     /// All TVs
     public static var allTVs: [Device] {
@@ -690,6 +700,16 @@ public enum Device {
     /// All simulator Watches
     public static var allSimulatorWatches: [Device] {
       return allWatches.map(Device.simulator)
+    }
+
+    /// All watches that have Force Touch support.
+    public static var allWatchesWithForceTouchSupport: [Device] {
+      return [.appleWatchSeries0_38mm, .appleWatchSeries0_42mm, .appleWatchSeries1_38mm, .appleWatchSeries1_42mm, .appleWatchSeries2_38mm, .appleWatchSeries2_42mm, .appleWatchSeries3_38mm, .appleWatchSeries3_42mm, .appleWatchSeries4_40mm, .appleWatchSeries4_44mm]
+    }
+
+    /// Returns whether or not the device has Force Touch support.
+    public var hasForceTouchSupport: Bool {
+      return isOneOf(Device.allWatchesWithForceTouchSupport)
     }
   #endif
 
