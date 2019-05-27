@@ -1254,3 +1254,91 @@ extension Device {
   }
 }
 #endif
+
+#if os(iOS)
+// MARK: - Cameras
+extension Device {
+
+  public enum CameraTypes {
+    case normal
+    case telephoto
+  }
+
+  /// Returns an array of the types of cameras the device has
+  public var cameras: [CameraTypes] {
+    switch self {
+      case .iPodTouch5: return [.normal]
+      case .iPodTouch6: return [.normal]
+      case .iPhone4: return [.normal]
+      case .iPhone4s: return [.normal]
+      case .iPhone5: return [.normal]
+      case .iPhone5c: return [.normal]
+      case .iPhone5s: return [.normal]
+      case .iPhone6: return [.normal]
+      case .iPhone6Plus: return [.normal]
+      case .iPhone6s: return [.normal]
+      case .iPhone6sPlus: return [.normal]
+      case .iPhone7: return [.normal]
+      case .iPhoneSE: return [.normal]
+      case .iPhone8: return [.normal]
+      case .iPhoneXR: return [.normal]
+      case .iPad2: return [.normal]
+      case .iPad3: return [.normal]
+      case .iPad4: return [.normal]
+      case .iPadAir: return [.normal]
+      case .iPadAir2: return [.normal]
+      case .iPad5: return [.normal]
+      case .iPad6: return [.normal]
+      case .iPadAir3: return [.normal]
+      case .iPadMini: return [.normal]
+      case .iPadMini2: return [.normal]
+      case .iPadMini3: return [.normal]
+      case .iPadMini4: return [.normal]
+      case .iPadMini5: return [.normal]
+      case .iPadPro9Inch: return [.normal]
+      case .iPadPro12Inch: return [.normal]
+      case .iPadPro12Inch2: return [.normal]
+      case .iPadPro10Inch: return [.normal]
+      case .iPadPro11Inch: return [.normal]
+      case .iPadPro12Inch3: return [.normal]
+      case .iPhone7Plus: return [.normal, .telephoto]
+      case .iPhone8Plus: return [.normal, .telephoto]
+      case .iPhoneX: return [.normal, .telephoto]
+      case .iPhoneXS: return [.normal, .telephoto]
+      case .iPhoneXSMax: return [.normal, .telephoto]
+      default: return []
+    }
+  }
+
+  /// All devices that feature a camera
+  public var allDevicesWithCamera: [Device] {
+    return [.iPodTouch5, .iPodTouch6, .iPhone4, .iPhone4s, .iPhone5, .iPhone5c, .iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE, .iPhone8, .iPhone8Plus, .iPhoneX, .iPhoneXS, .iPhoneXSMax, .iPhoneXR, .iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPad5, .iPad6, .iPadAir3, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadMini5, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3]
+  }
+
+  /// All devices that feature a normal camera
+  public var allDevicesWithNormalCamera: [Device] {
+    return [.iPodTouch5, .iPodTouch6, .iPhone4, .iPhone4s, .iPhone5, .iPhone5c, .iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE, .iPhone8, .iPhone8Plus, .iPhoneX, .iPhoneXS, .iPhoneXSMax, .iPhoneXR, .iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPad5, .iPad6, .iPadAir3, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadMini5, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3]
+  }
+
+  /// All devices that feature a telephoto camera
+  public var allDevicesWithTelephotoCamera: [Device] {
+    return [.iPhone7Plus, .iPhone8Plus, .iPhoneX, .iPhoneXS, .iPhoneXSMax]
+  }
+
+  /// Returns whether or not the current device has a camera
+  public var hasCamera: Bool {
+    return self.cameras.count > 0
+  }
+
+  /// Returns whether or not the current device has a normal camera
+  public var hasNormalCamera: Bool {
+    return self.cameras.contains(.normal)
+  }
+
+  /// Returns whether or not the current device has a telephoto camera
+  public var hasTelephotoCamera: Bool {
+    return self.cameras.contains(.telephoto)
+  }
+
+}
+#endif
