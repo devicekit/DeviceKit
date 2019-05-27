@@ -384,6 +384,33 @@ class DeviceKitTests: XCTestCase {
     XCTAssertNotNil(Device.volumes)
   }
 
+  func testCameras() {
+    for device in Device.allDevicesWithCamera {
+      XCTAssertTrue(device.cameras.contains(.normal) || device.cameras.contains(.telephoto))
+      XCTAssertTrue(device.hasCamera)
+      XCTAssertTrue(device.hasNormalCamera || device.hasTelephotoCamera)
+    }
+    for device in Device.allPhones + Device.allPads + Device.allPods {
+      if !Device.allDevicesWithCamera.contains(device) {
+        XCTAssertFalse(device.cameras.contains(.normal))
+        XCTAssertFalse(device.cameras.contains(.telephoto))
+        XCTAssertFalse(device.hasCamera)
+        XCTAssertFalse(device.hasNormalCamera)
+        XCTAssertFalse(device.hasTelephotoCamera)
+      }
+    }
+    for device in Device.allDevicesWithNormalCamera {
+      XCTAssertTrue(device.cameras.contains(.normal))
+      XCTAssertTrue(device.hasCamera)
+      XCTAssertTrue(device.hasNormalCamera)
+    }
+    for device in Device.allDevicesWithTelephotoCamera {
+      XCTAssertTrue(device.cameras.contains(.telephoto))
+      XCTAssertTrue(device.hasCamera)
+      XCTAssertTrue(device.hasTelephotoCamera)
+    }
+  }
+  
   #endif
 
   // MARK: - tvOS
