@@ -1028,17 +1028,17 @@ extension Device {
   }
 
   /// All devices that feature a camera
-  public var allDevicesWithCamera: [Device] {
+  public static var allDevicesWithCamera: [Device] {
     return [${', '.join(list(map(lambda device: "." + device.caseName, list(filter(lambda device: device.cameras != 0, iOSDevices)))))}]
   }
 
   /// All devices that feature a normal camera
-  public var allDevicesWithNormalCamera: [Device] {
+  public static var allDevicesWithNormalCamera: [Device] {
     return [${', '.join(list(map(lambda device: "." + device.caseName, list(filter(lambda device: device.cameras == 1 or device.cameras == 12, iOSDevices)))))}]
   }
 
   /// All devices that feature a telephoto camera
-  public var allDevicesWithTelephotoCamera: [Device] {
+  public static var allDevicesWithTelephotoCamera: [Device] {
     return [${', '.join(list(map(lambda device: "." + device.caseName, list(filter(lambda device: device.cameras == 2 or device.cameras == 12, iOSDevices)))))}]
   }
 
