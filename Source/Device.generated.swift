@@ -1327,7 +1327,7 @@ extension Device {
 
   /// Returns whether or not the current device has a camera
   public var hasCamera: Bool {
-    return self.cameras.count > 0
+    return !self.cameras.isEmpty
   }
 
   /// Returns whether or not the current device has a normal camera

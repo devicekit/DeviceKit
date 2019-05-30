@@ -410,7 +410,7 @@ class DeviceKitTests: XCTestCase {
       XCTAssertTrue(device.hasTelephotoCamera)
     }
   }
-  
+
   #endif
 
   // MARK: - tvOS
