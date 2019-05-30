@@ -48,11 +48,11 @@ import UIKit
 ///
 public enum Device {
   #if os(iOS)
-    /// Device is an [iPod Touch (5th generation)](https://support.apple.com/kb/SP657)
+    /// Device is an [iPod touch (5th generation)](https://support.apple.com/kb/SP657)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP657/sp657_ipod-touch_size.jpg)
     case iPodTouch5
-    /// Device is an [iPod Touch (6th generation)](https://support.apple.com/kb/SP720)
+    /// Device is an [iPod touch (6th generation)](https://support.apple.com/kb/SP720)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP720/SP720-ipod-touch-specs-color-sg-2015.jpg)
     case iPodTouch6
