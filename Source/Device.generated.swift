@@ -922,8 +922,8 @@ extension Device: CustomStringConvertible {
   public var description: String {
     #if os(iOS)
       switch self {
-      case .iPodTouch5: return "iPod Touch 5"
-      case .iPodTouch6: return "iPod Touch 6"
+      case .iPodTouch5: return "iPod touch (5th generation)"
+      case .iPodTouch6: return "iPod touch (6th generation)"
       case .iPodTouch7: return "iPod touch (7th generation)"
       case .iPhone4: return "iPhone 4"
       case .iPhone4s: return "iPhone 4s"
