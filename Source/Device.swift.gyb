@@ -35,8 +35,9 @@ class Device:
 
 # iOS
 iPods = [
-            Device("iPodTouch5",     "Device is an [iPod Touch (5th generation)](https://support.apple.com/kb/SP657)", "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP657/sp657_ipod-touch_size.jpg",                      ["iPod5,1"],                                  4,    (9, 16),    "iPod Touch 5", 326, False, False, False, False, False, False, False, False, 0, False, 1),
-            Device("iPodTouch6",     "Device is an [iPod Touch (6th generation)](https://support.apple.com/kb/SP720)", "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP720/SP720-ipod-touch-specs-color-sg-2015.jpg",       ["iPod7,1"],                                  4,    (9, 16),    "iPod Touch 6", 326, False, False, False, False, False, False, False, False, 0, False, 1)
+            Device("iPodTouch5",     "Device is an [iPod Touch (5th generation)](https://support.apple.com/kb/SP657)", "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP657/sp657_ipod-touch_size.jpg",                      ["iPod5,1"],                                  4,    (9, 16),    "iPod Touch 5", 326, False, False, False, False, False, False, False, False, 0, False),
+            Device("iPodTouch6",     "Device is an [iPod Touch (6th generation)](https://support.apple.com/kb/SP720)", "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP720/SP720-ipod-touch-specs-color-sg-2015.jpg",       ["iPod7,1"],                                  4,    (9, 16),    "iPod Touch 6", 326, False, False, False, False, False, False, False, False, 0, False)
+            Device("iPodTouch7",     "Device is an [iPod touch (7th generation)](https://support.apple.com/kb/SP796)", "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP796/ipod-touch-7th-gen_2x.png",                      ["iPod9,1"],                                  4,    (9, 16),    "iPod touch (7th generation)", 326, False, False, False, False, False, False, False, False, 0, False)
         ]
 
 iPhones = [

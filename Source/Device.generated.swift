@@ -56,6 +56,10 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP720/SP720-ipod-touch-specs-color-sg-2015.jpg)
     case iPodTouch6
+    /// Device is an [iPod touch (7th generation)](https://support.apple.com/kb/SP796)
+    ///
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP796/ipod-touch-7th-gen_2x.png)
+    case iPodTouch7
     /// Device is an [iPhone 4](https://support.apple.com/kb/SP587)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP643/sp643_iphone4s_color_black.jpg)
@@ -298,6 +302,7 @@ public enum Device {
       switch identifier {
       case "iPod5,1": return iPodTouch5
       case "iPod7,1": return iPodTouch6
+      case "iPod9,1": return iPodTouch7
       case "iPhone3,1", "iPhone3,2", "iPhone3,3": return iPhone4
       case "iPhone4,1": return iPhone4s
       case "iPhone5,1", "iPhone5,2": return iPhone5
@@ -386,6 +391,7 @@ public enum Device {
       switch self {
         case .iPodTouch5: return 4
         case .iPodTouch6: return 4
+        case .iPodTouch7: return 4
         case .iPhone4: return 3.5
         case .iPhone4s: return 3.5
         case .iPhone5: return 4
@@ -452,6 +458,7 @@ public enum Device {
       switch self {
       case .iPodTouch5: return (width: 9, height: 16)
       case .iPodTouch6: return (width: 9, height: 16)
+      case .iPodTouch7: return (width: 9, height: 16)
       case .iPhone4: return (width: 2, height: 3)
       case .iPhone4s: return (width: 2, height: 3)
       case .iPhone5: return (width: 9, height: 16)
@@ -516,7 +523,7 @@ public enum Device {
   #if os(iOS)
     /// All iPods
     public static var allPods: [Device] {
-      return [.iPodTouch5, .iPodTouch6]
+      return [.iPodTouch5, .iPodTouch6, .iPodTouch7]
     }
 
     /// All iPhones
@@ -823,6 +830,7 @@ public enum Device {
     switch self {
       case .iPodTouch5: return 326
       case .iPodTouch6: return 326
+      case .iPodTouch7: return 326
       case .iPhone4: return 326
       case .iPhone4s: return 326
       case .iPhone5: return 326
@@ -916,6 +924,7 @@ extension Device: CustomStringConvertible {
       switch self {
       case .iPodTouch5: return "iPod Touch 5"
       case .iPodTouch6: return "iPod Touch 6"
+      case .iPodTouch7: return "iPod touch (7th generation)"
       case .iPhone4: return "iPhone 4"
       case .iPhone4s: return "iPhone 4s"
       case .iPhone5: return "iPhone 5"
