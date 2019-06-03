@@ -17,7 +17,7 @@ class DeviceKitTests: XCTestCase {
   let device = Device.current
 
   func testDeviceSimulator() {
-    if Device.current.isSimulator {
+    if device.isSimulator {
       XCTAssertTrue(device.isOneOf(Device.allSimulators))
     } else {
       XCTAssertFalse(device.isOneOf(Device.allSimulators))
@@ -25,7 +25,7 @@ class DeviceKitTests: XCTestCase {
   }
 
   func testDeviceDescription() {
-    if Device.current.isSimulator {
+    if device.isSimulator {
       XCTAssertTrue(device.description.hasPrefix("Simulator"))
     }
     XCTAssertTrue(device.description.contains("iPhone")
