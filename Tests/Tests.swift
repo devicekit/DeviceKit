@@ -230,8 +230,9 @@ class DeviceKitTests: XCTestCase {
   }
 
   func testDescription() { // swiftlint:disable:this function_body_length
-    XCTAssertEqual(Device.iPodTouch5.description, "iPod Touch 5")
-    XCTAssertEqual(Device.iPodTouch6.description, "iPod Touch 6")
+    XCTAssertEqual(Device.iPodTouch5.description, "iPod touch (5th generation)")
+    XCTAssertEqual(Device.iPodTouch6.description, "iPod touch (6th generation)")
+    XCTAssertEqual(Device.iPodTouch7.description, "iPod touch (7th generation)")
     XCTAssertEqual(Device.iPhone4.description, "iPhone 4")
     XCTAssertEqual(Device.iPhone4s.description, "iPhone 4s")
     XCTAssertEqual(Device.iPhone5.description, "iPhone 5")
