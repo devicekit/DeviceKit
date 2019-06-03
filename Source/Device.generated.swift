@@ -48,14 +48,18 @@ import UIKit
 ///
 public enum Device {
   #if os(iOS)
-    /// Device is an [iPod Touch (5th generation)](https://support.apple.com/kb/SP657)
+    /// Device is an [iPod touch (5th generation)](https://support.apple.com/kb/SP657)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP657/sp657_ipod-touch_size.jpg)
     case iPodTouch5
-    /// Device is an [iPod Touch (6th generation)](https://support.apple.com/kb/SP720)
+    /// Device is an [iPod touch (6th generation)](https://support.apple.com/kb/SP720)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP720/SP720-ipod-touch-specs-color-sg-2015.jpg)
     case iPodTouch6
+    /// Device is an [iPod touch (7th generation)](https://support.apple.com/kb/SP796)
+    ///
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP796/ipod-touch-7th-gen_2x.png)
+    case iPodTouch7
     /// Device is an [iPhone 4](https://support.apple.com/kb/SP587)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP643/sp643_iphone4s_color_black.jpg)
@@ -298,6 +302,7 @@ public enum Device {
       switch identifier {
       case "iPod5,1": return iPodTouch5
       case "iPod7,1": return iPodTouch6
+      case "iPod9,1": return iPodTouch7
       case "iPhone3,1", "iPhone3,2", "iPhone3,3": return iPhone4
       case "iPhone4,1": return iPhone4s
       case "iPhone5,1", "iPhone5,2": return iPhone5
@@ -386,6 +391,7 @@ public enum Device {
       switch self {
         case .iPodTouch5: return 4
         case .iPodTouch6: return 4
+        case .iPodTouch7: return 4
         case .iPhone4: return 3.5
         case .iPhone4s: return 3.5
         case .iPhone5: return 4
@@ -452,6 +458,7 @@ public enum Device {
       switch self {
       case .iPodTouch5: return (width: 9, height: 16)
       case .iPodTouch6: return (width: 9, height: 16)
+      case .iPodTouch7: return (width: 9, height: 16)
       case .iPhone4: return (width: 2, height: 3)
       case .iPhone4s: return (width: 2, height: 3)
       case .iPhone5: return (width: 9, height: 16)
@@ -516,7 +523,7 @@ public enum Device {
   #if os(iOS)
     /// All iPods
     public static var allPods: [Device] {
-      return [.iPodTouch5, .iPodTouch6]
+      return [.iPodTouch5, .iPodTouch6, .iPodTouch7]
     }
 
     /// All iPhones
@@ -823,6 +830,7 @@ public enum Device {
     switch self {
       case .iPodTouch5: return 326
       case .iPodTouch6: return 326
+      case .iPodTouch7: return 326
       case .iPhone4: return 326
       case .iPhone4s: return 326
       case .iPhone5: return 326
@@ -914,8 +922,9 @@ extension Device: CustomStringConvertible {
   public var description: String {
     #if os(iOS)
       switch self {
-      case .iPodTouch5: return "iPod Touch 5"
-      case .iPodTouch6: return "iPod Touch 6"
+      case .iPodTouch5: return "iPod touch (5th generation)"
+      case .iPodTouch6: return "iPod touch (6th generation)"
+      case .iPodTouch7: return "iPod touch (7th generation)"
       case .iPhone4: return "iPhone 4"
       case .iPhone4s: return "iPhone 4s"
       case .iPhone5: return "iPhone 5"
@@ -1269,6 +1278,7 @@ extension Device {
     switch self {
       case .iPodTouch5: return [.normal]
       case .iPodTouch6: return [.normal]
+      case .iPodTouch7: return [.normal]
       case .iPhone4: return [.normal]
       case .iPhone4s: return [.normal]
       case .iPhone5: return [.normal]
@@ -1312,12 +1322,12 @@ extension Device {
 
   /// All devices that feature a camera
   public static var allDevicesWithCamera: [Device] {
-    return [.iPodTouch5, .iPodTouch6, .iPhone4, .iPhone4s, .iPhone5, .iPhone5c, .iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE, .iPhone8, .iPhone8Plus, .iPhoneX, .iPhoneXS, .iPhoneXSMax, .iPhoneXR, .iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPad5, .iPad6, .iPadAir3, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadMini5, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3]
+    return [.iPodTouch5, .iPodTouch6, .iPodTouch7, .iPhone4, .iPhone4s, .iPhone5, .iPhone5c, .iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE, .iPhone8, .iPhone8Plus, .iPhoneX, .iPhoneXS, .iPhoneXSMax, .iPhoneXR, .iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPad5, .iPad6, .iPadAir3, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadMini5, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3]
   }
 
   /// All devices that feature a normal camera
   public static var allDevicesWithNormalCamera: [Device] {
-    return [.iPodTouch5, .iPodTouch6, .iPhone4, .iPhone4s, .iPhone5, .iPhone5c, .iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE, .iPhone8, .iPhone8Plus, .iPhoneX, .iPhoneXS, .iPhoneXSMax, .iPhoneXR, .iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPad5, .iPad6, .iPadAir3, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadMini5, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3]
+    return [.iPodTouch5, .iPodTouch6, .iPodTouch7, .iPhone4, .iPhone4s, .iPhone5, .iPhone5c, .iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE, .iPhone8, .iPhone8Plus, .iPhoneX, .iPhoneXS, .iPhoneXSMax, .iPhoneXR, .iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPad5, .iPad6, .iPadAir3, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadMini5, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3]
   }
 
   /// All devices that feature a telephoto camera
