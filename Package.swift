@@ -1,3 +1,5 @@
+// swift-tools-version:5.0
+
 //===----------------------------------------------------------------------===//
 //
 // This source file is part of the DeviceKit open source project
