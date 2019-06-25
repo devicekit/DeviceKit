@@ -1,5 +1,14 @@
 // swift-tools-version:5.0
-// The swift-tools-version declares the minimum version of Swift required to build this package.
+//===----------------------------------------------------------------------===//
+//
+// This source file is part of the DeviceKit open source project
+//
+// Copyright © 2014 - 2018 Dennis Weissmann and the DeviceKit project authors
+//
+// License: https://github.com/dennisweissmann/DeviceKit/blob/master/LICENSE
+// Contributors: https://github.com/dennisweissmann/DeviceKit#contributors
+//
+//===----------------------------------------------------------------------===//
 
 import PackageDescription
 
@@ -9,11 +18,7 @@ let package = Package(
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
             name: "DeviceKit",
-            targets: ["DeviceKit"]),
-    ],
-    dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
+            targets: ["DeviceKit"])
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -24,7 +29,7 @@ let package = Package(
         .testTarget(
             name: "DeviceKitTests",
             dependencies: ["DeviceKit"],
-            path: "Tests"),
+            path: "Tests")
     ],
     swiftLanguageVersions: [.v5]
 )
