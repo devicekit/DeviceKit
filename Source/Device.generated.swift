@@ -628,7 +628,7 @@ public enum Device {
       guard self != .iPhoneX && self != .iPhoneXS else { return false }
       if Int(UIScreen.main.scale.rounded()) == 3 {
         // Plus-sized
-        return UIScreen.main.nativeScale > 2.7
+        return UIScreen.main.nativeScale > 2.7 && UIScreen.main.nativeScale < 3
       } else {
         return UIScreen.main.nativeScale > UIScreen.main.scale
       }
