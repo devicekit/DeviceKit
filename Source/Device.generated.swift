@@ -213,7 +213,7 @@ public enum Device {
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP773/homepod_space_gray_large_2x.jpg)
     case homePod
   #elseif os(tvOS)
-    /// Device is an [Apple TV 4](https://support.apple.com/kb/SP724)
+    /// Device is an [Apple TV HD](https://support.apple.com/kb/SP724) (Previously Apple TV (4th generation))
     ///
     /// ![Image](http://images.apple.com/v/tv/c/images/overview/buy_tv_large_2x.jpg)
     case appleTV4
@@ -983,7 +983,7 @@ extension Device: CustomStringConvertible {
       }
     #elseif os(tvOS)
       switch self {
-      case .appleTV4: return "Apple TV 4"
+      case .appleTV4: return "Apple TV HD"
       case .appleTV4K: return "Apple TV 4K"
       case .simulator(let model): return "Simulator (\(model))"
       case .unknown(let identifier): return identifier

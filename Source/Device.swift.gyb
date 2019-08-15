@@ -88,8 +88,8 @@ homePods =  [
             ]
 # tvOS
 tvs = [
-            Device("appleTV4",       "Device is an [Apple TV 4](https://support.apple.com/kb/SP724)",                          "http://images.apple.com/v/tv/c/images/overview/buy_tv_large_2x.jpg",                                     ["AppleTV5,3"],                               0,    (),         "Apple TV 4", -1, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device("appleTV4K",      "Device is an [Apple TV 4K](https://support.apple.com/kb/SP769)",                         "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP769/appletv4k.png",                          ["AppleTV6,2"],                               0,    (),         "Apple TV 4K", -1, False, False, False, False, False, False, False, False, 0, False, 0)
+            Device("appleTV4",       "Device is an [Apple TV HD](https://support.apple.com/kb/SP724) (Previously Apple TV (4th generation))", "http://images.apple.com/v/tv/c/images/overview/buy_tv_large_2x.jpg",                      ["AppleTV5,3"],                               0,    (),         "Apple TV HD", -1, False, False, False, False, False, False, False, False, 0, False, 0),
+            Device("appleTV4K",      "Device is an [Apple TV 4K](https://support.apple.com/kb/SP769)",                                        "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP769/appletv4k.png",           ["AppleTV6,2"],                               0,    (),         "Apple TV 4K", -1, False, False, False, False, False, False, False, False, 0, False, 0)
       ]
 
 # watchOS
