@@ -624,11 +624,9 @@ public enum Device {
 
     public var isZoomed: Bool? {
       guard isCurrent else { return nil }
-      // TODO: Longterm we need a better solution for this!
-      guard self != .iPhoneX && self != .iPhoneXS else { return false }
       if Int(UIScreen.main.scale.rounded()) == 3 {
         // Plus-sized
-        return UIScreen.main.nativeScale > 2.7
+        return UIScreen.main.nativeScale > 2.7 && UIScreen.main.nativeScale < 3
       } else {
         return UIScreen.main.nativeScale > UIScreen.main.scale
       }
