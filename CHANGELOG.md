@@ -9,15 +9,25 @@ pod 'DeviceKit', :git => 'https://github.com/devicekit/DeviceKit.git', :branch =
 ```
 
 ### New features
-- Added `Device.allApplePencilCapableDevices` and `Device.current.applePencilSupport` variables for checking Apple Pencil support.
+- Add support for the new iPod touch (7th generation) ([#189](https://github.com/devicekit/DeviceKit/pull/189))
+- Added `Device.allApplePencilCapableDevices` and `Device.current.applePencilSupport` variables for checking Apple Pencil support. ([#179](https://github.com/devicekit/DeviceKit/pull/179))
   - `.applePencilSupport` returns `ApplePencilSupport.firstGeneration` or `ApplePencilSupport.secondGeneration` for checking which Apple Pencil is supported.
-- Added 3D Touch (iOS) and Force Touch (watchOS) support variables:
+- Added 3D Touch (iOS) and Force Touch (watchOS) support variables: ([#183](https://github.com/devicekit/DeviceKit/pull/183))
   - iOS
     - `Device.allDevicesWith3dTouchSupport`
     - `Device.current.has3dTouchSupport`
   - watchOS
     - `Device.allWatchesWithForceTouchSupport`
     - `Device.current.hasForceTouchSupport`
+- Added variable to check for the camera's a device has. ([#188](https://github.com/devicekit/DeviceKit/pull/188))
+  - Example: `Device.iPhoneXS.cameras` should return `CameraTypes.normal` and `CameraTypes.telephoto`.
+
+### Fixes
+- Rename iPod touch 5 and 6 to iPod touch (5th generation) and iPod touch (6th generation) respectively. ([#189](https://github.com/devicekit/DeviceKit/pull/189))
+- Rename Apple TV (4th generation) to Apple TV HD to comply with Apple's rename of the device. ([#196](https://github.com/devicekit/DeviceKit/pull/196))
+- Improve support for Swift Package Manager. ([#193](https://github.com/devicekit/DeviceKit/pull/193))
+- Fixed the isZoomed() function. ([#59 comment](https://github.com/devicekit/DeviceKit/issues/59#issuecomment-519457674) and [#198](https://github.com/devicekit/DeviceKit/pull/198))
+
 
 ## Version 2.0.0
 
