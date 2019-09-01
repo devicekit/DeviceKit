@@ -1,8 +1,8 @@
 # Changelog
 
-## Version 2.1.0 (Unreleased)
+## Version 2.1.0
 
-Releasedate: TBD
+Releasedate: 2019-09-01
 
 ```ruby
 pod 'DeviceKit', :git => 'https://github.com/devicekit/DeviceKit.git', :branch => 'master'
