@@ -1266,13 +1266,13 @@ extension Device {
 // MARK: - Cameras
 extension Device {
 
-  public enum CameraTypes {
+  public enum CameraType {
     case normal
     case telephoto
   }
 
   /// Returns an array of the types of cameras the device has
-  public var cameras: [CameraTypes] {
+  public var cameras: [CameraType] {
     switch self {
       case .iPodTouch5: return [.normal]
       case .iPodTouch6: return [.normal]

@@ -1005,13 +1005,13 @@ extension Device {
 // MARK: - Cameras
 extension Device {
 
-  public enum CameraTypes {
+  public enum CameraType {
     case normal
     case telephoto
   }
 
   /// Returns an array of the types of cameras the device has
-  public var cameras: [CameraTypes] {
+  public var cameras: [CameraType] {
     switch self {
   % for device in list(filter(lambda device: device.cameras == 1, iOSDevices)):
       case .${device.caseName}: return [.normal]
