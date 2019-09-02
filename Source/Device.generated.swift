@@ -216,7 +216,7 @@ public enum Device {
     /// Device is an [Apple TV HD](https://support.apple.com/kb/SP724) (Previously Apple TV (4th generation))
     ///
     /// ![Image](http://images.apple.com/v/tv/c/images/overview/buy_tv_large_2x.jpg)
-    case appleTV4
+    case appleTVHD
     /// Device is an [Apple TV 4K](https://support.apple.com/kb/SP769)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP769/appletv4k.png)
@@ -346,7 +346,7 @@ public enum Device {
       }
     #elseif os(tvOS)
       switch identifier {
-      case "AppleTV5,3": return appleTV4
+      case "AppleTV5,3": return appleTVHD
       case "AppleTV6,2": return appleTV4K
       case "i386", "x86_64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "tvOS"))
       default: return unknown(identifier)
@@ -689,7 +689,7 @@ public enum Device {
   #elseif os(tvOS)
     /// All TVs
     public static var allTVs: [Device] {
-       return [.appleTV4, .appleTV4K]
+       return [.appleTVHD, .appleTV4K]
     }
 
     /// All simulator TVs
@@ -981,7 +981,7 @@ extension Device: CustomStringConvertible {
       }
     #elseif os(tvOS)
       switch self {
-      case .appleTV4: return "Apple TV HD"
+      case .appleTVHD: return "Apple TV HD"
       case .appleTV4K: return "Apple TV 4K"
       case .simulator(let model): return "Simulator (\(model))"
       case .unknown(let identifier): return identifier
