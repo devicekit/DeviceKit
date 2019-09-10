@@ -465,6 +465,8 @@ public enum Device {
       case .appleWatchSeries3_42mm: return 1.6
       case .appleWatchSeries4_40mm: return 1.8
       case .appleWatchSeries4_44mm: return 2.0
+      case .appleWatchSeries5_40mm: return 1.8
+      case .appleWatchSeries5_44mm: return 2.0
       case .simulator(let model): return model.diagonal
       case .unknown: return -1
       }
@@ -536,6 +538,8 @@ public enum Device {
       case .appleWatchSeries3_42mm: return (width: 4, height: 5)
       case .appleWatchSeries4_40mm: return (width: 4, height: 5)
       case .appleWatchSeries4_44mm: return (width: 4, height: 5)
+      case .appleWatchSeries5_40mm: return (width: 4, height: 5)
+      case .appleWatchSeries5_44mm: return (width: 4, height: 5)
       case .simulator(let model): return model.screenRatio
       case .unknown: return (width: -1, height: -1)
       }
@@ -723,7 +727,7 @@ public enum Device {
   #elseif os(watchOS)
     /// All Watches
     public static var allWatches: [Device] {
-       return [.appleWatchSeries0_38mm, .appleWatchSeries0_42mm, .appleWatchSeries1_38mm, .appleWatchSeries1_42mm, .appleWatchSeries2_38mm, .appleWatchSeries2_42mm, .appleWatchSeries3_38mm, .appleWatchSeries3_42mm, .appleWatchSeries4_40mm, .appleWatchSeries4_44mm]
+       return [.appleWatchSeries0_38mm, .appleWatchSeries0_42mm, .appleWatchSeries1_38mm, .appleWatchSeries1_42mm, .appleWatchSeries2_38mm, .appleWatchSeries2_42mm, .appleWatchSeries3_38mm, .appleWatchSeries3_42mm, .appleWatchSeries4_40mm, .appleWatchSeries4_44mm, .appleWatchSeries5_40mm, .appleWatchSeries5_44mm]
     }
 
     /// All simulator Watches
@@ -733,7 +737,7 @@ public enum Device {
 
     /// All watches that have Force Touch support.
     public static var allWatchesWithForceTouchSupport: [Device] {
-      return [.appleWatchSeries0_38mm, .appleWatchSeries0_42mm, .appleWatchSeries1_38mm, .appleWatchSeries1_42mm, .appleWatchSeries2_38mm, .appleWatchSeries2_42mm, .appleWatchSeries3_38mm, .appleWatchSeries3_42mm, .appleWatchSeries4_40mm, .appleWatchSeries4_44mm]
+      return [.appleWatchSeries0_38mm, .appleWatchSeries0_42mm, .appleWatchSeries1_38mm, .appleWatchSeries1_42mm, .appleWatchSeries2_38mm, .appleWatchSeries2_42mm, .appleWatchSeries3_38mm, .appleWatchSeries3_42mm, .appleWatchSeries4_40mm, .appleWatchSeries4_44mm, .appleWatchSeries5_40mm, .appleWatchSeries5_44mm]
     }
 
     /// Returns whether or not the device has Force Touch support.
@@ -910,6 +914,8 @@ public enum Device {
     case .appleWatchSeries3_42mm: return 303
     case .appleWatchSeries4_40mm: return 326
     case .appleWatchSeries4_44mm: return 326
+    case .appleWatchSeries5_40mm: return 326
+    case .appleWatchSeries5_44mm: return 326
     case .simulator(let model): return model.ppi
     case .unknown: return nil
     }
@@ -1008,6 +1014,8 @@ extension Device: CustomStringConvertible {
       case .appleWatchSeries3_42mm: return "Apple Watch Series 3 42mm"
       case .appleWatchSeries4_40mm: return "Apple Watch Series 4 40mm"
       case .appleWatchSeries4_44mm: return "Apple Watch Series 4 44mm"
+      case .appleWatchSeries5_40mm: return "Apple Watch Series 5 40mm"
+      case .appleWatchSeries5_44mm: return "Apple Watch Series 5 44mm"
       case .simulator(let model): return "Simulator (\(model))"
       case .unknown(let identifier): return identifier
       }

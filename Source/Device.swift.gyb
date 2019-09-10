@@ -166,6 +166,20 @@ watches = [
             "Device is an [Apple Watch Series 4](https://support.apple.com/kb/SP778)",
             "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM911/en_US/aw-series4-nike-240.png",
             ["Watch4,2", "Watch4,4"], 2.0, (4,5), "Apple Watch Series 4 44mm", 326, False, False, False, False, False, False, False, False, 0, True, 0),
+
+
+            Device(
+            "appleWatchSeries5_40mm",
+            "Device is an [Apple Watch Series 5](TODO)",
+            "TODO",
+            ["Watch5TODO40"], 1.8, (4,5), "Apple Watch Series 5 40mm", 326, False, False, False, False, False, False, False, False, 0, True, 0),
+
+
+            Device(
+            "appleWatchSeries5_44mm",
+            "Device is an [Apple Watch Series 5](TODO)",
+            "TODO",
+            ["Watch5TODO44"], 2.0, (4,5), "Apple Watch Series 5 44mm", 326, False, False, False, False, False, False, False, False, 0, True, 0)
   ]
 
 iOSDevices = iPods + iPhones + iPads + homePods
