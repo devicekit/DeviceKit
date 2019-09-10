@@ -278,6 +278,14 @@ public enum Device {
     ///
     /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM911/en_US/aw-series4-nike-240.png)
     case appleWatchSeries4_44mm
+    /// Device is an [Apple Watch Series 5](TODO)
+    ///
+    /// ![Image](TODO)
+    case appleWatchSeries5_40mm
+    /// Device is an [Apple Watch Series 5](TODO)
+    ///
+    /// ![Image](TODO)
+    case appleWatchSeries5_44mm
   #endif
 
   /// Device is [Simulator](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/Introduction/Introduction.html)
