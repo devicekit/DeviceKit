@@ -42,7 +42,7 @@ iPods = [
 
 iPhones = [
             Device("iPhone4",        "Device is an [iPhone 4](https://support.apple.com/kb/SP587)",                    "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP643/sp643_iphone4s_color_black.jpg",                 ["iPhone3,1", "iPhone3,2", "iPhone3,3"],      3.5,  (2, 3),     "iPhone 4", 326, False, False, False, False, False, False, False, False, 0, False, 1),
-            Device("iPhone4s",       "Device is an [iPhone 4s](https://support.apple.com/kb/SP643)",                   "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/iphone/iphone5s/iphone_4s.png",        ["iPhone4,1"],                                3.5,  (2, 3),     "iPhone 4s", 326, False, False, False, False, False, False, False, False, 0, False, 1),
+            Device("iPhone4s",       "Device is an [iPhone 4s](https://support.apple.com/kb/SP643)",                   "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP643/sp643_iphone4s_color_black.jpg",                 ["iPhone4,1"],                                3.5,  (2, 3),     "iPhone 4s", 326, False, False, False, False, False, False, False, False, 0, False, 1),
             Device("iPhone5",        "Device is an [iPhone 5](https://support.apple.com/kb/SP655)",                    "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP655/sp655_iphone5_color.jpg",                        ["iPhone5,1", "iPhone5,2"],                   4,    (9, 16),    "iPhone 5", 326, False, False, False, False, False, False, False, False, 0, False, 1),
             Device("iPhone5c",       "Device is an [iPhone 5c](https://support.apple.com/kb/SP684)",                   "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP684/SP684-color_yellow.jpg",                         ["iPhone5,3", "iPhone5,4"],                   4,    (9, 16),    "iPhone 5c", 326, False, False, False, False, False, False, False, False, 0, False, 1),
             Device("iPhone5s",       "Device is an [iPhone 5s](https://support.apple.com/kb/SP685)",                   "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP685/SP685-color_black.jpg",                          ["iPhone6,1", "iPhone6,2"],                   4,    (9, 16),    "iPhone 5s", 326, False, False, False, False, True, False, False, False, 0, False, 1),
@@ -71,7 +71,7 @@ iPads = [
             Device("iPadAir",        "Device is an [iPad Air](https://support.apple.com/kb/SP692)",                            "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP692/SP692-specs_color-mul.png",              ["iPad4,1", "iPad4,2", "iPad4,3"],            9.7,  (3, 4),     "iPad Air", 264, False, False, False, False, False, False, False, False, 0, False, 1),
             Device("iPadAir2",       "Device is an [iPad Air 2](https://support.apple.com/kb/SP708)",                          "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP708/SP708-space_gray.jpeg",                  ["iPad5,3", "iPad5,4"],                       9.7,  (3, 4),     "iPad Air 2", 264, False, False, False, False, True, False, False, False, 0, False, 1),
             Device("iPad5",          "Device is an [iPad (5th generation)](https://support.apple.com/kb/SP751)",               "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP751/ipad_5th_generation.png",                ["iPad6,11", "iPad6,12"],                     9.7,  (3, 4),     "iPad (5th generation)", 264, False, False, False, False, True, False, False, False, 0, False, 1),
-            Device("iPad6",          "Device is an [iPad (6th generation)](https://support.apple.com/kb/SP774)",               "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/ipad/ipad/ios11-3-ipad-9-7-in-2018.jpg", ["iPad7,5", "iPad7,6"],             9.7,  (3, 4),     "iPad (6th generation)", 264, False, False, False, False, True, False, False, False, 1, False, 1),
+            Device("iPad6",          "Device is an [iPad (6th generation)](https://support.apple.com/kb/SP774)",               "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP774/sp774-ipad-6-gen_2x.png",                ["iPad7,5", "iPad7,6"],                       9.7,  (3, 4),     "iPad (6th generation)", 264, False, False, False, False, True, False, False, False, 1, False, 1),
             Device("iPadAir3",       "Device is an [iPad Air (3rd generation)](https://support.apple.com/kb/SP787)",           "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP787/ipad-air-2019.jpg",                      ["iPad11,3", "iPad11,4"],                     10.5, (3, 4),     "iPad Air (3rd generation)", 264, False, False, False, False, True, False, False, False, 1, False, 1),
             Device("iPad7",          "Device is an [iPad (7th generation)](TODO)",                                             "TODO",                                                                                                   ["iPadTODO"],                                 10.2, (3, 4),     "iPad (7th generation)", 264, False, False, False, False, True, False, False, False, 1, False, 1),
             Device("iPadMini",       "Device is an [iPad Mini](https://support.apple.com/kb/SP661)",                           "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP661/sp661_ipad_mini_color.jpg",              ["iPad2,5", "iPad2,6", "iPad2,7"],            7.9,  (3, 4),     "iPad Mini", 163, False, True, False, False, False, False, False, False, 0, False, 1),
@@ -104,13 +104,11 @@ watches = [
             "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM784/en_US/apple_watch_sport-240.png",
             ["Watch1,1"], 1.5, (4,5), "Apple Watch (1st generation) 38mm", 290, False, False, False, False, False, False, False, False, 0, True, 0),
 
-
             Device(
             "appleWatchSeries0_42mm",
             "Device is an [Apple Watch (1st generation)](https://support.apple.com/kb/SP735)",
             "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM784/en_US/apple_watch_sport-240.png",
             ["Watch1,2"], 1.6, (4,5), "Apple Watch (1st generation) 42mm", 303, False, False, False, False, False, False, False, False, 0, True, 0),
-
 
             Device(
             "appleWatchSeries1_38mm",
@@ -118,13 +116,11 @@ watches = [
             "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM848/en_US/applewatch-series2-aluminum-temp-240.png",
             ["Watch2,6"], 1.5, (4,5), "Apple Watch Series 1 38mm", 290, False, False, False, False, False, False, False, False, 0, True, 0),
 
-
             Device(
             "appleWatchSeries1_42mm",
             "Device is an [Apple Watch Series 1](https://support.apple.com/kb/SP745)",
             "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM848/en_US/applewatch-series2-aluminum-temp-240.png",
             ["Watch2,7"], 1.6, (4,5), "Apple Watch Series 1 42mm", 303, False, False, False, False, False, False, False, False, 0, True, 0),
-
 
             Device(
             "appleWatchSeries2_38mm",
@@ -132,13 +128,11 @@ watches = [
             "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM852/en_US/applewatch-series2-hermes-240.png",
             ["Watch2,3"], 1.5, (4,5), "Apple Watch Series 2 38mm", 290, False, False, False, False, False, False, False, False, 0, True, 0),
 
-
             Device(
             "appleWatchSeries2_42mm",
             "Device is an [Apple Watch Series 2](https://support.apple.com/kb/SP746)",
             "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM852/en_US/applewatch-series2-hermes-240.png",
             ["Watch2,4"], 1.6, (4,5), "Apple Watch Series 2 42mm", 303, False, False, False, False, False, False, False, False, 0, True, 0),
-
 
             Device(
             "appleWatchSeries3_38mm",
@@ -146,13 +140,11 @@ watches = [
             "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM893/en_US/apple-watch-s3-nikeplus-240.png",
             ["Watch3,1", "Watch3,3"], 1.5, (4,5), "Apple Watch Series 3 38mm", 290, False, False, False, False, False, False, False, False, 0, True, 0),
 
-
             Device(
             "appleWatchSeries3_42mm",
             "Device is an [Apple Watch Series 3](https://support.apple.com/kb/SP766)",
             "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM893/en_US/apple-watch-s3-nikeplus-240.png",
             ["Watch3,2", "Watch3,4"], 1.6, (4,5), "Apple Watch Series 3 42mm", 303, False, False, False, False, False, False, False, False, 0, True, 0),
-
 
             Device(
             "appleWatchSeries4_40mm",
@@ -160,20 +152,17 @@ watches = [
             "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM911/en_US/aw-series4-nike-240.png",
             ["Watch4,1", "Watch4,3"], 1.8, (4,5), "Apple Watch Series 4 40mm", 326, False, False, False, False, False, False, False, False, 0, True, 0),
 
-
             Device(
             "appleWatchSeries4_44mm",
             "Device is an [Apple Watch Series 4](https://support.apple.com/kb/SP778)",
             "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM911/en_US/aw-series4-nike-240.png",
             ["Watch4,2", "Watch4,4"], 2.0, (4,5), "Apple Watch Series 4 44mm", 326, False, False, False, False, False, False, False, False, 0, True, 0),
 
-
             Device(
             "appleWatchSeries5_40mm",
             "Device is an [Apple Watch Series 5](TODO)",
             "TODO",
             ["Watch5,3"], 1.8, (4,5), "Apple Watch Series 5 40mm", 326, False, False, False, False, False, False, False, False, 0, True, 0),
-
 
             Device(
             "appleWatchSeries5_44mm",

@@ -66,7 +66,7 @@ public enum Device {
     case iPhone4
     /// Device is an [iPhone 4s](https://support.apple.com/kb/SP643)
     ///
-    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/iphone/iphone5s/iphone_4s.png)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP643/sp643_iphone4s_color_black.jpg)
     case iPhone4s
     /// Device is an [iPhone 5](https://support.apple.com/kb/SP655)
     ///
@@ -170,7 +170,7 @@ public enum Device {
     case iPad5
     /// Device is an [iPad (6th generation)](https://support.apple.com/kb/SP774)
     ///
-    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/ipad/ipad/ios11-3-ipad-9-7-in-2018.jpg)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP774/sp774-ipad-6-gen_2x.png)
     case iPad6
     /// Device is an [iPad Air (3rd generation)](https://support.apple.com/kb/SP787)
     ///
