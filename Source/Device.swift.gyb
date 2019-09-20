@@ -87,9 +87,9 @@ iPads = [
             Device("iPadPro12Inch3", "Device is an [iPad Pro 12.9-inch (3rd generation)](https://support.apple.com/kb/SP785)", "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP785/ipad-pro-12-2018_2x.png",                ["iPad8,5", "iPad8,6", "iPad8,7", "iPad8,8"], 12.9, (512, 683), "iPad Pro (12.9-inch) (3rd generation)", 264, False, False, True, False, False, True, False, True, 2, False, 1)
         ]
 
-homePods =  [
+homePods = [
             Device("homePod",        "Device is a [HomePod](https://support.apple.com/kb/SP773)",                              "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP773/homepod_space_gray_large_2x.jpg",        ["AudioAccessory1,1"],                        -1,   (4, 5),     "HomePod", -1, False, False, False, False, False, False, False, False, 0, False, 0),
-            ]
+           ]
 # tvOS
 tvs = [
             Device("appleTV4",       "Device is an [Apple TV HD](https://support.apple.com/kb/SP724) (Previously Apple TV (4th generation))", "http://images.apple.com/v/tv/c/images/overview/buy_tv_large_2x.jpg",                      ["AppleTV5,3"],                               0,    (),         "Apple TV HD", -1, False, False, False, False, False, False, False, False, 0, False, 0),
@@ -162,13 +162,13 @@ watches = [
             "appleWatchSeries5_40mm",
             "Device is an [Apple Watch Series 5](TODO)",
             "TODO",
-            ["Watch5,3"], 1.8, (4,5), "Apple Watch Series 5 40mm", 326, False, False, False, False, False, False, False, False, 0, True, 0),
+            ["Watch5,1", "Watch5,3"], 1.8, (4,5), "Apple Watch Series 5 40mm", 326, False, False, False, False, False, False, False, False, 0, True, 0),
 
             Device(
             "appleWatchSeries5_44mm",
             "Device is an [Apple Watch Series 5](TODO)",
             "TODO",
-            ["Watch5,4"], 2.0, (4,5), "Apple Watch Series 5 44mm", 326, False, False, False, False, False, False, False, False, 0, True, 0)
+            ["Watch5,2", "Watch5,4"], 2.0, (4,5), "Apple Watch Series 5 44mm", 326, False, False, False, False, False, False, False, False, 0, True, 0)
   ]
 
 iOSDevices = iPods + iPhones + iPads + homePods
