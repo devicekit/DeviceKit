@@ -17,11 +17,17 @@ class DeviceKitTests: XCTestCase {
   let device = Device.current
 
   func testDeviceSimulator() {
-    XCTAssertTrue(device.isOneOf(Device.allSimulators))
+    if device.isSimulator {
+      XCTAssertTrue(device.isOneOf(Device.allSimulators))
+    } else {
+      XCTAssertFalse(device.isOneOf(Device.allSimulators))
+    }
   }
 
   func testDeviceDescription() {
-    XCTAssertTrue(device.description.hasPrefix("Simulator"))
+    if device.isSimulator {
+      XCTAssertTrue(device.description.hasPrefix("Simulator"))
+    }
     XCTAssertTrue(device.description.contains("iPhone")
       || device.description.contains("iPad")
       || device.description.contains("iPod")
@@ -31,7 +37,11 @@ class DeviceKitTests: XCTestCase {
   // MARK: - iOS
   #if os(iOS)
   func testIsSimulator() {
+    #if targetEnvironment(simulator)
     XCTAssertTrue(device.isSimulator)
+    #else
+    XCTAssertFalse(device.isSimulator)
+    #endif
   }
 
   func testIsPhoneIsPad() {
