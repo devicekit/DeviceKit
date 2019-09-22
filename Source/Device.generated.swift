@@ -132,17 +132,17 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP781/SP781-iPhone-xr.jpg)
     case iPhoneXR
-    /// Device is an [iPhone 11](TODO)
+    /// Device is an [iPhone 11](https://support.apple.com/kb/SP804)
     ///
-    /// ![Image](TODO)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP804/sp804-iphone11_2x.png)
     case iPhone11
-    /// Device is an [iPhone 11 Pro](TODO)
+    /// Device is an [iPhone 11 Pro](https://support.apple.com/kb/SP805)
     ///
-    /// ![Image](TODO)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP805/sp805-iphone11pro_2x.png)
     case iPhone11Pro
-    /// Device is an [iPhone 11 Pro Max](TODO)
+    /// Device is an [iPhone 11 Pro Max](https://support.apple.com/kb/SP806)
     ///
-    /// ![Image](TODO)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP806/sp806-iphone11pro-max_2x.png)
     case iPhone11ProMax
     /// Device is an [iPad 2](https://support.apple.com/kb/SP622)
     ///
@@ -274,13 +274,13 @@ public enum Device {
     ///
     /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM911/en_US/aw-series4-nike-240.png)
     case appleWatchSeries4_44mm
-    /// Device is an [Apple Watch Series 5](TODO)
+    /// Device is an [Apple Watch Series 5](https://support.apple.com/kb/SP808)
     ///
-    /// ![Image](TODO)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP808/sp808-apple-watch-series-5_2x.png)
     case appleWatchSeries5_40mm
-    /// Device is an [Apple Watch Series 5](TODO)
+    /// Device is an [Apple Watch Series 5](https://support.apple.com/kb/SP808)
     ///
-    /// ![Image](TODO)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP808/sp808-apple-watch-series-5_2x.png)
     case appleWatchSeries5_44mm
   #endif
 
