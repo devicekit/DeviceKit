@@ -1,11 +1,31 @@
 # Changelog
 
+## Version 2.2.0
+
+Releasedate: TBD
+
+```ruby
+pod 'DeviceKit', :git => 'https://github.com/devicekit/DeviceKit.git', :branch => 'master'
+```
+
+### New devices
+- Added support for the new september 2019 devices:
+  - iPhone 11
+  - iPhone 11 Pro
+  - iPhone 11 Pro Max
+  - Apple Watch Series 5
+  
+Support for iPad (7th generation) will be added later.
+
+### New features
+- `Device.current.cameras` now has the `.ultraWide` camera type added for devices with that camera.
+
 ## Version 2.1.0
 
 Releasedate: 2019-09-01
 
 ```ruby
-pod 'DeviceKit', :git => 'https://github.com/devicekit/DeviceKit.git', :branch => 'master'
+pod 'DeviceKit', '~> 2.1'
 ```
 
 ### New features
