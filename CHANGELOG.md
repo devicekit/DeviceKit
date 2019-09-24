@@ -2,7 +2,7 @@
 
 ## Version 2.2.0
 
-Releasedate: TBD
+Releasedate: 2019-09-24
 
 ```ruby
 pod 'DeviceKit', :git => 'https://github.com/devicekit/DeviceKit.git', :branch => 'master'
