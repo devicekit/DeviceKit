@@ -11,12 +11,7 @@
 
 %{
 class Device:
-
-<<<<<<< HEAD
-  def __init__(self, caseName, comment, imageURL, identifiers, diagonal, screenRatio, description, ppi, isPlusFormFactor, isPadMiniFormFactor, isPro):
-=======
-  def __init__(self, caseName, comment, imageURL, identifiers, diagonal, screenRatio, description, ppi, isPlusFormFactor, isPadMiniFormFactor, isPro, isXSeries, hasTouchID, hasFaceID, hasSensorHousing, hasRoundedDisplayCorners, applePencilSupport, hasForce3dTouchSupport, cameras):
->>>>>>> upstream/master
+  def __init__(self, caseName, comment, imageURL, identifiers, diagonal, screenRatio, description, ppi, isPlusFormFactor, isPadMiniFormFactor, isPro, isXSeries, hasTouchID, hasFaceID, hasSensorHousing, supportsWirelessCharging, hasRoundedDisplayCorners, applePencilSupport, hasForce3dTouchSupport, cameras):
     self.caseName = caseName
     self.comment = comment
     self.imageURL = imageURL
@@ -32,6 +27,7 @@ class Device:
     self.hasTouchID = hasTouchID
     self.hasFaceID = hasFaceID
     self.hasSensorHousing = hasSensorHousing
+    self.supportsWirelessCharging = supportsWirelessCharging
     self.hasRoundedDisplayCorners = hasRoundedDisplayCorners
     self.applePencilSupport = applePencilSupport
     self.hasForce3dTouchSupport = hasForce3dTouchSupport
@@ -527,6 +523,16 @@ public enum Device {
     /// Returns whether or not the device has 3D Touch support.
     public var has3dTouchSupport: Bool {
       return isOneOf(Device.allDevicesWith3dTouchSupport)
+    }
+    
+    /// All devices that support wireless charging.
+    public static var allDevicesWithWirelessChargingSupport: [Device] {
+      return [${', '.join(list(map(lambda device: "." + device.caseName, list(filter(lambda device: device.supportsWirelessCharging == True, iOSDevices)))))}]
+    }
+  
+    /// Returns whether or not the device supports wireless charging
+    public var supportsWirelessCharging: Bool {
+      return isOneOf(Device.allDevicesWithWirelessChargingSupport)
     }
   #elseif os(tvOS)
     /// All TVs

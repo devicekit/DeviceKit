@@ -590,11 +590,6 @@ public enum Device {
     public static var allMiniDevices: [Device] {
       return [.iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadMini5]
     }
-    
-    /// All mini Devices
-    public static var allMiniDevices: [Device] {
-      return [.iPadMini, .iPadMini2, .iPadMini3, .iPadMini4]
-    }
 
     /// All simulator iPods
     public static var allSimulatorPods: [Device] {
@@ -609,11 +604,6 @@ public enum Device {
     /// All simulator iPads
     public static var allSimulatorPads: [Device] {
       return allPads.map(Device.simulator)
-    }
-    
-    /// All simulator iPad mini
-    public static var allSimulatorMiniDevices: [Device] {
-      return allMiniDevices.map(Device.simulator)
     }
 
     /// All simulator iPad mini
@@ -730,6 +720,16 @@ public enum Device {
     /// Returns whether or not the device has 3D Touch support.
     public var has3dTouchSupport: Bool {
       return isOneOf(Device.allDevicesWith3dTouchSupport)
+    }
+  
+    /// All devices that support wireless charging.
+    public static var allDevicesWithWirelessChargingSupport: [Device] {
+      return [.iPhone8, .iPhone8Plus, .iPhoneX, .iPhoneXS, .iPhoneXSMax, .iPhoneXR, .iPhone11, .iPhone11Pro, .iPhone11ProMax]
+    }
+  
+    /// Returns whether or not the device supports wireless charging
+    public var supportsWirelessCharging: Bool {
+      return isOneOf(Device.allDevicesWithWirelessChargingSupport)
     }
   #elseif os(tvOS)
     /// All TVs
