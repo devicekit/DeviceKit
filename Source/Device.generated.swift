@@ -728,12 +728,12 @@ public enum Device {
     public var has3dTouchSupport: Bool {
       return isOneOf(Device.allDevicesWith3dTouchSupport)
     }
-    
+
     /// All devices that support wireless charging.
     public static var allDevicesWithWirelessChargingSupport: [Device] {
       return [.iPhone8, .iPhone8Plus, .iPhoneX, .iPhoneXS, .iPhoneXSMax, .iPhoneXR, .iPhone11, .iPhone11Pro, .iPhone11ProMax]
     }
-  
+
     /// Returns whether or not the device supports wireless charging
     public var supportsWirelessCharging: Bool {
       return isOneOf(Device.allDevicesWithWirelessChargingSupport)
