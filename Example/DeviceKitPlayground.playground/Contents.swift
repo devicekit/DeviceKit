@@ -38,7 +38,14 @@ default: break
 }
 
 /// Make Sure the Device Is Contained in a Preconfigured Group
-let groupOfAllowedDevices: [Device] = [.iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .simulator(.iPhone6), .simulator(.iPhone6Plus), .simulator(.iPhone6s), .simulator(.iPhone6sPlus)]
+let groupOfAllowedDevices: [Device] = [.iPhone6,
+                                       .iPhone6Plus,
+                                       .iPhone6s,
+                                       .iPhone6sPlus,
+                                       .simulator(.iPhone6),
+                                       .simulator(.iPhone6Plus),
+                                       .simulator(.iPhone6s),
+                                       .simulator(.iPhone6sPlus)]
 
 if device.isOneOf(groupOfAllowedDevices) {
     // Do your action
@@ -74,3 +81,18 @@ if device.isGuidedAccessSessionActive {
 if device.screenBrightness > 50 {
     print("Take care of your eyes!")
 }
+
+/// Get Available Disk Space
+if Device.volumeAvailableCapacityForOpportunisticUsage ?? 0 > Int64(1_000_000) {
+    // download that nice-to-have huge file
+}
+
+if Device.volumeAvailableCapacityForImportantUsage ?? 0 > Int64(1_000) {
+    // download that file you really need
+}
+
+// Get the underlying device
+let simulator = Device.simulator(.iPhone8Plus)
+let realDevice = Device.iPhone8Plus
+simulator.realDevice == realDevice // true
+realDevice.realDevice == realDevice // true
