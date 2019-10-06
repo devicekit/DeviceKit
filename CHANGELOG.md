@@ -1,23 +1,37 @@
 # Changelog
 
-## Version 2.3.0
+## Version 3.0.0
 
-Releasedate: 2019-10-02
+Releasedate: TBD
 
 ```ruby
 pod 'DeviceKit', :git => 'https://github.com/devicekit/DeviceKit.git', :branch => 'master'
 ```
 
-### New devices
-- Added support for the new september 2019 devices:
-  - iPad (7th generation)
+### Breaking changes
+- The enum for the Apple TV HD has been renamed from `.appleTV4` to `.appleTVHD`. (#211)
+
+### New features
+- You can now check which devices support wireless charging through the following variables: `Device.allDevicesWithWirelessChargingSupport` and `Device.current.supportsWirelessCharging` (#209)
+
+  ## Version 2.3.0
+
+  Releasedate: 2019-10-02
+
+  ```ruby
+  pod 'DeviceKit', '~> 2.3'
+  ```
+
+  ### New devices
+  - Added support for the new september 2019 devices:
+    - iPad (7th generation)
 
 ## Version 2.2.0
 
 Releasedate: 2019-09-24
 
 ```ruby
-pod 'DeviceKit', :git => 'https://github.com/devicekit/DeviceKit.git', :branch => 'master'
+pod 'DeviceKit', '~> 2.2'
 ```
 
 ### New devices
