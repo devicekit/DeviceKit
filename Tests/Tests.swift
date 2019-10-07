@@ -429,10 +429,10 @@ class DeviceKitTests: XCTestCase {
   func testPPI() {
     // Non-applicable devices:
     // Apple TV
-    XCTAssertEqual(Device.appleTV4.ppi, nil)
+    XCTAssertEqual(Device.appleTVHD.ppi, nil)
     XCTAssertEqual(Device.appleTV4K.ppi, nil)
     // Simulators
-    XCTAssertEqual(Device.simulator(Device.appleTV4).ppi, nil)
+    XCTAssertEqual(Device.simulator(Device.appleTVHD).ppi, nil)
     XCTAssertEqual(Device.simulator(Device.appleTV4K).ppi, nil)
   }
 
