@@ -375,11 +375,12 @@ public enum Device {
     }
 
     /// All X-Series Devices
+    @available(*, deprecated, renamed: "allDevicesWithSensorHousing")
     public static var allXSeriesDevices: [Device] {
       return [${', '.join(list(map(lambda device: "." + device.caseName, list(filter(lambda device: device.isXSeries == True, iOSDevices)))))}]
     }
 
-    /// All Plus-Sized Devices
+    /// All Plus and Max-Sized Devices
     public static var allPlusSizedDevices: [Device] {
       return [${', '.join(list(map(lambda device: "." + device.caseName, list(filter(lambda device: device.isPlusFormFactor == True, iOSDevices)))))}]
     }
@@ -415,11 +416,12 @@ public enum Device {
     }
 
     /// All simulator Plus-Sized Devices
+    @available(*, deprecated, renamed: "allSimulatorDevicesWithSensorHousing")
     public static var allSimulatorXSeriesDevices: [Device] {
-      return allXSeriesDevices.map(Device.simulator)
+      return allDevicesWithSensorHousing.map(Device.simulator)
     }
 
-    /// All simulator Plus-Sized Devices
+    /// All simulator Plus and Max-Sized Devices
     public static var allSimulatorPlusSizedDevices: [Device] {
       return allPlusSizedDevices.map(Device.simulator)
     }
@@ -480,6 +482,11 @@ public enum Device {
       return [${', '.join(list(map(lambda device: "." + device.caseName, list(filter(lambda device: device.hasFaceID == True, iOSDevices)))))}]
     }
 
+    /// All Devices with Touch ID or Face ID
+    public static var allBiometricAuthenticationCapableDevices: [Device] {
+      return [${', '.join(list(map(lambda device: "." + device.caseName, list(filter(lambda device: device.hasTouchID == True or device.hasFaceID == True, iOSDevices)))))}]
+    }
+
     /// Returns whether or not the device has Touch ID
     public var isTouchIDCapable: Bool {
       return isOneOf(Device.allTouchIDCapableDevices) || isOneOf(Device.allTouchIDCapableDevices.map(Device.simulator))
@@ -498,6 +505,11 @@ public enum Device {
     /// All devices that feature a sensor housing in the screen
     public static var allDevicesWithSensorHousing: [Device] {
       return [${', '.join(list(map(lambda device: "." + device.caseName, list(filter(lambda device: device.hasSensorHousing == True, iOSDevices)))))}]
+    }
+
+    /// All simulator devices that feature a sensor housing in the screen
+    public static var allSimulatorDevicesWithSensorHousing: [Device] {
+      return allDevicesWithSensorHousing.map(Device.simulator)
     }
 
     /// Returns whether or not the device has a sensor housing
@@ -1023,17 +1035,20 @@ extension Device {
 // MARK: - Cameras
 extension Device {
 
-  public enum CameraTypes {
+  public enum CameraType {
+    @available(*, deprecated, renamed: "wide")
     case normal
+
+    case wide
     case telephoto
     case ultraWide
   }
 
   /// Returns an array of the types of cameras the device has
-  public var cameras: [CameraTypes] {
+  public var cameras: [CameraType] {
     switch self {
   % for device in list(filter(lambda device: device.cameras == 1, iOSDevices)):
-      case .${device.caseName}: return [.normal]
+      case .${device.caseName}: return [.wide]
   % end
   % for device in list(filter(lambda device: device.cameras == 2, iOSDevices)):
     case .${device.caseName}: return [.telephoto]
@@ -1042,13 +1057,16 @@ extension Device {
     case .${device.caseName}: return [.ultraWide]
   % end
   % for device in list(filter(lambda device: device.cameras == 12, iOSDevices)):
-      case .${device.caseName}: return [.normal, .telephoto]
+      case .${device.caseName}: return [.wide, .telephoto]
   % end
   % for device in list(filter(lambda device: device.cameras == 13, iOSDevices)):
-      case .${device.caseName}: return [.normal, .ultraWide]
+      case .${device.caseName}: return [.wide, .ultraWide]
+  % end
+  % for device in list(filter(lambda device: device.cameras == 23, iOSDevices)):
+      case .${device.caseName}: return [.telephoto, .ultraWide]
   % end
   % for device in list(filter(lambda device: device.cameras == 123, iOSDevices)):
-      case .${device.caseName}: return [.normal, .telephoto, .ultraWide]
+      case .${device.caseName}: return [.wide, .telephoto, .ultraWide]
   % end
       default: return []
     }
@@ -1060,7 +1078,13 @@ extension Device {
   }
 
   /// All devices that feature a normal camera
+  @available(*, deprecated, renamed: "allDevicesWithWideCamera")
   public static var allDevicesWithNormalCamera: [Device] {
+    return [${', '.join(list(map(lambda device: "." + device.caseName, list(filter(lambda device: device.cameras == 1 or device.cameras == 12 or device.cameras == 13 or device.cameras == 123, iOSDevices)))))}]
+  }
+
+  /// All devices that feature a wide camera
+  public static var allDevicesWithWideCamera: [Device] {
     return [${', '.join(list(map(lambda device: "." + device.caseName, list(filter(lambda device: device.cameras == 1 or device.cameras == 12 or device.cameras == 13 or device.cameras == 123, iOSDevices)))))}]
   }
 
@@ -1080,8 +1104,14 @@ extension Device {
   }
 
   /// Returns whether or not the current device has a normal camera
+  @available(*, deprecated, renamed: "hasWideCamera")
   public var hasNormalCamera: Bool {
-    return self.cameras.contains(.normal)
+    return self.cameras.contains(.wide)
+  }
+
+  /// Returns whether or not the current device has a wide camera
+  public var hasWideCamera: Bool {
+    return self.cameras.contains(.wide)
   }
 
   /// Returns whether or not the current device has a telephoto camera

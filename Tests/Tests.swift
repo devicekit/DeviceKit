@@ -387,28 +387,35 @@ class DeviceKitTests: XCTestCase {
 
   func testCameras() {
     for device in Device.allDevicesWithCamera {
-      XCTAssertTrue(device.cameras.contains(.normal) || device.cameras.contains(.telephoto))
+      XCTAssertTrue(device.cameras.contains(.wide) || device.cameras.contains(.telephoto) || device.cameras.contains(.ultraWide))
       XCTAssertTrue(device.hasCamera)
-      XCTAssertTrue(device.hasNormalCamera || device.hasTelephotoCamera)
+      XCTAssertTrue(device.hasWideCamera || device.hasTelephotoCamera || device.hasUltraWideCamera)
     }
     for device in Device.allPhones + Device.allPads + Device.allPods {
       if !Device.allDevicesWithCamera.contains(device) {
-        XCTAssertFalse(device.cameras.contains(.normal))
+        XCTAssertFalse(device.cameras.contains(.wide))
         XCTAssertFalse(device.cameras.contains(.telephoto))
+        XCTAssertFalse(device.cameras.contains(.ultraWide))
         XCTAssertFalse(device.hasCamera)
-        XCTAssertFalse(device.hasNormalCamera)
+        XCTAssertFalse(device.hasWideCamera)
         XCTAssertFalse(device.hasTelephotoCamera)
+        XCTAssertFalse(device.hasUltraWideCamera)
       }
     }
-    for device in Device.allDevicesWithNormalCamera {
-      XCTAssertTrue(device.cameras.contains(.normal))
+    for device in Device.allDevicesWithWideCamera {
+      XCTAssertTrue(device.cameras.contains(.wide))
       XCTAssertTrue(device.hasCamera)
-      XCTAssertTrue(device.hasNormalCamera)
+      XCTAssertTrue(device.hasWideCamera)
     }
     for device in Device.allDevicesWithTelephotoCamera {
       XCTAssertTrue(device.cameras.contains(.telephoto))
       XCTAssertTrue(device.hasCamera)
       XCTAssertTrue(device.hasTelephotoCamera)
+    }
+    for device in Device.allDevicesWithUltraWideCamera {
+      XCTAssertTrue(device.cameras.contains(.ultraWide))
+      XCTAssertTrue(device.hasCamera)
+      XCTAssertTrue(device.hasUltraWideCamera)
     }
   }
 
