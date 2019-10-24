@@ -230,8 +230,9 @@ class DeviceKitTests: XCTestCase {
   }
 
   func testDescription() { // swiftlint:disable:this function_body_length
-    XCTAssertEqual(Device.iPodTouch5.description, "iPod Touch 5")
-    XCTAssertEqual(Device.iPodTouch6.description, "iPod Touch 6")
+    XCTAssertEqual(Device.iPodTouch5.description, "iPod touch (5th generation)")
+    XCTAssertEqual(Device.iPodTouch6.description, "iPod touch (6th generation)")
+    XCTAssertEqual(Device.iPodTouch7.description, "iPod touch (7th generation)")
     XCTAssertEqual(Device.iPhone4.description, "iPhone 4")
     XCTAssertEqual(Device.iPhone4s.description, "iPhone 4s")
     XCTAssertEqual(Device.iPhone5.description, "iPhone 5")
@@ -335,11 +336,11 @@ class DeviceKitTests: XCTestCase {
   }
 
   func testIsPlusSized() {
-    XCTAssertEqual(Device.allPlusSizedDevices, [.iPhone6Plus, .iPhone6sPlus, .iPhone7Plus, .iPhone8Plus])
+    XCTAssertEqual(Device.allPlusSizedDevices, [.iPhone6Plus, .iPhone6sPlus, .iPhone7Plus, .iPhone8Plus, .iPhoneXSMax, .iPhone11ProMax])
   }
 
   func testIsPro() {
-    XCTAssertEqual(Device.allProDevices, [.iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3])
+    XCTAssertEqual(Device.allProDevices, [.iPhone11Pro, .iPhone11ProMax, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3])
   }
 
   func testGuidedAccessSession() {
@@ -384,6 +385,33 @@ class DeviceKitTests: XCTestCase {
     XCTAssertNotNil(Device.volumes)
   }
 
+  func testCameras() {
+    for device in Device.allDevicesWithCamera {
+      XCTAssertTrue(device.cameras.contains(.normal) || device.cameras.contains(.telephoto))
+      XCTAssertTrue(device.hasCamera)
+      XCTAssertTrue(device.hasNormalCamera || device.hasTelephotoCamera)
+    }
+    for device in Device.allPhones + Device.allPads + Device.allPods {
+      if !Device.allDevicesWithCamera.contains(device) {
+        XCTAssertFalse(device.cameras.contains(.normal))
+        XCTAssertFalse(device.cameras.contains(.telephoto))
+        XCTAssertFalse(device.hasCamera)
+        XCTAssertFalse(device.hasNormalCamera)
+        XCTAssertFalse(device.hasTelephotoCamera)
+      }
+    }
+    for device in Device.allDevicesWithNormalCamera {
+      XCTAssertTrue(device.cameras.contains(.normal))
+      XCTAssertTrue(device.hasCamera)
+      XCTAssertTrue(device.hasNormalCamera)
+    }
+    for device in Device.allDevicesWithTelephotoCamera {
+      XCTAssertTrue(device.cameras.contains(.telephoto))
+      XCTAssertTrue(device.hasCamera)
+      XCTAssertTrue(device.hasTelephotoCamera)
+    }
+  }
+
   #endif
 
   // MARK: - tvOS
@@ -393,7 +421,7 @@ class DeviceKitTests: XCTestCase {
   }
 
   func testDescriptionFromIdentifier() {
-    XCTAssertEqual(Device.mapToDevice(identifier: "AppleTV5,3").description, "Apple TV 4")
+    XCTAssertEqual(Device.mapToDevice(identifier: "AppleTV5,3").description, "Apple TV HD")
     XCTAssertEqual(Device.mapToDevice(identifier: "AppleTV6,2").description, "Apple TV 4K")
   }
 
@@ -401,10 +429,10 @@ class DeviceKitTests: XCTestCase {
   func testPPI() {
     // Non-applicable devices:
     // Apple TV
-    XCTAssertEqual(Device.appleTV4.ppi, nil)
+    XCTAssertEqual(Device.appleTVHD.ppi, nil)
     XCTAssertEqual(Device.appleTV4K.ppi, nil)
     // Simulators
-    XCTAssertEqual(Device.simulator(Device.appleTV4).ppi, nil)
+    XCTAssertEqual(Device.simulator(Device.appleTVHD).ppi, nil)
     XCTAssertEqual(Device.simulator(Device.appleTV4K).ppi, nil)
   }
 
