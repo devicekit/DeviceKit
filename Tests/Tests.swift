@@ -275,6 +275,16 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.unknown(uuid).description, uuid)
   }
 
+  func testSafeDescription() {
+    for device in Device.allRealDevices {
+      if device == .iPhoneXR || device == .iPhoneXS || device == .iPhoneXSMax {
+        XCTAssertNotEqual(device.description, device.safeDescription)
+      } else {
+        XCTAssertEqual(device.description, device.safeDescription)
+      }
+    }
+  }
+
   func testIsPad() {
     Device.allPads.forEach { XCTAssertTrue($0.isPad) }
   }
@@ -430,6 +440,12 @@ class DeviceKitTests: XCTestCase {
   func testDescriptionFromIdentifier() {
     XCTAssertEqual(Device.mapToDevice(identifier: "AppleTV5,3").description, "Apple TV HD")
     XCTAssertEqual(Device.mapToDevice(identifier: "AppleTV6,2").description, "Apple TV 4K")
+  }
+
+  func testSafeDescription() {
+    for device in Device.allRealDevices {
+      XCTAssertEqual(device.description, device.safeDescription)
+    }
   }
 
   /// Test that all the ppi values for applicable devices match the public information available at wikipedia. Test non-applicable devices return nil.
