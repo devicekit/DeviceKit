@@ -15,7 +15,7 @@ import WatchKit
 import UIKit
 #endif
 
-// MARK: - Device
+// MARK: Device
 
 /// This enum is a value-type wrapper and extension of
 /// [`UIDevice`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/).
@@ -831,6 +831,8 @@ public enum Device {
     return devices.contains(self)
   }
 
+  // MARK: Current Device
+
   /// Whether or not the current device is the current device.
   private var isCurrent: Bool {
     return self == Device.current
@@ -983,7 +985,7 @@ public enum Device {
   }
 }
 
-// MARK: - CustomStringConvertible
+// MARK: CustomStringConvertible
 extension Device: CustomStringConvertible {
 
   /// A textual representation of the device.
@@ -1066,7 +1068,7 @@ extension Device: CustomStringConvertible {
   }
 }
 
-// MARK: - Equatable
+// MARK: Equatable
 extension Device: Equatable {
 
   /// Compares two devices
@@ -1081,7 +1083,7 @@ extension Device: Equatable {
 
 }
 
-// MARK: - Battery
+// MARK: Battery
 #if os(iOS) || os(watchOS)
 @available(iOS 8.0, watchOS 4.0, *)
 extension Device {
@@ -1181,7 +1183,7 @@ extension Device {
 }
 #endif
 
-// MARK: - Device.Batterystate: Comparable
+// MARK: Device.Batterystate: Comparable
 #if os(iOS) || os(watchOS)
 @available(iOS 8.0, watchOS 4.0, *)
 extension Device.BatteryState: Comparable {
@@ -1217,7 +1219,7 @@ extension Device.BatteryState: Comparable {
 
 #if os(iOS)
 extension Device {
-  // MARK: - Orientation
+  // MARK: Orientation
     /**
       This enum describes the state of the orientation.
       - Landscape: The device is in Landscape Orientation
@@ -1239,7 +1241,7 @@ extension Device {
 #endif
 
 #if os(iOS)
-// MARK: - DiskSpace
+// MARK: DiskSpace
 extension Device {
 
   /// Return the root url
@@ -1295,7 +1297,7 @@ extension Device {
 #endif
 
 #if os(iOS)
-// MARK: - Apple Pencil
+// MARK: Apple Pencil
 extension Device {
 
   /**
@@ -1341,7 +1343,7 @@ extension Device {
 #endif
 
 #if os(iOS)
-// MARK: - Cameras
+// MARK: Cameras
 extension Device {
 
   public enum CameraType {
