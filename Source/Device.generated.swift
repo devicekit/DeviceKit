@@ -11,6 +11,8 @@
 
 #if os(watchOS)
 import WatchKit
+#elseif os(macOS)
+import AppKit
 #else
 import UIKit
 #endif
@@ -286,6 +288,7 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP808/sp808-apple-watch-series-5_2x.png)
     case appleWatchSeries5_44mm
+  #elseif os(macOS)
   #endif
 
   /// Device is [Simulator](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/Introduction/Introduction.html)
@@ -396,6 +399,8 @@ public enum Device {
       case "i386", "x86_64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "watchOS"))
       default: return unknown(identifier)
       }
+    #elseif os(macOS)
+    return unknown(identifier)
     #endif
   }
 
@@ -484,6 +489,8 @@ public enum Device {
       case .simulator(let model): return model.diagonal
       case .unknown: return -1
       }
+    #elseif os(macOS)
+    return -1
     #endif
   }
   #endif
@@ -558,6 +565,8 @@ public enum Device {
       case .unknown: return (width: -1, height: -1)
       }
     #elseif os(tvOS)
+      return (width: -1, height: -1)
+    #elseif os(macOS)
       return (width: -1, height: -1)
     #endif
   }
@@ -778,6 +787,8 @@ public enum Device {
       return allTVs
     #elseif os(watchOS)
       return allWatches
+    #elseif os(macOS)
+      return []
     #endif
   }
 
@@ -829,6 +840,8 @@ public enum Device {
     guard isCurrent else { return nil }
     #if os(watchOS)
     return WKInterfaceDevice.current().name
+    #elseif os(macOS)
+    return nil
     #else
     return UIDevice.current.name
     #endif
@@ -839,6 +852,8 @@ public enum Device {
     guard isCurrent else { return nil }
     #if os(watchOS)
     return WKInterfaceDevice.current().systemName
+    #elseif os(macOS)
+    return nil
     #else
     return UIDevice.current.systemName
     #endif
@@ -849,6 +864,8 @@ public enum Device {
     guard isCurrent else { return nil }
     #if os(watchOS)
     return WKInterfaceDevice.current().systemVersion
+    #elseif os(macOS)
+    return nil
     #else
     return UIDevice.current.systemVersion
     #endif
@@ -859,6 +876,8 @@ public enum Device {
     guard isCurrent else { return nil }
     #if os(watchOS)
     return WKInterfaceDevice.current().model
+    #elseif os(macOS)
+    return nil
     #else
     return UIDevice.current.model
     #endif
@@ -869,6 +888,8 @@ public enum Device {
     guard isCurrent else { return nil }
     #if os(watchOS)
     return WKInterfaceDevice.current().localizedModel
+    #elseif os(macOS)
+    return nil
     #else
     return UIDevice.current.localizedModel
     #endif
@@ -944,6 +965,8 @@ public enum Device {
     case .unknown: return nil
     }
     #elseif os(tvOS)
+    return nil
+    #elseif os(macOS)
     return nil
     #endif
   }
@@ -1047,6 +1070,11 @@ extension Device: CustomStringConvertible {
       switch self {
       case .appleTVHD: return "Apple TV HD"
       case .appleTV4K: return "Apple TV 4K"
+      case .simulator(let model): return "Simulator (\(model))"
+      case .unknown(let identifier): return identifier
+      }
+    #elseif os(macOS)
+      switch self {
       case .simulator(let model): return "Simulator (\(model))"
       case .unknown(let identifier): return identifier
       }
