@@ -16,6 +16,11 @@ class DeviceKitTests: XCTestCase {
 
   let device = Device.current
 
+  #if os(macOS)
+  func testDeviceIsKnown() {
+    XCTAssertTrue(device.isOneOf(Device.allMacs))
+  }
+  #else
   func testDeviceSimulator() {
     XCTAssertTrue(device.isOneOf(Device.allSimulators))
   }
@@ -27,6 +32,7 @@ class DeviceKitTests: XCTestCase {
       || device.description.contains("iPod")
       || device.description.contains("TV"))
   }
+  #endif
 
   // MARK: - iOS
   #if os(iOS)
