@@ -186,27 +186,22 @@ macMinis = [
             "macMiniLate2012",
             "Device is a [Mac mini (Late 2012)](https://support.apple.com/kb/SP659)",
             "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macmini/mac-mini-2011-2012-2014-device.jpg",
-            ["Macmini6,1" ," Macmini6,2"], 0,(), "Mac mini (Late 2012)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
+            ["Macmini6,1", "Macmini6,2"], 0,(), "Mac mini (Late 2012)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
             Device(
             "macMiniMid2011",
             "Device is a [Mac mini (Mid 2011)](https://support.apple.com/kb/SP632)",
             "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macmini/mac-mini-2011-2012-2014-device.jpg",
-            ["Macmini5,1" ," Macmini5,2"], 0,(), "Mac mini (Mid 2011)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
+            ["Macmini5,1", "Macmini5,2"], 0,(), "Mac mini (Mid 2011)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
             Device(
             "macMiniMid2010",
             "Device is a [Mac mini (Mid 2010)](https://support.apple.com/kb/SP585)",
             "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macmini/mac-mini-2010-device.jpg",
             ["Macmini4,1"], 0,(), "Mac mini (Mid 2010)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
             Device(
-            "macMiniLate2009",
-            "Device is a [Mac mini (Late 2009)](https://support.apple.com/kb/SP577)",
+            "macMini2009",
+            "Device is a [Mac mini (Late 2009)](https://support.apple.com/kb/SP577) or [Mac mini (Early 2009)](https://support.apple.com/kb/SP505)",
             "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macmini/mac-mini-2009-device.jpg",
-            ["Macmini3,1"], 0,(), "Mac mini (Late 2009)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "macMiniEarly2009",
-            "Device is a [Mac mini (Early 2009)](https://support.apple.com/kb/SP505)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macmini/mac-mini-2009-device.jpg",
-            ["Macmini3,1"], 0,(), "Mac mini (Early 2009)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0)
+            ["Macmini3,1"], 0,(), "Mac mini (2009)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0)
 ]
 ## https://support.apple.com/mac/imac, https://support.apple.com/en-us/HT201634
 iMacs = [
@@ -252,14 +247,9 @@ iMacs = [
             ["iMac16,1"], 0,(), "iMac (21.5-inch, Late 2015)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
             Device(
             "iMacRetina5K27InchMid2015",
-            "Device is a [iMac (Retina 5K, 27-inch, Mid 2015)](https://support.apple.com/kb/SP718)",
+            "Device is a [iMac (Retina 5K, 27-inch, Mid 2015)](https://support.apple.com/kb/SP718) or [iMac (Retina 5K, 27-inch, Late 2014)](https://support.apple.com/kb/SP707)",
             "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/imac/imac-27-late-2015.jpg",
-            ["iMac15,1"], 0,(), "iMac (Retina 5K, 27-inch, Mid 2015)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "iMacRetina5K27InchLate2014",
-            "Device is a [iMac (Retina 5K, 27-inch, Late 2014)](https://support.apple.com/kb/SP707)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/imac/imac-27-2014.jpg",
-            ["iMac15,1"], 0,(), "iMac (Retina 5K, 27-inch, Late 2014)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
+            ["iMac15,1"], 0,(), "iMac (Retina 5K, 27-inch)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
             Device(
             "iMac215InchMid2014",
             "Device is a [iMac (21.5-inch, Mid 2014)](https://support.apple.com/kb/SP701)",
@@ -299,27 +289,7 @@ iMacs = [
             "iMac215InchMid2010",
             "Device is a [iMac (21.5-inch, Mid 2010)](https://support.apple.com/kb/SP588)",
             "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/imac/imac-27-2010.jpg",
-            ["iMac11,2"], 0,(), "iMac (21.5-inch, Mid 2010)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "iMac27InchLate2009",
-            "Device is a [iMac (27-inch, Late 2009)](https://support.apple.com/kb/SP696)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/imac/imac-27-2009-late.jpg",
-            ["iMac10,1"], 0,(), "iMac (27-inch, Late 2009)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "iMac215InchLate2009",
-            "Device is a [iMac (21.5-inch, Late 2009)](https://support.apple.com/kb/SP576)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/imac/imac-27-2009-late.jpg",
-            ["iMac10,1"], 0,(), "iMac (21.5-inch, Late 2009)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "iMac24InchEarly2009",
-            "Device is a [iMac (24-inch, Early 2009)](https://support.apple.com/kb/SP507)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/imac/imac-27-2009-late.jpg",
-            ["iMac9,1"], 0,(), "iMac (24-inch, Early 2009)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "iMac20InchEarly2009",
-            "Device is a [iMac (20-inch, Early 2009)](https://support.apple.com/kb/SP507)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/imac/imac-27-2009-late.jpg",
-            ["iMac9,1"], 0,(), "iMac (20-inch, Early 2009)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0)
+            ["iMac11,2"], 0,(), "iMac (21.5-inch, Mid 2010)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0)
 ]
 ## https://support.apple.com/mac/mac-pro, https://support.apple.com/en-us/HT202888
 macPros = [
@@ -355,17 +325,7 @@ macBooks = [
             "macBook13InchLate2009",
             "Device is a [MacBook (13-inch, Late 2009)](https://support.apple.com/kb/SP579)",
             "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbook/macbook-late-2009-2010-device.jpg",
-            ["MacBook6,1"], 0,(), "MacBook (13-inch, Late 2009)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "macBook13InchMid2009",
-            "Device is a [MacBook (13-inch, Mid 2009)](https://support.apple.com/kb/SP512)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbook/macbook-late-2009-2010-device.jpg",
-            ["MacBook5,2"], 0,(), "MacBook (13-inch, Mid 2009)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "macBook13InchEarly2009",
-            "Device is a [MacBook (13-inch, Early 2009)](https://support.apple.com/kb/SP504)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbook/macbook-late-2009-2010-device.jpg",
-            ["MacBook5,2"], 0,(), "MacBook (13-inch, Early 2009)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0)
+            ["MacBook6,1"], 0,(), "MacBook (13-inch, Late 2009)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0)
 ]
 ## https://support.apple.com/mac/macbook-air, https://support.apple.com/en-us/HT201862
 macBookAirs = [
@@ -383,7 +343,7 @@ macBookAirs = [
             "macBookAir13Inch2017",
             "Device is a [MacBook Air (13-inch, 2017)](https://support.apple.com/kb/SP753)",
             "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookair/macbook-air-2017-device.jpg",
-            ["MacBookAir7,2"], 0,(), "MacBook Air (13-inch, 2017)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
+            ["MacBookAir7,3"], 0,(), "MacBook Air (13-inch, 2017)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
             Device(
             "macBookAir13InchEarly2015",
             "Device is a [MacBook Air (13-inch, Early 2015)](https://support.apple.com/kb/SP714)",
@@ -396,24 +356,14 @@ macBookAirs = [
             ["MacBookAir7,1"], 0,(), "MacBook Air (11-inch, Early 2015)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
             Device(
             "macBookAir13InchEarly2014",
-            "Device is a [MacBook Air (13-inch, Early 2014)](https://support.apple.com/kb/SP700)",
+            "Device is a [MacBook Air (13-inch, Early 2014)](https://support.apple.com/kb/SP700) or [MacBook Air (13-inch, Mid 2013)](https://support.apple.com/kb/SP678)",
             "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookair/macbook-air-2013-2014-13in-device.jpg",
             ["MacBookAir6,2"], 0,(), "MacBook Air (13-inch, Early 2014)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
             Device(
             "macBookAir11InchEarly2014",
-            "Device is a [MacBook Air (11-inch, Early 2014)](https://support.apple.com/kb/SP699)",
+            "Device is a [MacBook Air (11-inch, Early 2014)](https://support.apple.com/kb/SP699) or [MacBook Air (11-inch, Mid 2013)](https://support.apple.com/kb/SP677)",
             "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookair/macbook-air-2013-2014-13in-device.jpg",
             ["MacBookAir6,1"], 0,(), "MacBook Air (11-inch, Early 2014)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "macBookAir13InchMid2013",
-            "Device is a [MacBook Air (13-inch, Mid 2013)](https://support.apple.com/kb/SP678)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookair/macbook-air-2013-2014-13in-device.jpg",
-            ["MacBookAir6,2"], 0,(), "MacBook Air (13-inch, Mid 2013)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "macBookAir11InchMid2013",
-            "Device is a [MacBook Air (11-inch, Mid 2013)](https://support.apple.com/kb/SP677)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookair/macbook-air-2013-2014-13in-device.jpg",
-            ["MacBookAir6,1"], 0,(), "MacBook Air (11-inch, Mid 2013)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
             Device(
             "macBookAir13InchMid2012",
             "Device is a [MacBook Air (13-inch, Mid 2012)](https://support.apple.com/kb/SP670)",
@@ -461,10 +411,10 @@ macBookPros = [
             "macBookPro15Inch2019",
             "Device is a [MacBook Pro (15-inch, 2019)](https://support.apple.com/kb/SP794)",
             "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-2018-13in-device.jpg",
-            ["MacBookPro15,1,"], 0,(), "MacBook Pro (15-inch, 2019)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
+            ["MacBookPro15,3"], 0,(), "MacBook Pro (15-inch, 2019)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
             Device(
             "macBookPro13Inch2019FourThunderbolt3Ports",
-            "Device is a [MacBook Pro (13-inch, 2019, Four Thunderbolt 3 ports)](https://support.apple.com/kb/SP795)",
+            "Device is a [MacBook Pro (13-inch, 2019, Four Thunderbolt 3 ports)](https://support.apple.com/kb/SP795) or [MacBook Pro (13-inch, 2018, Four Thunderbolt 3 ports)](https://support.apple.com/kb/SP775)",
             "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-2018-13in-device.jpg",
             ["MacBookPro15,2"], 0,(), "MacBook Pro (13-inch, 2019, Four Thunderbolt 3 ports)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
             Device(
@@ -472,11 +422,6 @@ macBookPros = [
             "Device is a [MacBook Pro (15-inch, 2018)](https://support.apple.com/kb/SP776)",
             "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-2018-15in-device.jpg",
             ["MacBookPro15,1"], 0,(), "MacBook Pro (15-inch, 2018)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "macBookPro13Inch2018FourThunderbolt3Ports",
-            "Device is a [MacBook Pro (13-inch, 2018, Four Thunderbolt 3 ports)](https://support.apple.com/kb/SP775)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-2018-15in-device.jpg",
-            ["MacBookPro15,2"], 0,(), "MacBook Pro (13-inch, 2018, Four Thunderbolt 3 ports)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
             Device(
             "macBookPro15Inch2017",
             "Device is a [MacBook Pro (15-inch, 2017)](https://support.apple.com/kb/SP756)",
@@ -519,139 +464,14 @@ macBookPros = [
             ["MacBookPro12,1"], 0,(), "MacBook Pro (Retina, 13-inch, Early 2015)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
             Device(
             "macBookProRetina15InchMid2014",
-            "Device is a [MacBook Pro (Retina, 15-inch, Mid 2014)](https://support.apple.com/kb/SP704)",
+            "Device is a [MacBook Pro (Retina, 15-inch, Mid 2014)](https://support.apple.com/kb/SP704) or [MacBook Pro (Retina, 15-inch, Late 2013)](https://support.apple.com/kb/SP690)",
             "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-mid-2014-15in-device.jpg",
             ["MacBookPro11,2"], 0,(), "MacBook Pro (Retina, 15-inch, Mid 2014)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
             Device(
             "macBookProRetina13InchMid2014",
-            "Device is a [MacBook Pro (Retina, 13-inch, Mid 2014)](https://support.apple.com/kb/SP703)",
+            "Device is a [MacBook Pro (Retina, 13-inch, Mid 2014)](https://support.apple.com/kb/SP703) or [MacBook Pro (Retina, 13-inch, Late 2013)](https://support.apple.com/kb/SP691)",
             "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-mid-2014-15in-device.jpg",
-            ["MacBookPro11,1"], 0,(), "MacBook Pro (Retina, 13-inch, Mid 2014)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "macBookProRetina15InchLate2013",
-            "Device is a [MacBook Pro (Retina, 15-inch, Late 2013)](https://support.apple.com/kb/SP690)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-late-2013-15in-device.jpg",
-            ["MacBookPro11,2"], 0,(), "MacBook Pro (Retina, 15-inch, Late 2013)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "macBookProRetina15InchEarly2013",
-            "Device is a [MacBook Pro (Retina, 15-inch, Early 2013)](https://support.apple.com/kb/SP669)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-late-2013-15in-device.jpg",
-            ["MacBookPro10,1"], 0,(), "MacBook Pro (Retina, 15-inch, Early 2013)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "macBookProRetina13InchLate2013",
-            "Device is a [MacBook Pro (Retina, 13-inch, Late 2013)](https://support.apple.com/kb/SP691)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-late-2013-15in-device.jpg",
-            ["MacBookPro11,1"], 0,(), "MacBook Pro (Retina, 13-inch, Late 2013)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "macBookProRetina13InchEarly2013",
-            "Device is a [MacBook Pro (Retina, 13-inch, Early 2013)](https://support.apple.com/kb/SP668)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-late-2013-15in-device.jpg",
-            ["MacBookPro10,2"], 0,(), "MacBook Pro (Retina, 13-inch, Early 2013)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "macBookProRetina15InchMid2012",
-            "Device is a [MacBook Pro (Retina, 15-inch, Mid 2012)](https://support.apple.com/kb/SP653)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-mid-2012-15in-device.jpg",
-            ["MacBookPro10,1"], 0,(), "MacBook Pro (Retina, 15-inch, Mid 2012)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "macBookPro15InchMid2012",
-            "Device is a [MacBook Pro (15-inch, Mid 2012)](https://support.apple.com/kb/SP694)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-mid-2012-15in-device.jpg",
-            ["MacBookPro9,1"], 0,(), "MacBook Pro (15-inch, Mid 2012)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "macBookProRetina13InchLate2012",
-            "Device is a [MacBook Pro (Retina, 13-inch, Late 2012)](https://support.apple.com/kb/SP658)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-mid-2012-15in-device.jpg",
-            ["MacBookPro10,2"], 0,(), "MacBook Pro (Retina, 13-inch, Late 2012)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "macBookPro13InchMid2012",
-            "Device is a [MacBook Pro (13-inch, Mid 2012)](https://support.apple.com/kb/SP649)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-mid-2012-15in-device.jpg",
-            ["MacBookPro9,2"], 0,(), "MacBook Pro (13-inch, Mid 2012)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "macBookPro17InchLate2011",
-            "Device is a [MacBook Pro (17-inch, Late 2011)](https://support.apple.com/kb/SP646)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-late-2011-17in-device.jpg",
-            ["MacBookPro8,3"], 0,(), "MacBook Pro (17-inch, Late 2011)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "macBookPro17InchEarly2011",
-            "Device is a [MacBook Pro (17-inch, Early 2011)](https://support.apple.com/kb/SP621)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-late-2011-17in-device.jpg",
-            ["MacBookPro8,3"], 0,(), "MacBook Pro (17-inch, Early 2011)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "macBookPro15InchLate2011",
-            "Device is a [MacBook Pro (15-inch, Late 2011)](https://support.apple.com/kb/SP644)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-late-2011-17in-device.jpg",
-            ["MacBookPro8,2"], 0,(), "MacBook Pro (15-inch, Late 2011)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "macBookPro15InchEarly2011",
-            "Device is a [MacBook Pro (15-inch, Early 2011)](https://support.apple.com/kb/SP620)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-late-2011-17in-device.jpg",
-            ["MacBookPro8,2"], 0,(), "MacBook Pro (15-inch, Early 2011)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "macBookPro13InchLate2011",
-            "Device is a [MacBook Pro (13-inch, Late 2011)](https://support.apple.com/kb/SP645)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-late-2011-17in-device.jpg",
-            ["MacBookPro8,1"], 0,(), "MacBook Pro (13-inch, Late 2011)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "macBookPro13InchEarly2011",
-            "Device is a [MacBook Pro (13-inch, Early 2011)](https://support.apple.com/kb/SP619)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-late-2011-17in-device.jpg",
-            ["MacBookPro8,1"], 0,(), "MacBook Pro (13-inch, Early 2011)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "macBookPro17InchMid2010",
-            "Device is a [MacBook Pro (17-inch, Mid 2010)](https://support.apple.com/kb/SP581)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-mid-2010-17in-device.jpg",
-            ["MacBookPro6,1"], 0,(), "MacBook Pro (17-inch, Mid 2010)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "macBookPro15InchMid2010",
-            "Device is a [MacBook Pro (15-inch, Mid 2010)](https://support.apple.com/kb/SP582)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-mid-2010-17in-device.jpg",
-            ["MacBookPro6,2"], 0,(), "MacBook Pro (15-inch, Mid 2010)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "macBookPro13InchMid2010",
-            "Device is a [MacBook Pro (13-inch, Mid 2010)](https://support.apple.com/kb/SP583)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-mid-2010-17in-device.jpg",
-            ["MacBookPro7,1"], 0,(), "MacBook Pro (13-inch, Mid 2010)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "macBookPro17InchMid2009",
-            "Device is a [MacBook Pro (17-inch, Mid 2009)](https://support.apple.com/kb/SP546)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-early-mid-2009-17in-device.jpg",
-            ["MacBookPro5,2"], 0,(), "MacBook Pro (17-inch, Mid 2009)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "macBookPro17InchEarly2009",
-            "Device is a [MacBook Pro (17-inch, Early 2009)](https://support.apple.com/kb/SP503)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-early-mid-2009-17in-device.jpg",
-            ["MacBookPro5,2"], 0,(), "MacBook Pro (17-inch, Early 2009)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "macBookPro15InchMid2009",
-            "Device is a [MacBook Pro (15-inch, Mid 2009)](https://support.apple.com/kb/SP544)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-early-mid-2009-17in-device.jpg",
-            ["MacBookPro5,3"], 0,(), "MacBook Pro (15-inch, Mid 2009)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "macBookPro15Inch253GHzMid2009",
-            "Device is a [MacBook Pro (15-inch, 2.53GHz, Mid 2009)](https://support.apple.com/kb/SP544)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-early-mid-2009-17in-device.jpg",
-            ["MacBookPro5,3"], 0,(), "MacBook Pro (15-inch, 2.53GHz, Mid 2009)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "macBookPro13InchMid2009",
-            "Device is a [MacBook Pro (13-inch, Mid 2009)](https://support.apple.com/kb/SP541)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-early-mid-2009-17in-device.jpg",
-            ["MacBookPro5,5"], 0,(), "MacBook Pro (13-inch, Mid 2009)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "macBookPro15InchLate2008",
-            "Device is a [MacBook Pro (15-inch, Late 2008)](https://support.apple.com/kb/SP499)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-late-2008-15in-device.jpg",
-            ["MacBookPro5,1"], 0,(), "MacBook Pro (15-inch, Late 2008)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "macBookPro17InchEarly2008",
-            "Device is a [MacBook Pro (17-inch, Early 2008)](https://support.apple.com/kb/SP4)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-late-2008-15in-device.jpg",
-            ["MacBookPro4,1"], 0,(), "MacBook Pro (17-inch, Early 2008)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
-            Device(
-            "macBookPro15InchEarly2008",
-            "Device is a [MacBook Pro (15-inch, Early 2008)](https://support.apple.com/kb/SP4)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-late-2008-15in-device.jpg",
-            ["MacBookPro4,1"], 0,(), "MacBook Pro (15-inch, Early 2008)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0)
+            ["MacBookPro11,1"], 0,(), "MacBook Pro (Retina, 13-inch, Mid 2014)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0)
 ]
 ## https://support.apple.com/mac/imac-pro
 iMacPros = [
@@ -1208,7 +1028,7 @@ public enum Device {
     #if os(watchOS)
     return WKInterfaceDevice.current().name
     #elseif os(macOS)
-    return nil
+    return description
     #else
     return UIDevice.current.name
     #endif
@@ -1220,7 +1040,7 @@ public enum Device {
     #if os(watchOS)
     return WKInterfaceDevice.current().systemName
     #elseif os(macOS)
-    return nil
+    return "macOS"
     #else
     return UIDevice.current.systemName
     #endif
@@ -1232,7 +1052,7 @@ public enum Device {
     #if os(watchOS)
     return WKInterfaceDevice.current().systemVersion
     #elseif os(macOS)
-    return nil
+    return ProcessInfo.processInfo.operatingSystemVersionString
     #else
     return UIDevice.current.systemVersion
     #endif
@@ -1244,7 +1064,9 @@ public enum Device {
     #if os(watchOS)
     return WKInterfaceDevice.current().model
     #elseif os(macOS)
-    return nil
+    var set = CharacterSet.decimalDigits
+    set.insert(",")
+    return Device.identifier.components(separatedBy: set).joined()
     #else
     return UIDevice.current.model
     #endif
@@ -1256,7 +1078,7 @@ public enum Device {
     #if os(watchOS)
     return WKInterfaceDevice.current().localizedModel
     #elseif os(macOS)
-    return nil
+    return model
     #else
     return UIDevice.current.localizedModel
     #endif
