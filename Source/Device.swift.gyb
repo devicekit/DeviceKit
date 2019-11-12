@@ -476,7 +476,7 @@ macBookPros = [
 ## https://support.apple.com/mac/imac-pro
 iMacPros = [
             Device(
-            "iMacPro",
+            "iMacPro2017",
             "Device is an [iMac Pro](https://support.apple.com/kb/SP771)",
             "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP771/SP771-imac-pro-2017.png",
             ["iMacPro1,1"], 0,(), "iMac Pro (2017)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0)
