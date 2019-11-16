@@ -403,6 +403,11 @@ macBookAirs = [
 ## https://support.apple.com/mac/macbook-pro, https://support.apple.com/en-us/HT201300
 macBookPros = [
             Device(
+            "macBookPro16Inch2019",
+            "Device is a [MacBook Pro (16-inch, 2019)](https://support.apple.com/kb/SP809)",
+            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-16in-2019.jpg",
+            ["MacBookPro16,1"], 0,(), "MacBook Pro (16-inch, 2019)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
+            Device(
             "macBookPro13Inch2019TwoThunderbolt3Ports",
             "Device is a [MacBook Pro (13-inch, 2019, Two Thunderbolt 3 ports)](https://support.apple.com/kb/SP799)",
             "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-2018-13in-device.jpg",

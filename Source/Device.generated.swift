@@ -461,6 +461,10 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookair/macbook-air-2009-2010-13in-device.jpg)
     case macBookAirMid2009
+    /// Device is a [MacBook Pro (16-inch, 2019)](https://support.apple.com/kb/SP809)
+    ///
+    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-16in-2019.jpg)
+    case macBookPro16Inch2019
     /// Device is a [MacBook Pro (13-inch, 2019, Two Thunderbolt 3 ports)](https://support.apple.com/kb/SP799)
     ///
     /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-2018-13in-device.jpg)
@@ -683,6 +687,7 @@ public enum Device {
       case "MacBookAir3,2": return macBookAir13InchLate2010
       case "MacBookAir3,1": return macBookAir11InchLate2010
       case "MacBookAir2,1": return macBookAirMid2009
+      case "MacBookPro16,1": return macBookPro16Inch2019
       case "MacBookPro15,4": return macBookPro13Inch2019TwoThunderbolt3Ports
       case "MacBookPro15,3": return macBookPro15Inch2019
       case "MacBookPro15,2": return macBookPro13Inch2019FourThunderbolt3Ports
@@ -1079,7 +1084,7 @@ public enum Device {
   #elseif os(macOS)
   /// All Macs
   public static var allMacs: [Device] {
-     return [.macMini2018, .macMiniLate2014, .macMiniLate2012, .macMiniMid2011, .macMiniMid2010, .macMini2009, .iMacRetina5K27Inch2019, .iMacRetina4K215Inch2019, .iMacRetina5K27Inch2017, .iMacRetina4K215Inch2017, .iMac215Inch2017, .iMacRetina5K27InchLate2015, .iMacRetina4K215InchLate2015, .iMac215InchLate2015, .iMacRetina5K27InchMid2015, .iMac215InchMid2014, .iMac27InchLate2013, .iMac215InchLate2013, .iMac215InchLate2012, .iMac27InchMid2011, .iMac215InchMid2011, .iMac27InchMid2010, .iMac215InchMid2010, .macProMid2012, .macBookRetina12Inch2017, .macBookRetina12InchEarly2016, .macBookRetina12InchEarly2015, .macBook13InchMid2010, .macBook13InchLate2009, .macBookAirRetina13Inch2019, .macBookAirRetina13Inch2018, .macBookAir13Inch2017, .macBookAir13InchEarly2015, .macBookAir11InchEarly2015, .macBookAir13InchEarly2014, .macBookAir11InchEarly2014, .macBookAir13InchMid2012, .macBookAir11InchMid2012, .macBookAir13InchMid2011, .macBookAir11InchMid2011, .macBookAir13InchLate2010, .macBookAir11InchLate2010, .macBookAirMid2009, .macBookPro13Inch2019TwoThunderbolt3Ports, .macBookPro15Inch2019, .macBookPro13Inch2019FourThunderbolt3Ports, .macBookPro15Inch2018, .macBookPro15Inch2017, .macBookPro13Inch2017FourThunderbolt3Ports, .macBookPro13Inch2017TwoThunderbolt3Ports, .macBookPro15Inch2016, .macBookPro13Inch2016FourThunderbolt3Ports, .macBookPro13Inch2016TwoThunderbolt3Ports, .macBookProRetina15InchMid2015, .macBookProRetina13InchEarly2015, .macBookProRetina15InchMid2014, .macBookProRetina13InchMid2014, .iMacPro2017]
+     return [.macMini2018, .macMiniLate2014, .macMiniLate2012, .macMiniMid2011, .macMiniMid2010, .macMini2009, .iMacRetina5K27Inch2019, .iMacRetina4K215Inch2019, .iMacRetina5K27Inch2017, .iMacRetina4K215Inch2017, .iMac215Inch2017, .iMacRetina5K27InchLate2015, .iMacRetina4K215InchLate2015, .iMac215InchLate2015, .iMacRetina5K27InchMid2015, .iMac215InchMid2014, .iMac27InchLate2013, .iMac215InchLate2013, .iMac215InchLate2012, .iMac27InchMid2011, .iMac215InchMid2011, .iMac27InchMid2010, .iMac215InchMid2010, .macProMid2012, .macBookRetina12Inch2017, .macBookRetina12InchEarly2016, .macBookRetina12InchEarly2015, .macBook13InchMid2010, .macBook13InchLate2009, .macBookAirRetina13Inch2019, .macBookAirRetina13Inch2018, .macBookAir13Inch2017, .macBookAir13InchEarly2015, .macBookAir11InchEarly2015, .macBookAir13InchEarly2014, .macBookAir11InchEarly2014, .macBookAir13InchMid2012, .macBookAir11InchMid2012, .macBookAir13InchMid2011, .macBookAir11InchMid2011, .macBookAir13InchLate2010, .macBookAir11InchLate2010, .macBookAirMid2009, .macBookPro16Inch2019, .macBookPro13Inch2019TwoThunderbolt3Ports, .macBookPro15Inch2019, .macBookPro13Inch2019FourThunderbolt3Ports, .macBookPro15Inch2018, .macBookPro15Inch2017, .macBookPro13Inch2017FourThunderbolt3Ports, .macBookPro13Inch2017TwoThunderbolt3Ports, .macBookPro15Inch2016, .macBookPro13Inch2016FourThunderbolt3Ports, .macBookPro13Inch2016TwoThunderbolt3Ports, .macBookProRetina15InchMid2015, .macBookProRetina13InchEarly2015, .macBookProRetina15InchMid2014, .macBookProRetina13InchMid2014, .iMacPro2017]
   }
 
   public static var allMacMinis: [Device] {
@@ -1095,7 +1100,7 @@ public enum Device {
   }
 
   public static var allMacBookPros: [Device] {
-     return [.macBookPro13Inch2019TwoThunderbolt3Ports, .macBookPro15Inch2019, .macBookPro13Inch2019FourThunderbolt3Ports, .macBookPro15Inch2018, .macBookPro15Inch2017, .macBookPro13Inch2017FourThunderbolt3Ports, .macBookPro13Inch2017TwoThunderbolt3Ports, .macBookPro15Inch2016, .macBookPro13Inch2016FourThunderbolt3Ports, .macBookPro13Inch2016TwoThunderbolt3Ports, .macBookProRetina15InchMid2015, .macBookProRetina13InchEarly2015, .macBookProRetina15InchMid2014, .macBookProRetina13InchMid2014]
+     return [.macBookPro16Inch2019, .macBookPro13Inch2019TwoThunderbolt3Ports, .macBookPro15Inch2019, .macBookPro13Inch2019FourThunderbolt3Ports, .macBookPro15Inch2018, .macBookPro15Inch2017, .macBookPro13Inch2017FourThunderbolt3Ports, .macBookPro13Inch2017TwoThunderbolt3Ports, .macBookPro15Inch2016, .macBookPro13Inch2016FourThunderbolt3Ports, .macBookPro13Inch2016TwoThunderbolt3Ports, .macBookProRetina15InchMid2015, .macBookProRetina13InchEarly2015, .macBookProRetina15InchMid2014, .macBookProRetina13InchMid2014]
   }
 
   public static var allIMacs: [Device] {
@@ -1480,6 +1485,7 @@ extension Device: CustomStringConvertible {
       case .macBookAir13InchLate2010: return "MacBook Air (13-inch, Late 2010)"
       case .macBookAir11InchLate2010: return "MacBook Air (11-inch, Late 2010)"
       case .macBookAirMid2009: return "MacBook Air (Mid 2009)"
+      case .macBookPro16Inch2019: return "MacBook Pro (16-inch, 2019)"
       case .macBookPro13Inch2019TwoThunderbolt3Ports: return "MacBook Pro (13-inch, 2019, Two Thunderbolt 3 ports)"
       case .macBookPro15Inch2019: return "MacBook Pro (15-inch, 2019)"
       case .macBookPro13Inch2019FourThunderbolt3Ports: return "MacBook Pro (13-inch, 2019, Four Thunderbolt 3 ports)"
