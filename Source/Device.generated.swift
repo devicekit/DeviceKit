@@ -319,7 +319,7 @@ public enum Device {
     case iMacRetina5K27Inch2019
     /// Device is a [iMac (Retina 4K, 21.5-inch, 2019)](https://support.apple.com/kb/SP789)
     ///
-    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/imac/imac-27-2017.jpg)
+    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/imac/imac-21-5-2017.jpg)
     case iMacRetina4K215Inch2019
     /// Device is a [iMac (Retina 5K, 27-inch, 2017)](https://support.apple.com/kb/SP760)
     ///
@@ -327,11 +327,11 @@ public enum Device {
     case iMacRetina5K27Inch2017
     /// Device is a [iMac (Retina 4K, 21.5-inch, 2017)](https://support.apple.com/kb/SP759)
     ///
-    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/imac/imac-27-2017.jpg)
+    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/imac/imac-21-5-2017.jpg)
     case iMacRetina4K215Inch2017
     /// Device is a [iMac (21.5-inch, 2017)](https://support.apple.com/kb/SP758)
     ///
-    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/imac/imac-27-2017.jpg)
+    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/imac/imac-21-5-2017.jpg)
     case iMac215Inch2017
     /// Device is a [iMac (Retina 5K, 27-inch, Late 2015)](https://support.apple.com/kb/SP731)
     ///
@@ -339,11 +339,11 @@ public enum Device {
     case iMacRetina5K27InchLate2015
     /// Device is a [iMac (Retina 4K, 21.5-inch, Late 2015)](https://support.apple.com/kb/SP732)
     ///
-    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/imac/imac-27-late-2015.jpg)
+    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/imac/imac-21-5-2015.jpg)
     case iMacRetina4K215InchLate2015
     /// Device is a [iMac (21.5-inch, Late 2015)](https://support.apple.com/kb/SP733)
     ///
-    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/imac/imac-27-late-2015.jpg)
+    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/imac/imac-21-5-2015.jpg)
     case iMac215InchLate2015
     /// Device is a [iMac (Retina 5K, 27-inch, Mid 2015)](https://support.apple.com/kb/SP718) or [iMac (Retina 5K, 27-inch, Late 2014)](https://support.apple.com/kb/SP707)
     ///
@@ -423,7 +423,7 @@ public enum Device {
     case macBookAir13InchEarly2015
     /// Device is a [MacBook Air (11-inch, Early 2015)](https://support.apple.com/kb/SP713)
     ///
-    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookair/macbook-air-2015-13in-device.jpg)
+    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookair/macbook-air-2015-11in-device.jpg)
     case macBookAir11InchEarly2015
     /// Device is a [MacBook Air (13-inch, Early 2014)](https://support.apple.com/kb/SP700) or [MacBook Air (13-inch, Mid 2013)](https://support.apple.com/kb/SP678)
     ///
@@ -431,7 +431,7 @@ public enum Device {
     case macBookAir13InchEarly2014
     /// Device is a [MacBook Air (11-inch, Early 2014)](https://support.apple.com/kb/SP699) or [MacBook Air (11-inch, Mid 2013)](https://support.apple.com/kb/SP677)
     ///
-    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookair/macbook-air-2013-2014-13in-device.jpg)
+    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookair/macbook-air-2013-2014-11in-device.jpg)
     case macBookAir11InchEarly2014
     /// Device is a [MacBook Air (13-inch, Mid 2012)](https://support.apple.com/kb/SP670)
     ///
@@ -439,7 +439,7 @@ public enum Device {
     case macBookAir13InchMid2012
     /// Device is a [MacBook Air (11-inch, Mid 2012)](https://support.apple.com/kb/SP650)
     ///
-    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookair/macbook-air-2012-13in-device.jpg)
+    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookair/macbook-air-2012-11in-device.jpg)
     case macBookAir11InchMid2012
     /// Device is a [MacBook Air (13-inch, Mid 2011)](https://support.apple.com/kb/SP683)
     ///
@@ -447,7 +447,7 @@ public enum Device {
     case macBookAir13InchMid2011
     /// Device is a [MacBook Air (11-inch, Mid 2011)](https://support.apple.com/kb/SP631)
     ///
-    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookair/macbook-air-2011-13in-device.jpg)
+    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookair/macbook-air-2011-11in-device.jpg)
     case macBookAir11InchMid2011
     /// Device is a [MacBook Air (13-inch, Late 2010)](https://support.apple.com/kb/SP618)
     ///
@@ -455,7 +455,7 @@ public enum Device {
     case macBookAir13InchLate2010
     /// Device is a [MacBook Air (11-inch, Late 2010)](https://support.apple.com/kb/SP617)
     ///
-    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookair/macbook-air-2009-2010-13in-device.jpg)
+    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookair/macbook-air-2010-11in-device.jpg)
     case macBookAir11InchLate2010
     /// Device is a [MacBook Air (Mid 2009)](https://support.apple.com/kb/SP548)
     ///
@@ -471,7 +471,7 @@ public enum Device {
     case macBookPro13Inch2019TwoThunderbolt3Ports
     /// Device is a [MacBook Pro (15-inch, 2019)](https://support.apple.com/kb/SP794)
     ///
-    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-2018-13in-device.jpg)
+    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-2018-15in-device.jpg)
     case macBookPro15Inch2019
     /// Device is a [MacBook Pro (13-inch, 2019, Four Thunderbolt 3 ports)](https://support.apple.com/kb/SP795) or [MacBook Pro (13-inch, 2018, Four Thunderbolt 3 ports)](https://support.apple.com/kb/SP775)
     ///
@@ -487,11 +487,11 @@ public enum Device {
     case macBookPro15Inch2017
     /// Device is a [MacBook Pro (13-inch, 2017, Four Thunderbolt 3 ports)](https://support.apple.com/kb/SP755)
     ///
-    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-2017-15in-device.jpg)
+    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-2017-13in-device.jpg)
     case macBookPro13Inch2017FourThunderbolt3Ports
     /// Device is a [MacBook Pro (13-inch, 2017, Two Thunderbolt 3 ports)](https://support.apple.com/kb/SP754)
     ///
-    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-2017-15in-device.jpg)
+    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-2017-13in-device-2thunderbolt-3ports.jpg)
     case macBookPro13Inch2017TwoThunderbolt3Ports
     /// Device is a [MacBook Pro (15-inch, 2016)](https://support.apple.com/kb/SP749)
     ///
@@ -499,11 +499,11 @@ public enum Device {
     case macBookPro15Inch2016
     /// Device is a [MacBook Pro (13-inch, 2016, Four Thunderbolt 3 ports)](https://support.apple.com/kb/SP748)
     ///
-    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-2016-15in-device.jpg)
+    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-2016-13in-device.jpg)
     case macBookPro13Inch2016FourThunderbolt3Ports
     /// Device is a [MacBook Pro (13-inch, 2016, Two Thunderbolt 3 ports)](https://support.apple.com/kb/SP747)
     ///
-    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-2016-15in-device.jpg)
+    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-2016-13in-device.jpg)
     case macBookPro13Inch2016TwoThunderbolt3Ports
     /// Device is a [MacBook Pro (Retina, 15-inch, Mid 2015)](https://support.apple.com/kb/SP719)
     ///
@@ -511,7 +511,7 @@ public enum Device {
     case macBookProRetina15InchMid2015
     /// Device is a [MacBook Pro (Retina, 13-inch, Early 2015)](https://support.apple.com/kb/SP715)
     ///
-    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-mid-2015-15in-device.jpg)
+    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-early-2015-13in-device.jpg)
     case macBookProRetina13InchEarly2015
     /// Device is a [MacBook Pro (Retina, 15-inch, Mid 2014)](https://support.apple.com/kb/SP704) or [MacBook Pro (Retina, 15-inch, Late 2013)](https://support.apple.com/kb/SP690)
     ///
@@ -519,7 +519,7 @@ public enum Device {
     case macBookProRetina15InchMid2014
     /// Device is a [MacBook Pro (Retina, 13-inch, Mid 2014)](https://support.apple.com/kb/SP703) or [MacBook Pro (Retina, 13-inch, Late 2013)](https://support.apple.com/kb/SP691)
     ///
-    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-mid-2014-15in-device.jpg)
+    /// ![Image](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macbookpro/macbook-pro-mid-2014-13in-device.jpg)
     case macBookProRetina13InchMid2014
     /// Device is an [iMac Pro](https://support.apple.com/kb/SP771)
     ///
