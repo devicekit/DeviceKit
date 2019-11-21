@@ -357,6 +357,14 @@ public enum Device {
       return (width: -1, height: -1)
     #endif
   }
+  
+  #if os(iOS) || os(tvOS)
+    /// Returns whether the device is any of the simulator
+    /// Useful when there is a need to check and skip running a portion of code (location request or others)
+    public var isSimulator: Bool {
+        return isOneOf(Device.allSimulators)
+    }
+  #endif
 
   #if os(iOS)
     /// All iPods
@@ -446,12 +454,6 @@ public enum Device {
       return isOneOf(Device.allPads)
               || isOneOf(Device.allSimulatorPads)
               || (UIDevice.current.userInterfaceIdiom == .pad && isCurrent)
-    }
-
-    /// Returns whether the device is any of the simulator
-    /// Useful when there is a need to check and skip running a portion of code (location request or others)
-    public var isSimulator: Bool {
-      return isOneOf(Device.allSimulators)
     }
 
     /// If this device is a simulator return the underlying device,
