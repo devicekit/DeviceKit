@@ -794,7 +794,7 @@ public enum Device {
       case .unknown: return -1
       }
     #elseif os(macOS)
-    return -1
+      return -1
     #endif
   }
   #endif
