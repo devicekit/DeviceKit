@@ -482,12 +482,12 @@ public enum Device {
 
     /// Returns whether or not the device has Touch ID
     public var isTouchIDCapable: Bool {
-      return isOneOf(Device.allTouchIDCapableDevices)
+      return isOneOf(Device.allTouchIDCapableDevices) || isOneOf(Device.allTouchIDCapableDevices.map(Device.simulator))
     }
 
     /// Returns whether or not the device has Face ID
     public var isFaceIDCapable: Bool {
-      return isOneOf(Device.allFaceIDCapableDevices)
+      return isOneOf(Device.allFaceIDCapableDevices) || isOneOf(Device.allFaceIDCapableDevices.map(Device.simulator))
     }
 
     /// Returns whether or not the device has any biometric sensor (i.e. Touch ID or Face ID)
@@ -502,7 +502,7 @@ public enum Device {
 
     /// Returns whether or not the device has a sensor housing
     public var hasSensorHousing: Bool {
-      return isOneOf(Device.allDevicesWithSensorHousing)
+      return isOneOf(Device.allDevicesWithSensorHousing) || isOneOf(Device.allDevicesWithSensorHousing.map(Device.simulator))
     }
 
     /// All devices that feature a screen with rounded corners.
@@ -512,7 +512,7 @@ public enum Device {
 
     /// Returns whether or not the device has a screen with rounded corners.
     public var hasRoundedDisplayCorners: Bool {
-      return isOneOf(Device.allDevicesWithRoundedDisplayCorners)
+      return isOneOf(Device.allDevicesWithRoundedDisplayCorners) || isOneOf(Device.allDevicesWithRoundedDisplayCorners.map(Device.simulator))
     }
 
     /// All devices that have 3D Touch support.
@@ -522,7 +522,7 @@ public enum Device {
 
     /// Returns whether or not the device has 3D Touch support.
     public var has3dTouchSupport: Bool {
-      return isOneOf(Device.allDevicesWith3dTouchSupport)
+      return isOneOf(Device.allDevicesWith3dTouchSupport) || isOneOf(Device.allDevicesWith3dTouchSupport.map(Device.simulator))
     }
 
     /// All devices that support wireless charging.
@@ -532,7 +532,7 @@ public enum Device {
 
     /// Returns whether or not the device supports wireless charging
     public var supportsWirelessCharging: Bool {
-      return isOneOf(Device.allDevicesWithWirelessChargingSupport)
+      return isOneOf(Device.allDevicesWithWirelessChargingSupport) || isOneOf(Device.allDevicesWithWirelessChargingSupport.map(Device.simulator))
     }
   #elseif os(tvOS)
     /// All TVs
@@ -562,7 +562,7 @@ public enum Device {
 
     /// Returns whether or not the device has Force Touch support.
     public var hasForceTouchSupport: Bool {
-      return isOneOf(Device.allWatchesWithForceTouchSupport)
+      return isOneOf(Device.allWatchesWithForceTouchSupport) || isOneOf(Device.allWatchesWithForceTouchSupport.map(Device.simulator))
     }
   #endif
 
@@ -1012,6 +1012,7 @@ extension Device {
   % for device in list(filter(lambda device: device.applePencilSupport == 2, iOSDevices)):
       case .${device.caseName}: return .secondGeneration
   % end
+      case .simulator(let model): return model.applePencilSupport
       default: return []
     }
   }
