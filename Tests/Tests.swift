@@ -277,9 +277,10 @@ class DeviceKitTests: XCTestCase {
 
   func testSafeDescription() {
     for device in Device.allRealDevices {
-      if device == .iPhoneXR || device == .iPhoneXS || device == .iPhoneXSMax {
+      switch device {
+      case .iPhoneXR, .iPhoneXS, .iPhoneXSMax:
         XCTAssertNotEqual(device.description, device.safeDescription)
-      } else {
+      default:
         XCTAssertEqual(device.description, device.safeDescription)
       }
     }
@@ -429,17 +430,6 @@ class DeviceKitTests: XCTestCase {
     }
   }
 
-  func testSafeDescriptioniOS() {
-    for device in Device.allRealDevices {
-      switch device {
-      case .iPhoneXR, .iPhoneXS, .iPhoneXSMax:
-        XCTAssertNotEqual(device.description, device.safeDescription)
-      default:
-        XCTAssertEqual(device.description, device.safeDescription)
-      }
-    }
-  }
-
   #endif
 
   // MARK: - tvOS
@@ -453,7 +443,7 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.mapToDevice(identifier: "AppleTV6,2").description, "Apple TV 4K")
   }
 
-  func testSafeDescriptiontvOS() {
+  func testSafeDescription() {
     for device in Device.allRealDevices {
       XCTAssertEqual(device.description, device.safeDescription)
     }
