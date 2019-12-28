@@ -721,7 +721,7 @@ public enum Device {
 
     /// All devices that have 3D Touch support.
     public static var allDevicesWith3dTouchSupport: [Device] {
-      return [.iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE, .iPhone8, .iPhone8Plus, .iPhoneX, .iPhoneXS, .iPhoneXSMax]
+      return [.iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhone8, .iPhone8Plus, .iPhoneX, .iPhoneXS, .iPhoneXSMax]
     }
 
     /// Returns whether or not the device has 3D Touch support.
