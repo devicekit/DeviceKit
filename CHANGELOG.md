@@ -24,22 +24,22 @@ pod 'DeviceKit', :git => 'https://github.com/devicekit/DeviceKit.git', :branch =
 - You can now check which devices support wireless charging through the following variables: `Device.allDevicesWithWirelessChargingSupport` and `Device.current.supportsWirelessCharging` (#209)
 - New `.safeDescription` variable that will provide you with a safe version of the `.description` variable. (#212)
   - Example: "iPhone Xʀ" vs "iPhone XR"
-  
-  ### Bugfixes
-  - `.allDevicesWith3dTouchSupport` contained `.iPhoneSE` which was incorrect. (#226)
-  - Some variables would return incorrect values when running on the simulator. (#227)
 
-  ## Version 2.3.0
+### Bugfixes
+- `.allDevicesWith3dTouchSupport` contained `.iPhoneSE` which was incorrect. (#226)
+- Some variables would return incorrect values when running on the simulator. (#227)
 
-  Releasedate: 2019-10-02
+## Version 2.3.0
 
- ```ruby
+Releasedate: 2019-10-02
+
+```ruby
 pod 'DeviceKit', '~> 2.3'
 ```
 
-  ### New devices
-  - Added support for the new september 2019 devices:
-    - iPad (7th generation)
+### New devices
+- Added support for the new september 2019 devices:
+  - iPad (7th generation)
 
 ## Version 2.2.0
 
