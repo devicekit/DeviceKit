@@ -619,7 +619,7 @@ public enum Device {
       return allMiniDevices.map(Device.simulator)
     }
 
-    /// All simulator Plus-Sized Devices
+    /// All simulator X series Devices
     @available(*, deprecated, renamed: "allSimulatorDevicesWithSensorHousing")
     public static var allSimulatorXSeriesDevices: [Device] {
       return allDevicesWithSensorHousing.map(Device.simulator)
