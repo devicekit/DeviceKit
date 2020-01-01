@@ -295,10 +295,25 @@ iMacs = [
 ## https://support.apple.com/mac/mac-pro, https://support.apple.com/en-us/HT202888
 macPros = [
             Device(
+            "macPro2019",
+            "Device is a [Mac Pro (2019)](https://support.apple.com/kb/SP797)",
+            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macpro/id-mac-pro-2019.jpg",
+            ["MacPro7,1"], 0, (), "Mac Pro (2019)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
+            Device(
+            "macProLate2013",
+            "Device is a [Mac Pro (Late 2013)](https://support.apple.com/kb/SP697)",
+            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macpro/id-mac-pro-2013.jpg",
+            ["MacPro6,1"], 0, (), "Mac Pro (Late 2013)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
+            Device(
             "macProMid2012",
             "Device is a [Mac Pro (Mid 2012)](https://support.apple.com/kb/SP652)",
-            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macpro/macpro_previous.png",
-            ["MacPro5,1"], 0, (), "Mac Pro (Mid 2012)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0)
+            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macpro/id-mac-pro-2009-2012.jpg",
+            ["MacPro5,1"], 0, (), "Mac Pro (Mid 2010 to Mid 2012)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0),
+            Device(
+            "macProEarly2009",
+            "Device is a [Mac Pro (Early 2009)](https://support.apple.com/kb/SP506)",
+            "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macpro/id-mac-pro-2009-2012.jpg",
+            ["MacPro4,1"], 0, (), "Mac Pro (Early 2009)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0)
 ]
 ## https://support.apple.com/mac/macbook, https://support.apple.com/en-us/HT201608
 macBooks = [
