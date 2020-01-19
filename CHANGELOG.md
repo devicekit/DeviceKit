@@ -6,25 +6,40 @@ Releasedate: TBD
 
 ```ruby
 pod 'DeviceKit', :git => 'https://github.com/devicekit/DeviceKit.git', :branch => 'master'
+#pod 'DeviceKit', '~> 3.0'
 ```
 
 ### Breaking changes
-- The enum for the Apple TV HD has been renamed from `.appleTV4` to `.appleTVHD`. (#211)
+- The enum for the Apple TV HD has been renamed from `.appleTV4` to `.appleTVHD`. ([#211](https://github.com/devicekit/DeviceKit/pull/211))
+- `.allSimulatorXSeriesDevices` has been deprecated and replaced by `.allSimulatorDevicesWithSensorHousing`. ([#212](https://github.com/devicekit/DeviceKit/pull/212))
+- `.allXSeriesDevices` has been deprecated and replaced by `.allDevicesWithSensorHousing`. ([#212](https://github.com/devicekit/DeviceKit/pull/212))
+
+#### Camera
+- `CameraTypes` has been renamed to `CameraType`. ([#212](https://github.com/devicekit/DeviceKit/pull/212))
+- `CameraType.normal` has been deprecated and replaced by `CameraType.wide`. ([#212](https://github.com/devicekit/DeviceKit/pull/212))
+- `.allDevicesWithNormalCamera` has been deprecated and replaced by `.allDevicesWithWideCamera`. ([#212](https://github.com/devicekit/DeviceKit/pull/212))
+- `.hasNormalCamera` has been deprecated and replaced by `.hasWideCamera`. ([#212](https://github.com/devicekit/DeviceKit/pull/212))
 
 ### New features
-- You can now check which devices support wireless charging through the following variables: `Device.allDevicesWithWirelessChargingSupport` and `Device.current.supportsWirelessCharging` (#209)
+- You can now check which devices support wireless charging through the following variables: `Device.allDevicesWithWirelessChargingSupport` and `Device.current.supportsWirelessCharging` ([#209](https://github.com/devicekit/DeviceKit/pull/209))
+- New `.safeDescription` variable that will provide you with a safe version of the `.description` variable. ([#212](https://github.com/devicekit/DeviceKit/pull/212))
+  - Example: "iPhone Xʀ" vs "iPhone XR"
 
-  ## Version 2.3.0
+### Bugfixes
+- `.allDevicesWith3dTouchSupport` contained `.iPhoneSE` which was incorrect. ([#226](https://github.com/devicekit/DeviceKit/pull/226))
+- Some variables would return incorrect values when running on the simulator. ([#227](https://github.com/devicekit/DeviceKit/pull/227))
 
-  Releasedate: 2019-10-02
+## Version 2.3.0
 
-  ```ruby
-  pod 'DeviceKit', '~> 2.3'
-  ```
+Releasedate: 2019-10-02
 
-  ### New devices
-  - Added support for the new september 2019 devices:
-    - iPad (7th generation)
+```ruby
+pod 'DeviceKit', '~> 2.3'
+```
+
+### New devices
+- Added support for the new september 2019 devices:
+  - iPad (7th generation)
 
 ## Version 2.2.0
 
