@@ -1,12 +1,15 @@
 # Changelog
 
+<!--```ruby
+pod 'DeviceKit', :git => 'https://github.com/devicekit/DeviceKit.git', :branch => 'master'
+```-->
+
 ## Version 3.0.0
 
 Releasedate: 2020-01-19
 
 ```ruby
-pod 'DeviceKit', :git => 'https://github.com/devicekit/DeviceKit.git', :branch => 'master'
-#pod 'DeviceKit', '~> 3.0'
+pod 'DeviceKit', '~> 3.0'
 ```
 
 ### Breaking changes
