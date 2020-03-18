@@ -760,9 +760,19 @@ public enum Device {
       return [.iPhone8, .iPhone8Plus, .iPhoneX, .iPhoneXS, .iPhoneXSMax, .iPhoneXR, .iPhone11, .iPhone11Pro, .iPhone11ProMax]
     }
 
-    /// Returns whether or not the device supports wireless charging
+    /// Returns whether or not the device supports wireless charging.
     public var supportsWirelessCharging: Bool {
       return isOneOf(Device.allDevicesWithWirelessChargingSupport) || isOneOf(Device.allDevicesWithWirelessChargingSupport.map(Device.simulator))
+    }
+
+    /// All devices that have a LiDAR sensor.
+    public static var allDevicesWithALidarSensor: [Device] {
+      return [.iPadPro11Inch2, .iPadPro12Inch4]
+    }
+
+    /// Returns whether or not the device has a LiDAR sensor.
+    public var hasLidarSensor: Bool {
+      return isOneOf(Device.allDevicesWithALidarSensor) || isOneOf(Device.allDevicesWithALidarSensor.map(Device.simulator))
     }
   #elseif os(tvOS)
     /// All TVs
