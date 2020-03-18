@@ -430,6 +430,12 @@ class DeviceKitTests: XCTestCase {
     }
   }
 
+  func testLidarValues() {
+    for device in Device.allRealDevices {
+      XCTAssertTrue(device.hasLidarSensor == (device == .iPadPro11Inch2 || device == .iPadPro12Inch4))
+    }
+  }
+
   #endif
 
   // MARK: - tvOS
