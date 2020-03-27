@@ -224,13 +224,13 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP785/ipad-pro-12-2018_2x.png)
     case iPadPro12Inch3
-    /// Device is an [iPad Pro 11-inch (2nd generation)](TODO)
+    /// Device is an [iPad Pro 11-inch (2nd generation)](https://support.apple.com/kb/SP814)
     ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP784/ipad-pro-11-2018_2x.png)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP814/ipad-pro-11-2020.jpeg)
     case iPadPro11Inch2
-    /// Device is an [iPad Pro 12.9-inch (4th generation)](TODO)
+    /// Device is an [iPad Pro 12.9-inch (4th generation)](https://support.apple.com/kb/SP815)
     ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP785/ipad-pro-12-2018_2x.png)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP815/ipad-pro-12-2020.jpeg)
     case iPadPro12Inch4
     /// Device is a [HomePod](https://support.apple.com/kb/SP773)
     ///
@@ -376,8 +376,8 @@ public enum Device {
       case "iPad7,3", "iPad7,4": return iPadPro10Inch
       case "iPad8,1", "iPad8,2", "iPad8,3", "iPad8,4": return iPadPro11Inch
       case "iPad8,5", "iPad8,6", "iPad8,7", "iPad8,8": return iPadPro12Inch3
-      case "TODO1": return iPadPro11Inch2
-      case "TODO2": return iPadPro12Inch4
+      case "iPad8,9", "iPad8,10": return iPadPro11Inch2
+      case "iPad8,11", "iPad8,12": return iPadPro12Inch4
       case "AudioAccessory1,1": return homePod
       case "i386", "x86_64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "iOS"))
       default: return unknown(identifier)
