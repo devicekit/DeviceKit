@@ -351,7 +351,7 @@ class DeviceKitTests: XCTestCase {
   }
 
   func testIsPro() {
-    XCTAssertEqual(Device.allProDevices, [.iPhone11Pro, .iPhone11ProMax, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3])
+    XCTAssertEqual(Device.allProDevices, [.iPhone11Pro, .iPhone11ProMax, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3, .iPadPro11Inch2, .iPadPro12Inch4])
   }
 
   func testGuidedAccessSession() {
