@@ -1,12 +1,27 @@
 # Changelog
 
+## Version 3.1.0
+
+Releasedate: TBD
+
+```ruby
+pod 'DeviceKit', :git => 'https://github.com/devicekit/DeviceKit.git', :branch => 'master'
+#pod 'DeviceKit', '~> 3.1'
+```
+
+### 2020 iPad Pro
+Added support for the new 2020 iPad Pro.
+```swift
+Device.iPadPro11Inch2 // iPad Pro (11-inch) (2nd generation)
+Device.iPadPro12inch4 // iPad Pro (12.9-inch) (4th generation)
+```
+
 ## Version 3.0.0
 
 Releasedate: 2020-01-19
 
 ```ruby
-pod 'DeviceKit', :git => 'https://github.com/devicekit/DeviceKit.git', :branch => 'master'
-#pod 'DeviceKit', '~> 3.0'
+pod 'DeviceKit', '~> 3.0'
 ```
 
 ### Breaking changes
