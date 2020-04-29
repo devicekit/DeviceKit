@@ -1,12 +1,26 @@
 # Changelog
 
+## Version 3.2.0
+
+Releasedate: TBD
+
+```ruby
+pod 'DeviceKit', :git => 'https://github.com/devicekit/DeviceKit.git', :branch => 'master'
+#pod 'DeviceKit', '~> 3.2'
+```
+
+### iPhone SE (2nd generation)
+- Added support for the iPhone SE (2nd generation). ([#238](https://github.com/devicekit/DeviceKit/pull/238))
+```swift
+Device.iPhoneSE2
+```
+
 ## Version 3.1.0
 
 Releasedate: 2020-03-29
 
 ```ruby
-pod 'DeviceKit', :git => 'https://github.com/devicekit/DeviceKit.git', :branch => 'master'
-#pod 'DeviceKit', '~> 3.1'
+pod 'DeviceKit', '~> 3.1'
 ```
 
 ### 2020 iPad Pro
