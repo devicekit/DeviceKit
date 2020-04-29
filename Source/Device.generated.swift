@@ -144,9 +144,9 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP806/sp806-iphone11pro-max_2x.png)
     case iPhone11ProMax
-    /// Device is an [iPhone SE (2nd generation)](TODO SUPPORT LINK)
+    /// Device is an [iPhone SE (2nd generation)](https://support.apple.com/kb/SP820)
     ///
-    /// ![Image](TODO APPLECARE_ALLGEOS IMAGE)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP820/iphone-se-2nd-gen_2x.png)
     case iPhoneSE2
     /// Device is an [iPad 2](https://support.apple.com/kb/SP622)
     ///
@@ -360,7 +360,7 @@ public enum Device {
       case "iPhone12,1": return iPhone11
       case "iPhone12,3": return iPhone11Pro
       case "iPhone12,5": return iPhone11ProMax
-      case "iPhoneSETODOID": return iPhoneSE2
+      case "iPhone12,8": return iPhoneSE2
       case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4": return iPad2
       case "iPad3,1", "iPad3,2", "iPad3,3": return iPad3
       case "iPad3,4", "iPad3,5", "iPad3,6": return iPad4
