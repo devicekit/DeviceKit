@@ -19,7 +19,7 @@ class DeviceKitTests: XCTestCase {
   func testDeviceSimulator() {
     XCTAssertTrue(device.isOneOf(Device.allSimulators))
   }
-  
+
   func testIsSimulator() {
     XCTAssertTrue(device.isSimulator)
   }
