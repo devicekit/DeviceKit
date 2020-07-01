@@ -41,6 +41,7 @@ xcuserdata
 Utilities/Docker/*.tar.gz
 .swiftpm
 Package.resolved
+vendor
 
 ## Generated Files
 # *.generated.swift # we have to check it in because of CocoaPods ...
