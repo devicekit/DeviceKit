@@ -923,12 +923,6 @@ public enum Device {
               || (UIDevice.current.userInterfaceIdiom == .pad && isCurrent)
     }
 
-    /// Returns whether the device is any of the simulator
-    /// Useful when there is a need to check and skip running a portion of code (location request or others)
-    public var isSimulator: Bool {
-      return isOneOf(Device.allSimulators)
-    }
-
     /// If this device is a simulator return the underlying device,
     /// otherwise return `self`.
     public var realDevice: Device {
@@ -1075,6 +1069,12 @@ public enum Device {
   /// All simulators
   public static var allSimulators: [Device] {
     return allRealDevices.map(Device.simulator)
+  }
+  
+  /// Returns whether the device is any of the simulator
+  /// Useful when there is a need to check and skip running a portion of code (location request or others)
+  public var isSimulator: Bool {
+    return isOneOf(Device.allSimulators)
   }
 
   /**
