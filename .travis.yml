@@ -2,18 +2,25 @@ language: objective-c
 osx_image: xcode11.6
 
 env:
-  - DESTINATION='platform=iOS Simulator,OS=12.4,name=iPad (5th generation)' # Latest OS not available on Travis.
-  - DESTINATION='platform=iOS Simulator,OS=12.4,name=iPad (6th generation)' # Latest OS not available on Travis.
   - DESTINATION='platform=iOS Simulator,OS=12.4,name=iPad Air' # Latest OS not available on Travis.
   - DESTINATION='platform=iOS Simulator,OS=12.4,name=iPad Air 2' # Latest OS not available on Travis.
+  - DESTINATION='platform=iOS Simulator,OS=12.4,name=iPad (5th generation)' # Latest OS not available on Travis.
+  - DESTINATION='platform=iOS Simulator,OS=12.4,name=iPad (6th generation)' # Latest OS not available on Travis.
+  - DESTINATION='platform=iOS Simulator,name=iPad (7th generation)'
+  
   - DESTINATION='platform=iOS Simulator,name=iPad Pro (9.7-inch)'
   - DESTINATION='platform=iOS Simulator,OS=12.4,name=iPad Pro (10.5-inch)' # Latest OS not available on Travis.
   - DESTINATION='platform=iOS Simulator,OS=13.3,name=iPad Pro (11-inch)' # Latest OS not available on Travis.
   - DESTINATION='platform=iOS Simulator,name=iPad Pro (11-inch) (2nd generation)'
+  
   - DESTINATION='platform=iOS Simulator,OS=12.4,name=iPad Pro (12.9-inch)' # Latest OS not available on Travis.
   - DESTINATION='platform=iOS Simulator,OS=12.4,name=iPad Pro (12.9-inch) (2nd generation)' # Latest OS not available on Travis.
   - DESTINATION='platform=iOS Simulator,OS=13.3,name=iPad Pro (12.9-inch) (3rd generation)' # Latest OS not available on Travis.
   - DESTINATION='platform=iOS Simulator,name=iPad Pro (12.9-inch) (4th generation)'
+  
+  - DESTINATION='platform=iOS Simulator,OS=12.4,name=iPhone SE (1st generation)' # Latest OS not available on Travis.
+  - DESTINATION='platform=iOS Simulator,name=iPhone SE (2nd generation)'
+  
   - DESTINATION='platform=iOS Simulator,OS=12.4,name=iPhone 5s' # Latest OS not available on Travis.
   - DESTINATION='platform=iOS Simulator,OS=12.4,name=iPhone 6' # Latest OS not available on Travis.
   - DESTINATION='platform=iOS Simulator,OS=12.4,name=iPhone 6 Plus' # Latest OS not available on Travis.
@@ -23,7 +30,7 @@ env:
   - DESTINATION='platform=iOS Simulator,OS=12.4,name=iPhone 7 Plus' # Latest OS not available on Travis.
   - DESTINATION='platform=iOS Simulator,name=iPhone 8'
   - DESTINATION='platform=iOS Simulator,name=iPhone 8 Plus'
-  - DESTINATION='platform=iOS Simulator,OS=12.4,name=iPhone SE (1st generation)' # Latest OS not available on Travis.
+  
   - DESTINATION='platform=iOS Simulator,OS=12.4,name=iPhone X' # Latest OS not available on Travis.
   - DESTINATION='platform=iOS Simulator,OS=12.4,name=iPhone XR' # Latest OS not available on Travis.
   - DESTINATION='platform=iOS Simulator,OS=12.4,name=iPhone XS' # Latest OS not available on Travis.
@@ -31,7 +38,6 @@ env:
   - DESTINATION='platform=iOS Simulator,name=iPhone 11'
   - DESTINATION='platform=iOS Simulator,name=iPhone 11 Pro'
   - DESTINATION='platform=iOS Simulator,name=iPhone 11 Pro Max'
-  - DESTINATION='platform=iOS Simulator,name=iPhone SE (2nd generation)'
 
   - DESTINATION='platform=tvOS Simulator,name=Apple TV'
   - DESTINATION='platform=tvOS Simulator,name=Apple TV 4K'
