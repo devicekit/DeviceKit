@@ -1,12 +1,25 @@
 # Changelog
 
+## Version 4.0.0
+
+Releasedate: 2020-09-04
+
+```ruby
+pod 'DeviceKit', :git => 'https://github.com/devicekit/DeviceKit.git', :branch => 'master'
+#pod 'DeviceKit', '~> 4.0'
+```
+
+This is a v4.0.0 release because of the possibly breaking change of no longer supporting iOS 9. This decision was made because of Xcode 12 no longer supporting iOS 8.
+
+- Dropped support for iOS 8. Lowest supported version is now iOS 9. ([#249](https://github.com/devicekit/DeviceKit/pull/249))
+- Updated project settings for Xcode 12. ([#248](https://github.com/devicekit/DeviceKit/pull/248))
+
 ## Version 3.2.0
 
 Releasedate: 2020-04-29
 
 ```ruby
-pod 'DeviceKit', :git => 'https://github.com/devicekit/DeviceKit.git', :branch => 'master'
-#pod 'DeviceKit', '~> 3.2'
+pod 'DeviceKit', '~> 3.2'
 ```
 
 ### iPhone SE (2nd generation)
