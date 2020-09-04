@@ -18,7 +18,7 @@
 
 `DeviceKit` is a value-type replacement of [`UIDevice`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/).
 
-## Current version 3.2.0
+## Current version 4.0.0
 See our detailed [changelog](CHANGELOG.md) for the latest features, improvements and bug fixes.
 
 ## Features
@@ -41,7 +41,7 @@ See our detailed [changelog](CHANGELOG.md) for the latest features, improvements
 
 ## Requirements
 
-- iOS 8.0+ (linking against iOS 9.3 required)
+- iOS 9.0+ (linking against iOS 9.3 required)
 - tvOS 9.0+ (linking against tvOS 9.2 required)
 - watchOS 2.0+
 
@@ -52,7 +52,11 @@ DeviceKit can be installed in various ways.
 
 #### Swift 5
 ```ruby
-pod 'DeviceKit', '~> 2.0'
+pod 'DeviceKit', '~> 4.0'
+```
+#### iOS 8.0 support
+```ruby
+pod 'DeviceKit', '3.2'
 ```
 #### Swift 4.0 - Swift 4.2
 ```ruby
@@ -67,11 +71,32 @@ pod 'DeviceKit', '~> 1.2.3'
 pod 'DeviceKit', :git => 'https://github.com/devicekit/DeviceKit.git', :branch => 'swift-2.3-unsupported'
 ```
 
+### Swift Package Manager
+
+#### Swift 5
+```swift
+dependencies: [
+    .package(url: "https://github.com/devicekit/DeviceKit.git", from: "4.0.0"),
+    /// ...
+]
+```
+#### iOS 8.0 support
+```swift
+dependencies: [
+    .package(url: "https://github.com/devicekit/DeviceKit.git", from: "3.2.0"),
+    /// ...
+]
+```
+
 ### Carthage
 
 #### Swift 5
 ```ogdl
-github "devicekit/DeviceKit" ~> 2.0
+github "devicekit/DeviceKit" ~> 4.0
+```
+#### iOS 8.0 support
+```ogdl
+github "devicekit/DeviceKit" ~> 3.2
 ```
 #### Swift 4.0 - Swift 4.2
 ```ogdl
