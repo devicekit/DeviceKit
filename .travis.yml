@@ -10,7 +10,7 @@ env:
   
   - DESTINATION='platform=iOS Simulator,name=iPad Pro (9.7-inch)'
   - DESTINATION='platform=iOS Simulator,OS=12.4,name=iPad Pro (10.5-inch)' # Latest OS not available on Travis.
-  - DESTINATION='platform=iOS Simulator,OS=13.3,name=iPad Pro (11-inch)' # Latest OS not available on Travis.
+  - DESTINATION='platform=iOS Simulator,OS=13.3,name=iPad Pro (11-inch) (1st generation)' # Latest OS not available on Travis.
   - DESTINATION='platform=iOS Simulator,name=iPad Pro (11-inch) (2nd generation)'
   
   - DESTINATION='platform=iOS Simulator,OS=12.4,name=iPad Pro (12.9-inch)' # Latest OS not available on Travis.
