@@ -755,7 +755,7 @@ extension Device: CustomStringConvertible {
 % for device in iOSDevices:
       case .${device.caseName}: return "${device.description}"
 % end
-      case .simulator(let model): return "Simulator (\(model))"
+      case .simulator(let model): return "Simulator (\(model.description))"
       case .unknown(let identifier): return identifier
       }
     #elseif os(watchOS)
@@ -763,7 +763,7 @@ extension Device: CustomStringConvertible {
 % for device in watchOSDevices:
       case .${device.caseName}: return "${device.description}"
 % end
-      case .simulator(let model): return "Simulator (\(model))"
+      case .simulator(let model): return "Simulator (\(model.description))"
       case .unknown(let identifier): return identifier
       }
     #elseif os(tvOS)
@@ -771,7 +771,7 @@ extension Device: CustomStringConvertible {
 % for device in tvOSDevices:
       case .${device.caseName}: return "${device.description}"
 % end
-      case .simulator(let model): return "Simulator (\(model))"
+      case .simulator(let model): return "Simulator (\(model.description))"
       case .unknown(let identifier): return identifier
       }
     #endif
@@ -787,7 +787,7 @@ extension Device: CustomStringConvertible {
   % for device in iOSDevices:
       case .${device.caseName}: return "${device.safeDescription}"
   % end
-      case .simulator(let model): return "Simulator (\(model))"
+      case .simulator(let model): return "Simulator (\(model.safeDescription))"
       case .unknown(let identifier): return identifier
       }
     #elseif os(watchOS)
@@ -795,7 +795,7 @@ extension Device: CustomStringConvertible {
   % for device in watchOSDevices:
       case .${device.caseName}: return "${device.safeDescription}"
   % end
-      case .simulator(let model): return "Simulator (\(model))"
+      case .simulator(let model): return "Simulator (\(model.safeDescription))"
       case .unknown(let identifier): return identifier
       }
     #elseif os(tvOS)
@@ -803,7 +803,7 @@ extension Device: CustomStringConvertible {
   % for device in tvOSDevices:
       case .${device.caseName}: return "${device.safeDescription}"
   % end
-      case .simulator(let model): return "Simulator (\(model))"
+      case .simulator(let model): return "Simulator (\(model.safeDescription))"
       case .unknown(let identifier): return identifier
       }
     #endif

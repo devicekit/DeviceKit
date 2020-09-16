@@ -1074,7 +1074,7 @@ extension Device: CustomStringConvertible {
       case .iPadPro11Inch2: return "iPad Pro (11-inch) (2nd generation)"
       case .iPadPro12Inch4: return "iPad Pro (12.9-inch) (4th generation)"
       case .homePod: return "HomePod"
-      case .simulator(let model): return "Simulator (\(model))"
+      case .simulator(let model): return "Simulator (\(model.description))"
       case .unknown(let identifier): return identifier
       }
     #elseif os(watchOS)
@@ -1091,14 +1091,14 @@ extension Device: CustomStringConvertible {
       case .appleWatchSeries4_44mm: return "Apple Watch Series 4 44mm"
       case .appleWatchSeries5_40mm: return "Apple Watch Series 5 40mm"
       case .appleWatchSeries5_44mm: return "Apple Watch Series 5 44mm"
-      case .simulator(let model): return "Simulator (\(model))"
+      case .simulator(let model): return "Simulator (\(model.description))"
       case .unknown(let identifier): return identifier
       }
     #elseif os(tvOS)
       switch self {
       case .appleTVHD: return "Apple TV HD"
       case .appleTV4K: return "Apple TV 4K"
-      case .simulator(let model): return "Simulator (\(model))"
+      case .simulator(let model): return "Simulator (\(model.description))"
       case .unknown(let identifier): return identifier
       }
     #endif
@@ -1159,7 +1159,7 @@ extension Device: CustomStringConvertible {
       case .iPadPro11Inch2: return "iPad Pro (11-inch) (2nd generation)"
       case .iPadPro12Inch4: return "iPad Pro (12.9-inch) (4th generation)"
       case .homePod: return "HomePod"
-      case .simulator(let model): return "Simulator (\(model))"
+      case .simulator(let model): return "Simulator (\(model.safeDescription))"
       case .unknown(let identifier): return identifier
       }
     #elseif os(watchOS)
@@ -1176,14 +1176,14 @@ extension Device: CustomStringConvertible {
       case .appleWatchSeries4_44mm: return "Apple Watch Series 4 44mm"
       case .appleWatchSeries5_40mm: return "Apple Watch Series 5 40mm"
       case .appleWatchSeries5_44mm: return "Apple Watch Series 5 44mm"
-      case .simulator(let model): return "Simulator (\(model))"
+      case .simulator(let model): return "Simulator (\(model.safeDescription))"
       case .unknown(let identifier): return identifier
       }
     #elseif os(tvOS)
       switch self {
       case .appleTVHD: return "Apple TV HD"
       case .appleTV4K: return "Apple TV 4K"
-      case .simulator(let model): return "Simulator (\(model))"
+      case .simulator(let model): return "Simulator (\(model.safeDescription))"
       case .unknown(let identifier): return identifier
       }
     #endif
