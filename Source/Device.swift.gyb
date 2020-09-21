@@ -77,6 +77,7 @@ iPads = [
             Device("iPad6",          "Device is an [iPad (6th generation)](https://support.apple.com/kb/SP774)",               "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP774/sp774-ipad-6-gen_2x.png",                ["iPad7,5", "iPad7,6"],                       9.7,  (3, 4),     "iPad (6th generation)", "iPad (6th generation)", 264, False, False, False, False, True, False, False, False, False, 1, False, 1, False),
             Device("iPadAir3",       "Device is an [iPad Air (3rd generation)](https://support.apple.com/kb/SP787)",           "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP787/ipad-air-2019.jpg",                      ["iPad11,3", "iPad11,4"],                     10.5, (3, 4),     "iPad Air (3rd generation)", "iPad Air (3rd generation)", 264, False, False, False, False, True, False, False, False, False, 1, False, 1, False),
             Device("iPad7",          "Device is an [iPad (7th generation)](https://support.apple.com/kb/SP807)",               "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP807/sp807-ipad-7th-gen_2x.png",              ["iPad7,11", "iPad7,12"],                     10.2, (3, 4),     "iPad (7th generation)", "iPad (7th generation)", 264, False, False, False, False, True, False, False, False, False, 1, False, 1, False),
+            Device("iPad8",          "Device is an [iPad (8th generation)](https://support.apple.com/kb/SP822)",               "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP822/sp822-ipad-8gen_2x.png",                 ["iPad11,6", "iPad11,7"],                     10.2, (3, 4),     "iPad (8th generation)", "iPad (8th generation)", 264, False, False, False, False, True, False, False, False, False, 1, False, 1, False),
             Device("iPadMini",       "Device is an [iPad Mini](https://support.apple.com/kb/SP661)",                           "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP661/sp661_ipad_mini_color.jpg",              ["iPad2,5", "iPad2,6", "iPad2,7"],            7.9,  (3, 4),     "iPad Mini", "iPad Mini", 163, False, True, False, False, False, False, False, False, False, 0, False, 1, False),
             Device("iPadMini2",      "Device is an [iPad Mini 2](https://support.apple.com/kb/SP693)",                         "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP693/SP693-specs_color-mul.png",              ["iPad4,4", "iPad4,5", "iPad4,6"],            7.9,  (3, 4),     "iPad Mini 2", "iPad Mini 2", 326, False, True, False, False, False, False, False, False, False, 0, False, 1, False),
             Device("iPadMini3",      "Device is an [iPad Mini 3](https://support.apple.com/kb/SP709)",                         "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP709/SP709-space_gray.jpeg",                  ["iPad4,7", "iPad4,8", "iPad4,9"],            7.9,  (3, 4),     "iPad Mini 3", "iPad Mini 3", 326, False, True, False, False, True, False, False, False, False, 0, False, 1, False),
@@ -173,7 +174,31 @@ watches = [
             "appleWatchSeries5_44mm",
             "Device is an [Apple Watch Series 5](https://support.apple.com/kb/SP808)",
             "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP808/sp808-apple-watch-series-5_2x.png",
-            ["Watch5,2", "Watch5,4"], 2.0, (4,5), "Apple Watch Series 5 44mm", "Apple Watch Series 5 44mm", 326, False, False, False, False, False, False, False, True, False, 0, True, 0, False)
+            ["Watch5,2", "Watch5,4"], 2.0, (4,5), "Apple Watch Series 5 44mm", "Apple Watch Series 5 44mm", 326, False, False, False, False, False, False, False, True, False, 0, True, 0, False),
+
+            Device(
+            "appleWatchSeries6_40mm",
+            "Device is an [Apple Watch Series 6](https://support.apple.com/kb/SP826)",
+            "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP826/sp826-apple-watch-series6-580_2x.png",
+            ["Watch6,1", "Watch6,3"], 1.8, (4,5), "Apple Watch Series 6 40mm", "Apple Watch Series 6 40mm", 326, False, False, False, False, False, False, False, True, False, 0, False, 0, False),
+
+            Device(
+            "appleWatchSeries6_44mm",
+            "Device is an [Apple Watch Series 6](https://support.apple.com/kb/SP826)",
+            "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP826/sp826-apple-watch-series6-580_2x.png",
+            ["Watch6,2", "Watch6,4"], 2.0, (4,5), "Apple Watch Series 6 44mm", "Apple Watch Series 6 44mm", 326, False, False, False, False, False, False, False, True, False, 0, False, 0, False),
+
+            Device(
+            "appleWatchSE_40mm",
+            "Device is an [Apple Watch SE](https://support.apple.com/kb/SP827)",
+            "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP827/sp827-apple-watch-se-580_2x.png",
+            ["Watch5,9", "Watch5,11"], 1.8, (4,5), "Apple Watch SE 40mm", "Apple Watch SE 40mm", 326, False, False, False, False, False, False, False, True, False, 0, False, 0, False),
+
+            Device(
+            "appleWatchSE_44mm",
+            "Device is an [Apple Watch SE](https://support.apple.com/kb/SP827)",
+            "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP827/sp827-apple-watch-se-580_2x.png",
+            ["Watch5,10", "Watch5,12"], 2.0, (4,5), "Apple Watch SE 44mm", "Apple Watch SE 44mm", 326, False, False, False, False, False, False, False, True, False, 0, False, 0, False)
   ]
 
 iOSDevices = iPods + iPhones + iPads + homePods

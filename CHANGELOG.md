@@ -1,12 +1,36 @@
 # Changelog
 
+## Version 4.1.0
+
+Releasedate: 2020-09-21
+
+```ruby
+pod 'DeviceKit', :git => 'https://github.com/devicekit/DeviceKit.git', :branch => 'master'
+#pod 'DeviceKit', '~> 4.1'
+```
+
+This release will add support for the September 2020 devices, which will be released on the 18th of September: ([#256](https://github.com/devicekit/DeviceKit/pull/256))
+- iPad (8th generation)
+- Apple Watch Series 6
+- Apple Watch SE
+```swift
+Device.iPad8
+
+Device.appleWatchSeries6_40mm
+Device.appleWatchSeries6_44mm
+
+Device.appleWatchSE_40mm
+Device.appleWatchSE_44mm
+```
+
+Support for iPad Air (4th generation) will be added in a later version since it will be a long time before we know its device identifiers.
+
 ## Version 4.0.0
 
 Releasedate: 2020-09-04
 
 ```ruby
-pod 'DeviceKit', :git => 'https://github.com/devicekit/DeviceKit.git', :branch => 'master'
-#pod 'DeviceKit', '~> 4.0'
+pod 'DeviceKit', '~> 4.0'
 ```
 
 This is a v4.0.0 release because of the possibly breaking change of no longer supporting iOS 9. This decision was made because of Xcode 12 no longer supporting iOS 8.
