@@ -184,9 +184,9 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP807/sp807-ipad-7th-gen_2x.png)
     case iPad7
-    /// Device is an [iPad (8th generation)](SUPPORTTODO)
+    /// Device is an [iPad (8th generation)](https://support.apple.com/kb/SP822)
     ///
-    /// ![Image](TODO)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP822/sp822-ipad-8gen_2x.png)
     case iPad8
     /// Device is an [iPad Mini](https://support.apple.com/kb/SP661)
     ///
@@ -302,21 +302,21 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP808/sp808-apple-watch-series-5_2x.png)
     case appleWatchSeries5_44mm
-    /// Device is an [Apple Watch Series 6](SUPPORTTODO)
+    /// Device is an [Apple Watch Series 6](https://support.apple.com/kb/SP826)
     ///
-    /// ![Image](TODO)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP826/sp826-apple-watch-series6-580_2x.png)
     case appleWatchSeries6_40mm
-    /// Device is an [Apple Watch Series 6](SUPPORTTODO)
+    /// Device is an [Apple Watch Series 6](https://support.apple.com/kb/SP826)
     ///
-    /// ![Image](TODO)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP826/sp826-apple-watch-series6-580_2x.png)
     case appleWatchSeries6_44mm
-    /// Device is an [Apple Watch SE](SUPPORTTODO)
+    /// Device is an [Apple Watch SE](https://support.apple.com/kb/SP827)
     ///
-    /// ![Image](TODO)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP827/sp827-apple-watch-se-580_2x.png)
     case appleWatchSE_40mm
-    /// Device is an [Apple Watch SE](SUPPORTTODO)
+    /// Device is an [Apple Watch SE](https://support.apple.com/kb/SP827)
     ///
-    /// ![Image](TODO)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP827/sp827-apple-watch-se-580_2x.png)
     case appleWatchSE_44mm
   #endif
 
@@ -390,7 +390,7 @@ public enum Device {
       case "iPad7,5", "iPad7,6": return iPad6
       case "iPad11,3", "iPad11,4": return iPadAir3
       case "iPad7,11", "iPad7,12": return iPad7
-      case "iPad8TODO": return iPad8
+      case "iPad11,6", "iPad11,7": return iPad8
       case "iPad2,5", "iPad2,6", "iPad2,7": return iPadMini
       case "iPad4,4", "iPad4,5", "iPad4,6": return iPadMini2
       case "iPad4,7", "iPad4,8", "iPad4,9": return iPadMini3
@@ -429,10 +429,10 @@ public enum Device {
       case "Watch4,2", "Watch4,4": return appleWatchSeries4_44mm
       case "Watch5,1", "Watch5,3": return appleWatchSeries5_40mm
       case "Watch5,2", "Watch5,4": return appleWatchSeries5_44mm
-      case "Watch6TODO1": return appleWatchSeries6_40mm
-      case "Watch6TODO2": return appleWatchSeries6_44mm
-      case "WatchSETODO1": return appleWatchSE_40mm
-      case "WatchSETODO2": return appleWatchSE_44mm
+      case "Watch6,1", "Watch6,3": return appleWatchSeries6_40mm
+      case "Watch6,2", "Watch6,4": return appleWatchSeries6_44mm
+      case "Watch5,9", "Watch5,11": return appleWatchSE_40mm
+      case "Watch5,10", "Watch5,12": return appleWatchSE_44mm
       case "i386", "x86_64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "watchOS"))
       default: return unknown(identifier)
       }
