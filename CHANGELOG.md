@@ -1,12 +1,36 @@
 # Changelog
 
+## Version 4.2.0
+
+Releasedate: TBD
+
+```ruby
+pod 'DeviceKit', '~> 4.2'
+```
+
+This release will add support for the October 2020 devices. ([#262](https://github.com/devicekit/DeviceKit/pull/262))
+
+- iPad Air (4th generation)
+- iPhone 12
+- iPhone 12 mini
+- iPhone 12 Pro
+- iPhone 12 Pro Max
+```swift
+Device.iPadAir4
+
+Device.iPhone12
+Device.iPhone12Mini
+
+Device.iPhone12Pro
+Device.iPhone12ProMax
+```
+
 ## Version 4.1.0
 
 Releasedate: 2020-09-21
 
 ```ruby
-pod 'DeviceKit', :git => 'https://github.com/devicekit/DeviceKit.git', :branch => 'master'
-#pod 'DeviceKit', '~> 4.1'
+pod 'DeviceKit', '~> 4.1'
 ```
 
 This release will add support for the September 2020 devices, which will be released on the 18th of September: ([#256](https://github.com/devicekit/DeviceKit/pull/256))
