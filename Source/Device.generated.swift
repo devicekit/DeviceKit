@@ -401,10 +401,10 @@ public enum Device {
       case "iPhone12,3": return iPhone11Pro
       case "iPhone12,5": return iPhone11ProMax
       case "iPhone12,8": return iPhoneSE2
-      case "iPhone12TODO1": return iPhone12
-      case "iPhone12TODO2": return iPhone12Mini
-      case "iPhone12TODO3": return iPhone12Pro
-      case "iPhone12TODO4": return iPhone12ProMax
+      case "iPhone13,2": return iPhone12
+      case "iPhone13,1": return iPhone12Mini
+      case "iPhone13,3": return iPhone12Pro
+      case "iPhone13,4": return iPhone12ProMax
       case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4": return iPad2
       case "iPad3,1", "iPad3,2", "iPad3,3": return iPad3
       case "iPad3,4", "iPad3,5", "iPad3,6": return iPad4
