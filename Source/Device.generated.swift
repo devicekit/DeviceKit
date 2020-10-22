@@ -609,7 +609,7 @@ public enum Device {
       case .iPadAir3: return (width: 3, height: 4)
       case .iPad7: return (width: 3, height: 4)
       case .iPad8: return (width: 3, height: 4)
-      case .iPadAir4: return (width: 3, height: 4)
+      case .iPadAir4: return (width: 41, height: 59)
       case .iPadMini: return (width: 3, height: 4)
       case .iPadMini2: return (width: 3, height: 4)
       case .iPadMini3: return (width: 3, height: 4)
