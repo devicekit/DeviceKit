@@ -433,8 +433,9 @@ class DeviceKitTests: XCTestCase {
   }
 
   func testLidarValues() {
+    let lidarDevices: [Device] = [.iPhone12Pro, .iPhone12ProMax, .iPadPro11Inch2, .iPadPro12Inch4]
     for device in Device.allRealDevices {
-      XCTAssertTrue(device.hasLidarSensor == (device == .iPadPro11Inch2 || device == .iPadPro12Inch4))
+      XCTAssertTrue(device.hasLidarSensor == device.isOneOf(lidarDevices))
     }
   }
 
