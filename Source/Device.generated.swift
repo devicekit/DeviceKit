@@ -609,7 +609,7 @@ public enum Device {
       case .iPadAir3: return (width: 3, height: 4)
       case .iPad7: return (width: 3, height: 4)
       case .iPad8: return (width: 3, height: 4)
-      case .iPadAir4: return (width: 3, height: 4)
+      case .iPadAir4: return (width: 41, height: 59)
       case .iPadMini: return (width: 3, height: 4)
       case .iPadMini2: return (width: 3, height: 4)
       case .iPadMini3: return (width: 3, height: 4)
@@ -844,7 +844,7 @@ public enum Device {
 
     /// All devices that have a LiDAR sensor.
     public static var allDevicesWithALidarSensor: [Device] {
-      return [.iPadPro11Inch2, .iPadPro12Inch4]
+      return [.iPhone12Pro, .iPhone12ProMax, .iPadPro11Inch2, .iPadPro12Inch4]
     }
 
     /// Returns whether or not the device has a LiDAR sensor.
