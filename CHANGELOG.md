@@ -1,5 +1,18 @@
 # Changelog
 
+## Version 4.2.1
+
+Releasedate: 2020-10-22
+
+```ruby
+pod 'DeviceKit', '~> 4.2'
+```
+
+This version fixes a couple of bugs introduced in the v4.2.0 release:
+
+- `Device.allDevicesWithALidarSensor` didn't include iPhone 12 Pro and iPhone 12 Pro Max.
+- `Device.iPadAir4.screenRatio` returned an invalid screen ratio.
+
 ## Version 4.2.0
 
 Releasedate: 2020-10-21
