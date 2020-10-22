@@ -844,7 +844,7 @@ public enum Device {
 
     /// All devices that have a LiDAR sensor.
     public static var allDevicesWithALidarSensor: [Device] {
-      return [.iPadPro11Inch2, .iPadPro12Inch4]
+      return [.iPhone12Pro, .iPhone12ProMax, .iPadPro11Inch2, .iPadPro12Inch4]
     }
 
     /// Returns whether or not the device has a LiDAR sensor.
