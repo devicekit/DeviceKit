@@ -10,8 +10,8 @@ pod 'DeviceKit', '~> 4.2'
 
 This version fixes a couple of bugs introduced in the v4.2.0 release:
 
-- `Device.allDevicesWithALidarSensor` didn't include iPhone 12 Pro and iPhone 12 Pro Max.
-- `Device.iPadAir4.screenRatio` returned an invalid screen ratio.
+- `Device.allDevicesWithALidarSensor` didn't include iPhone 12 Pro and iPhone 12 Pro Max. ([#268](https://github.com/devicekit/DeviceKit/pull/268) [#266](https://github.com/devicekit/DeviceKit/issues/266))
+- `Device.iPadAir4.screenRatio` returned an invalid screen ratio. ([#268](https://github.com/devicekit/DeviceKit/pull/268) [#267](https://github.com/devicekit/DeviceKit/issues/267))
 
 ## Version 4.2.0
 
