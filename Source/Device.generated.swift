@@ -148,17 +148,17 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP820/iphone-se-2nd-gen_2x.png)
     case iPhoneSE2
-    /// Device is an [iPhone 12](TODO)
+    /// Device is an [iPhone 12](https://support.apple.com/kb/SP830)
     ///
-    /// ![Image](TODO)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP830/sp830-iphone12-ios14_2x.png)
     case iPhone12
     /// Device is an [iPhone 12 mini](TODO)
     ///
     /// ![Image](TODO)
     case iPhone12Mini
-    /// Device is an [iPhone 12 Pro](TODO)
+    /// Device is an [iPhone 12 Pro](https://support.apple.com/kb/SP831)
     ///
-    /// ![Image](TODO)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP831/iphone12pro-ios14_2x.png)
     case iPhone12Pro
     /// Device is an [iPhone 12 Pro Max](TODO)
     ///
@@ -204,9 +204,9 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP822/sp822-ipad-8gen_2x.png)
     case iPad8
-    /// Device is an [iPad Air (4th generation)](TODO)
+    /// Device is an [iPad Air (4th generation)](https://support.apple.com/kb/SP828)
     ///
-    /// ![Image](TODO)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP828/sp828ipad-air-ipados14-960_2x.png)
     case iPadAir4
     /// Device is an [iPad Mini](https://support.apple.com/kb/SP661)
     ///
