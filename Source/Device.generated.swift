@@ -152,17 +152,17 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP830/sp830-iphone12-ios14_2x.png)
     case iPhone12
-    /// Device is an [iPhone 12 mini](TODO)
+    /// Device is an [iPhone 12 mini](https://support.apple.com/kb/SP829)
     ///
-    /// ![Image](TODO)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP829/sp829-iphone12mini-ios14_2x.png)
     case iPhone12Mini
     /// Device is an [iPhone 12 Pro](https://support.apple.com/kb/SP831)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP831/iphone12pro-ios14_2x.png)
     case iPhone12Pro
-    /// Device is an [iPhone 12 Pro Max](TODO)
+    /// Device is an [iPhone 12 Pro Max](https://support.apple.com/kb/SP832)
     ///
-    /// ![Image](TODO)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP832/iphone12promax-ios14_2x.png)
     case iPhone12ProMax
     /// Device is an [iPad 2](https://support.apple.com/kb/SP622)
     ///
