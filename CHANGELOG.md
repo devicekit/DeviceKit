@@ -1,5 +1,18 @@
 # Changelog
 
+## Version 4.3.0
+
+Releasedate: 2021-02-12
+
+```ruby
+pod 'DeviceKit', '~> 4.3'
+```
+
+This version adds support for the Simulator running on Apple Silicon and fixes documentation:
+
+- Support for running in Simulator on Apple Silicon. ([#273](https://github.com/devicekit/DeviceKit/pull/273))
+- Fix tech specs link and images for iPhone 12 models and iPad Air (4th generation). ([#272](https://github.com/devicekit/DeviceKit/pull/272))
+
 ## Version 4.2.1
 
 Releasedate: 2020-10-22
