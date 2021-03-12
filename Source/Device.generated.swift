@@ -902,13 +902,13 @@ public enum Device {
   }
   
   /// all SensorHousing Devices
-  public static var allSensorHousingDevices: [Device] {
+  public static var allFullScreenDevices: [Device] {
     return allDevicesWithSensorHousing + allSimulatorDevicesWithSensorHousing
   }
   
   ///  Returns whether the device is a SensorHousing Device
-  public static var isSensorHousingDevice: Bool {
-    return allSensorHousingDevices.contains(current)
+  public static var isFullScreenDevice: Bool {
+    return allFullScreenDevices.contains(current)
  }
 
   /**
