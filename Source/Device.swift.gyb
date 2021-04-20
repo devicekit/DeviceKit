@@ -39,7 +39,7 @@ class Device:
 iPods = [
             Device("iPodTouch5",     "Device is an [iPod touch (5th generation)](https://support.apple.com/kb/SP657)", "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP657/sp657_ipod-touch_size.jpg",                      ["iPod5,1"],                                  4,    (9, 16),    "iPod touch (5th generation)", "iPod touch (5th generation)", 326, False, False, False, False, False, False, False, False, False, 0, False, 1, False),
             Device("iPodTouch6",     "Device is an [iPod touch (6th generation)](https://support.apple.com/kb/SP720)", "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP720/SP720-ipod-touch-specs-color-sg-2015.jpg",       ["iPod7,1"],                                  4,    (9, 16),    "iPod touch (6th generation)", "iPod touch (6th generation)", 326, False, False, False, False, False, False, False, False, False, 0, False, 1, False),
-            Device("iPodTouch7",     "Device is an [iPod touch (7th generation)](https://support.apple.com/kb/SP796)", "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP796/ipod-touch-7th-gen_2x.png",                      ["iPod9,1"],                                  4,    (9, 16),    "iPod touch (7th generation)", "iPod touch (7th generation)", 326, False, False, False, False, False, False, False, False, False, 0, False, 1, False)
+            Device("iPodTouch7",     "Device is an [iPod touch (7th generation)](https://support.apple.com/kb/SP796)", "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP796/ipod-touch-7th-gen_2x.png",                      ["iPod9,1"],                                  4,    (9, 16),    "iPod touch (7th generation)", "iPod touch (7th generation)", 326, False, False, False, False, False, False, False, False, False, 0, False, 1, False),
         ]
 
 iPhones = [
@@ -68,7 +68,7 @@ iPhones = [
             Device("iPhone12",       "Device is an [iPhone 12](https://support.apple.com/kb/SP830)",                   "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP830/sp830-iphone12-ios14_2x.png",                    ["iPhone13,2"],                               6.1,  (9, 19.5),  "iPhone 12", "iPhone 12", 460, False, False, False, True, False, True, True, True, True, 0, False, 13, False),
             Device("iPhone12Mini",   "Device is an [iPhone 12 mini](https://support.apple.com/kb/SP829)",              "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP829/sp829-iphone12mini-ios14_2x.png",                ["iPhone13,1"],                               5.4,  (9, 19.5),  "iPhone 12 mini", "iPhone 12 mini", 476, False, False, False, True, False, True, True, True, True, 0, False, 13, False),
             Device("iPhone12Pro",    "Device is an [iPhone 12 Pro](https://support.apple.com/kb/SP831)",               "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP831/iphone12pro-ios14_2x.png",                       ["iPhone13,3"],                               6.1,  (9, 19.5),  "iPhone 12 Pro", "iPhone 12 Pro", 460, False, False, True, True, False, True, True, True, True, 0, False, 123, True),
-            Device("iPhone12ProMax", "Device is an [iPhone 12 Pro Max](https://support.apple.com/kb/SP832)",           "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP832/iphone12promax-ios14_2x.png",                    ["iPhone13,4"],                               6.7,  (9, 19.5),  "iPhone 12 Pro Max", "iPhone 12 Pro Max", 458, True, False, True, True, False, True, True, True, True, 0, False, 123, True)
+            Device("iPhone12ProMax", "Device is an [iPhone 12 Pro Max](https://support.apple.com/kb/SP832)",           "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP832/iphone12promax-ios14_2x.png",                    ["iPhone13,4"],                               6.7,  (9, 19.5),  "iPhone 12 Pro Max", "iPhone 12 Pro Max", 458, True, False, True, True, False, True, True, True, True, 0, False, 123, True),
           ]
 
 iPads = [
@@ -97,7 +97,7 @@ iPads = [
             Device("iPadPro11Inch2", "Device is an [iPad Pro 11-inch (2nd generation)](https://support.apple.com/kb/SP814)",   "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP814/ipad-pro-11-2020.jpeg",                  ["iPad8,9", "iPad8,10"],                      11.0, (139, 199), "iPad Pro (11-inch) (2nd generation)", "iPad Pro (11-inch) (2nd generation)", 264, False, False, True, False, False, True, False, False, True, 2, False, 13, True),
             Device("iPadPro12Inch4", "Device is an [iPad Pro 12.9-inch (4th generation)](https://support.apple.com/kb/SP815)", "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP815/ipad-pro-12-2020.jpeg",                  ["iPad8,11", "iPad8,12"],                     12.9, (512, 683), "iPad Pro (12.9-inch) (4th generation)", "iPad Pro (12.9-inch) (4th generation)", 264, False, False, True, False, False, True, False, False, True, 2, False, 13, True),
             Device("iPadPro11Inch3", "Device is an [iPad Pro 11-inch (3rd generation)](https://support.apple.com/kb/TODO)",    "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/TODO",                                         ["iPadTODO1", "iPadTODO2"],                   11.0, (139, 199), "iPad Pro (11-inch) (3rd generation)", "iPad Pro (11-inch) (3rd generation)", 264, False, False, True, False, False, True, False, False, True, 2, False, 13, True),
-            Device("iPadPro12Inch5", "Device is an [iPad Pro 12.9-inch (5th generation)](https://support.apple.com/kb/TODO)",  "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/TODO",                                         ["iPadTODO3", "iPadTODO4"],                   12.9, (512, 683), "iPad Pro (12.9-inch) (5th generation)", "iPad Pro (12.9-inch) (5th generation)", 264, False, False, True, False, False, True, False, False, True, 2, False, 13, True)
+            Device("iPadPro12Inch5", "Device is an [iPad Pro 12.9-inch (5th generation)](https://support.apple.com/kb/TODO)",  "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/TODO",                                         ["iPadTODO3", "iPadTODO4"],                   12.9, (512, 683), "iPad Pro (12.9-inch) (5th generation)", "iPad Pro (12.9-inch) (5th generation)", 264, False, False, True, False, False, True, False, False, True, 2, False, 13, True),
         ]
 
 homePods = [
@@ -107,7 +107,7 @@ homePods = [
 tvs = [
             Device("appleTVHD",      "Device is an [Apple TV HD](https://support.apple.com/kb/SP724) (Previously Apple TV (4th generation))", "http://images.apple.com/v/tv/c/images/overview/buy_tv_large_2x.jpg",                      ["AppleTV5,3"],                               0,    (),         "Apple TV HD", "Apple TV HD", -1, False, False, False, False, False, False, False, False, False, 0, False, 0, False),
             Device("appleTV4K",      "Device is an [Apple TV 4K](https://support.apple.com/kb/SP769)",                                        "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP769/appletv4k.png",           ["AppleTV6,2"],                               0,    (),         "Apple TV 4K", "Apple TV 4K", -1, False, False, False, False, False, False, False, False, False, 0, False, 0, False),
-            Device("appleTV4K2",     "Device is an [Apple TV 4K (2nd generation)](https://support.apple.com/kb/TODO)",                        "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/TODO",                          ["AppleTVTODO"],                              0,    (),         "Apple TV 4K (2nd generation)", "Apple TV 4K (2nd generation)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0, False)
+            Device("appleTV4K2",     "Device is an [Apple TV 4K (2nd generation)](https://support.apple.com/kb/TODO)",                        "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/TODO",                          ["AppleTVTODO"],                              0,    (),         "Apple TV 4K (2nd generation)", "Apple TV 4K (2nd generation)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0, False),
       ]
 
 # watchOS
@@ -206,7 +206,7 @@ watches = [
             "appleWatchSE_44mm",
             "Device is an [Apple Watch SE](https://support.apple.com/kb/SP827)",
             "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP827/sp827-apple-watch-se-580_2x.png",
-            ["Watch5,10", "Watch5,12"], 2.0, (4,5), "Apple Watch SE 44mm", "Apple Watch SE 44mm", 326, False, False, False, False, False, False, False, True, False, 0, False, 0, False)
+            ["Watch5,10", "Watch5,12"], 2.0, (4,5), "Apple Watch SE 44mm", "Apple Watch SE 44mm", 326, False, False, False, False, False, False, False, True, False, 0, False, 0, False),
   ]
 
 iOSDevices = iPods + iPhones + iPads + homePods
