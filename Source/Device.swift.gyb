@@ -106,7 +106,8 @@ homePods = [
 # tvOS
 tvs = [
             Device("appleTVHD",      "Device is an [Apple TV HD](https://support.apple.com/kb/SP724) (Previously Apple TV (4th generation))", "http://images.apple.com/v/tv/c/images/overview/buy_tv_large_2x.jpg",                      ["AppleTV5,3"],                               0,    (),         "Apple TV HD", "Apple TV HD", -1, False, False, False, False, False, False, False, False, False, 0, False, 0, False),
-            Device("appleTV4K",      "Device is an [Apple TV 4K](https://support.apple.com/kb/SP769)",                                        "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP769/appletv4k.png",           ["AppleTV6,2"],                               0,    (),         "Apple TV 4K", "Apple TV 4K", -1, False, False, False, False, False, False, False, False, False, 0, False, 0, False)
+            Device("appleTV4K",      "Device is an [Apple TV 4K](https://support.apple.com/kb/SP769)",                                        "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP769/appletv4k.png",           ["AppleTV6,2"],                               0,    (),         "Apple TV 4K", "Apple TV 4K", -1, False, False, False, False, False, False, False, False, False, 0, False, 0, False),
+            Device("appleTV4K2",     "Device is an [Apple TV 4K (2nd generation)](https://support.apple.com/kb/TODO)",                        "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/TODO",                          ["AppleTVTODO"],                              0,    (),         "Apple TV 4K (2nd generation)", "Apple TV 4K (2nd generation)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0, False)
       ]
 
 # watchOS
