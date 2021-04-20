@@ -1,5 +1,20 @@
 # Changelog
 
+## Version 4.4.0
+
+Releasedate: 2021-05-15 ish
+
+```ruby
+pod 'DeviceKit', '~> 4.4'
+```
+
+### April 2021 devices
+This version adds support for the devices announced at the April 2021 Apple Event:
+
+- iPad Pro (11-inch) (3rd generation) `Device.iPadPro11Inch3`
+- iPad Pro (12.9-inch) (5th generation) `Device.iPadPro12Inch5`
+- Apple TV 4K (2nd generation) `Device.appleTV4K2`
+
 ## Version 4.3.0
 
 Releasedate: 2021-02-12
