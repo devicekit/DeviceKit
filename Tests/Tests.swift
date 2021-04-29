@@ -42,7 +42,7 @@ class DeviceKitTests: XCTestCase {
       XCTAssertFalse(device.isPhone)
     } else if UIDevice.current.userInterfaceIdiom == .phone {
       XCTAssertFalse(device.isPad)
-      XCTAssertTrue(device.isPhone)
+      XCTAssertTrue(device.isPhone) // TODO: failed for iPod touch (7th generation)
     }
 
     for pad in Device.allPads {
@@ -353,7 +353,7 @@ class DeviceKitTests: XCTestCase {
   }
 
   func testIsPro() {
-    XCTAssertEqual(Device.allProDevices, [.iPhone11Pro, .iPhone11ProMax, .iPhone12Pro, .iPhone12ProMax, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3, .iPadPro11Inch2, .iPadPro12Inch4])
+    XCTAssertEqual(Device.allProDevices, [.iPhone11Pro, .iPhone11ProMax, .iPhone12Pro, .iPhone12ProMax, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5])
   }
 
   func testGuidedAccessSession() {
@@ -433,7 +433,7 @@ class DeviceKitTests: XCTestCase {
   }
 
   func testLidarValues() {
-    let lidarDevices: [Device] = [.iPhone12Pro, .iPhone12ProMax, .iPadPro11Inch2, .iPadPro12Inch4]
+    let lidarDevices: [Device] = [.iPhone12Pro, .iPhone12ProMax, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5]
     for device in Device.allRealDevices {
       XCTAssertTrue(device.hasLidarSensor == device.isOneOf(lidarDevices))
     }
