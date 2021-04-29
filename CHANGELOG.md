@@ -2,14 +2,13 @@
 
 ## Version 4.4.0
 
-Releasedate: 2021-05-15 ish
+Releasedate: 2021-04-29
 
 ```ruby
 pod 'DeviceKit', '~> 4.4'
 ```
 
-### April 2021 devices
-This version adds support for the devices announced at the April 2021 Apple Event:
+This version adds support for the devices announced at the April 2021 Apple Event: ([#279](https://github.com/devicekit/DeviceKit/pull/279))
 
 - iPad Pro (11-inch) (3rd generation) `Device.iPadPro11Inch3`
 - iPad Pro (12.9-inch) (5th generation) `Device.iPadPro12Inch5`
