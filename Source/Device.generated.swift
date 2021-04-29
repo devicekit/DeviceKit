@@ -441,8 +441,8 @@ public enum Device {
       case "iPad8,5", "iPad8,6", "iPad8,7", "iPad8,8": return iPadPro12Inch3
       case "iPad8,9", "iPad8,10": return iPadPro11Inch2
       case "iPad8,11", "iPad8,12": return iPadPro12Inch4
-      case "iPadTODO1", "iPadTODO2": return iPadPro11Inch3
-      case "iPadTODO3", "iPadTODO4": return iPadPro12Inch5
+      case "iPad13,4", "iPad13,5", "iPad13,6", "iPad13,7": return iPadPro11Inch3
+      case "iPad13,8", "iPad13,9", "iPad13,10", "iPad13,11": return iPadPro12Inch5
       case "AudioAccessory1,1": return homePod
       case "i386", "x86_64", "arm64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "iOS"))
       default: return unknown(identifier)
@@ -451,7 +451,7 @@ public enum Device {
       switch identifier {
       case "AppleTV5,3": return appleTVHD
       case "AppleTV6,2": return appleTV4K
-      case "AppleTVTODO": return appleTV4K2
+      case "AppleTV11,1": return appleTV4K2
       case "i386", "x86_64", "arm64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "tvOS"))
       default: return unknown(identifier)
       }
