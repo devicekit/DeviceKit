@@ -9,8 +9,33 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  danger:
     runs-on: macos-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+          ruby-version: 2.6.3
+
+      - uses: MeilCli/danger-action@v5
+        with:
+          plugins_file: Gemfile
+          install_path: vendor/bundle
+          danger_file: Dangerfile
+          danger_id: danger-pr
+
+  test:
+    runs-on: macos-latest
+
+    strategy:
+      matrix:
+        node:
+          - platform=iOS Simulator,name=iPhone 12 Pro
+          - platform=iOS Simulator,name=iPhone X
+          - platform=iOS Simulator,name=iPhone 6s Plus
 
     steps:
       - uses: actions/checkout@v2
@@ -21,7 +46,4 @@ jobs:
           ruby-version: 2.6.3
 
       - name: xcodebuild
-        run: set -o pipefail && xcodebuild -scheme DeviceKit -destination "platform=iOS Simulator,name=iPhone 12 Pro" -configuration Debug ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES test
-
-      - name: danger
-        run: bundle exec danger
+        run: set -o pipefail && xcodebuild -scheme DeviceKit -destination "${{ matrix.node }}" -configuration Debug ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES test
