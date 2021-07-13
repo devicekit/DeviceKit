@@ -33,9 +33,19 @@ jobs:
     strategy:
       matrix:
         platform:
+          - platform=iOS Simulator,name=iPhone 12 Pro Max
           - platform=iOS Simulator,name=iPhone 12 Pro
-          - platform=iOS Simulator,name=iPhone X
-          - platform=iOS Simulator,name=iPhone 6s Plus
+          - platform=iOS Simulator,name=iPhone 12
+          - platform=iOS Simulator,name=iPhone 12 mini
+          - platform=iOS Simulator,name=iPhone 11 Pro Max
+          - platform=iOS Simulator,name=iPhone 11 Pro
+          - platform=iOS Simulator,name=iPhone 11
+          - platform=iOS Simulator,name=iPhone 8 Plus
+          - platform=iOS Simulator,name=iPhone 8
+          - platform=iOS Simulator,name=iPhone SE (2nd generation)
+          - platform=iOS Simulator,name=iPod touch (7th generation)
+          - platform=tvOS Simulator,name=Apple TV
+          - platform=tvOS Simulator,name=Apple TV 4K
 
     steps:
       - uses: actions/checkout@v2
