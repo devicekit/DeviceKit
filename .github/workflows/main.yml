@@ -14,12 +14,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      
-      - name: update bundler
-        run: bundle update --bundler
-      
-      - name: setup
-        run: bundle install
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
 
       - name: xcodebuild
         run: set -o pipefail && xcodebuild -scheme DeviceKit -destination "platform=iOS Simulator,name=iPhone 12 Pro" -configuration Debug ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES test
