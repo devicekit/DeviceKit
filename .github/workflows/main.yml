@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-11
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: setup
+        run: bundle install
+
+      - name: xcodebuild
+        run: set -o pipefail && xcodebuild -scheme DeviceKit -destination "platform=iOS Simulator,name=iPhone 12 Pro" -configuration Debug ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES test
+
+      - name: danger
+        run: bundle exec danger
