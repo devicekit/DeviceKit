@@ -18,6 +18,7 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+          ruby-version: 2.6.3
 
       - name: xcodebuild
         run: set -o pipefail && xcodebuild -scheme DeviceKit -destination "platform=iOS Simulator,name=iPhone 12 Pro" -configuration Debug ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES test
