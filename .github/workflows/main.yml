@@ -15,6 +15,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
+      - name: update bundler
+        run: bundle update --bundler
+      
       - name: setup
         run: bundle install
 
