@@ -32,7 +32,7 @@ jobs:
 
     strategy:
       matrix:
-        node:
+        platform:
           - platform=iOS Simulator,name=iPhone 12 Pro
           - platform=iOS Simulator,name=iPhone X
           - platform=iOS Simulator,name=iPhone 6s Plus
@@ -46,4 +46,4 @@ jobs:
           ruby-version: 2.6.3
 
       - name: xcodebuild
-        run: set -o pipefail && xcodebuild -scheme DeviceKit -destination "${{ matrix.node }}" -configuration Debug ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES test
+        run: set -o pipefail && xcodebuild -scheme DeviceKit -destination "${{ matrix.platform }}" -configuration Debug ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES test
