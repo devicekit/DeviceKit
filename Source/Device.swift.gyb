@@ -213,18 +213,6 @@ watches = [
             "Device is an [Apple Watch SE](https://support.apple.com/kb/SP827)",
             "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP827/sp827-apple-watch-se-580_2x.png",
             ["Watch5,10", "Watch5,12"], 2.0, (4,5), "Apple Watch SE 44mm", "Apple Watch SE 44mm", 326, False, False, False, False, False, False, False, True, False, 0, False, 0, False),
-
-            Device(
-            "appleWatchSeries7_40mm",
-            "Device is an [Apple Watch Series 7](https://support.apple.com/kb/TODO)",
-            "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP826/TODO",
-            ["WatchTODO1"], 1.8, (4,5), "Apple Watch Series 7 40mm", "Apple Watch Series 7 40mm", 326, False, False, False, False, False, False, False, True, False, 0, False, 0, False),
-
-            Device(
-            "appleWatchSeries7_44mm",
-            "Device is an [Apple Watch Series 7](https://support.apple.com/kb/TODO)",
-            "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP826/TOOD",
-            ["WatchTODO2"], 2.0, (4,5), "Apple Watch Series 7 44mm", "Apple Watch Series 7 44mm", 326, False, False, False, False, False, False, False, True, False, 0, False, 0, False),
   ]
 
 iOSDevices = iPods + iPhones + iPads + homePods
