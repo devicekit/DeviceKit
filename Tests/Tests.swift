@@ -55,6 +55,14 @@ class DeviceKitTests: XCTestCase {
     }
   }
 
+  func testSystemName() {
+    if UIDevice.current.userInterfaceIdiom == .pad {
+      XCTAssertEqual(device.systemName, "iPadOS")
+    } else if UIDevice.current.userInterfaceIdiom == .phone {
+      XCTAssertEqual(device.systemName, "iOS")
+    }
+  }
+
   func testBattery() {
     XCTAssertTrue(Device.BatteryState.full > Device.BatteryState.charging(100))
     XCTAssertTrue(Device.BatteryState.charging(75) != Device.BatteryState.unplugged(75))
