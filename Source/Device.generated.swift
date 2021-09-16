@@ -441,10 +441,10 @@ public enum Device {
       case "iPhone13,1": return iPhone12Mini
       case "iPhone13,3": return iPhone12Pro
       case "iPhone13,4": return iPhone12ProMax
-      case "iPhoneTODO1": return iPhone13
-      case "iPhoneTODO2": return iPhone13Mini
-      case "iPhoneTODO3": return iPhone13Pro
-      case "iPhoneTODO4": return iPhone13ProMax
+      case "iPhone14,5": return iPhone13
+      case "iPhone14,4": return iPhone13Mini
+      case "iPhone14,2": return iPhone13Pro
+      case "iPhone14,3": return iPhone13ProMax
       case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4": return iPad2
       case "iPad3,1", "iPad3,2", "iPad3,3": return iPad3
       case "iPad3,4", "iPad3,5", "iPad3,6": return iPad4
@@ -455,14 +455,14 @@ public enum Device {
       case "iPad11,3", "iPad11,4": return iPadAir3
       case "iPad7,11", "iPad7,12": return iPad7
       case "iPad11,6", "iPad11,7": return iPad8
-      case "iPadTODO2": return iPad9
+      case "iPad12,1", "iPad12,2": return iPad9
       case "iPad13,1", "iPad13,2": return iPadAir4
       case "iPad2,5", "iPad2,6", "iPad2,7": return iPadMini
       case "iPad4,4", "iPad4,5", "iPad4,6": return iPadMini2
       case "iPad4,7", "iPad4,8", "iPad4,9": return iPadMini3
       case "iPad5,1", "iPad5,2": return iPadMini4
       case "iPad11,1", "iPad11,2": return iPadMini5
-      case "iPadTODO1": return iPadMini6
+      case "iPad14,1", "iPad14,2": return iPadMini6
       case "iPad6,3", "iPad6,4": return iPadPro9Inch
       case "iPad6,7", "iPad6,8": return iPadPro12Inch
       case "iPad7,1", "iPad7,2": return iPadPro12Inch2
