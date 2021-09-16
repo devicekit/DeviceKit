@@ -23,7 +23,6 @@ This version adds support for the devices announced at the September 2021 Apple 
 
 ### Changes
 
-- `Device.systemName` now returns "iPadOS" when running on iPad. ([#283](https://github.com/devicekit/DeviceKit/pull/283))
 - Switched from Travis CI to GitHub Actions.
 
 ## Version 4.4.0
