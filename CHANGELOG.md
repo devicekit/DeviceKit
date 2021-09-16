@@ -1,5 +1,31 @@
 # Changelog
 
+## Version 4.5.0
+
+Releasedate: 2021-09-16
+
+```ruby
+pod 'DeviceKit', '~> 4.5'
+```
+
+### New September 2021 devices
+
+This version adds support for the devices announced at the September 2021 Apple Event: ([#286](https://github.com/devicekit/DeviceKit/pull/286))
+
+| Device | Case value |
+| --- | --- |
+| iPhone 13 | `Device.iPhone13` |
+| iPhone 13 mini | `Device.iPhone13Mini` |
+| iPhone 13 Pro | `Device.iPhone13Pro` |
+| iPhone 13 Pro Max | `Device.iPhone13ProMax` |
+| iPad (9th generation) | `Device.iPad9` |
+| iPad mini (6th generation) | `Device.iPadMini6` |
+
+### Changes
+
+- `Device.systemName` now returns "iPadOS" when running on iPad. ([#283](https://github.com/devicekit/DeviceKit/pull/283))
+- Switched from Travis CI to GitHub Actions.
+
 ## Version 4.4.0
 
 Releasedate: 2021-04-29
