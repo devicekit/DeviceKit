@@ -13,8 +13,6 @@ opt_in_rules:
   - closure_spacing
   - contains_over_first_not_nil
   - convenience_type
-  - discouraged_optional_boolean
-  - discouraged_optional_collection
   - empty_count
   - empty_string
   - empty_xctest_method
@@ -31,7 +29,6 @@ opt_in_rules:
   - vertical_parameter_alignment_on_call
   - pattern_matching_keywords
   - fatal_error_message
-  - implicit_return
   - implicitly_unwrapped_optional
   - joined_default_parameter
   - let_var_whitespace
