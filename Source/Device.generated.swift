@@ -579,7 +579,7 @@ public enum Device {
         case .iPadMini3: return 7.9
         case .iPadMini4: return 7.9
         case .iPadMini5: return 7.9
-        case .iPadMini6: return 7.9
+        case .iPadMini6: return 8.3
         case .iPadPro9Inch: return 9.7
         case .iPadPro12Inch: return 12.9
         case .iPadPro12Inch2: return 12.9
@@ -673,7 +673,7 @@ public enum Device {
       case .iPadMini3: return (width: 3, height: 4)
       case .iPadMini4: return (width: 3, height: 4)
       case .iPadMini5: return (width: 3, height: 4)
-      case .iPadMini6: return (width: 3, height: 4)
+      case .iPadMini6: return (width: 1133, height: 744)
       case .iPadPro9Inch: return (width: 3, height: 4)
       case .iPadPro12Inch: return (width: 3, height: 4)
       case .iPadPro12Inch2: return (width: 3, height: 4)
