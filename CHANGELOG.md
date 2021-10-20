@@ -1,5 +1,18 @@
 # Changelog
 
+## Version 4.5.2
+
+Releasedate: TBD
+
+```ruby
+pod 'DeviceKit', '~> 4.5'
+```
+
+### Fixes
+
+- Fix iPad mini (6th generation) screen size and aspect ratio again. ([#300](https://github.com/devicekit/DeviceKit/pull/300))
+- Add missing device support URLs and images. ([#300](https://github.com/devicekit/DeviceKit/pull/300))
+
 ## Version 4.5.1
 
 Releasedate: 2021-10-15
