@@ -164,21 +164,21 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP832/iphone12promax-ios14_2x.png)
     case iPhone12ProMax
-    /// Device is an [iPhone 13](https://support.apple.com/kb/TODO)
+    /// Device is an [iPhone 13](https://support.apple.com/kb/SP851)
     ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP830/TODO)
+    /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1092/en_US/iphone-13-240.png)
     case iPhone13
-    /// Device is an [iPhone 13 mini](https://support.apple.com/kb/TODO)
+    /// Device is an [iPhone 13 mini](https://support.apple.com/kb/SP847)
     ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP829/TODO)
+    /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1091/en_US/iphone-13mini-240.png)
     case iPhone13Mini
-    /// Device is an [iPhone 13 Pro](https://support.apple.com/kb/TODO)
+    /// Device is an [iPhone 13 Pro](https://support.apple.com/kb/SP852)
     ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP831/TODO)
+    /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1093/en_US/iphone-13pro-240.png)
     case iPhone13Pro
-    /// Device is an [iPhone 13 Pro Max](https://support.apple.com/kb/TODO)
+    /// Device is an [iPhone 13 Pro Max](https://support.apple.com/kb/SP848)
     ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP832/TODO)
+    /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1095/en_US/iphone-13promax-240.png)
     case iPhone13ProMax
     /// Device is an [iPad 2](https://support.apple.com/kb/SP622)
     ///
@@ -220,9 +220,9 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP822/sp822-ipad-8gen_2x.png)
     case iPad8
-    /// Device is an [iPad (9th generation)](https://support.apple.com/kb/TODO)
+    /// Device is an [iPad (9th generation)](https://support.apple.com/kb/SP849)
     ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP822/TODO)
+    /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1096/en_US/ipad-9gen-240.png)
     case iPad9
     /// Device is an [iPad Air (4th generation)](https://support.apple.com/kb/SP828)
     ///
@@ -248,9 +248,9 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP788/ipad-mini-2019.jpg)
     case iPadMini5
-    /// Device is an [iPad Mini (6th generation)](https://support.apple.com/kb/TODO)
+    /// Device is an [iPad Mini (6th generation)](https://support.apple.com/kb/SP850)
     ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP788/TODO)
+    /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1097/en_US/ipad-mini-6gen-240.png)
     case iPadMini6
     /// Device is an [iPad Pro 9.7-inch](https://support.apple.com/kb/SP739)
     ///
@@ -284,13 +284,13 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP815/ipad-pro-12-2020.jpeg)
     case iPadPro12Inch4
-    /// Device is an [iPad Pro 11-inch (3rd generation)](https://support.apple.com/kb/TODO)
+    /// Device is an [iPad Pro 11-inch (3rd generation)](https://support.apple.com/kb/SP843)
     ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/TODO)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP843/ipad-pro-11_2x.png)
     case iPadPro11Inch3
-    /// Device is an [iPad Pro 12.9-inch (5th generation)](https://support.apple.com/kb/TODO)
+    /// Device is an [iPad Pro 12.9-inch (5th generation)](https://support.apple.com/kb/SP844)
     ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/TODO)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP844/ipad-pro-12-9_2x.png)
     case iPadPro12Inch5
     /// Device is a [HomePod](https://support.apple.com/kb/SP773)
     ///
@@ -305,9 +305,9 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP769/appletv4k.png)
     case appleTV4K
-    /// Device is an [Apple TV 4K (2nd generation)](https://support.apple.com/kb/TODO)
+    /// Device is an [Apple TV 4K (2nd generation)](https://support.apple.com/kb/SP845)
     ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/TODO)
+    /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1023/en_US/apple-tv-4k-2gen-240.png)
     case appleTV4K2
   #elseif os(watchOS)
     /// Device is an [Apple Watch (1st generation)](https://support.apple.com/kb/SP735)
@@ -673,7 +673,7 @@ public enum Device {
       case .iPadMini3: return (width: 3, height: 4)
       case .iPadMini4: return (width: 3, height: 4)
       case .iPadMini5: return (width: 3, height: 4)
-      case .iPadMini6: return (width: 1133, height: 744)
+      case .iPadMini6: return (width: 744, height: 1133)
       case .iPadPro9Inch: return (width: 3, height: 4)
       case .iPadPro12Inch: return (width: 3, height: 4)
       case .iPadPro12Inch2: return (width: 3, height: 4)
