@@ -32,6 +32,10 @@ class DeviceKitTests: XCTestCase {
       || device.description.contains("TV"))
   }
 
+  func testIsCanvas() {
+    XCTAssertFalse(device.isCanvas)
+  }
+
   #if os(iOS) || os(tvOS)
   func testDeviceCPU() {
   #if os(iOS)

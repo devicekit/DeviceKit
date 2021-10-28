@@ -923,6 +923,15 @@ public enum Device {
               || (UIDevice.current.userInterfaceIdiom == .pad && isCurrent)
     }
 
+    /// Returns whether the device is a SwiftUI preview canvas
+    public var isCanvas: Bool {
+        #if DEBUG
+            return ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1"
+        #else
+            return false
+        #endif
+    }
+
     /// If this device is a simulator return the underlying device,
     /// otherwise return `self`.
     public var realDevice: Device {
