@@ -349,11 +349,37 @@ class DeviceKitTests: XCTestCase {
   }
 
   func testIsPlusSized() {
-    XCTAssertEqual(Device.allPlusSizedDevices, [.iPhone6Plus, .iPhone6sPlus, .iPhone7Plus, .iPhone8Plus, .iPhoneXSMax, .iPhone11ProMax, .iPhone12ProMax])
+    XCTAssertEqual(Device.allPlusSizedDevices, [
+      .iPhone6Plus,
+      .iPhone6sPlus,
+      .iPhone7Plus,
+      .iPhone8Plus,
+      .iPhoneXSMax,
+      .iPhone11ProMax,
+      .iPhone12ProMax,
+      .iPhone13ProMax
+    ])
   }
 
   func testIsPro() {
-    XCTAssertEqual(Device.allProDevices, [.iPhone11Pro, .iPhone11ProMax, .iPhone12Pro, .iPhone12ProMax, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5])
+    XCTAssertEqual(Device.allProDevices, [
+      .iPhone11Pro,
+      .iPhone11ProMax,
+      .iPhone12Pro,
+      .iPhone12ProMax,
+      .iPhone13Pro,
+      .iPhone13ProMax,
+      .iPadPro9Inch,
+      .iPadPro12Inch,
+      .iPadPro12Inch2,
+      .iPadPro10Inch,
+      .iPadPro11Inch,
+      .iPadPro12Inch3,
+      .iPadPro11Inch2,
+      .iPadPro12Inch4,
+      .iPadPro11Inch3,
+      .iPadPro12Inch5
+    ])
   }
 
   func testGuidedAccessSession() {
@@ -433,9 +459,18 @@ class DeviceKitTests: XCTestCase {
   }
 
   func testLidarValues() {
-    let lidarDevices: [Device] = [.iPhone12Pro, .iPhone12ProMax, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5]
+    let lidarDevices: [Device] = [
+      .iPhone12Pro,
+      .iPhone12ProMax,
+      .iPhone13Pro,
+      .iPhone13ProMax,
+      .iPadPro11Inch2,
+      .iPadPro12Inch4,
+      .iPadPro11Inch3,
+      .iPadPro12Inch5
+    ]
     for device in Device.allRealDevices {
-      XCTAssertTrue(device.hasLidarSensor == device.isOneOf(lidarDevices))
+      XCTAssertTrue(device.hasLidarSensor == device.isOneOf(lidarDevices), "testLidarValues failed for \(device.description)")
     }
   }
 
