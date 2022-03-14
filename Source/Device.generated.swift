@@ -453,7 +453,7 @@ public enum Device {
       case "iPhone14,4": return iPhone13Mini
       case "iPhone14,2": return iPhone13Pro
       case "iPhone14,3": return iPhone13ProMax
-      case "iPhone12TODO": return iPhoneSE3
+      case "iPhone14,6": return iPhoneSE3
       case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4": return iPad2
       case "iPad3,1", "iPad3,2", "iPad3,3": return iPad3
       case "iPad3,4", "iPad3,5", "iPad3,6": return iPad4
