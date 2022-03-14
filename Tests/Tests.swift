@@ -34,24 +34,38 @@ class DeviceKitTests: XCTestCase {
     XCTAssertTrue(device.isSimulator)
   }
 
-  func testIsPhoneIsPad() {
+  func testIsPhoneIsPadIsPod() {
     // Test for https://github.com/devicekit/DeviceKit/issues/165 to prevent it from happening in the future.
 
     if UIDevice.current.userInterfaceIdiom == .pad {
       XCTAssertTrue(device.isPad)
       XCTAssertFalse(device.isPhone)
+      XCTAssertFalse(device.isPod)
     } else if UIDevice.current.userInterfaceIdiom == .phone {
       XCTAssertFalse(device.isPad)
-      XCTAssertTrue(device.isPhone) // TODO: failed for iPod touch (7th generation)
+      if device.description.contains("iPod") {
+        XCTAssertFalse(device.isPhone)
+        XCTAssertTrue(device.isPod)
+      } else {
+        XCTAssertTrue(device.isPhone)
+        XCTAssertFalse(device.isPod)
+      }
     }
 
     for pad in Device.allPads {
       XCTAssertTrue(pad.isPad)
       XCTAssertFalse(pad.isPhone)
+      XCTAssertFalse(pad.isPod)
     }
     for phone in Device.allPhones {
       XCTAssertFalse(phone.isPad)
       XCTAssertTrue(phone.isPhone)
+      XCTAssertFalse(phone.isPod)
+    }
+    for pod in Device.allPods {
+      XCTAssertFalse(pod.isPad)
+      XCTAssertFalse(pod.isPhone)
+      XCTAssertTrue(pod.isPod)
     }
   }
 
