@@ -466,7 +466,7 @@ public enum Device {
       case "iPad11,6", "iPad11,7": return iPad8
       case "iPad12,1", "iPad12,2": return iPad9
       case "iPad13,1", "iPad13,2": return iPadAir4
-      case "iPad14TODO", "iPad14TODO": return iPadAir5
+      case "iPad13,16", "iPad13,17": return iPadAir5
       case "iPad2,5", "iPad2,6", "iPad2,7": return iPadMini
       case "iPad4,4", "iPad4,5", "iPad4,6": return iPadMini2
       case "iPad4,7", "iPad4,8", "iPad4,9": return iPadMini3
