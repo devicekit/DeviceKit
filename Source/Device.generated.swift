@@ -180,9 +180,9 @@ public enum Device {
     ///
     /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1095/en_US/iphone-13promax-240.png)
     case iPhone13ProMax
-    /// Device is an [iPhone SE (3rd generation)](https://support.apple.com/kb/TODO)
+    /// Device is an [iPhone SE (3rd generation)](https://support.apple.com/kb/SP867)
     ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/TODO)
+    /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1136/en_US/iphone-se-3rd-gen-colors-240.png)
     case iPhoneSE3
     /// Device is an [iPad 2](https://support.apple.com/kb/SP622)
     ///
