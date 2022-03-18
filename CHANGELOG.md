@@ -1,5 +1,22 @@
 # Changelog
 
+## Version 4.6.0
+
+Releasedate: 2022-03-18
+
+```ruby
+pod 'DeviceKit', '~> 4.6'
+```
+
+### New March 2022 devices
+
+This version adds support for the devices announced at the March 2022 Apple Event: ([#286](https://github.com/devicekit/DeviceKit/pull/308))
+
+| Device | Case value |
+| --- | --- |
+| iPhone SE (3rd generation) | `Device.iPhoneSE3` |
+| iPad Air (5th generation) | `Device.iPadAir5` |
+
 ## Version 4.5.2
 
 Releasedate: 2021-10-24

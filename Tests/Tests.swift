@@ -34,24 +34,38 @@ class DeviceKitTests: XCTestCase {
     XCTAssertTrue(device.isSimulator)
   }
 
-  func testIsPhoneIsPad() {
+  func testIsPhoneIsPadIsPod() {
     // Test for https://github.com/devicekit/DeviceKit/issues/165 to prevent it from happening in the future.
 
     if UIDevice.current.userInterfaceIdiom == .pad {
       XCTAssertTrue(device.isPad)
       XCTAssertFalse(device.isPhone)
+      XCTAssertFalse(device.isPod)
     } else if UIDevice.current.userInterfaceIdiom == .phone {
       XCTAssertFalse(device.isPad)
-      XCTAssertTrue(device.isPhone) // TODO: failed for iPod touch (7th generation)
+      if device.description.contains("iPod") {
+        XCTAssertFalse(device.isPhone)
+        XCTAssertTrue(device.isPod)
+      } else {
+        XCTAssertTrue(device.isPhone)
+        XCTAssertFalse(device.isPod)
+      }
     }
 
     for pad in Device.allPads {
       XCTAssertTrue(pad.isPad)
       XCTAssertFalse(pad.isPhone)
+      XCTAssertFalse(pad.isPod)
     }
     for phone in Device.allPhones {
       XCTAssertFalse(phone.isPad)
       XCTAssertTrue(phone.isPhone)
+      XCTAssertFalse(phone.isPod)
+    }
+    for pod in Device.allPods {
+      XCTAssertFalse(pod.isPad)
+      XCTAssertFalse(pod.isPhone)
+      XCTAssertTrue(pod.isPod)
     }
   }
 
@@ -349,11 +363,37 @@ class DeviceKitTests: XCTestCase {
   }
 
   func testIsPlusSized() {
-    XCTAssertEqual(Device.allPlusSizedDevices, [.iPhone6Plus, .iPhone6sPlus, .iPhone7Plus, .iPhone8Plus, .iPhoneXSMax, .iPhone11ProMax, .iPhone12ProMax])
+    XCTAssertEqual(Device.allPlusSizedDevices, [
+      .iPhone6Plus,
+      .iPhone6sPlus,
+      .iPhone7Plus,
+      .iPhone8Plus,
+      .iPhoneXSMax,
+      .iPhone11ProMax,
+      .iPhone12ProMax,
+      .iPhone13ProMax
+    ])
   }
 
   func testIsPro() {
-    XCTAssertEqual(Device.allProDevices, [.iPhone11Pro, .iPhone11ProMax, .iPhone12Pro, .iPhone12ProMax, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5])
+    XCTAssertEqual(Device.allProDevices, [
+      .iPhone11Pro,
+      .iPhone11ProMax,
+      .iPhone12Pro,
+      .iPhone12ProMax,
+      .iPhone13Pro,
+      .iPhone13ProMax,
+      .iPadPro9Inch,
+      .iPadPro12Inch,
+      .iPadPro12Inch2,
+      .iPadPro10Inch,
+      .iPadPro11Inch,
+      .iPadPro12Inch3,
+      .iPadPro11Inch2,
+      .iPadPro12Inch4,
+      .iPadPro11Inch3,
+      .iPadPro12Inch5
+    ])
   }
 
   func testGuidedAccessSession() {
@@ -433,9 +473,18 @@ class DeviceKitTests: XCTestCase {
   }
 
   func testLidarValues() {
-    let lidarDevices: [Device] = [.iPhone12Pro, .iPhone12ProMax, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5]
+    let lidarDevices: [Device] = [
+      .iPhone12Pro,
+      .iPhone12ProMax,
+      .iPhone13Pro,
+      .iPhone13ProMax,
+      .iPadPro11Inch2,
+      .iPadPro12Inch4,
+      .iPadPro11Inch3,
+      .iPadPro12Inch5
+    ]
     for device in Device.allRealDevices {
-      XCTAssertTrue(device.hasLidarSensor == device.isOneOf(lidarDevices))
+      XCTAssertTrue(device.hasLidarSensor == device.isOneOf(lidarDevices), "testLidarValues failed for \(device.description)")
     }
   }
 
