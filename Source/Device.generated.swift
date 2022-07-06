@@ -382,14 +382,14 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP827/sp827-apple-watch-se-580_2x.png)
     case appleWatchSE_44mm
-  /// Device is an [Apple Watch Series 7](https://support.apple.com/kb/SP860)
-  ///
-  /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP860/series7-480_2x.png)
-  case appleWatchSeries7_41mm
-  /// Device is an [Apple Watch Series 7](https://support.apple.com/kb/SP860)
-  ///
-  /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP860/series7-480_2x.png)
-  case appleWatchSeries7_45mm
+    /// Device is an [Apple Watch Series 7](https://support.apple.com/kb/SP860)
+    ///
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP860/series7-480_2x.png)
+    case appleWatchSeries7_41mm
+    /// Device is an [Apple Watch Series 7](https://support.apple.com/kb/SP860)
+    ///
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP860/series7-480_2x.png)
+    case appleWatchSeries7_45mm
   #endif
 
   /// Device is [Simulator](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/Introduction/Introduction.html)
@@ -519,10 +519,10 @@ public enum Device {
       case "Watch5,2", "Watch5,4": return appleWatchSeries5_44mm
       case "Watch6,1", "Watch6,3": return appleWatchSeries6_40mm
       case "Watch6,2", "Watch6,4": return appleWatchSeries6_44mm
-      case "Watch6,6", "Watch6,8": return appleWatchSeries7_41mm
-      case "Watch6,7", "Watch6,9": return appleWatchSeries7_45mm
       case "Watch5,9", "Watch5,11": return appleWatchSE_40mm
       case "Watch5,10", "Watch5,12": return appleWatchSE_44mm
+      case "Watch6,6", "Watch6,8": return appleWatchSeries7_41mm
+      case "Watch6,7", "Watch6,9": return appleWatchSeries7_45mm
       case "i386", "x86_64", "arm64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "watchOS"))
       default: return unknown(identifier)
       }
@@ -953,7 +953,7 @@ public enum Device {
   #elseif os(watchOS)
     /// All Watches
     public static var allWatches: [Device] {
-      return [.appleWatchSeries0_38mm, .appleWatchSeries0_42mm, .appleWatchSeries1_38mm, .appleWatchSeries1_42mm, .appleWatchSeries2_38mm, .appleWatchSeries2_42mm, .appleWatchSeries3_38mm, .appleWatchSeries3_42mm, .appleWatchSeries4_40mm, .appleWatchSeries4_44mm, .appleWatchSeries5_40mm, .appleWatchSeries5_44mm, .appleWatchSeries6_40mm, .appleWatchSeries6_44mm, .appleWatchSE_40mm, .appleWatchSE_44mm, .appleWatchSeries7_41mm, .appleWatchSeries7_45mm]
+       return [.appleWatchSeries0_38mm, .appleWatchSeries0_42mm, .appleWatchSeries1_38mm, .appleWatchSeries1_42mm, .appleWatchSeries2_38mm, .appleWatchSeries2_42mm, .appleWatchSeries3_38mm, .appleWatchSeries3_42mm, .appleWatchSeries4_40mm, .appleWatchSeries4_44mm, .appleWatchSeries5_40mm, .appleWatchSeries5_44mm, .appleWatchSeries6_40mm, .appleWatchSeries6_44mm, .appleWatchSE_40mm, .appleWatchSE_44mm, .appleWatchSeries7_41mm, .appleWatchSeries7_45mm]
     }
 
     /// All simulator Watches
@@ -1837,7 +1837,7 @@ extension Device {
 
 // MARK: CPU
 extension Device {
-
+  
   // We don't need to worry about s1 being declared after m1 here as the order is not important
   public enum CPU: Comparable {
     #if os(iOS) || os(tvOS)
