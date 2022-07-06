@@ -382,6 +382,14 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP827/sp827-apple-watch-se-580_2x.png)
     case appleWatchSE_44mm
+  /// Device is an [Apple Watch Series 7](https://support.apple.com/kb/SP860)
+  ///
+  /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP860/series7-480_2x.png)
+  case appleWatchSeries7_41mm
+  /// Device is an [Apple Watch Series 7](https://support.apple.com/kb/SP860)
+  ///
+  /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP860/series7-480_2x.png)
+  case appleWatchSeries7_45mm
   #endif
 
   /// Device is [Simulator](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/Introduction/Introduction.html)
@@ -511,6 +519,8 @@ public enum Device {
       case "Watch5,2", "Watch5,4": return appleWatchSeries5_44mm
       case "Watch6,1", "Watch6,3": return appleWatchSeries6_40mm
       case "Watch6,2", "Watch6,4": return appleWatchSeries6_44mm
+      case "Watch6,6", "Watch6,8": return appleWatchSeries7_41mm
+      case "Watch6,7", "Watch6,9": return appleWatchSeries7_45mm
       case "Watch5,9", "Watch5,11": return appleWatchSE_40mm
       case "Watch5,10", "Watch5,12": return appleWatchSE_44mm
       case "i386", "x86_64", "arm64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "watchOS"))
@@ -624,6 +634,8 @@ public enum Device {
       case .appleWatchSeries6_44mm: return 2.0
       case .appleWatchSE_40mm: return 1.8
       case .appleWatchSE_44mm: return 2.0
+      case .appleWatchSeries7_41mm: return 1.691
+      case .appleWatchSeries7_45mm: return 1.901
       case .simulator(let model): return model.diagonal
       case .unknown: return -1
       }
@@ -720,6 +732,8 @@ public enum Device {
       case .appleWatchSeries6_44mm: return (width: 4, height: 5)
       case .appleWatchSE_40mm: return (width: 4, height: 5)
       case .appleWatchSE_44mm: return (width: 4, height: 5)
+      case .appleWatchSeries7_41mm: return (width: 13, height: 16)
+      case .appleWatchSeries7_45mm: return (width: 13, height: 16)
       case .simulator(let model): return model.screenRatio
       case .unknown: return (width: -1, height: -1)
       }
@@ -939,7 +953,7 @@ public enum Device {
   #elseif os(watchOS)
     /// All Watches
     public static var allWatches: [Device] {
-       return [.appleWatchSeries0_38mm, .appleWatchSeries0_42mm, .appleWatchSeries1_38mm, .appleWatchSeries1_42mm, .appleWatchSeries2_38mm, .appleWatchSeries2_42mm, .appleWatchSeries3_38mm, .appleWatchSeries3_42mm, .appleWatchSeries4_40mm, .appleWatchSeries4_44mm, .appleWatchSeries5_40mm, .appleWatchSeries5_44mm, .appleWatchSeries6_40mm, .appleWatchSeries6_44mm, .appleWatchSE_40mm, .appleWatchSE_44mm]
+      return [.appleWatchSeries0_38mm, .appleWatchSeries0_42mm, .appleWatchSeries1_38mm, .appleWatchSeries1_42mm, .appleWatchSeries2_38mm, .appleWatchSeries2_42mm, .appleWatchSeries3_38mm, .appleWatchSeries3_42mm, .appleWatchSeries4_40mm, .appleWatchSeries4_44mm, .appleWatchSeries5_40mm, .appleWatchSeries5_44mm, .appleWatchSeries6_40mm, .appleWatchSeries6_44mm, .appleWatchSE_40mm, .appleWatchSE_44mm, .appleWatchSeries7_41mm, .appleWatchSeries7_45mm]
     }
 
     /// All simulator Watches
@@ -1153,6 +1167,8 @@ public enum Device {
     case .appleWatchSeries6_44mm: return 326
     case .appleWatchSE_40mm: return 326
     case .appleWatchSE_44mm: return 326
+    case .appleWatchSeries7_41mm: return 326
+    case .appleWatchSeries7_45mm: return 326
     case .simulator(let model): return model.ppi
     case .unknown: return nil
     }
@@ -1276,6 +1292,8 @@ extension Device: CustomStringConvertible {
       case .appleWatchSeries6_44mm: return "Apple Watch Series 6 44mm"
       case .appleWatchSE_40mm: return "Apple Watch SE 40mm"
       case .appleWatchSE_44mm: return "Apple Watch SE 44mm"
+      case .appleWatchSeries7_41mm: return "Apple Watch Series 7 41mm"
+      case .appleWatchSeries7_45mm: return "Apple Watch Series 7 45mm"
       case .simulator(let model): return "Simulator (\(model.description))"
       case .unknown(let identifier): return identifier
       }
@@ -1382,6 +1400,8 @@ extension Device: CustomStringConvertible {
       case .appleWatchSeries6_44mm: return "Apple Watch Series 6 44mm"
       case .appleWatchSE_40mm: return "Apple Watch SE 40mm"
       case .appleWatchSE_44mm: return "Apple Watch SE 44mm"
+      case .appleWatchSeries7_41mm: return "Apple Watch Series 7 41mm"
+      case .appleWatchSeries7_45mm: return "Apple Watch Series 7 45mm"
       case .simulator(let model): return "Simulator (\(model.safeDescription))"
       case .unknown(let identifier): return identifier
       }
@@ -1814,3 +1834,148 @@ extension Device {
 
 }
 #endif
+
+// MARK: CPU
+extension Device {
+
+  // We don't need to worry about s1 being declared after m1 here as the order is not important
+  public enum CPU: Comparable {
+    #if os(iOS) || os(tvOS)
+    case a4
+    case a5
+    case a5X
+    case a6
+    case a6X
+    case a7
+    case a8
+    case a8X
+    case a9
+    case a9X
+    case a10Fusion
+    case a10XFusion
+    case a11Bionic
+    case a12Bionic
+    case a12XBionic
+    case a12ZBionic
+    case a13Bionic
+    case a14Bionic
+    case a15Bionic
+    case m1
+    #elseif os(watchOS)
+    case s1P
+    case s1
+    case s2
+    case s3
+    case s4
+    case s5
+    case s6
+    case s7
+    #endif
+    case unknown // Any unknown processor is likely to be newer and thus more powerful than other processors, so we put this case at the end
+  }
+  
+  /// Returns the cpu (SoC) that the device uses
+  public var cpu: CPU {
+  #if os(iOS)
+    switch self {
+    case .iPodTouch5: return .a5
+    case .iPodTouch6: return .a8
+    case .iPodTouch7: return .a10Fusion
+    case .iPhone4: return .a4
+    case .iPhone4s: return .a5
+    case .iPhone5: return .a6
+    case .iPhone5c: return .a6
+    case .iPhone5s: return .a7
+    case .iPhone6: return .a8
+    case .iPhone6Plus: return .a8
+    case .iPhone6s: return .a9
+    case .iPhone6sPlus: return .a9
+    case .iPhone7: return .a10Fusion
+    case .iPhone7Plus: return .a10Fusion
+    case .iPhoneSE: return .a9
+    case .iPhone8: return .a11Bionic
+    case .iPhone8Plus: return .a11Bionic
+    case .iPhoneX: return .a11Bionic
+    case .iPhoneXS: return .a12Bionic
+    case .iPhoneXSMax: return .a12Bionic
+    case .iPhoneXR: return .a12Bionic
+    case .iPhone11: return .a13Bionic
+    case .iPhone11Pro: return .a13Bionic
+    case .iPhone11ProMax: return .a13Bionic
+    case .iPhoneSE2: return .a13Bionic
+    case .iPhone12: return .a14Bionic
+    case .iPhone12Mini: return .a14Bionic
+    case .iPhone12Pro: return .a14Bionic
+    case .iPhone12ProMax: return .a14Bionic
+    case .iPhone13: return .a15Bionic
+    case .iPhone13Mini: return .a15Bionic
+    case .iPhone13Pro: return .a15Bionic
+    case .iPhone13ProMax: return .a15Bionic
+    case .iPhoneSE3: return .a15Bionic
+    case .iPad2: return .a5
+    case .iPad3: return .a5X
+    case .iPad4: return .a6X
+    case .iPadAir: return .a7
+    case .iPadAir2: return .a8X
+    case .iPad5: return .a9
+    case .iPad6: return .a10Fusion
+    case .iPadAir3: return .a12Bionic
+    case .iPad7: return .a10Fusion
+    case .iPad8: return .a12Bionic
+    case .iPad9: return .a13Bionic
+    case .iPadAir4: return .a14Bionic
+    case .iPadAir5: return .m1
+    case .iPadMini: return .a5
+    case .iPadMini2: return .a7
+    case .iPadMini3: return .a7
+    case .iPadMini4: return .a8
+    case .iPadMini5: return .a12Bionic
+    case .iPadMini6: return .a15Bionic
+    case .iPadPro9Inch: return .a9X
+    case .iPadPro12Inch: return .a9X
+    case .iPadPro12Inch2: return .a10XFusion
+    case .iPadPro10Inch: return .a10XFusion
+    case .iPadPro11Inch: return .a12XBionic
+    case .iPadPro12Inch3: return .a12XBionic
+    case .iPadPro11Inch2: return .a12ZBionic
+    case .iPadPro12Inch4: return .a12ZBionic
+    case .iPadPro11Inch3: return .m1
+    case .iPadPro12Inch5: return .m1
+    case .homePod: return .a8
+    case .simulator(let model): return model.cpu
+    case .unknown: return .unknown
+    }
+  #elseif os(watchOS)
+    switch self {
+    case .appleWatchSeries0_38mm: return .s1
+    case .appleWatchSeries0_42mm: return .s1
+    case .appleWatchSeries1_38mm: return .s1P
+    case .appleWatchSeries1_42mm: return .s1P
+    case .appleWatchSeries2_38mm: return .s2
+    case .appleWatchSeries2_42mm: return .s2
+    case .appleWatchSeries3_38mm: return .s3
+    case .appleWatchSeries3_42mm: return .s3
+    case .appleWatchSeries4_40mm: return .s4
+    case .appleWatchSeries4_44mm: return .s4
+    case .appleWatchSeries5_40mm: return .s5
+    case .appleWatchSeries5_44mm: return .s5
+    case .appleWatchSeries6_40mm: return .s6
+    case .appleWatchSeries6_44mm: return .s6
+    case .appleWatchSE_40mm: return .s5
+    case .appleWatchSE_44mm: return .s5
+    case .appleWatchSeries7_41mm: return .s7
+    case .appleWatchSeries7_45mm: return .s7
+    case .simulator(let model): return model.cpu
+    case .unknown: return .unknown
+    }
+  #elseif os(tvOS)
+    switch self {
+    case .appleTVHD: return .a8
+    case .appleTV4K: return .a10XFusion
+    case .appleTV4K2: return .a12Bionic
+    case .simulator(let model): return model.cpu
+    case .unknown: return .unknown
+    }
+  #endif
+  }
+}

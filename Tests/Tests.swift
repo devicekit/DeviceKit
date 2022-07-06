@@ -25,11 +25,88 @@ class DeviceKitTests: XCTestCase {
     XCTAssertTrue(device.description.contains("iPhone")
       || device.description.contains("iPad")
       || device.description.contains("iPod")
-      || device.description.contains("TV"))
+      || device.description.contains("TV")
+      || device.description.contains("Apple Watch"))
   }
 
   // MARK: - iOS
   #if os(iOS)
+  
+  func testCPU() {
+    XCTAssertEqual(Device.iPodTouch5.cpu, .a5)
+    XCTAssertEqual(Device.iPodTouch6.cpu, .a8)
+    XCTAssertEqual(Device.iPodTouch7.cpu, .a10Fusion)
+    XCTAssertEqual(Device.iPhone4.cpu, .a4)
+    XCTAssertEqual(Device.iPhone4s.cpu, .a5)
+    XCTAssertEqual(Device.iPhone5.cpu, .a6)
+    XCTAssertEqual(Device.iPhone5c.cpu, .a6)
+    XCTAssertEqual(Device.iPhone6.cpu, .a8)
+    XCTAssertEqual(Device.iPhone6Plus.cpu, .a8)
+    XCTAssertEqual(Device.iPhone6s.cpu, .a9)
+    XCTAssertEqual(Device.iPhone6sPlus.cpu, .a9)
+    XCTAssertEqual(Device.iPhone7.cpu, .a10Fusion)
+    XCTAssertEqual(Device.iPhone7Plus.cpu, .a10Fusion)
+    XCTAssertEqual(Device.iPhoneSE.cpu, .a9)
+    XCTAssertEqual(Device.iPhone8.cpu, .a11Bionic)
+    XCTAssertEqual(Device.iPhone8Plus.cpu, .a11Bionic)
+    XCTAssertEqual(Device.iPhoneX.cpu, .a11Bionic)
+    XCTAssertEqual(Device.iPhoneXS.cpu, .a12Bionic)
+    XCTAssertEqual(Device.iPhoneXSMax.cpu, .a12Bionic)
+    XCTAssertEqual(Device.iPhoneXR.cpu, .a12Bionic)
+    XCTAssertEqual(Device.iPhone11.cpu, .a13Bionic)
+    XCTAssertEqual(Device.iPhone11Pro.cpu, .a13Bionic)
+    XCTAssertEqual(Device.iPhone11ProMax.cpu, .a13Bionic)
+    XCTAssertEqual(Device.iPhoneSE2.cpu, .a13Bionic)
+    XCTAssertEqual(Device.iPhone12.cpu, .a14Bionic)
+    XCTAssertEqual(Device.iPhone12Pro.cpu, .a14Bionic)
+    XCTAssertEqual(Device.iPhone12Mini.cpu, .a14Bionic)
+    XCTAssertEqual(Device.iPhone12ProMax.cpu, .a14Bionic)
+    XCTAssertEqual(Device.iPhone13.cpu, .a15Bionic)
+    XCTAssertEqual(Device.iPhone13Mini.cpu, .a15Bionic)
+    XCTAssertEqual(Device.iPhone13Pro.cpu, .a15Bionic)
+    XCTAssertEqual(Device.iPhone13ProMax.cpu, .a15Bionic)
+    XCTAssertEqual(Device.iPhoneSE3.cpu, .a15Bionic)
+    
+    XCTAssertEqual(Device.iPad2.cpu, .a5)
+    XCTAssertEqual(Device.iPad3.cpu, .a5X)
+    XCTAssertEqual(Device.iPad4.cpu, .a6X)
+    XCTAssertEqual(Device.iPadAir.cpu, .a7)
+    XCTAssertEqual(Device.iPadAir2.cpu, .a8X)
+    XCTAssertEqual(Device.iPad5.cpu, .a9)
+    XCTAssertEqual(Device.iPad6.cpu, .a10Fusion)
+    XCTAssertEqual(Device.iPadAir3.cpu, .a12Bionic)
+    XCTAssertEqual(Device.iPad7.cpu, .a10Fusion)
+    XCTAssertEqual(Device.iPad8.cpu, .a12Bionic)
+    XCTAssertEqual(Device.iPad9.cpu, .a13Bionic)
+    XCTAssertEqual(Device.iPadAir4.cpu, .a14Bionic)
+    XCTAssertEqual(Device.iPadAir5.cpu, .m1)
+    XCTAssertEqual(Device.iPadMini.cpu, .a5)
+    XCTAssertEqual(Device.iPadMini2.cpu, .a7)
+    XCTAssertEqual(Device.iPadMini3.cpu, .a7)
+    XCTAssertEqual(Device.iPadMini4.cpu, .a8)
+    XCTAssertEqual(Device.iPadMini5.cpu, .a12Bionic)
+    XCTAssertEqual(Device.iPadMini6.cpu, .a15Bionic)
+    XCTAssertEqual(Device.iPadPro9Inch.cpu, .a9X)
+    XCTAssertEqual(Device.iPadPro10Inch.cpu, .a10XFusion)
+    XCTAssertEqual(Device.iPadPro12Inch2.cpu, .a10XFusion)
+    XCTAssertEqual(Device.iPadPro10Inch.cpu, .a10XFusion)
+    XCTAssertEqual(Device.iPadPro11Inch.cpu, .a12XBionic)
+    XCTAssertEqual(Device.iPadPro12Inch3.cpu, .a12XBionic)
+    XCTAssertEqual(Device.iPadPro11Inch2.cpu, .a12ZBionic)
+    XCTAssertEqual(Device.iPadPro12Inch4.cpu, .a12ZBionic)
+    XCTAssertEqual(Device.iPadPro11Inch3.cpu, .m1)
+    XCTAssertEqual(Device.iPadPro12Inch5.cpu, .m1)
+    XCTAssertEqual(Device.homePod.cpu, .a8)
+  }
+  
+  func testCPUOrdering() {
+    XCTAssertTrue(Device.CPU.m1 > Device.CPU.a4)
+    XCTAssertEqual(
+      [Device.CPU.a12XBionic, .a4, .a12Bionic, .a9X, .a11Bionic, .a8, .a14Bionic, .a5X, .m1, .a13Bionic, .a6X, .a5, .a10XFusion, .a10Fusion, .a6, .a12ZBionic, .a15Bionic, .a9, .a8X, .a7].sorted(by: >),
+      [.m1, .a15Bionic, .a14Bionic, .a13Bionic, .a12ZBionic, .a12XBionic, .a12Bionic, .a11Bionic, .a10XFusion, .a10Fusion, .a9X, .a9, .a8X, .a8, .a7, .a6X, .a6, .a5X, .a5, .a4]
+    )
+  }
+  
   func testIsSimulator() {
     XCTAssertTrue(device.isSimulator)
   }
@@ -489,6 +566,8 @@ class DeviceKitTests: XCTestCase {
   }
 
   #endif
+  
+  // MARK: - watchOS
 
   // MARK: - tvOS
   #if os(tvOS)
@@ -517,7 +596,41 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.simulator(Device.appleTVHD).ppi, nil)
     XCTAssertEqual(Device.simulator(Device.appleTV4K).ppi, nil)
   }
+  
+  func testCPU() {
+    XCTAssertEqual(Device.appleTVHD.cpu, .a8)
+    XCTAssertEqual(Device.appleTV4K.cpu, .a10XFusion)
+    XCTAssertEqual(Device.appleTV4K2.cpu, .a12Bionic)
+  }
 
   #endif
 
+  // MARK: - watchOS
+  #if os(watchOS)
+  func testCPU() {
+    XCTAssertEqual(Device.appleWatchSeries0_38mm.cpu, .s1)
+    XCTAssertEqual(Device.appleWatchSeries0_42mm.cpu, .s1)
+    XCTAssertEqual(Device.appleWatchSeries1_38mm.cpu, .s1P)
+    XCTAssertEqual(Device.appleWatchSeries1_42mm.cpu, .s1P)
+    XCTAssertEqual(Device.appleWatchSeries2_38mm.cpu, .s2)
+    XCTAssertEqual(Device.appleWatchSeries2_42mm.cpu, .s2)
+    XCTAssertEqual(Device.appleWatchSeries3_38mm.cpu, .s3)
+    XCTAssertEqual(Device.appleWatchSeries3_42mm.cpu, .s3)
+    XCTAssertEqual(Device.appleWatchSeries4_40mm.cpu, .s4)
+    XCTAssertEqual(Device.appleWatchSeries4_44mm.cpu, .s4)
+    XCTAssertEqual(Device.appleWatchSeries5_40mm.cpu, .s5)
+    XCTAssertEqual(Device.appleWatchSeries5_44mm.cpu, .s5)
+    XCTAssertEqual(Device.appleWatchSeries6_40mm.cpu, .s6)
+    XCTAssertEqual(Device.appleWatchSeries6_44mm.cpu, .s6)
+    XCTAssertEqual(Device.appleWatchSE_40mm.cpu, .s5)
+    XCTAssertEqual(Device.appleWatchSE_44mm.cpu, .s5)
+  }
+  
+  func testCPUOrdering() {
+    XCTAssertEqual(
+      [Device.CPU.s1, .s6, .s4, .s7, .s5, .s2, .s1P, .s3, .unknown].sorted(by: >),
+      [.unknown, .s7, .s6, .s5, .s4, .s3, .s2, .s1, .s1P]
+    )
+  }
+  #endif
 }
