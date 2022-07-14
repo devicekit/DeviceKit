@@ -9,12 +9,12 @@
 [![Platform](https://img.shields.io/cocoapods/p/DeviceKit.svg?style=flat)](http://cocoadocs.org/docsets/DeviceKit)
 
 
-| Branch | Build Status | Versions |
+| Branch | Versions |
 |:---------|:--------------:|:----------:|
-| **master** |[![Build Status](https://travis-ci.org/devicekit/DeviceKit.svg?branch=master)](https://travis-ci.org/devicekit/DeviceKit)| - |
-| **Swift 4 - 4.2** |[![Build Status](https://travis-ci.org/devicekit/DeviceKit.svg?branch=swift-4)](https://travis-ci.org/devicekit/DeviceKit)| ≥ 1.3 |
-| **Swift 3** |[![Build Status](https://travis-ci.org/devicekit/DeviceKit.svg?branch=swift-3)](https://travis-ci.org/devicekit/DeviceKit)| ≥ 1.0 < 1.3 |
-| **Swift 2.3** |[![Build Status](https://travis-ci.org/devicekit/DeviceKit.svg?branch=swift-2.3-unsupported)](https://travis-ci.org/devicekit/DeviceKit)| < 1.0 |
+| **master** | ≥ 2.0 |
+| **Swift 4 - 4.2** | ≥ 1.3 < 1.13 |
+| **Swift 3** | ≥ 1.0 < 1.3 |
+| **Swift 2.3** | < 1.0 |
 
 `DeviceKit` is a value-type replacement of [`UIDevice`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/).
 

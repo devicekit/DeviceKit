@@ -51,7 +51,6 @@
 		955EE5A21D5E581B008C3DA8 /* DeviceKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeviceKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		957D18251C28C1E90067D203 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		957D18261C28C1F30067D203 /* DeviceKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = DeviceKit.podspec; sourceTree = "<group>"; };
-		957D18271C28C1FC0067D203 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		95C7E83F1C61239D00B0189E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		95C7E8451C61253900B0189E /* Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tests.swift; path = Tests/Tests.swift; sourceTree = "<group>"; };
 		95C7E8471C612ABA00B0189E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = "<group>"; };
@@ -125,7 +124,6 @@
 				FCF1EAD323381E5700B609AA /* CHANGELOG.md */,
 				95C7E84E1C61332300B0189E /* Package.swift */,
 				957D18261C28C1F30067D203 /* DeviceKit.podspec */,
-				957D18271C28C1FC0067D203 /* .travis.yml */,
 				95C7E84D1C6130DB00B0189E /* .swiftlint.yml */,
 				6DAAE66C1EDDC53800074892 /* Dangerfile */,
 				6DAAE66D1EDDF06700074892 /* Gemfile */,
