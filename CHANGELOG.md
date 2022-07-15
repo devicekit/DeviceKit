@@ -1,5 +1,17 @@
 # Changelog
 
+## Version 4.6.1
+
+Releasedate: 2022-07-15
+
+```ruby
+pod 'DeviceKit', '~> 4.6'
+```
+
+### Fixes
+
+- Fixes Carthage support. ([#288](https://github.com/devicekit/DeviceKit/pull/288))
+
 ## Version 4.6.0
 
 Releasedate: 2022-03-18
