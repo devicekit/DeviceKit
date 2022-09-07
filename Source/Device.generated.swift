@@ -382,6 +382,14 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP827/sp827-apple-watch-se-580_2x.png)
     case appleWatchSE_44mm
+    /// Device is an [Apple Watch Series 6](https://support.apple.com/kb/SP860)
+    ///
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP860/series7-480_2x.png)
+    case appleWatchSeries7_41mm
+    /// Device is an [Apple Watch Series 7](https://support.apple.com/kb/SP860)
+    ///
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP860/series7-480_2x.png)
+    case appleWatchSeries7_44mm
   #endif
 
   /// Device is [Simulator](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/Introduction/Introduction.html)
@@ -513,6 +521,8 @@ public enum Device {
       case "Watch6,2", "Watch6,4": return appleWatchSeries6_44mm
       case "Watch5,9", "Watch5,11": return appleWatchSE_40mm
       case "Watch5,10", "Watch5,12": return appleWatchSE_44mm
+      case "Watch6,6", "Watch6,6": return appleWatchSeries7_41mm
+      case "Watch6,7", "Watch6,9": return appleWatchSeries7_44mm
       case "i386", "x86_64", "arm64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "watchOS"))
       default: return unknown(identifier)
       }
@@ -624,6 +634,8 @@ public enum Device {
       case .appleWatchSeries6_44mm: return 2.0
       case .appleWatchSE_40mm: return 1.8
       case .appleWatchSE_44mm: return 2.0
+      case .appleWatchSeries7_41mm: return 1.8
+      case .appleWatchSeries7_44mm: return 2.0
       case .simulator(let model): return model.diagonal
       case .unknown: return -1
       }
@@ -720,6 +732,8 @@ public enum Device {
       case .appleWatchSeries6_44mm: return (width: 4, height: 5)
       case .appleWatchSE_40mm: return (width: 4, height: 5)
       case .appleWatchSE_44mm: return (width: 4, height: 5)
+      case .appleWatchSeries7_41mm: return (width: 4, height: 5)
+      case .appleWatchSeries7_44mm: return (width: 4, height: 5)
       case .simulator(let model): return model.screenRatio
       case .unknown: return (width: -1, height: -1)
       }
@@ -939,7 +953,7 @@ public enum Device {
   #elseif os(watchOS)
     /// All Watches
     public static var allWatches: [Device] {
-       return [.appleWatchSeries0_38mm, .appleWatchSeries0_42mm, .appleWatchSeries1_38mm, .appleWatchSeries1_42mm, .appleWatchSeries2_38mm, .appleWatchSeries2_42mm, .appleWatchSeries3_38mm, .appleWatchSeries3_42mm, .appleWatchSeries4_40mm, .appleWatchSeries4_44mm, .appleWatchSeries5_40mm, .appleWatchSeries5_44mm, .appleWatchSeries6_40mm, .appleWatchSeries6_44mm, .appleWatchSE_40mm, .appleWatchSE_44mm]
+       return [.appleWatchSeries0_38mm, .appleWatchSeries0_42mm, .appleWatchSeries1_38mm, .appleWatchSeries1_42mm, .appleWatchSeries2_38mm, .appleWatchSeries2_42mm, .appleWatchSeries3_38mm, .appleWatchSeries3_42mm, .appleWatchSeries4_40mm, .appleWatchSeries4_44mm, .appleWatchSeries5_40mm, .appleWatchSeries5_44mm, .appleWatchSeries6_40mm, .appleWatchSeries6_44mm, .appleWatchSE_40mm, .appleWatchSE_44mm, .appleWatchSeries7_41mm, .appleWatchSeries7_44mm]
     }
 
     /// All simulator Watches
@@ -1153,6 +1167,8 @@ public enum Device {
     case .appleWatchSeries6_44mm: return 326
     case .appleWatchSE_40mm: return 326
     case .appleWatchSE_44mm: return 326
+    case .appleWatchSeries7_41mm: return 326
+    case .appleWatchSeries7_44mm: return 326
     case .simulator(let model): return model.ppi
     case .unknown: return nil
     }
@@ -1276,6 +1292,8 @@ extension Device: CustomStringConvertible {
       case .appleWatchSeries6_44mm: return "Apple Watch Series 6 44mm"
       case .appleWatchSE_40mm: return "Apple Watch SE 40mm"
       case .appleWatchSE_44mm: return "Apple Watch SE 44mm"
+      case .appleWatchSeries7_41mm: return "Apple Watch Series 7 41mm"
+      case .appleWatchSeries7_44mm: return "Apple Watch Series 7 45mm"
       case .simulator(let model): return "Simulator (\(model.description))"
       case .unknown(let identifier): return identifier
       }
@@ -1382,6 +1400,8 @@ extension Device: CustomStringConvertible {
       case .appleWatchSeries6_44mm: return "Apple Watch Series 6 44mm"
       case .appleWatchSE_40mm: return "Apple Watch SE 40mm"
       case .appleWatchSE_44mm: return "Apple Watch SE 44mm"
+      case .appleWatchSeries7_41mm: return "Apple Watch Series 7 41mm"
+      case .appleWatchSeries7_44mm: return "Apple Watch Series 7 45mm"
       case .simulator(let model): return "Simulator (\(model.safeDescription))"
       case .unknown(let identifier): return identifier
       }
