@@ -405,15 +405,15 @@ public enum Device {
     /// Device is an [Apple Watch Series 7](https://support.apple.com/kb/SP860)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP860/series7-480_2x.png)
-    case appleWatchSeries7_44mm
+    case appleWatchSeries7_45mm
     /// Device is an [Apple Watch Series 8](https://support.apple.com/kb/TODO)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP860/TODO)
     case appleWatchSeries8_41mm
-    /// Device is an [Apple Watch Series 7](https://support.apple.com/kb/TODO)
+    /// Device is an [Apple Watch Series 8](https://support.apple.com/kb/TODO)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP860/TODO)
-    case appleWatchSeries8_44mm
+    case appleWatchSeries8_45mm
     /// Device is an [Apple Watch SE (2nd generation)](https://support.apple.com/kb/TODO)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP827/TODO)
@@ -498,10 +498,10 @@ public enum Device {
       case "iPhone14,2": return iPhone13Pro
       case "iPhone14,3": return iPhone13ProMax
       case "iPhone14,6": return iPhoneSE3
-      case "iPhoneTODO1": return iPhone14
-      case "iPhoneTODO2": return iPhone14Plus
-      case "iPhoneTODO3": return iPhone14Pro
-      case "iPhoneTODO4": return iPhone14ProMax
+      case "iPhone14,7": return iPhone14
+      case "iPhone14,8": return iPhone14Plus
+      case "iPhone15,2": return iPhone14Pro
+      case "iPhone15,3": return iPhone14ProMax
       case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4": return iPad2
       case "iPad3,1", "iPad3,2", "iPad3,3": return iPad3
       case "iPad3,4", "iPad3,5", "iPad3,6": return iPad4
@@ -562,12 +562,12 @@ public enum Device {
       case "Watch5,9", "Watch5,11": return appleWatchSE_40mm
       case "Watch5,10", "Watch5,12": return appleWatchSE_44mm
       case "Watch6,6", "Watch6,6": return appleWatchSeries7_41mm
-      case "Watch6,7", "Watch6,9": return appleWatchSeries7_44mm
-      case "WatchTODO1", "WatchTODO2": return appleWatchSeries8_41mm
-      case "WatchTODO3", "WatchTODO4": return appleWatchSeries8_44mm
-      case "WatchTODO5", "WatchTODO6": return appleWatchSE2_40mm
-      case "WatchTODO7", "WatchTODO8": return appleWatchSE2_44mm
-      case "WatchTODO9": return appleWatchUltra
+      case "Watch6,7", "Watch6,9": return appleWatchSeries7_45mm
+      case "Watch6,14", "Watch6,16": return appleWatchSeries8_41mm
+      case "Watch6,15", "Watch6,17": return appleWatchSeries8_45mm
+      case "Watch6,10", "Watch6,12": return appleWatchSE2_40mm
+      case "Watch6,11", "Watch6,13": return appleWatchSE2_44mm
+      case "Watch6,18": return appleWatchUltra
       case "i386", "x86_64", "arm64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "watchOS"))
       default: return unknown(identifier)
       }
@@ -684,12 +684,12 @@ public enum Device {
       case .appleWatchSE_40mm: return 1.8
       case .appleWatchSE_44mm: return 2.0
       case .appleWatchSeries7_41mm: return 1.8
-      case .appleWatchSeries7_44mm: return 2.0
+      case .appleWatchSeries7_45mm: return 2.0
       case .appleWatchSeries8_41mm: return 1.8
-      case .appleWatchSeries8_44mm: return 2.0
+      case .appleWatchSeries8_45mm: return 2.0
       case .appleWatchSE2_40mm: return 1.8
       case .appleWatchSE2_44mm: return 2.0
-      case .appleWatchUltra: return 1.8
+      case .appleWatchUltra: return 2.2
       case .simulator(let model): return model.diagonal
       case .unknown: return -1
       }
@@ -791,9 +791,9 @@ public enum Device {
       case .appleWatchSE_40mm: return (width: 4, height: 5)
       case .appleWatchSE_44mm: return (width: 4, height: 5)
       case .appleWatchSeries7_41mm: return (width: 4, height: 5)
-      case .appleWatchSeries7_44mm: return (width: 4, height: 5)
+      case .appleWatchSeries7_45mm: return (width: 4, height: 5)
       case .appleWatchSeries8_41mm: return (width: 4, height: 5)
-      case .appleWatchSeries8_44mm: return (width: 4, height: 5)
+      case .appleWatchSeries8_45mm: return (width: 4, height: 5)
       case .appleWatchSE2_40mm: return (width: 4, height: 5)
       case .appleWatchSE2_44mm: return (width: 4, height: 5)
       case .appleWatchUltra: return (width: 4, height: 5)
@@ -829,7 +829,7 @@ public enum Device {
 
     /// All Plus and Max-Sized Devices
     public static var allPlusSizedDevices: [Device] {
-      return [.iPhone6Plus, .iPhone6sPlus, .iPhone7Plus, .iPhone8Plus, .iPhoneXSMax, .iPhone11ProMax, .iPhone12ProMax, .iPhone13ProMax, .iPhone14ProMax]
+      return [.iPhone6Plus, .iPhone6sPlus, .iPhone7Plus, .iPhone8Plus, .iPhoneXSMax, .iPhone11ProMax, .iPhone12ProMax, .iPhone13ProMax, .iPhone14Plus, .iPhone14ProMax]
     }
 
     /// All Pro Devices
@@ -1016,7 +1016,7 @@ public enum Device {
   #elseif os(watchOS)
     /// All Watches
     public static var allWatches: [Device] {
-       return [.appleWatchSeries0_38mm, .appleWatchSeries0_42mm, .appleWatchSeries1_38mm, .appleWatchSeries1_42mm, .appleWatchSeries2_38mm, .appleWatchSeries2_42mm, .appleWatchSeries3_38mm, .appleWatchSeries3_42mm, .appleWatchSeries4_40mm, .appleWatchSeries4_44mm, .appleWatchSeries5_40mm, .appleWatchSeries5_44mm, .appleWatchSeries6_40mm, .appleWatchSeries6_44mm, .appleWatchSE_40mm, .appleWatchSE_44mm, .appleWatchSeries7_41mm, .appleWatchSeries7_44mm, .appleWatchSeries8_41mm, .appleWatchSeries8_44mm, .appleWatchSE2_40mm, .appleWatchSE2_44mm, .appleWatchUltra]
+       return [.appleWatchSeries0_38mm, .appleWatchSeries0_42mm, .appleWatchSeries1_38mm, .appleWatchSeries1_42mm, .appleWatchSeries2_38mm, .appleWatchSeries2_42mm, .appleWatchSeries3_38mm, .appleWatchSeries3_42mm, .appleWatchSeries4_40mm, .appleWatchSeries4_44mm, .appleWatchSeries5_40mm, .appleWatchSeries5_44mm, .appleWatchSeries6_40mm, .appleWatchSeries6_44mm, .appleWatchSE_40mm, .appleWatchSE_44mm, .appleWatchSeries7_41mm, .appleWatchSeries7_45mm, .appleWatchSeries8_41mm, .appleWatchSeries8_45mm, .appleWatchSE2_40mm, .appleWatchSE2_44mm, .appleWatchUltra]
     }
 
     /// All simulator Watches
@@ -1235,12 +1235,12 @@ public enum Device {
     case .appleWatchSE_40mm: return 326
     case .appleWatchSE_44mm: return 326
     case .appleWatchSeries7_41mm: return 326
-    case .appleWatchSeries7_44mm: return 326
+    case .appleWatchSeries7_45mm: return 326
     case .appleWatchSeries8_41mm: return 326
-    case .appleWatchSeries8_44mm: return 326
+    case .appleWatchSeries8_45mm: return 326
     case .appleWatchSE2_40mm: return 326
     case .appleWatchSE2_44mm: return 326
-    case .appleWatchUltra: return 326
+    case .appleWatchUltra: return 338
     case .simulator(let model): return model.ppi
     case .unknown: return nil
     }
@@ -1369,9 +1369,9 @@ extension Device: CustomStringConvertible {
       case .appleWatchSE_40mm: return "Apple Watch SE 40mm"
       case .appleWatchSE_44mm: return "Apple Watch SE 44mm"
       case .appleWatchSeries7_41mm: return "Apple Watch Series 7 41mm"
-      case .appleWatchSeries7_44mm: return "Apple Watch Series 7 45mm"
+      case .appleWatchSeries7_45mm: return "Apple Watch Series 7 45mm"
       case .appleWatchSeries8_41mm: return "Apple Watch Series 8 41mm"
-      case .appleWatchSeries8_44mm: return "Apple Watch Series 8 45mm"
+      case .appleWatchSeries8_45mm: return "Apple Watch Series 8 45mm"
       case .appleWatchSE2_40mm: return "Apple Watch SE (2nd generation) 40mm"
       case .appleWatchSE2_44mm: return "Apple Watch SE (2nd generation) 44mm"
       case .appleWatchUltra: return "Apple Watch Ultra"
@@ -1486,9 +1486,9 @@ extension Device: CustomStringConvertible {
       case .appleWatchSE_40mm: return "Apple Watch SE 40mm"
       case .appleWatchSE_44mm: return "Apple Watch SE 44mm"
       case .appleWatchSeries7_41mm: return "Apple Watch Series 7 41mm"
-      case .appleWatchSeries7_44mm: return "Apple Watch Series 7 45mm"
+      case .appleWatchSeries7_45mm: return "Apple Watch Series 7 45mm"
       case .appleWatchSeries8_41mm: return "Apple Watch Series 8 41mm"
-      case .appleWatchSeries8_44mm: return "Apple Watch Series 8 45mm"
+      case .appleWatchSeries8_45mm: return "Apple Watch Series 8 45mm"
       case .appleWatchSE2_40mm: return "Apple Watch SE (2nd generation) 40mm"
       case .appleWatchSE2_44mm: return "Apple Watch SE (2nd generation) 44mm"
       case .appleWatchUltra: return "Apple Watch Ultra"
