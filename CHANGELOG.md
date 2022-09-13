@@ -2,7 +2,7 @@
 
 ## Version 4.7.0
 
-Releasedate: 2022-09-09
+Releasedate: 2022-09-13
 
 ```ruby
 pod 'DeviceKit', '~> 4.7'
