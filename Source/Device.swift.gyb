@@ -74,6 +74,10 @@ iPhones = [
             Device("iPhone13Pro",    "Device is an [iPhone 13 Pro](https://support.apple.com/kb/SP852)",               "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1093/en_US/iphone-13pro-240.png",             ["iPhone14,2"],                               6.1,  (9, 19.5),  "iPhone 13 Pro", "iPhone 13 Pro", 460, False, False, True, True, False, True, True, True, True, 0, False, 123, True),
             Device("iPhone13ProMax", "Device is an [iPhone 13 Pro Max](https://support.apple.com/kb/SP848)",           "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1095/en_US/iphone-13promax-240.png",          ["iPhone14,3"],                               6.7,  (9, 19.5),  "iPhone 13 Pro Max", "iPhone 13 Pro Max", 458, True, False, True, True, False, True, True, True, True, 0, False, 123, True),
             Device("iPhoneSE3",      "Device is an [iPhone SE (3rd generation)](https://support.apple.com/kb/SP867)",  "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1136/en_US/iphone-se-3rd-gen-colors-240.png", ["iPhone14,6"],                               4.7,  (9, 16),    "iPhone SE (3rd generation)", "iPhone SE (3rd generation)", 326, False, False, False, False, True, False, False, True, False, 0, False, 1, False),
+            Device("iPhone14",       "Device is an [iPhone 14](https://support.apple.com/kb/TODO)",                    "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1092/en_US/TODO",                             ["iPhone14,7"],                               6.1,  (9, 19.5),  "iPhone 14", "iPhone 14", 460, False, False, False, True, False, True, True, True, True, 0, False, 13, False),
+            Device("iPhone14Plus",   "Device is an [iPhone 14 Plus](https://support.apple.com/kb/TODO)",               "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1091/en_US/TODO",                             ["iPhone14,8"],                               6.7,  (9, 19.5),  "iPhone 14 Plus", "iPhone 14 Plus", 476, True, False, False, True, False, True, True, True, True, 0, False, 13, False),
+            Device("iPhone14Pro",    "Device is an [iPhone 14 Pro](https://support.apple.com/kb/TODO)",                "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1093/en_US/TODO",                             ["iPhone15,2"],                               6.1,  (9, 19.5),  "iPhone 14 Pro", "iPhone 14 Pro", 460, False, False, True, True, False, True, True, True, True, 0, False, 123, True),
+            Device("iPhone14ProMax", "Device is an [iPhone 14 Pro Max](https://support.apple.com/kb/TODO)",            "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1095/en_US/TODO",                             ["iPhone15,3"],                               6.7,  (9, 19.5),  "iPhone 14 Pro Max", "iPhone 14 Pro Max", 458, True, False, True, True, False, True, True, True, True, 0, False, 123, True),
           ]
 
 iPads = [
@@ -215,6 +219,49 @@ watches = [
             "Device is an [Apple Watch SE](https://support.apple.com/kb/SP827)",
             "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP827/sp827-apple-watch-se-580_2x.png",
             ["Watch5,10", "Watch5,12"], 2.0, (4,5), "Apple Watch SE 44mm", "Apple Watch SE 44mm", 326, False, False, False, False, False, False, False, True, False, 0, False, 0, False),
+
+            Device(
+            "appleWatchSeries7_41mm",
+            "Device is an [Apple Watch Series 7](https://support.apple.com/kb/SP860)",
+            "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP860/series7-480_2x.png",
+            ["Watch6,6", "Watch6,6"], 1.8, (4,5), "Apple Watch Series 7 41mm", "Apple Watch Series 7 41mm", 326, False, False, False, False, False, False, False, True, False, 0, False, 0, False),
+
+            Device(
+            "appleWatchSeries7_45mm",
+            "Device is an [Apple Watch Series 7](https://support.apple.com/kb/SP860)",
+            "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP860/series7-480_2x.png",
+            ["Watch6,7", "Watch6,9"], 2.0, (4,5), "Apple Watch Series 7 45mm", "Apple Watch Series 7 45mm", 326, False, False, False, False, False, False, False, True, False, 0, False, 0, False),
+
+            Device(
+            "appleWatchSeries8_41mm",
+            "Device is an [Apple Watch Series 8](https://support.apple.com/kb/TODO)",
+            "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP860/TODO",
+            ["Watch6,14", "Watch6,16"], 1.8, (4,5), "Apple Watch Series 8 41mm", "Apple Watch Series 8 41mm", 326, False, False, False, False, False, False, False, True, False, 0, False, 0, False),
+
+            Device(
+            "appleWatchSeries8_45mm",
+            "Device is an [Apple Watch Series 8](https://support.apple.com/kb/TODO)",
+            "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP860/TODO",
+            ["Watch6,15", "Watch6,17"], 2.0, (4,5), "Apple Watch Series 8 45mm", "Apple Watch Series 8 45mm", 326, False, False, False, False, False, False, False, True, False, 0, False, 0, False),
+
+            Device(
+            "appleWatchSE2_40mm",
+            "Device is an [Apple Watch SE (2nd generation)](https://support.apple.com/kb/TODO)",
+            "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP827/TODO",
+            ["Watch6,10", "Watch6,12"], 1.8, (4,5), "Apple Watch SE (2nd generation) 40mm", "Apple Watch SE (2nd generation) 40mm", 326, False, False, False, False, False, False, False, True, False, 0, False, 0, False),
+
+            Device(
+            "appleWatchSE2_44mm",
+            "Device is an [Apple Watch SE (2nd generation)](https://support.apple.com/kb/TODO)",
+            "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP827/TODO",
+            ["Watch6,11", "Watch6,13"], 2.0, (4,5), "Apple Watch SE (2nd generation) 44mm", "Apple Watch SE (2nd generation) 44mm", 326, False, False, False, False, False, False, False, True, False, 0, False, 0, False),
+
+            Device(
+            "appleWatchUltra",
+            "Device is an [Apple Watch Ultra](https://support.apple.com/kb/TODO)",
+            "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP827/TODO",
+            ["Watch6,18"], 2.2, (4,5), "Apple Watch Ultra", "Apple Watch Ultra", 338, False, False, False, False, False, False, False, True, False, 0, False, 0, False),
+
   ]
 
 iOSDevices = iPods + iPhones + iPads + homePods

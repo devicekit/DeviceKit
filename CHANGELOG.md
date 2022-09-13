@@ -1,5 +1,28 @@
 # Changelog
 
+## Version 4.7.0
+
+Releasedate: 2022-09-09
+
+```ruby
+pod 'DeviceKit', '~> 4.7'
+```
+
+### New September 2022 devices
+
+This version adds support for the devices announced at the September 2022 Apple Event: ([#324](https://github.com/devicekit/DeviceKit/pull/324))
+
+| Device | Case value |
+| --- | --- |
+| iPhone 14 | `Device.iPhone14` |
+| iPhone 14 Plus | `Device.iPhone14Plus` |
+| iPhone 14 Pro | `Device.iPhone14Pro` |
+| iPhone 14 Pro Max | `Device.iPhone14ProMax` |
+| Apple Watch Series 7 (Missing from DeviceKit, from last year) | `Device.appleWatchSeries7_41mm`, `Device.appleWatchSeries7_45mm` |
+| Apple Watch Series 8 | `Device.appleWatchSeries8_41mm`, `Device.appleWatchSeries8_45mm` |
+| Apple Watch SE (2nd generation) | `Device.appleWatchSE2_40mm`, `Device.appleWatchSE2_44mm` |
+| Apple Watch Ultra | `Device.appleWatchUltra` |
+
 ## Version 4.6.1
 
 Releasedate: 2022-07-15
@@ -22,7 +45,7 @@ pod 'DeviceKit', '~> 4.6'
 
 ### New March 2022 devices
 
-This version adds support for the devices announced at the March 2022 Apple Event: ([#286](https://github.com/devicekit/DeviceKit/pull/308))
+This version adds support for the devices announced at the March 2022 Apple Event: ([308](https://github.com/devicekit/DeviceKit/pull/308))
 
 | Device | Case value |
 | --- | --- |
