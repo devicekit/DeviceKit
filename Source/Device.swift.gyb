@@ -227,7 +227,7 @@ watches = [
             "appleWatchSeries7_41mm",
             "Device is an [Apple Watch Series 7](https://support.apple.com/kb/SP860)",
             "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP860/series7-480_2x.png",
-            ["Watch6,6", "Watch6,6"], 1.8, (4,5), "Apple Watch Series 7 41mm", "Apple Watch Series 7 41mm", 326, False, False, False, False, False, False, False, True, False, 0, False, 0, False),
+            ["Watch6,6", "Watch6,8"], 1.8, (4,5), "Apple Watch Series 7 41mm", "Apple Watch Series 7 41mm", 326, False, False, False, False, False, False, False, True, False, 0, False, 0, False),
 
             Device(
             "appleWatchSeries7_45mm",
