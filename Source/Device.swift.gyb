@@ -1353,50 +1353,48 @@ watchOS_cpus = [
 
 extension Device {
 
-public enum CPU: Comparable {
-#if os(iOS) || os(tvOS)
+  public enum CPU: Comparable {
+  #if os(iOS) || os(tvOS)
 % for cpu in iOS_cpus:
-  case ${cpu.name}
+    case ${cpu.name}
 % end
-#elseif os(watchOS)
+  #elseif os(watchOS)
 % for cpu in watchOS_cpus:
-  case ${cpu.name}
+    case ${cpu.name}
 % end
-#endif
-  case unknown
-}
-  
-  
+  #endif
+    case unknown
+  }
 
 /// Returns the cpu (SoC) that the device uses
   public var cpu: CPU {
   #if os(iOS)
     switch self {
     % for device in iOSDevices:
-    case .${device.caseName}: return .${device.cpu}
+      case .${device.caseName}: return .${device.cpu}
     % end
-    case .simulator(let model): return model.cpu
-    case .unknown: return .unknown
+      case .simulator(let model): return model.cpu
+      case .unknown: return .unknown
     }
   #elseif os(watchOS)
     switch self {
     % for device in watchOSDevices:
-    case .${device.caseName}: return .${device.cpu}
+      case .${device.caseName}: return .${device.cpu}
     % end
-    case .simulator(let model): return model.cpu
-    case .unknown: return .unknown
+      case .simulator(let model): return model.cpu
+      case .unknown: return .unknown
     }
   #elseif os(tvOS)
     switch self {
     % for device in tvOSDevices:
-    case .${device.caseName}: return .${device.cpu}
+      case .${device.caseName}: return .${device.cpu}
     % end
-    case .simulator(let model): return model.cpu
-    case .unknown: return .unknown
+      case .simulator(let model): return model.cpu
+      case .unknown: return .unknown
     }
   #endif
   }
-  }
+}
 
 extension Device.CPU: CustomStringConvertible {
 
@@ -1405,18 +1403,17 @@ extension Device.CPU: CustomStringConvertible {
     #if os(iOS)
       switch self {
 % for cpu in iOS_cpus:
-      case .${cpu.name}: return "${cpu.description}"
+        case .${cpu.name}: return "${cpu.description}"
 % end
-      case .unknown: return "unknown"
+        case .unknown: return "unknown"
       }
     #elseif os(watchOS)
       switch self {
 % for cpu in watchOS_cpus:
-      case .${cpu.name}: return "${cpu.description}"
+        case .${cpu.name}: return "${cpu.description}"
 % end
-      case .unknown: return "unknown"
+        case .unknown: return "unknown"
       }
     #endif
   }
-  
 }
