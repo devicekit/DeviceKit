@@ -1,5 +1,23 @@
 # Changelog
 
+## Version 4.8.0
+
+Releasedate: 2022-10-27
+
+```ruby
+pod 'DeviceKit', '~> 4.8'
+```
+
+### New October 2022 devices
+
+This version adds support for the devices that were released in October 2022: ([#334](https://github.com/devicekit/DeviceKit/pull/334))
+
+| Device | Case value |
+| --- | --- |
+| iPad (10th generation) | `Device.iPad10` |
+| iPad Pro 11-inch (4th generation) | `Device.iPadPro11Inch4` |
+| iPad Pro 12.9-inch (6th generation) | `Device.iPadPro12Inch6` |
+
 ## Version 4.7.0
 
 Releasedate: 2022-09-13
