@@ -184,19 +184,19 @@ public enum Device {
     ///
     /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1136/en_US/iphone-se-3rd-gen-colors-240.png)
     case iPhoneSE3
-    /// Device is an [iPhone 14](https://support.apple.com/kb/TODO)
+    /// Device is an [iPhone 14](https://support.apple.com/kb/SP873)
     ///
     /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1092/en_US/TODO)
     case iPhone14
-    /// Device is an [iPhone 14 Plus](https://support.apple.com/kb/TODO)
+    /// Device is an [iPhone 14 Plus](https://support.apple.com/kb/SP874)
     ///
     /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1091/en_US/TODO)
     case iPhone14Plus
-    /// Device is an [iPhone 14 Pro](https://support.apple.com/kb/TODO)
+    /// Device is an [iPhone 14 Pro](https://support.apple.com/kb/SP875)
     ///
     /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1093/en_US/TODO)
     case iPhone14Pro
-    /// Device is an [iPhone 14 Pro Max](https://support.apple.com/kb/TODO)
+    /// Device is an [iPhone 14 Pro Max](https://support.apple.com/kb/SP876)
     ///
     /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1095/en_US/TODO)
     case iPhone14ProMax
@@ -418,23 +418,23 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP860/series7-480_2x.png)
     case appleWatchSeries7_45mm
-    /// Device is an [Apple Watch Series 8](https://support.apple.com/kb/TODO)
+    /// Device is an [Apple Watch Series 8](https://support.apple.com/kb/SP878)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP860/TODO)
     case appleWatchSeries8_41mm
-    /// Device is an [Apple Watch Series 8](https://support.apple.com/kb/TODO)
+    /// Device is an [Apple Watch Series 8](https://support.apple.com/kb/SP878)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP860/TODO)
     case appleWatchSeries8_45mm
-    /// Device is an [Apple Watch SE (2nd generation)](https://support.apple.com/kb/TODO)
+    /// Device is an [Apple Watch SE (2nd generation)](https://support.apple.com/kb/SP877)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP827/TODO)
     case appleWatchSE2_40mm
-    /// Device is an [Apple Watch SE (2nd generation)](https://support.apple.com/kb/TODO)
+    /// Device is an [Apple Watch SE (2nd generation)](https://support.apple.com/kb/SP877)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP827/TODO)
     case appleWatchSE2_44mm
-    /// Device is an [Apple Watch Ultra](https://support.apple.com/kb/TODO)
+    /// Device is an [Apple Watch Ultra](https://support.apple.com/kb/SP879)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP827/TODO)
     case appleWatchUltra
