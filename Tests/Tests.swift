@@ -404,7 +404,9 @@ class DeviceKitTests: XCTestCase {
       .iPadPro11Inch2,
       .iPadPro12Inch4,
       .iPadPro11Inch3,
-      .iPadPro12Inch5
+      .iPadPro12Inch5,
+      .iPadPro11Inch4,
+      .iPadPro12Inch6
     ])
   }
 
@@ -495,7 +497,9 @@ class DeviceKitTests: XCTestCase {
       .iPadPro11Inch2,
       .iPadPro12Inch4,
       .iPadPro11Inch3,
-      .iPadPro12Inch5
+      .iPadPro12Inch5,
+      .iPadPro11Inch4,
+      .iPadPro12Inch6
     ]
     for device in Device.allRealDevices {
       XCTAssertTrue(device.hasLidarSensor == device.isOneOf(lidarDevices), "testLidarValues failed for \(device.description)")
