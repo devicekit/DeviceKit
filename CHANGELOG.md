@@ -1,5 +1,17 @@
 # Changelog
 
+## Version 4.8.1
+
+Releasedate: 2022-10-28
+
+```ruby
+pod 'DeviceKit', '~> 4.8'
+```
+
+### Bugfixes
+
+- Fix Apple Watch Series 7 device identifier being incorrect. ([#329](https://github.com/devicekit/DeviceKit/pull/329))
+
 ## Version 4.8.0
 
 Releasedate: 2022-10-28
