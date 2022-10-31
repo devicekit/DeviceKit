@@ -345,6 +345,10 @@ public enum Device {
     ///
     /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1023/en_US/apple-tv-4k-2gen-240.png)
     case appleTV4K2
+    /// Device is an [Apple TV 4K (3rd generation)](https://support.apple.com/kb/TODO)
+    ///
+    /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1023/en_US/TODO.png)
+    case appleTV4K3
   #elseif os(watchOS)
     /// Device is an [Apple Watch (1st generation)](https://support.apple.com/kb/SP735)
     ///
@@ -555,6 +559,7 @@ public enum Device {
       case "AppleTV5,3": return appleTVHD
       case "AppleTV6,2": return appleTV4K
       case "AppleTV11,1": return appleTV4K2
+      case "AppleTV14,1": return appleTV4K3
       case "i386", "x86_64", "arm64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "tvOS"))
       default: return unknown(identifier)
       }
@@ -1027,7 +1032,7 @@ public enum Device {
   #elseif os(tvOS)
     /// All TVs
     public static var allTVs: [Device] {
-       return [.appleTVHD, .appleTV4K, .appleTV4K2]
+       return [.appleTVHD, .appleTV4K, .appleTV4K2, .appleTV4K3]
     }
 
     /// All simulator TVs
@@ -1416,6 +1421,7 @@ extension Device: CustomStringConvertible {
       case .appleTVHD: return "Apple TV HD"
       case .appleTV4K: return "Apple TV 4K"
       case .appleTV4K2: return "Apple TV 4K (2nd generation)"
+      case .appleTV4K3: return "Apple TV 4K (3rd generation)"
       case .simulator(let model): return "Simulator (\(model.description))"
       case .unknown(let identifier): return identifier
       }
@@ -1536,6 +1542,7 @@ extension Device: CustomStringConvertible {
       case .appleTVHD: return "Apple TV HD"
       case .appleTV4K: return "Apple TV 4K"
       case .appleTV4K2: return "Apple TV 4K (2nd generation)"
+      case .appleTV4K3: return "Apple TV 4K (3rd generation)"
       case .simulator(let model): return "Simulator (\(model.safeDescription))"
       case .unknown(let identifier): return identifier
       }
