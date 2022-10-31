@@ -18,11 +18,20 @@ This version adds support for the new Apple TV (3rd generation) that is released
 
 ### New features
 
+- Retrieve a device's CPU info using eg. `Device.current.cpu`. ([#330](https://github.com/devicekit/DeviceKit/pull/330))
 - Add ability to get current device's thermal state. ([#332](https://github.com/devicekit/DeviceKit/pull/332))
+- Add `.isSimulator` to tvOS and watchOS. ([#245](https://github.com/devicekit/DeviceKit/pull/245))
 
 ### Bugfixes
 
 - Fix Apple Watch Series 7 device identifier being incorrect. ([#329](https://github.com/devicekit/DeviceKit/pull/329))
+
+### Contributors
+
+Thanks to all the contributers of this release!
+- [parski](https://github.com/parski)
+- [guidev](https://github.com/guidev)
+- [chedabob](https://github.com/chedabob)
 
 ## Version 4.8.0
 
