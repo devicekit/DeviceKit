@@ -694,7 +694,7 @@ public enum Device {
   public static var allSimulators: [Device] {
     return allRealDevices.map(Device.simulator)
   }
-  
+
   /// Returns whether the device is any of the simulator
   /// Useful when there is a need to check and skip running a portion of code (location request or others)
   public var isSimulator: Bool {
