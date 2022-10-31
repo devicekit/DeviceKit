@@ -41,9 +41,9 @@ See our detailed [changelog](CHANGELOG.md) for the latest features, improvements
 
 ## Requirements
 
-- iOS 9.0+ (linking against iOS 9.3 required)
-- tvOS 9.0+ (linking against tvOS 9.2 required)
-- watchOS 2.0+
+- iOS 11.0+
+- tvOS 11.0+
+- watchOS 4.0+
 
 ## Installation
 DeviceKit can be installed in various ways.
