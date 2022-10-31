@@ -1,12 +1,16 @@
 # Changelog
 
-## Version 4.8.1
+## Version 4.9.0
 
-Releasedate: 2022-10-28
+Releasedate: TBD
 
 ```ruby
-pod 'DeviceKit', '~> 4.8'
+pod 'DeviceKit', '~> 4.9'
 ```
+
+### New features
+
+- Add ability to get current device's thermal state. ([#332](https://github.com/devicekit/DeviceKit/pull/332))
 
 ### Bugfixes
 
