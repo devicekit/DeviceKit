@@ -2176,7 +2176,7 @@ extension Device.CPU: CustomStringConvertible {
 
   /// A textual representation of the device.
   public var description: String {
-    #if os(iOS)
+    #if os(iOS) || os(tvOS)
       switch self {
         case .a4: return "A4"
         case .a5: return "A5"

@@ -1400,7 +1400,7 @@ extension Device.CPU: CustomStringConvertible {
 
   /// A textual representation of the device.
   public var description: String {
-    #if os(iOS)
+    #if os(iOS) || os(tvOS)
       switch self {
 % for cpu in iOS_cpus:
         case .${cpu.name}: return "${cpu.description}"
