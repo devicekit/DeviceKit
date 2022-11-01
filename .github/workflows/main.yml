@@ -48,6 +48,7 @@ jobs:
           - platform=iOS Simulator,name=iPod touch (7th generation)
           - platform=tvOS Simulator,name=Apple TV
           - platform=tvOS Simulator,name=Apple TV 4K
+          - platform=watchOS Simulator,name=Apple Watch Ultra (49mm)
 
     steps:
       - uses: actions/checkout@v2
