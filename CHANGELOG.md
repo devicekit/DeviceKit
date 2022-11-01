@@ -22,12 +22,14 @@ pod 'DeviceKit', '~> 5.0'
 
 - Retrieve a device's CPU info using eg. `Device.current.cpu`. ([#330](https://github.com/devicekit/DeviceKit/pull/330))
 - Add `.isSimulator` to tvOS and watchOS. ([#245](https://github.com/devicekit/DeviceKit/pull/245))
+- Add `.isCanvas` which indicates whether the app is running in a SwiftUI preview. ([#303](https://github.com/devicekit/DeviceKit/pull/303))
 
 ### Contributors
 
 Thanks to all the contributers of this release!
 - [parski](https://github.com/parski)
 - [guidev](https://github.com/guidev)
+- [JackYoustra](https://github.com/JackYoustra)
 
 ## Version 4.9.0
 
