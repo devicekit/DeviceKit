@@ -8,6 +8,14 @@ Releasedate: TBD
 pod 'DeviceKit', '~> 4.9'
 ```
 
+### Apple TV 4K (3rd generation) support.
+
+This version adds support for the new Apple TV (3rd generation) that is released on the 4th of November 2022. ([#335](https://github.com/devicekit/DeviceKit/pull/335))
+
+| Device | Case value |
+| --- | --- |
+| Apple TV 4K (3rd generation) | `Device.appleTV4K3` |
+
 ### New features
 
 - Add ability to get current device's thermal state. ([#332](https://github.com/devicekit/DeviceKit/pull/332))
@@ -15,6 +23,12 @@ pod 'DeviceKit', '~> 4.9'
 ### Bugfixes
 
 - Fix Apple Watch Series 7 device identifier being incorrect. ([#329](https://github.com/devicekit/DeviceKit/pull/329))
+
+### Contributors
+
+Thanks to all the contributers of this release!
+- [guidev](https://github.com/guidev)
+- [chedabob](https://github.com/chedabob)
 
 ## Version 4.8.0
 
