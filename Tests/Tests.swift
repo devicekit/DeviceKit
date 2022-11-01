@@ -32,6 +32,18 @@ class DeviceKitTests: XCTestCase {
       || device.description.contains("TV"))
   }
 
+  func testIsCanvas() {
+    #if os(iOS)
+    let otherDevice: Device = device == .iPhone14Pro ? .iPhone14ProMax : .iPhone14Pro
+    #elseif os(tvOS)
+    let otherDevice: Device = device == .appleTVHD ? .appleTV4K : .appleTVHD
+    #elseif os(watchOS)
+    let otherDevice: Device = device == .appleWatchUltra ? .appleWatchSeries8_41mm : .appleWatchUltra
+    #endif
+    XCTAssertEqual(otherDevice.isCanvas, nil)
+    XCTAssertEqual(device.isCanvas, false)
+  }
+
   #if os(iOS) || os(tvOS)
   func testDeviceCPU() {
   #if os(iOS)
