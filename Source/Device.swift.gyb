@@ -548,7 +548,6 @@ public enum Device {
               || (UIDevice.current.userInterfaceIdiom == .pad && isCurrent)
     }
 
-
     /// If this device is a simulator return the underlying device,
     /// otherwise return `self`.
     public var realDevice: Device {
