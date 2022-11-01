@@ -2176,45 +2176,45 @@ extension Device.CPU: CustomStringConvertible {
 
   /// A textual representation of the device.
   public var description: String {
-    #if os(iOS) || os(tvOS)
-      switch self {
-        case .a4: return "A4"
-        case .a5: return "A5"
-        case .a5X: return "A5X"
-        case .a6: return "A6"
-        case .a6X: return "A6X"
-        case .a7: return "A7"
-        case .a8: return "A8"
-        case .a8X: return "A8X"
-        case .a9: return "A9"
-        case .a9X: return "A9X"
-        case .a10Fusion: return "A10 Fusion"
-        case .a10XFusion: return "A10X Fusion"
-        case .a11Bionic: return "A11 Bionic"
-        case .a12Bionic: return "A12 Bionic"
-        case .a12XBionic: return "A12X Bionic"
-        case .a12ZBionic: return "A12Z Bionic"
-        case .a13Bionic: return "A13 Bionic"
-        case .a14Bionic: return "A14 Bionic"
-        case .a15Bionic: return "A15 Bionic"
-        case .a16Bionic: return "A16 Bionic"
-        case .m1: return "M1"
-        case .m2: return "M2"
-        case .unknown: return "unknown"
-      }
-    #elseif os(watchOS)
-      switch self {
-        case .s1: return "S1"
-        case .s1P: return "S1P"
-        case .s2: return "S2"
-        case .s3: return "S3"
-        case .s4: return "S4"
-        case .s5: return "S5"
-        case .s6: return "S6"
-        case .s7: return "S7"
-        case .s8: return "S8"
-        case .unknown: return "unknown"
-      }
-    #endif
+  #if os(iOS) || os(tvOS)
+    switch self {
+      case .a4: return "A4"
+      case .a5: return "A5"
+      case .a5X: return "A5X"
+      case .a6: return "A6"
+      case .a6X: return "A6X"
+      case .a7: return "A7"
+      case .a8: return "A8"
+      case .a8X: return "A8X"
+      case .a9: return "A9"
+      case .a9X: return "A9X"
+      case .a10Fusion: return "A10 Fusion"
+      case .a10XFusion: return "A10X Fusion"
+      case .a11Bionic: return "A11 Bionic"
+      case .a12Bionic: return "A12 Bionic"
+      case .a12XBionic: return "A12X Bionic"
+      case .a12ZBionic: return "A12Z Bionic"
+      case .a13Bionic: return "A13 Bionic"
+      case .a14Bionic: return "A14 Bionic"
+      case .a15Bionic: return "A15 Bionic"
+      case .a16Bionic: return "A16 Bionic"
+      case .m1: return "M1"
+      case .m2: return "M2"
+      case .unknown: return "unknown"
+    }
+  #elseif os(watchOS)
+    switch self {
+      case .s1: return "S1"
+      case .s1P: return "S1P"
+      case .s2: return "S2"
+      case .s3: return "S3"
+      case .s4: return "S4"
+      case .s5: return "S5"
+      case .s6: return "S6"
+      case .s7: return "S7"
+      case .s8: return "S8"
+      case .unknown: return "unknown"
+    }
+  #endif
   }
 }

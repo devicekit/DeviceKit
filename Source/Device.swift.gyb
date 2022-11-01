@@ -1400,20 +1400,20 @@ extension Device.CPU: CustomStringConvertible {
 
   /// A textual representation of the device.
   public var description: String {
-    #if os(iOS) || os(tvOS)
-      switch self {
+  #if os(iOS) || os(tvOS)
+    switch self {
 % for cpu in iOS_cpus:
-        case .${cpu.name}: return "${cpu.description}"
+      case .${cpu.name}: return "${cpu.description}"
 % end
-        case .unknown: return "unknown"
-      }
-    #elseif os(watchOS)
-      switch self {
+      case .unknown: return "unknown"
+    }
+  #elseif os(watchOS)
+    switch self {
 % for cpu in watchOS_cpus:
-        case .${cpu.name}: return "${cpu.description}"
+      case .${cpu.name}: return "${cpu.description}"
 % end
-        case .unknown: return "unknown"
-      }
-    #endif
+      case .unknown: return "unknown"
+    }
+  #endif
   }
 }
