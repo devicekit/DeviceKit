@@ -33,7 +33,9 @@ class DeviceKitTests: XCTestCase {
   }
 
   func testIsCanvas() {
-    XCTAssertFalse(device.isCanvas)
+    let otherDevice: Device = device == .iPhone14Pro ? .iPhone14ProMax : .iPhone14Pro
+    XCTAssertEqual(otherDevice.isCanvas, nil)
+    XCTAssertEqual(device.isCanvas, false)
   }
 
   #if os(iOS) || os(tvOS)

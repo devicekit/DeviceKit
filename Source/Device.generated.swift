@@ -1055,8 +1055,9 @@ public enum Device {
     }
   #endif
 
-  /// Returns whether the device is a SwiftUI preview canvas
-  public var isCanvas: Bool {
+  /// Returns whether the current device is a SwiftUI preview canvas
+  public var isCanvas: Bool? {
+    guard isCurrent else { return nil }
     #if DEBUG
       return ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1"
     #else
