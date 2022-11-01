@@ -32,6 +32,51 @@ class DeviceKitTests: XCTestCase {
       || device.description.contains("TV"))
   }
 
+  #if os(iOS) || os(tvOS)
+  func testDeviceCPU() {
+  #if os(iOS)
+    XCTAssertEqual(Device.iPhone12Mini.cpu, Device.CPU.a14Bionic)
+    XCTAssertEqual(Device.iPhone12.cpu, Device.CPU.a14Bionic)
+    XCTAssertEqual(Device.iPhone12Pro.cpu, Device.CPU.a14Bionic)
+    XCTAssertEqual(Device.iPhone12ProMax.cpu, Device.CPU.a14Bionic)
+    XCTAssertEqual(Device.iPhone13Mini.cpu, Device.CPU.a15Bionic)
+    XCTAssertEqual(Device.iPhone13.cpu, Device.CPU.a15Bionic)
+    XCTAssertEqual(Device.iPhone13Pro.cpu, Device.CPU.a15Bionic)
+    XCTAssertEqual(Device.iPhone13ProMax.cpu, Device.CPU.a15Bionic)
+    XCTAssertEqual(Device.iPhone14.cpu, Device.CPU.a15Bionic)
+    XCTAssertEqual(Device.iPhone14Plus.cpu, Device.CPU.a15Bionic)
+    XCTAssertEqual(Device.iPhone14Pro.cpu, Device.CPU.a16Bionic)
+    XCTAssertEqual(Device.iPhone14ProMax.cpu, Device.CPU.a16Bionic)
+
+    XCTAssertEqual(Device.iPad8.cpu, Device.CPU.a12Bionic)
+    XCTAssertEqual(Device.iPad9.cpu, Device.CPU.a13Bionic)
+    XCTAssertEqual(Device.iPad10.cpu, Device.CPU.a14Bionic)
+    XCTAssertEqual(Device.iPadAir3.cpu, Device.CPU.a12Bionic)
+    XCTAssertEqual(Device.iPadAir4.cpu, Device.CPU.a14Bionic)
+    XCTAssertEqual(Device.iPadAir5.cpu, Device.CPU.m1)
+    XCTAssertEqual(Device.iPadMini4.cpu, Device.CPU.a8)
+    XCTAssertEqual(Device.iPadMini5.cpu, Device.CPU.a12Bionic)
+    XCTAssertEqual(Device.iPadMini6.cpu, Device.CPU.a15Bionic)
+    XCTAssertEqual(Device.iPadPro11Inch.cpu, Device.CPU.a12XBionic)
+    XCTAssertEqual(Device.iPadPro11Inch2.cpu, Device.CPU.a12ZBionic)
+    XCTAssertEqual(Device.iPadPro11Inch3.cpu, Device.CPU.m1)
+    XCTAssertEqual(Device.iPadPro11Inch4.cpu, Device.CPU.m2)
+  #elseif os(tvOS)
+    XCTAssertEqual(Device.appleTVHD.cpu, Device.CPU.a8)
+    XCTAssertEqual(Device.appleTV4K.cpu, Device.CPU.a10XFusion)
+    XCTAssertEqual(Device.appleTV4K2.cpu, Device.CPU.a12Bionic)
+    XCTAssertEqual(Device.appleTV4K3.cpu, Device.CPU.a15Bionic)
+  #endif
+  }
+
+  func testCPUDescription() {
+    XCTAssertEqual(Device.CPU.a15Bionic.description, "A15 Bionic")
+    XCTAssertEqual(Device.CPU.a16Bionic.description, "A16 Bionic")
+    XCTAssertEqual(Device.CPU.m1.description, "M1")
+    XCTAssertEqual(Device.CPU.m2.description, "M2")
+  }
+  #endif
+
   // MARK: - iOS
   #if os(iOS)
 
