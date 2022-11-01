@@ -20,6 +20,10 @@ class DeviceKitTests: XCTestCase {
     XCTAssertTrue(device.isOneOf(Device.allSimulators))
   }
 
+  func testIsSimulator() {
+    XCTAssertTrue(device.isSimulator)
+  }
+
   func testDeviceDescription() {
     XCTAssertTrue(device.description.hasPrefix("Simulator"))
     XCTAssertTrue(device.description.contains("iPhone")
@@ -30,9 +34,6 @@ class DeviceKitTests: XCTestCase {
 
   // MARK: - iOS
   #if os(iOS)
-  func testIsSimulator() {
-    XCTAssertTrue(device.isSimulator)
-  }
 
   func testIsPhoneIsPadIsPod() {
     // Test for https://github.com/devicekit/DeviceKit/issues/165 to prevent it from happening in the future.
@@ -510,9 +511,6 @@ class DeviceKitTests: XCTestCase {
 
   // MARK: - tvOS
   #if os(tvOS)
-  func testIsSimulator() {
-    XCTAssertTrue(Device.current.isOneOf(Device.allSimulatorTVs))
-  }
 
   func testDescriptionFromIdentifier() {
     XCTAssertEqual(Device.mapToDevice(identifier: "AppleTV5,3").description, "Apple TV HD")
