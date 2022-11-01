@@ -1,8 +1,37 @@
 # Changelog
 
-## Version 4.9.0
+## Version 5.0.0
 
 Releasedate: TBD
+
+```ruby
+pod 'DeviceKit', '~> 5.0'
+```
+
+### Breaking changes
+
+- DeviceKit v5.0.0 drops support for the platforms that Xcode 14 also no longer supports: ([#337](https://github.com/devicekit/DeviceKit/pull/337))
+
+| Platform | Previous | Now  |
+|----------|----------|------|
+| iOS      | 9.0      | 11.0 |
+| tvOS     | 9.0      | 11.0 |
+| watchOS  | 2.0      | 4.0  |
+
+### New features
+
+- Retrieve a device's CPU info using eg. `Device.current.cpu`. ([#330](https://github.com/devicekit/DeviceKit/pull/330))
+- Add `.isSimulator` to tvOS and watchOS. ([#245](https://github.com/devicekit/DeviceKit/pull/245))
+
+### Contributors
+
+Thanks to all the contributers of this release!
+- [parski](https://github.com/parski)
+- [guidev](https://github.com/guidev)
+
+## Version 4.9.0
+
+Releasedate: 2022-11-01
 
 ```ruby
 pod 'DeviceKit', '~> 4.9'
@@ -18,9 +47,7 @@ This version adds support for the new Apple TV (3rd generation) that is released
 
 ### New features
 
-- Retrieve a device's CPU info using eg. `Device.current.cpu`. ([#330](https://github.com/devicekit/DeviceKit/pull/330))
 - Add ability to get current device's thermal state. ([#332](https://github.com/devicekit/DeviceKit/pull/332))
-- Add `.isSimulator` to tvOS and watchOS. ([#245](https://github.com/devicekit/DeviceKit/pull/245))
 
 ### Bugfixes
 
@@ -29,7 +56,6 @@ This version adds support for the new Apple TV (3rd generation) that is released
 ### Contributors
 
 Thanks to all the contributers of this release!
-- [parski](https://github.com/parski)
 - [guidev](https://github.com/guidev)
 - [chedabob](https://github.com/chedabob)
 
