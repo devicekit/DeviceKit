@@ -1,12 +1,51 @@
 # Changelog
 
-## Version 4.9.0
+## Version 5.0.0
 
 Releasedate: TBD
 
 ```ruby
+pod 'DeviceKit', '~> 5.0'
+```
+
+### Breaking changes
+
+- DeviceKit v5.0.0 drops support for the platforms that Xcode 14 also no longer supports: ([#337](https://github.com/devicekit/DeviceKit/pull/337))
+
+| Platform | Previous | Now  |
+|----------|----------|------|
+| iOS      | 9.0      | 11.0 |
+| tvOS     | 9.0      | 11.0 |
+| watchOS  | 2.0      | 4.0  |
+
+### New features
+
+- Retrieve a device's CPU info using eg. `Device.current.cpu`. ([#330](https://github.com/devicekit/DeviceKit/pull/330))
+- Add `.isSimulator` to tvOS and watchOS. ([#245](https://github.com/devicekit/DeviceKit/pull/245))
+- Add `.isCanvas` which indicates whether the app is running in a SwiftUI preview. ([#303](https://github.com/devicekit/DeviceKit/pull/303))
+
+### Contributors
+
+Thanks to all the contributers of this release!
+- [parski](https://github.com/parski)
+- [guidev](https://github.com/guidev)
+- [JackYoustra](https://github.com/JackYoustra)
+
+## Version 4.9.0
+
+Releasedate: 2022-11-01
+
+```ruby
 pod 'DeviceKit', '~> 4.9'
 ```
+
+### Apple TV 4K (3rd generation) support.
+
+This version adds support for the new Apple TV (3rd generation) that is released on the 4th of November 2022. ([#335](https://github.com/devicekit/DeviceKit/pull/335))
+
+| Device | Case value |
+| --- | --- |
+| Apple TV 4K (3rd generation) | `Device.appleTV4K3` |
 
 ### New features
 
@@ -15,6 +54,12 @@ pod 'DeviceKit', '~> 4.9'
 ### Bugfixes
 
 - Fix Apple Watch Series 7 device identifier being incorrect. ([#329](https://github.com/devicekit/DeviceKit/pull/329))
+
+### Contributors
+
+Thanks to all the contributers of this release!
+- [guidev](https://github.com/guidev)
+- [chedabob](https://github.com/chedabob)
 
 ## Version 4.8.0
 
