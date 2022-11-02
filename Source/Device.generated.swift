@@ -1016,7 +1016,7 @@ public enum Device {
   
     /// All devices that support 5G.
     public static var allDevicesWith5gSupport: [Device] {
-      return [.iPhone12, .iPhone12Pro, .iPhone12ProMax, .iPhone12Mini, .iPhone13, .iPhone12Pro, .iPhone12ProMax, .iPhone13Mini, .iPhone14, .iPhone14Pro, .iPhone14ProMax, .iPhone14ProMax, .iPhoneSE3, .iPadAir5, .iPadMini6, .iPadPro11Inch3, .iPadPro11Inch4, .iPadPro12Inch5, .iPadPro12Inch6]
+      return [.iPhone12, .iPhone12Pro, .iPhone12ProMax, .iPhone12Mini, .iPhone13, .iPhone13Pro, .iPhone13ProMax, .iPhone13Mini, .iPhone14, .iPhone14Pro, .iPhone14ProMax, .iPhone14ProMax, .iPhoneSE3, .iPadAir5, .iPadMini6, .iPadPro11Inch3, .iPadPro11Inch4, .iPadPro12Inch5, .iPadPro12Inch6]
     }
     
     /// Returns whether or not the device has 5G support.
