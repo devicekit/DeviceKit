@@ -9,6 +9,8 @@
 //
 //===----------------------------------------------------------------------===//
 
+#if os(iOS) || os(watchOS) || os(tvOS)
+
 @testable import DeviceKit
 import XCTest
 
@@ -594,3 +596,5 @@ class DeviceKitTests: XCTestCase {
   #endif
 
 }
+
+#endif

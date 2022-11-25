@@ -9,6 +9,8 @@
 //
 //===----------------------------------------------------------------------===//
 
+#if os(iOS) || os(watchOS) || os(tvOS)
+
 #if os(watchOS)
 import WatchKit
 #else
@@ -2228,3 +2230,5 @@ extension Device.CPU: CustomStringConvertible {
   #endif
   }
 }
+
+#endif

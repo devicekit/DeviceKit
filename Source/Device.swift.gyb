@@ -273,6 +273,8 @@ iOSDevices = iPods + iPhones + iPads + homePods
 tvOSDevices = tvs
 watchOSDevices = watches
 }%
+#if os(iOS) || os(watchOS) || os(tvOS)
+
 #if os(watchOS)
 import WatchKit
 #else
@@ -1427,3 +1429,5 @@ extension Device.CPU: CustomStringConvertible {
   #endif
   }
 }
+
+#endif
