@@ -1013,10 +1013,10 @@ public enum Device {
     public var supportsWirelessCharging: Bool {
       return isOneOf(Device.allDevicesWithWirelessChargingSupport) || isOneOf(Device.allDevicesWithWirelessChargingSupport.map(Device.simulator))
     }
-  
+
     /// All devices that support 5G.
     public static var allDevicesWith5gSupport: [Device] {
-      return [.iPhone12, .iPhone12Pro, .iPhone12ProMax, .iPhone12Mini, .iPhone13, .iPhone13Pro, .iPhone13ProMax, .iPhone13Mini, .iPhone14, .iPhone14Pro, .iPhone14ProMax, .iPhone14ProMax, .iPhoneSE3, .iPadAir5, .iPadMini6, .iPadPro11Inch3, .iPadPro11Inch4, .iPadPro12Inch5, .iPadPro12Inch6]
+      return [.iPhone12, .iPhone12Mini, .iPhone12Pro, .iPhone12ProMax, .iPhone13, .iPhone13Mini, .iPhone13Pro, .iPhone13ProMax, .iPhoneSE3, .iPhone14, .iPhone14Plus, .iPhone14Pro, .iPhone14ProMax, .iPadAir5, .iPadMini6, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6]
     }
     
     /// Returns whether or not the device has 5G support.
