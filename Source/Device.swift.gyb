@@ -780,7 +780,7 @@ public enum Device {
     return self == Device.current
   }
 
-  /// The name identifying the device (e.g. "Dennis' iPhone").
+  /// The name identifying the device (e.g. "Dennis' iPhone"). As of iOS 16, this will return a generic String like "iPhone", unless your app has additional entitlements
   public var name: String? {
     guard isCurrent else { return nil }
     #if os(watchOS)
