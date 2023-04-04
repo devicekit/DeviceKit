@@ -11,7 +11,7 @@
 
 #if os(watchOS)
 import WatchKit
-#else
+#elseif canImport(UIKit)
 import UIKit
 #endif
 
