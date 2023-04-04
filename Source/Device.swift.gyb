@@ -9,6 +9,8 @@
 //
 //===----------------------------------------------------------------------===//
 
+#if canImport(WatchKit) || canImport(UIKit)
+
 %{
 class Device:
   def __init__(self, caseName, comment, imageURL, identifiers, diagonal, screenRatio, description, safeDescription, ppi, isPlusFormFactor, isPadMiniFormFactor, isPro, isXSeries, hasTouchID, hasFaceID, hasSensorHousing, supportsWirelessCharging, hasRoundedDisplayCorners, applePencilSupport, hasForce3dTouchSupport, cameras, hasLidarSensor, cpu):
@@ -273,7 +275,7 @@ iOSDevices = iPods + iPhones + iPads + homePods
 tvOSDevices = tvs
 watchOSDevices = watches
 }%
-#if os(watchOS)
+#if canImport(WatchKit)
 import WatchKit
 #elseif canImport(UIKit)
 import UIKit
@@ -1427,3 +1429,5 @@ extension Device.CPU: CustomStringConvertible {
   #endif
   }
 }
+
+#endif

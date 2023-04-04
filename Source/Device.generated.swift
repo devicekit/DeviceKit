@@ -9,7 +9,9 @@
 //
 //===----------------------------------------------------------------------===//
 
-#if os(watchOS)
+#if canImport(WatchKit) || canImport(UIKit)
+
+#if canImport(WatchKit)
 import WatchKit
 #elseif canImport(UIKit)
 import UIKit
@@ -2228,3 +2230,5 @@ extension Device.CPU: CustomStringConvertible {
   #endif
   }
 }
+
+#endif

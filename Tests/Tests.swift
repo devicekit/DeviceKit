@@ -12,6 +12,8 @@
 @testable import DeviceKit
 import XCTest
 
+#if canImport(UIKit) || canImport(WatchKit)
+
 class DeviceKitTests: XCTestCase {
 
   let device = Device.current
@@ -594,3 +596,5 @@ class DeviceKitTests: XCTestCase {
   #endif
 
 }
+
+#endif
