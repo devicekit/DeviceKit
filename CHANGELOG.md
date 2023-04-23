@@ -14,7 +14,7 @@ pod 'DeviceKit', '~> 5.0'
 
 | Platform | Previous | Now  |
 |----------|----------|------|
-| iOS      | 9.0      | 11.0 |
+| iOS      | 9.0      | 10.0 |
 | tvOS     | 9.0      | 11.0 |
 | watchOS  | 2.0      | 4.0  |
 
