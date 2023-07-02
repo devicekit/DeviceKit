@@ -56,6 +56,7 @@
 		95C7E8471C612ABA00B0189E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = "<group>"; };
 		95C7E84D1C6130DB00B0189E /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		95C7E84E1C61332300B0189E /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		FC5C20FA2A5197E2009406EE /* .github */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .github; sourceTree = "<group>"; };
 		FCF1EAD323381E5700B609AA /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +118,7 @@
 		95CBDB631BFD2B440065FC66 = {
 			isa = PBXGroup;
 			children = (
+				FC5C20FA2A5197E2009406EE /* .github */,
 				95C7E83B1C6122BF00B0189E /* Source */,
 				95C7E8411C61241200B0189E /* Tests */,
 				954977F91E748DB000D6FAEB /* Scripts */,
