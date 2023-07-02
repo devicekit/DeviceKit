@@ -1,5 +1,22 @@
 # Changelog
 
+## Version 5.0.1
+
+Releasedate: 2023-07-03
+
+```ruby
+pod 'DeviceKit', '~> 5.0'
+```
+
+### Fixes
+
+- Fixes compilation errors that occur when compiling DeviceKit for visionOS. ([#356](https://github.com/devicekit/DeviceKit/pull/356))
+
+### Important notes
+
+- Note that this version does not add full visionOS support to DeviceKit. It just allows DeviceKit to compile for visionOS.
+- When compiling this version of DeviceKit with Xcode 14 or lower, it will produce the following warning 3 times: `Unknown operating system for build configuration 'os'`
+
 ## Version 5.0.0
 
 Releasedate: 2022-11-01
