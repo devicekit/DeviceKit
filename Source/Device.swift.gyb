@@ -267,6 +267,25 @@ watches = [
             "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP827/TODO",
             ["Watch6,18"], 2.2, (4,5), "Apple Watch Ultra", "Apple Watch Ultra", 338, False, False, False, False, False, False, False, True, False, 0, False, 0, False, "s8"),
 
+            Device(
+            "appleWatchSeries9_41mm",
+            "Device is an [Apple Watch Series 9]()",
+            "",
+            ["Watch7,3"], 1.9, (4,5), "Apple Watch Series 9 41mm", "Apple Watch Series 9 41mm", 326, False, False, False, False, False, False, False, True, False, 0, False, 0, False, "s9"),
+
+            Device(
+            "appleWatchSeries9_45mm",
+            "Device is an [Apple Watch Series 9]()",
+            "",
+            ["Watch7,4"], 2.0, (4,5), "Apple Watch Series 9 45mm", "Apple Watch Series 9 45mm", 326, False, False, False, False, False, False, False, True, False, 0, False, 0, False, "s9"),
+
+             Device(
+            "appleWatchUltra2",
+            "Device is an [Apple Watch Ultra2]()",
+            "",
+            ["Watch7,5"], 2.2, (4,5), "Apple Watch Ultra2", "Apple Watch Ultra2", 338, False, False, False, False, False, False, False, True, False, 0, False, 0, False, "s9"),
+
+
   ]
 
 iOSDevices = iPods + iPhones + iPads + homePods
