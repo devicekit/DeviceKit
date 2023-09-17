@@ -82,7 +82,7 @@ iPhones = [
             Device("iPhone15",       "Device is an [iPhone 15]()",                                                     "",                                                                                                                          ["iPhone15,4"],                               6.1,  (9, 19.5),  "iPhone 15", "iPhone 15", 460, False, False, False, True, False, True, True, True, True, 0, False, 13, False, "a16Bionic"),
             Device("iPhone15Plus",   "Device is an [iPhone 15 Plus]()",                                                "",                                                                                                                          ["iPhone15,5"],                               6.7,  (9, 19.5),  "iPhone 15 Plus", "iPhone 15 Plus", 476, True, False, False, True, False, True, True, True, True, 0, False, 13, False, "a16Bionic"),
             Device("iPhone15Pro",    "Device is an [iPhone 15 Pro]()",                                                 "",                                                                                                                          ["iPhone16,1"],                               6.1,  (9, 19.5),  "iPhone 15 Pro", "iPhone 15 Pro", 460, False, False, True, True, False, True, True, True, True, 0, False, 123, True, "a17Pro"),
-            Device("iPhone15ProMax", "Device is an [iPhone 15 Pro Max]()",                                             "",                                                                                                                          ["iPhone16,2"],                               6.7,  (9, 19.5),  "iPhone 15 Pro Max", "iPhone 15 Pro Max", 460, True, False, True, True, False, True, True, True, True, 0, False, 134, True, "a17Pro"),
+            Device("iPhone15ProMax", "Device is an [iPhone 15 Pro Max]()",                                             "",                                                                                                                          ["iPhone16,2"],                               6.7,  (9, 19.5),  "iPhone 15 Pro Max", "iPhone 15 Pro Max", 460, True, False, True, True, False, True, True, True, True, 0, False, 123, True, "a17Pro"),
 
           ]
 
@@ -1225,7 +1225,6 @@ extension Device {
     case wide
     case telephoto
     case ultraWide
-    case periscope
   }
 
   /// Returns an array of the types of cameras the device has
@@ -1240,9 +1239,6 @@ extension Device {
   % for device in list(filter(lambda device: device.cameras == 3, iOSDevices)):
     case .${device.caseName}: return [.ultraWide]
   % end
-  % for device in list(filter(lambda device: device.cameras == 4, iOSDevices)):
-    case .${device.caseName}: return [.periscope]
-  % end
   % for device in list(filter(lambda device: device.cameras == 12, iOSDevices)):
       case .${device.caseName}: return [.wide, .telephoto]
   % end
@@ -1254,9 +1250,6 @@ extension Device {
   % end
   % for device in list(filter(lambda device: device.cameras == 123, iOSDevices)):
       case .${device.caseName}: return [.wide, .telephoto, .ultraWide]
-  % end
-  % for device in list(filter(lambda device: device.cameras == 134, iOSDevices)):
-      case .${device.caseName}: return [.wide, .ultraWide, .periscope]
   % end
       default: return []
     }
@@ -1288,11 +1281,6 @@ extension Device {
     return [${', '.join(list(map(lambda device: "." + device.caseName, list(filter(lambda device: device.cameras == 3 or device.cameras == 13 or device.cameras == 123, iOSDevices)))))}]
   }
 
-  /// All devices that feature a periscope camera
-  public static var allDevicesWithPeriscopeCamera: [Device] {
-    return [${', '.join(list(map(lambda device: "." + device.caseName, list(filter(lambda device: device.cameras == 4 or device.cameras == 134, iOSDevices)))))}]
-  }
-
   /// Returns whether or not the current device has a camera
   public var hasCamera: Bool {
     return !self.cameras.isEmpty
@@ -1317,11 +1305,6 @@ extension Device {
   /// Returns whether or not the current device has an ultra wide camera
   public var hasUltraWideCamera: Bool {
     return self.cameras.contains(.ultraWide)
-  }
-
-  /// Returns whether or not the current device has a periscope camera
-  public var hasPeriscopeCamera: Bool {
-    return self.cameras.contains(.periscope)
   }
 }
 #endif
