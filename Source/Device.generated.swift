@@ -186,19 +186,19 @@ public enum Device {
     case iPhoneSE3
     /// Device is an [iPhone 14](https://support.apple.com/kb/SP873)
     ///
-    /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1092/en_US/TODO)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP873/iphone-14_1_2x.png)
     case iPhone14
     /// Device is an [iPhone 14 Plus](https://support.apple.com/kb/SP874)
     ///
-    /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1091/en_US/TODO)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP873/iphone-14_1_2x.png)
     case iPhone14Plus
     /// Device is an [iPhone 14 Pro](https://support.apple.com/kb/SP875)
     ///
-    /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1093/en_US/TODO)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP875/sp875-sp876-iphone14-pro-promax_2x.png)
     case iPhone14Pro
     /// Device is an [iPhone 14 Pro Max](https://support.apple.com/kb/SP876)
     ///
-    /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1095/en_US/TODO)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP875/sp875-sp876-iphone14-pro-promax_2x.png)
     case iPhone14ProMax
     /// Device is an [iPhone 15]()
     ///
@@ -262,15 +262,15 @@ public enum Device {
     case iPad9
     /// Device is an [iPad (10th generation)](https://support.apple.com/kb/SP884)
     ///
-    /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1096/en_US/TODO.png)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP884/sp884-ipad-10gen-960_2x.png)
     case iPad10
     /// Device is an [iPad Air (4th generation)](https://support.apple.com/kb/SP828)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP828/sp828ipad-air-ipados14-960_2x.png)
     case iPadAir4
-    /// Device is an [iPad Air (5th generation)](https://support.apple.com/kb/TODO)
+    /// Device is an [iPad Air (5th generation)](https://support.apple.com/kb/SP866)
     ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/TODO)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP866/sp866-ipad-air-5gen_2x.png)
     case iPadAir5
     /// Device is an [iPad Mini](https://support.apple.com/kb/SP661)
     ///
@@ -338,11 +338,11 @@ public enum Device {
     case iPadPro12Inch5
     /// Device is an [iPad Pro 11-inch (4th generation)](https://support.apple.com/kb/SP882)
     ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP843/TODO.png)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP882/ipad-pro-4gen-mainimage_2x.png)
     case iPadPro11Inch4
     /// Device is an [iPad Pro 12.9-inch (6th generation)](https://support.apple.com/kb/SP883)
     ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP844/TODO.png)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP882/ipad-pro-4gen-mainimage_2x.png)
     case iPadPro12Inch6
     /// Device is a [HomePod](https://support.apple.com/kb/SP773)
     ///
@@ -361,9 +361,9 @@ public enum Device {
     ///
     /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1023/en_US/apple-tv-4k-2gen-240.png)
     case appleTV4K2
-    /// Device is an [Apple TV 4K (3rd generation)](https://support.apple.com/kb/TODO)
+    /// Device is an [Apple TV 4K (3rd generation)](https://support.apple.com/kb/SP886)
     ///
-    /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1023/en_US/TODO.png)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP886/apple-tv-4k-3gen_2x.png)
     case appleTV4K3
   #elseif os(watchOS)
     /// Device is an [Apple Watch (1st generation)](https://support.apple.com/kb/SP735)
@@ -440,23 +440,23 @@ public enum Device {
     case appleWatchSeries7_45mm
     /// Device is an [Apple Watch Series 8](https://support.apple.com/kb/SP878)
     ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP860/TODO)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP878/apple-watch-series8_2x.png)
     case appleWatchSeries8_41mm
     /// Device is an [Apple Watch Series 8](https://support.apple.com/kb/SP878)
     ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP860/TODO)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP878/apple-watch-series8_2x.png)
     case appleWatchSeries8_45mm
     /// Device is an [Apple Watch SE (2nd generation)](https://support.apple.com/kb/SP877)
     ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP827/TODO)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP877/apple-watch-se-2nd-gen_2x.png)
     case appleWatchSE2_40mm
     /// Device is an [Apple Watch SE (2nd generation)](https://support.apple.com/kb/SP877)
     ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP827/TODO)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP877/apple-watch-se-2nd-gen_2x.png)
     case appleWatchSE2_44mm
     /// Device is an [Apple Watch Ultra](https://support.apple.com/kb/SP879)
     ///
-    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP827/TODO)
+    /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP879/apple-watch-ultra_2x.png)
     case appleWatchUltra
     /// Device is an [Apple Watch Series 9]()
     ///
