@@ -29,7 +29,8 @@ class DeviceKitTests: XCTestCase {
     XCTAssertTrue(device.description.contains("iPhone")
       || device.description.contains("iPad")
       || device.description.contains("iPod")
-      || device.description.contains("TV"))
+      || device.description.contains("TV")
+      || device.description.contains("Apple Watch"))
   }
 
   func testIsCanvas() {

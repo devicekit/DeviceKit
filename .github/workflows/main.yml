@@ -48,6 +48,7 @@ jobs:
           - platform=iOS Simulator,name=iPhone SE (2nd generation)
           - platform=tvOS Simulator,name=Apple TV
           - platform=tvOS Simulator,name=Apple TV 4K (3rd generation)
+          - platform=watchOS Simulator,name=Apple Watch Series 8 (45mm)
 
     steps:
       - uses: actions/checkout@v2
