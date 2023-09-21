@@ -75,10 +75,15 @@ iPhones = [
             Device("iPhone13Pro",    "Device is an [iPhone 13 Pro](https://support.apple.com/kb/SP852)",               "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1093/en_US/iphone-13pro-240.png",             ["iPhone14,2"],                               6.1,  (9, 19.5),  "iPhone 13 Pro", "iPhone 13 Pro", 460, False, False, True, True, False, True, True, True, True, 0, False, 123, True, "a15Bionic"),
             Device("iPhone13ProMax", "Device is an [iPhone 13 Pro Max](https://support.apple.com/kb/SP848)",           "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1095/en_US/iphone-13promax-240.png",          ["iPhone14,3"],                               6.7,  (9, 19.5),  "iPhone 13 Pro Max", "iPhone 13 Pro Max", 458, True, False, True, True, False, True, True, True, True, 0, False, 123, True, "a15Bionic"),
             Device("iPhoneSE3",      "Device is an [iPhone SE (3rd generation)](https://support.apple.com/kb/SP867)",  "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1136/en_US/iphone-se-3rd-gen-colors-240.png", ["iPhone14,6"],                               4.7,  (9, 16),    "iPhone SE (3rd generation)", "iPhone SE (3rd generation)", 326, False, False, False, False, True, False, False, True, False, 0, False, 1, False, "a15Bionic"),
-            Device("iPhone14",       "Device is an [iPhone 14](https://support.apple.com/kb/SP873)",                   "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1092/en_US/TODO",                             ["iPhone14,7"],                               6.1,  (9, 19.5),  "iPhone 14", "iPhone 14", 460, False, False, False, True, False, True, True, True, True, 0, False, 13, False, "a15Bionic"),
-            Device("iPhone14Plus",   "Device is an [iPhone 14 Plus](https://support.apple.com/kb/SP874)",              "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1091/en_US/TODO",                             ["iPhone14,8"],                               6.7,  (9, 19.5),  "iPhone 14 Plus", "iPhone 14 Plus", 476, True, False, False, True, False, True, True, True, True, 0, False, 13, False, "a15Bionic"),
-            Device("iPhone14Pro",    "Device is an [iPhone 14 Pro](https://support.apple.com/kb/SP875)",               "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1093/en_US/TODO",                             ["iPhone15,2"],                               6.1,  (9, 19.5),  "iPhone 14 Pro", "iPhone 14 Pro", 460, False, False, True, True, False, True, True, True, True, 0, False, 123, True, "a16Bionic"),
-            Device("iPhone14ProMax", "Device is an [iPhone 14 Pro Max](https://support.apple.com/kb/SP876)",           "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1095/en_US/TODO",                             ["iPhone15,3"],                               6.7,  (9, 19.5),  "iPhone 14 Pro Max", "iPhone 14 Pro Max", 458, True, False, True, True, False, True, True, True, True, 0, False, 123, True, "a16Bionic"),
+            Device("iPhone14",       "Device is an [iPhone 14](https://support.apple.com/kb/SP873)",                   "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP873/iphone-14_1_2x.png",                                        ["iPhone14,7"],                               6.1,  (9, 19.5),  "iPhone 14", "iPhone 14", 460, False, False, False, True, False, True, True, True, True, 0, False, 13, False, "a15Bionic"),
+            Device("iPhone14Plus",   "Device is an [iPhone 14 Plus](https://support.apple.com/kb/SP874)",              "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP873/iphone-14_1_2x.png",                                        ["iPhone14,8"],                               6.7,  (9, 19.5),  "iPhone 14 Plus", "iPhone 14 Plus", 476, True, False, False, True, False, True, True, True, True, 0, False, 13, False, "a15Bionic"),
+            Device("iPhone14Pro",    "Device is an [iPhone 14 Pro](https://support.apple.com/kb/SP875)",               "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP875/sp875-sp876-iphone14-pro-promax_2x.png",                    ["iPhone15,2"],                               6.1,  (9, 19.5),  "iPhone 14 Pro", "iPhone 14 Pro", 460, False, False, True, True, False, True, True, True, True, 0, False, 123, True, "a16Bionic"),
+            Device("iPhone14ProMax", "Device is an [iPhone 14 Pro Max](https://support.apple.com/kb/SP876)",           "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP875/sp875-sp876-iphone14-pro-promax_2x.png",                    ["iPhone15,3"],                               6.7,  (9, 19.5),  "iPhone 14 Pro Max", "iPhone 14 Pro Max", 458, True, False, True, True, False, True, True, True, True, 0, False, 123, True, "a16Bionic"),
+            Device("iPhone15",       "Device is an [iPhone 15]()",                                                     "",                                                                                                                          ["iPhone15,4"],                               6.1,  (9, 19.5),  "iPhone 15", "iPhone 15", 460, False, False, False, True, False, True, True, True, True, 0, False, 13, False, "a16Bionic"),
+            Device("iPhone15Plus",   "Device is an [iPhone 15 Plus]()",                                                "",                                                                                                                          ["iPhone15,5"],                               6.7,  (9, 19.5),  "iPhone 15 Plus", "iPhone 15 Plus", 476, True, False, False, True, False, True, True, True, True, 0, False, 13, False, "a16Bionic"),
+            Device("iPhone15Pro",    "Device is an [iPhone 15 Pro]()",                                                 "",                                                                                                                          ["iPhone16,1"],                               6.1,  (9, 19.5),  "iPhone 15 Pro", "iPhone 15 Pro", 460, False, False, True, True, False, True, True, True, True, 0, False, 123, True, "a17Pro"),
+            Device("iPhone15ProMax", "Device is an [iPhone 15 Pro Max]()",                                             "",                                                                                                                          ["iPhone16,2"],                               6.7,  (9, 19.5),  "iPhone 15 Pro Max", "iPhone 15 Pro Max", 460, True, False, True, True, False, True, True, True, True, 0, False, 123, True, "a17Pro"),
+
           ]
 
 iPads = [
@@ -93,9 +98,9 @@ iPads = [
             Device("iPad7",          "Device is an [iPad (7th generation)](https://support.apple.com/kb/SP807)",               "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP807/sp807-ipad-7th-gen_2x.png",                       ["iPad7,11", "iPad7,12"],                           10.2, (3, 4),      "iPad (7th generation)", "iPad (7th generation)", 264, False, False, False, False, True, False, False, False, False, 1, False, 1, False, "a10Fusion"),
             Device("iPad8",          "Device is an [iPad (8th generation)](https://support.apple.com/kb/SP822)",               "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP822/sp822-ipad-8gen_2x.png",                          ["iPad11,6", "iPad11,7"],                           10.2, (3, 4),      "iPad (8th generation)", "iPad (8th generation)", 264, False, False, False, False, True, False, False, False, False, 1, False, 1, False, "a12Bionic"),
             Device("iPad9",          "Device is an [iPad (9th generation)](https://support.apple.com/kb/SP849)",               "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1096/en_US/ipad-9gen-240.png",      ["iPad12,1", "iPad12,2"],                           10.2, (3, 4),      "iPad (9th generation)", "iPad (9th generation)", 264, False, False, False, False, True, False, False, False, False, 1, False, 1, False, "a13Bionic"),
-            Device("iPad10",         "Device is an [iPad (10th generation)](https://support.apple.com/kb/SP884)",              "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1096/en_US/TODO.png",               ["iPad13,18", "iPad13,19"],                         10.9, (41, 59),    "iPad (10th generation)", "iPad (10th generation)", 264, False, False, False, False, True, False, False, False, True, 1, False, 1, False, "a14Bionic"),
+            Device("iPad10",         "Device is an [iPad (10th generation)](https://support.apple.com/kb/SP884)",              "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP884/sp884-ipad-10gen-960_2x.png",                     ["iPad13,18", "iPad13,19"],                         10.9, (41, 59),    "iPad (10th generation)", "iPad (10th generation)", 264, False, False, False, False, True, False, False, False, True, 1, False, 1, False, "a14Bionic"),
             Device("iPadAir4",       "Device is an [iPad Air (4th generation)](https://support.apple.com/kb/SP828)",           "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP828/sp828ipad-air-ipados14-960_2x.png",               ["iPad13,1", "iPad13,2"],                           10.9, (41, 59),    "iPad Air (4th generation)", "iPad Air (4th generation)", 264, False, False, False, False, True, False, False, False, True, 2, False, 1, False, "a14Bionic"),
-            Device("iPadAir5",       "Device is an [iPad Air (5th generation)](https://support.apple.com/kb/TODO)",            "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/TODO",                                                  ["iPad13,16", "iPad13,17"],                         10.9, (41, 59),    "iPad Air (5th generation)", "iPad Air (5th generation)", 264, False, False, False, False, True, False, False, False, True, 2, False, 1, False, "m1"),
+            Device("iPadAir5",       "Device is an [iPad Air (5th generation)](https://support.apple.com/kb/SP866)",           "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP866/sp866-ipad-air-5gen_2x.png",                      ["iPad13,16", "iPad13,17"],                         10.9, (41, 59),    "iPad Air (5th generation)", "iPad Air (5th generation)", 264, False, False, False, False, True, False, False, False, True, 2, False, 1, False, "m1"),
             Device("iPadMini",       "Device is an [iPad Mini](https://support.apple.com/kb/SP661)",                           "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP661/sp661_ipad_mini_color.jpg",                       ["iPad2,5", "iPad2,6", "iPad2,7"],                  7.9,  (3, 4),      "iPad Mini", "iPad Mini", 163, False, True, False, False, False, False, False, False, False, 0, False, 1, False, "a5"),
             Device("iPadMini2",      "Device is an [iPad Mini 2](https://support.apple.com/kb/SP693)",                         "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP693/SP693-specs_color-mul.png",                       ["iPad4,4", "iPad4,5", "iPad4,6"],                  7.9,  (3, 4),      "iPad Mini 2", "iPad Mini 2", 326, False, True, False, False, False, False, False, False, False, 0, False, 1, False, "a7"),
             Device("iPadMini3",      "Device is an [iPad Mini 3](https://support.apple.com/kb/SP709)",                         "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP709/SP709-space_gray.jpeg",                           ["iPad4,7", "iPad4,8", "iPad4,9"],                  7.9,  (3, 4),      "iPad Mini 3", "iPad Mini 3", 326, False, True, False, False, True, False, False, False, False, 0, False, 1, False, "a7"),
@@ -112,8 +117,8 @@ iPads = [
             Device("iPadPro12Inch4", "Device is an [iPad Pro 12.9-inch (4th generation)](https://support.apple.com/kb/SP815)", "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP815/ipad-pro-12-2020.jpeg",                           ["iPad8,11", "iPad8,12"],                           12.9, (512, 683),  "iPad Pro (12.9-inch) (4th generation)", "iPad Pro (12.9-inch) (4th generation)", 264, False, False, True, False, False, True, False, False, True, 2, False, 13, True, "a12ZBionic"),
             Device("iPadPro11Inch3", "Device is an [iPad Pro 11-inch (3rd generation)](https://support.apple.com/kb/SP843)",   "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP843/ipad-pro-11_2x.png",                              ["iPad13,4", "iPad13,5", "iPad13,6", "iPad13,7"],   11.0, (139, 199),  "iPad Pro (11-inch) (3rd generation)", "iPad Pro (11-inch) (3rd generation)", 264, False, False, True, False, False, True, False, False, True, 2, False, 13, True, "m1"),
             Device("iPadPro12Inch5", "Device is an [iPad Pro 12.9-inch (5th generation)](https://support.apple.com/kb/SP844)", "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP844/ipad-pro-12-9_2x.png",                            ["iPad13,8", "iPad13,9", "iPad13,10", "iPad13,11"], 12.9, (512, 683),  "iPad Pro (12.9-inch) (5th generation)", "iPad Pro (12.9-inch) (5th generation)", 264, False, False, True, False, False, True, False, False, True, 2, False, 13, True, "m1"),
-            Device("iPadPro11Inch4", "Device is an [iPad Pro 11-inch (4th generation)](https://support.apple.com/kb/SP882)",   "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP843/TODO.png",                                        ["iPad14,3", "iPad14,4"],                           11.0, (139, 199),  "iPad Pro (11-inch) (4th generation)", "iPad Pro (11-inch) (4th generation)", 264, False, False, True, False, False, True, False, False, True, 2, False, 13, True, "m2"),
-            Device("iPadPro12Inch6", "Device is an [iPad Pro 12.9-inch (6th generation)](https://support.apple.com/kb/SP883)", "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP844/TODO.png",                                        ["iPad14,5", "iPad14,6"],                           12.9, (512, 683),  "iPad Pro (12.9-inch) (6th generation)", "iPad Pro (12.9-inch) (6th generation)", 264, False, False, True, False, False, True, False, False, True, 2, False, 13, True, "m2"),
+            Device("iPadPro11Inch4", "Device is an [iPad Pro 11-inch (4th generation)](https://support.apple.com/kb/SP882)",   "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP882/ipad-pro-4gen-mainimage_2x.png",                  ["iPad14,3", "iPad14,4"],                           11.0, (139, 199),  "iPad Pro (11-inch) (4th generation)", "iPad Pro (11-inch) (4th generation)", 264, False, False, True, False, False, True, False, False, True, 2, False, 13, True, "m2"),
+            Device("iPadPro12Inch6", "Device is an [iPad Pro 12.9-inch (6th generation)](https://support.apple.com/kb/SP883)", "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP882/ipad-pro-4gen-mainimage_2x.png",                  ["iPad14,5", "iPad14,6"],                           12.9, (512, 683),  "iPad Pro (12.9-inch) (6th generation)", "iPad Pro (12.9-inch) (6th generation)", 264, False, False, True, False, False, True, False, False, True, 2, False, 13, True, "m2"),
         ]
 
 homePods = [
@@ -124,7 +129,7 @@ tvs = [
             Device("appleTVHD",      "Device is an [Apple TV HD](https://support.apple.com/kb/SP724) (Previously Apple TV (4th generation))", "http://images.apple.com/v/tv/c/images/overview/buy_tv_large_2x.jpg",                                                ["AppleTV5,3"],  0, (), "Apple TV HD", "Apple TV HD", -1, False, False, False, False, False, False, False, False, False, 0, False, 0, False, "a8"),
             Device("appleTV4K",      "Device is an [Apple TV 4K](https://support.apple.com/kb/SP769)",                                        "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP769/appletv4k.png",                                     ["AppleTV6,2"],  0, (), "Apple TV 4K", "Apple TV 4K", -1, False, False, False, False, False, False, False, False, False, 0, False, 0, False, "a10XFusion"),
             Device("appleTV4K2",     "Device is an [Apple TV 4K (2nd generation)](https://support.apple.com/kb/SP845)",                       "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1023/en_US/apple-tv-4k-2gen-240.png", ["AppleTV11,1"], 0, (), "Apple TV 4K (2nd generation)", "Apple TV 4K (2nd generation)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0, False, "a12Bionic"),
-            Device("appleTV4K3",     "Device is an [Apple TV 4K (3rd generation)](https://support.apple.com/kb/TODO)",                        "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1023/en_US/TODO.png",                 ["AppleTV14,1"], 0, (), "Apple TV 4K (3rd generation)", "Apple TV 4K (3rd generation)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0, False, "a15Bionic"),
+            Device("appleTV4K3",     "Device is an [Apple TV 4K (3rd generation)](https://support.apple.com/kb/SP886)",                       "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP886/apple-tv-4k-3gen_2x.png",                           ["AppleTV14,1"], 0, (), "Apple TV 4K (3rd generation)", "Apple TV 4K (3rd generation)", -1, False, False, False, False, False, False, False, False, False, 0, False, 0, False, "a15Bionic"),
       ]
 
 # watchOS
@@ -240,32 +245,51 @@ watches = [
             Device(
             "appleWatchSeries8_41mm",
             "Device is an [Apple Watch Series 8](https://support.apple.com/kb/SP878)",
-            "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP860/TODO",
+            "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP878/apple-watch-series8_2x.png",
             ["Watch6,14", "Watch6,16"], 1.8, (4,5), "Apple Watch Series 8 41mm", "Apple Watch Series 8 41mm", 326, False, False, False, False, False, False, False, True, False, 0, False, 0, False, "s8"),
 
             Device(
             "appleWatchSeries8_45mm",
             "Device is an [Apple Watch Series 8](https://support.apple.com/kb/SP878)",
-            "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP860/TODO",
+            "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP878/apple-watch-series8_2x.png",
             ["Watch6,15", "Watch6,17"], 2.0, (4,5), "Apple Watch Series 8 45mm", "Apple Watch Series 8 45mm", 326, False, False, False, False, False, False, False, True, False, 0, False, 0, False, "s8"),
 
             Device(
             "appleWatchSE2_40mm",
             "Device is an [Apple Watch SE (2nd generation)](https://support.apple.com/kb/SP877)",
-            "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP827/TODO",
+            "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP877/apple-watch-se-2nd-gen_2x.png",
             ["Watch6,10", "Watch6,12"], 1.8, (4,5), "Apple Watch SE (2nd generation) 40mm", "Apple Watch SE (2nd generation) 40mm", 326, False, False, False, False, False, False, False, True, False, 0, False, 0, False, "s8"),
 
             Device(
             "appleWatchSE2_44mm",
             "Device is an [Apple Watch SE (2nd generation)](https://support.apple.com/kb/SP877)",
-            "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP827/TODO",
+            "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP877/apple-watch-se-2nd-gen_2x.png",
             ["Watch6,11", "Watch6,13"], 2.0, (4,5), "Apple Watch SE (2nd generation) 44mm", "Apple Watch SE (2nd generation) 44mm", 326, False, False, False, False, False, False, False, True, False, 0, False, 0, False, "s8"),
 
             Device(
             "appleWatchUltra",
             "Device is an [Apple Watch Ultra](https://support.apple.com/kb/SP879)",
-            "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP827/TODO",
+            "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP879/apple-watch-ultra_2x.png",
             ["Watch6,18"], 2.2, (4,5), "Apple Watch Ultra", "Apple Watch Ultra", 338, False, False, False, False, False, False, False, True, False, 0, False, 0, False, "s8"),
+
+            Device(
+            "appleWatchSeries9_41mm",
+            "Device is an [Apple Watch Series 9]()",
+            "",
+            ["Watch7,3"], 1.9, (4,5), "Apple Watch Series 9 41mm", "Apple Watch Series 9 41mm", 326, False, False, False, False, False, False, False, True, False, 0, False, 0, False, "s9"),
+
+            Device(
+            "appleWatchSeries9_45mm",
+            "Device is an [Apple Watch Series 9]()",
+            "",
+            ["Watch7,4"], 2.0, (4,5), "Apple Watch Series 9 45mm", "Apple Watch Series 9 45mm", 326, False, False, False, False, False, False, False, True, False, 0, False, 0, False, "s9"),
+
+             Device(
+            "appleWatchUltra2",
+            "Device is an [Apple Watch Ultra2]()",
+            "",
+            ["Watch7,5"], 2.2, (4,5), "Apple Watch Ultra2", "Apple Watch Ultra2", 338, False, False, False, False, False, False, False, True, False, 0, False, 0, False, "s9"),
+
 
   ]
 
@@ -556,12 +580,16 @@ public enum Device {
 
     public var isZoomed: Bool? {
       guard isCurrent else { return nil }
+      #if os(xrOS)
+      return nil
+      #else
       if Int(UIScreen.main.scale.rounded()) == 3 {
         // Plus-sized
         return UIScreen.main.nativeScale > 2.7 && UIScreen.main.nativeScale < 3
       } else {
         return UIScreen.main.nativeScale > UIScreen.main.scale
       }
+      #endif
     }
 
     /// All Touch ID Capable Devices
@@ -846,7 +874,7 @@ public enum Device {
 
   /// The brightness level of the screen.
   public var screenBrightness: Int {
-    #if os(iOS)
+    #if os(iOS) && !os(xrOS)
     return Int(UIScreen.main.brightness * 100)
     #else
     return 100
@@ -1065,7 +1093,7 @@ extension Device.BatteryState: Comparable {
 }
 #endif
 
-#if os(iOS)
+#if os(iOS) && !os(xrOS)
 extension Device {
   // MARK: Orientation
     /**
@@ -1278,7 +1306,6 @@ extension Device {
   public var hasUltraWideCamera: Bool {
     return self.cameras.contains(.ultraWide)
   }
-
 }
 #endif
 
@@ -1344,6 +1371,7 @@ iOS_cpus = [
           CPU("a14Bionic", "A14 Bionic"),
           CPU("a15Bionic", "A15 Bionic"),
           CPU("a16Bionic", "A16 Bionic"),
+          CPU("a17Pro"   , "A17 Pro"),
           CPU("m1", "M1"),
           CPU("m2", "M2"),
       ]

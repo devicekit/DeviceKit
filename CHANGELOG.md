@@ -1,5 +1,40 @@
 # Changelog
 
+## Version 5.1.0
+
+Releasedate: 2023-09-21
+
+```ruby
+pod 'DeviceKit', '~> 5.1'
+```
+
+### New September 2023 devices
+
+This version adds support for the devices announced at the September 2023 Apple Event: ([#360](https://github.com/devicekit/DeviceKit/pull/360), [#361](https://github.com/devicekit/DeviceKit/pull/361))
+
+| Device | Case value |
+| --- | --- |
+| iPhone 15 | `Device.iPhone15` |
+| iPhone 15 Plus | `Device.iPhone15Plus` |
+| iPhone 15 Pro | `Device.iPhone15Pro` |
+| iPhone 15 Pro Max | `Device.iPhone15ProMax` |
+| Apple Watch Series 9 | `Device.appleWatchSeries9_41mm`, `Device.appleWatchSeries9_45mm` |
+| Apple Watch Ultra 2 | `Device.appleWatchUltra2` |
+
+### Fixes
+
+- Fixes compilation errors that occur when compiling DeviceKit for visionOS. ([#356](https://github.com/devicekit/DeviceKit/pull/356))
+
+### Important notes
+
+- Note that this version does not add full visionOS support to DeviceKit. It just allows DeviceKit to compile for visionOS.
+- When compiling this version of DeviceKit with Xcode 14 or lower, it will produce the following warning 3 times: `Unknown operating system for build configuration 'os'`
+
+### Contributors
+
+Thanks to all the contributers of this release!
+- [wo-ist-henry](https://github.com/wo-ist-henry)
+
 ## Version 5.0.0
 
 Releasedate: 2022-11-01
