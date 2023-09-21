@@ -2137,6 +2137,7 @@ extension Device {
     case s6
     case s7
     case s8
+    case s9
   #endif
     case unknown
   }
@@ -2309,6 +2310,7 @@ extension Device.CPU: CustomStringConvertible {
       case .s6: return "S6"
       case .s7: return "S7"
       case .s8: return "S8"
+      case .s9: return "S9"
       case .unknown: return "unknown"
     }
   #endif
