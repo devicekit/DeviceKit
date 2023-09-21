@@ -1386,6 +1386,7 @@ watchOS_cpus = [
           CPU("s6", "S6"),
           CPU("s7", "S7"),
           CPU("s8", "S8"),
+          CPU("s9", "S9"),
 ]
 }%
 
