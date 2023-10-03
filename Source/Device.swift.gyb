@@ -781,6 +781,8 @@ public enum Device {
   }
 
   /// The name identifying the device (e.g. "Dennis' iPhone").
+  /// As of iOS 16, this will return a generic String like "iPhone", unless your app has additional entitlements.
+  /// See the follwing link for more information: https://developer.apple.com/documentation/uikit/uidevice/1620015-name
   public var name: String? {
     guard isCurrent else { return nil }
     #if os(watchOS)
