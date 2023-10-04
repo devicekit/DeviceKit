@@ -1047,6 +1047,16 @@ public enum Device {
       return isOneOf(Device.allDevicesWithRoundedDisplayCorners) || isOneOf(Device.allDevicesWithRoundedDisplayCorners.map(Device.simulator))
     }
 
+    /// All devices that have the Dynamic Island.
+    public static var allDevicesWithDynamicIsland: [Device] {
+      return [.iPhone14Pro, .iPhone14ProMax, .iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax]
+    }
+
+    /// Returns whether or not the device has a screen with rounded corners.
+    public var hasDynamicIsland: Bool {
+      return isOneOf(Device.allDevicesWithDynamicIsland) || isOneOf(Device.allDevicesWithDynamicIsland.map(Device.simulator))
+    }
+
     /// All devices that have 3D Touch support.
     public static var allDevicesWith3dTouchSupport: [Device] {
       return [.iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhone8, .iPhone8Plus, .iPhoneX, .iPhoneXS, .iPhoneXSMax]
