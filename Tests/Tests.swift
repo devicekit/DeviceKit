@@ -488,6 +488,18 @@ class DeviceKitTests: XCTestCase {
     XCTAssertFalse(UIDevice.current.isBatteryMonitoringEnabled)
   }
 
+  func testHasDynamicIsland() {
+    let devicesHasDynamicIsland: [Device] = [
+        .iPhone14Pro, .iPhone14ProMax,
+        .iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax,
+    ]
+    XCTAssertTrue(devicesHasDynamicIsland.allSatisfy(\Device.hasDynamicIsland))
+
+    let devicesNotHaveDynamicIsland = (Device.allPhones + Device.allPads)
+        .filter { !devicesHasDynamicIsland.contains($0) }
+    XCTAssertFalse(devicesNotHaveDynamicIsland.contains(where: \.hasDynamicIsland))
+  }
+
   // MARK: - volumes
   @available(iOS 11.0, *)
   func testVolumeTotalCapacity() {
