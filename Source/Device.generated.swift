@@ -980,15 +980,15 @@ public enum Device {
 
     public var isZoomed: Bool? {
       guard isCurrent else { return nil }
-      #if os(xrOS)
-      return nil
-      #else
+      #if canImport(UIScreen)
       if Int(UIScreen.main.scale.rounded()) == 3 {
         // Plus-sized
         return UIScreen.main.nativeScale > 2.7 && UIScreen.main.nativeScale < 3
       } else {
         return UIScreen.main.nativeScale > UIScreen.main.scale
       }
+      #else
+      return nil
       #endif
     }
 
@@ -1371,7 +1371,7 @@ public enum Device {
 
   /// The brightness level of the screen.
   public var screenBrightness: Int {
-    #if os(iOS) && !os(xrOS)
+    #if canImport(UIScreen)
     return Int(UIScreen.main.brightness * 100)
     #else
     return 100
@@ -1782,7 +1782,9 @@ extension Device.BatteryState: Comparable {
 }
 #endif
 
-#if os(iOS) && !os(xrOS)
+// Unfortunately this is messy since os(visionOS) is not supported in swift < 5.9 (like Swift Playgrounds)
+#if swift(>=5.9)
+#if os(iOS) && !os(visionOS)
 extension Device {
   // MARK: Orientation
     /**
@@ -1803,6 +1805,30 @@ extension Device {
       }
     }
 }
+#endif
+#else
+#if os(iOS)
+extension Device {
+  // MARK: Orientation
+    /**
+      This enum describes the state of the orientation.
+      - Landscape: The device is in Landscape Orientation
+      - Portrait:  The device is in Portrait Orientation
+    */
+    public enum Orientation {
+      case landscape
+      case portrait
+    }
+
+    public var orientation: Orientation {
+      if UIDevice.current.orientation.isLandscape {
+        return .landscape
+      } else {
+        return .portrait
+      }
+    }
+}
+#endif
 #endif
 
 #if os(iOS)
