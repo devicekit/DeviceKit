@@ -628,6 +628,9 @@ public enum Device {
       case "i386", "x86_64", "arm64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "watchOS"))
       default: return unknown(identifier)
       }
+    #elseif os(visionOS)
+    // To be completed when more information becomes available.
+    return unknown(identifier)
     #else
       return unknown(identifier)
     #endif
@@ -879,7 +882,7 @@ public enum Device {
       case .simulator(let model): return model.screenRatio
       case .unknown: return (width: -1, height: -1)
       }
-    #elseif os(tvOS)
+    #elseif os(tvOS) || os(visionOS)
       return (width: -1, height: -1)
     #else
       return (width: -1, height: -1)
@@ -1162,6 +1165,9 @@ public enum Device {
       return allTVs
     #elseif os(watchOS)
       return allWatches
+    #elseif os(visionOS)
+      // To be completed when more information becomes available.
+      return []
     #else
       return []
     #endif
@@ -1401,6 +1407,9 @@ public enum Device {
     }
     #elseif os(tvOS)
     return nil
+    #elseif os(visionOS)
+    // To be completed when more information becomes available.
+    return nil
     #else
     return nil
     #endif
@@ -1554,6 +1563,8 @@ extension Device: CustomStringConvertible {
       case .simulator(let model): return "Simulator (\(model.description))"
       case .unknown(let identifier): return identifier
       }
+    #elseif os(visionOS)
+      return "Apple Vision Pro"
     #else
       switch self {
       case .simulator(let model): return "Simulator (\(model.description))"
@@ -1687,6 +1698,8 @@ extension Device: CustomStringConvertible {
       case .simulator(let model): return "Simulator (\(model.safeDescription))"
       case .unknown(let identifier): return identifier
       }
+    #elseif os(visionOS)
+      return "Apple Vision Pro"
     #else
       switch self {
       case .simulator(let model): return "Simulator (\(model.safeDescription))"
@@ -2326,6 +2339,9 @@ extension Device {
       case .simulator(let model): return model.cpu
       case .unknown: return .unknown
     }
+  #elseif os(visionOS)
+    // To be completed when more information becomes available.
+    return .unknown
   #else
     return .unknown
   #endif
@@ -2377,6 +2393,9 @@ extension Device.CPU: CustomStringConvertible {
       case .s9: return "S9"
       case .unknown: return "unknown"
     }
+  #elseif os(visionOS)
+    // To be completed when more information becomes available.
+    return "unknown"
   #else
     return "unknown"
   #endif
