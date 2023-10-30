@@ -983,16 +983,12 @@ public enum Device {
 
     public var isZoomed: Bool? {
       guard isCurrent else { return nil }
-      #if os(xrOS)
-      return nil
-      #else
       if Int(UIScreen.main.scale.rounded()) == 3 {
         // Plus-sized
         return UIScreen.main.nativeScale > 2.7 && UIScreen.main.nativeScale < 3
       } else {
         return UIScreen.main.nativeScale > UIScreen.main.scale
       }
-      #endif
     }
 
     /// All Touch ID Capable Devices
@@ -1380,7 +1376,7 @@ public enum Device {
 
   /// The brightness level of the screen.
   public var screenBrightness: Int {
-    #if os(iOS) && !os(xrOS)
+    #if os(iOS)
     return Int(UIScreen.main.brightness * 100)
     #else
     return 100
@@ -1795,7 +1791,7 @@ extension Device.BatteryState: Comparable {
 }
 #endif
 
-#if os(iOS) && !os(xrOS)
+#if os(iOS)
 extension Device {
   // MARK: Orientation
     /**
