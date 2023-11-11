@@ -13,6 +13,9 @@
 import WatchKit
 #elseif canImport(UIKit)
 import UIKit
+#else
+import Foundation
+import IOKit
 #endif
 
 // MARK: Device
@@ -470,6 +473,8 @@ public enum Device {
     ///
     /// ![Image]()
     case appleWatchUltra2
+  #elseif os(macOS)
+    case macBookProM2Max
   #endif
 
   /// Device is [Simulator](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/Introduction/Introduction.html)
@@ -498,6 +503,19 @@ public enum Device {
       return identifier + String(UnicodeScalar(UInt8(value)))
     }
     return identifier
+    
+    /* Possible code for macOS using IOKit:
+     
+     let service = IOServiceGetMatchingService(kIOMasterPortDefault,
+                                               IOServiceMatching("IOPlatformExpertDevice"))
+     var modelIdentifier: String?
+     if let modelData = IORegistryEntryCreateCFProperty(service, "model" as CFString, kCFAllocatorDefault, 0).takeRetainedValue() as? Data {
+         modelIdentifier = String(data: modelData, encoding: .utf8)?.trimmingCharacters(in: .controlCharacters)
+     }
+
+     IOObjectRelease(service)
+     return modelIdentifier
+*/
   }()
 
   /// Maps an identifier to a Device. If the identifier can not be mapped to an existing device, `UnknownDevice(identifier)` is returned.
@@ -626,6 +644,11 @@ public enum Device {
       case "i386", "x86_64", "arm64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "watchOS"))
       default: return unknown(identifier)
       }
+#elseif os(macOS)
+  switch identifier {
+  case "Mac14,6": return macBookProM2Max
+  default: return unknown(identifier)
+  }
     #endif
   }
 
@@ -875,7 +898,7 @@ public enum Device {
       case .simulator(let model): return model.screenRatio
       case .unknown: return (width: -1, height: -1)
       }
-    #elseif os(tvOS)
+    #else // if os(tvOS)
       return (width: -1, height: -1)
     #endif
   }
@@ -1106,6 +1129,10 @@ public enum Device {
     public var hasForceTouchSupport: Bool {
       return isOneOf(Device.allWatchesWithForceTouchSupport) || isOneOf(Device.allWatchesWithForceTouchSupport.map(Device.simulator))
     }
+  #elseif os(macOS)
+  public static var allMacs: [Device] {
+    return [.macBookProM2Max] // TODO: add others
+  }
   #endif
 
   /// Returns whether the current device is a SwiftUI preview canvas
@@ -1126,6 +1153,8 @@ public enum Device {
       return allTVs
     #elseif os(watchOS)
       return allWatches
+    #elseif os(macOS)
+      return allMacs
     #endif
   }
 
@@ -1187,8 +1216,17 @@ public enum Device {
     guard isCurrent else { return nil }
     #if os(watchOS)
     return WKInterfaceDevice.current().name
-    #else
+    #elseif canImport(UIKit)
     return UIDevice.current.name
+    #elseif canImport(Foundation)
+    return ProcessInfo.processInfo.hostName
+    #else
+    // pulled from https://github.com/rjstelling/Hostess.swift/blob/master/Projects/Hostess/Hostess/Hostess.swift
+    var hostname = [CChar](repeating: 0x0, count: Int(NI_MAXHOST))
+    guard gethostname(&hostname, Int(NI_MAXHOST)) == noErr else {
+        return nil
+    }
+    return String(cString: hostname)
     #endif
   }
 
@@ -1203,8 +1241,12 @@ public enum Device {
     } else {
       return UIDevice.current.systemName
     }
-    #else
+    #elseif canImport(UIKit)
     return UIDevice.current.systemName
+    #elseif os(macOS)
+      return "macOS"
+    #else
+    return "unknownOS"
     #endif
   }
 
@@ -1213,8 +1255,10 @@ public enum Device {
     guard isCurrent else { return nil }
     #if os(watchOS)
     return WKInterfaceDevice.current().systemVersion
-    #else
+  #elseif canImport(UIKit)
     return UIDevice.current.systemVersion
+    #else
+    return ProcessInfo.processInfo.operatingSystemVersionString
     #endif
   }
 
@@ -1223,8 +1267,10 @@ public enum Device {
     guard isCurrent else { return nil }
     #if os(watchOS)
     return WKInterfaceDevice.current().model
-    #else
+#elseif canImport(UIKit)
     return UIDevice.current.model
+    #else
+    return Host.current().name
     #endif
   }
 
@@ -1233,8 +1279,10 @@ public enum Device {
     guard isCurrent else { return nil }
     #if os(watchOS)
     return WKInterfaceDevice.current().localizedModel
-    #else
+    #elseif canImport(UIKit)
     return UIDevice.current.localizedModel
+    #else
+    return Host.current().localizedName
     #endif
   }
 
@@ -1351,7 +1399,7 @@ public enum Device {
     case .simulator(let model): return model.ppi
     case .unknown: return nil
     }
-    #elseif os(tvOS)
+    #else //if os(tvOS)
     return nil
     #endif
   }
@@ -1504,6 +1552,12 @@ extension Device: CustomStringConvertible {
       case .simulator(let model): return "Simulator (\(model.description))"
       case .unknown(let identifier): return identifier
       }
+    #else
+    switch self {
+    case .macBookProM2Max: return "MacBook Pro M2 Max 16\""
+    case .simulator(let model): return "Simulator (\(model.description))"
+    case .unknown(let identifier): return identifier
+    }
     #endif
   }
 
@@ -1630,6 +1684,12 @@ extension Device: CustomStringConvertible {
       case .appleTV4K2: return "Apple TV 4K (2nd generation)"
       case .appleTV4K3: return "Apple TV 4K (3rd generation)"
       case .simulator(let model): return "Simulator (\(model.safeDescription))"
+      case .unknown(let identifier): return identifier
+      }
+    #else
+      switch self {
+      case .macBookProM2Max: return "MacBook Pro M2 Max 16in"
+      case .simulator(let model): return "Simulator (\(model.description))"
       case .unknown(let identifier): return identifier
       }
     #endif
@@ -2166,6 +2226,14 @@ extension Device {
     case s7
     case s8
     case s9
+  #elseif os(macOS)
+    case i3
+    case i5
+    case i7
+    case i9
+    case m1
+    case m2
+    case m3
   #endif
     case unknown
   }
@@ -2292,6 +2360,12 @@ extension Device {
       case .simulator(let model): return model.cpu
       case .unknown: return .unknown
     }
+#else
+switch self {
+case .macBookProM2Max: return .m2
+case .simulator(let model): return model.cpu
+case .unknown: return .unknown
+}
   #endif
   }
 }
@@ -2325,6 +2399,7 @@ extension Device.CPU: CustomStringConvertible {
       case .a17Pro: return "A17 Pro"
       case .m1: return "M1"
       case .m2: return "M2"
+      case .m3: return "M3"
       case .unknown: return "unknown"
     }
   #elseif os(watchOS)
@@ -2339,6 +2414,17 @@ extension Device.CPU: CustomStringConvertible {
       case .s7: return "S7"
       case .s8: return "S8"
       case .s9: return "S9"
+      case .unknown: return "unknown"
+    }
+  #else
+    switch self {
+      case .i3: return "Core i3"
+      case .i5: return "Core i5"
+      case .i7: return "Core i7"
+      case .i9: return "Core i9"
+      case .m1: return "M1"
+      case .m2: return "M2"
+      case .m3: return "M3"
       case .unknown: return "unknown"
     }
   #endif
