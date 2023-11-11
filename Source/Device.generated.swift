@@ -2399,7 +2399,7 @@ extension Device.CPU: CustomStringConvertible {
       case .a17Pro: return "A17 Pro"
       case .m1: return "M1"
       case .m2: return "M2"
-      case .m3: return "M3"
+//      case .m3: return "M3"
       case .unknown: return "unknown"
     }
   #elseif os(watchOS)
