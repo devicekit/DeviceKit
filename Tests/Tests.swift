@@ -441,7 +441,9 @@ class DeviceKitTests: XCTestCase {
       .iPhone12ProMax,
       .iPhone13ProMax,
       .iPhone14Plus,
-      .iPhone14ProMax
+      .iPhone14ProMax,
+      .iPhone15Plus,
+      .iPhone15ProMax
     ])
   }
 
@@ -455,6 +457,8 @@ class DeviceKitTests: XCTestCase {
       .iPhone13ProMax,
       .iPhone14Pro,
       .iPhone14ProMax,
+      .iPhone15Pro,
+      .iPhone15ProMax,
       .iPadPro9Inch,
       .iPadPro12Inch,
       .iPadPro12Inch2,
@@ -554,6 +558,8 @@ class DeviceKitTests: XCTestCase {
       .iPhone13ProMax,
       .iPhone14Pro,
       .iPhone14ProMax,
+      .iPhone15Pro,
+      .iPhone15ProMax,
       .iPadPro11Inch2,
       .iPadPro12Inch4,
       .iPadPro11Inch3,
