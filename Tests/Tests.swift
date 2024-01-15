@@ -571,6 +571,21 @@ class DeviceKitTests: XCTestCase {
     }
   }
 
+  func testHasUSBCConnectivity() {
+    XCTAssertEqual(Device.allDevicesWithUSBCConnectivity, [
+      .iPhone15,
+      .iPhone15Plus,
+      .iPhone15Pro,
+      .iPhone15ProMax,
+      .iPad10,
+      .iPadAir4,
+      .iPadAir5,
+      .iPadMini6,
+      .iPadPro12Inch5,
+      .iPadPro12Inch6
+    ])
+  }
+
   #endif
 
   // MARK: - tvOS
