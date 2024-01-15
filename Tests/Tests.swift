@@ -503,6 +503,38 @@ class DeviceKitTests: XCTestCase {
     }
   }
 
+  func testHas5gSupport() {
+    let has5gDevices: [Device] = [
+      .iPhone12,
+      .iPhone12Mini,
+      .iPhone12Pro,
+      .iPhone12ProMax,
+      .iPhone13,
+      .iPhone13Mini,
+      .iPhone13Pro,
+      .iPhone13ProMax,
+      .iPhoneSE3,
+      .iPhone14,
+      .iPhone14Plus,
+      .iPhone14Pro,
+      .iPhone14ProMax,
+      .iPhone15,
+      .iPhone15Plus,
+      .iPhone15Pro,
+      .iPhone15ProMax,
+      .iPad10,
+      .iPadAir5,
+      .iPadMini6,
+      .iPadPro11Inch3,
+      .iPadPro12Inch5,
+      .iPadPro11Inch4,
+      .iPadPro12Inch6
+    ]
+    for device in Device.allRealDevices {
+      XCTAssertTrue(device.has5gSupport == device.isOneOf(has5gDevices), "testHasDynamicIsland failed for \(device.description)")
+    }
+  }
+
   // MARK: - volumes
   @available(iOS 11.0, *)
   func testVolumeTotalCapacity() {
