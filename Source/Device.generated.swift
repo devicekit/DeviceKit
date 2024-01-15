@@ -1076,6 +1076,16 @@ public enum Device {
     public var hasLidarSensor: Bool {
       return isOneOf(Device.allDevicesWithALidarSensor) || isOneOf(Device.allDevicesWithALidarSensor.map(Device.simulator))
     }
+
+    /// All devices that have a USB-C connectivity.
+    public static var allDevicesWithUSBCConnectivity: [Device] {
+      return [.iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax, .iPad10, .iPadAir4, .iPadAir5, .iPadMini6, .iPadPro12Inch5, .iPadPro12Inch6]
+    }
+
+    /// Returns whether or not the device has a USB-C power supply.
+    public var hasUSBCConnectivity: Bool {
+      return isOneOf(Device.allDevicesWithUSBCConnectivity) || isOneOf(Device.allDevicesWithUSBCConnectivity.map(Device.simulator))
+    }
   #elseif os(tvOS)
     /// All TVs
     public static var allTVs: [Device] {
