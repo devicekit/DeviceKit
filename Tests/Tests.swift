@@ -489,6 +489,20 @@ class DeviceKitTests: XCTestCase {
     XCTAssertFalse(UIDevice.current.isBatteryMonitoringEnabled)
   }
 
+  func testHasDynamicIsland() {
+    let dynamicIslandDevices: [Device] = [
+      .iPhone14Pro,
+      .iPhone14ProMax,
+      .iPhone15,
+      .iPhone15Plus,
+      .iPhone15Pro,
+      .iPhone15ProMax,
+    ]
+    for device in Device.allRealDevices {
+      XCTAssertTrue(device.hasDynamicIsland == device.isOneOf(dynamicIslandDevices), "testHasDynamicIsland failed for \(device.description)")
+    }
+  }
+
   // MARK: - volumes
   @available(iOS 11.0, *)
   func testVolumeTotalCapacity() {
@@ -572,7 +586,7 @@ class DeviceKitTests: XCTestCase {
   }
 
   func testHasUSBCConnectivity() {
-    XCTAssertEqual(Device.allDevicesWithUSBCConnectivity, [
+    let usbCDevices: [Device] = [
       .iPhone15,
       .iPhone15Plus,
       .iPhone15Pro,
@@ -581,9 +595,18 @@ class DeviceKitTests: XCTestCase {
       .iPadAir4,
       .iPadAir5,
       .iPadMini6,
+      .iPadPro11Inch,
+      .iPadPro12Inch3,
+      .iPadPro11Inch2,
+      .iPadPro12Inch4,
+      .iPadPro11Inch3,
       .iPadPro12Inch5,
+      .iPadPro11Inch4,
       .iPadPro12Inch6
-    ])
+    ]
+    for device in Device.allRealDevices {
+      XCTAssertTrue(device.hasUSBCConnectivity == device.isOneOf(usbCDevices), "testHasUSBCConnectivity failed for \(device.description)")
+    }
   }
 
   #endif

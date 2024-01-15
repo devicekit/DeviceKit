@@ -1047,6 +1047,16 @@ public enum Device {
       return isOneOf(Device.allDevicesWithRoundedDisplayCorners) || isOneOf(Device.allDevicesWithRoundedDisplayCorners.map(Device.simulator))
     }
 
+    /// All devices that have the Dynamic Island.
+    public static var allDevicesWithDynamicIsland: [Device] {
+      return [.iPhone14Pro, .iPhone14ProMax, .iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax]
+    }
+
+    /// Returns whether or not the device has the Dynamic Island.
+    public var hasDynamicIsland: Bool {
+      return isOneOf(Device.allDevicesWithDynamicIsland) || isOneOf(Device.allDevicesWithDynamicIsland.map(Device.simulator))
+    }
+
     /// All devices that have 3D Touch support.
     public static var allDevicesWith3dTouchSupport: [Device] {
       return [.iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhone8, .iPhone8Plus, .iPhoneX, .iPhoneXS, .iPhoneXSMax]
@@ -1079,7 +1089,7 @@ public enum Device {
 
     /// All devices that have a USB-C connectivity.
     public static var allDevicesWithUSBCConnectivity: [Device] {
-      return [.iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax, .iPad10, .iPadAir4, .iPadAir5, .iPadMini6, .iPadPro12Inch5, .iPadPro12Inch6]
+      return [.iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax, .iPad10, .iPadAir4, .iPadAir5, .iPadMini6, .iPadPro11Inch, .iPadPro12Inch3, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6]
     }
 
     /// Returns whether or not the device has a USB-C power supply.
