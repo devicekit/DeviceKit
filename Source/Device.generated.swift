@@ -628,6 +628,8 @@ public enum Device {
       case "i386", "x86_64", "arm64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "watchOS"))
       default: return unknown(identifier)
       }
+    #else
+      return unknown(identifier)
     #endif
   }
 
@@ -879,6 +881,8 @@ public enum Device {
       }
     #elseif os(tvOS)
       return (width: -1, height: -1)
+    #else
+      return (width: -1, height: -1)
     #endif
   }
 
@@ -1128,6 +1132,8 @@ public enum Device {
       return allTVs
     #elseif os(watchOS)
       return allWatches
+    #else
+      return []
     #endif
   }
 
@@ -1189,8 +1195,10 @@ public enum Device {
     guard isCurrent else { return nil }
     #if os(watchOS)
     return WKInterfaceDevice.current().name
-    #else
+    #elseif canImport(UIKit)
     return UIDevice.current.name
+    #else
+    return nil
     #endif
   }
 
@@ -1205,8 +1213,10 @@ public enum Device {
     } else {
       return UIDevice.current.systemName
     }
-    #else
+    #elseif canImport(UIKit)
     return UIDevice.current.systemName
+    #else
+    return nil
     #endif
   }
 
@@ -1215,8 +1225,10 @@ public enum Device {
     guard isCurrent else { return nil }
     #if os(watchOS)
     return WKInterfaceDevice.current().systemVersion
-    #else
+    #elseif canImport(UIKit)
     return UIDevice.current.systemVersion
+    #else
+    return nil
     #endif
   }
 
@@ -1225,8 +1237,10 @@ public enum Device {
     guard isCurrent else { return nil }
     #if os(watchOS)
     return WKInterfaceDevice.current().model
-    #else
+    #elseif canImport(UIKit)
     return UIDevice.current.model
+    #else
+    return nil
     #endif
   }
 
@@ -1235,8 +1249,10 @@ public enum Device {
     guard isCurrent else { return nil }
     #if os(watchOS)
     return WKInterfaceDevice.current().localizedModel
-    #else
+    #elseif canImport(UIKit)
     return UIDevice.current.localizedModel
+    #else
+    return nil
     #endif
   }
 
@@ -1354,6 +1370,8 @@ public enum Device {
     case .unknown: return nil
     }
     #elseif os(tvOS)
+    return nil
+    #else
     return nil
     #endif
   }
@@ -1506,6 +1524,11 @@ extension Device: CustomStringConvertible {
       case .simulator(let model): return "Simulator (\(model.description))"
       case .unknown(let identifier): return identifier
       }
+    #else
+      switch self {
+      case .simulator(let model): return "Simulator (\(model.safeDescription))"
+      case .unknown(let identifier): return identifier
+      }
     #endif
   }
 
@@ -1631,6 +1654,11 @@ extension Device: CustomStringConvertible {
       case .appleTV4K: return "Apple TV 4K"
       case .appleTV4K2: return "Apple TV 4K (2nd generation)"
       case .appleTV4K3: return "Apple TV 4K (3rd generation)"
+      case .simulator(let model): return "Simulator (\(model.safeDescription))"
+      case .unknown(let identifier): return identifier
+      }
+    #else
+      switch self {
       case .simulator(let model): return "Simulator (\(model.safeDescription))"
       case .unknown(let identifier): return identifier
       }
@@ -2268,6 +2296,8 @@ extension Device {
       case .simulator(let model): return model.cpu
       case .unknown: return .unknown
     }
+  #else
+    return .unknown
   #endif
   }
 }
@@ -2317,6 +2347,8 @@ extension Device.CPU: CustomStringConvertible {
       case .s9: return "S9"
       case .unknown: return "unknown"
     }
+  #else
+    return "unknown"
   #endif
   }
 }
