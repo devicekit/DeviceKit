@@ -17,20 +17,31 @@ class DeviceKitTests: XCTestCase {
   let device = Device.current
 
   func testDeviceSimulator() {
+    #if os(macOS)
+    XCTAssertFalse(device.isOneOf(Device.allSimulators))
+    #else
     XCTAssertTrue(device.isOneOf(Device.allSimulators))
+    #endif
   }
 
   func testIsSimulator() {
+    #if os(macOS)
+    XCTAssertFalse(device.isSimulator)
+    #else
     XCTAssertTrue(device.isSimulator)
+    #endif
   }
 
   func testDeviceDescription() {
+    #if os(macOS)
+    #else
     XCTAssertTrue(device.description.hasPrefix("Simulator"))
     XCTAssertTrue(device.description.contains("iPhone")
       || device.description.contains("iPad")
       || device.description.contains("iPod")
       || device.description.contains("TV")
       || device.description.contains("Apple Watch"))
+    #endif
   }
 
   func testIsCanvas() {
@@ -40,6 +51,8 @@ class DeviceKitTests: XCTestCase {
     let otherDevice: Device = device == .appleTVHD ? .appleTV4K : .appleTVHD
     #elseif os(watchOS)
     let otherDevice: Device = device == .appleWatchUltra ? .appleWatchSeries8_41mm : .appleWatchUltra
+    #else
+    let otherDevice: Device = .unknown("mac")
     #endif
     XCTAssertEqual(otherDevice.isCanvas, nil)
     XCTAssertEqual(device.isCanvas, false)
