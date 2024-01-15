@@ -14,6 +14,7 @@ pod 'DeviceKit', '~> 5.2'
 - Add `.hasDynamicIsland` to `Device` to indicate whether the device has a dynamic island. ([#368](https://github.com/devicekit/DeviceKit/pull/368))
 - Add `.has5gSupport` to `Device` to indicate whether the device has 5G support. ([#340](https://github.com/devicekit/DeviceKit/pull/340))
 - Added Privacy Manifest to DeviceKit. ([#367](https://github.com/devicekit/DeviceKit/pull/367))
+- Fix compilation issues when building SwiftUI Previews for macOS. ([#376](https://github.com/devicekit/DeviceKit/pull/376))
 
 ### Contributors
 
@@ -21,6 +22,8 @@ Thanks to all the contributers of this release!
 - [mhausherr](https://github.com/mhausherr)
 - [417-72KI](https://github.com/417-72KI)
 - [furiosFast](https://github.com/furiosFast)
+- [DenTelezhkin](https://github.com/DenTelezhkin)
+- [honghaoz](https://github.com/honghaoz)
 
 ## Version 5.1.0
 
