@@ -496,7 +496,7 @@ class DeviceKitTests: XCTestCase {
       .iPhone15,
       .iPhone15Plus,
       .iPhone15Pro,
-      .iPhone15ProMax,
+      .iPhone15ProMax
     ]
     for device in Device.allRealDevices {
       XCTAssertTrue(device.hasDynamicIsland == device.isOneOf(dynamicIslandDevices), "testHasDynamicIsland failed for \(device.description)")
