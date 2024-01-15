@@ -1077,6 +1077,16 @@ public enum Device {
       return isOneOf(Device.allDevicesWithWirelessChargingSupport) || isOneOf(Device.allDevicesWithWirelessChargingSupport.map(Device.simulator))
     }
 
+    /// All devices that support 5G.
+    public static var allDevicesWith5gSupport: [Device] {
+      return [.iPhone12, .iPhone12Mini, .iPhone12Pro, .iPhone12ProMax, .iPhone13, .iPhone13Mini, .iPhone13Pro, .iPhone13ProMax, .iPhoneSE3, .iPhone14, .iPhone14Plus, .iPhone14Pro, .iPhone14ProMax, .iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax, .iPad10, .iPadAir5, .iPadMini6, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6]
+    }
+    
+    /// Returns whether or not the device has 5G support.
+    public var has5gSupport: Bool {
+      return isOneOf(Device.allDevicesWith5gSupport) || isOneOf(Device.allDevicesWith5gSupport.map(Device.simulator))
+    }
+
     /// All devices that have a LiDAR sensor.
     public static var allDevicesWithALidarSensor: [Device] {
       return [.iPhone12Pro, .iPhone12ProMax, .iPhone13Pro, .iPhone13ProMax, .iPhone14Pro, .iPhone14ProMax, .iPhone15Pro, .iPhone15ProMax, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6]
