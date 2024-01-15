@@ -684,7 +684,7 @@ public enum Device {
     public static var allDevicesWith5gSupport: [Device] {
       return [${', '.join(list(map(lambda device: "." + device.caseName, list(filter(lambda device: device.has5gSupport == True, iOSDevices)))))}]
     }
-    
+
     /// Returns whether or not the device has 5G support.
     public var has5gSupport: Bool {
       return isOneOf(Device.allDevicesWith5gSupport) || isOneOf(Device.allDevicesWith5gSupport.map(Device.simulator))
