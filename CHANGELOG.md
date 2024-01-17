@@ -1,5 +1,24 @@
 # Changelog
 
+## Version 5.2.1
+
+Releasedate: 2024-01-17
+
+```ruby
+pod 'DeviceKit', '~> 5.2'
+```
+
+### Bugfixes
+
+- Update swift-tools-version in Package.swift to 5.3 to support Resource files. ([#381](https://github.com/devicekit/DeviceKit/pull/381))
+- Fix PrivacyInfo.xcprivacy not being detected on SPM. ([#384](https://github.com/devicekit/DeviceKit/pull/384))
+
+### Contributors
+
+Thanks to all the contributers of this release!
+- [Semty](https://github.com/Semty)
+- Everyone who reported the SPM issues.
+
 ## Version 5.2.0
 
 Releasedate: 2024-01-15
