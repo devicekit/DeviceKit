@@ -1,5 +1,49 @@
 # Changelog
 
+## Version 5.2.1
+
+Releasedate: 2024-01-17
+
+```ruby
+pod 'DeviceKit', '~> 5.2'
+```
+
+### Bugfixes
+
+- Update swift-tools-version in Package.swift to 5.3 to support Resource files. ([#381](https://github.com/devicekit/DeviceKit/pull/381))
+- Fix PrivacyInfo.xcprivacy not being detected on SPM. ([#384](https://github.com/devicekit/DeviceKit/pull/384))
+
+### Contributors
+
+Thanks to all the contributers of this release!
+- [Semty](https://github.com/Semty)
+- Everyone who reported the SPM issues.
+
+## Version 5.2.0
+
+Releasedate: 2024-01-15
+
+```ruby
+pod 'DeviceKit', '~> 5.2'
+```
+
+### New features
+
+- Add `.hasUSBCConnectivity` to `Device` to indicate whether the device has an USB-C port. ([#373](https://github.com/devicekit/DeviceKit/pull/373))
+- Add `.hasDynamicIsland` to `Device` to indicate whether the device has a dynamic island. ([#368](https://github.com/devicekit/DeviceKit/pull/368))
+- Add `.has5gSupport` to `Device` to indicate whether the device has 5G support. ([#340](https://github.com/devicekit/DeviceKit/pull/340))
+- Added Privacy Manifest to DeviceKit. ([#367](https://github.com/devicekit/DeviceKit/pull/367))
+- Fix compilation issues when building SwiftUI Previews for macOS. ([#376](https://github.com/devicekit/DeviceKit/pull/376))
+
+### Contributors
+
+Thanks to all the contributers of this release!
+- [mhausherr](https://github.com/mhausherr)
+- [417-72KI](https://github.com/417-72KI)
+- [furiosFast](https://github.com/furiosFast)
+- [DenTelezhkin](https://github.com/DenTelezhkin)
+- [honghaoz](https://github.com/honghaoz)
+
 ## Version 5.1.0
 
 Releasedate: 2023-09-21
