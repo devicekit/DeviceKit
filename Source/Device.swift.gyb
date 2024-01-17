@@ -480,7 +480,7 @@ public enum Device {
       case .simulator(let model): return model.screenRatio
       case .unknown: return (width: -1, height: -1)
       }
-    #elseif os(tvOS)
+    #else // if os(tvOS) and other platforms
       return (width: -1, height: -1)
     #endif
   }
