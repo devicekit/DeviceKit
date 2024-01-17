@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.source                     = { :git => 'https://github.com/devicekit/DeviceKit.git', :tag => s.version }
   s.source_files               = 'Source/Device.generated.swift'
 
-  s.resources                  = 'PrivacyInfo.xcprivacy'
+  s.resources                  = 'Source/PrivacyInfo.xcprivacy'
 
   s.requires_arc = true
 end
