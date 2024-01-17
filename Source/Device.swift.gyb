@@ -585,15 +585,15 @@ public enum Device {
 
     public var isZoomed: Bool? {
       guard isCurrent else { return nil }
-      #if os(xrOS)
-      return nil
-      #else
+      #if canImport(UIScreen)
       if Int(UIScreen.main.scale.rounded()) == 3 {
         // Plus-sized
         return UIScreen.main.nativeScale > 2.7 && UIScreen.main.nativeScale < 3
       } else {
         return UIScreen.main.nativeScale > UIScreen.main.scale
       }
+      #else
+      return nil
       #endif
     }
 
