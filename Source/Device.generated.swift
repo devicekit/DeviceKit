@@ -1220,7 +1220,7 @@ public enum Device {
     return UIDevice.current.name
     #elseif canImport(Foundation)
     return ProcessInfo.processInfo.hostName
-    #else
+    #else // for macs and possibly others that support gethostname
     // pulled from https://github.com/rjstelling/Hostess.swift/blob/master/Projects/Hostess/Hostess/Hostess.swift
     var hostname = [CChar](repeating: 0x0, count: Int(NI_MAXHOST))
     guard gethostname(&hostname, Int(NI_MAXHOST)) == noErr else {
@@ -1235,6 +1235,7 @@ public enum Device {
     guard isCurrent else { return nil }
     #if os(watchOS)
     return WKInterfaceDevice.current().systemName
+    // TODO: Add check for visionOS
     #elseif os(iOS)
     if isPad, #available(iOS 13, *), UIDevice.current.systemName == "iOS" {
       return "iPadOS"
