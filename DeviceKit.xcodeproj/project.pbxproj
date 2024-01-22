@@ -57,6 +57,7 @@
 		95C7E84D1C6130DB00B0189E /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		95C7E84E1C61332300B0189E /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		FC5C20FA2A5197E2009406EE /* .github */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .github; sourceTree = "<group>"; };
+		FCC5A8F22B5820A6004E159B /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = Source/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		FCF1EAD323381E5700B609AA /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +103,7 @@
 				6D29C0BF1F122C77005B52BD /* Device.generated.swift */,
 				6D29C0BC1F122863005B52BD /* Device.swift.gyb */,
 				951E3A0E1C61549400261610 /* Info.plist */,
+				FCC5A8F22B5820A6004E159B /* PrivacyInfo.xcprivacy */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -386,9 +388,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.1.0;
-				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
-				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
+				MARKETING_VERSION = 5.2.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = me.dennisweissmann.DeviceKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -448,9 +448,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.1.0;
-				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
-				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
+				MARKETING_VERSION = 5.2.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = me.dennisweissmann.DeviceKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";

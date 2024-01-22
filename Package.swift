@@ -1,4 +1,4 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.3
 //===----------------------------------------------------------------------===//
 //
 // This source file is part of the DeviceKit open source project
@@ -24,7 +24,8 @@ let package = Package(
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
             name: "DeviceKit",
-            targets: ["DeviceKit"])
+            targets: ["DeviceKit"]
+        )
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -32,11 +33,15 @@ let package = Package(
         .target(
             name: "DeviceKit",
             dependencies: [],
-            path: "Source"),
+            path: "Source",
+            resources: [.copy("PrivacyInfo.xcprivacy")]
+        ),
         .testTarget(
             name: "DeviceKitTests",
             dependencies: ["DeviceKit"],
-            path: "Tests")
+            path: "Tests",
+            resources: [.copy("PrivacyInfo.xcprivacy")]
+        )
     ],
     swiftLanguageVersions: [.v5]
 )

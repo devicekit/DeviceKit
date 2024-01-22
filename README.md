@@ -18,7 +18,7 @@
 
 `DeviceKit` is a value-type replacement of [`UIDevice`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/).
 
-## Current version 5.1.0
+## Current version 5.2.1
 See our detailed [changelog](CHANGELOG.md) for the latest features, improvements and bug fixes.
 
 ## Features
@@ -52,7 +52,7 @@ DeviceKit can be installed in various ways.
 
 #### Swift 5
 ```ruby
-pod 'DeviceKit', '~> 5.1'
+pod 'DeviceKit', '~> 5.2'
 ```
 #### iOS 8.0 support
 ```ruby

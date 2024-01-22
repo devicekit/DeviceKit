@@ -898,7 +898,7 @@ public enum Device {
       case .simulator(let model): return model.screenRatio
       case .unknown: return (width: -1, height: -1)
       }
-    #else // if os(tvOS)
+    #else // if os(tvOS) and other platforms
       return (width: -1, height: -1)
     #endif
   }
@@ -1070,6 +1070,16 @@ public enum Device {
       return isOneOf(Device.allDevicesWithRoundedDisplayCorners) || isOneOf(Device.allDevicesWithRoundedDisplayCorners.map(Device.simulator))
     }
 
+    /// All devices that have the Dynamic Island.
+    public static var allDevicesWithDynamicIsland: [Device] {
+      return [.iPhone14Pro, .iPhone14ProMax, .iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax]
+    }
+
+    /// Returns whether or not the device has the Dynamic Island.
+    public var hasDynamicIsland: Bool {
+      return isOneOf(Device.allDevicesWithDynamicIsland) || isOneOf(Device.allDevicesWithDynamicIsland.map(Device.simulator))
+    }
+
     /// All devices that have 3D Touch support.
     public static var allDevicesWith3dTouchSupport: [Device] {
       return [.iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhone8, .iPhone8Plus, .iPhoneX, .iPhoneXS, .iPhoneXSMax]
@@ -1090,6 +1100,16 @@ public enum Device {
       return isOneOf(Device.allDevicesWithWirelessChargingSupport) || isOneOf(Device.allDevicesWithWirelessChargingSupport.map(Device.simulator))
     }
 
+    /// All devices that support 5G.
+    public static var allDevicesWith5gSupport: [Device] {
+      return [.iPhone12, .iPhone12Mini, .iPhone12Pro, .iPhone12ProMax, .iPhone13, .iPhone13Mini, .iPhone13Pro, .iPhone13ProMax, .iPhoneSE3, .iPhone14, .iPhone14Plus, .iPhone14Pro, .iPhone14ProMax, .iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax, .iPad10, .iPadAir5, .iPadMini6, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6]
+    }
+
+    /// Returns whether or not the device has 5G support.
+    public var has5gSupport: Bool {
+      return isOneOf(Device.allDevicesWith5gSupport) || isOneOf(Device.allDevicesWith5gSupport.map(Device.simulator))
+    }
+
     /// All devices that have a LiDAR sensor.
     public static var allDevicesWithALidarSensor: [Device] {
       return [.iPhone12Pro, .iPhone12ProMax, .iPhone13Pro, .iPhone13ProMax, .iPhone14Pro, .iPhone14ProMax, .iPhone15Pro, .iPhone15ProMax, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6]
@@ -1098,6 +1118,16 @@ public enum Device {
     /// Returns whether or not the device has a LiDAR sensor.
     public var hasLidarSensor: Bool {
       return isOneOf(Device.allDevicesWithALidarSensor) || isOneOf(Device.allDevicesWithALidarSensor.map(Device.simulator))
+    }
+
+    /// All devices that have a USB-C connectivity.
+    public static var allDevicesWithUSBCConnectivity: [Device] {
+      return [.iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax, .iPad10, .iPadAir4, .iPadAir5, .iPadMini6, .iPadPro11Inch, .iPadPro12Inch3, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6]
+    }
+
+    /// Returns whether or not the device has a USB-C power supply.
+    public var hasUSBCConnectivity: Bool {
+      return isOneOf(Device.allDevicesWithUSBCConnectivity) || isOneOf(Device.allDevicesWithUSBCConnectivity.map(Device.simulator))
     }
   #elseif os(tvOS)
     /// All TVs
