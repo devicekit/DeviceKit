@@ -585,7 +585,7 @@ public enum Device {
 
     public var isZoomed: Bool? {
       guard isCurrent else { return nil }
-      #if os(xrOS)
+      #if os(visionOS)
       return nil
       #else
       if Int(UIScreen.main.scale.rounded()) == 3 {
@@ -911,7 +911,7 @@ public enum Device {
 
   /// The brightness level of the screen.
   public var screenBrightness: Int {
-    #if os(iOS) && !os(xrOS)
+    #if os(iOS) && !os(visionOS)
     return Int(UIScreen.main.brightness * 100)
     #else
     return 100
@@ -1130,7 +1130,7 @@ extension Device.BatteryState: Comparable {
 }
 #endif
 
-#if os(iOS) && !os(xrOS)
+#if os(iOS) && !os(visionOS)
 extension Device {
   // MARK: Orientation
     /**
