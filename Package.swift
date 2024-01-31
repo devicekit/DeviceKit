@@ -17,8 +17,9 @@ let package = Package(
     platforms: [
         .iOS(.v11),
         .tvOS(.v11),
-//        .macOS(.v12),
-        .watchOS(.v4)
+        .watchOS(.v4),
+        .macOS(.v12),
+        .visionOS(.v1),
     ],
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.

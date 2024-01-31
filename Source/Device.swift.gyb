@@ -135,6 +135,16 @@ tvs = [
             Device("appleTV4K3",     "Device is an [Apple TV 4K (3rd generation)](https://support.apple.com/kb/SP886)",                       "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP886/apple-tv-4k-3gen_2x.png",                           ["AppleTV14,1"], 0, (), "Apple TV 4K (3rd generation)", "Apple TV 4K (3rd generation)", -1, False, False, False, False, False, False, False, False, False, False, 0, False, 0, False, "a15Bionic", False, False),
       ]
 
+# macOS
+macs = [
+            Device("macBookProM2Max",      "Device is a MacBook Pro 16\" with M2 Max", "https://everymac.com/images/cpu_pictures/macbook-pro-16-2023.jpg",                                                ["Mac14,6"],  16.2, (16,10), "MacBook Pro 14\" M2 Max", "MacBook Pro 14in M2 Max", 254, False, False, True, False, True, False, False, False, True, False, 0, False, 1, False, "M2 Max", True, False),
+        ]
+
+# visionOS
+visions = [
+            Device("appleVisionPro",      "Device is an Apple Vision Pro", "https://everymac.com/images/cpu_pictures/apple-vision-pro-with-battery.jpg",                                                ["Pending"],  0, (), "Apple Vision Pro", "Apple Vision Pro", 3400, False, False, True, False, False, False, False, False, False, False, 0, False, 12, True, "M2", False, False),
+        ]
+
 # watchOS
 watches = [
             Device(
@@ -299,6 +309,8 @@ watches = [
 iOSDevices = iPods + iPhones + iPads + homePods
 tvOSDevices = tvs
 watchOSDevices = watches
+macOSDevices = macs
+visionOSDevices = visions
 }%
 #if os(watchOS)
 import WatchKit
@@ -357,6 +369,13 @@ public enum Device {
 % end
   #elseif os(watchOS)
 % for device in watchOSDevices:
+    /// ${device.comment}
+    ///
+    /// ![Image](${device.imageURL})
+    case ${device.caseName}
+% end
+  #elseif os(visionOS)
+% for device in visionOSDevices:
     /// ${device.comment}
     ///
     /// ![Image](${device.imageURL})
@@ -435,11 +454,22 @@ public enum Device {
       case "i386", "x86_64", "arm64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "watchOS"))
       default: return unknown(identifier)
       }
-#elseif os(macOS)
-  switch identifier {
-  case "Mac14,6": return macBookProM2Max
-  default: return unknown(identifier)
-  }
+    #elseif os(macOS)
+    switch identifier {
+% for device in macOSDevices:
+      case ${', '.join(list(map(lambda device: "\"" + device + "\"", device.identifiers)))}: return ${device.caseName}
+% end
+      default: return unknown(identifier)
+      }
+    #elseif os(visionOS)
+    switch identifier {
+% for device in visionOSDevices:
+      case ${', '.join(list(map(lambda device: "\"" + device + "\"", device.identifiers)))}: return ${device.caseName}
+% end
+      default: return unknown(identifier)
+      }
+    #else
+      return unknown(identifier)
     #endif
   }
 
@@ -740,6 +770,18 @@ public enum Device {
     public static var allSimulatorTVs: [Device] {
       return allTVs.map(Device.simulator)
     }
+
+  #elseif os(visionOS)
+    /// All Visions
+    public static var allVisions: [Device] {
+       return [${', '.join(list(map(lambda device: "." + device.caseName, visionOSDevices)))}]
+    }
+
+    /// All simulator Visions
+    public static var allSimulatorVisions: [Device] {
+      return allVisions.map(Device.simulator)
+    }
+
   #elseif os(watchOS)
     /// All Watches
     public static var allWatches: [Device] {
@@ -762,7 +804,7 @@ public enum Device {
     }
   #elseif os(macOS)
   public static var allMacs: [Device] {
-    return [.macBookProM2Max] // TODO: add others
+       return [${', '.join(list(map(lambda device: "." + device.caseName, macOSDevices)))}]
   }
   #endif
 
@@ -786,6 +828,8 @@ public enum Device {
       return allWatches
     #elseif os(macOS)
       return allMacs
+    #else
+      return []
     #endif
   }
 
@@ -992,9 +1036,24 @@ extension Device: CustomStringConvertible {
       case .simulator(let model): return "Simulator (\(model.description))"
       case .unknown(let identifier): return identifier
       }
+    #elseif os(macOS)
+    switch self {
+% for device in macOSDevices:
+      case .${device.caseName}: return "${device.description}"
+% end
+    case .simulator(let model): return "Simulator (\(model.description))"
+    case .unknown(let identifier): return identifier
+    }
+    #elseif os(visionOS)
+    switch self {
+% for device in visionOSDevices:
+      case .${device.caseName}: return "${device.description}"
+% end
+    case .simulator(let model): return "Simulator (\(model.description))"
+    case .unknown(let identifier): return identifier
+    }
     #else
     switch self {
-    case .macBookProM2Max: return "MacBook Pro M2 Max 16\""
     case .simulator(let model): return "Simulator (\(model.description))"
     case .unknown(let identifier): return identifier
     }
@@ -1030,9 +1089,24 @@ extension Device: CustomStringConvertible {
       case .simulator(let model): return "Simulator (\(model.safeDescription))"
       case .unknown(let identifier): return identifier
       }
+    #elseif os(macOS)
+      switch self {
+  % for device in macOSDevices:
+      case .${device.caseName}: return "${device.safeDescription}"
+  % end
+      case .simulator(let model): return "Simulator (\(model.description))"
+      case .unknown(let identifier): return identifier
+      }
+    #elseif os(visionOS)
+      switch self {
+  % for device in visionOSDevices:
+      case .${device.caseName}: return "${device.safeDescription}"
+  % end
+      case .simulator(let model): return "Simulator (\(model.description))"
+      case .unknown(let identifier): return identifier
+      }
     #else
       switch self {
-      case .macBookProM2Max: return "MacBook Pro M2 Max 16in"
       case .simulator(let model): return "Simulator (\(model.description))"
       case .unknown(let identifier): return identifier
       }
@@ -1558,12 +1632,27 @@ extension Device {
       case .simulator(let model): return model.cpu
       case .unknown: return .unknown
     }
-#else
-switch self {
-case .macBookProM2Max: return .m2
-case .simulator(let model): return model.cpu
-case .unknown: return .unknown
-}
+  #elseif os(macOS)
+    switch self {
+    % for device in macOSDevices:
+      case .${device.caseName}: return .${device.cpu}
+    % end
+      case .simulator(let model): return model.cpu
+      case .unknown: return .unknown
+    }
+  #elseif os(visionOS)
+    switch self {
+    % for device in visionOSDevices:
+      case .${device.caseName}: return .${device.cpu}
+    % end
+      case .simulator(let model): return model.cpu
+      case .unknown: return .unknown
+    }
+  #else
+    switch self {
+      case .simulator(let model): return model.cpu
+      case .unknown: return .unknown
+    }
   #endif
   }
 }
