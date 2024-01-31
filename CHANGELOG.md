@@ -1,5 +1,19 @@
 # Changelog
 
+NOTE: Device.generated should be re-done using Swift Macros instead of GYB.
+
+## Version 5.2.5
+Added batteryLevel and volumeAvailableCapacityForOpportunisticUsage support for visionOS.
+
+## Version 5.2.4
+Updated package version to support visionOS.
+
+## Version 5.2.3
+Kudit updated to allow compilation on visionOS.
+
+## Version 5.2.2
+Kudit updated to fix compiler issues with xrOS and other incompatibilities for Swift 5.7 and macOS compilation.
+
 ## Version 5.2.1
 
 Releasedate: 2024-01-17

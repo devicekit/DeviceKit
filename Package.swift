@@ -1,4 +1,4 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.9
 //===----------------------------------------------------------------------===//
 //
 // This source file is part of the DeviceKit open source project
@@ -17,7 +17,9 @@ let package = Package(
     platforms: [
         .iOS(.v11),
         .tvOS(.v11),
-        .watchOS(.v4)
+        .watchOS(.v4),
+        .macOS(.v14),
+        .visionOS(.v1),
     ],
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
