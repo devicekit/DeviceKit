@@ -2,6 +2,9 @@
 
 NOTE: Device.generated should be re-done using Swift Macros instead of GYB.
 
+## Version 5.2.5
+Added batteryLevel and volumeAvailableCapacityForOpportunisticUsage support for visionOS.
+
 ## Version 5.2.4
 Updated package version to support visionOS.
 

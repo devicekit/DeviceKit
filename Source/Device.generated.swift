@@ -1790,7 +1790,7 @@ extension Device: Equatable {
 }
 
 // MARK: Battery
-#if os(iOS) || os(watchOS)
+#if os(iOS) || os(watchOS) || os(visionOS)
 @available(iOS 8.0, watchOS 4.0, *)
 extension Device {
   /**
@@ -1810,7 +1810,7 @@ extension Device {
     /// The associated value is in percent (0-100).
     case unplugged(Int)
 
-    #if os(iOS)
+    #if os(iOS) || os(visionOS)
       fileprivate init() {
         let wasBatteryMonitoringEnabled = UIDevice.current.isBatteryMonitoringEnabled
         UIDevice.current.isBatteryMonitoringEnabled = true
@@ -1886,7 +1886,7 @@ extension Device {
 #endif
 
 // MARK: Device.Batterystate: Comparable
-#if os(iOS) || os(watchOS)
+#if os(iOS) || os(watchOS) || os(visionOS)
 @available(iOS 8.0, watchOS 4.0, *)
 extension Device.BatteryState: Comparable {
   /// Tells if two battery states are equal.
@@ -1968,7 +1968,7 @@ extension Device {
 #endif
 #endif
 
-#if os(iOS)
+#if os(iOS) || os(visionOS)
 // MARK: DiskSpace
 extension Device {
 
