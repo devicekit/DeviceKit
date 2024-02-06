@@ -1,5 +1,22 @@
 # Changelog
 
+## Version 5.2.2
+
+Releasedate: 2024-02-06
+
+```ruby
+pod 'DeviceKit', '~> 5.2'
+```
+
+### Bugfixes
+
+- Fix building SwiftUI previews on macOS properly. ([#389](https://github.com/devicekit/DeviceKit/pull/389))
+
+### Contributors
+
+Thanks to all the contributers of this release!
+- [honghaoz](https://github.com/honghaoz)
+
 ## Version 5.2.1
 
 Releasedate: 2024-01-17
