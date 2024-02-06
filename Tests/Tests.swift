@@ -40,7 +40,8 @@ class DeviceKitTests: XCTestCase {
       || device.description.contains("iPad")
       || device.description.contains("iPod")
       || device.description.contains("TV")
-      || device.description.contains("Apple Watch"))
+      || device.description.contains("Apple Watch")
+      || device.description.contains("Apple Vision"))
     #endif
   }
 
@@ -58,7 +59,7 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(device.isCanvas, false)
   }
 
-  #if os(iOS) || os(tvOS)
+  #if os(iOS) || os(tvOS) || os(visionOS)
   func testDeviceCPU() {
   #if os(iOS)
     XCTAssertEqual(Device.iPhone12Mini.cpu, Device.CPU.a14Bionic)
@@ -92,6 +93,8 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.appleTV4K.cpu, Device.CPU.a10XFusion)
     XCTAssertEqual(Device.appleTV4K2.cpu, Device.CPU.a12Bionic)
     XCTAssertEqual(Device.appleTV4K3.cpu, Device.CPU.a15Bionic)
+  #elseif os(visionOS)
+    XCTAssertEqual(Device.appleVisionPro.cpu, Device.CPU.m2)
   #endif
   }
 
@@ -679,6 +682,21 @@ class DeviceKitTests: XCTestCase {
     // Simulators
     XCTAssertEqual(Device.simulator(Device.appleTVHD).ppi, nil)
     XCTAssertEqual(Device.simulator(Device.appleTV4K).ppi, nil)
+  }
+
+  #endif
+
+  // MARK: - visionOS
+  #if os(visionOS)
+
+  func testDescriptionFromIdentifier() {
+    XCTAssertEqual(Device.mapToDevice(identifier: "RealityDevice14,1").description, "Apple Vision Pro")
+  }
+
+  func testSafeDescription() {
+    for device in Device.allRealDevices {
+      XCTAssertEqual(device.description, device.safeDescription)
+    }
   }
 
   #endif
