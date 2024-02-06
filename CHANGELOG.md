@@ -11,11 +11,13 @@ pod 'DeviceKit', '~> 5.2'
 ### Bugfixes
 
 - Fix building SwiftUI previews on macOS properly. ([#389](https://github.com/devicekit/DeviceKit/pull/389))
+- Fix building for visionOS. ([#390](https://github.com/devicekit/DeviceKit/pull/390))
 
 ### Contributors
 
 Thanks to all the contributers of this release!
 - [honghaoz](https://github.com/honghaoz)
+- [chrisvasselli](https://github.com/chrisvasselli)
 
 ## Version 5.2.1
 
