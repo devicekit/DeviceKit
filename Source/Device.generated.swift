@@ -1556,7 +1556,7 @@ extension Device: CustomStringConvertible {
       }
     #else
       switch self {
-      case .simulator(let model): return "Simulator (\(model.safeDescription))"
+      case .simulator(let model): return "Simulator (\(model.description))"
       case .unknown(let identifier): return identifier
       }
     #endif
