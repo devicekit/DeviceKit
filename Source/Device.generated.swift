@@ -629,8 +629,8 @@ public enum Device {
       default: return unknown(identifier)
       }
     #elseif os(visionOS)
-    // To be completed when more information becomes available.
-    return unknown(identifier)
+      // TODO: Replace with proper implementation for visionOS.
+      return unknown(identifier)
     #else
       return unknown(identifier)
     #endif
@@ -1162,7 +1162,7 @@ public enum Device {
     #elseif os(watchOS)
       return allWatches
     #elseif os(visionOS)
-      // To be completed when more information becomes available.
+      // TODO: Replace with proper implementation for visionOS.
       return []
     #else
       return []
@@ -1404,7 +1404,7 @@ public enum Device {
     #elseif os(tvOS)
     return nil
     #elseif os(visionOS)
-    // To be completed when more information becomes available.
+    // TODO: Replace with proper implementation for visionOS.
     return nil
     #else
     return nil
@@ -1560,6 +1560,7 @@ extension Device: CustomStringConvertible {
       case .unknown(let identifier): return identifier
       }
     #elseif os(visionOS)
+      // TODO: Replace with proper implementation for visionOS.
       return "Apple Vision Pro"
     #else
       switch self {
@@ -1695,6 +1696,7 @@ extension Device: CustomStringConvertible {
       case .unknown(let identifier): return identifier
       }
     #elseif os(visionOS)
+      // TODO: Replace with proper implementation for visionOS.
       return "Apple Vision Pro"
     #else
       switch self {
@@ -2336,7 +2338,7 @@ extension Device {
       case .unknown: return .unknown
     }
   #elseif os(visionOS)
-    // To be completed when more information becomes available.
+    // TODO: Replace with proper implementation for visionOS.
     return .unknown
   #else
     return .unknown
@@ -2390,7 +2392,7 @@ extension Device.CPU: CustomStringConvertible {
       case .unknown: return "unknown"
     }
   #elseif os(visionOS)
-    // To be completed when more information becomes available.
+    // TODO: Replace with proper implementation for visionOS.
     return "unknown"
   #else
     return "unknown"
