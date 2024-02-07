@@ -1,6 +1,10 @@
 # Changelog
 
 NOTE: Device.generated should be re-done using Swift Macros instead of GYB.
+TODO: re-work so battery level and disk usage classes are available even if values are inaccessible to facilitate usage in frameworks.
+
+## Version 5.2.6
+Updated iOS and tvOS versions to new v12 minimum.
 
 ## Version 5.2.5
 Added batteryLevel and volumeAvailableCapacityForOpportunisticUsage support for visionOS.
