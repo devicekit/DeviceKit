@@ -1,5 +1,22 @@
 # Changelog
 
+## Version 5.2.3
+
+Releasedate: 2024-04-15
+
+```ruby
+pod 'DeviceKit', '~> 5.2'
+```
+
+### Bugfixes
+
+- Fix PrivacyInfo for Cocoapods. ([#397](https://github.com/devicekit/DeviceKit/pull/397))
+
+### Contributors
+
+Thanks to all the contributers of this release!
+- [RayJiang16](https://github.com/RayJiang16)
+
 ## Version 5.2.2
 
 Releasedate: 2024-02-06
