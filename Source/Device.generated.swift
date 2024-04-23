@@ -472,6 +472,11 @@ public enum Device {
     ///
     /// ![Image]()
     case appleWatchUltra2
+  #elseif os(visionOS)
+    /// Device is an [Apple Vision Pro](https://support.apple.com/kb/SP911)
+    ///
+    /// ![Image](http://images.apple.com/v/tv/c/images/overview/buy_tv_large_2x.jpg)
+    case appleVisionPro
   #endif
 
   /// Device is [Simulator](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/Introduction/Introduction.html)
@@ -598,7 +603,7 @@ public enum Device {
       default: return unknown(identifier)
       }
     #elseif os(watchOS)
-    switch identifier {
+      switch identifier {
       case "Watch1,1": return appleWatchSeries0_38mm
       case "Watch1,2": return appleWatchSeries0_42mm
       case "Watch2,6": return appleWatchSeries1_38mm
@@ -629,8 +634,11 @@ public enum Device {
       default: return unknown(identifier)
       }
     #elseif os(visionOS)
-      // TODO: Replace with proper implementation for visionOS.
-      return unknown(identifier)
+      switch identifier {
+      case "RealityDevice14,1": return appleVisionPro
+      case "i386", "x86_64", "arm64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "visionOS"))
+      default: return unknown(identifier)
+      }
     #else
       return unknown(identifier)
     #endif
@@ -1141,6 +1149,16 @@ public enum Device {
     public var hasForceTouchSupport: Bool {
       return isOneOf(Device.allWatchesWithForceTouchSupport) || isOneOf(Device.allWatchesWithForceTouchSupport.map(Device.simulator))
     }
+  #elseif os(visionOS)
+    /// All Watches
+    public static var allVisions: [Device] {
+       return [.appleVisionPro]
+    }
+
+    /// All simulator Watches
+    public static var allSimulatorVisions: [Device] {
+      return allVisions.map(Device.simulator)
+    }
   #endif
 
   /// Returns whether the current device is a SwiftUI preview canvas
@@ -1162,8 +1180,7 @@ public enum Device {
     #elseif os(watchOS)
       return allWatches
     #elseif os(visionOS)
-      // TODO: Replace with proper implementation for visionOS.
-      return []
+      return allVisions
     #else
       return []
     #endif
@@ -1404,7 +1421,6 @@ public enum Device {
     #elseif os(tvOS)
     return nil
     #elseif os(visionOS)
-    // TODO: Replace with proper implementation for visionOS.
     return nil
     #else
     return nil
@@ -1439,8 +1455,8 @@ extension Device: CustomStringConvertible {
 
   /// A textual representation of the device.
   public var description: String {
+    switch self {
     #if os(iOS)
-      switch self {
       case .iPodTouch5: return "iPod touch (5th generation)"
       case .iPodTouch6: return "iPod touch (6th generation)"
       case .iPodTouch7: return "iPod touch (7th generation)"
@@ -1516,11 +1532,7 @@ extension Device: CustomStringConvertible {
       case .iPadPro11Inch4: return "iPad Pro (11-inch) (4th generation)"
       case .iPadPro12Inch6: return "iPad Pro (12.9-inch) (6th generation)"
       case .homePod: return "HomePod"
-      case .simulator(let model): return "Simulator (\(model.description))"
-      case .unknown(let identifier): return identifier
-      }
     #elseif os(watchOS)
-      switch self {
       case .appleWatchSeries0_38mm: return "Apple Watch (1st generation) 38mm"
       case .appleWatchSeries0_42mm: return "Apple Watch (1st generation) 42mm"
       case .appleWatchSeries1_38mm: return "Apple Watch Series 1 38mm"
@@ -1547,27 +1559,17 @@ extension Device: CustomStringConvertible {
       case .appleWatchSeries9_41mm: return "Apple Watch Series 9 41mm"
       case .appleWatchSeries9_45mm: return "Apple Watch Series 9 45mm"
       case .appleWatchUltra2: return "Apple Watch Ultra2"
-      case .simulator(let model): return "Simulator (\(model.description))"
-      case .unknown(let identifier): return identifier
-      }
     #elseif os(tvOS)
-      switch self {
       case .appleTVHD: return "Apple TV HD"
       case .appleTV4K: return "Apple TV 4K"
       case .appleTV4K2: return "Apple TV 4K (2nd generation)"
       case .appleTV4K3: return "Apple TV 4K (3rd generation)"
-      case .simulator(let model): return "Simulator (\(model.description))"
-      case .unknown(let identifier): return identifier
-      }
     #elseif os(visionOS)
-      // TODO: Replace with proper implementation for visionOS.
-      return "Apple Vision Pro"
-    #else
-      switch self {
+      case .appleVisionPro: return "Apple Vision Pro"
+    #endif
       case .simulator(let model): return "Simulator (\(model.description))"
       case .unknown(let identifier): return identifier
-      }
-    #endif
+    }
   }
 
   /// A safe version of `description`.
@@ -1575,8 +1577,8 @@ extension Device: CustomStringConvertible {
   /// Device.iPhoneXR.description:     iPhone Xʀ
   /// Device.iPhoneXR.safeDescription: iPhone XR
   public var safeDescription: String {
+    switch self {
     #if os(iOS)
-      switch self {
       case .iPodTouch5: return "iPod touch (5th generation)"
       case .iPodTouch6: return "iPod touch (6th generation)"
       case .iPodTouch7: return "iPod touch (7th generation)"
@@ -1652,11 +1654,7 @@ extension Device: CustomStringConvertible {
       case .iPadPro11Inch4: return "iPad Pro (11-inch) (4th generation)"
       case .iPadPro12Inch6: return "iPad Pro (12.9-inch) (6th generation)"
       case .homePod: return "HomePod"
-      case .simulator(let model): return "Simulator (\(model.safeDescription))"
-      case .unknown(let identifier): return identifier
-      }
     #elseif os(watchOS)
-      switch self {
       case .appleWatchSeries0_38mm: return "Apple Watch (1st generation) 38mm"
       case .appleWatchSeries0_42mm: return "Apple Watch (1st generation) 42mm"
       case .appleWatchSeries1_38mm: return "Apple Watch Series 1 38mm"
@@ -1683,27 +1681,17 @@ extension Device: CustomStringConvertible {
       case .appleWatchSeries9_41mm: return "Apple Watch Series 9 41mm"
       case .appleWatchSeries9_45mm: return "Apple Watch Series 9 45mm"
       case .appleWatchUltra2: return "Apple Watch Ultra2"
-      case .simulator(let model): return "Simulator (\(model.safeDescription))"
-      case .unknown(let identifier): return identifier
-      }
     #elseif os(tvOS)
-      switch self {
       case .appleTVHD: return "Apple TV HD"
       case .appleTV4K: return "Apple TV 4K"
       case .appleTV4K2: return "Apple TV 4K (2nd generation)"
       case .appleTV4K3: return "Apple TV 4K (3rd generation)"
-      case .simulator(let model): return "Simulator (\(model.safeDescription))"
-      case .unknown(let identifier): return identifier
-      }
     #elseif os(visionOS)
-      // TODO: Replace with proper implementation for visionOS.
-      return "Apple Vision Pro"
-    #else
-      switch self {
+      case .appleVisionPro: return "Apple Vision Pro"
+    #endif
       case .simulator(let model): return "Simulator (\(model.safeDescription))"
       case .unknown(let identifier): return identifier
-      }
-    #endif
+    }
   }
 
 }
@@ -2176,7 +2164,7 @@ extension Device {
 extension Device {
 
   public enum CPU: Comparable {
-  #if os(iOS) || os(tvOS)
+  #if os(iOS) || os(tvOS) || os(visionOS)
     case a4
     case a5
     case a5X
@@ -2338,8 +2326,11 @@ extension Device {
       case .unknown: return .unknown
     }
   #elseif os(visionOS)
-    // TODO: Replace with proper implementation for visionOS.
-    return .unknown
+    switch self {
+      case .appleVisionPro: return .m2
+      case .simulator(let model): return model.cpu
+      case .unknown: return .unknown
+    }
   #else
     return .unknown
   #endif
@@ -2350,7 +2341,7 @@ extension Device.CPU: CustomStringConvertible {
 
   /// A textual representation of the device.
   public var description: String {
-  #if os(iOS) || os(tvOS)
+  #if os(iOS) || os(tvOS) || os(visionOS)
     switch self {
       case .a4: return "A4"
       case .a5: return "A5"
@@ -2391,9 +2382,6 @@ extension Device.CPU: CustomStringConvertible {
       case .s9: return "S9"
       case .unknown: return "unknown"
     }
-  #elseif os(visionOS)
-    // TODO: Replace with proper implementation for visionOS.
-    return "unknown"
   #else
     return "unknown"
   #endif
