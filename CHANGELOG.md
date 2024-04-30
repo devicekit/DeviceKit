@@ -1,5 +1,17 @@
 # Changelog
 
+## Version 5.2.4
+
+Releasedate: 2024-04-30
+
+```ruby
+pod 'DeviceKit', '~> 5.2'
+```
+
+### Bugfixes
+
+- Enable MERGEABLE_LIBRARY flag. ([#407](https://github.com/devicekit/DeviceKit/pull/407))
+
 ## Version 5.2.3
 
 Releasedate: 2024-04-15

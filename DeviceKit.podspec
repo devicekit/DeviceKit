@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'DeviceKit'
-  s.version      = '5.2.3'
+  s.version      = '5.2.4'
   s.summary      = 'DeviceKit is a µ-framework that provides a value-type replacement of UIDevice.'
 
   s.description                = <<-DESC
