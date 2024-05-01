@@ -1176,17 +1176,21 @@ extension Device {
       This enum describes the state of the orientation.
       - Landscape: The device is in Landscape Orientation
       - Portrait:  The device is in Portrait Orientation
+      - Unknown:   The device orientation is unknown.
     */
     public enum Orientation {
       case landscape
       case portrait
+      case unknown
     }
 
     public var orientation: Orientation {
       if UIDevice.current.orientation.isLandscape {
         return .landscape
-      } else {
+      } else if UIDevice.current.orientation.isPortrait {
         return .portrait
+      } else {
+        return .unknown
       }
     }
 }
