@@ -732,8 +732,8 @@ public enum Device {
         case .iPad10: return 10.9
         case .iPadAir4: return 10.9
         case .iPadAir5: return 10.9
-        case .iPadAir11inch6: return 11.0
-        case .iPadAir13inch6: return 13.0
+        case .iPadAir11inch6: return 10.9
+        case .iPadAir13inch6: return 12.9
         case .iPadMini: return 7.9
         case .iPadMini2: return 7.9
         case .iPadMini3: return 7.9
@@ -1978,8 +1978,10 @@ extension Device {
 
   /**
     This option set describes the current Apple Pencils
-    - firstGeneration:  1st Generation Apple Pencil
+    - firstGeneration: 1st Generation Apple Pencil
     - secondGeneration: 2nd Generation Apple Pencil
+    - firstGenerationUsbC: 1st Generation Apple Pencil (USB-C)
+    - pro: Apple Pencil Pro
    */
   public struct ApplePencilSupport: OptionSet {
 
@@ -1991,6 +1993,8 @@ extension Device {
 
     public static let firstGeneration = ApplePencilSupport(rawValue: 0x01)
     public static let secondGeneration = ApplePencilSupport(rawValue: 0x02)
+    public static let firstGenerationUsbC = ApplePencilSupport(rawValue: 0x03)
+    public static let pro = ApplePencilSupport(rawValue: 0x04)
   }
 
   /// All Apple Pencil Capable Devices
@@ -2006,27 +2010,27 @@ extension Device {
       case .iPad7: return .firstGeneration
       case .iPad8: return .firstGeneration
       case .iPad9: return .firstGeneration
-      case .iPad10: return .firstGeneration
       case .iPadMini5: return .firstGeneration
       case .iPadPro9Inch: return .firstGeneration
       case .iPadPro12Inch: return .firstGeneration
       case .iPadPro12Inch2: return .firstGeneration
       case .iPadPro10Inch: return .firstGeneration
-      case .iPadAir4: return .secondGeneration
-      case .iPadAir5: return .secondGeneration
-      case .iPadAir11inch6: return .secondGeneration
-      case .iPadAir13inch6: return .secondGeneration
-      case .iPadMini6: return .secondGeneration
-      case .iPadPro11Inch: return .secondGeneration
-      case .iPadPro12Inch3: return .secondGeneration
-      case .iPadPro11Inch2: return .secondGeneration
-      case .iPadPro12Inch4: return .secondGeneration
-      case .iPadPro11Inch3: return .secondGeneration
-      case .iPadPro12Inch5: return .secondGeneration
-      case .iPadPro11Inch4: return .secondGeneration
-      case .iPadPro12Inch6: return .secondGeneration
-      case .iPadPro11Inch5: return .secondGeneration
-      case .iPadPro13Inch7: return .secondGeneration
+      case .iPad10: return .firstGenerationUsbC
+      case .iPadAir4: return [.secondGeneration, .firstGenerationUsbC]
+      case .iPadAir5: return [.secondGeneration, .firstGenerationUsbC]
+      case .iPadMini6: return [.secondGeneration, .firstGenerationUsbC]
+      case .iPadPro11Inch: return [.secondGeneration, .firstGenerationUsbC]
+      case .iPadPro12Inch3: return [.secondGeneration, .firstGenerationUsbC]
+      case .iPadPro11Inch2: return [.secondGeneration, .firstGenerationUsbC]
+      case .iPadPro12Inch4: return [.secondGeneration, .firstGenerationUsbC]
+      case .iPadPro11Inch3: return [.secondGeneration, .firstGenerationUsbC]
+      case .iPadPro12Inch5: return [.secondGeneration, .firstGenerationUsbC]
+      case .iPadPro11Inch4: return [.secondGeneration, .firstGenerationUsbC]
+      case .iPadPro12Inch6: return [.secondGeneration, .firstGenerationUsbC]
+      case .iPadPro11Inch5: return [.secondGeneration, .firstGenerationUsbC, .pro]
+      case .iPadPro13Inch7: return [.secondGeneration, .firstGenerationUsbC, .pro]
+      case .iPadAir11inch6: return [.secondGeneration, .pro]
+      case .iPadAir13inch6: return [.secondGeneration, .pro]
       case .simulator(let model): return model.applePencilSupport
       default: return []
     }
