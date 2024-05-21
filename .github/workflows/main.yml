@@ -56,7 +56,7 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-          ruby-version: 2.6.3
+          ruby-version: 2.7.8
 
       - name: xcodebuild
         run: set -o pipefail && xcodebuild -scheme DeviceKit -destination "${{ matrix.platform }}" -configuration Debug ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES test
