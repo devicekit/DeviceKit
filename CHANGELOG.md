@@ -1,5 +1,24 @@
 # Changelog
 
+## Version 5.3.0
+
+Releasedate: 2024-05-21
+
+```ruby
+pod 'DeviceKit', '~> 5.3'
+```
+
+### New May 2024 devices
+
+This version adds support for the devices announced at the May 2024 Apple Event: ([#412](https://github.com/devicekit/DeviceKit/pull/412))
+
+| Device | Case value |
+| --- | --- |
+| iPad Air (11-inch) (M2) | `Device.iPadAir11M2` |
+| iPad Air (13-inch) (M2) | `Device.iPadAir13M2` |
+| iPad Pro (11-inch) (M4) | `Device.iPadPro11M4` |
+| iPad Pro (13-inch) (M4) | `Device.iPadPro13M4` |
+
 ## Version 5.2.4
 
 Releasedate: 2024-04-30
