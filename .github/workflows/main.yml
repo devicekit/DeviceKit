@@ -18,7 +18,7 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-          ruby-version: 2.6.3
+          ruby-version: 2.6.10
 
       - uses: MeilCli/danger-action@v5
         with:
