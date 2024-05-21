@@ -19,6 +19,10 @@ This version adds support for the devices announced at the May 2024 Apple Event:
 | iPad Pro (11-inch) (M4) | `Device.iPadPro11M4` |
 | iPad Pro (13-inch) (M4) | `Device.iPadPro13M4` |
 
+### New features
+
+- Added `ApplePencilSupport.firstGenerationUsbC` and `ApplePencilSupport.pro`. ([#412](https://github.com/devicekit/DeviceKit/pull/412))
+
 ## Version 5.2.4
 
 Releasedate: 2024-04-30
