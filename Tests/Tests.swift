@@ -482,7 +482,9 @@ class DeviceKitTests: XCTestCase {
       .iPadPro11Inch3,
       .iPadPro12Inch5,
       .iPadPro11Inch4,
-      .iPadPro12Inch6
+      .iPadPro12Inch6,
+      .iPadPro11M4,
+      .iPadPro13M4,
     ])
   }
 
@@ -537,11 +539,15 @@ class DeviceKitTests: XCTestCase {
       .iPhone15ProMax,
       .iPad10,
       .iPadAir5,
+      .iPadAir11M2,
+      .iPadAir13M2,
       .iPadMini6,
       .iPadPro11Inch3,
       .iPadPro12Inch5,
       .iPadPro11Inch4,
-      .iPadPro12Inch6
+      .iPadPro12Inch6,
+      .iPadPro11M4,
+      .iPadPro13M4,
     ]
     for device in Device.allRealDevices {
       XCTAssertTrue(device.has5gSupport == device.isOneOf(has5gDevices), "testHasDynamicIsland failed for \(device.description)")
@@ -623,7 +629,9 @@ class DeviceKitTests: XCTestCase {
       .iPadPro11Inch3,
       .iPadPro12Inch5,
       .iPadPro11Inch4,
-      .iPadPro12Inch6
+      .iPadPro12Inch6,
+      .iPadPro11M4,
+      .iPadPro13M4,
     ]
     for device in Device.allRealDevices {
       XCTAssertTrue(device.hasLidarSensor == device.isOneOf(lidarDevices), "testLidarValues failed for \(device.description)")
@@ -639,6 +647,8 @@ class DeviceKitTests: XCTestCase {
       .iPad10,
       .iPadAir4,
       .iPadAir5,
+      .iPadAir11M2,
+      .iPadAir13M2,
       .iPadMini6,
       .iPadPro11Inch,
       .iPadPro12Inch3,
@@ -647,7 +657,9 @@ class DeviceKitTests: XCTestCase {
       .iPadPro11Inch3,
       .iPadPro12Inch5,
       .iPadPro11Inch4,
-      .iPadPro12Inch6
+      .iPadPro12Inch6,
+      .iPadPro11M4,
+      .iPadPro13M4,
     ]
     for device in Device.allRealDevices {
       XCTAssertTrue(device.hasUSBCConnectivity == device.isOneOf(usbCDevices), "testHasUSBCConnectivity failed for \(device.description)")
