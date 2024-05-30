@@ -1,5 +1,22 @@
 # Changelog
 
+## Version 5.4.0
+
+Releasedate: 2024-05-30
+
+```ruby
+pod 'DeviceKit', '~> 5.4'
+```
+
+### New features
+
+- Add `Orientation.unknown` for when the device is neither in landscape or portrait orientation. ([#410](https://github.com/devicekit/DeviceKit/pull/410))
+
+### Contributors
+
+Thanks to all the contributers of this release!
+- [GeorgeElsham](https://github.com/GeorgeElsham)
+
 ## Version 5.3.1
 
 Releasedate: 2024-05-30
