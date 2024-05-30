@@ -39,7 +39,7 @@ let package = Package(
             name: "DeviceKitTests",
             dependencies: ["DeviceKit"],
             path: "Tests",
-            resources: [.process("PrivacyInfo.xcprivacy")]
+            resources: [.process("../Source/PrivacyInfo.xcprivacy")]
         )
     ],
     swiftLanguageVersions: [.v5]
