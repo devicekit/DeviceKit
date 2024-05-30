@@ -1,5 +1,17 @@
 # Changelog
 
+## Version 5.3.1
+
+Releasedate: 2024-05-30
+
+```ruby
+pod 'DeviceKit', '~> 5.3'
+```
+
+### Bugfixes
+
+- Process Privacy manifest instead of copy on SPM. ([#409](https://github.com/devicekit/DeviceKit/pull/409))
+
 ## Version 5.3.0
 
 Releasedate: 2024-05-21
