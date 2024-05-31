@@ -1,5 +1,124 @@
 # Changelog
 
+## Version 5.4.0
+
+Releasedate: 2024-05-30
+
+```ruby
+pod 'DeviceKit', '~> 5.4'
+```
+
+### New features
+
+- Add `Orientation.unknown` for when the device is neither in landscape or portrait orientation. ([#410](https://github.com/devicekit/DeviceKit/pull/410))
+
+### Contributors
+
+Thanks to all the contributers of this release!
+- [GeorgeElsham](https://github.com/GeorgeElsham)
+
+## Version 5.3.1
+
+Releasedate: 2024-05-30
+
+```ruby
+pod 'DeviceKit', '~> 5.3'
+```
+
+### Bugfixes
+
+- Process Privacy manifest instead of copy on SPM. ([#409](https://github.com/devicekit/DeviceKit/pull/409))
+
+## Version 5.3.0
+
+Releasedate: 2024-05-21
+
+```ruby
+pod 'DeviceKit', '~> 5.3'
+```
+
+### New May 2024 devices
+
+This version adds support for the devices announced at the May 2024 Apple Event: ([#412](https://github.com/devicekit/DeviceKit/pull/412))
+
+| Device | Case value |
+| --- | --- |
+| iPad Air (11-inch) (M2) | `Device.iPadAir11M2` |
+| iPad Air (13-inch) (M2) | `Device.iPadAir13M2` |
+| iPad Pro (11-inch) (M4) | `Device.iPadPro11M4` |
+| iPad Pro (13-inch) (M4) | `Device.iPadPro13M4` |
+
+### New features
+
+- Added `ApplePencilSupport.firstGenerationUsbC` and `ApplePencilSupport.pro`. ([#412](https://github.com/devicekit/DeviceKit/pull/412))
+
+## Version 5.2.4
+
+Releasedate: 2024-04-30
+
+```ruby
+pod 'DeviceKit', '~> 5.2'
+```
+
+### Bugfixes
+
+- Enable MERGEABLE_LIBRARY flag. ([#407](https://github.com/devicekit/DeviceKit/pull/407))
+
+## Version 5.2.3
+
+Releasedate: 2024-04-15
+
+```ruby
+pod 'DeviceKit', '~> 5.2'
+```
+
+### Bugfixes
+
+- Fix PrivacyInfo for Cocoapods. ([#397](https://github.com/devicekit/DeviceKit/pull/397))
+
+### Contributors
+
+Thanks to all the contributers of this release!
+- [RayJiang16](https://github.com/RayJiang16)
+
+## Version 5.2.2
+
+Releasedate: 2024-02-06
+
+```ruby
+pod 'DeviceKit', '~> 5.2'
+```
+
+### Bugfixes
+
+- Fix building SwiftUI previews on macOS properly. ([#389](https://github.com/devicekit/DeviceKit/pull/389))
+- Fix building for visionOS. ([#390](https://github.com/devicekit/DeviceKit/pull/390))
+
+### Contributors
+
+Thanks to all the contributers of this release!
+- [honghaoz](https://github.com/honghaoz)
+- [chrisvasselli](https://github.com/chrisvasselli)
+
+## Version 5.2.1
+
+Releasedate: 2024-01-17
+
+```ruby
+pod 'DeviceKit', '~> 5.2'
+```
+
+### Bugfixes
+
+- Update swift-tools-version in Package.swift to 5.3 to support Resource files. ([#381](https://github.com/devicekit/DeviceKit/pull/381))
+- Fix PrivacyInfo.xcprivacy not being detected on SPM. ([#384](https://github.com/devicekit/DeviceKit/pull/384))
+
+### Contributors
+
+Thanks to all the contributers of this release!
+- [Semty](https://github.com/Semty)
+- Everyone who reported the SPM issues.
+
 ## Version 5.2.0
 
 Releasedate: 2024-01-15

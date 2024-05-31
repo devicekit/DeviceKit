@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'DeviceKit'
-  s.version      = '5.2.0'
+  s.version      = '5.4.0'
   s.summary      = 'DeviceKit is a µ-framework that provides a value-type replacement of UIDevice.'
 
   s.description                = <<-DESC
@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.source                     = { :git => 'https://github.com/devicekit/DeviceKit.git', :tag => s.version }
   s.source_files               = 'Source/Device.generated.swift'
 
-  s.resources                  = 'PrivacyInfo.xcprivacy'
+  s.resource_bundles = { 'DeviceKit' => 'Source/PrivacyInfo.xcprivacy' }
 
   s.requires_arc = true
 end

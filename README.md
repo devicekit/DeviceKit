@@ -18,7 +18,7 @@
 
 `DeviceKit` is a value-type replacement of [`UIDevice`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/).
 
-## Current version 5.2.0
+## Current version 5.4.0
 See our detailed [changelog](CHANGELOG.md) for the latest features, improvements and bug fixes.
 
 ## Features
