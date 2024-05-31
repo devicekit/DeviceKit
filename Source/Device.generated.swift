@@ -1119,6 +1119,26 @@ public enum Device {
     public var has5gSupport: Bool {
       return isOneOf(Device.allDevicesWith5gSupport) || isOneOf(Device.allDevicesWith5gSupport.map(Device.simulator))
     }
+    
+    /// All devices that support single ESIM.
+    public static var allDevicesWithSingleEsimSupport: [Device] {
+      return [.iPhoneX, .iPhoneXS, .iPhoneXSMax, .iPhoneXR, .iPhone11, .iPhone11Pro, .iPhone11ProMax, .iPhoneSE2, .iPhone12, .iPhone12Mini, .iPhone12Pro, .iPhone12ProMax, .iPhone13, .iPhone13Mini, .iPhone13Pro, .iPhone13ProMax, .iPhoneSE3, .iPhone14, .iPhone14Plus, .iPhone14Pro, .iPhone14ProMax, .iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax, .iPadAir3, .iPad7, .iPad8, .iPad9, .iPad10, .iPadAir4, .iPadAir5, .iPadAir11M2, .iPadAir13M2, .iPadMini5, .iPadMini6, .iPadPro11Inch, .iPadPro12Inch3, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6, .iPadPro11M4, .iPadPro13M4]
+    }
+
+    /// Returns whether or not the device has single ESIM support.
+    public var hasSingleEsimSupport: Bool {
+      return isOneOf(Device.allDevicesWithSingleEsimSupport) || isOneOf(Device.allDevicesWithSingleEsimSupport.map(Device.simulator))
+    }
+    
+    /// All devices that support dual ESIM.
+    public static var allDevicesWithDualEsimSupport: [Device] {
+      return [.iPhone13, .iPhone13Mini, .iPhone13Pro, .iPhone13ProMax, .iPhoneSE3, .iPhone14, .iPhone14Plus, .iPhone14Pro, .iPhone14ProMax, .iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax]
+    }
+
+    /// Returns whether or not the device has dual ESIM support.
+    public var hasDualEsimSupport: Bool {
+      return isOneOf(Device.allDevicesWithDualEsimSupport) || isOneOf(Device.allDevicesWithDualEsimSupport.map(Device.simulator))
+    }
 
     /// All devices that have a LiDAR sensor.
     public static var allDevicesWithALidarSensor: [Device] {
