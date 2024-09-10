@@ -82,11 +82,14 @@ iPhones = [
             Device("iPhone14Plus",   "Device is an [iPhone 14 Plus](https://support.apple.com/kb/SP874)",              "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP873/iphone-14_1_2x.png",                                        ["iPhone14,8"],                               6.7,  (9, 19.5),  "iPhone 14 Plus", "iPhone 14 Plus", 476, True, False, False, True, False, True, True, True, True, False, 0, False, 13, False, "a15Bionic", False, True),
             Device("iPhone14Pro",    "Device is an [iPhone 14 Pro](https://support.apple.com/kb/SP875)",               "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP875/sp875-sp876-iphone14-pro-promax_2x.png",                    ["iPhone15,2"],                               6.1,  (9, 19.5),  "iPhone 14 Pro", "iPhone 14 Pro", 460, False, False, True, True, False, True, True, True, True, True, 0, False, 123, True, "a16Bionic", False, True),
             Device("iPhone14ProMax", "Device is an [iPhone 14 Pro Max](https://support.apple.com/kb/SP876)",           "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP875/sp875-sp876-iphone14-pro-promax_2x.png",                    ["iPhone15,3"],                               6.7,  (9, 19.5),  "iPhone 14 Pro Max", "iPhone 14 Pro Max", 458, True, False, True, True, False, True, True, True, True, True, 0, False, 123, True, "a16Bionic", False, True),
-            Device("iPhone15",       "Device is an [iPhone 15]()",                                                     "",                                                                                                                          ["iPhone15,4"],                               6.1,  (9, 19.5),  "iPhone 15", "iPhone 15", 460, False, False, False, True, False, True, True, True, True, True, 0, False, 13, False, "a16Bionic", True, True),
-            Device("iPhone15Plus",   "Device is an [iPhone 15 Plus]()",                                                "",                                                                                                                          ["iPhone15,5"],                               6.7,  (9, 19.5),  "iPhone 15 Plus", "iPhone 15 Plus", 476, True, False, False, True, False, True, True, True, True, True, 0, False, 13, False, "a16Bionic", True, True),
-            Device("iPhone15Pro",    "Device is an [iPhone 15 Pro]()",                                                 "",                                                                                                                          ["iPhone16,1"],                               6.1,  (9, 19.5),  "iPhone 15 Pro", "iPhone 15 Pro", 460, False, False, True, True, False, True, True, True, True, True, 0, False, 123, True, "a17Pro", True, True),
-            Device("iPhone15ProMax", "Device is an [iPhone 15 Pro Max]()",                                             "",                                                                                                                          ["iPhone16,2"],                               6.7,  (9, 19.5),  "iPhone 15 Pro Max", "iPhone 15 Pro Max", 460, True, False, True, True, False, True, True, True, True, True, 0, False, 123, True, "a17Pro", True, True),
-
+            Device("iPhone15",       "Device is an [iPhone 15](https://support.apple.com/en-us/111831)",               "",                                                                                                                          ["iPhone15,4"],                               6.1,  (9, 19.5),  "iPhone 15", "iPhone 15", 460, False, False, False, True, False, True, True, True, True, True, 0, False, 13, False, "a16Bionic", True, True),
+            Device("iPhone15Plus",   "Device is an [iPhone 15 Plus](https://support.apple.com/en-us/111830)",          "",                                                                                                                          ["iPhone15,5"],                               6.7,  (9, 19.5),  "iPhone 15 Plus", "iPhone 15 Plus", 476, True, False, False, True, False, True, True, True, True, True, 0, False, 13, False, "a16Bionic", True, True),
+            Device("iPhone15Pro",    "Device is an [iPhone 15 Pro](https://support.apple.com/en-us/111829)",           "",                                                                                                                          ["iPhone16,1"],                               6.1,  (9, 19.5),  "iPhone 15 Pro", "iPhone 15 Pro", 460, False, False, True, True, False, True, True, True, True, True, 0, False, 123, True, "a17Pro", True, True),
+            Device("iPhone15ProMax", "Device is an [iPhone 15 Pro Max](https://support.apple.com/en-us/111828)",       "",                                                                                                                          ["iPhone16,2"],                               6.7,  (9, 19.5),  "iPhone 15 Pro Max", "iPhone 15 Pro Max", 460, True, False, True, True, False, True, True, True, True, True, 0, False, 123, True, "a17Pro", True, True),
+            Device("iPhone16",       "Device is an [iPhone 16]()",                                                     "",                                                                                                                          ["iPhoneTODO1"],                              6.1,  (9, 19.5),  "iPhone 16", "iPhone 16", 460, False, False, False, True, False, True, True, True, True, True, 0, False, 13, False, "a18", True, True),
+            Device("iPhone16Plus",   "Device is an [iPhone 16 Plus]()",                                                "",                                                                                                                          ["iPhoneTODO2"],                              6.7,  (9, 19.5),  "iPhone 16 Plus", "iPhone 16 Plus", 476, True, False, False, True, False, True, True, True, True, True, 0, False, 13, False, "a18", True, True),
+            Device("iPhone16Pro",    "Device is an [iPhone 16 Pro]()",                                                 "",                                                                                                                          ["iPhoneTODO3"],                              6.3,  (9, 19.5),  "iPhone 16 Pro", "iPhone 16 Pro", 460, False, False, True, True, False, True, True, True, True, True, 0, False, 123, True, "a18Pro", True, True),
+            Device("iPhone16ProMax", "Device is an [iPhone 16 Pro Max]()",                                             "",                                                                                                                          ["iPhoneTODO4"],                              6.9,  (9, 19.5),  "iPhone 16 Pro Max", "iPhone 16 Pro Max", 460, True, False, True, True, False, True, True, True, True, True, 0, False, 123, True, "a18Pro", True, True),
           ]
 
 iPads = [
@@ -297,6 +300,17 @@ watches = [
             "",
             ["Watch7,5"], 2.2, (4,5), "Apple Watch Ultra2", "Apple Watch Ultra2", 338, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s9", False, False),
 
+            Device(
+            "appleWatchSeries10_42mm",
+            "Device is an [Apple Watch Series 10]()",
+            "",
+            ["WatchTODO1"], 1.9, (374,446), "Apple Watch Series 10 42mm", "Apple Watch Series 10 42mm", 326, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s10", False, False),
+
+            Device(
+            "appleWatchSeries10_46mm",
+            "Device is an [Apple Watch Series 10]()",
+            "",
+            ["WatchTODO2"], 2.0, (416,496), "Apple Watch Series 10 46mm", "Apple Watch Series 10 46mm", 326, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s10", False, False),
 
   ]
 
@@ -1475,6 +1489,8 @@ iOS_cpus = [
           CPU("a15Bionic", "A15 Bionic"),
           CPU("a16Bionic", "A16 Bionic"),
           CPU("a17Pro"   , "A17 Pro"),
+          CPU("a18"   , "A18"),
+          CPU("a18Pro"   , "A18 Pro"),
           CPU("m1", "M1"),
           CPU("m2", "M2"),
           CPU("m3", "M3"),
@@ -1492,6 +1508,7 @@ watchOS_cpus = [
           CPU("s7", "S7"),
           CPU("s8", "S8"),
           CPU("s9", "S9"),
+          CPU("s10", "S10"),
 ]
 }%
 
