@@ -1,5 +1,34 @@
 # Changelog
 
+## Version 5.5.0
+
+Releasedate: 2024-09-12
+
+```ruby
+pod 'DeviceKit', '~> 5.5'
+```
+
+### New September 2024 devices
+
+This version adds support for the devices announced at the September 2024 Apple Event: ([#417](https://github.com/devicekit/DeviceKit/pull/417))
+
+| Device | Case value |
+| --- | --- |
+| iPhone 16 | `Device.iPhone16` |
+| iPhone 16 Plus | `Device.iPhone16Plus` |
+| iPhone 16 Pro | `Device.iPhone16Pro` |
+| iPhone 16 Pro Max | `Device.iPhone16ProMax` |
+| Apple Watch Series 10 | `Device.appleWatchSeries10_42mm`, `Device.appleWatchSeries10_46mm` |
+
+### Fixes
+
+- Fix incorrect PPI for iPhone 14 Plus and iPhone 15 Plus. ([#418](https://github.com/devicekit/DeviceKit/pull/418))
+
+### Contributors
+
+Thanks to all the contributers of this release!
+- [arindamxd](https://github.com/arindamxd)
+
 ## Version 5.4.0
 
 Releasedate: 2024-05-30
