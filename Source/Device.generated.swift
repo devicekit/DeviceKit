@@ -592,10 +592,10 @@ public enum Device {
       case "iPhone15,5": return iPhone15Plus
       case "iPhone16,1": return iPhone15Pro
       case "iPhone16,2": return iPhone15ProMax
-      case "iPhoneTODO1": return iPhone16
-      case "iPhoneTODO2": return iPhone16Plus
-      case "iPhoneTODO3": return iPhone16Pro
-      case "iPhoneTODO4": return iPhone16ProMax
+      case "iPhone17,3": return iPhone16
+      case "iPhone17,4": return iPhone16Plus
+      case "iPhone17,1": return iPhone16Pro
+      case "iPhone17,2": return iPhone16ProMax
       case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4": return iPad2
       case "iPad3,1", "iPad3,2", "iPad3,3": return iPad3
       case "iPad3,4", "iPad3,5", "iPad3,6": return iPad4
@@ -673,8 +673,8 @@ public enum Device {
       case "Watch7,3": return appleWatchSeries9_41mm
       case "Watch7,4": return appleWatchSeries9_45mm
       case "Watch7,5": return appleWatchUltra2
-      case "WatchTODO1": return appleWatchSeries10_42mm
-      case "WatchTODO2": return appleWatchSeries10_46mm
+      case "Watch7,8", "Watch7,10": return appleWatchSeries10_42mm
+      case "Watch7,9", "Watch7,11": return appleWatchSeries10_46mm
       case "i386", "x86_64", "arm64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "watchOS"))
       default: return unknown(identifier)
       }
