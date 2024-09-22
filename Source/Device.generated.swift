@@ -1397,11 +1397,11 @@ public enum Device {
       case .iPhone13ProMax: return 458
       case .iPhoneSE3: return 326
       case .iPhone14: return 460
-      case .iPhone14Plus: return 476
+      case .iPhone14Plus: return 458
       case .iPhone14Pro: return 460
       case .iPhone14ProMax: return 458
       case .iPhone15: return 460
-      case .iPhone15Plus: return 476
+      case .iPhone15Plus: return 460
       case .iPhone15Pro: return 460
       case .iPhone15ProMax: return 460
       case .iPhone16: return 460
