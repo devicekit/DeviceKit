@@ -1405,7 +1405,7 @@ public enum Device {
       case .iPhone15Pro: return 460
       case .iPhone15ProMax: return 460
       case .iPhone16: return 460
-      case .iPhone16Plus: return 476
+      case .iPhone16Plus: return 460
       case .iPhone16Pro: return 460
       case .iPhone16ProMax: return 460
       case .iPad2: return 132
