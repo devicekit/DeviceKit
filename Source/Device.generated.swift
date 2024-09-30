@@ -1070,6 +1070,7 @@ public enum Device {
       } else {
         return UIScreen.main.nativeScale > UIScreen.main.scale
       }
+      #endif
     }
 
     /// All Touch ID Capable Devices
