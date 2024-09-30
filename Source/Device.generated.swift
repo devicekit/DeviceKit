@@ -1486,8 +1486,6 @@ public enum Device {
     case .simulator(let model): return model.ppi
     case .unknown: return nil
     }
-    #else
-    return nil
     #elseif os(visionOS)
     // TODO: Replace with proper implementation for visionOS.
     return nil
