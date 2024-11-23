@@ -512,6 +512,8 @@ public enum Device {
     ///
     /// ![Image]()
     case appleWatchSeries10_46mm
+  #elseif os(visionOS)
+    case visionPro
   #endif
 
   /// Device is [Simulator](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/Introduction/Introduction.html)
@@ -679,8 +681,8 @@ public enum Device {
       default: return unknown(identifier)
       }
     #elseif os(visionOS)
-      // TODO: Replace with proper implementation for visionOS.
-      return unknown(identifier)
+    // TODO: add proper visionOS support
+    return .visionPro
     #else
       return unknown(identifier)
     #endif
@@ -1059,12 +1061,16 @@ public enum Device {
 
     public var isZoomed: Bool? {
       guard isCurrent else { return nil }
+      #if os(visionOS)
+      return nil
+      #else
       if Int(UIScreen.main.scale.rounded()) == 3 {
         // Plus-sized
         return UIScreen.main.nativeScale > 2.7 && UIScreen.main.nativeScale < 3
       } else {
         return UIScreen.main.nativeScale > UIScreen.main.scale
       }
+      #endif
     }
 
     /// All Touch ID Capable Devices
@@ -1232,8 +1238,7 @@ public enum Device {
     #elseif os(watchOS)
       return allWatches
     #elseif os(visionOS)
-      // TODO: Replace with proper implementation for visionOS.
-      return []
+      return [.visionPro]
     #else
       return []
     #endif
@@ -1481,8 +1486,6 @@ public enum Device {
     case .simulator(let model): return model.ppi
     case .unknown: return nil
     }
-    #elseif os(tvOS)
-    return nil
     #elseif os(visionOS)
     // TODO: Replace with proper implementation for visionOS.
     return nil
@@ -1506,7 +1509,7 @@ public enum Device {
 
   /// The brightness level of the screen.
   public var screenBrightness: Int {
-    #if os(iOS)
+    #if os(iOS) && !os(visionOS)
     return Int(UIScreen.main.brightness * 100)
     #else
     return 100
@@ -1650,8 +1653,11 @@ extension Device: CustomStringConvertible {
       case .unknown(let identifier): return identifier
       }
     #elseif os(visionOS)
-      // TODO: Replace with proper implementation for visionOS.
-      return "Apple Vision Pro"
+      switch self {
+      case .visionPro: return "Vision Pro"
+      case .simulator(let model): return "Simulator (\(model.description))"
+      case .unknown(let identifier): return identifier
+      }    
     #else
       switch self {
       case .simulator(let model): return "Simulator (\(model.description))"
@@ -1796,8 +1802,11 @@ extension Device: CustomStringConvertible {
       case .unknown(let identifier): return identifier
       }
     #elseif os(visionOS)
-      // TODO: Replace with proper implementation for visionOS.
-      return "Apple Vision Pro"
+      switch self {
+      case .visionPro: return "Apple Vision Pro"
+      case .simulator(let model): return "Simulator \(model.safeDescription)"
+      case .unknown(let identifier): return identifier
+      }
     #else
       switch self {
       case .simulator(let model): return "Simulator (\(model.safeDescription))"
@@ -1953,7 +1962,7 @@ extension Device.BatteryState: Comparable {
 }
 #endif
 
-#if os(iOS)
+#if os(iOS) && !os(visionOS)
 extension Device {
   // MARK: Orientation
     /**
