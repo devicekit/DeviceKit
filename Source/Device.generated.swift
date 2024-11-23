@@ -1804,6 +1804,8 @@ extension Device: CustomStringConvertible {
     #elseif os(visionOS)
       switch self {
       case .visionPro: return "Apple Vision Pro"
+      case .simulator(let model): return "Simulator \(model.safeDescription)"
+      case .unknown(let identifier): return identifier
       }
     #else
       switch self {
