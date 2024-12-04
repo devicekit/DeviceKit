@@ -83,6 +83,7 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.iPadMini4.cpu, Device.CPU.a8)
     XCTAssertEqual(Device.iPadMini5.cpu, Device.CPU.a12Bionic)
     XCTAssertEqual(Device.iPadMini6.cpu, Device.CPU.a15Bionic)
+    XCTAssertEqual(Device.iPadMiniA17Pro.cpu, Device.CPU.a17Pro)
     XCTAssertEqual(Device.iPadPro11Inch.cpu, Device.CPU.a12XBionic)
     XCTAssertEqual(Device.iPadPro11Inch2.cpu, Device.CPU.a12ZBionic)
     XCTAssertEqual(Device.iPadPro11Inch3.cpu, Device.CPU.m1)
@@ -554,6 +555,7 @@ class DeviceKitTests: XCTestCase {
       .iPadAir11M2,
       .iPadAir13M2,
       .iPadMini6,
+      .iPadMiniA17Pro,
       .iPadPro11Inch3,
       .iPadPro12Inch5,
       .iPadPro11Inch4,
@@ -668,6 +670,7 @@ class DeviceKitTests: XCTestCase {
       .iPadAir11M2,
       .iPadAir13M2,
       .iPadMini6,
+      .iPadMiniA17Pro,
       .iPadPro11Inch,
       .iPadPro12Inch3,
       .iPadPro11Inch2,
