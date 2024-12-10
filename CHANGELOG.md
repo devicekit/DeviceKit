@@ -1,5 +1,25 @@
 # Changelog
 
+## Version 5.6.0
+
+Releasedate: 2024-12-10
+
+```ruby
+pod 'DeviceKit', '~> 5.6'
+```
+
+### New Oktober 2024 devices
+
+This version adds support for the devices announced in Oktober 2024: ([429](https://github.com/devicekit/DeviceKit/pull/429))
+
+| Device | Case value |
+| --- | --- |
+| iPad Mini (A17 Pro) | `Device.iPadMiniA17Pro` |
+
+### Fixes
+
+- Fix iPhone 16 Plus PPI. ([#423](https://github.com/devicekit/DeviceKit/pull/423))
+
 ## Version 5.5.0
 
 Releasedate: 2024-09-22
