@@ -73,6 +73,7 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.iPhone14Plus.cpu, Device.CPU.a15Bionic)
     XCTAssertEqual(Device.iPhone14Pro.cpu, Device.CPU.a16Bionic)
     XCTAssertEqual(Device.iPhone14ProMax.cpu, Device.CPU.a16Bionic)
+    XCTAssertEqual(Device.iPhone16e.cpu, Device.CPU.a18)
 
     XCTAssertEqual(Device.iPad8.cpu, Device.CPU.a12Bionic)
     XCTAssertEqual(Device.iPad9.cpu, Device.CPU.a13Bionic)
@@ -187,6 +188,7 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.mapToDevice(identifier: "iPhone11,4"), .iPhoneXSMax)
     XCTAssertEqual(Device.mapToDevice(identifier: "iPhone11,6"), .iPhoneXSMax)
     XCTAssertEqual(Device.mapToDevice(identifier: "iPhone11,8"), .iPhoneXR)
+    XCTAssertEqual(Device.mapToDevice(identifier: "iPhone17,5"), .iPhone16e)
     XCTAssertEqual(Device.mapToDevice(identifier: "iPad2,1"), .iPad2)
     XCTAssertEqual(Device.mapToDevice(identifier: "iPad2,2"), .iPad2)
     XCTAssertEqual(Device.mapToDevice(identifier: "iPad2,3"), .iPad2)
@@ -255,6 +257,7 @@ class DeviceKitTests: XCTestCase {
     XCTAssertTrue(Device.iPhoneXS.screenRatio == (width: 9, height: 19.5))
     XCTAssertTrue(Device.iPhoneXSMax.screenRatio == (width: 9, height: 19.5))
     XCTAssertTrue(Device.iPhoneXR.screenRatio == (width: 9, height: 19.5))
+    XCTAssertTrue(Device.iPhone16e.screenRatio == (width: 9, height: 19.5))
     XCTAssertTrue(Device.iPad2.screenRatio == (width: 3, height: 4))
     XCTAssertTrue(Device.iPad3.screenRatio == (width: 3, height: 4))
     XCTAssertTrue(Device.iPad4.screenRatio == (width: 3, height: 4))
@@ -300,6 +303,7 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.iPhoneXS.diagonal, 5.8)
     XCTAssertEqual(Device.iPhoneXSMax.diagonal, 6.5)
     XCTAssertEqual(Device.iPhoneXR.diagonal, 6.1)
+    XCTAssertEqual(Device.iPhone16e.diagonal, 6.1)
 
     XCTAssertEqual(Device.iPad2.diagonal, 9.7)
     XCTAssertEqual(Device.iPad3.diagonal, 9.7)
@@ -346,6 +350,7 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.iPhoneXS.description, "iPhone Xs")
     XCTAssertEqual(Device.iPhoneXSMax.description, "iPhone Xs Max")
     XCTAssertEqual(Device.iPhoneXR.description, "iPhone Xʀ")
+    XCTAssertEqual(Device.iPhone16e.description, "iPhone 16e")
     XCTAssertEqual(Device.iPad2.description, "iPad 2")
     XCTAssertEqual(Device.iPad3.description, "iPad (3rd generation)")
     XCTAssertEqual(Device.iPad4.description, "iPad (4th generation)")
@@ -411,6 +416,7 @@ class DeviceKitTests: XCTestCase {
     assertEqualDeviceAndSimulator(device: Device.iPhoneXR,        property: \Device.ppi, value: 326)
     assertEqualDeviceAndSimulator(device: Device.iPhoneXS,        property: \Device.ppi, value: 458)
     assertEqualDeviceAndSimulator(device: Device.iPhoneXSMax,     property: \Device.ppi, value: 458)
+    assertEqualDeviceAndSimulator(device: Device.iPhone16e,       property: \Device.ppi, value: 460)
 
     assertEqualDeviceAndSimulator(device: Device.iPad2,           property: \Device.ppi, value: 132)
     assertEqualDeviceAndSimulator(device: Device.iPad3,           property: \Device.ppi, value: 264)
@@ -549,6 +555,7 @@ class DeviceKitTests: XCTestCase {
       .iPhone16Plus,
       .iPhone16Pro,
       .iPhone16ProMax,
+      .iPhone16e,
       .iPad10,
       .iPadAir5,
       .iPadAir11M2,
@@ -662,6 +669,7 @@ class DeviceKitTests: XCTestCase {
       .iPhone16Plus,
       .iPhone16Pro,
       .iPhone16ProMax,
+      .iPhone16e,
       .iPad10,
       .iPadAir4,
       .iPadAir5,
