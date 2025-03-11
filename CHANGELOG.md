@@ -24,6 +24,16 @@ This version adds support for the devices announced in February 2025: ([#436](ht
 | --- | --- |
 | iPhone 16e | `Device.iPhone16e` |
 
+### New March 2025 devices
+
+This version adds support for the devices announced in March 2025: ([#436](https://github.com/devicekit/DeviceKit/pull/436))
+
+| Device | Case value |
+| --- | --- |
+| iPad (A16) | `Device.iPadA16` |
+| iPad Air 11-inch (M3) | `Device.iPadAir11M3` |
+| iPad Air 13-inch (M3) | `Device.iPadAir13M3` |
+
 ### Fixes
 
 - Fix iPhone 16 Plus PPI. ([#423](https://github.com/devicekit/DeviceKit/pull/423))
