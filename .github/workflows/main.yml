@@ -30,28 +30,30 @@ jobs:
           DANGER_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   test:
-    runs-on: macos-12
+    runs-on: macos-14
 
     strategy:
       matrix:
         platform:
-          - platform=iOS Simulator,name=iPhone 14 Pro Max
-          - platform=iOS Simulator,name=iPhone 14 Pro
-          - platform=iOS Simulator,name=iPhone 14
-          - platform=iOS Simulator,name=iPhone 14 Plus
-          - platform=iOS Simulator,name=iPhone 12 Pro Max
-          - platform=iOS Simulator,name=iPhone 12 Pro
-          - platform=iOS Simulator,name=iPhone 12
-          - platform=iOS Simulator,name=iPhone 12 mini
-          - platform=iOS Simulator,name=iPhone 8 Plus
-          - platform=iOS Simulator,name=iPhone 8
-          - platform=iOS Simulator,name=iPhone SE (2nd generation)
+          - platform=iOS Simulator,name=iPhone 15 Pro Max
+          - platform=iOS Simulator,name=iPhone 15 Pro
+          - platform=iOS Simulator,name=iPhone 15
+          - platform=iOS Simulator,name=iPhone 15 Plus
+          - platform=iOS Simulator,name=iPhone 16 Pro Max
+          - platform=iOS Simulator,name=iPhone 16 Pro
+          - platform=iOS Simulator,name=iPhone 16
+          - platform=iOS Simulator,name=iPhone 16 Plus
+          - platform=iOS Simulator,name=iPhone SE (3rd generation)
           - platform=tvOS Simulator,name=Apple TV
           - platform=tvOS Simulator,name=Apple TV 4K (3rd generation)
-          - platform=watchOS Simulator,name=Apple Watch Series 8 (45mm)
+          - platform=watchOS Simulator,name=Apple Watch Series 9 (45mm)
 
     steps:
       - uses: actions/checkout@v2
+
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
 
       - uses: ruby/setup-ruby@v1
         with:
