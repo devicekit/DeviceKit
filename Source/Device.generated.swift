@@ -48,7 +48,7 @@ import Foundation
 ///         showError()
 ///     }
 ///
-public enum Device {
+public enum Device: Sendable {
   #if os(iOS)
     /// Device is an [iPod touch (5th generation)](https://support.apple.com/kb/SP657)
     ///
@@ -550,7 +550,7 @@ public enum Device {
   }
 
   /// Gets the identifier from the system, such as "iPhone7,1".
-  public static var identifier: String = {
+  public static let identifier: String = {
     var systemInfo = utsname()
     uname(&systemInfo)
     let mirror = Mirror(reflecting: systemInfo.machine)
@@ -1073,6 +1073,7 @@ public enum Device {
     }
 
     /// Returns whether the device is an iPhone (real or simulator)
+    @MainActor
     public var isPhone: Bool {
       return (isOneOf(Device.allPhones)
               || isOneOf(Device.allSimulatorPhones)
@@ -1080,6 +1081,7 @@ public enum Device {
     }
 
     /// Returns whether the device is an iPad (real or simulator)
+    @MainActor
     public var isPad: Bool {
       return isOneOf(Device.allPads)
               || isOneOf(Device.allSimulatorPads)
@@ -1092,6 +1094,7 @@ public enum Device {
       return Device.realDevice(from: self)
     }
 
+    @MainActor
     public var isZoomed: Bool? {
       guard isCurrent else { return nil }
       if Int(UIScreen.main.scale.rounded()) == 3 {
@@ -1328,6 +1331,9 @@ public enum Device {
   /// The name identifying the device (e.g. "Dennis' iPhone").
   /// As of iOS 16, this will return a generic String like "iPhone", unless your app has additional entitlements.
   /// See the follwing link for more information: https://developer.apple.com/documentation/uikit/uidevice/1620015-name
+  #if !os(watchOS) && canImport(UIKit)
+  @MainActor
+  #endif
   public var name: String? {
     guard isCurrent else { return nil }
     #if os(watchOS)
@@ -1340,6 +1346,9 @@ public enum Device {
   }
 
   /// The name of the operating system running on the device represented by the receiver (e.g. "iOS" or "tvOS").
+  #if !os(watchOS) && (os(iOS) || canImport(UIKit))
+  @MainActor
+  #endif
   public var systemName: String? {
     guard isCurrent else { return nil }
     #if os(watchOS)
@@ -1358,6 +1367,9 @@ public enum Device {
   }
 
   /// The current version of the operating system (e.g. 8.4 or 9.2).
+  #if !os(watchOS) && canImport(UIKit)
+  @MainActor
+  #endif
   public var systemVersion: String? {
     guard isCurrent else { return nil }
     #if os(watchOS)
@@ -1370,6 +1382,9 @@ public enum Device {
   }
 
   /// The model of the device (e.g. "iPhone" or "iPod Touch").
+  #if !os(watchOS) && canImport(UIKit)
+  @MainActor
+  #endif
   public var model: String? {
     guard isCurrent else { return nil }
     #if os(watchOS)
@@ -1382,6 +1397,9 @@ public enum Device {
   }
 
   /// The model of the device as a localized string.
+  #if !os(watchOS) && canImport(UIKit)
+  @MainActor
+  #endif
   public var localizedModel: String? {
     guard isCurrent else { return nil }
     #if os(watchOS)
@@ -1532,6 +1550,9 @@ public enum Device {
   }
 
   /// True when a Guided Access session is currently active; otherwise, false.
+  #if os(iOS)
+  @MainActor
+  #endif
   public var isGuidedAccessSessionActive: Bool {
     #if os(iOS)
       #if swift(>=4.2)
@@ -1545,6 +1566,9 @@ public enum Device {
   }
 
   /// The brightness level of the screen.
+  #if os(iOS)
+  @MainActor
+  #endif
   public var screenBrightness: Int {
     #if os(iOS)
     return Int(UIScreen.main.brightness * 100)
@@ -1884,7 +1908,7 @@ extension Device {
    - Charging:  The device is plugged into power and the battery is less than 100% charged.
    - Unplugged: The device is not plugged into power; the battery is discharging.
    */
-  public enum BatteryState: CustomStringConvertible, Equatable {
+  public enum BatteryState: CustomStringConvertible, Equatable, Sendable {
     /// The device is plugged into power and the battery is 100% charged or the device is the iOS Simulator.
     case full
     /// The device is plugged into power and the battery is less than 100% charged.
@@ -1895,6 +1919,7 @@ extension Device {
     case unplugged(Int)
 
     #if os(iOS)
+      @MainActor
       fileprivate init() {
         let wasBatteryMonitoringEnabled = UIDevice.current.isBatteryMonitoringEnabled
         UIDevice.current.isBatteryMonitoringEnabled = true
@@ -1951,12 +1976,18 @@ extension Device {
   }
 
   /// The state of the battery
+  #if os(iOS)
+  @MainActor
+  #endif
   public var batteryState: BatteryState? {
     guard isCurrent else { return nil }
     return BatteryState()
   }
 
   /// Battery level ranges from 0 (fully discharged) to 100 (100% charged).
+  #if os(iOS)
+  @MainActor
+  #endif
   public var batteryLevel: Int? {
     guard isCurrent else { return nil }
     switch BatteryState() {
@@ -2012,16 +2043,18 @@ extension Device {
       - Portrait:  The device is in Portrait Orientation
       - Unknown:   The device orientation is unknown.
     */
-    public enum Orientation {
+    public enum Orientation: Sendable {
       case landscape
       case portrait
       case unknown
     }
 
+    @MainActor
     public var orientation: Orientation {
-      if UIDevice.current.orientation.isLandscape {
+      let orientation = UIDevice.current.orientation
+      if orientation.isLandscape {
         return .landscape
-      } else if UIDevice.current.orientation.isPortrait {
+      } else if orientation.isPortrait {
         return .portrait
       } else {
         return .unknown
@@ -2097,7 +2130,7 @@ extension Device {
     - firstGenerationUsbC: 1st Generation Apple Pencil (USB-C)
     - pro: Apple Pencil Pro
    */
-  public struct ApplePencilSupport: OptionSet {
+  public struct ApplePencilSupport: OptionSet, Sendable {
 
     public var rawValue: UInt
 
@@ -2160,7 +2193,7 @@ extension Device {
 // MARK: Cameras
 extension Device {
 
-  public enum CameraType {
+  public enum CameraType: Sendable {
     @available(*, deprecated, renamed: "wide")
     case normal
 
@@ -2317,7 +2350,7 @@ extension Device {
 }
 #endif
 
-// MARK: ThermalState
+// MARK: ThermalState: Sendable
 @available(iOS 11.0, watchOS 4.0, macOS 10.10.3, tvOS 11.0, *)
 extension Device {
   /// The thermal state of the system.
@@ -2354,7 +2387,7 @@ extension Device {
 
 extension Device {
 
-  public enum CPU: Comparable {
+  public enum CPU: Comparable, Sendable {
   #if os(iOS) || os(tvOS)
     case a4
     case a5
