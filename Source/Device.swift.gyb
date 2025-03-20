@@ -1464,7 +1464,7 @@ extension Device {
 }
 #endif
 
-// MARK: ThermalState: Sendable
+// MARK: ThermalState
 @available(iOS 11.0, watchOS 4.0, macOS 10.10.3, tvOS 11.0, *)
 extension Device {
   /// The thermal state of the system.
