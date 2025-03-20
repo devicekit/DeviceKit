@@ -35,10 +35,6 @@ jobs:
     strategy:
       matrix:
         platform:
-          - platform=iOS Simulator,name=iPhone 15 Pro Max
-          - platform=iOS Simulator,name=iPhone 15 Pro
-          - platform=iOS Simulator,name=iPhone 15
-          - platform=iOS Simulator,name=iPhone 15 Plus
           - platform=iOS Simulator,name=iPhone 16 Pro Max
           - platform=iOS Simulator,name=iPhone 16 Pro
           - platform=iOS Simulator,name=iPhone 16
@@ -46,7 +42,7 @@ jobs:
           - platform=iOS Simulator,name=iPhone SE (3rd generation)
           - platform=tvOS Simulator,name=Apple TV
           - platform=tvOS Simulator,name=Apple TV 4K (3rd generation)
-          - platform=watchOS Simulator,name=Apple Watch Series 9 (45mm)
+          - platform=watchOS Simulator,name=Apple Watch Series 10 (46mm)
 
     steps:
       - uses: actions/checkout@v2

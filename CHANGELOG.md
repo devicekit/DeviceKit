@@ -2,19 +2,37 @@
 
 ## Version 5.6.0
 
-Releasedate: 2024-12-10
+Releasedate: 2025-03-13
 
 ```ruby
 pod 'DeviceKit', '~> 5.6'
 ```
 
-### New Oktober 2024 devices
+### New October 2024 devices
 
-This version adds support for the devices announced in Oktober 2024: ([429](https://github.com/devicekit/DeviceKit/pull/429))
+This version adds support for the devices announced in October 2024: ([#429](https://github.com/devicekit/DeviceKit/pull/429))
 
 | Device | Case value |
 | --- | --- |
 | iPad Mini (A17 Pro) | `Device.iPadMiniA17Pro` |
+
+### New February 2025 devices
+
+This version adds support for the devices announced in February 2025: ([#436](https://github.com/devicekit/DeviceKit/pull/436))
+
+| Device | Case value |
+| --- | --- |
+| iPhone 16e | `Device.iPhone16e` |
+
+### New March 2025 devices
+
+This version adds support for the devices announced in March 2025: ([#436](https://github.com/devicekit/DeviceKit/pull/436))
+
+| Device | Case value |
+| --- | --- |
+| iPad (A16) | `Device.iPadA16` |
+| iPad Air 11-inch (M3) | `Device.iPadAir11M3` |
+| iPad Air 13-inch (M3) | `Device.iPadAir13M3` |
 
 ### Fixes
 
