@@ -30,7 +30,7 @@ jobs:
           DANGER_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   test:
-    runs-on: macos-14-arm64
+    runs-on: macos-14
 
     strategy:
       matrix:
