@@ -527,6 +527,31 @@ class DeviceKitTests: XCTestCase {
     }
   }
 
+  func testHasNotch() {
+    let notchDevices: [Device] = [
+      .iPhoneX,
+      .iPhoneXS,
+      .iPhoneXSMax,
+      .iPhoneXR,
+      .iPhone11,
+      .iPhone11Pro,
+      .iPhone11ProMax,
+      .iPhone12,
+      .iPhone12Mini,
+      .iPhone12Pro,
+      .iPhone12ProMax,
+      .iPhone13,
+      .iPhone13Mini,
+      .iPhone13Pro,
+      .iPhone13ProMax,
+      .iPhone14,
+      .iPhone14Plus
+    ]
+    for device in Device.allRealDevices {
+      XCTAssertTrue(device.hasNotch == device.isOneOf(notchDevices), "testHasNotch failed for \(device.description)")
+    }
+  }
+
   func testHas5gSupport() {
     let has5gDevices: [Device] = [
       .iPhone12,
