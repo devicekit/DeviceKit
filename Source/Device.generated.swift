@@ -1167,17 +1167,6 @@ public enum Device {
       return isOneOf(Device.allDevicesWithDynamicIsland) || isOneOf(Device.allDevicesWithDynamicIsland.map(Device.simulator))
     }
 
-    /// All devices that have a notch.
-    public static var allDevicesWithNotch: [Device] {
-        return [.iPhoneX, .iPhoneXS, .iPhoneXSMax, .iPhoneXR, .iPhone11, .iPhone11Pro, .iPhone11ProMax, .iPhone12, .iPhone12Mini, .iPhone12Pro, .iPhone12ProMax, .iPhone13, .iPhone13Mini, .iPhone13Pro, .iPhone13ProMax, .iPhone14, .iPhone14Plus
-        ]
-    }
-
-    /// Returns whether or not the device has a notch.
-    public var hasNotch: Bool {
-        return isOneOf(allDevicesWithNotch) || isOneOf(allDevicesWithNotch.map(Device.simulator))
-    }
-
     /// All devices that have 3D Touch support.
     public static var allDevicesWith3dTouchSupport: [Device] {
       return [.iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhone8, .iPhone8Plus, .iPhoneX, .iPhoneXS, .iPhoneXSMax]
