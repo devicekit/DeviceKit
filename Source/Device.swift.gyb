@@ -289,15 +289,15 @@ watches = [
 
             Device(
             "appleWatchSeries9_41mm",
-            "Device is an [Apple Watch Series 9]()",
+            "Device is an [Apple Watch Series 9](https://support.apple.com/kb/SP905)",
             "",
-            ["Watch7,3"], 1.9, (4,5), "Apple Watch Series 9 41mm", "Apple Watch Series 9 41mm", 326, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s9", False, False),
+            ["Watch7,1", "Watch7,3"], 1.9, (4,5), "Apple Watch Series 9 41mm", "Apple Watch Series 9 41mm", 326, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s9", False, False),
 
             Device(
             "appleWatchSeries9_45mm",
-            "Device is an [Apple Watch Series 9]()",
+            "Device is an [Apple Watch Series 9](https://support.apple.com/kb/SP905)",
             "",
-            ["Watch7,4"], 2.0, (4,5), "Apple Watch Series 9 45mm", "Apple Watch Series 9 45mm", 326, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s9", False, False),
+            ["Watch7,2", "Watch7,4"], 2.0, (4,5), "Apple Watch Series 9 45mm", "Apple Watch Series 9 45mm", 326, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s9", False, False),
 
              Device(
             "appleWatchUltra2",
@@ -1501,7 +1501,7 @@ iOS_cpus = [
           CPU("m3", "M3"),
           CPU("m4", "M4"),
       ]
-      
+
 watchOS_cpus = [
           CPU("s1", "S1"),
           CPU("s1P", "S1P"),
