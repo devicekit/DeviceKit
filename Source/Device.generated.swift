@@ -813,10 +813,10 @@ public enum Device {
         case .iPhone16Pro: return 6.3
         case .iPhone16ProMax: return 6.9
         case .iPhone16e: return 6.1
-        case .iPhone17: return 6.1
+        case .iPhone17: return 6.3
         case .iPhone17Pro: return 6.3
         case .iPhone17ProMax: return 6.9
-        case .iPhoneAir: return 6.6
+        case .iPhoneAir: return 6.5
         case .iPad2: return 9.7
         case .iPad3: return 9.7
         case .iPad4: return 9.7
@@ -2529,7 +2529,7 @@ extension Device {
       case .iPhone17: return .a19
       case .iPhone17Pro: return .a19Pro
       case .iPhone17ProMax: return .a19Pro
-      case .iPhoneAir: return .a19
+      case .iPhoneAir: return .a19Pro
       case .iPad2: return .a5
       case .iPad3: return .a5X
       case .iPad4: return .a6X
