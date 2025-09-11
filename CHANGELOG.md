@@ -26,9 +26,11 @@ This version adds support for the iPhone 17 series, Apple Watch Ultra 3 and Appl
 
 - Missing device identifiers for Apple Watch Series 9 were added.
 - Docs for Apple Watch Series 9 was updated to include specs links
+- Fixed Apple Pencil support for iPad Mini (A17 Pro).
 
 Thanks to all the contributers of this release!
 - [Jager-yoo](https://github.com/Jager-yoo)
+- [iDevid](https://github.com/iDevid)
 
 ## Version 5.6.0
 
