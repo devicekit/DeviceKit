@@ -512,11 +512,11 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP879/apple-watch-ultra_2x.png)
     case appleWatchUltra
-    /// Device is an [Apple Watch Series 9]()
+    /// Device is an [Apple Watch Series 9](https://support.apple.com/kb/SP905)
     ///
     /// ![Image]()
     case appleWatchSeries9_41mm
-    /// Device is an [Apple Watch Series 9]()
+    /// Device is an [Apple Watch Series 9](https://support.apple.com/kb/SP905)
     ///
     /// ![Image]()
     case appleWatchSeries9_45mm
@@ -695,8 +695,8 @@ public enum Device {
       case "Watch6,10", "Watch6,12": return appleWatchSE2_40mm
       case "Watch6,11", "Watch6,13": return appleWatchSE2_44mm
       case "Watch6,18": return appleWatchUltra
-      case "Watch7,3": return appleWatchSeries9_41mm
-      case "Watch7,4": return appleWatchSeries9_45mm
+      case "Watch7,1", "Watch7,3": return appleWatchSeries9_41mm
+      case "Watch7,2", "Watch7,4": return appleWatchSeries9_45mm
       case "Watch7,5": return appleWatchUltra2
       case "Watch7,8", "Watch7,10": return appleWatchSeries10_42mm
       case "Watch7,9", "Watch7,11": return appleWatchSeries10_46mm
