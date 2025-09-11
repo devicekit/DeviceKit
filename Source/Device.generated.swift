@@ -1067,7 +1067,7 @@ public enum Device {
 
     /// All Plus and Max-Sized Devices
     public static var allPlusSizedDevices: [Device] {
-      return [.iPhone6Plus, .iPhone6sPlus, .iPhone7Plus, .iPhone8Plus, .iPhoneXSMax, .iPhone11ProMax, .iPhone12ProMax, .iPhone13ProMax, .iPhone14Plus, .iPhone14ProMax, .iPhone15Plus, .iPhone15ProMax, .iPhone16Plus, .iPhone16ProMax, .iPhone17ProMax]
+      return [.iPhone6Plus, .iPhone6sPlus, .iPhone7Plus, .iPhone8Plus, .iPhoneXSMax, .iPhone11ProMax, .iPhone12ProMax, .iPhone13ProMax, .iPhone14Plus, .iPhone14ProMax, .iPhone15Plus, .iPhone15ProMax, .iPhone16Plus, .iPhone16ProMax, .iPhone17ProMax, .iPhoneAir]
     }
 
     /// All Pro Devices
