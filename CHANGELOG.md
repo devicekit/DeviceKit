@@ -1,5 +1,27 @@
 # Changelog
 
+## Version 5.7.0
+
+Releasedate: 2024-09-12
+
+```ruby
+pod 'DeviceKit', '~> 5.7'
+```
+
+### New September 2024 devices
+
+This version adds support for the upcoming iPhone 17 series and new Apple Watch models:
+
+| Device | Case value |
+| --- | --- |
+| iPhone 17 | `Device.iPhone17` |
+| iPhone 17 Pro | `Device.iPhone17Pro` |
+| iPhone 17 Pro Max | `Device.iPhone17ProMax` |
+| iPhone Air | `Device.iPhoneAir` |
+| Apple Watch Ultra 3 | `Device.appleWatchUltra3` |
+| Apple Watch Series 11 42mm | `Device.appleWatchSeries11_42mm` |
+| Apple Watch Series 11 46mm | `Device.appleWatchSeries11_46mm` |
+
 ## Version 5.6.0
 
 Releasedate: 2025-03-27
