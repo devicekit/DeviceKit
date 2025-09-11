@@ -2134,7 +2134,6 @@ extension Device {
       case .iPadAir4: return [.secondGeneration, .firstGenerationUsbC]
       case .iPadAir5: return [.secondGeneration, .firstGenerationUsbC]
       case .iPadMini6: return [.secondGeneration, .firstGenerationUsbC]
-      case .iPadMiniA17Pro: return [.secondGeneration, .firstGenerationUsbC]
       case .iPadPro11Inch: return [.secondGeneration, .firstGenerationUsbC]
       case .iPadPro12Inch3: return [.secondGeneration, .firstGenerationUsbC]
       case .iPadPro11Inch2: return [.secondGeneration, .firstGenerationUsbC]
@@ -2149,6 +2148,7 @@ extension Device {
       case .iPadAir13M2: return [.secondGeneration, .pro]
       case .iPadAir11M3: return [.secondGeneration, .pro]
       case .iPadAir13M3: return [.secondGeneration, .pro]
+      case .iPadMiniA17Pro: return [.firstGenerationUsbC, .pro]
       case .simulator(let model): return model.applePencilSupport
       default: return []
     }
