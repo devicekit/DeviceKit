@@ -325,19 +325,19 @@ watches = [
             "appleWatchUltra3",
             "Device is an [Apple Watch Ultra 3]()",
             "",
-            ["Watch7,12"], 2.2, (4,5), "Apple Watch Ultra 3", "Apple Watch Ultra 3", 338, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s11", False, False),
+            ["Watch7,12"], 2.2, (4,5), "Apple Watch Ultra 3", "Apple Watch Ultra 3", 338, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s10", False, False),
 
             Device(
             "appleWatchSeries11_42mm",
             "Device is an [Apple Watch Series 11]()",
             "",
-            ["Watch7,17", "Watch7,19"], 1.9, (374,446), "Apple Watch Series 11 42mm", "Apple Watch Series 11 42mm", 326, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s11", False, False),
+            ["Watch7,17", "Watch7,19"], 1.9, (374,446), "Apple Watch Series 11 42mm", "Apple Watch Series 11 42mm", 326, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s10", False, False),
 
             Device(
             "appleWatchSeries11_46mm",
             "Device is an [Apple Watch Series 11]()",
             "",
-            ["Watch7,18", "Watch7,20"], 2.0, (416,496), "Apple Watch Series 11 46mm", "Apple Watch Series 11 46mm", 326, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s11", False, False),
+            ["Watch7,18", "Watch7,20"], 2.0, (416,496), "Apple Watch Series 11 46mm", "Apple Watch Series 11 46mm", 326, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s10", False, False),
 
   ]
 
@@ -1538,7 +1538,6 @@ watchOS_cpus = [
           CPU("s8", "S8"),
           CPU("s9", "S9"),
           CPU("s10", "S10"),
-          CPU("s11", "S11"),
 ]
 }%
 
