@@ -2,15 +2,15 @@
 
 ## Version 5.7.0
 
-Releasedate: 2024-09-12
+Releasedate: 2025-09-12
 
 ```ruby
 pod 'DeviceKit', '~> 5.7'
 ```
 
-### New September 2024 devices
+### New September 2025 devices
 
-This version adds support for the upcoming iPhone 17 series and new Apple Watch models:
+This version adds support for the iPhone 17 series, Apple Watch Ultra 3 and Apple Watch Series 11:
 
 | Device | Case value |
 | --- | --- |
