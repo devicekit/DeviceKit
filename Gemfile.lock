@@ -170,9 +170,9 @@ PLATFORMS
 
 DEPENDENCIES
   cocoapods (= 1.15.2)
-  danger
-  danger-swiftlint
-  xcpretty
+  danger (= 8.3.1)
+  danger-swiftlint (= 0.26.0)
+  xcpretty (= 0.3.0)
 
 BUNDLED WITH
    2.1.4
