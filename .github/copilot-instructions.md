@@ -13,6 +13,18 @@ DeviceKit is a Swift library that provides a value-type replacement for UIDevice
 
 Do not attempt to build on Linux - it will fail with ProcessInfo API errors. All development must be done on macOS.
 
+## Critical Code Generation Rules
+
+**⚠️ NEVER EDIT DIRECTLY**: The file `Source/Device.generated.swift` may NEVER be edited directly. 
+
+**ALWAYS** apply changes to `Source/Device.swift.gyb` and then run this command to generate the Device.generated.swift file:
+
+```bash
+./Utils/gyb --line-directive '' -o ./Source/Device.generated.swift ./Source/Device.swift.gyb
+```
+
+**This command MUST be run before every commit** to ensure the generated file is up-to-date with your gyb template changes.
+
 ## Working Effectively
 
 ### Bootstrap and Build Steps
@@ -34,7 +46,7 @@ Execute these commands in order for a fresh repository setup:
 2. **Generate Swift Source Code** (REQUIRED):
    ```bash
    # Generate the main Device.generated.swift file from template
-   python3 Utils/gyb.py Source/Device.swift.gyb > Source/Device.generated.swift
+   ./Utils/gyb --line-directive '' -o ./Source/Device.generated.swift ./Source/Device.swift.gyb
    ```
    - Takes < 1 minute
    - Must be run after any changes to `Source/Device.swift.gyb`
@@ -72,6 +84,9 @@ Execute these commands in order for a fresh repository setup:
 Always run these commands before committing changes:
 
 ```bash
+# FIRST: Generate updated source code from template (REQUIRED before every commit)
+./Utils/gyb --line-directive '' -o ./Source/Device.generated.swift ./Source/Device.swift.gyb
+
 # Lint the code (required for CI to pass)
 swiftlint
 
@@ -86,12 +101,12 @@ Since this is a device detection library, validation focuses on:
 1. **Code Generation Validation** (Always required):
    ```bash
    # Verify code generation works and produces valid Swift
-   python3 Utils/gyb.py Source/Device.swift.gyb > Source/Device.generated.swift
+   ./Utils/gyb --line-directive '' -o ./Source/Device.generated.swift ./Source/Device.swift.gyb
    wc -l Source/Device.generated.swift  # Should show ~2700-4000 lines
    ```
    - Must produce Swift code without syntax errors
    - Generated file should be significantly larger than template file
-   - Any Python warnings about escape sequences are normal
+   - Never edit Device.generated.swift directly - always edit Device.swift.gyb
 
 2. **Build Validation** (macOS only):
    ```bash
@@ -135,8 +150,8 @@ Since this is a device detection library, validation focuses on:
 ## Development Workflows
 
 ### Adding New Device Support
-1. Edit `Source/Device.swift.gyb` to add new device entries
-2. Regenerate: `python3 Utils/gyb.py Source/Device.swift.gyb > Source/Device.generated.swift`
+1. Edit `Source/Device.swift.gyb` to add new device entries (NEVER edit Device.generated.swift directly)
+2. Regenerate: `./Utils/gyb --line-directive '' -o ./Source/Device.generated.swift ./Source/Device.swift.gyb`
 3. Build and test: `swift build && swift test`
 4. Lint: `swiftlint`
 5. Test on relevant simulators
@@ -158,7 +173,9 @@ Since this is a device detection library, validation focuses on:
 
 **"SwiftLint not found"**: Install via `brew install swiftlint` (macOS only)
 
-**"Code generation produces different output"**: Ensure you're using Python 3 and the exact command: `python3 Utils/gyb.py Source/Device.swift.gyb > Source/Device.generated.swift`
+**"Code generation produces different output"**: Ensure you're using the exact command: `./Utils/gyb --line-directive '' -o ./Source/Device.generated.swift ./Source/Device.swift.gyb`
+
+**"Accidentally edited Device.generated.swift"**: Never edit this file directly. Always edit Device.swift.gyb and regenerate using the gyb command.
 
 **"Permission denied installing gems"**: Use `sudo gem install bundler` or install gems in user directory
 
@@ -207,7 +224,7 @@ DeviceKit.podspec           # CocoaPods specification
 ## Command Validation Status
 
 ### ✅ Verified on Linux (Limited):
-- `python3 Utils/gyb.py Source/Device.swift.gyb > Source/Device.generated.swift` - Works, produces valid Swift code
+- `./Utils/gyb --line-directive '' -o ./Source/Device.generated.swift ./Source/Device.swift.gyb` - Code generation works, produces valid Swift code
 - Repository structure exploration and documentation review
 - Package.swift and project file validation
 

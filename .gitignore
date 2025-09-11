@@ -28,6 +28,7 @@ xcuserdata
 *.xcuserstate
 *.DS_Store
 Utils/gyb.pyc
+Utils/__pycache__/
 
 .build
 /.previous-build
