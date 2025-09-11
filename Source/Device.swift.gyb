@@ -91,6 +91,10 @@ iPhones = [
             Device("iPhone16Pro",    "Device is an [iPhone 16 Pro]()",                                                 "",                                                                                                                          ["iPhone17,1"],                               6.3,  (9, 19.5),  "iPhone 16 Pro", "iPhone 16 Pro", 460, False, False, True, True, False, True, True, True, True, True, 0, False, 123, True, "a18Pro", True, True),
             Device("iPhone16ProMax", "Device is an [iPhone 16 Pro Max]()",                                             "",                                                                                                                          ["iPhone17,2"],                               6.9,  (9, 19.5),  "iPhone 16 Pro Max", "iPhone 16 Pro Max", 460, True, False, True, True, False, True, True, True, True, True, 0, False, 123, True, "a18Pro", True, True),
             Device("iPhone16e",      "Device is an [iPhone 16e](https://support.apple.com/en-us/122208)",              "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/122208-iphone-16e.png",                                         ["iPhone17,5"],                               6.1,  (9, 19.5),  "iPhone 16e", "iPhone 16e", 460, False, False, False, True, False, True, True, True, True, False, 0, False, 1, False, "a18", True, True),
+            Device("iPhone17",       "Device is an [iPhone 17]()",                                                     "",                                                                                                                          ["iPhone18,3"],                               6.3,  (9, 19.5),  "iPhone 17", "iPhone 17", 460, False, False, False, True, False, True, True, True, True, True, 0, False, 13, False, "a19", True, True),
+            Device("iPhone17Pro",    "Device is an [iPhone 17 Pro]()",                                                 "",                                                                                                                          ["iPhone18,1"],                               6.3,  (9, 19.5),  "iPhone 17 Pro", "iPhone 17 Pro", 460, False, False, True, True, False, True, True, True, True, True, 0, False, 123, True, "a19Pro", True, True),
+            Device("iPhone17ProMax", "Device is an [iPhone 17 Pro Max]()",                                             "",                                                                                                                          ["iPhone18,2"],                               6.9,  (9, 19.5),  "iPhone 17 Pro Max", "iPhone 17 Pro Max", 460, True, False, True, True, False, True, True, True, True, True, 0, False, 123, True, "a19Pro", True, True),
+            Device("iPhoneAir",      "Device is an [iPhone Air]()",                                                    "",                                                                                                                          ["iPhone18,4"],                               6.5,  (9, 19.5),  "iPhone Air", "iPhone Air", 460, True, False, False, True, False, True, True, True, True, True, 0, False, 13, False, "a19Pro", True, True),
           ]
 
 iPads = [
@@ -316,6 +320,24 @@ watches = [
             "Device is an [Apple Watch Series 10]()",
             "",
             ["Watch7,9", "Watch7,11"], 2.0, (416,496), "Apple Watch Series 10 46mm", "Apple Watch Series 10 46mm", 326, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s10", False, False),
+
+            Device(
+            "appleWatchUltra3",
+            "Device is an [Apple Watch Ultra 3]()",
+            "",
+            ["Watch7,12"], 2.2, (4,5), "Apple Watch Ultra 3", "Apple Watch Ultra 3", 338, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s10", False, False),
+
+            Device(
+            "appleWatchSeries11_42mm",
+            "Device is an [Apple Watch Series 11]()",
+            "",
+            ["Watch7,17", "Watch7,19"], 1.9, (374,446), "Apple Watch Series 11 42mm", "Apple Watch Series 11 42mm", 326, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s10", False, False),
+
+            Device(
+            "appleWatchSeries11_46mm",
+            "Device is an [Apple Watch Series 11]()",
+            "",
+            ["Watch7,18", "Watch7,20"], 2.0, (416,496), "Apple Watch Series 11 46mm", "Apple Watch Series 11 46mm", 326, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s10", False, False),
 
   ]
 
@@ -1499,6 +1521,8 @@ iOS_cpus = [
           CPU("a17Pro"   , "A17 Pro"),
           CPU("a18"   , "A18"),
           CPU("a18Pro"   , "A18 Pro"),
+          CPU("a19"   , "A19"),
+          CPU("a19Pro"   , "A19 Pro"),
           CPU("m1", "M1"),
           CPU("m2", "M2"),
           CPU("m3", "M3"),

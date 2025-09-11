@@ -459,6 +459,8 @@ class DeviceKitTests: XCTestCase {
       .iPhone15ProMax,
       .iPhone16Plus,
       .iPhone16ProMax,
+      .iPhone17ProMax,
+      .iPhoneAir,
     ])
   }
 
@@ -476,6 +478,8 @@ class DeviceKitTests: XCTestCase {
       .iPhone15ProMax,
       .iPhone16Pro,
       .iPhone16ProMax,
+      .iPhone17Pro,
+      .iPhone17ProMax,
       .iPadPro9Inch,
       .iPadPro12Inch,
       .iPadPro12Inch2,
@@ -521,6 +525,10 @@ class DeviceKitTests: XCTestCase {
       .iPhone16Plus,
       .iPhone16Pro,
       .iPhone16ProMax,
+      .iPhone17,
+      .iPhone17Pro,
+      .iPhone17ProMax,
+      .iPhoneAir,
     ]
     for device in Device.allRealDevices {
       XCTAssertTrue(device.hasDynamicIsland == device.isOneOf(dynamicIslandDevices), "testHasDynamicIsland failed for \(device.description)")
@@ -551,6 +559,10 @@ class DeviceKitTests: XCTestCase {
       .iPhone16Pro,
       .iPhone16ProMax,
       .iPhone16e,
+      .iPhone17,
+      .iPhone17Pro,
+      .iPhone17ProMax,
+      .iPhoneAir,
       .iPad10,
       .iPadA16,
       .iPadAir5,
@@ -644,6 +656,8 @@ class DeviceKitTests: XCTestCase {
       .iPhone15ProMax,
       .iPhone16Pro,
       .iPhone16ProMax,
+      .iPhone17Pro,
+      .iPhone17ProMax,
       .iPadPro11Inch2,
       .iPadPro12Inch4,
       .iPadPro11Inch3,
@@ -669,6 +683,10 @@ class DeviceKitTests: XCTestCase {
       .iPhone16Pro,
       .iPhone16ProMax,
       .iPhone16e,
+      .iPhone17,
+      .iPhone17Pro,
+      .iPhone17ProMax,
+      .iPhoneAir,
       .iPad10,
       .iPadA16,
       .iPadAir4,
