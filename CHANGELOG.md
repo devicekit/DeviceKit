@@ -22,6 +22,14 @@ This version adds support for the iPhone 17 series, Apple Watch Ultra 3 and Appl
 | Apple Watch Series 11 42mm | `Device.appleWatchSeries11_42mm` |
 | Apple Watch Series 11 46mm | `Device.appleWatchSeries11_46mm` |
 
+### Bug fixes
+
+- Missing device identifiers for Apple Watch Series 9 were added.
+- Docs for Apple Watch Series 9 was updated to include specs links
+
+Thanks to all the contributers of this release!
+- [Jager-yoo](https://github.com/Jager-yoo)
+
 ## Version 5.6.0
 
 Releasedate: 2025-03-27
