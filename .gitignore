@@ -45,3 +45,4 @@ vendor
 
 ## Generated Files
 # *.generated.swift # we have to check it in because of CocoaPods ...
+Utils/__pycache__

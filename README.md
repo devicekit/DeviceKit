@@ -41,9 +41,9 @@ See our detailed [changelog](CHANGELOG.md) for the latest features, improvements
 
 ## Requirements
 
-- iOS 11.0+
-- tvOS 11.0+
-- watchOS 4.0+
+- iOS 13.0+
+- tvOS 13.0+
+- watchOS 6.0+
 
 ## Installation
 DeviceKit can be installed in various ways.
