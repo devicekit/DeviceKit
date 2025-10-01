@@ -560,6 +560,14 @@ public enum Device {
     ///
     /// ![Image]()
     case appleWatchSeries11_46mm
+    /// Device is an [Apple Watch SE (3rd generation)](https://apple.com/apple-watch-se-3/specs)
+    ///
+    /// ![Image](https://www.apple.com/v/apple-watch-se-3/b/images/specs/materials_and_finish__bc7ggddoo7vm_large_2x.jpg)
+    case appleWatchSE3_40mm
+    /// Device is an [Apple Watch SE (3rd generation)](https://apple.com/apple-watch-se-3/specs)
+    ///
+    /// ![Image](https://www.apple.com/v/apple-watch-se-3/b/images/specs/materials_and_finish__bc7ggddoo7vm_large_2x.jpg)
+    case appleWatchSE3_44mm
   #endif
 
   /// Device is [Simulator](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/Introduction/Introduction.html)
@@ -894,6 +902,8 @@ public enum Device {
       case .appleWatchUltra3: return 2.2
       case .appleWatchSeries11_42mm: return 1.9
       case .appleWatchSeries11_46mm: return 2.0
+      case .appleWatchSE3_40mm: return 1.57
+      case .appleWatchSE3_44mm: return 1.78
       case .simulator(let model): return model.diagonal
       case .unknown: return -1
       }
@@ -1033,6 +1043,8 @@ public enum Device {
       case .appleWatchUltra3: return (width: 4, height: 5)
       case .appleWatchSeries11_42mm: return (width: 374, height: 446)
       case .appleWatchSeries11_46mm: return (width: 416, height: 496)
+      case .appleWatchSE3_40mm: return (width: 324, height: 394)
+      case .appleWatchSE3_44mm: return (width: 368, height: 448)
       case .simulator(let model): return model.screenRatio
       case .unknown: return (width: -1, height: -1)
       }
@@ -1574,6 +1586,8 @@ public enum Device {
     case .appleWatchUltra3: return 338
     case .appleWatchSeries11_42mm: return 326
     case .appleWatchSeries11_46mm: return 326
+    case .appleWatchSE3_40mm: return 326
+    case .appleWatchSE3_44mm: return 326
     case .simulator(let model): return model.ppi
     case .unknown: return nil
     }
@@ -1745,6 +1759,8 @@ extension Device: CustomStringConvertible {
       case .appleWatchUltra3: return "Apple Watch Ultra 3"
       case .appleWatchSeries11_42mm: return "Apple Watch Series 11 42mm"
       case .appleWatchSeries11_46mm: return "Apple Watch Series 11 46mm"
+      case .appleWatchSE3_40mm: return "Apple Watch SE (3rd generation) 40mm"
+      case .appleWatchSE3_44mm: return "Apple Watch SE (3rd generation) 44mm"
       case .simulator(let model): return "Simulator (\(model.description))"
       case .unknown(let identifier): return identifier
       }
@@ -1903,6 +1919,8 @@ extension Device: CustomStringConvertible {
       case .appleWatchUltra3: return "Apple Watch Ultra 3"
       case .appleWatchSeries11_42mm: return "Apple Watch Series 11 42mm"
       case .appleWatchSeries11_46mm: return "Apple Watch Series 11 46mm"
+      case .appleWatchSE3_40mm: return "Apple Watch SE (3rd generation) 40mm"
+      case .appleWatchSE3_44mm: return "Apple Watch SE (3rd generation) 44mm"
       case .simulator(let model): return "Simulator (\(model.safeDescription))"
       case .unknown(let identifier): return identifier
       }
@@ -2607,6 +2625,8 @@ extension Device {
       case .appleWatchUltra3: return .s10
       case .appleWatchSeries11_42mm: return .s10
       case .appleWatchSeries11_46mm: return .s10
+      case .appleWatchSE3_40mm: return .s10
+      case .appleWatchSE3_44mm: return .s10
       case .simulator(let model): return model.cpu
       case .unknown: return .unknown
     }
