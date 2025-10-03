@@ -595,18 +595,20 @@ class DeviceKitTests: XCTestCase {
   func testVolumeAvailableCapacity() {
     XCTAssertNotNil(Device.volumeAvailableCapacity)
   }
+  #endif
 
-  @available(iOS 11.0, tvOS 11.0, *)
+  #if os(iOS)
+  @available(iOS 11.0, *)
   func testVolumeAvailableCapacityForImportantUsage() {
     XCTAssertNotNil(Device.volumeAvailableCapacityForImportantUsage)
   }
 
-  @available(iOS 11.0, tvOS 11.0, *)
+  @available(iOS 11.0, *)
   func testVolumeAvailableCapacityForOpportunisticUsage() {
     XCTAssertNotNil(Device.volumeAvailableCapacityForOpportunisticUsage)
   }
 
-  @available(iOS 11.0, tvOS 11.0, *)
+  @available(iOS 11.0, *)
   func testVolumes() {
     XCTAssertNotNil(Device.volumes)
   }
