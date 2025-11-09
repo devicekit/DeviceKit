@@ -4,16 +4,19 @@
 
 ### New devices
 
-- Add support for Apple Watch SE (3rd generation) ([#473](https://github.com/devicekit/DeviceKit/issues/473))
+- Add support for M5 iPad Pro models. ([#467](https://github.com/devicekit/DeviceKit/pull/467))
+- Add support for Apple Watch SE (3rd generation) ([#473](https://github.com/devicekit/DeviceKit/pull/473))
 
 | Device | Case value |
 | --- | --- |
+| iPad Pro 11-inch (M5) | `Device.iPadPro11M5` |
+| iPad Pro 13-inch (M5) | `Device.iPadPro13M5` |
 | Apple Watch SE (3rd generation) 40mm | `Device.appleWatchSE3_40mm` |
 | Apple Watch SE (3rd generation) 44mm | `Device.appleWatchSE3_44mm` |
 
 ### Bug fixes
 
-- Fixed iPhone Air incorrectly marked as having ultra-wide camera. ([#463](https://github.com/devicekit/DeviceKit/issues/463))
+- Fixed iPhone Air incorrectly marked as having ultra-wide camera. ([#463](https://github.com/devicekit/DeviceKit/pull/463))
 
 ## Version 5.7.0
 
