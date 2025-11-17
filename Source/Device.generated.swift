@@ -2239,8 +2239,8 @@ extension Device {
       case .iPadPro12Inch: return .firstGeneration
       case .iPadPro12Inch2: return .firstGeneration
       case .iPadPro10Inch: return .firstGeneration
-      case .iPad10: return .firstGenerationUsbC
-      case .iPadA16: return .firstGenerationUsbC
+      case .iPad10: return [.firstGeneration, .firstGenerationUsbC]
+      case .iPadA16: return [.firstGeneration, .firstGenerationUsbC]
       case .iPadAir4: return [.secondGeneration, .firstGenerationUsbC]
       case .iPadAir5: return [.secondGeneration, .firstGenerationUsbC]
       case .iPadMini6: return [.secondGeneration, .firstGenerationUsbC]
@@ -2252,15 +2252,15 @@ extension Device {
       case .iPadPro12Inch5: return [.secondGeneration, .firstGenerationUsbC]
       case .iPadPro11Inch4: return [.secondGeneration, .firstGenerationUsbC]
       case .iPadPro12Inch6: return [.secondGeneration, .firstGenerationUsbC]
-      case .iPadPro11M4: return [.secondGeneration, .firstGenerationUsbC, .pro]
-      case .iPadPro13M4: return [.secondGeneration, .firstGenerationUsbC, .pro]
       case .iPadPro11M5: return [.secondGeneration, .firstGenerationUsbC, .pro]
       case .iPadPro13M5: return [.secondGeneration, .firstGenerationUsbC, .pro]
-      case .iPadAir11M2: return [.secondGeneration, .pro]
-      case .iPadAir13M2: return [.secondGeneration, .pro]
-      case .iPadAir11M3: return [.secondGeneration, .pro]
-      case .iPadAir13M3: return [.secondGeneration, .pro]
+      case .iPadAir11M2: return [.firstGenerationUsbC, .pro]
+      case .iPadAir13M2: return [.firstGenerationUsbC, .pro]
+      case .iPadAir11M3: return [.firstGenerationUsbC, .pro]
+      case .iPadAir13M3: return [.firstGenerationUsbC, .pro]
       case .iPadMiniA17Pro: return [.firstGenerationUsbC, .pro]
+      case .iPadPro11M4: return [.firstGenerationUsbC, .pro]
+      case .iPadPro13M4: return [.firstGenerationUsbC, .pro]
       case .simulator(let model): return model.applePencilSupport
       default: return []
     }
