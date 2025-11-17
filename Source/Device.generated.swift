@@ -2622,8 +2622,8 @@ extension Device {
       case .appleWatchSeries9_41mm: return .s9
       case .appleWatchSeries9_45mm: return .s9
       case .appleWatchUltra2: return .s9
-      case .appleWatchSE3_40mm: return .s9
-      case .appleWatchSE3_44mm: return .s9
+      case .appleWatchSE3_40mm: return .s10
+      case .appleWatchSE3_44mm: return .s10
       case .appleWatchSeries10_42mm: return .s10
       case .appleWatchSeries10_46mm: return .s10
       case .appleWatchUltra3: return .s10
