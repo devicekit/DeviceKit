@@ -723,6 +723,14 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.mapToDevice(identifier: "AppleTV6,2").description, "Apple TV 4K")
   }
 
+  func testAppleWatchSE3Mapping() {
+    // Test Apple Watch SE 3rd generation identifier mapping
+    XCTAssertEqual(Device.mapToDevice(identifier: "Watch7,13"), .appleWatchSE3_40mm)
+    XCTAssertEqual(Device.mapToDevice(identifier: "Watch7,14"), .appleWatchSE3_40mm)
+    XCTAssertEqual(Device.mapToDevice(identifier: "Watch7,15"), .appleWatchSE3_44mm)
+    XCTAssertEqual(Device.mapToDevice(identifier: "Watch7,16"), .appleWatchSE3_44mm)
+  }
+
   func testSafeDescription() {
     for device in Device.allRealDevices {
       XCTAssertEqual(device.description, device.safeDescription)
