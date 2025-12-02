@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Bug fixes
+
+- Fixed iPhone Air incorrectly marked as having ultra-wide camera. ([#463](https://github.com/devicekit/DeviceKit/issues/463))
+
 ## Version 5.7.0
 
 Releasedate: 2025-09-12
@@ -27,7 +33,6 @@ This version adds support for the iPhone 17 series, Apple Watch Ultra 3 and Appl
 - Missing device identifiers for Apple Watch Series 9 were added.
 - Docs for Apple Watch Series 9 was updated to include specs links
 - Fixed Apple Pencil support for iPad Mini (A17 Pro).
-- Fixed iPhone Air incorrectly marked as having ultra-wide camera. ([#463](https://github.com/devicekit/DeviceKit/issues/463))
 
 Thanks to all the contributers of this release!
 - [Jager-yoo](https://github.com/Jager-yoo)
