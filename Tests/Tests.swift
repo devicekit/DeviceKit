@@ -733,43 +733,43 @@ class DeviceKitTests: XCTestCase {
     XCTAssertTrue(Device.iPad10.applePencilSupport.contains(.firstGenerationUsbC))
     XCTAssertFalse(Device.iPad10.applePencilSupport.contains(.secondGeneration))
     XCTAssertFalse(Device.iPad10.applePencilSupport.contains(.pro))
-    
+
     // Test iPad (A16) - Supports Apple Pencil (1st gen) and Apple Pencil (USB-C)
     XCTAssertTrue(Device.iPadA16.applePencilSupport.contains(.firstGeneration))
     XCTAssertTrue(Device.iPadA16.applePencilSupport.contains(.firstGenerationUsbC))
     XCTAssertFalse(Device.iPadA16.applePencilSupport.contains(.secondGeneration))
     XCTAssertFalse(Device.iPadA16.applePencilSupport.contains(.pro))
-    
+
     // Test iPad Air 11" (M2) - Supports Apple Pencil Pro and Apple Pencil (USB-C)
     XCTAssertFalse(Device.iPadAir11M2.applePencilSupport.contains(.firstGeneration))
     XCTAssertTrue(Device.iPadAir11M2.applePencilSupport.contains(.firstGenerationUsbC))
     XCTAssertFalse(Device.iPadAir11M2.applePencilSupport.contains(.secondGeneration))
     XCTAssertTrue(Device.iPadAir11M2.applePencilSupport.contains(.pro))
-    
+
     // Test iPad Air 13" (M2) - Supports Apple Pencil Pro and Apple Pencil (USB-C)
     XCTAssertFalse(Device.iPadAir13M2.applePencilSupport.contains(.firstGeneration))
     XCTAssertTrue(Device.iPadAir13M2.applePencilSupport.contains(.firstGenerationUsbC))
     XCTAssertFalse(Device.iPadAir13M2.applePencilSupport.contains(.secondGeneration))
     XCTAssertTrue(Device.iPadAir13M2.applePencilSupport.contains(.pro))
-    
+
     // Test iPad Air 11" (M3) - Supports Apple Pencil Pro and Apple Pencil (USB-C)
     XCTAssertFalse(Device.iPadAir11M3.applePencilSupport.contains(.firstGeneration))
     XCTAssertTrue(Device.iPadAir11M3.applePencilSupport.contains(.firstGenerationUsbC))
     XCTAssertFalse(Device.iPadAir11M3.applePencilSupport.contains(.secondGeneration))
     XCTAssertTrue(Device.iPadAir11M3.applePencilSupport.contains(.pro))
-    
+
     // Test iPad Air 13" (M3) - Supports Apple Pencil Pro and Apple Pencil (USB-C)
     XCTAssertFalse(Device.iPadAir13M3.applePencilSupport.contains(.firstGeneration))
     XCTAssertTrue(Device.iPadAir13M3.applePencilSupport.contains(.firstGenerationUsbC))
     XCTAssertFalse(Device.iPadAir13M3.applePencilSupport.contains(.secondGeneration))
     XCTAssertTrue(Device.iPadAir13M3.applePencilSupport.contains(.pro))
-    
+
     // Test iPad Pro 11" (M4) - Supports Apple Pencil Pro and Apple Pencil (USB-C)
     XCTAssertFalse(Device.iPadPro11M4.applePencilSupport.contains(.firstGeneration))
     XCTAssertTrue(Device.iPadPro11M4.applePencilSupport.contains(.firstGenerationUsbC))
     XCTAssertFalse(Device.iPadPro11M4.applePencilSupport.contains(.secondGeneration))
     XCTAssertTrue(Device.iPadPro11M4.applePencilSupport.contains(.pro))
-    
+
     // Test iPad Pro 13" (M4) - Supports Apple Pencil Pro and Apple Pencil (USB-C)
     XCTAssertFalse(Device.iPadPro13M4.applePencilSupport.contains(.firstGeneration))
     XCTAssertTrue(Device.iPadPro13M4.applePencilSupport.contains(.firstGenerationUsbC))
