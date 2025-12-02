@@ -2261,6 +2261,7 @@ extension Device {
       case .iPhoneSE2: return [.wide]
       case .iPhoneSE3: return [.wide]
       case .iPhone16e: return [.wide]
+      case .iPhoneAir: return [.wide]
       case .iPad2: return [.wide]
       case .iPad3: return [.wide]
       case .iPad4: return [.wide]
@@ -2312,7 +2313,6 @@ extension Device {
       case .iPhone16: return [.wide, .ultraWide]
       case .iPhone16Plus: return [.wide, .ultraWide]
       case .iPhone17: return [.wide, .ultraWide]
-      case .iPhoneAir: return [.wide, .ultraWide]
       case .iPadPro11Inch2: return [.wide, .ultraWide]
       case .iPadPro12Inch4: return [.wide, .ultraWide]
       case .iPadPro11Inch3: return [.wide, .ultraWide]
@@ -2360,7 +2360,7 @@ extension Device {
 
   /// All devices that feature an ultra wide camera
   public static var allDevicesWithUltraWideCamera: [Device] {
-    return [.iPhone11, .iPhone11Pro, .iPhone11ProMax, .iPhone12, .iPhone12Mini, .iPhone12Pro, .iPhone12ProMax, .iPhone13, .iPhone13Mini, .iPhone13Pro, .iPhone13ProMax, .iPhone14, .iPhone14Plus, .iPhone14Pro, .iPhone14ProMax, .iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax, .iPhone16, .iPhone16Plus, .iPhone16Pro, .iPhone16ProMax, .iPhone17, .iPhone17Pro, .iPhone17ProMax, .iPhoneAir, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6]
+    return [.iPhone11, .iPhone11Pro, .iPhone11ProMax, .iPhone12, .iPhone12Mini, .iPhone12Pro, .iPhone12ProMax, .iPhone13, .iPhone13Mini, .iPhone13Pro, .iPhone13ProMax, .iPhone14, .iPhone14Plus, .iPhone14Pro, .iPhone14ProMax, .iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax, .iPhone16, .iPhone16Plus, .iPhone16Pro, .iPhone16ProMax, .iPhone17, .iPhone17Pro, .iPhone17ProMax, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6]
   }
 
   /// Returns whether or not the current device has a camera

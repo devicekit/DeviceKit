@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Bug fixes
+
+- Fixed iPhone Air incorrectly marked as having ultra-wide camera. ([#463](https://github.com/devicekit/DeviceKit/issues/463))
+
 ## Version 5.7.0
 
 Releasedate: 2025-09-12
