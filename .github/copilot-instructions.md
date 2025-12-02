@@ -158,7 +158,7 @@ Since this is a device detection library, validation focuses on:
 
 **"SwiftLint not found"**: Install via `brew install swiftlint` (macOS only)
 
-**"Code generation produces different output"**: Ensure you're using Python 3 and the exact command: `./Utils/gyb --line-directive '' -o ./Source/Device.generated.swift ./Source/Device.swift.gyb`
+**"Code generation produces different output"**: Ensure you're using the exact command: `./Utils/gyb --line-directive '' -o ./Source/Device.generated.swift ./Source/Device.swift.gyb`
 
 **"Permission denied installing gems"**: Use `sudo gem install bundler` or install gems in user directory
 
