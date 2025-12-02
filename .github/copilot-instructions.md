@@ -34,7 +34,7 @@ Execute these commands in order for a fresh repository setup:
 2. **Generate Swift Source Code** (REQUIRED):
    ```bash
    # Generate the main Device.generated.swift file from template
-   python3 Utils/gyb.py Source/Device.swift.gyb > Source/Device.generated.swift
+   ./Utils/gyb --line-directive '' -o ./Source/Device.generated.swift ./Source/Device.swift.gyb
    ```
    - Takes < 1 minute
    - Must be run after any changes to `Source/Device.swift.gyb`
@@ -86,7 +86,7 @@ Since this is a device detection library, validation focuses on:
 1. **Code Generation Validation** (Always required):
    ```bash
    # Verify code generation works and produces valid Swift
-   python3 Utils/gyb.py Source/Device.swift.gyb > Source/Device.generated.swift
+   ./Utils/gyb --line-directive '' -o ./Source/Device.generated.swift ./Source/Device.swift.gyb
    wc -l Source/Device.generated.swift  # Should show ~2700-4000 lines
    ```
    - Must produce Swift code without syntax errors
@@ -136,7 +136,7 @@ Since this is a device detection library, validation focuses on:
 
 ### Adding New Device Support
 1. Edit `Source/Device.swift.gyb` to add new device entries
-2. Regenerate: `python3 Utils/gyb.py Source/Device.swift.gyb > Source/Device.generated.swift`
+2. Regenerate: `./Utils/gyb --line-directive '' -o ./Source/Device.generated.swift ./Source/Device.swift.gyb`
 3. Build and test: `swift build && swift test`
 4. Lint: `swiftlint`
 5. Test on relevant simulators
@@ -158,7 +158,7 @@ Since this is a device detection library, validation focuses on:
 
 **"SwiftLint not found"**: Install via `brew install swiftlint` (macOS only)
 
-**"Code generation produces different output"**: Ensure you're using Python 3 and the exact command: `python3 Utils/gyb.py Source/Device.swift.gyb > Source/Device.generated.swift`
+**"Code generation produces different output"**: Ensure you're using the exact command: `./Utils/gyb --line-directive '' -o ./Source/Device.generated.swift ./Source/Device.swift.gyb`
 
 **"Permission denied installing gems"**: Use `sudo gem install bundler` or install gems in user directory
 
@@ -207,7 +207,7 @@ DeviceKit.podspec           # CocoaPods specification
 ## Command Validation Status
 
 ### ✅ Verified on Linux (Limited):
-- `python3 Utils/gyb.py Source/Device.swift.gyb > Source/Device.generated.swift` - Works, produces valid Swift code
+- `./Utils/gyb --line-directive '' -o ./Source/Device.generated.swift ./Source/Device.swift.gyb` - Works, produces valid Swift code
 - Repository structure exploration and documentation review
 - Package.swift and project file validation
 
