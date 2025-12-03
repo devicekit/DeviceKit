@@ -1,4 +1,4 @@
-//===----------------------------------------------------------------------===//
+// ===----------------------------------------------------------------------=== //
 //
 // This source file is part of the DeviceKit open source project
 //
@@ -7,7 +7,7 @@
 // License: https://github.com/dennisweissmann/DeviceKit/blob/master/LICENSE
 // Contributors: https://github.com/dennisweissmann/DeviceKit#contributors
 //
-//===----------------------------------------------------------------------===//
+// ===----------------------------------------------------------------------=== //
 
 @testable import DeviceKit
 import XCTest
@@ -162,7 +162,7 @@ class DeviceKitTests: XCTestCase {
     XCTAssertTrue(Device.BatteryState.unplugged(2) > Device.BatteryState.charging(1))
   }
 
-  func testMapFromIdentifier() { // swiftlint:disable:this function_body_length
+  func testMapFromIdentifier() {
     XCTAssertEqual(Device.mapToDevice(identifier: "iPod5,1"), .iPodTouch5)
     XCTAssertEqual(Device.mapToDevice(identifier: "iPod7,1"), .iPodTouch6)
     XCTAssertEqual(Device.mapToDevice(identifier: "iPhone3,1"), .iPhone4)
@@ -331,7 +331,7 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.unknown(UUID().uuidString).diagonal, -1)
   }
 
-  func testDescription() { // swiftlint:disable:this function_body_length
+  func testDescription() {
     XCTAssertEqual(Device.iPodTouch5.description, "iPod touch (5th generation)")
     XCTAssertEqual(Device.iPodTouch6.description, "iPod touch (6th generation)")
     XCTAssertEqual(Device.iPodTouch7.description, "iPod touch (7th generation)")
@@ -626,16 +626,15 @@ class DeviceKitTests: XCTestCase {
       XCTAssertTrue(device.hasCamera)
       XCTAssertTrue(device.hasWideCamera || device.hasTelephotoCamera || device.hasUltraWideCamera)
     }
-    for device in Device.allPhones + Device.allPads + Device.allPods {
-      if !Device.allDevicesWithCamera.contains(device) {
-        XCTAssertFalse(device.cameras.contains(.wide))
-        XCTAssertFalse(device.cameras.contains(.telephoto))
-        XCTAssertFalse(device.cameras.contains(.ultraWide))
-        XCTAssertFalse(device.hasCamera)
-        XCTAssertFalse(device.hasWideCamera)
-        XCTAssertFalse(device.hasTelephotoCamera)
-        XCTAssertFalse(device.hasUltraWideCamera)
-      }
+    let devices = Device.allPhones + Device.allPads + Device.allPods
+    for device in devices where !Device.allDevicesWithCamera.contains(device) {
+      XCTAssertFalse(device.cameras.contains(.wide))
+      XCTAssertFalse(device.cameras.contains(.telephoto))
+      XCTAssertFalse(device.cameras.contains(.ultraWide))
+      XCTAssertFalse(device.hasCamera)
+      XCTAssertFalse(device.hasWideCamera)
+      XCTAssertFalse(device.hasTelephotoCamera)
+      XCTAssertFalse(device.hasUltraWideCamera)
     }
     for device in Device.allDevicesWithWideCamera {
       XCTAssertTrue(device.cameras.contains(.wide))
@@ -725,6 +724,56 @@ class DeviceKitTests: XCTestCase {
     for device in Device.allRealDevices {
       XCTAssertTrue(device.hasUSBCConnectivity == device.isOneOf(usbCDevices), "testHasUSBCConnectivity failed for \(device.description)")
     }
+  }
+
+  func testApplePencilSupport() {
+    // Test iPad (10th gen) - Supports Apple Pencil (1st gen) and Apple Pencil (USB-C)
+    XCTAssertTrue(Device.iPad10.applePencilSupport.contains(.firstGeneration))
+    XCTAssertTrue(Device.iPad10.applePencilSupport.contains(.firstGenerationUsbC))
+    XCTAssertFalse(Device.iPad10.applePencilSupport.contains(.secondGeneration))
+    XCTAssertFalse(Device.iPad10.applePencilSupport.contains(.pro))
+
+    // Test iPad (A16) - Supports Apple Pencil (1st gen) and Apple Pencil (USB-C)
+    XCTAssertTrue(Device.iPadA16.applePencilSupport.contains(.firstGeneration))
+    XCTAssertTrue(Device.iPadA16.applePencilSupport.contains(.firstGenerationUsbC))
+    XCTAssertFalse(Device.iPadA16.applePencilSupport.contains(.secondGeneration))
+    XCTAssertFalse(Device.iPadA16.applePencilSupport.contains(.pro))
+
+    // Test iPad Air 11" (M2) - Supports Apple Pencil Pro and Apple Pencil (USB-C)
+    XCTAssertFalse(Device.iPadAir11M2.applePencilSupport.contains(.firstGeneration))
+    XCTAssertTrue(Device.iPadAir11M2.applePencilSupport.contains(.firstGenerationUsbC))
+    XCTAssertFalse(Device.iPadAir11M2.applePencilSupport.contains(.secondGeneration))
+    XCTAssertTrue(Device.iPadAir11M2.applePencilSupport.contains(.pro))
+
+    // Test iPad Air 13" (M2) - Supports Apple Pencil Pro and Apple Pencil (USB-C)
+    XCTAssertFalse(Device.iPadAir13M2.applePencilSupport.contains(.firstGeneration))
+    XCTAssertTrue(Device.iPadAir13M2.applePencilSupport.contains(.firstGenerationUsbC))
+    XCTAssertFalse(Device.iPadAir13M2.applePencilSupport.contains(.secondGeneration))
+    XCTAssertTrue(Device.iPadAir13M2.applePencilSupport.contains(.pro))
+
+    // Test iPad Air 11" (M3) - Supports Apple Pencil Pro and Apple Pencil (USB-C)
+    XCTAssertFalse(Device.iPadAir11M3.applePencilSupport.contains(.firstGeneration))
+    XCTAssertTrue(Device.iPadAir11M3.applePencilSupport.contains(.firstGenerationUsbC))
+    XCTAssertFalse(Device.iPadAir11M3.applePencilSupport.contains(.secondGeneration))
+    XCTAssertTrue(Device.iPadAir11M3.applePencilSupport.contains(.pro))
+
+    // Test iPad Air 13" (M3) - Supports Apple Pencil Pro and Apple Pencil (USB-C)
+    XCTAssertFalse(Device.iPadAir13M3.applePencilSupport.contains(.firstGeneration))
+    XCTAssertTrue(Device.iPadAir13M3.applePencilSupport.contains(.firstGenerationUsbC))
+    XCTAssertFalse(Device.iPadAir13M3.applePencilSupport.contains(.secondGeneration))
+    XCTAssertTrue(Device.iPadAir13M3.applePencilSupport.contains(.pro))
+
+    // Test iPad Pro 11" (M4) - Supports Apple Pencil Pro and Apple Pencil (USB-C)
+    XCTAssertFalse(Device.iPadPro11M4.applePencilSupport.contains(.firstGeneration))
+    XCTAssertTrue(Device.iPadPro11M4.applePencilSupport.contains(.firstGenerationUsbC))
+    XCTAssertFalse(Device.iPadPro11M4.applePencilSupport.contains(.secondGeneration))
+    XCTAssertTrue(Device.iPadPro11M4.applePencilSupport.contains(.pro))
+
+    // Test iPad Pro 13" (M4) - Supports Apple Pencil Pro and Apple Pencil (USB-C)
+    XCTAssertFalse(Device.iPadPro13M4.applePencilSupport.contains(.firstGeneration))
+    XCTAssertTrue(Device.iPadPro13M4.applePencilSupport.contains(.firstGenerationUsbC))
+    XCTAssertFalse(Device.iPadPro13M4.applePencilSupport.contains(.secondGeneration))
+    XCTAssertTrue(Device.iPadPro13M4.applePencilSupport.contains(.pro))
   }
 
   #endif

@@ -17,6 +17,7 @@
 ### Bug fixes
 
 - Fixed iPhone Air incorrectly marked as having ultra-wide camera. ([#463](https://github.com/devicekit/DeviceKit/pull/463))
+- Fixed Apple Pencil compatibility for M4 iPad Pro, M2/M3 iPad Air, iPad (10th gen), and iPad (A16) models. ([#474](https://github.com/devicekit/DeviceKit/pull/474))
 
 ## Version 5.7.0
 
