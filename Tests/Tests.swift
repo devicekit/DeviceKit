@@ -1,4 +1,4 @@
-//===----------------------------------------------------------------------===//
+// ===----------------------------------------------------------------------=== //
 //
 // This source file is part of the DeviceKit open source project
 //
@@ -7,7 +7,7 @@
 // License: https://github.com/dennisweissmann/DeviceKit/blob/master/LICENSE
 // Contributors: https://github.com/dennisweissmann/DeviceKit#contributors
 //
-//===----------------------------------------------------------------------===//
+// ===----------------------------------------------------------------------=== //
 
 @testable import DeviceKit
 import XCTest
@@ -331,7 +331,7 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.unknown(UUID().uuidString).diagonal, -1)
   }
 
-  func testDescription() { // swiftlint:disable:this function_body_length
+  func testDescription() {
     XCTAssertEqual(Device.iPodTouch5.description, "iPod touch (5th generation)")
     XCTAssertEqual(Device.iPodTouch6.description, "iPod touch (6th generation)")
     XCTAssertEqual(Device.iPodTouch7.description, "iPod touch (7th generation)")
@@ -626,16 +626,15 @@ class DeviceKitTests: XCTestCase {
       XCTAssertTrue(device.hasCamera)
       XCTAssertTrue(device.hasWideCamera || device.hasTelephotoCamera || device.hasUltraWideCamera)
     }
-    for device in Device.allPhones + Device.allPads + Device.allPods {
-      if !Device.allDevicesWithCamera.contains(device) {
-        XCTAssertFalse(device.cameras.contains(.wide))
-        XCTAssertFalse(device.cameras.contains(.telephoto))
-        XCTAssertFalse(device.cameras.contains(.ultraWide))
-        XCTAssertFalse(device.hasCamera)
-        XCTAssertFalse(device.hasWideCamera)
-        XCTAssertFalse(device.hasTelephotoCamera)
-        XCTAssertFalse(device.hasUltraWideCamera)
-      }
+    let devices = Device.allPhones + Device.allPads + Device.allPods
+    for device in devices where !Device.allDevicesWithCamera.contains(device) {
+      XCTAssertFalse(device.cameras.contains(.wide))
+      XCTAssertFalse(device.cameras.contains(.telephoto))
+      XCTAssertFalse(device.cameras.contains(.ultraWide))
+      XCTAssertFalse(device.hasCamera)
+      XCTAssertFalse(device.hasWideCamera)
+      XCTAssertFalse(device.hasTelephotoCamera)
+      XCTAssertFalse(device.hasUltraWideCamera)
     }
     for device in Device.allDevicesWithWideCamera {
       XCTAssertTrue(device.cameras.contains(.wide))
