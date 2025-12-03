@@ -330,31 +330,31 @@ public enum Device {
     ///
     /// ![Image](https://cdsassets.apple.com/content/services/pub/image?productid=301029&size=240x240)
     case iPadAir13M3
-    /// Device is an [iPad Mini](https://support.apple.com/kb/SP661)
+    /// Device is an [iPad mini](https://support.apple.com/kb/SP661)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP661/sp661_ipad_mini_color.jpg)
     case iPadMini
-    /// Device is an [iPad Mini 2](https://support.apple.com/kb/SP693)
+    /// Device is an [iPad mini 2](https://support.apple.com/kb/SP693)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP693/SP693-specs_color-mul.png)
     case iPadMini2
-    /// Device is an [iPad Mini 3](https://support.apple.com/kb/SP709)
+    /// Device is an [iPad mini 3](https://support.apple.com/kb/SP709)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP709/SP709-space_gray.jpeg)
     case iPadMini3
-    /// Device is an [iPad Mini 4](https://support.apple.com/kb/SP725)
+    /// Device is an [iPad mini 4](https://support.apple.com/kb/SP725)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP725/SP725ipad-mini-4.png)
     case iPadMini4
-    /// Device is an [iPad Mini (5th generation)](https://support.apple.com/kb/SP788)
+    /// Device is an [iPad mini (5th generation)](https://support.apple.com/kb/SP788)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP788/ipad-mini-2019.jpg)
     case iPadMini5
-    /// Device is an [iPad Mini (6th generation)](https://support.apple.com/kb/SP850)
+    /// Device is an [iPad mini (6th generation)](https://support.apple.com/kb/SP850)
     ///
     /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1097/en_US/ipad-mini-6gen-240.png)
     case iPadMini6
-    /// Device is an [iPad Mini (A17 Pro)](https://support.apple.com/en-us/121456)
+    /// Device is an [iPad mini (A17 Pro)](https://support.apple.com/en-us/121456)
     ///
     /// ![Image](https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/iPad_mini_A17_Pro_Wi-Fi_Lineup_Print__USEN.png)
     case iPadMiniA17Pro
@@ -1703,13 +1703,13 @@ extension Device: CustomStringConvertible {
       case .iPadAir13M2: return "iPad Air (13-inch) (M2)"
       case .iPadAir11M3: return "iPad Air (11-inch) (M3)"
       case .iPadAir13M3: return "iPad Air (13-inch) (M3)"
-      case .iPadMini: return "iPad Mini"
-      case .iPadMini2: return "iPad Mini 2"
-      case .iPadMini3: return "iPad Mini 3"
-      case .iPadMini4: return "iPad Mini 4"
-      case .iPadMini5: return "iPad Mini (5th generation)"
-      case .iPadMini6: return "iPad Mini (6th generation)"
-      case .iPadMiniA17Pro: return "iPad Mini (A17 Pro)"
+      case .iPadMini: return "iPad mini"
+      case .iPadMini2: return "iPad mini 2"
+      case .iPadMini3: return "iPad mini 3"
+      case .iPadMini4: return "iPad mini 4"
+      case .iPadMini5: return "iPad mini (5th generation)"
+      case .iPadMini6: return "iPad mini (6th generation)"
+      case .iPadMiniA17Pro: return "iPad mini (A17 Pro)"
       case .iPadPro9Inch: return "iPad Pro (9.7-inch)"
       case .iPadPro12Inch: return "iPad Pro (12.9-inch)"
       case .iPadPro12Inch2: return "iPad Pro (12.9-inch) (2nd generation)"
@@ -1863,13 +1863,13 @@ extension Device: CustomStringConvertible {
       case .iPadAir13M2: return "iPad Air (13-inch) (M2)"
       case .iPadAir11M3: return "iPad Air (11-inch) (M3)"
       case .iPadAir13M3: return "iPad Air (13-inch) (M3)"
-      case .iPadMini: return "iPad Mini"
-      case .iPadMini2: return "iPad Mini 2"
-      case .iPadMini3: return "iPad Mini 3"
-      case .iPadMini4: return "iPad Mini 4"
-      case .iPadMini5: return "iPad Mini (5th generation)"
-      case .iPadMini6: return "iPad Mini (6th generation)"
-      case .iPadMiniA17Pro: return "iPad Mini (A17 Pro)"
+      case .iPadMini: return "iPad mini"
+      case .iPadMini2: return "iPad mini 2"
+      case .iPadMini3: return "iPad mini 3"
+      case .iPadMini4: return "iPad mini 4"
+      case .iPadMini5: return "iPad mini (5th generation)"
+      case .iPadMini6: return "iPad mini (6th generation)"
+      case .iPadMiniA17Pro: return "iPad mini (A17 Pro)"
       case .iPadPro9Inch: return "iPad Pro (9.7-inch)"
       case .iPadPro12Inch: return "iPad Pro (12.9-inch)"
       case .iPadPro12Inch2: return "iPad Pro (12.9-inch) (2nd generation)"
