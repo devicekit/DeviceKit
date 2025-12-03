@@ -138,6 +138,8 @@ iPads = [
             Device("iPadPro12Inch6", "Device is an [iPad Pro 12.9-inch (6th generation)](https://support.apple.com/kb/SP883)", "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP882/ipad-pro-4gen-mainimage_2x.png",                  ["iPad14,5", "iPad14,6"],                           12.9, (512, 683),  "iPad Pro (12.9-inch) (6th generation)", "iPad Pro (12.9-inch) (6th generation)", 264, False, False, True, False, False, True, False, False, True, False, 23, False, 13, True, "m2", True, True),
             Device("iPadPro11M4",    "Device is an [iPad Pro 11-inch (M4)](https://support.apple.com/en-us/119892)",           "https://cdsassets.apple.com/content/services/pub/image?productid=301031&size=240x240",                            ["iPad16,3", "iPad16,4"],                           11.0, (605, 417),  "iPad Pro (11-inch) (M4)", "iPad Pro (11-inch) (M4)", 264, False, False, True, False, False, True, False, False, True, False, 234, False, 1, True, "m4", True, True),
             Device("iPadPro13M4",    "Device is an [iPad Pro 13-inch (M4)](https://support.apple.com/en-us/119891)",           "https://cdsassets.apple.com/content/services/pub/image?productid=301033&size=240x240",                            ["iPad16,5", "iPad16,6"],                           13.0, (4, 3),  "iPad Pro (13-inch) (M4)", "iPad Pro (13-inch) (M4)", 264, False, False, True, False, False, True, False, False, True, False, 234, False, 1, True, "m4", True, True),
+            Device("iPadPro11M5",    "Device is an [iPad Pro 11-inch (M5)](https://support.apple.com/en-us/125406)",           "",                                                                                                                ["iPad17,3", "iPad17,4"],                           11.0, (605, 417),  "iPad Pro (11-inch) (M5)", "iPad Pro (11-inch) (M5)", 264, False, False, True, False, False, True, False, False, True, False, 234, False, 1, True, "m5", True, True),
+            Device("iPadPro13M5",    "Device is an [iPad Pro 13-inch (M5)](https://support.apple.com/en-us/125406)",           "",                                                                                                                ["iPad17,5", "iPad17,6"],                           13.0, (4, 3),  "iPad Pro (13-inch) (M5)", "iPad Pro (13-inch) (M5)", 264, False, False, True, False, False, True, False, False, True, False, 234, False, 1, True, "m5", True, True),
         ]
 
 homePods = [
@@ -1539,6 +1541,7 @@ iOS_cpus = [
           CPU("m2", "M2"),
           CPU("m3", "M3"),
           CPU("m4", "M4"),
+          CPU("m5", "M5"),
       ]
 
 watchOS_cpus = [

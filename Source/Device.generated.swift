@@ -414,6 +414,14 @@ public enum Device {
     ///
     /// ![Image](https://cdsassets.apple.com/content/services/pub/image?productid=301033&size=240x240)
     case iPadPro13M4
+    /// Device is an [iPad Pro 11-inch (M5)](https://support.apple.com/en-us/125406)
+    ///
+    /// ![Image]()
+    case iPadPro11M5
+    /// Device is an [iPad Pro 13-inch (M5)](https://support.apple.com/en-us/125406)
+    ///
+    /// ![Image]()
+    case iPadPro13M5
     /// Device is a [HomePod](https://support.apple.com/kb/SP773)
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP773/homepod_space_gray_large_2x.jpg)
@@ -697,6 +705,8 @@ public enum Device {
       case "iPad14,5", "iPad14,6": return iPadPro12Inch6
       case "iPad16,3", "iPad16,4": return iPadPro11M4
       case "iPad16,5", "iPad16,6": return iPadPro13M4
+      case "iPad17,3", "iPad17,4": return iPadPro11M5
+      case "iPad17,5", "iPad17,6": return iPadPro13M5
       case "AudioAccessory1,1": return homePod
       case "i386", "x86_64", "arm64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "iOS"))
       default: return unknown(identifier)
@@ -867,6 +877,8 @@ public enum Device {
         case .iPadPro12Inch6: return 12.9
         case .iPadPro11M4: return 11.0
         case .iPadPro13M4: return 13.0
+        case .iPadPro11M5: return 11.0
+        case .iPadPro13M5: return 13.0
         case .homePod: return -1
         case .simulator(let model): return model.diagonal
         case .unknown: return -1
@@ -1008,6 +1020,8 @@ public enum Device {
       case .iPadPro12Inch6: return (width: 512, height: 683)
       case .iPadPro11M4: return (width: 605, height: 417)
       case .iPadPro13M4: return (width: 4, height: 3)
+      case .iPadPro11M5: return (width: 605, height: 417)
+      case .iPadPro13M5: return (width: 4, height: 3)
       case .homePod: return (width: 4, height: 5)
       case .simulator(let model): return model.screenRatio
       case .unknown: return (width: -1, height: -1)
@@ -1070,7 +1084,7 @@ public enum Device {
 
     /// All iPads
     public static var allPads: [Device] {
-      return [.iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPad5, .iPad6, .iPadAir3, .iPad7, .iPad8, .iPad9, .iPad10, .iPadA16, .iPadAir4, .iPadAir5, .iPadAir11M2, .iPadAir13M2, .iPadAir11M3, .iPadAir13M3, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadMini5, .iPadMini6, .iPadMiniA17Pro, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6, .iPadPro11M4, .iPadPro13M4]
+      return [.iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPad5, .iPad6, .iPadAir3, .iPad7, .iPad8, .iPad9, .iPad10, .iPadA16, .iPadAir4, .iPadAir5, .iPadAir11M2, .iPadAir13M2, .iPadAir11M3, .iPadAir13M3, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadMini5, .iPadMini6, .iPadMiniA17Pro, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6, .iPadPro11M4, .iPadPro13M4, .iPadPro11M5, .iPadPro13M5]
     }
 
     /// All X-Series Devices
@@ -1086,7 +1100,7 @@ public enum Device {
 
     /// All Pro Devices
     public static var allProDevices: [Device] {
-      return [.iPhone11Pro, .iPhone11ProMax, .iPhone12Pro, .iPhone12ProMax, .iPhone13Pro, .iPhone13ProMax, .iPhone14Pro, .iPhone14ProMax, .iPhone15Pro, .iPhone15ProMax, .iPhone16Pro, .iPhone16ProMax, .iPhone17Pro, .iPhone17ProMax, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6, .iPadPro11M4, .iPadPro13M4]
+      return [.iPhone11Pro, .iPhone11ProMax, .iPhone12Pro, .iPhone12ProMax, .iPhone13Pro, .iPhone13ProMax, .iPhone14Pro, .iPhone14ProMax, .iPhone15Pro, .iPhone15ProMax, .iPhone16Pro, .iPhone16ProMax, .iPhone17Pro, .iPhone17ProMax, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6, .iPadPro11M4, .iPadPro13M4, .iPadPro11M5, .iPadPro13M5]
     }
 
     /// All mini Devices
@@ -1172,12 +1186,12 @@ public enum Device {
 
     /// All Face ID Capable Devices
     public static var allFaceIDCapableDevices: [Device] {
-      return [.iPhoneX, .iPhoneXS, .iPhoneXSMax, .iPhoneXR, .iPhone11, .iPhone11Pro, .iPhone11ProMax, .iPhone12, .iPhone12Mini, .iPhone12Pro, .iPhone12ProMax, .iPhone13, .iPhone13Mini, .iPhone13Pro, .iPhone13ProMax, .iPhone14, .iPhone14Plus, .iPhone14Pro, .iPhone14ProMax, .iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax, .iPhone16, .iPhone16Plus, .iPhone16Pro, .iPhone16ProMax, .iPhone16e, .iPhone17, .iPhone17Pro, .iPhone17ProMax, .iPhoneAir, .iPadPro11Inch, .iPadPro12Inch3, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6, .iPadPro11M4, .iPadPro13M4]
+      return [.iPhoneX, .iPhoneXS, .iPhoneXSMax, .iPhoneXR, .iPhone11, .iPhone11Pro, .iPhone11ProMax, .iPhone12, .iPhone12Mini, .iPhone12Pro, .iPhone12ProMax, .iPhone13, .iPhone13Mini, .iPhone13Pro, .iPhone13ProMax, .iPhone14, .iPhone14Plus, .iPhone14Pro, .iPhone14ProMax, .iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax, .iPhone16, .iPhone16Plus, .iPhone16Pro, .iPhone16ProMax, .iPhone16e, .iPhone17, .iPhone17Pro, .iPhone17ProMax, .iPhoneAir, .iPadPro11Inch, .iPadPro12Inch3, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6, .iPadPro11M4, .iPadPro13M4, .iPadPro11M5, .iPadPro13M5]
     }
 
     /// All Devices with Touch ID or Face ID
     public static var allBiometricAuthenticationCapableDevices: [Device] {
-      return [.iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE, .iPhone8, .iPhone8Plus, .iPhoneX, .iPhoneXS, .iPhoneXSMax, .iPhoneXR, .iPhone11, .iPhone11Pro, .iPhone11ProMax, .iPhoneSE2, .iPhone12, .iPhone12Mini, .iPhone12Pro, .iPhone12ProMax, .iPhone13, .iPhone13Mini, .iPhone13Pro, .iPhone13ProMax, .iPhoneSE3, .iPhone14, .iPhone14Plus, .iPhone14Pro, .iPhone14ProMax, .iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax, .iPhone16, .iPhone16Plus, .iPhone16Pro, .iPhone16ProMax, .iPhone16e, .iPhone17, .iPhone17Pro, .iPhone17ProMax, .iPhoneAir, .iPadAir2, .iPad5, .iPad6, .iPadAir3, .iPad7, .iPad8, .iPad9, .iPad10, .iPadA16, .iPadAir4, .iPadAir5, .iPadAir11M2, .iPadAir13M2, .iPadAir11M3, .iPadAir13M3, .iPadMini3, .iPadMini4, .iPadMini5, .iPadMini6, .iPadMiniA17Pro, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6, .iPadPro11M4, .iPadPro13M4]
+      return [.iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE, .iPhone8, .iPhone8Plus, .iPhoneX, .iPhoneXS, .iPhoneXSMax, .iPhoneXR, .iPhone11, .iPhone11Pro, .iPhone11ProMax, .iPhoneSE2, .iPhone12, .iPhone12Mini, .iPhone12Pro, .iPhone12ProMax, .iPhone13, .iPhone13Mini, .iPhone13Pro, .iPhone13ProMax, .iPhoneSE3, .iPhone14, .iPhone14Plus, .iPhone14Pro, .iPhone14ProMax, .iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax, .iPhone16, .iPhone16Plus, .iPhone16Pro, .iPhone16ProMax, .iPhone16e, .iPhone17, .iPhone17Pro, .iPhone17ProMax, .iPhoneAir, .iPadAir2, .iPad5, .iPad6, .iPadAir3, .iPad7, .iPad8, .iPad9, .iPad10, .iPadA16, .iPadAir4, .iPadAir5, .iPadAir11M2, .iPadAir13M2, .iPadAir11M3, .iPadAir13M3, .iPadMini3, .iPadMini4, .iPadMini5, .iPadMini6, .iPadMiniA17Pro, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6, .iPadPro11M4, .iPadPro13M4, .iPadPro11M5, .iPadPro13M5]
     }
 
     /// Returns whether or not the device has Touch ID
@@ -1212,7 +1226,7 @@ public enum Device {
 
     /// All devices that feature a screen with rounded corners.
     public static var allDevicesWithRoundedDisplayCorners: [Device] {
-      return [.iPhoneX, .iPhoneXS, .iPhoneXSMax, .iPhoneXR, .iPhone11, .iPhone11Pro, .iPhone11ProMax, .iPhone12, .iPhone12Mini, .iPhone12Pro, .iPhone12ProMax, .iPhone13, .iPhone13Mini, .iPhone13Pro, .iPhone13ProMax, .iPhone14, .iPhone14Plus, .iPhone14Pro, .iPhone14ProMax, .iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax, .iPhone16, .iPhone16Plus, .iPhone16Pro, .iPhone16ProMax, .iPhone16e, .iPhone17, .iPhone17Pro, .iPhone17ProMax, .iPhoneAir, .iPad10, .iPadA16, .iPadAir4, .iPadAir5, .iPadAir11M2, .iPadAir13M2, .iPadAir11M3, .iPadAir13M3, .iPadMini6, .iPadMiniA17Pro, .iPadPro11Inch, .iPadPro12Inch3, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6, .iPadPro11M4, .iPadPro13M4]
+      return [.iPhoneX, .iPhoneXS, .iPhoneXSMax, .iPhoneXR, .iPhone11, .iPhone11Pro, .iPhone11ProMax, .iPhone12, .iPhone12Mini, .iPhone12Pro, .iPhone12ProMax, .iPhone13, .iPhone13Mini, .iPhone13Pro, .iPhone13ProMax, .iPhone14, .iPhone14Plus, .iPhone14Pro, .iPhone14ProMax, .iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax, .iPhone16, .iPhone16Plus, .iPhone16Pro, .iPhone16ProMax, .iPhone16e, .iPhone17, .iPhone17Pro, .iPhone17ProMax, .iPhoneAir, .iPad10, .iPadA16, .iPadAir4, .iPadAir5, .iPadAir11M2, .iPadAir13M2, .iPadAir11M3, .iPadAir13M3, .iPadMini6, .iPadMiniA17Pro, .iPadPro11Inch, .iPadPro12Inch3, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6, .iPadPro11M4, .iPadPro13M4, .iPadPro11M5, .iPadPro13M5]
     }
 
     /// Returns whether or not the device has a screen with rounded corners.
@@ -1252,7 +1266,7 @@ public enum Device {
 
     /// All devices that support 5G.
     public static var allDevicesWith5gSupport: [Device] {
-      return [.iPhone12, .iPhone12Mini, .iPhone12Pro, .iPhone12ProMax, .iPhone13, .iPhone13Mini, .iPhone13Pro, .iPhone13ProMax, .iPhoneSE3, .iPhone14, .iPhone14Plus, .iPhone14Pro, .iPhone14ProMax, .iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax, .iPhone16, .iPhone16Plus, .iPhone16Pro, .iPhone16ProMax, .iPhone16e, .iPhone17, .iPhone17Pro, .iPhone17ProMax, .iPhoneAir, .iPad10, .iPadA16, .iPadAir5, .iPadAir11M2, .iPadAir13M2, .iPadAir11M3, .iPadAir13M3, .iPadMini6, .iPadMiniA17Pro, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6, .iPadPro11M4, .iPadPro13M4]
+      return [.iPhone12, .iPhone12Mini, .iPhone12Pro, .iPhone12ProMax, .iPhone13, .iPhone13Mini, .iPhone13Pro, .iPhone13ProMax, .iPhoneSE3, .iPhone14, .iPhone14Plus, .iPhone14Pro, .iPhone14ProMax, .iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax, .iPhone16, .iPhone16Plus, .iPhone16Pro, .iPhone16ProMax, .iPhone16e, .iPhone17, .iPhone17Pro, .iPhone17ProMax, .iPhoneAir, .iPad10, .iPadA16, .iPadAir5, .iPadAir11M2, .iPadAir13M2, .iPadAir11M3, .iPadAir13M3, .iPadMini6, .iPadMiniA17Pro, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6, .iPadPro11M4, .iPadPro13M4, .iPadPro11M5, .iPadPro13M5]
     }
 
     /// Returns whether or not the device has 5G support.
@@ -1262,7 +1276,7 @@ public enum Device {
 
     /// All devices that have a LiDAR sensor.
     public static var allDevicesWithALidarSensor: [Device] {
-      return [.iPhone12Pro, .iPhone12ProMax, .iPhone13Pro, .iPhone13ProMax, .iPhone14Pro, .iPhone14ProMax, .iPhone15Pro, .iPhone15ProMax, .iPhone16Pro, .iPhone16ProMax, .iPhone17Pro, .iPhone17ProMax, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6, .iPadPro11M4, .iPadPro13M4]
+      return [.iPhone12Pro, .iPhone12ProMax, .iPhone13Pro, .iPhone13ProMax, .iPhone14Pro, .iPhone14ProMax, .iPhone15Pro, .iPhone15ProMax, .iPhone16Pro, .iPhone16ProMax, .iPhone17Pro, .iPhone17ProMax, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6, .iPadPro11M4, .iPadPro13M4, .iPadPro11M5, .iPadPro13M5]
     }
 
     /// Returns whether or not the device has a LiDAR sensor.
@@ -1272,7 +1286,7 @@ public enum Device {
 
     /// All devices that have a USB-C connectivity.
     public static var allDevicesWithUSBCConnectivity: [Device] {
-      return [.iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax, .iPhone16, .iPhone16Plus, .iPhone16Pro, .iPhone16ProMax, .iPhone16e, .iPhone17, .iPhone17Pro, .iPhone17ProMax, .iPhoneAir, .iPad10, .iPadA16, .iPadAir4, .iPadAir5, .iPadAir11M2, .iPadAir13M2, .iPadAir11M3, .iPadAir13M3, .iPadMini6, .iPadMiniA17Pro, .iPadPro11Inch, .iPadPro12Inch3, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6, .iPadPro11M4, .iPadPro13M4]
+      return [.iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax, .iPhone16, .iPhone16Plus, .iPhone16Pro, .iPhone16ProMax, .iPhone16e, .iPhone17, .iPhone17Pro, .iPhone17ProMax, .iPhoneAir, .iPad10, .iPadA16, .iPadAir4, .iPadAir5, .iPadAir11M2, .iPadAir13M2, .iPadAir11M3, .iPadAir13M3, .iPadMini6, .iPadMiniA17Pro, .iPadPro11Inch, .iPadPro12Inch3, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6, .iPadPro11M4, .iPadPro13M4, .iPadPro11M5, .iPadPro13M5]
     }
 
     /// Returns whether or not the device has a USB-C power supply.
@@ -1551,6 +1565,8 @@ public enum Device {
       case .iPadPro12Inch6: return 264
       case .iPadPro11M4: return 264
       case .iPadPro13M4: return 264
+      case .iPadPro11M5: return 264
+      case .iPadPro13M5: return 264
       case .homePod: return -1
       case .simulator(let model): return model.ppi
       case .unknown: return nil
@@ -1724,6 +1740,8 @@ extension Device: CustomStringConvertible {
       case .iPadPro12Inch6: return "iPad Pro (12.9-inch) (6th generation)"
       case .iPadPro11M4: return "iPad Pro (11-inch) (M4)"
       case .iPadPro13M4: return "iPad Pro (13-inch) (M4)"
+      case .iPadPro11M5: return "iPad Pro (11-inch) (M5)"
+      case .iPadPro13M5: return "iPad Pro (13-inch) (M5)"
       case .homePod: return "HomePod"
       case .simulator(let model): return "Simulator (\(model.description))"
       case .unknown(let identifier): return identifier
@@ -1884,6 +1902,8 @@ extension Device: CustomStringConvertible {
       case .iPadPro12Inch6: return "iPad Pro (12.9-inch) (6th generation)"
       case .iPadPro11M4: return "iPad Pro (11-inch) (M4)"
       case .iPadPro13M4: return "iPad Pro (13-inch) (M4)"
+      case .iPadPro11M5: return "iPad Pro (11-inch) (M5)"
+      case .iPadPro13M5: return "iPad Pro (13-inch) (M5)"
       case .homePod: return "HomePod"
       case .simulator(let model): return "Simulator (\(model.safeDescription))"
       case .unknown(let identifier): return identifier
@@ -2203,7 +2223,7 @@ extension Device {
 
   /// All Apple Pencil Capable Devices
   public static var allApplePencilCapableDevices: [Device] {
-    return [.iPad6, .iPadAir3, .iPad7, .iPad8, .iPad9, .iPad10, .iPadA16, .iPadAir4, .iPadAir5, .iPadAir11M2, .iPadAir13M2, .iPadAir11M3, .iPadAir13M3, .iPadMini5, .iPadMini6, .iPadMiniA17Pro, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6, .iPadPro11M4, .iPadPro13M4]
+    return [.iPad6, .iPadAir3, .iPad7, .iPad8, .iPad9, .iPad10, .iPadA16, .iPadAir4, .iPadAir5, .iPadAir11M2, .iPadAir13M2, .iPadAir11M3, .iPadAir13M3, .iPadMini5, .iPadMini6, .iPadMiniA17Pro, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6, .iPadPro11M4, .iPadPro13M4, .iPadPro11M5, .iPadPro13M5]
   }
 
   /// Returns supported version of the Apple Pencil
@@ -2234,6 +2254,8 @@ extension Device {
       case .iPadPro12Inch6: return [.secondGeneration, .firstGenerationUsbC]
       case .iPadPro11M4: return [.secondGeneration, .firstGenerationUsbC, .pro]
       case .iPadPro13M4: return [.secondGeneration, .firstGenerationUsbC, .pro]
+      case .iPadPro11M5: return [.secondGeneration, .firstGenerationUsbC, .pro]
+      case .iPadPro13M5: return [.secondGeneration, .firstGenerationUsbC, .pro]
       case .iPadAir11M2: return [.secondGeneration, .pro]
       case .iPadAir13M2: return [.secondGeneration, .pro]
       case .iPadAir11M3: return [.secondGeneration, .pro]
@@ -2316,6 +2338,8 @@ extension Device {
       case .iPadPro12Inch3: return [.wide]
       case .iPadPro11M4: return [.wide]
       case .iPadPro13M4: return [.wide]
+      case .iPadPro11M5: return [.wide]
+      case .iPadPro13M5: return [.wide]
       case .iPhone7Plus: return [.wide, .telephoto]
       case .iPhone8Plus: return [.wide, .telephoto]
       case .iPhoneX: return [.wide, .telephoto]
@@ -2359,7 +2383,7 @@ extension Device {
 
   /// All devices that feature a camera
   public static var allDevicesWithCamera: [Device] {
-    return [.iPodTouch5, .iPodTouch6, .iPodTouch7, .iPhone4, .iPhone4s, .iPhone5, .iPhone5c, .iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE, .iPhone8, .iPhone8Plus, .iPhoneX, .iPhoneXS, .iPhoneXSMax, .iPhoneXR, .iPhone11, .iPhone11Pro, .iPhone11ProMax, .iPhoneSE2, .iPhone12, .iPhone12Mini, .iPhone12Pro, .iPhone12ProMax, .iPhone13, .iPhone13Mini, .iPhone13Pro, .iPhone13ProMax, .iPhoneSE3, .iPhone14, .iPhone14Plus, .iPhone14Pro, .iPhone14ProMax, .iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax, .iPhone16, .iPhone16Plus, .iPhone16Pro, .iPhone16ProMax, .iPhone16e, .iPhone17, .iPhone17Pro, .iPhone17ProMax, .iPhoneAir, .iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPad5, .iPad6, .iPadAir3, .iPad7, .iPad8, .iPad9, .iPad10, .iPadA16, .iPadAir4, .iPadAir5, .iPadAir11M2, .iPadAir13M2, .iPadAir11M3, .iPadAir13M3, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadMini5, .iPadMini6, .iPadMiniA17Pro, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6, .iPadPro11M4, .iPadPro13M4]
+    return [.iPodTouch5, .iPodTouch6, .iPodTouch7, .iPhone4, .iPhone4s, .iPhone5, .iPhone5c, .iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE, .iPhone8, .iPhone8Plus, .iPhoneX, .iPhoneXS, .iPhoneXSMax, .iPhoneXR, .iPhone11, .iPhone11Pro, .iPhone11ProMax, .iPhoneSE2, .iPhone12, .iPhone12Mini, .iPhone12Pro, .iPhone12ProMax, .iPhone13, .iPhone13Mini, .iPhone13Pro, .iPhone13ProMax, .iPhoneSE3, .iPhone14, .iPhone14Plus, .iPhone14Pro, .iPhone14ProMax, .iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax, .iPhone16, .iPhone16Plus, .iPhone16Pro, .iPhone16ProMax, .iPhone16e, .iPhone17, .iPhone17Pro, .iPhone17ProMax, .iPhoneAir, .iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPad5, .iPad6, .iPadAir3, .iPad7, .iPad8, .iPad9, .iPad10, .iPadA16, .iPadAir4, .iPadAir5, .iPadAir11M2, .iPadAir13M2, .iPadAir11M3, .iPadAir13M3, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadMini5, .iPadMini6, .iPadMiniA17Pro, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6, .iPadPro11M4, .iPadPro13M4, .iPadPro11M5, .iPadPro13M5]
   }
 
   /// All devices that feature a normal camera
@@ -2370,7 +2394,7 @@ extension Device {
 
   /// All devices that feature a wide camera
   public static var allDevicesWithWideCamera: [Device] {
-    return [.iPodTouch5, .iPodTouch6, .iPodTouch7, .iPhone4, .iPhone4s, .iPhone5, .iPhone5c, .iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE, .iPhone8, .iPhone8Plus, .iPhoneX, .iPhoneXS, .iPhoneXSMax, .iPhoneXR, .iPhone11, .iPhone11Pro, .iPhone11ProMax, .iPhoneSE2, .iPhone12, .iPhone12Mini, .iPhone12Pro, .iPhone12ProMax, .iPhone13, .iPhone13Mini, .iPhone13Pro, .iPhone13ProMax, .iPhoneSE3, .iPhone14, .iPhone14Plus, .iPhone14Pro, .iPhone14ProMax, .iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax, .iPhone16, .iPhone16Plus, .iPhone16Pro, .iPhone16ProMax, .iPhone16e, .iPhone17, .iPhone17Pro, .iPhone17ProMax, .iPhoneAir, .iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPad5, .iPad6, .iPadAir3, .iPad7, .iPad8, .iPad9, .iPad10, .iPadA16, .iPadAir4, .iPadAir5, .iPadAir11M2, .iPadAir13M2, .iPadAir11M3, .iPadAir13M3, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadMini5, .iPadMini6, .iPadMiniA17Pro, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6, .iPadPro11M4, .iPadPro13M4]
+    return [.iPodTouch5, .iPodTouch6, .iPodTouch7, .iPhone4, .iPhone4s, .iPhone5, .iPhone5c, .iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE, .iPhone8, .iPhone8Plus, .iPhoneX, .iPhoneXS, .iPhoneXSMax, .iPhoneXR, .iPhone11, .iPhone11Pro, .iPhone11ProMax, .iPhoneSE2, .iPhone12, .iPhone12Mini, .iPhone12Pro, .iPhone12ProMax, .iPhone13, .iPhone13Mini, .iPhone13Pro, .iPhone13ProMax, .iPhoneSE3, .iPhone14, .iPhone14Plus, .iPhone14Pro, .iPhone14ProMax, .iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax, .iPhone16, .iPhone16Plus, .iPhone16Pro, .iPhone16ProMax, .iPhone16e, .iPhone17, .iPhone17Pro, .iPhone17ProMax, .iPhoneAir, .iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPad5, .iPad6, .iPadAir3, .iPad7, .iPad8, .iPad9, .iPad10, .iPadA16, .iPadAir4, .iPadAir5, .iPadAir11M2, .iPadAir13M2, .iPadAir11M3, .iPadAir13M3, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadMini5, .iPadMini6, .iPadMiniA17Pro, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6, .iPadPro11M4, .iPadPro13M4, .iPadPro11M5, .iPadPro13M5]
   }
 
   /// All devices that feature a telephoto camera
@@ -2479,6 +2503,7 @@ extension Device {
     case m2
     case m3
     case m4
+    case m5
   #elseif os(watchOS)
     case s1
     case s1P
@@ -2590,6 +2615,8 @@ extension Device {
       case .iPadPro12Inch6: return .m2
       case .iPadPro11M4: return .m4
       case .iPadPro13M4: return .m4
+      case .iPadPro11M5: return .m5
+      case .iPadPro13M5: return .m5
       case .homePod: return .a8
       case .simulator(let model): return model.cpu
       case .unknown: return .unknown
@@ -2685,6 +2712,7 @@ extension Device.CPU: CustomStringConvertible {
       case .m2: return "M2"
       case .m3: return "M3"
       case .m4: return "M4"
+      case .m5: return "M5"
       case .unknown: return "unknown"
     }
   #elseif os(watchOS)

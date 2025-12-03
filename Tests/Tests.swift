@@ -88,6 +88,10 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.iPadPro11Inch2.cpu, Device.CPU.a12ZBionic)
     XCTAssertEqual(Device.iPadPro11Inch3.cpu, Device.CPU.m1)
     XCTAssertEqual(Device.iPadPro11Inch4.cpu, Device.CPU.m2)
+    XCTAssertEqual(Device.iPadPro11M4.cpu, Device.CPU.m4)
+    XCTAssertEqual(Device.iPadPro13M4.cpu, Device.CPU.m4)
+    XCTAssertEqual(Device.iPadPro11M5.cpu, Device.CPU.m5)
+    XCTAssertEqual(Device.iPadPro13M5.cpu, Device.CPU.m5)
   #elseif os(tvOS)
     XCTAssertEqual(Device.appleTVHD.cpu, Device.CPU.a8)
     XCTAssertEqual(Device.appleTV4K.cpu, Device.CPU.a10XFusion)
@@ -101,6 +105,8 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.CPU.a16Bionic.description, "A16 Bionic")
     XCTAssertEqual(Device.CPU.m1.description, "M1")
     XCTAssertEqual(Device.CPU.m2.description, "M2")
+    XCTAssertEqual(Device.CPU.m4.description, "M4")
+    XCTAssertEqual(Device.CPU.m5.description, "M5")
   }
   #endif
 
@@ -494,6 +500,8 @@ class DeviceKitTests: XCTestCase {
       .iPadPro12Inch6,
       .iPadPro11M4,
       .iPadPro13M4,
+      .iPadPro11M5,
+      .iPadPro13M5,
     ])
   }
 
@@ -578,6 +586,8 @@ class DeviceKitTests: XCTestCase {
       .iPadPro12Inch6,
       .iPadPro11M4,
       .iPadPro13M4,
+      .iPadPro11M5,
+      .iPadPro13M5,
     ]
     for device in Device.allRealDevices {
       XCTAssertTrue(device.has5gSupport == device.isOneOf(has5gDevices), "testHas5gSupport failed for \(device.description)")
@@ -666,6 +676,8 @@ class DeviceKitTests: XCTestCase {
       .iPadPro12Inch6,
       .iPadPro11M4,
       .iPadPro13M4,
+      .iPadPro11M5,
+      .iPadPro13M5,
     ]
     for device in Device.allRealDevices {
       XCTAssertTrue(device.hasLidarSensor == device.isOneOf(lidarDevices), "testLidarValues failed for \(device.description)")
@@ -707,6 +719,8 @@ class DeviceKitTests: XCTestCase {
       .iPadPro12Inch6,
       .iPadPro11M4,
       .iPadPro13M4,
+      .iPadPro11M5,
+      .iPadPro13M5,
     ]
     for device in Device.allRealDevices {
       XCTAssertTrue(device.hasUSBCConnectivity == device.isOneOf(usbCDevices), "testHasUSBCConnectivity failed for \(device.description)")
