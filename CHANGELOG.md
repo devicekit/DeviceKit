@@ -20,9 +20,10 @@
 
 ### Bug fixes
 
-- Fixed iPhone Air incorrectly marked as having ultra-wide camera. ([#463](https://github.com/devicekit/DeviceKit/pull/463))
+- Fixed iPhone Air incorrectly marked as having ultra-wide camera. ([#463](https://github.com/devicekit/DeviceKit/issues/463))
 - Fixed Apple Pencil compatibility for M4 iPad Pro, M2/M3 iPad Air, iPad (10th gen), and iPad (A16) models. ([#474](https://github.com/devicekit/DeviceKit/pull/474))
 - Fixed `ApplePencilSupport` OptionSet raw values so that `.firstGenerationUsbC` no longer incorrectly overlaps with `.firstGeneration` and `.secondGeneration`. ([#474](https://github.com/devicekit/DeviceKit/pull/474))
+- Fixed naming of iPad mini devices to match Apple's official naming (lowercase "mini"). ([#458](https://github.com/devicekit/DeviceKit/issues/458))
 - Exclude unhandled files (`Info.plist`, `Device.swift.gyb`) to suppress SPM warnings. ([#484](https://github.com/devicekit/DeviceKit/pull/484))
 
 ## Version 5.7.0
