@@ -310,6 +310,18 @@ watches = [
             ["Watch7,5"], 2.2, (4,5), "Apple Watch Ultra2", "Apple Watch Ultra2", 338, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s9", False, False),
 
             Device(
+            "appleWatchSE3_40mm",
+            "Device is an [Apple Watch SE (3rd generation)]()",
+            "",
+            ["Watch7,13", "Watch7,14"], 1.8, (4,5), "Apple Watch SE (3rd generation) 40mm", "Apple Watch SE (3rd generation) 40mm", 326, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s10", False, False),
+
+            Device(
+            "appleWatchSE3_44mm",
+            "Device is an [Apple Watch SE (3rd generation)]()",
+            "",
+            ["Watch7,15", "Watch7,16"], 2.0, (4,5), "Apple Watch SE (3rd generation) 44mm", "Apple Watch SE (3rd generation) 44mm", 326, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s10", False, False),
+
+            Device(
             "appleWatchSeries10_42mm",
             "Device is an [Apple Watch Series 10]()",
             "",
