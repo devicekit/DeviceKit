@@ -41,7 +41,7 @@ This version adds support for the iPhone 17 series, Apple Watch Ultra 3 and Appl
 
 - Missing device identifiers for Apple Watch Series 9 were added.
 - Docs for Apple Watch Series 9 was updated to include specs links
-- Fixed Apple Pencil support for iPad Mini (A17 Pro).
+- Fixed Apple Pencil support for iPad mini (A17 Pro).
 
 Thanks to all the contributers of this release!
 - [Jager-yoo](https://github.com/Jager-yoo)
@@ -61,7 +61,7 @@ This version adds support for the devices announced in October 2024: ([#429](htt
 
 | Device | Case value |
 | --- | --- |
-| iPad Mini (A17 Pro) | `Device.iPadMiniA17Pro` |
+| iPad mini (A17 Pro) | `Device.iPadMiniA17Pro` |
 
 ### New February 2025 devices
 
@@ -728,8 +728,8 @@ pod 'DeviceKit', '~> 1.13'
 ```
 
 ### New iPads
-Added new iPad Mini (5th generation) and iPad Air (3rd generation)
+Added new iPad mini (5th generation) and iPad Air (3rd generation)
 ```swift
-Device.iPadMini5 // iPad Mini (5th generation)
+Device.iPadMini5 // iPad mini (5th generation)
 Device.iPadAir3 // iPad Air (3rd generation)
 ```
