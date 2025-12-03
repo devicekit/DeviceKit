@@ -14,6 +14,7 @@
 ### Bug fixes
 
 - Fixed iPhone Air incorrectly marked as having ultra-wide camera. ([#463](https://github.com/devicekit/DeviceKit/issues/463))
+- Fixed naming of iPad mini devices to match Apple's official naming (lowercase "mini"). ([#458](https://github.com/devicekit/DeviceKit/issues/458))
 
 ## Version 5.7.0
 
