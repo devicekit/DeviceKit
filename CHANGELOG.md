@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+### New devices
+
+- Add support for Apple Watch SE (3rd generation) ([#473](https://github.com/devicekit/DeviceKit/issues/473))
+
+| Device | Case value |
+| --- | --- |
+| Apple Watch SE (3rd generation) 40mm | `Device.appleWatchSE3_40mm` |
+| Apple Watch SE (3rd generation) 44mm | `Device.appleWatchSE3_44mm` |
+
 ### Bug fixes
 
 - Fixed iPhone Air incorrectly marked as having ultra-wide camera. ([#463](https://github.com/devicekit/DeviceKit/issues/463))
