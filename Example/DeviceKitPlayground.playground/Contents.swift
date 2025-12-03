@@ -96,8 +96,9 @@ if Device.volumeAvailableCapacityForImportantUsage ?? 0 > Int64(1_000) {
 // Get the underlying device
 let simulator = Device.simulator(.iPhone8Plus)
 let realDevice = Device.iPhone8Plus
-simulator.realDevice == realDevice // true
-realDevice.realDevice == realDevice // true
+
+_ = simulator.realDevice == realDevice // true
+_ = realDevice.realDevice == realDevice // true
 
 // Get device thermal state
 if device.thermalState == .nominal {

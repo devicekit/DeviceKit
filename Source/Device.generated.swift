@@ -2197,7 +2197,7 @@ extension Device {
 
   /// The volume’s available capacity in bytes for storing nonessential resources.
   @available(iOS 11.0, *)
-  public static var volumeAvailableCapacityForOpportunisticUsage: Int64? { //swiftlint:disable:this identifier_name
+  public static var volumeAvailableCapacityForOpportunisticUsage: Int64? { // swiftlint:disable:this identifier_name
     return (try? rootURL.resourceValues(forKeys: [.volumeAvailableCapacityForOpportunisticUsageKey]))?.volumeAvailableCapacityForOpportunisticUsage
   }
 
