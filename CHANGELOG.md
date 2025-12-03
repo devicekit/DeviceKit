@@ -21,6 +21,7 @@
 ### Bug fixes
 
 - Fixed iPhone Air incorrectly marked as having ultra-wide camera. ([#463](https://github.com/devicekit/DeviceKit/pull/463))
+- Fixed Apple Pencil compatibility for M4 iPad Pro, M2/M3 iPad Air, iPad (10th gen), and iPad (A16) models. ([#474](https://github.com/devicekit/DeviceKit/pull/474))
 - Exclude unhandled files (`Info.plist`, `Device.swift.gyb`) to suppress SPM warnings. ([#484](https://github.com/devicekit/DeviceKit/pull/484))
 
 ## Version 5.7.0
@@ -50,7 +51,6 @@ This version adds support for the iPhone 17 series, Apple Watch Ultra 3 and Appl
 - Missing device identifiers for Apple Watch Series 9 were added.
 - Docs for Apple Watch Series 9 was updated to include specs links
 - Fixed Apple Pencil support for iPad Mini (A17 Pro).
-- Fixed Apple Pencil compatibility for M4 iPad Pro, M2/M3 iPad Air, iPad (10th gen), and iPad (A16) models.
 
 Thanks to all the contributers of this release!
 - [Jager-yoo](https://github.com/Jager-yoo)
