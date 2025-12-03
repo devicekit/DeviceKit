@@ -611,7 +611,7 @@ public enum Device {
   /// - parameter identifier: The device identifier, e.g. "iPhone7,1". Can be obtained from `Device.identifier`.
   ///
   /// - returns: An initialized `Device`.
-  public static func mapToDevice(identifier: String) -> Device { // swiftlint:disable:this cyclomatic_complexity function_body_length
+  public static func mapToDevice(identifier: String) -> Device {
     #if os(iOS)
       switch identifier {
       case "iPod5,1": return iPodTouch5

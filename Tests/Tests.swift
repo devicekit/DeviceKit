@@ -162,7 +162,7 @@ class DeviceKitTests: XCTestCase {
     XCTAssertTrue(Device.BatteryState.unplugged(2) > Device.BatteryState.charging(1))
   }
 
-  func testMapFromIdentifier() { // swiftlint:disable:this function_body_length
+  func testMapFromIdentifier() {
     XCTAssertEqual(Device.mapToDevice(identifier: "iPod5,1"), .iPodTouch5)
     XCTAssertEqual(Device.mapToDevice(identifier: "iPod7,1"), .iPodTouch6)
     XCTAssertEqual(Device.mapToDevice(identifier: "iPhone3,1"), .iPhone4)
