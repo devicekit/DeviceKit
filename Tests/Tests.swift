@@ -594,17 +594,20 @@ class DeviceKitTests: XCTestCase {
     }
   }
 
+  #if os(iOS) || os(tvOS)
   // MARK: - volumes
-  @available(iOS 11.0, *)
+  @available(iOS 11.0, tvOS 11.0, *)
   func testVolumeTotalCapacity() {
     XCTAssertNotNil(Device.volumeTotalCapacity)
   }
 
-  @available(iOS 11.0, *)
+  @available(iOS 11.0, tvOS 11.0, *)
   func testVolumeAvailableCapacity() {
     XCTAssertNotNil(Device.volumeAvailableCapacity)
   }
+  #endif
 
+  #if os(iOS)
   @available(iOS 11.0, *)
   func testVolumeAvailableCapacityForImportantUsage() {
     XCTAssertNotNil(Device.volumeAvailableCapacityForImportantUsage)
@@ -619,6 +622,7 @@ class DeviceKitTests: XCTestCase {
   func testVolumes() {
     XCTAssertNotNil(Device.volumes)
   }
+  #endif
 
   func testCameras() {
     for device in Device.allDevicesWithCamera {

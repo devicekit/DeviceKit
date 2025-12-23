@@ -2140,7 +2140,7 @@ extension Device {
 }
 #endif
 
-#if os(iOS)
+#if os(iOS) || os(tvOS)
 // MARK: DiskSpace
 extension Device {
 
@@ -2158,7 +2158,11 @@ extension Device {
   public static var volumeAvailableCapacity: Int? {
     return (try? rootURL.resourceValues(forKeys: [.volumeAvailableCapacityKey]))?.volumeAvailableCapacity
   }
+}
+#endif
 
+#if os(iOS)
+extension Device {
   /// The volume’s available capacity in bytes for storing important resources.
   @available(iOS 11.0, *)
   public static var volumeAvailableCapacityForImportantUsage: Int64? {
