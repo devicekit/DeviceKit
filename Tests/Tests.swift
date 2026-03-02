@@ -92,6 +92,9 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.iPadPro13M4.cpu, Device.CPU.m4)
     XCTAssertEqual(Device.iPadPro11M5.cpu, Device.CPU.m5)
     XCTAssertEqual(Device.iPadPro13M5.cpu, Device.CPU.m5)
+    XCTAssertEqual(Device.iPhone17e.cpu, Device.CPU.a19)
+    XCTAssertEqual(Device.iPadAir11M4.cpu, Device.CPU.m4)
+    XCTAssertEqual(Device.iPadAir13M4.cpu, Device.CPU.m4)
   #elseif os(tvOS)
     XCTAssertEqual(Device.appleTVHD.cpu, Device.CPU.a8)
     XCTAssertEqual(Device.appleTV4K.cpu, Device.CPU.a10XFusion)
@@ -238,6 +241,11 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.mapToDevice(identifier: "iPad8,6"), .iPadPro12Inch3)
     XCTAssertEqual(Device.mapToDevice(identifier: "iPad8,7"), .iPadPro12Inch3)
     XCTAssertEqual(Device.mapToDevice(identifier: "iPad8,8"), .iPadPro12Inch3)
+    XCTAssertEqual(Device.mapToDevice(identifier: "iPhone18,5"), .iPhone17e)
+    XCTAssertEqual(Device.mapToDevice(identifier: "iPad16,8"), .iPadAir11M4)
+    XCTAssertEqual(Device.mapToDevice(identifier: "iPad16,9"), .iPadAir11M4)
+    XCTAssertEqual(Device.mapToDevice(identifier: "iPad16,10"), .iPadAir13M4)
+    XCTAssertEqual(Device.mapToDevice(identifier: "iPad16,11"), .iPadAir13M4)
   }
 
   func testScreenRatio() {
@@ -571,6 +579,7 @@ class DeviceKitTests: XCTestCase {
       .iPhone17Pro,
       .iPhone17ProMax,
       .iPhoneAir,
+      .iPhone17e,
       .iPad10,
       .iPadA16,
       .iPadAir5,
@@ -578,6 +587,8 @@ class DeviceKitTests: XCTestCase {
       .iPadAir13M2,
       .iPadAir11M3,
       .iPadAir13M3,
+      .iPadAir11M4,
+      .iPadAir13M4,
       .iPadMini6,
       .iPadMiniA17Pro,
       .iPadPro11Inch3,
@@ -699,6 +710,7 @@ class DeviceKitTests: XCTestCase {
       .iPhone17Pro,
       .iPhone17ProMax,
       .iPhoneAir,
+      .iPhone17e,
       .iPad10,
       .iPadA16,
       .iPadAir4,
@@ -707,6 +719,8 @@ class DeviceKitTests: XCTestCase {
       .iPadAir13M2,
       .iPadAir11M3,
       .iPadAir13M3,
+      .iPadAir11M4,
+      .iPadAir13M4,
       .iPadMini6,
       .iPadMiniA17Pro,
       .iPadPro11Inch,
