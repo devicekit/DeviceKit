@@ -6,6 +6,7 @@
 
 - Add support for M5 iPad Pro models. ([#467](https://github.com/devicekit/DeviceKit/pull/467))
 - Add support for Apple Watch SE (3rd generation) ([#473](https://github.com/devicekit/DeviceKit/pull/473))
+- Add support for iPhone 17e and iPad Air (M4)
 
 | Device | Case value |
 | --- | --- |
@@ -13,6 +14,9 @@
 | iPad Pro 13-inch (M5) | `Device.iPadPro13M5` |
 | Apple Watch SE (3rd generation) 40mm | `Device.appleWatchSE3_40mm` |
 | Apple Watch SE (3rd generation) 44mm | `Device.appleWatchSE3_44mm` |
+| iPhone 17e | `Device.iPhone17e` |
+| iPad Air (11-inch) (M4) | `Device.iPadAir11M4` |
+| iPad Air (13-inch) (M4) | `Device.iPadAir13M4` |
 
 ### Bug fixes
 
