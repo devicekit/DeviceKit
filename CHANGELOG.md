@@ -25,6 +25,7 @@
 - Fixed `ApplePencilSupport` OptionSet raw values so that `.firstGenerationUsbC` no longer incorrectly overlaps with `.firstGeneration` and `.secondGeneration`. ([#474](https://github.com/devicekit/DeviceKit/pull/474))
 - Fixed naming of iPad mini devices to match Apple's official naming (lowercase "mini"). ([#458](https://github.com/devicekit/DeviceKit/issues/458))
 - Exclude unhandled files (`Info.plist`, `Device.swift.gyb`) to suppress SPM warnings. ([#484](https://github.com/devicekit/DeviceKit/pull/484))
+- Fixed M5 iPad Pro device identifiers and added image URLs. ([#480](https://github.com/devicekit/DeviceKit/pull/480))
 
 ## Version 5.7.0
 
