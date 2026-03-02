@@ -43,6 +43,7 @@ jobs:
           - platform=tvOS Simulator,name=Apple TV
           - platform=tvOS Simulator,name=Apple TV 4K (3rd generation)
           - platform=watchOS Simulator,name=Apple Watch Series 10 (46mm)
+          - platform=visionOS Simulator,name=Apple Vision Pro
 
     steps:
       - uses: actions/checkout@v4
