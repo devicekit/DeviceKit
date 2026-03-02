@@ -31,9 +31,9 @@ if has_app_changes && !has_test_changes && git.lines_of_code > 10
 end
 
 # Info.plist file shouldn't change often. Leave warning if it changes.
-is_plist_change = git.modified_files.sort == ["ProjectName/Info.plist"].sort
+is_plist_change = git.modified_files.include?("Source/Info.plist")
 
-if !is_plist_change
+if is_plist_change
   warn "Plist changed, don't forget to localize your plist values"
 end
 
