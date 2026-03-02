@@ -20,9 +20,10 @@
 
 ### Bug fixes
 
-- Fixed iPhone Air incorrectly marked as having ultra-wide camera. ([#463](https://github.com/devicekit/DeviceKit/pull/463))
+- Fixed iPhone Air incorrectly marked as having ultra-wide camera. ([#463](https://github.com/devicekit/DeviceKit/issues/463))
 - Fixed Apple Pencil compatibility for M4 iPad Pro, M2/M3 iPad Air, iPad (10th gen), and iPad (A16) models. ([#474](https://github.com/devicekit/DeviceKit/pull/474))
 - Fixed `ApplePencilSupport` OptionSet raw values so that `.firstGenerationUsbC` no longer incorrectly overlaps with `.firstGeneration` and `.secondGeneration`. ([#474](https://github.com/devicekit/DeviceKit/pull/474))
+- Fixed naming of iPad mini devices to match Apple's official naming (lowercase "mini"). ([#458](https://github.com/devicekit/DeviceKit/issues/458))
 - Exclude unhandled files (`Info.plist`, `Device.swift.gyb`) to suppress SPM warnings. ([#484](https://github.com/devicekit/DeviceKit/pull/484))
 
 ## Version 5.7.0
@@ -51,7 +52,7 @@ This version adds support for the iPhone 17 series, Apple Watch Ultra 3 and Appl
 
 - Missing device identifiers for Apple Watch Series 9 were added.
 - Docs for Apple Watch Series 9 was updated to include specs links
-- Fixed Apple Pencil support for iPad Mini (A17 Pro).
+- Fixed Apple Pencil support for iPad mini (A17 Pro).
 
 Thanks to all the contributers of this release!
 - [Jager-yoo](https://github.com/Jager-yoo)
@@ -71,7 +72,7 @@ This version adds support for the devices announced in October 2024: ([#429](htt
 
 | Device | Case value |
 | --- | --- |
-| iPad Mini (A17 Pro) | `Device.iPadMiniA17Pro` |
+| iPad mini (A17 Pro) | `Device.iPadMiniA17Pro` |
 
 ### New February 2025 devices
 
@@ -738,8 +739,8 @@ pod 'DeviceKit', '~> 1.13'
 ```
 
 ### New iPads
-Added new iPad Mini (5th generation) and iPad Air (3rd generation)
+Added new iPad mini (5th generation) and iPad Air (3rd generation)
 ```swift
-Device.iPadMini5 // iPad Mini (5th generation)
+Device.iPadMini5 // iPad mini (5th generation)
 Device.iPadAir3 // iPad Air (3rd generation)
 ```
