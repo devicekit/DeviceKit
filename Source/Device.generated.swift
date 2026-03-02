@@ -428,11 +428,11 @@ public enum Device {
     case iPadPro13M4
     /// Device is an [iPad Pro 11-inch (M5)](https://support.apple.com/en-us/125406)
     ///
-    /// ![Image]()
+    /// ![Image](https://cdsassets.apple.com/content/services/pub/image?productid=301271&size=240x240)
     case iPadPro11M5
     /// Device is an [iPad Pro 13-inch (M5)](https://support.apple.com/en-us/125406)
     ///
-    /// ![Image]()
+    /// ![Image](https://cdsassets.apple.com/content/services/pub/image?productid=301273&size=240x240)
     case iPadPro13M5
     /// Device is a [HomePod](https://support.apple.com/kb/SP773)
     ///
@@ -720,8 +720,8 @@ public enum Device {
       case "iPad14,5", "iPad14,6": return iPadPro12Inch6
       case "iPad16,3", "iPad16,4": return iPadPro11M4
       case "iPad16,5", "iPad16,6": return iPadPro13M4
-      case "iPad17,3", "iPad17,4": return iPadPro11M5
-      case "iPad17,5", "iPad17,6": return iPadPro13M5
+      case "iPad17,1", "iPad17,2": return iPadPro11M5
+      case "iPad17,3", "iPad17,4": return iPadPro13M5
       case "AudioAccessory1,1": return homePod
       case "i386", "x86_64", "arm64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "iOS"))
       default: return unknown(identifier)
