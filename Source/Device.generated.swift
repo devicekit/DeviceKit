@@ -588,6 +588,15 @@ public enum Device {
     ///
     /// ![Image]()
     case appleWatchSeries11_46mm
+  #elseif os(visionOS)
+    /// Device is an [Apple Vision Pro](https://support.apple.com/kb/SP911)
+    ///
+    /// ![Image]()
+    case appleVisionPro
+    /// Device is an [Apple Vision Pro (M5)](https://support.apple.com/en-us/125436)
+    ///
+    /// ![Image]()
+    case appleVisionProM5
   #endif
 
   /// Device is [Simulator](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/Introduction/Introduction.html)
@@ -774,8 +783,12 @@ public enum Device {
       default: return unknown(identifier)
       }
     #elseif os(visionOS)
-      // TODO: Replace with proper implementation for visionOS.
-      return unknown(identifier)
+      switch identifier {
+      case "RealityDevice14,1": return appleVisionPro
+      case "RealityDevice17,1": return appleVisionProM5
+      case "i386", "x86_64", "arm64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "visionOS"))
+      default: return unknown(identifier)
+      }
     #else
       return unknown(identifier)
     #endif
@@ -1344,6 +1357,16 @@ public enum Device {
     public var hasForceTouchSupport: Bool {
       return isOneOf(Device.allWatchesWithForceTouchSupport) || isOneOf(Device.allWatchesWithForceTouchSupport.map(Device.simulator))
     }
+  #elseif os(visionOS)
+    /// All Vision devices
+    public static var allVisions: [Device] {
+       return [.appleVisionPro, .appleVisionProM5]
+    }
+
+    /// All simulator Vision devices
+    public static var allSimulatorVisions: [Device] {
+      return allVisions.map(Device.simulator)
+    }
   #endif
 
   /// Returns whether the current device is a SwiftUI preview canvas
@@ -1365,8 +1388,7 @@ public enum Device {
     #elseif os(watchOS)
       return allWatches
     #elseif os(visionOS)
-      // TODO: Replace with proper implementation for visionOS.
-      return []
+      return allVisions
     #else
       return []
     #endif
@@ -1636,7 +1658,6 @@ public enum Device {
     #elseif os(tvOS)
     return nil
     #elseif os(visionOS)
-    // TODO: Replace with proper implementation for visionOS.
     return nil
     #else
     return nil
@@ -1821,8 +1842,12 @@ extension Device: CustomStringConvertible {
       case .unknown(let identifier): return identifier
       }
     #elseif os(visionOS)
-      // TODO: Replace with proper implementation for visionOS.
-      return "Apple Vision Pro"
+      switch self {
+      case .appleVisionPro: return "Apple Vision Pro"
+      case .appleVisionProM5: return "Apple Vision Pro (M5)"
+      case .simulator(let model): return "Simulator (\(model.description))"
+      case .unknown(let identifier): return identifier
+      }
     #else
       switch self {
       case .simulator(let model): return "Simulator (\(model.description))"
@@ -1986,8 +2011,12 @@ extension Device: CustomStringConvertible {
       case .unknown(let identifier): return identifier
       }
     #elseif os(visionOS)
-      // TODO: Replace with proper implementation for visionOS.
-      return "Apple Vision Pro"
+      switch self {
+      case .appleVisionPro: return "Apple Vision Pro"
+      case .appleVisionProM5: return "Apple Vision Pro (M5)"
+      case .simulator(let model): return "Simulator (\(model.safeDescription))"
+      case .unknown(let identifier): return identifier
+      }
     #else
       switch self {
       case .simulator(let model): return "Simulator (\(model.safeDescription))"
@@ -2508,7 +2537,7 @@ extension Device {
 extension Device {
 
   public enum CPU: Comparable {
-  #if os(iOS) || os(tvOS)
+  #if os(iOS) || os(tvOS) || os(visionOS)
     case a4
     case a5
     case a5X
@@ -2707,8 +2736,12 @@ extension Device {
       case .unknown: return .unknown
     }
   #elseif os(visionOS)
-    // TODO: Replace with proper implementation for visionOS.
-    return .unknown
+    switch self {
+      case .appleVisionPro: return .m2
+      case .appleVisionProM5: return .m5
+      case .simulator(let model): return model.cpu
+      case .unknown: return .unknown
+    }
   #else
     return .unknown
   #endif
@@ -2719,7 +2752,7 @@ extension Device.CPU: CustomStringConvertible {
 
   /// A textual representation of the device.
   public var description: String {
-  #if os(iOS) || os(tvOS)
+  #if os(iOS) || os(tvOS) || os(visionOS)
     switch self {
       case .a4: return "A4"
       case .a5: return "A5"
@@ -2768,9 +2801,6 @@ extension Device.CPU: CustomStringConvertible {
       case .s10: return "S10"
       case .unknown: return "unknown"
     }
-  #elseif os(visionOS)
-    // TODO: Replace with proper implementation for visionOS.
-    return "unknown"
   #else
     return "unknown"
   #endif

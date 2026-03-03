@@ -819,4 +819,30 @@ class DeviceKitTests: XCTestCase {
 
   #endif
 
+  // MARK: - visionOS
+  #if os(visionOS)
+
+  func testMapFromIdentifier() {
+    XCTAssertEqual(Device.mapToDevice(identifier: "RealityDevice14,1"), .appleVisionPro)
+    XCTAssertEqual(Device.mapToDevice(identifier: "RealityDevice17,1"), .appleVisionProM5)
+  }
+
+  func testDeviceCPU() {
+    XCTAssertEqual(Device.appleVisionPro.cpu, Device.CPU.m2)
+    XCTAssertEqual(Device.appleVisionProM5.cpu, Device.CPU.m5)
+  }
+
+  func testDescription() {
+    XCTAssertEqual(Device.appleVisionPro.description, "Apple Vision Pro")
+    XCTAssertEqual(Device.appleVisionProM5.description, "Apple Vision Pro (M5)")
+  }
+
+  func testSafeDescription() {
+    for device in Device.allRealDevices {
+      XCTAssertEqual(device.description, device.safeDescription)
+    }
+  }
+
+  #endif
+
 }

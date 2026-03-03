@@ -156,6 +156,12 @@ tvs = [
             Device("appleTV4K3",     "Device is an [Apple TV 4K (3rd generation)](https://support.apple.com/kb/SP886)",                       "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP886/apple-tv-4k-3gen_2x.png",                           ["AppleTV14,1"], 0, (), "Apple TV 4K (3rd generation)", "Apple TV 4K (3rd generation)", -1, False, False, False, False, False, False, False, False, False, False, 0, False, 0, False, "a15Bionic", False, False),
       ]
 
+# visionOS
+visions = [
+            Device("appleVisionPro",   "Device is an [Apple Vision Pro](https://support.apple.com/kb/SP911)",            "", ["RealityDevice14,1"], 0, (1, 1), "Apple Vision Pro", "Apple Vision Pro", -1, False, False, False, False, False, False, False, False, False, False, 0, False, 0, True, "m2", True, False),
+            Device("appleVisionProM5", "Device is an [Apple Vision Pro (M5)](https://support.apple.com/en-us/125436)",   "", ["RealityDevice17,1"], 0, (1, 1), "Apple Vision Pro (M5)", "Apple Vision Pro (M5)", -1, False, False, False, False, False, False, False, False, False, False, 0, False, 0, True, "m5", True, False),
+      ]
+
 # watchOS
 watches = [
             Device(
@@ -361,6 +367,7 @@ watches = [
 iOSDevices = iPods + iPhones + iPads + homePods
 tvOSDevices = tvs
 watchOSDevices = watches
+visionOSDevices = visions
 }%
 #if os(watchOS)
 import WatchKit
@@ -418,6 +425,13 @@ public enum Device {
 % end
   #elseif os(watchOS)
 % for device in watchOSDevices:
+    /// ${device.comment}
+    ///
+    /// ![Image](${device.imageURL})
+    case ${device.caseName}
+% end
+  #elseif os(visionOS)
+% for device in visionOSDevices:
     /// ${device.comment}
     ///
     /// ![Image](${device.imageURL})
@@ -484,8 +498,13 @@ public enum Device {
       default: return unknown(identifier)
       }
     #elseif os(visionOS)
-      // TODO: Replace with proper implementation for visionOS.
-      return unknown(identifier)
+      switch identifier {
+% for device in visionOSDevices:
+      case ${', '.join(list(map(lambda device: "\"" + device + "\"", device.identifiers)))}: return ${device.caseName}
+% end
+      case "i386", "x86_64", "arm64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "visionOS"))
+      default: return unknown(identifier)
+      }
     #else
       return unknown(identifier)
     #endif
@@ -806,6 +825,16 @@ public enum Device {
     public var hasForceTouchSupport: Bool {
       return isOneOf(Device.allWatchesWithForceTouchSupport) || isOneOf(Device.allWatchesWithForceTouchSupport.map(Device.simulator))
     }
+  #elseif os(visionOS)
+    /// All Vision devices
+    public static var allVisions: [Device] {
+       return [${', '.join(list(map(lambda device: "." + device.caseName, visionOSDevices)))}]
+    }
+
+    /// All simulator Vision devices
+    public static var allSimulatorVisions: [Device] {
+      return allVisions.map(Device.simulator)
+    }
   #endif
 
   /// Returns whether the current device is a SwiftUI preview canvas
@@ -827,8 +856,7 @@ public enum Device {
     #elseif os(watchOS)
       return allWatches
     #elseif os(visionOS)
-      // TODO: Replace with proper implementation for visionOS.
-      return []
+      return allVisions
     #else
       return []
     #endif
@@ -974,7 +1002,6 @@ public enum Device {
     #elseif os(tvOS)
     return nil
     #elseif os(visionOS)
-    // TODO: Replace with proper implementation for visionOS.
     return nil
     #else
     return nil
@@ -1034,8 +1061,13 @@ extension Device: CustomStringConvertible {
       case .unknown(let identifier): return identifier
       }
     #elseif os(visionOS)
-      // TODO: Replace with proper implementation for visionOS.
-      return "Apple Vision Pro"
+      switch self {
+% for device in visionOSDevices:
+      case .${device.caseName}: return "${device.description}"
+% end
+      case .simulator(let model): return "Simulator (\(model.description))"
+      case .unknown(let identifier): return identifier
+      }
     #else
       switch self {
       case .simulator(let model): return "Simulator (\(model.description))"
@@ -1074,8 +1106,13 @@ extension Device: CustomStringConvertible {
       case .unknown(let identifier): return identifier
       }
     #elseif os(visionOS)
-      // TODO: Replace with proper implementation for visionOS.
-      return "Apple Vision Pro"
+      switch self {
+  % for device in visionOSDevices:
+      case .${device.caseName}: return "${device.safeDescription}"
+  % end
+      case .simulator(let model): return "Simulator (\(model.safeDescription))"
+      case .unknown(let identifier): return identifier
+      }
     #else
       switch self {
       case .simulator(let model): return "Simulator (\(model.safeDescription))"
@@ -1568,7 +1605,7 @@ watchOS_cpus = [
 extension Device {
 
   public enum CPU: Comparable {
-  #if os(iOS) || os(tvOS)
+  #if os(iOS) || os(tvOS) || os(visionOS)
 % for cpu in iOS_cpus:
     case ${cpu.name}
 % end
@@ -1607,8 +1644,13 @@ extension Device {
       case .unknown: return .unknown
     }
   #elseif os(visionOS)
-    // TODO: Replace with proper implementation for visionOS.
-    return .unknown
+    switch self {
+    % for device in visionOSDevices:
+      case .${device.caseName}: return .${device.cpu}
+    % end
+      case .simulator(let model): return model.cpu
+      case .unknown: return .unknown
+    }
   #else
     return .unknown
   #endif
@@ -1619,7 +1661,7 @@ extension Device.CPU: CustomStringConvertible {
 
   /// A textual representation of the device.
   public var description: String {
-  #if os(iOS) || os(tvOS)
+  #if os(iOS) || os(tvOS) || os(visionOS)
     switch self {
 % for cpu in iOS_cpus:
       case .${cpu.name}: return "${cpu.description}"
@@ -1633,9 +1675,6 @@ extension Device.CPU: CustomStringConvertible {
 % end
       case .unknown: return "unknown"
     }
-  #elseif os(visionOS)
-    // TODO: Replace with proper implementation for visionOS.
-    return "unknown"
   #else
     return "unknown"
   #endif
