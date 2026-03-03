@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+## Version 5.8.0
+
+Releasedate: 2026-03-03
+
+```ruby
+pod 'DeviceKit', '~> 5.8'
+```
+
 ### New devices
 
 - Add support for M5 iPad Pro models. ([#467](https://github.com/devicekit/DeviceKit/pull/467))
