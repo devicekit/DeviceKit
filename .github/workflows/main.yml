@@ -30,19 +30,19 @@ jobs:
           DANGER_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   test:
-    runs-on: macos-15
+    runs-on: macos-26
 
     strategy:
       matrix:
         platform:
-          - platform=iOS Simulator,name=iPhone 16 Pro Max
-          - platform=iOS Simulator,name=iPhone 16 Pro
-          - platform=iOS Simulator,name=iPhone 16
-          - platform=iOS Simulator,name=iPhone 16 Plus
-          - platform=iOS Simulator,name=iPhone SE (3rd generation)
+          - platform=iOS Simulator,name=iPhone 17 Pro Max
+          - platform=iOS Simulator,name=iPhone 17 Pro
+          - platform=iOS Simulator,name=iPhone 17
+          - platform=iOS Simulator,name=iPhone Air
+          - platform=iOS Simulator,name=iPhone 16e
           - platform=tvOS Simulator,name=Apple TV
           - platform=tvOS Simulator,name=Apple TV 4K (3rd generation)
-          - platform=watchOS Simulator,name=Apple Watch Series 10 (46mm)
+          - platform=watchOS Simulator,name=Apple Watch Series 11 (46mm)
 
     steps:
       - uses: actions/checkout@v4
