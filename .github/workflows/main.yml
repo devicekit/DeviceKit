@@ -30,7 +30,7 @@ jobs:
           DANGER_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   test:
-    runs-on: macos-15
+    runs-on: macos-26
 
     strategy:
       fail-fast: false
