@@ -40,6 +40,10 @@ jobs:
           - platform=iOS Simulator,name=iPhone 17
           - platform=iOS Simulator,name=iPhone Air
           - platform=iOS Simulator,name=iPhone 16e
+          - platform=iOS Simulator,name=iPad (A16)
+          - platform=iOS Simulator,name=iPad Air 13-inch (M3)
+          - platform=iOS Simulator,name=iPad mini (A17 Pro)
+          - platform=iOS Simulator,name=iPad Pro 13-inch (M5)
           - platform=tvOS Simulator,name=Apple TV
           - platform=tvOS Simulator,name=Apple TV 4K (3rd generation)
           - platform=watchOS Simulator,name=Apple Watch Series 11 (46mm)
