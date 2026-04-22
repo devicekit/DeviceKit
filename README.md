@@ -38,6 +38,7 @@ See our detailed [changelog](CHANGELOG.md) for the latest features, improvements
 - [x] Detect available sensors (Touch ID, Face ID)
 - [x] Detect available disk space
 - [x] Apple Pencil support detection
+- [x] Action Button detection
 
 ## Requirements
 
@@ -167,6 +168,14 @@ if device.isSimulator {
   // Running on one of the simulators(iPod/iPhone/iPad)
   // Skip doing something irrelevant for Simulator
 } 
+```
+
+### Check if a device has an Action Button
+```swift
+let device = Device.current
+if device.hasActionButton {
+  // Action Button specific behavior
+}
 ```
 
 ### Get the Simulator Device
