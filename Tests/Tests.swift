@@ -551,6 +551,23 @@ class DeviceKitTests: XCTestCase {
     }
   }
 
+  func testHasActionButton() {
+    let actionButtonDevices: [Device] = [
+      .iPhone15Pro,
+      .iPhone15ProMax,
+      .iPhone16,
+      .iPhone16Plus,
+      .iPhone16Pro,
+      .iPhone16ProMax,
+      .iPhone17,
+      .iPhone17Pro,
+      .iPhone17ProMax,
+    ]
+    for device in Device.allRealDevices {
+      XCTAssertTrue(device.hasActionButton == device.isOneOf(actionButtonDevices), "testHasActionButton failed for \(device.description)")
+    }
+  }
+
   func testHas5gSupport() {
     let has5gDevices: [Device] = [
       .iPhone12,
