@@ -1335,6 +1335,16 @@ public enum Device {
       return allWatches.map(Device.simulator)
     }
 
+    /// All watches that feature a screen with rounded corners.
+    public static var allDevicesWithRoundedDisplayCorners: [Device] {
+      return [.appleWatchSeries4_40mm, .appleWatchSeries4_44mm, .appleWatchSeries5_40mm, .appleWatchSeries5_44mm, .appleWatchSeries6_40mm, .appleWatchSeries6_44mm, .appleWatchSeries7_41mm, .appleWatchSeries7_45mm, .appleWatchSeries8_41mm, .appleWatchSeries8_45mm, .appleWatchSE2_40mm, .appleWatchSE2_44mm, .appleWatchUltra, .appleWatchSeries9_41mm, .appleWatchSeries9_45mm, .appleWatchUltra2, .appleWatchSeries10_42mm, .appleWatchSeries10_46mm, .appleWatchUltra3, .appleWatchSeries11_42mm, .appleWatchSeries11_46mm]
+    }
+
+    /// Returns whether or not the watch has a screen with rounded corners.
+    public var hasRoundedDisplayCorners: Bool {
+      return isOneOf(Device.allDevicesWithRoundedDisplayCorners) || isOneOf(Device.allDevicesWithRoundedDisplayCorners.map(Device.simulator))
+    }
+
     /// All watches that have Force Touch support.
     public static var allWatchesWithForceTouchSupport: [Device] {
       return [.appleWatchSeries0_38mm, .appleWatchSeries0_42mm, .appleWatchSeries1_38mm, .appleWatchSeries1_42mm, .appleWatchSeries2_38mm, .appleWatchSeries2_42mm, .appleWatchSeries3_38mm, .appleWatchSeries3_42mm, .appleWatchSeries4_40mm, .appleWatchSeries4_44mm, .appleWatchSeries5_40mm, .appleWatchSeries5_44mm]

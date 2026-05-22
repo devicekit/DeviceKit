@@ -210,37 +210,37 @@ watches = [
             "appleWatchSeries4_40mm",
             "Device is an [Apple Watch Series 4](https://support.apple.com/kb/SP778)",
             "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM911/en_US/aw-series4-nike-240.png",
-            ["Watch4,1", "Watch4,3"], 1.8, (4,5), "Apple Watch Series 4 40mm", "Apple Watch Series 4 40mm", 326, False, False, False, False, False, False, False, True, False, False, 0, True, 0, False, "s4", False, False),
+            ["Watch4,1", "Watch4,3"], 1.8, (4,5), "Apple Watch Series 4 40mm", "Apple Watch Series 4 40mm", 326, False, False, False, False, False, False, False, True, True, False, 0, True, 0, False, "s4", False, False),
 
             Device(
             "appleWatchSeries4_44mm",
             "Device is an [Apple Watch Series 4](https://support.apple.com/kb/SP778)",
             "https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM911/en_US/aw-series4-nike-240.png",
-            ["Watch4,2", "Watch4,4"], 2.0, (4,5), "Apple Watch Series 4 44mm", "Apple Watch Series 4 44mm", 326, False, False, False, False, False, False, False, True, False, False, 0, True, 0, False, "s4", False, False),
+            ["Watch4,2", "Watch4,4"], 2.0, (4,5), "Apple Watch Series 4 44mm", "Apple Watch Series 4 44mm", 326, False, False, False, False, False, False, False, True, True, False, 0, True, 0, False, "s4", False, False),
 
             Device(
             "appleWatchSeries5_40mm",
             "Device is an [Apple Watch Series 5](https://support.apple.com/kb/SP808)",
             "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP808/sp808-apple-watch-series-5_2x.png",
-            ["Watch5,1", "Watch5,3"], 1.8, (4,5), "Apple Watch Series 5 40mm", "Apple Watch Series 5 40mm", 326, False, False, False, False, False, False, False, True, False, False, 0, True, 0, False, "s5", False, False),
+            ["Watch5,1", "Watch5,3"], 1.8, (4,5), "Apple Watch Series 5 40mm", "Apple Watch Series 5 40mm", 326, False, False, False, False, False, False, False, True, True, False, 0, True, 0, False, "s5", False, False),
 
             Device(
             "appleWatchSeries5_44mm",
             "Device is an [Apple Watch Series 5](https://support.apple.com/kb/SP808)",
             "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP808/sp808-apple-watch-series-5_2x.png",
-            ["Watch5,2", "Watch5,4"], 2.0, (4,5), "Apple Watch Series 5 44mm", "Apple Watch Series 5 44mm", 326, False, False, False, False, False, False, False, True, False, False, 0, True, 0, False, "s5", False, False),
+            ["Watch5,2", "Watch5,4"], 2.0, (4,5), "Apple Watch Series 5 44mm", "Apple Watch Series 5 44mm", 326, False, False, False, False, False, False, False, True, True, False, 0, True, 0, False, "s5", False, False),
 
             Device(
             "appleWatchSeries6_40mm",
             "Device is an [Apple Watch Series 6](https://support.apple.com/kb/SP826)",
             "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP826/sp826-apple-watch-series6-580_2x.png",
-            ["Watch6,1", "Watch6,3"], 1.8, (4,5), "Apple Watch Series 6 40mm", "Apple Watch Series 6 40mm", 326, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s6", False, False),
+            ["Watch6,1", "Watch6,3"], 1.8, (4,5), "Apple Watch Series 6 40mm", "Apple Watch Series 6 40mm", 326, False, False, False, False, False, False, False, True, True, False, 0, False, 0, False, "s6", False, False),
 
             Device(
             "appleWatchSeries6_44mm",
             "Device is an [Apple Watch Series 6](https://support.apple.com/kb/SP826)",
             "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP826/sp826-apple-watch-series6-580_2x.png",
-            ["Watch6,2", "Watch6,4"], 2.0, (4,5), "Apple Watch Series 6 44mm", "Apple Watch Series 6 44mm", 326, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s6", False, False),
+            ["Watch6,2", "Watch6,4"], 2.0, (4,5), "Apple Watch Series 6 44mm", "Apple Watch Series 6 44mm", 326, False, False, False, False, False, False, False, True, True, False, 0, False, 0, False, "s6", False, False),
 
             Device(
             "appleWatchSE_40mm",
@@ -258,61 +258,61 @@ watches = [
             "appleWatchSeries7_41mm",
             "Device is an [Apple Watch Series 7](https://support.apple.com/kb/SP860)",
             "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP860/series7-480_2x.png",
-            ["Watch6,6", "Watch6,8"], 1.8, (4,5), "Apple Watch Series 7 41mm", "Apple Watch Series 7 41mm", 326, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s7", False, False),
+            ["Watch6,6", "Watch6,8"], 1.8, (4,5), "Apple Watch Series 7 41mm", "Apple Watch Series 7 41mm", 326, False, False, False, False, False, False, False, True, True, False, 0, False, 0, False, "s7", False, False),
 
             Device(
             "appleWatchSeries7_45mm",
             "Device is an [Apple Watch Series 7](https://support.apple.com/kb/SP860)",
             "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP860/series7-480_2x.png",
-            ["Watch6,7", "Watch6,9"], 2.0, (4,5), "Apple Watch Series 7 45mm", "Apple Watch Series 7 45mm", 326, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s7", False, False),
+            ["Watch6,7", "Watch6,9"], 2.0, (4,5), "Apple Watch Series 7 45mm", "Apple Watch Series 7 45mm", 326, False, False, False, False, False, False, False, True, True, False, 0, False, 0, False, "s7", False, False),
 
             Device(
             "appleWatchSeries8_41mm",
             "Device is an [Apple Watch Series 8](https://support.apple.com/kb/SP878)",
             "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP878/apple-watch-series8_2x.png",
-            ["Watch6,14", "Watch6,16"], 1.8, (4,5), "Apple Watch Series 8 41mm", "Apple Watch Series 8 41mm", 326, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s8", False, False),
+            ["Watch6,14", "Watch6,16"], 1.8, (4,5), "Apple Watch Series 8 41mm", "Apple Watch Series 8 41mm", 326, False, False, False, False, False, False, False, True, True, False, 0, False, 0, False, "s8", False, False),
 
             Device(
             "appleWatchSeries8_45mm",
             "Device is an [Apple Watch Series 8](https://support.apple.com/kb/SP878)",
             "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP878/apple-watch-series8_2x.png",
-            ["Watch6,15", "Watch6,17"], 2.0, (4,5), "Apple Watch Series 8 45mm", "Apple Watch Series 8 45mm", 326, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s8", False, False),
+            ["Watch6,15", "Watch6,17"], 2.0, (4,5), "Apple Watch Series 8 45mm", "Apple Watch Series 8 45mm", 326, False, False, False, False, False, False, False, True, True, False, 0, False, 0, False, "s8", False, False),
 
             Device(
             "appleWatchSE2_40mm",
             "Device is an [Apple Watch SE (2nd generation)](https://support.apple.com/kb/SP877)",
             "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP877/apple-watch-se-2nd-gen_2x.png",
-            ["Watch6,10", "Watch6,12"], 1.8, (4,5), "Apple Watch SE (2nd generation) 40mm", "Apple Watch SE (2nd generation) 40mm", 326, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s8", False, False),
+            ["Watch6,10", "Watch6,12"], 1.8, (4,5), "Apple Watch SE (2nd generation) 40mm", "Apple Watch SE (2nd generation) 40mm", 326, False, False, False, False, False, False, False, True, True, False, 0, False, 0, False, "s8", False, False),
 
             Device(
             "appleWatchSE2_44mm",
             "Device is an [Apple Watch SE (2nd generation)](https://support.apple.com/kb/SP877)",
             "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP877/apple-watch-se-2nd-gen_2x.png",
-            ["Watch6,11", "Watch6,13"], 2.0, (4,5), "Apple Watch SE (2nd generation) 44mm", "Apple Watch SE (2nd generation) 44mm", 326, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s8", False, False),
+            ["Watch6,11", "Watch6,13"], 2.0, (4,5), "Apple Watch SE (2nd generation) 44mm", "Apple Watch SE (2nd generation) 44mm", 326, False, False, False, False, False, False, False, True, True, False, 0, False, 0, False, "s8", False, False),
 
             Device(
             "appleWatchUltra",
             "Device is an [Apple Watch Ultra](https://support.apple.com/kb/SP879)",
             "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP879/apple-watch-ultra_2x.png",
-            ["Watch6,18"], 2.2, (4,5), "Apple Watch Ultra", "Apple Watch Ultra", 338, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s8", False, False),
+            ["Watch6,18"], 2.2, (4,5), "Apple Watch Ultra", "Apple Watch Ultra", 338, False, False, False, False, False, False, False, True, True, False, 0, False, 0, False, "s8", False, False),
 
             Device(
             "appleWatchSeries9_41mm",
             "Device is an [Apple Watch Series 9](https://support.apple.com/kb/SP905)",
             "",
-            ["Watch7,1", "Watch7,3"], 1.9, (4,5), "Apple Watch Series 9 41mm", "Apple Watch Series 9 41mm", 326, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s9", False, False),
+            ["Watch7,1", "Watch7,3"], 1.9, (4,5), "Apple Watch Series 9 41mm", "Apple Watch Series 9 41mm", 326, False, False, False, False, False, False, False, True, True, False, 0, False, 0, False, "s9", False, False),
 
             Device(
             "appleWatchSeries9_45mm",
             "Device is an [Apple Watch Series 9](https://support.apple.com/kb/SP905)",
             "",
-            ["Watch7,2", "Watch7,4"], 2.0, (4,5), "Apple Watch Series 9 45mm", "Apple Watch Series 9 45mm", 326, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s9", False, False),
+            ["Watch7,2", "Watch7,4"], 2.0, (4,5), "Apple Watch Series 9 45mm", "Apple Watch Series 9 45mm", 326, False, False, False, False, False, False, False, True, True, False, 0, False, 0, False, "s9", False, False),
 
              Device(
             "appleWatchUltra2",
             "Device is an [Apple Watch Ultra2]()",
             "",
-            ["Watch7,5"], 2.2, (4,5), "Apple Watch Ultra2", "Apple Watch Ultra2", 338, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s9", False, False),
+            ["Watch7,5"], 2.2, (4,5), "Apple Watch Ultra2", "Apple Watch Ultra2", 338, False, False, False, False, False, False, False, True, True, False, 0, False, 0, False, "s9", False, False),
 
             Device(
             "appleWatchSE3_40mm",
@@ -330,31 +330,31 @@ watches = [
             "appleWatchSeries10_42mm",
             "Device is an [Apple Watch Series 10]()",
             "",
-            ["Watch7,8", "Watch7,10"], 1.9, (374,446), "Apple Watch Series 10 42mm", "Apple Watch Series 10 42mm", 326, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s10", False, False),
+            ["Watch7,8", "Watch7,10"], 1.9, (374,446), "Apple Watch Series 10 42mm", "Apple Watch Series 10 42mm", 326, False, False, False, False, False, False, False, True, True, False, 0, False, 0, False, "s10", False, False),
 
             Device(
             "appleWatchSeries10_46mm",
             "Device is an [Apple Watch Series 10]()",
             "",
-            ["Watch7,9", "Watch7,11"], 2.0, (416,496), "Apple Watch Series 10 46mm", "Apple Watch Series 10 46mm", 326, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s10", False, False),
+            ["Watch7,9", "Watch7,11"], 2.0, (416,496), "Apple Watch Series 10 46mm", "Apple Watch Series 10 46mm", 326, False, False, False, False, False, False, False, True, True, False, 0, False, 0, False, "s10", False, False),
 
             Device(
             "appleWatchUltra3",
             "Device is an [Apple Watch Ultra 3]()",
             "",
-            ["Watch7,12"], 2.2, (4,5), "Apple Watch Ultra 3", "Apple Watch Ultra 3", 338, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s10", False, False),
+            ["Watch7,12"], 2.2, (4,5), "Apple Watch Ultra 3", "Apple Watch Ultra 3", 338, False, False, False, False, False, False, False, True, True, False, 0, False, 0, False, "s10", False, False),
 
             Device(
             "appleWatchSeries11_42mm",
             "Device is an [Apple Watch Series 11]()",
             "",
-            ["Watch7,17", "Watch7,19"], 1.9, (374,446), "Apple Watch Series 11 42mm", "Apple Watch Series 11 42mm", 326, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s10", False, False),
+            ["Watch7,17", "Watch7,19"], 1.9, (374,446), "Apple Watch Series 11 42mm", "Apple Watch Series 11 42mm", 326, False, False, False, False, False, False, False, True, True, False, 0, False, 0, False, "s10", False, False),
 
             Device(
             "appleWatchSeries11_46mm",
             "Device is an [Apple Watch Series 11]()",
             "",
-            ["Watch7,18", "Watch7,20"], 2.0, (416,496), "Apple Watch Series 11 46mm", "Apple Watch Series 11 46mm", 326, False, False, False, False, False, False, False, True, False, False, 0, False, 0, False, "s10", False, False),
+            ["Watch7,18", "Watch7,20"], 2.0, (416,496), "Apple Watch Series 11 46mm", "Apple Watch Series 11 46mm", 326, False, False, False, False, False, False, False, True, True, False, 0, False, 0, False, "s10", False, False),
 
   ]
 
@@ -795,6 +795,16 @@ public enum Device {
     /// All simulator Watches
     public static var allSimulatorWatches: [Device] {
       return allWatches.map(Device.simulator)
+    }
+
+    /// All watches that feature a screen with rounded corners.
+    public static var allDevicesWithRoundedDisplayCorners: [Device] {
+      return [${', '.join(list(map(lambda device: "." + device.caseName, list(filter(lambda device: device.hasRoundedDisplayCorners == True, watchOSDevices)))))}]
+    }
+
+    /// Returns whether or not the watch has a screen with rounded corners.
+    public var hasRoundedDisplayCorners: Bool {
+      return isOneOf(Device.allDevicesWithRoundedDisplayCorners) || isOneOf(Device.allDevicesWithRoundedDisplayCorners.map(Device.simulator))
     }
 
     /// All watches that have Force Touch support.
