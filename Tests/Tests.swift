@@ -16,6 +16,58 @@ class DeviceKitTests: XCTestCase {
 
   let device = Device.current
 
+  func testIsFoldable() {
+    for model in Device.allRealDevices {
+      #if os(iOS)
+      let expected = model == .iPhoneDuo
+      #else
+      let expected = false
+      #endif
+      XCTAssertEqual(model.isFoldable, expected, model.description)
+      XCTAssertEqual(Device.simulator(model).isFoldable, expected, model.description)
+    }
+    XCTAssertFalse(Device.unknown("unrecognized").isFoldable)
+    XCTAssertFalse(Device.simulator(.unknown("unrecognized")).isFoldable)
+  }
+
+  #if os(iOS) || os(watchOS)
+  func testProvisionalDevices() {
+    #if os(iOS)
+    let models: [(String, Device)] = [
+      ("iPhone18Pro", .iPhone18Pro),
+      ("iPhone18ProMax", .iPhone18ProMax),
+      ("iPhoneDuo", .iPhoneDuo)
+    ]
+    let chip = Device.CPU.a20Pro
+    XCTAssertEqual(chip.description, "A20 Pro")
+    #else
+    let models: [(String, Device)] = [
+      ("appleWatchSeries12_42mm", .appleWatchSeries12_42mm),
+      ("appleWatchSeries12_46mm", .appleWatchSeries12_46mm),
+      ("appleWatchUltra4", .appleWatchUltra4)
+    ]
+    let chip = Device.CPU.s11
+    XCTAssertEqual(chip.description, "S11")
+    #endif
+    for (name, model) in models {
+      XCTAssertEqual(Device.mapToDevice(identifier: "placeholder:" + name), model)
+      #if os(iOS)
+      XCTAssertTrue(model.isPhone)
+      XCTAssertFalse(model.isPad)
+      #endif
+      XCTAssertTrue(Device.allRealDevices.contains(model))
+      XCTAssertTrue(Device.allSimulators.contains(.simulator(model)))
+      for variant in [model, .simulator(model)] {
+        XCTAssertEqual(variant.cpu, chip)
+        XCTAssertEqual(variant.diagonal, -1)
+        XCTAssertEqual(variant.screenRatio.width, -1)
+        XCTAssertEqual(variant.screenRatio.height, -1)
+        XCTAssertNil(variant.ppi)
+      }
+    }
+  }
+  #endif
+
   func testDeviceSimulator() {
     #if os(macOS)
     XCTAssertFalse(device.isOneOf(Device.allSimulators))
@@ -475,6 +527,7 @@ class DeviceKitTests: XCTestCase {
       .iPhone16ProMax,
       .iPhone17ProMax,
       .iPhoneAir,
+      .iPhone18ProMax,
     ])
   }
 
@@ -494,6 +547,8 @@ class DeviceKitTests: XCTestCase {
       .iPhone16ProMax,
       .iPhone17Pro,
       .iPhone17ProMax,
+      .iPhone18Pro,
+      .iPhone18ProMax,
       .iPadPro9Inch,
       .iPadPro12Inch,
       .iPadPro12Inch2,
@@ -544,6 +599,8 @@ class DeviceKitTests: XCTestCase {
       .iPhone17,
       .iPhone17Pro,
       .iPhone17ProMax,
+      .iPhone18Pro,
+      .iPhone18ProMax,
       .iPhoneAir,
     ]
     for device in Device.allRealDevices {
@@ -578,6 +635,8 @@ class DeviceKitTests: XCTestCase {
       .iPhone17,
       .iPhone17Pro,
       .iPhone17ProMax,
+      .iPhone18Pro,
+      .iPhone18ProMax,
       .iPhoneAir,
       .iPhone17e,
       .iPad10,
@@ -678,6 +737,8 @@ class DeviceKitTests: XCTestCase {
       .iPhone16ProMax,
       .iPhone17Pro,
       .iPhone17ProMax,
+      .iPhone18Pro,
+      .iPhone18ProMax,
       .iPadPro11Inch2,
       .iPadPro12Inch4,
       .iPadPro11Inch3,
@@ -708,6 +769,8 @@ class DeviceKitTests: XCTestCase {
       .iPhone17,
       .iPhone17Pro,
       .iPhone17ProMax,
+      .iPhone18Pro,
+      .iPhone18ProMax,
       .iPhoneAir,
       .iPhone17e,
       .iPad10,
