@@ -33,16 +33,18 @@ jobs:
     runs-on: macos-15
 
     strategy:
+      fail-fast: false
       matrix:
         platform:
-          - platform=iOS Simulator,name=iPhone 16 Pro Max
-          - platform=iOS Simulator,name=iPhone 16 Pro
-          - platform=iOS Simulator,name=iPhone 16
-          - platform=iOS Simulator,name=iPhone 16 Plus
-          - platform=iOS Simulator,name=iPhone SE (3rd generation)
-          - platform=tvOS Simulator,name=Apple TV
-          - platform=tvOS Simulator,name=Apple TV 4K (3rd generation)
-          - platform=watchOS Simulator,name=Apple Watch Series 10 (46mm)
+          # Use Xcode 26.2's default devices and keep the runtime in sync below.
+          - platform=iOS Simulator,name=iPhone 17 Pro Max,OS=26.2
+          - platform=iOS Simulator,name=iPhone 17 Pro,OS=26.2
+          - platform=iOS Simulator,name=iPhone 17,OS=26.2
+          - platform=iOS Simulator,name=iPhone Air,OS=26.2
+          - platform=iOS Simulator,name=iPhone 16e,OS=26.2
+          - platform=tvOS Simulator,name=Apple TV,OS=26.2
+          - platform=tvOS Simulator,name=Apple TV 4K (3rd generation),OS=26.2
+          - platform=watchOS Simulator,name=Apple Watch Series 11 (46mm),OS=26.2
 
     steps:
       - uses: actions/checkout@v4
@@ -50,6 +52,9 @@ jobs:
       - uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: '26.2'
+
+      - name: List available simulators
+        run: xcrun simctl list devices available
 
       - uses: ruby/setup-ruby@v1
         with:
