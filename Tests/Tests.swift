@@ -16,6 +16,42 @@ class DeviceKitTests: XCTestCase {
 
   let device = Device.current
 
+  func testIsFoldable() {
+    for model in Device.allRealDevices {
+      #if os(iOS)
+      let expected = model == .iPhoneDuo
+      #else
+      let expected = false
+      #endif
+      XCTAssertEqual(model.isFoldable, expected, model.description)
+      XCTAssertEqual(Device.simulator(model).isFoldable, expected, model.description)
+    }
+    XCTAssertFalse(Device.unknown("unrecognized").isFoldable)
+    XCTAssertFalse(Device.simulator(.unknown("unrecognized")).isFoldable)
+  }
+
+  #if os(iOS)
+  func testProvisionalIPhoneDuo() {
+    let model = Device.iPhoneDuo
+    XCTAssertEqual(Device.mapToDevice(identifier: "placeholder:iPhoneDuo"), model)
+    XCTAssertEqual(model.description, "iPhone Duo")
+    XCTAssertEqual(model.safeDescription, "iPhone Duo")
+    XCTAssertTrue(Device.allPhones.contains(model))
+    XCTAssertTrue(Device.allRealDevices.contains(model))
+    XCTAssertTrue(Device.allSimulators.contains(.simulator(model)))
+    for variant in [model, .simulator(model)] {
+      XCTAssertTrue(variant.isPhone)
+      XCTAssertFalse(variant.isPad)
+      XCTAssertTrue(variant.isFoldable)
+      XCTAssertEqual(variant.cpu, .a20Pro)
+      XCTAssertEqual(variant.diagonal, -1)
+      XCTAssertEqual(variant.screenRatio.width, -1)
+      XCTAssertEqual(variant.screenRatio.height, -1)
+      XCTAssertNil(variant.ppi)
+    }
+  }
+  #endif
+
   #if os(iOS) || os(watchOS)
   func testSeptember2026Devices() {
     struct ExpectedDevice {

@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### Provisional iPhone Duo support
+
+- Add `Device.iPhoneDuo` with the A20 Pro chip and `isFoldable`, true only for iPhone Duo and its simulator.
+- Use `placeholder:iPhoneDuo` until the hardware identifier is confirmed, and omit the image. Display metrics remain unknown (`-1` for diagonal/ratio, `nil` for PPI); other unconfirmed capabilities use false/empty defaults. Automatic hardware detection requires a confirmed identifier.
+
 ## Version 5.9.0
 
 Releasedate: 2026-09-22
