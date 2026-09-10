@@ -1,5 +1,5 @@
-// swift-tools-version:6.0
-// ===----------------------------------------------------------------------=== //
+// swift-tools-version:5.6
+//===----------------------------------------------------------------------===//
 //
 // This source file is part of the DeviceKit open source project
 //
@@ -8,7 +8,7 @@
 // License: https://github.com/dennisweissmann/DeviceKit/blob/master/LICENSE
 // Contributors: https://github.com/dennisweissmann/DeviceKit#contributors
 //
-// ===----------------------------------------------------------------------=== //
+//===----------------------------------------------------------------------===//
 
 import PackageDescription
 
@@ -33,16 +33,20 @@ let package = Package(
             name: "DeviceKit",
             dependencies: [],
             path: "Source",
-            exclude: ["Info.plist", "Device.swift.gyb"],
             resources: [.process("PrivacyInfo.xcprivacy")],
+            swiftSettings: [
+                .enableExperimentalFeature("StrictConcurrency"),
+            ]
         ),
         .testTarget(
             name: "DeviceKitTests",
             dependencies: ["DeviceKit"],
             path: "Tests",
-            exclude: ["Info.plist"],
-            resources: [.process("../Source/PrivacyInfo.xcprivacy")]
+            resources: [.process("../Source/PrivacyInfo.xcprivacy")],
+            swiftSettings: [
+                .enableExperimentalFeature("StrictConcurrency"),
+            ]
         )
     ],
-    swiftLanguageModes: [.v5, .v6]
+    swiftLanguageVersions: [.v5]
 )

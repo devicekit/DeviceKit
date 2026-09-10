@@ -2,9 +2,21 @@
 
 ## Unreleased
 
+### New features
+
+- Add Swift 6 and strict concurrency support, including `Sendable` conformances for `Device` and its supporting types. ([#437](https://github.com/devicekit/DeviceKit/pull/437))
+
+### Breaking changes
+
+- Require main-actor access for UIKit-backed device properties, including `isPhone`, `isPad`, screen information, battery information, and orientation, and make `Device.identifier` read-only. The Xcode project now requires Swift 6, and the Xcode and Swift Package Manager watchOS deployment targets increase to watchOS 6.0. ([#437](https://github.com/devicekit/DeviceKit/pull/437))
+
 ### Maintenance
 
 - Simplify GYB device definitions with named feature parameters and defaults for unsupported features, preserving the generated Swift output. ([#508](https://github.com/devicekit/DeviceKit/pull/508))
+
+### Contributors
+
+Thanks to [SomeRandomiOSDev](https://github.com/SomeRandomiOSDev) for contributing Swift 6 and strict concurrency support in [#437](https://github.com/devicekit/DeviceKit/pull/437)!
 
 ## Version 5.8.0
 

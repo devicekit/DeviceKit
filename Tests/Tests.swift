@@ -116,6 +116,7 @@ class DeviceKitTests: XCTestCase {
   // MARK: - iOS
   #if os(iOS)
 
+  @MainActor
   func testIsPhoneIsPadIsPod() {
     // Test for https://github.com/devicekit/DeviceKit/issues/165 to prevent it from happening in the future.
 
@@ -151,6 +152,7 @@ class DeviceKitTests: XCTestCase {
     }
   }
 
+  @MainActor
   func testSystemName() {
     if UIDevice.current.userInterfaceIdiom == .pad {
       XCTAssertEqual(device.systemName, "iPadOS")
@@ -396,6 +398,7 @@ class DeviceKitTests: XCTestCase {
     }
   }
 
+  @MainActor
   func testIsPad() {
     Device.allPads.forEach { XCTAssertTrue($0.isPad) }
   }
@@ -513,11 +516,13 @@ class DeviceKitTests: XCTestCase {
     ])
   }
 
+  @MainActor
   func testGuidedAccessSession() {
     XCTAssertFalse(Device.current.isGuidedAccessSessionActive)
   }
 
   // enable once unit tests can be run on device
+  @MainActor
   func testKeepsBatteryMonitoringState() {
     UIDevice.current.isBatteryMonitoringEnabled = true
     XCTAssertTrue(UIDevice.current.isBatteryMonitoringEnabled)
