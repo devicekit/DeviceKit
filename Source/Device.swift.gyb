@@ -30,6 +30,7 @@ class Device:
       hasLidarSensor=False,
       hasUSBCConnectivity=False,
       has5gSupport=False,
+      isFoldable=False,
   ):
     self.caseName = caseName
     self.comment = comment
@@ -57,6 +58,7 @@ class Device:
     self.cpu = cpu
     self.hasUSBCConnectivity = hasUSBCConnectivity
     self.has5gSupport = has5gSupport
+    self.isFoldable = isFoldable
 
 # iOS
 iPods = [
@@ -232,6 +234,21 @@ iPhones = [
                 cpu="a19", isXSeries=True, hasFaceID=True, hasSensorHousing=True,
                 supportsWirelessCharging=True, hasRoundedDisplayCorners=True, cameras=1,
                 hasUSBCConnectivity=True, has5gSupport=True),
+
+            # Provisional models: replace placeholder identifiers and verify capabilities before release.
+            # Display metrics are unknown; Pro capabilities provisionally follow the previous generation.
+            Device("iPhone18Pro", "Provisional iPhone 18 Pro; identifier, display metrics, and capabilities await verification.", "", ["placeholder:iPhone18Pro"], -1, (-1, -1), "iPhone 18 Pro", "iPhone 18 Pro", "nil",
+                cpu="a20Pro", isPro=True, isXSeries=True, hasFaceID=True,
+                hasSensorHousing=True, supportsWirelessCharging=True, hasRoundedDisplayCorners=True, hasDynamicIsland=True,
+                cameras=123, hasLidarSensor=True, hasUSBCConnectivity=True, has5gSupport=True),
+            Device("iPhone18ProMax", "Provisional iPhone 18 Pro Max; identifier, display metrics, and capabilities await verification.", "", ["placeholder:iPhone18ProMax"], -1, (-1, -1), "iPhone 18 Pro Max", "iPhone 18 Pro Max", "nil",
+                cpu="a20Pro", isPlusFormFactor=True, isPro=True, isXSeries=True,
+                hasFaceID=True, hasSensorHousing=True, supportsWirelessCharging=True, hasRoundedDisplayCorners=True,
+                hasDynamicIsland=True, cameras=123, hasLidarSensor=True, hasUSBCConnectivity=True,
+                has5gSupport=True),
+            # Duo capabilities other than its chip and foldability are unconfirmed (false/empty defaults).
+            Device("iPhoneDuo", "Provisional iPhone Duo; identifier, display metrics, and other capabilities await verification.", "", ["placeholder:iPhoneDuo"], -1, (-1, -1), "iPhone Duo", "iPhone Duo", "nil",
+                cpu="a20Pro", isFoldable=True),
           ]
 
 iPads = [
@@ -598,6 +615,14 @@ watches = [
             ["Watch7,18", "Watch7,20"], 2.0, (416,496), "Apple Watch Series 11 46mm", "Apple Watch Series 11 46mm", 326,
                 cpu="s10", supportsWirelessCharging=True),
 
+            # Provisional models: sizes and capabilities follow Series 11 / Ultra 3 pending verification.
+            # Hardware identifiers and display metrics remain unknown.
+            Device("appleWatchSeries12_42mm", "Provisional Apple Watch Series 12 42mm; identifier, size, display metrics, and capabilities await verification.", "", ["placeholder:appleWatchSeries12_42mm"], -1, (-1, -1), "Apple Watch Series 12 42mm", "Apple Watch Series 12 42mm", "nil",
+                cpu="s11", supportsWirelessCharging=True),
+            Device("appleWatchSeries12_46mm", "Provisional Apple Watch Series 12 46mm; identifier, size, display metrics, and capabilities await verification.", "", ["placeholder:appleWatchSeries12_46mm"], -1, (-1, -1), "Apple Watch Series 12 46mm", "Apple Watch Series 12 46mm", "nil",
+                cpu="s11", supportsWirelessCharging=True),
+            Device("appleWatchUltra4", "Provisional Apple Watch Ultra 4; identifier, size, display metrics, and capabilities await verification.", "", ["placeholder:appleWatchUltra4"], -1, (-1, -1), "Apple Watch Ultra 4", "Apple Watch Ultra 4", "nil",
+                cpu="s11", supportsWirelessCharging=True),
   ]
 
 iOSDevices = iPods + iPhones + iPads + homePods
@@ -647,22 +672,28 @@ public enum Device {
   #if os(iOS)
 % for device in iOSDevices:
     /// ${device.comment}
+% if device.imageURL:
     ///
     /// ![Image](${device.imageURL})
+% end
     case ${device.caseName}
 % end
   #elseif os(tvOS)
 % for device in tvOSDevices:
     /// ${device.comment}
+% if device.imageURL:
     ///
     /// ![Image](${device.imageURL})
+% end
     case ${device.caseName}
 % end
   #elseif os(watchOS)
 % for device in watchOSDevices:
     /// ${device.comment}
+% if device.imageURL:
     ///
     /// ![Image](${device.imageURL})
+% end
     case ${device.caseName}
 % end
   #endif
@@ -730,6 +761,23 @@ public enum Device {
       return unknown(identifier)
     #else
       return unknown(identifier)
+    #endif
+  }
+
+  /// Returns whether the device has a foldable display, including simulators.
+  public var isFoldable: Bool {
+    #if os(iOS)
+    switch self {
+% for device in iOSDevices:
+%   if device.isFoldable:
+    case .${device.caseName}: return true
+%   end
+% end
+    case .simulator(let model): return model.isFoldable
+    default: return false
+    }
+    #else
+    return false
     #endif
   }
 
@@ -1785,6 +1833,7 @@ iOS_cpus = [
           CPU("a18Pro"   , "A18 Pro"),
           CPU("a19"   , "A19"),
           CPU("a19Pro"   , "A19 Pro"),
+          CPU("a20Pro"   , "A20 Pro"),
           CPU("m1", "M1"),
           CPU("m2", "M2"),
           CPU("m3", "M3"),
@@ -1804,6 +1853,7 @@ watchOS_cpus = [
           CPU("s8", "S8"),
           CPU("s9", "S9"),
           CPU("s10", "S10"),
+          CPU("s11", "S11"),
 ]
 }%
 

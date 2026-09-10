@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### New devices
+
+- Add provisional iPhone 18 Pro, iPhone 18 Pro Max, iPhone Duo, Apple Watch Series 12 (42mm/46mm), and Apple Watch Ultra 4 cases, with A20 Pro and S11 chips.
+- Add `isFoldable`, true for iPhone Duo and its simulator only.
+- New models use `placeholder:<caseName>` identifiers and omit images. Automatic hardware detection requires confirmed identifiers. Display metrics return unknown values (`-1` for diagonal/ratio, `nil` for PPI). Pro and Watch capabilities (including Series 12 sizes) provisionally follow their predecessors; unconfirmed Duo capabilities use false/empty defaults and need verification before release.
+
 ### Maintenance
 
 - Simplify GYB device definitions with named feature parameters and defaults for unsupported features, preserving the generated Swift output. ([#508](https://github.com/devicekit/DeviceKit/pull/508))
