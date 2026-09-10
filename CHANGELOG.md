@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Bug fixes
+
+- Update Apple support links for iPhone and iPad models, correct the iPhone 14 Pro Max pixel density to 460 ppi, and correct the iPad Air 11-inch (M2) aspect ratio to 41:59. ([#497](https://github.com/devicekit/DeviceKit/pull/497)) Thanks to [@kudit](https://github.com/kudit)!
+
 ### Maintenance
 
 - Simplify GYB device definitions with named feature parameters and defaults for unsupported features, preserving the generated Swift output. ([#508](https://github.com/devicekit/DeviceKit/pull/508))
