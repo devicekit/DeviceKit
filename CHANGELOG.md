@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### New features
+
+- Add `allDevicesWithEsimSupport` / `hasEsimSupport` and `allDevicesWithDualEsimSupport` / `hasDualEsimSupport`, including simulator support. Cover supported iPhones through iPhone 17e and iPads through iPad Air (M4) and iPad Pro (M5), exclude iPhone X, and document regional and Wi-Fi + Cellular limitations. ([#382](https://github.com/devicekit/DeviceKit/pull/382))
+
+Thanks to [furiosFast](https://github.com/furiosFast) for the original eSIM support contribution!
+
 ### Maintenance
 
 - Simplify GYB device definitions with named feature parameters and defaults for unsupported features, preserving the generated Swift output. ([#508](https://github.com/devicekit/DeviceKit/pull/508))
