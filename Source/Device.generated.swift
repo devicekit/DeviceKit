@@ -1295,22 +1295,31 @@ public enum Device {
       return isOneOf(Device.allDevicesWith5gSupport) || isOneOf(Device.allDevicesWith5gSupport.map(Device.simulator))
     }
 
-    /// All devices that support single ESIM.
-    public static var allDevicesWithSingleEsimSupport: [Device] {
-      return [.iPhoneX, .iPhoneXS, .iPhoneXSMax, .iPhoneXR, .iPhone11, .iPhone11Pro, .iPhone11ProMax, .iPhoneSE2, .iPhone12, .iPhone12Mini, .iPhone12Pro, .iPhone12ProMax, .iPhone13, .iPhone13Mini, .iPhone13Pro, .iPhone13ProMax, .iPhoneSE3, .iPhone14, .iPhone14Plus, .iPhone14Pro, .iPhone14ProMax, .iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax, .iPadAir3, .iPad7, .iPad8, .iPad9, .iPad10, .iPadAir4, .iPadAir5, .iPadAir11M2, .iPadAir13M2, .iPadMini5, .iPadMini6, .iPadPro11Inch, .iPadPro12Inch3, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6, .iPadPro11M4, .iPadPro13M4]
+    /// All iPhone and iPad models that support at least one active eSIM, including dual eSIM models.
+    ///
+    /// Support varies by country, region, and carrier. For iPad, only Wi-Fi + Cellular variants
+    /// support eSIM. Device cases do not distinguish these variants, so membership describes
+    /// model capabilities and does not guarantee eSIM availability on a particular device.
+    /// See https://support.apple.com/en-us/109317 and https://support.apple.com/en-us/119592.
+    public static var allDevicesWithEsimSupport: [Device] {
+      return [.iPhoneXS, .iPhoneXSMax, .iPhoneXR, .iPhone11, .iPhone11Pro, .iPhone11ProMax, .iPhoneSE2, .iPhone12, .iPhone12Mini, .iPhone12Pro, .iPhone12ProMax, .iPhone13, .iPhone13Mini, .iPhone13Pro, .iPhone13ProMax, .iPhoneSE3, .iPhone14, .iPhone14Plus, .iPhone14Pro, .iPhone14ProMax, .iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax, .iPhone16, .iPhone16Plus, .iPhone16Pro, .iPhone16ProMax, .iPhone16e, .iPhone17, .iPhone17Pro, .iPhone17ProMax, .iPhoneAir, .iPhone17e, .iPadAir3, .iPad7, .iPad8, .iPad9, .iPad10, .iPadA16, .iPadAir4, .iPadAir5, .iPadAir11M2, .iPadAir13M2, .iPadAir11M3, .iPadAir13M3, .iPadAir11M4, .iPadAir13M4, .iPadMini5, .iPadMini6, .iPadMiniA17Pro, .iPadPro11Inch, .iPadPro12Inch3, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6, .iPadPro11M4, .iPadPro13M4, .iPadPro11M5, .iPadPro13M5]
     }
 
-    /// Returns whether or not the device has single ESIM support.
-    public var hasSingleEsimSupport: Bool {
-      return isOneOf(Device.allDevicesWithSingleEsimSupport) || isOneOf(Device.allDevicesWithSingleEsimSupport.map(Device.simulator))
+    /// Returns whether the device model supports eSIM. Simulators use their simulated model.
+    /// See `allDevicesWithEsimSupport` for regional and cellular-variant limitations.
+    public var hasEsimSupport: Bool {
+      return isOneOf(Device.allDevicesWithEsimSupport) || isOneOf(Device.allDevicesWithEsimSupport.map(Device.simulator))
     }
-    
-    /// All devices that support dual ESIM.
+
+    /// All iPhone models that support two active eSIMs simultaneously.
+    /// Support varies by country, region, and carrier; model membership does not guarantee
+    /// eSIM availability on a particular device. These models also appear in `allDevicesWithEsimSupport`.
     public static var allDevicesWithDualEsimSupport: [Device] {
-      return [.iPhone13, .iPhone13Mini, .iPhone13Pro, .iPhone13ProMax, .iPhoneSE3, .iPhone14, .iPhone14Plus, .iPhone14Pro, .iPhone14ProMax, .iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax]
+      return [.iPhone13, .iPhone13Mini, .iPhone13Pro, .iPhone13ProMax, .iPhoneSE3, .iPhone14, .iPhone14Plus, .iPhone14Pro, .iPhone14ProMax, .iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax, .iPhone16, .iPhone16Plus, .iPhone16Pro, .iPhone16ProMax, .iPhone16e, .iPhone17, .iPhone17Pro, .iPhone17ProMax, .iPhoneAir, .iPhone17e]
     }
 
-    /// Returns whether or not the device has dual ESIM support.
+    /// Returns whether the device model supports two active eSIMs simultaneously.
+    /// Simulators use their simulated model. See `allDevicesWithDualEsimSupport` for limitations.
     public var hasDualEsimSupport: Bool {
       return isOneOf(Device.allDevicesWithDualEsimSupport) || isOneOf(Device.allDevicesWithDualEsimSupport.map(Device.simulator))
     }
