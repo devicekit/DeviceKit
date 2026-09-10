@@ -4,7 +4,7 @@
 
 ### Bug fixes
 
-- Update Apple support links for iPhone and iPad models, correct the iPhone 14 Pro Max pixel density to 460 ppi and the iPad Air 11-inch (M2) aspect ratio to 41:59, and update the iPad Air 13-inch (M2) display name. ([#497](https://github.com/devicekit/DeviceKit/pull/497)) Thanks to [@kudit](https://github.com/kudit)!
+- Update Apple support links for iPhone and iPad models, correct the iPhone 14 Pro Max pixel density to 460 ppi, and correct the iPad Air 11-inch (M2) aspect ratio to 41:59. ([#497](https://github.com/devicekit/DeviceKit/pull/497)) Thanks to [@kudit](https://github.com/kudit)!
 
 ### Maintenance
 
