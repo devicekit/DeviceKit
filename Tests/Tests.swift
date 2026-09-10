@@ -551,6 +551,31 @@ class DeviceKitTests: XCTestCase {
     }
   }
 
+  func testHasActionButton() {
+    let actionButtonDevices: [Device] = [
+      .iPhone15Pro,
+      .iPhone15ProMax,
+      .iPhone16,
+      .iPhone16Plus,
+      .iPhone16Pro,
+      .iPhone16ProMax,
+      .iPhone16e,
+      .iPhone17,
+      .iPhone17Pro,
+      .iPhone17ProMax,
+      .iPhoneAir,
+      .iPhone17e,
+    ]
+    XCTAssertEqual(Device.allDevicesWithActionButton, actionButtonDevices)
+    for device in Device.allRealDevices {
+      let expected = device.isOneOf(actionButtonDevices)
+      XCTAssertEqual(device.hasActionButton, expected, "Action Button support for \(device)")
+      XCTAssertEqual(Device.simulator(device).hasActionButton, expected, "Simulator Action Button support for \(device)")
+    }
+    XCTAssertFalse(Device.unknown("unrecognized-device").hasActionButton)
+    XCTAssertFalse(Device.simulator(.unknown("unrecognized-device")).hasActionButton)
+  }
+
   func testHas5gSupport() {
     let has5gDevices: [Device] = [
       .iPhone12,
