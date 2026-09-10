@@ -605,6 +605,50 @@ class DeviceKitTests: XCTestCase {
     }
   }
 
+  func testEsimSupportBoundaries() {
+    // eSIM starts with XS/XR; dual eSIM starts with iPhone 13 and SE (3rd generation).
+    let unsupported: [Device] = [.iPhoneX, .iPhone8, .iPhoneSE, .iPad6, .iPadAir2,
+                                 .iPadMini4, .iPadPro10Inch, .iPadPro12Inch2, .iPodTouch7,
+                                 .unknown("future device")]
+    let esimOnly: [Device] = [.iPhoneXS, .iPhoneXSMax, .iPhoneXR, .iPhone11, .iPhoneSE2,
+                              .iPhone12, .iPhone12Mini, .iPhone12Pro, .iPhone12ProMax,
+                              .iPad7, .iPadAir3, .iPadMini5, .iPadPro11Inch, .iPadPro12Inch3]
+    let dualEsim: [Device] = [.iPhone13, .iPhone13Mini, .iPhone13Pro, .iPhone13ProMax, .iPhoneSE3]
+    for model in unsupported + esimOnly + dualEsim {
+      for variant in [model, .simulator(model)] {
+        XCTAssertEqual(variant.hasEsimSupport, !unsupported.contains(model), "\(variant)")
+        XCTAssertEqual(variant.hasDualEsimSupport, dualEsim.contains(model), "\(variant)")
+      }
+    }
+  }
+
+  func testRecentDevicesEsimSupport() {
+    let phones: [Device] = [.iPhone16, .iPhone16Plus, .iPhone16Pro, .iPhone16ProMax, .iPhone16e,
+                            .iPhone17, .iPhone17Pro, .iPhone17ProMax, .iPhoneAir, .iPhone17e]
+    let pads: [Device] = [.iPadAir11M2, .iPadAir13M2, .iPadPro11M4, .iPadPro13M4,
+                          .iPadMiniA17Pro, .iPadA16, .iPadAir11M3, .iPadAir13M3,
+                          .iPadPro11M5, .iPadPro13M5, .iPadAir11M4, .iPadAir13M4]
+    for model in phones + pads {
+      for variant in [model, .simulator(model)] {
+        XCTAssertTrue(variant.hasEsimSupport, "\(variant)")
+        XCTAssertEqual(variant.hasDualEsimSupport, phones.contains(model), "\(variant)")
+      }
+    }
+  }
+
+  func testEsimDeviceLists() {
+    for model in Device.allDevicesWithDualEsimSupport {
+      XCTAssertTrue(Device.allDevicesWithEsimSupport.contains(model), "\(model)")
+      XCTAssertTrue(model.isPhone)
+    }
+    for model in Device.allRealDevices {
+      XCTAssertEqual(Device.allDevicesWithEsimSupport.contains(model), model.hasEsimSupport)
+      XCTAssertEqual(Device.allDevicesWithDualEsimSupport.contains(model), model.hasDualEsimSupport)
+    }
+    XCTAssertFalse(Device.allDevicesWithEsimSupport.contains(.iPhoneX))
+    XCTAssertFalse(Device.allDevicesWithDualEsimSupport.contains(.iPhone12))
+  }
+
   // MARK: - volumes
   @available(iOS 11.0, *)
   func testVolumeTotalCapacity() {
