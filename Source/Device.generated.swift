@@ -202,59 +202,59 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP875/sp875-sp876-iphone14-pro-promax_2x.png)
     case iPhone14ProMax
-    /// Device is an [iPhone 15](https://support.apple.com/en-us/111831)
+    /// Device is an [iPhone 15](https://support.apple.com/kb/SP901)
     ///
     /// ![Image]()
     case iPhone15
-    /// Device is an [iPhone 15 Plus](https://support.apple.com/en-us/111830)
+    /// Device is an [iPhone 15 Plus](https://support.apple.com/kb/SP902)
     ///
     /// ![Image]()
     case iPhone15Plus
-    /// Device is an [iPhone 15 Pro](https://support.apple.com/en-us/111829)
+    /// Device is an [iPhone 15 Pro](https://support.apple.com/kb/SP903)
     ///
     /// ![Image]()
     case iPhone15Pro
-    /// Device is an [iPhone 15 Pro Max](https://support.apple.com/en-us/111828)
+    /// Device is an [iPhone 15 Pro Max](https://support.apple.com/kb/SP904)
     ///
     /// ![Image]()
     case iPhone15ProMax
-    /// Device is an [iPhone 16]()
+    /// Device is an [iPhone 16](https://support.apple.com/121029)
     ///
     /// ![Image]()
     case iPhone16
-    /// Device is an [iPhone 16 Plus]()
+    /// Device is an [iPhone 16 Plus](https://support.apple.com/121030)
     ///
     /// ![Image]()
     case iPhone16Plus
-    /// Device is an [iPhone 16 Pro]()
+    /// Device is an [iPhone 16 Pro](https://support.apple.com/121031)
     ///
     /// ![Image]()
     case iPhone16Pro
-    /// Device is an [iPhone 16 Pro Max]()
+    /// Device is an [iPhone 16 Pro Max](https://support.apple.com/121032)
     ///
     /// ![Image]()
     case iPhone16ProMax
-    /// Device is an [iPhone 16e](https://support.apple.com/en-us/122208)
+    /// Device is an [iPhone 16e](https://support.apple.com/122208)
     ///
     /// ![Image](https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/122208-iphone-16e.png)
     case iPhone16e
-    /// Device is an [iPhone 17]()
+    /// Device is an [iPhone 17](https://support.apple.com/125089)
     ///
     /// ![Image]()
     case iPhone17
-    /// Device is an [iPhone 17 Pro]()
+    /// Device is an [iPhone 17 Pro](https://support.apple.com/125090)
     ///
     /// ![Image]()
     case iPhone17Pro
-    /// Device is an [iPhone 17 Pro Max]()
+    /// Device is an [iPhone 17 Pro Max](https://support.apple.com/125091)
     ///
     /// ![Image]()
     case iPhone17ProMax
-    /// Device is an [iPhone Air]()
+    /// Device is an [iPhone Air](https://support.apple.com/125092)
     ///
     /// ![Image]()
     case iPhoneAir
-    /// Device is an [iPhone 17e]()
+    /// Device is an [iPhone 17e](https://support.apple.com/126470)
     ///
     /// ![Image]()
     case iPhone17e
@@ -306,7 +306,7 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP884/sp884-ipad-10gen-960_2x.png)
     case iPad10
-    /// Device is an [iPad (A16)]()
+    /// Device is an [iPad (A16)](https://support.apple.com/122240)
     ///
     /// ![Image]()
     case iPadA16
@@ -318,27 +318,27 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP866/sp866-ipad-air-5gen_2x.png)
     case iPadAir5
-    /// Device is an [iPad Air 11-inch (M2)](https://support.apple.com/en-us/119894)
+    /// Device is an [iPad Air 11-inch (M2)](https://support.apple.com/119894)
     ///
     /// ![Image](https://cdsassets.apple.com/content/services/pub/image?productid=301027&size=240x240)
     case iPadAir11M2
-    /// Device is an [iPad Air 13-inch (M2)](https://support.apple.com/en-us/119893)
+    /// Device is an [iPad Air 13-inch (M2)](https://support.apple.com/119893)
     ///
     /// ![Image](https://cdsassets.apple.com/content/services/pub/image?productid=301029&size=240x240)
     case iPadAir13M2
-    /// Device is an [iPad Air 11-inch (M3)]()
+    /// Device is an [iPad Air 11-inch (M3)](https://support.apple.com/122241)
     ///
     /// ![Image](https://cdsassets.apple.com/content/services/pub/image?productid=301027&size=240x240)
     case iPadAir11M3
-    /// Device is an [iPad Air 13-inch (M3)]()
+    /// Device is an [iPad Air 13-inch (M3)](https://support.apple.com/122242)
     ///
     /// ![Image](https://cdsassets.apple.com/content/services/pub/image?productid=301029&size=240x240)
     case iPadAir13M3
-    /// Device is an [iPad Air 11-inch (M4)]()
+    /// Device is an [iPad Air 11-inch (M4)](https://support.apple.com/126471)
     ///
     /// ![Image]()
     case iPadAir11M4
-    /// Device is an [iPad Air 13-inch (M4)]()
+    /// Device is an [iPad Air 13-inch (M4)](https://support.apple.com/126472)
     ///
     /// ![Image]()
     case iPadAir13M4
@@ -1014,7 +1014,7 @@ public enum Device {
       case .iPadA16: return (width: 41, height: 59)
       case .iPadAir4: return (width: 41, height: 59)
       case .iPadAir5: return (width: 41, height: 59)
-      case .iPadAir11M2: return (width: 59, height: 41)
+      case .iPadAir11M2: return (width: 41, height: 59)
       case .iPadAir13M2: return (width: 683, height: 512)
       case .iPadAir11M3: return (width: 59, height: 41)
       case .iPadAir13M3: return (width: 683, height: 512)
@@ -1561,7 +1561,7 @@ public enum Device {
       case .iPhone14: return 460
       case .iPhone14Plus: return 458
       case .iPhone14Pro: return 460
-      case .iPhone14ProMax: return 458
+      case .iPhone14ProMax: return 460
       case .iPhone15: return 460
       case .iPhone15Plus: return 460
       case .iPhone15Pro: return 460
@@ -1770,7 +1770,7 @@ extension Device: CustomStringConvertible {
       case .iPadAir4: return "iPad Air (4th generation)"
       case .iPadAir5: return "iPad Air (5th generation)"
       case .iPadAir11M2: return "iPad Air (11-inch) (M2)"
-      case .iPadAir13M2: return "iPad Air (13-inch) (M2)"
+      case .iPadAir13M2: return "iPad Air 13-inch (M2)"
       case .iPadAir11M3: return "iPad Air (11-inch) (M3)"
       case .iPadAir13M3: return "iPad Air (13-inch) (M3)"
       case .iPadAir11M4: return "iPad Air (11-inch) (M4)"
@@ -1935,7 +1935,7 @@ extension Device: CustomStringConvertible {
       case .iPadAir4: return "iPad Air (4th generation)"
       case .iPadAir5: return "iPad Air (5th generation)"
       case .iPadAir11M2: return "iPad Air (11-inch) (M2)"
-      case .iPadAir13M2: return "iPad Air (13-inch) (M2)"
+      case .iPadAir13M2: return "iPad Air 13-inch (M2)"
       case .iPadAir11M3: return "iPad Air (11-inch) (M3)"
       case .iPadAir13M3: return "iPad Air (13-inch) (M3)"
       case .iPadAir11M4: return "iPad Air (11-inch) (M4)"
