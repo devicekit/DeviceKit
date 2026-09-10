@@ -1267,17 +1267,7 @@ public enum Device {
 
     /// All devices that have an Action Button.
     public static var allDevicesWithActionButton: [Device] {
-      return [
-        .iPhone15Pro,
-        .iPhone15ProMax,
-        .iPhone16,
-        .iPhone16Plus,
-        .iPhone16Pro,
-        .iPhone16ProMax,
-        .iPhone17,
-        .iPhone17Pro,
-        .iPhone17ProMax,
-      ]
+      return [.iPhone15Pro, .iPhone15ProMax, .iPhone16, .iPhone16Plus, .iPhone16Pro, .iPhone16ProMax, .iPhone16e, .iPhone17, .iPhone17Pro, .iPhone17ProMax, .iPhoneAir, .iPhone17e]
     }
 
     /// Returns whether or not the device has an Action Button.
