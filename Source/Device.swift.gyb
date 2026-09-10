@@ -319,7 +319,7 @@ iPads = [
                 cpu="m2", hasTouchID=True, hasRoundedDisplayCorners=True, applePencilSupport=34, cameras=1,
                 hasUSBCConnectivity=True, has5gSupport=True,
                 hasEsimSupport=True),
-            Device("iPadAir13M2",    "Device is an [iPad Air 13-inch (M2)](https://support.apple.com/119893)",           "https://cdsassets.apple.com/content/services/pub/image?productid=301029&size=240x240",                            ["iPad14,10", "iPad14,11"],                         12.9, (683, 512),  "iPad Air 13-inch (M2)", "iPad Air 13-inch (M2)", 264,
+            Device("iPadAir13M2",    "Device is an [iPad Air 13-inch (M2)](https://support.apple.com/119893)",           "https://cdsassets.apple.com/content/services/pub/image?productid=301029&size=240x240",                            ["iPad14,10", "iPad14,11"],                         12.9, (683, 512),  "iPad Air (13-inch) (M2)", "iPad Air (13-inch) (M2)", 264,
                 cpu="m2", hasTouchID=True, hasRoundedDisplayCorners=True, applePencilSupport=34, cameras=1,
                 hasUSBCConnectivity=True, has5gSupport=True,
                 hasEsimSupport=True),
