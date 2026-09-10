@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### New features
+
+- Add `Device.hasActionButton` and `Device.allDevicesWithActionButton` on iOS, including simulator detection, with support generated from GYB device parameters. ([#499](https://github.com/devicekit/DeviceKit/pull/499))
+
 ## Version 5.9.0
 
 Releasedate: 2026-09-22
