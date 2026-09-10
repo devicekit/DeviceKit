@@ -819,4 +819,42 @@ class DeviceKitTests: XCTestCase {
 
   #endif
 
+  // MARK: - watchOS
+  #if os(watchOS)
+
+  func testHasRoundedDisplayCorners() {
+    let roundedDisplayCornerDevices: [Device] = [
+      .appleWatchSeries4_40mm,
+      .appleWatchSeries4_44mm,
+      .appleWatchSeries5_40mm,
+      .appleWatchSeries5_44mm,
+      .appleWatchSeries6_40mm,
+      .appleWatchSeries6_44mm,
+      .appleWatchSeries7_41mm,
+      .appleWatchSeries7_45mm,
+      .appleWatchSeries8_41mm,
+      .appleWatchSeries8_45mm,
+      .appleWatchSE2_40mm,
+      .appleWatchSE2_44mm,
+      .appleWatchUltra,
+      .appleWatchSeries9_41mm,
+      .appleWatchSeries9_45mm,
+      .appleWatchUltra2,
+      .appleWatchSeries10_42mm,
+      .appleWatchSeries10_46mm,
+      .appleWatchUltra3,
+      .appleWatchSeries11_42mm,
+      .appleWatchSeries11_46mm,
+    ]
+    for device in Device.allRealDevices {
+      XCTAssertEqual(
+        device.hasRoundedDisplayCorners,
+        device.isOneOf(roundedDisplayCornerDevices),
+        "testHasRoundedDisplayCorners failed for \(device.description)"
+      )
+    }
+  }
+
+  #endif
+
 }
