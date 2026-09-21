@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### New devices
+
+- Add iPhone 18 Pro, iPhone 18 Pro Max, Apple Watch Series 12 (42mm/46mm), and Apple Watch Ultra 4 support, including A20 Pro and S11 chips. Adapted from [#507](https://github.com/devicekit/DeviceKit/pull/507), excluding iPhone Duo.
+- Add hardware identifier mappings, including both regional iPhone 18 Pro Max variants and GPS/cellular Series 12 variants.
+- Add Apple technical specification links and verified display metrics; Watch display diagonals are calculated from the published pixel dimensions and PPI.
+
 ### New features
 
 - Add `allDevicesWithEsimSupport` / `hasEsimSupport` and `allDevicesWithDualEsimSupport` / `hasDualEsimSupport`, including simulator support. Cover supported iPhones through iPhone 17e and iPads through iPad Air (M4) and iPad Pro (M5), exclude iPhone X, and document regional and Wi-Fi + Cellular limitations. ([#382](https://github.com/devicekit/DeviceKit/pull/382))
@@ -9,6 +15,7 @@
 ### Bug fixes
 
 - Update Apple support links for iPhone and iPad models, correct the iPhone 14 Pro Max pixel density to 460 ppi, and correct the iPad Air 11-inch (M2) aspect ratio to 41:59. ([#497](https://github.com/devicekit/DeviceKit/pull/497))
+
 
 ### Maintenance
 
