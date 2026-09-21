@@ -2,11 +2,17 @@
 
 ## Unreleased
 
-### New devices
+### New September 2026 devices
 
-- Add iPhone 18 Pro, iPhone 18 Pro Max, Apple Watch Series 12 (42mm/46mm), and Apple Watch Ultra 4 support, including A20 Pro and S11 chips. Adapted from [#507](https://github.com/devicekit/DeviceKit/pull/507), excluding iPhone Duo.
-- Add hardware identifier mappings, including both regional iPhone 18 Pro Max variants and GPS/cellular Series 12 variants.
-- Add Apple technical specification links and verified display metrics; Watch display diagonals are calculated from the published pixel dimensions and PPI.
+This version adds support for iPhone 18 Pro, iPhone 18 Pro Max, Apple Watch Series 12 and Apple Watch Ultra 4, including hardware identifiers, display metrics and technical specification links: ([#512](https://github.com/devicekit/DeviceKit/pull/512))
+
+| Device | Case value |
+| --- | --- |
+| iPhone 18 Pro | `Device.iPhone18Pro` |
+| iPhone 18 Pro Max | `Device.iPhone18ProMax` |
+| Apple Watch Series 12 42mm | `Device.appleWatchSeries12_42mm` |
+| Apple Watch Series 12 46mm | `Device.appleWatchSeries12_46mm` |
+| Apple Watch Ultra 4 | `Device.appleWatchUltra4` |
 
 ### New features
 
@@ -15,7 +21,6 @@
 ### Bug fixes
 
 - Update Apple support links for iPhone and iPad models, correct the iPhone 14 Pro Max pixel density to 460 ppi, and correct the iPad Air 11-inch (M2) aspect ratio to 41:59. ([#497](https://github.com/devicekit/DeviceKit/pull/497))
-
 
 ### Maintenance
 
