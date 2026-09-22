@@ -30,7 +30,7 @@ jobs:
           DANGER_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   test:
-    runs-on: macos-15
+    runs-on: macos-26
 
     strategy:
       fail-fast: false
@@ -42,6 +42,10 @@ jobs:
           - platform=iOS Simulator,name=iPhone 17,OS=26.2
           - platform=iOS Simulator,name=iPhone Air,OS=26.2
           - platform=iOS Simulator,name=iPhone 16e,OS=26.2
+          - platform=iOS Simulator,name=iPad (A16),OS=26.2
+          - platform=iOS Simulator,name=iPad Air 13-inch (M3),OS=26.2
+          - platform=iOS Simulator,name=iPad mini (A17 Pro),OS=26.2
+          - platform=iOS Simulator,name=iPad Pro 13-inch (M5),OS=26.2
           - platform=tvOS Simulator,name=Apple TV,OS=26.2
           - platform=tvOS Simulator,name=Apple TV 4K (3rd generation),OS=26.2
           - platform=watchOS Simulator,name=Apple Watch Series 11 (46mm),OS=26.2
