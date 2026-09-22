@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+## Version 5.9.0
+
+Releasedate: 2026-09-22
+
+```ruby
+pod 'DeviceKit', '~> 5.9'
+```
+
 ### New September 2026 devices
 
 This version adds support for iPhone 18 Pro, iPhone 18 Pro Max, Apple Watch Series 12 and Apple Watch Ultra 4, including hardware identifiers, display metrics and technical specification links: ([#512](https://github.com/devicekit/DeviceKit/pull/512))
