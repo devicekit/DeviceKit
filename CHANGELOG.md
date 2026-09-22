@@ -2,6 +2,18 @@
 
 ## Unreleased
 
+### New September 2026 devices
+
+This version adds support for iPhone 18 Pro, iPhone 18 Pro Max, Apple Watch Series 12 and Apple Watch Ultra 4, including hardware identifiers, display metrics and technical specification links: ([#512](https://github.com/devicekit/DeviceKit/pull/512))
+
+| Device | Case value |
+| --- | --- |
+| iPhone 18 Pro | `Device.iPhone18Pro` |
+| iPhone 18 Pro Max | `Device.iPhone18ProMax` |
+| Apple Watch Series 12 42mm | `Device.appleWatchSeries12_42mm` |
+| Apple Watch Series 12 46mm | `Device.appleWatchSeries12_46mm` |
+| Apple Watch Ultra 4 | `Device.appleWatchUltra4` |
+
 ### New features
 
 - Add `allDevicesWithEsimSupport` / `hasEsimSupport` and `allDevicesWithDualEsimSupport` / `hasDualEsimSupport`, including simulator support. Cover supported iPhones through iPhone 17e and iPads through iPad Air (M4) and iPad Pro (M5), exclude iPhone X, and document regional and Wi-Fi + Cellular limitations. ([#382](https://github.com/devicekit/DeviceKit/pull/382))

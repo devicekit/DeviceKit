@@ -270,6 +270,20 @@ iPhones = [
                 supportsWirelessCharging=True, hasRoundedDisplayCorners=True, cameras=1,
                 hasUSBCConnectivity=True, has5gSupport=True,
                 hasEsimSupport=True, hasDualEsimSupport=True),
+
+            # Identifiers: https://api.ipsw.me/v4/devices (verified 2026-09-21).
+            # iPhone19,3 and iPhone19,7 are regional variants of iPhone 18 Pro Max.
+            Device("iPhone18Pro", "Device is an [iPhone 18 Pro](https://support.apple.com/en-us/148590)", "", ["iPhone19,2"], 6.3, (9, 19.5), "iPhone 18 Pro", "iPhone 18 Pro", 460,
+                cpu="a20Pro", isPro=True, isXSeries=True, hasFaceID=True,
+                hasSensorHousing=True, supportsWirelessCharging=True, hasRoundedDisplayCorners=True, hasDynamicIsland=True,
+                cameras=123, hasLidarSensor=True, hasUSBCConnectivity=True, has5gSupport=True,
+                hasEsimSupport=True, hasDualEsimSupport=True),
+            Device("iPhone18ProMax", "Device is an [iPhone 18 Pro Max](https://support.apple.com/en-us/148591)", "", ["iPhone19,3", "iPhone19,7"], 6.9, (9, 19.5), "iPhone 18 Pro Max", "iPhone 18 Pro Max", 460,
+                cpu="a20Pro", isPlusFormFactor=True, isPro=True, isXSeries=True,
+                hasFaceID=True, hasSensorHousing=True, supportsWirelessCharging=True, hasRoundedDisplayCorners=True,
+                hasDynamicIsland=True, cameras=123, hasLidarSensor=True, hasUSBCConnectivity=True,
+                has5gSupport=True,
+                hasEsimSupport=True, hasDualEsimSupport=True),
           ]
 
 iPads = [
@@ -665,6 +679,14 @@ watches = [
             ["Watch7,18", "Watch7,20"], 2.0, (416,496), "Apple Watch Series 11 46mm", "Apple Watch Series 11 46mm", 326,
                 cpu="s10", supportsWirelessCharging=True),
 
+            # Identifiers: https://gist.github.com/adamawolf/3048717 (verified 2026-09-21).
+            # Rectangular display diagonals calculated from Apple's pixel dimensions / PPI, rounded to two decimals.
+            Device("appleWatchSeries12_42mm", "Device is an [Apple Watch Series 12 42mm](https://support.apple.com/en-us/148589)", "", ["Watch8,2", "Watch8,4"], 1.79, (374,446), "Apple Watch Series 12 42mm", "Apple Watch Series 12 42mm", 326,
+                cpu="s11", supportsWirelessCharging=True),
+            Device("appleWatchSeries12_46mm", "Device is an [Apple Watch Series 12 46mm](https://support.apple.com/en-us/148589)", "", ["Watch8,3", "Watch8,5"], 1.99, (416,496), "Apple Watch Series 12 46mm", "Apple Watch Series 12 46mm", 326,
+                cpu="s11", supportsWirelessCharging=True),
+            Device("appleWatchUltra4", "Device is an [Apple Watch Ultra 4](https://support.apple.com/en-us/148758)", "", ["Watch8,1"], 2.04, (422,514), "Apple Watch Ultra 4", "Apple Watch Ultra 4", 326,
+                cpu="s11", supportsWirelessCharging=True),
   ]
 
 iOSDevices = iPods + iPhones + iPads + homePods
@@ -714,22 +736,28 @@ public enum Device {
   #if os(iOS)
 % for device in iOSDevices:
     /// ${device.comment}
+% if device.imageURL:
     ///
     /// ![Image](${device.imageURL})
+% end
     case ${device.caseName}
 % end
   #elseif os(tvOS)
 % for device in tvOSDevices:
     /// ${device.comment}
+% if device.imageURL:
     ///
     /// ![Image](${device.imageURL})
+% end
     case ${device.caseName}
 % end
   #elseif os(watchOS)
 % for device in watchOSDevices:
     /// ${device.comment}
+% if device.imageURL:
     ///
     /// ![Image](${device.imageURL})
+% end
     case ${device.caseName}
 % end
   #endif
@@ -1881,6 +1909,7 @@ iOS_cpus = [
           CPU("a18Pro"   , "A18 Pro"),
           CPU("a19"   , "A19"),
           CPU("a19Pro"   , "A19 Pro"),
+          CPU("a20Pro"   , "A20 Pro"),
           CPU("m1", "M1"),
           CPU("m2", "M2"),
           CPU("m3", "M3"),
@@ -1900,6 +1929,7 @@ watchOS_cpus = [
           CPU("s8", "S8"),
           CPU("s9", "S9"),
           CPU("s10", "S10"),
+          CPU("s11", "S11"),
 ]
 }%
 

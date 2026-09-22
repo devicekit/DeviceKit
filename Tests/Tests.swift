@@ -16,6 +16,65 @@ class DeviceKitTests: XCTestCase {
 
   let device = Device.current
 
+  #if os(iOS) || os(watchOS)
+  func testSeptember2026Devices() {
+    struct ExpectedDevice {
+      let model: Device
+      let identifiers: [String]
+      let diagonal: Double
+      let ratio: (Double, Double)
+      let ppi: Int
+    }
+    #if os(iOS)
+    let models: [ExpectedDevice] = [
+      ExpectedDevice(model: .iPhone18Pro, identifiers: ["iPhone19,2"], diagonal: 6.3, ratio: (9, 19.5), ppi: 460),
+      ExpectedDevice(model: .iPhone18ProMax, identifiers: ["iPhone19,3", "iPhone19,7"], diagonal: 6.9, ratio: (9, 19.5), ppi: 460)
+    ]
+    let chip = Device.CPU.a20Pro
+    XCTAssertEqual(chip.description, "A20 Pro")
+    // The deferred model and unverified identifiers must remain unknown.
+    for identifier in ["iPhone19,1", "iPhone19,4", "iPhone19,5", "iPhone19,6", "placeholder:iPhone18Pro", "placeholder:iPhone18ProMax"] {
+      XCTAssertEqual(Device.mapToDevice(identifier: identifier), .unknown(identifier))
+    }
+    #else
+    let models: [ExpectedDevice] = [
+      ExpectedDevice(model: .appleWatchSeries12_42mm, identifiers: ["Watch8,2", "Watch8,4"], diagonal: 1.79, ratio: (374, 446), ppi: 326),
+      ExpectedDevice(model: .appleWatchSeries12_46mm, identifiers: ["Watch8,3", "Watch8,5"], diagonal: 1.99, ratio: (416, 496), ppi: 326),
+      ExpectedDevice(model: .appleWatchUltra4, identifiers: ["Watch8,1"], diagonal: 2.04, ratio: (422, 514), ppi: 326)
+    ]
+    let chip = Device.CPU.s11
+    XCTAssertEqual(chip.description, "S11")
+    for identifier in ["Watch8,6", "Watch8,7", "Watch8,8", "Watch8,9", "placeholder:appleWatchSeries12_42mm", "placeholder:appleWatchSeries12_46mm", "placeholder:appleWatchUltra4"] {
+      XCTAssertEqual(Device.mapToDevice(identifier: identifier), .unknown(identifier))
+    }
+    #endif
+    for expected in models {
+      let model = expected.model
+      for identifier in expected.identifiers {
+        XCTAssertEqual(Device.mapToDevice(identifier: identifier), model, identifier)
+      }
+      #if os(iOS)
+      XCTAssertTrue(model.isPhone)
+      XCTAssertFalse(model.isPad)
+      #endif
+      XCTAssertTrue(Device.allRealDevices.contains(model))
+      XCTAssertTrue(Device.allSimulators.contains(.simulator(model)))
+      for variant in [model, .simulator(model)] {
+        XCTAssertEqual(variant.cpu, chip)
+        XCTAssertEqual(variant.diagonal, expected.diagonal)
+        XCTAssertEqual(variant.screenRatio.width, expected.ratio.0)
+        XCTAssertEqual(variant.screenRatio.height, expected.ratio.1)
+        XCTAssertEqual(variant.ppi, expected.ppi)
+        #if os(iOS)
+        XCTAssertTrue(variant.supportsWirelessCharging)
+        XCTAssertTrue(variant.hasEsimSupport)
+        XCTAssertTrue(variant.hasDualEsimSupport)
+        #endif
+      }
+    }
+  }
+  #endif
+
   func testDeviceSimulator() {
     #if os(macOS)
     XCTAssertFalse(device.isOneOf(Device.allSimulators))
@@ -475,6 +534,7 @@ class DeviceKitTests: XCTestCase {
       .iPhone16ProMax,
       .iPhone17ProMax,
       .iPhoneAir,
+      .iPhone18ProMax,
     ])
   }
 
@@ -494,6 +554,8 @@ class DeviceKitTests: XCTestCase {
       .iPhone16ProMax,
       .iPhone17Pro,
       .iPhone17ProMax,
+      .iPhone18Pro,
+      .iPhone18ProMax,
       .iPadPro9Inch,
       .iPadPro12Inch,
       .iPadPro12Inch2,
@@ -544,6 +606,8 @@ class DeviceKitTests: XCTestCase {
       .iPhone17,
       .iPhone17Pro,
       .iPhone17ProMax,
+      .iPhone18Pro,
+      .iPhone18ProMax,
       .iPhoneAir,
     ]
     for device in Device.allRealDevices {
@@ -578,6 +642,8 @@ class DeviceKitTests: XCTestCase {
       .iPhone17,
       .iPhone17Pro,
       .iPhone17ProMax,
+      .iPhone18Pro,
+      .iPhone18ProMax,
       .iPhoneAir,
       .iPhone17e,
       .iPad10,
@@ -722,6 +788,8 @@ class DeviceKitTests: XCTestCase {
       .iPhone16ProMax,
       .iPhone17Pro,
       .iPhone17ProMax,
+      .iPhone18Pro,
+      .iPhone18ProMax,
       .iPadPro11Inch2,
       .iPadPro12Inch4,
       .iPadPro11Inch3,
@@ -752,6 +820,8 @@ class DeviceKitTests: XCTestCase {
       .iPhone17,
       .iPhone17Pro,
       .iPhone17ProMax,
+      .iPhone18Pro,
+      .iPhone18ProMax,
       .iPhoneAir,
       .iPhone17e,
       .iPad10,
