@@ -236,7 +236,7 @@ public enum Device {
     case iPhone18Pro
     /// Device is an [iPhone 18 Pro Max](https://support.apple.com/en-us/148591)
     case iPhone18ProMax
-    /// Provisional iPhone Duo; identifier, display metrics, and other capabilities await verification.
+    /// Provisional iPhone Duo; display metrics and other capabilities await verification.
     case iPhoneDuo
     /// Device is an [iPad 2](https://support.apple.com/kb/SP622)
     ///
@@ -640,7 +640,7 @@ public enum Device {
       case "iPhone18,5": return iPhone17e
       case "iPhone19,2": return iPhone18Pro
       case "iPhone19,3", "iPhone19,7": return iPhone18ProMax
-      case "placeholder:iPhoneDuo": return iPhoneDuo
+      case "iPhone19,4": return iPhoneDuo
       case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4": return iPad2
       case "iPad3,1", "iPad3,2", "iPad3,3": return iPad3
       case "iPad3,4", "iPad3,5", "iPad3,6": return iPad4

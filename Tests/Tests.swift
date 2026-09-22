@@ -33,7 +33,8 @@ class DeviceKitTests: XCTestCase {
   #if os(iOS)
   func testProvisionalIPhoneDuo() {
     let model = Device.iPhoneDuo
-    XCTAssertEqual(Device.mapToDevice(identifier: "placeholder:iPhoneDuo"), model)
+    XCTAssertEqual(Device.mapToDevice(identifier: "iPhone19,4"), model)
+    XCTAssertEqual(Device.mapToDevice(identifier: "placeholder:iPhoneDuo"), .unknown("placeholder:iPhoneDuo"))
     XCTAssertEqual(model.description, "iPhone Duo")
     XCTAssertEqual(model.safeDescription, "iPhone Duo")
     XCTAssertTrue(Device.allPhones.contains(model))
@@ -68,8 +69,8 @@ class DeviceKitTests: XCTestCase {
     ]
     let chip = Device.CPU.a20Pro
     XCTAssertEqual(chip.description, "A20 Pro")
-    // The deferred model and unverified identifiers must remain unknown.
-    for identifier in ["iPhone19,1", "iPhone19,4", "iPhone19,5", "iPhone19,6", "placeholder:iPhone18Pro", "placeholder:iPhone18ProMax"] {
+    // Unverified identifiers must remain unknown.
+    for identifier in ["iPhone19,1", "iPhone19,5", "iPhone19,6", "placeholder:iPhone18Pro", "placeholder:iPhone18ProMax"] {
       XCTAssertEqual(Device.mapToDevice(identifier: identifier), .unknown(identifier))
     }
     #else

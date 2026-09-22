@@ -288,7 +288,7 @@ iPhones = [
                 hasEsimSupport=True, hasDualEsimSupport=True),
 
             # Duo capabilities other than its chip and foldability are unconfirmed (false/empty defaults).
-            Device("iPhoneDuo", "Provisional iPhone Duo; identifier, display metrics, and other capabilities await verification.", "", ["placeholder:iPhoneDuo"], -1, (-1, -1), "iPhone Duo", "iPhone Duo", "nil",
+            Device("iPhoneDuo", "Provisional iPhone Duo; display metrics and other capabilities await verification.", "", ["iPhone19,4"], -1, (-1, -1), "iPhone Duo", "iPhone Duo", "nil",
                 cpu="a20Pro", isFoldable=True),
           ]
 
