@@ -1238,6 +1238,16 @@ public enum Device {
       return isOneOf(Device.allDevicesWithDynamicIsland) || isOneOf(Device.allDevicesWithDynamicIsland.map(Device.simulator))
     }
 
+    /// All devices that have an Action Button.
+    public static var allDevicesWithActionButton: [Device] {
+      return [.iPhone15Pro, .iPhone15ProMax, .iPhone16, .iPhone16Plus, .iPhone16Pro, .iPhone16ProMax, .iPhone16e, .iPhone17, .iPhone17Pro, .iPhone17ProMax, .iPhoneAir, .iPhone17e]
+    }
+
+    /// Returns whether or not the device has an Action Button.
+    public var hasActionButton: Bool {
+      return isOneOf(Device.allDevicesWithActionButton) || isOneOf(Device.allDevicesWithActionButton.map(Device.simulator))
+    }
+
     /// All devices that have 3D Touch support.
     public static var allDevicesWith3dTouchSupport: [Device] {
       return [.iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhone8, .iPhone8Plus, .iPhoneX, .iPhoneXS, .iPhoneXSMax]

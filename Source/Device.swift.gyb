@@ -24,6 +24,7 @@ class Device:
       supportsWirelessCharging=False,
       hasRoundedDisplayCorners=False,
       hasDynamicIsland=False,
+      hasActionButton=False,
       applePencilSupport=0,
       hasForce3dTouchSupport=False,
       cameras=0,
@@ -52,6 +53,7 @@ class Device:
     self.supportsWirelessCharging = supportsWirelessCharging
     self.hasRoundedDisplayCorners = hasRoundedDisplayCorners
     self.hasDynamicIsland = hasDynamicIsland
+    self.hasActionButton = hasActionButton
     self.applePencilSupport = applePencilSupport
     self.hasForce3dTouchSupport = hasForce3dTouchSupport
     self.cameras = cameras
@@ -211,65 +213,77 @@ iPhones = [
                 cpu="a17Pro", isPro=True, isXSeries=True, hasFaceID=True, hasSensorHousing=True,
                 supportsWirelessCharging=True, hasRoundedDisplayCorners=True, hasDynamicIsland=True,
                 cameras=123, hasLidarSensor=True, hasUSBCConnectivity=True, has5gSupport=True,
-                hasEsimSupport=True, hasDualEsimSupport=True),
+                hasEsimSupport=True, hasDualEsimSupport=True,
+                hasActionButton=True),
             Device("iPhone15ProMax", "Device is an [iPhone 15 Pro Max](https://support.apple.com/kb/SP904)",       "",                                                                                                                          ["iPhone16,2"],                               6.7,  (9, 19.5),  "iPhone 15 Pro Max", "iPhone 15 Pro Max", 460,
                 cpu="a17Pro", isPlusFormFactor=True, isPro=True, isXSeries=True, hasFaceID=True,
                 hasSensorHousing=True, supportsWirelessCharging=True, hasRoundedDisplayCorners=True,
                 hasDynamicIsland=True, cameras=123, hasLidarSensor=True, hasUSBCConnectivity=True,
                 has5gSupport=True,
-                hasEsimSupport=True, hasDualEsimSupport=True),
+                hasEsimSupport=True, hasDualEsimSupport=True,
+                hasActionButton=True),
             Device("iPhone16",       "Device is an [iPhone 16](https://support.apple.com/121029)",                                                     "",                                                                                                                          ["iPhone17,3"],                               6.1,  (9, 19.5),  "iPhone 16", "iPhone 16", 460,
                 cpu="a18", isXSeries=True, hasFaceID=True, hasSensorHousing=True,
                 supportsWirelessCharging=True, hasRoundedDisplayCorners=True, hasDynamicIsland=True,
                 cameras=13, hasUSBCConnectivity=True, has5gSupport=True,
-                hasEsimSupport=True, hasDualEsimSupport=True),
+                hasEsimSupport=True, hasDualEsimSupport=True,
+                hasActionButton=True),
             Device("iPhone16Plus",   "Device is an [iPhone 16 Plus](https://support.apple.com/121030)",                                                "",                                                                                                                          ["iPhone17,4"],                               6.7,  (9, 19.5),  "iPhone 16 Plus", "iPhone 16 Plus", 460,
                 cpu="a18", isPlusFormFactor=True, isXSeries=True, hasFaceID=True, hasSensorHousing=True,
                 supportsWirelessCharging=True, hasRoundedDisplayCorners=True, hasDynamicIsland=True,
                 cameras=13, hasUSBCConnectivity=True, has5gSupport=True,
-                hasEsimSupport=True, hasDualEsimSupport=True),
+                hasEsimSupport=True, hasDualEsimSupport=True,
+                hasActionButton=True),
             Device("iPhone16Pro",    "Device is an [iPhone 16 Pro](https://support.apple.com/121031)",                                                 "",                                                                                                                          ["iPhone17,1"],                               6.3,  (9, 19.5),  "iPhone 16 Pro", "iPhone 16 Pro", 460,
                 cpu="a18Pro", isPro=True, isXSeries=True, hasFaceID=True, hasSensorHousing=True,
                 supportsWirelessCharging=True, hasRoundedDisplayCorners=True, hasDynamicIsland=True,
                 cameras=123, hasLidarSensor=True, hasUSBCConnectivity=True, has5gSupport=True,
-                hasEsimSupport=True, hasDualEsimSupport=True),
+                hasEsimSupport=True, hasDualEsimSupport=True,
+                hasActionButton=True),
             Device("iPhone16ProMax", "Device is an [iPhone 16 Pro Max](https://support.apple.com/121032)",                                             "",                                                                                                                          ["iPhone17,2"],                               6.9,  (9, 19.5),  "iPhone 16 Pro Max", "iPhone 16 Pro Max", 460,
                 cpu="a18Pro", isPlusFormFactor=True, isPro=True, isXSeries=True, hasFaceID=True,
                 hasSensorHousing=True, supportsWirelessCharging=True, hasRoundedDisplayCorners=True,
                 hasDynamicIsland=True, cameras=123, hasLidarSensor=True, hasUSBCConnectivity=True,
                 has5gSupport=True,
-                hasEsimSupport=True, hasDualEsimSupport=True),
+                hasEsimSupport=True, hasDualEsimSupport=True,
+                hasActionButton=True),
             Device("iPhone16e",      "Device is an [iPhone 16e](https://support.apple.com/122208)",              "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/122208-iphone-16e.png",                                         ["iPhone17,5"],                               6.1,  (9, 19.5),  "iPhone 16e", "iPhone 16e", 460,
                 cpu="a18", isXSeries=True, hasFaceID=True, hasSensorHousing=True,
                 supportsWirelessCharging=True, hasRoundedDisplayCorners=True, cameras=1,
                 hasUSBCConnectivity=True, has5gSupport=True,
-                hasEsimSupport=True, hasDualEsimSupport=True),
+                hasEsimSupport=True, hasDualEsimSupport=True,
+                hasActionButton=True),
             Device("iPhone17",       "Device is an [iPhone 17](https://support.apple.com/125089)",                                                     "",                                                                                                                          ["iPhone18,3"],                               6.3,  (9, 19.5),  "iPhone 17", "iPhone 17", 460,
                 cpu="a19", isXSeries=True, hasFaceID=True, hasSensorHousing=True,
                 supportsWirelessCharging=True, hasRoundedDisplayCorners=True, hasDynamicIsland=True,
                 cameras=13, hasUSBCConnectivity=True, has5gSupport=True,
-                hasEsimSupport=True, hasDualEsimSupport=True),
+                hasEsimSupport=True, hasDualEsimSupport=True,
+                hasActionButton=True),
             Device("iPhone17Pro",    "Device is an [iPhone 17 Pro](https://support.apple.com/125090)",                                                 "",                                                                                                                          ["iPhone18,1"],                               6.3,  (9, 19.5),  "iPhone 17 Pro", "iPhone 17 Pro", 460,
                 cpu="a19Pro", isPro=True, isXSeries=True, hasFaceID=True, hasSensorHousing=True,
                 supportsWirelessCharging=True, hasRoundedDisplayCorners=True, hasDynamicIsland=True,
                 cameras=123, hasLidarSensor=True, hasUSBCConnectivity=True, has5gSupport=True,
-                hasEsimSupport=True, hasDualEsimSupport=True),
+                hasEsimSupport=True, hasDualEsimSupport=True,
+                hasActionButton=True),
             Device("iPhone17ProMax", "Device is an [iPhone 17 Pro Max](https://support.apple.com/125091)",                                             "",                                                                                                                          ["iPhone18,2"],                               6.9,  (9, 19.5),  "iPhone 17 Pro Max", "iPhone 17 Pro Max", 460,
                 cpu="a19Pro", isPlusFormFactor=True, isPro=True, isXSeries=True, hasFaceID=True,
                 hasSensorHousing=True, supportsWirelessCharging=True, hasRoundedDisplayCorners=True,
                 hasDynamicIsland=True, cameras=123, hasLidarSensor=True, hasUSBCConnectivity=True,
                 has5gSupport=True,
-                hasEsimSupport=True, hasDualEsimSupport=True),
+                hasEsimSupport=True, hasDualEsimSupport=True,
+                hasActionButton=True),
             Device("iPhoneAir",      "Device is an [iPhone Air](https://support.apple.com/125092)",                                                    "",                                                                                                                          ["iPhone18,4"],                               6.5,  (9, 19.5),  "iPhone Air", "iPhone Air", 460,
                 cpu="a19Pro", isPlusFormFactor=True, isXSeries=True, hasFaceID=True, hasSensorHousing=True,
                 supportsWirelessCharging=True, hasRoundedDisplayCorners=True, hasDynamicIsland=True,
                 cameras=1, hasUSBCConnectivity=True, has5gSupport=True,
-                hasEsimSupport=True, hasDualEsimSupport=True),
+                hasEsimSupport=True, hasDualEsimSupport=True,
+                hasActionButton=True),
             Device("iPhone17e",      "Device is an [iPhone 17e](https://support.apple.com/126470)",                                                   "",                                                                                                                          ["iPhone18,5"],                               6.1,  (9, 19.5),  "iPhone 17e", "iPhone 17e", 460,
                 cpu="a19", isXSeries=True, hasFaceID=True, hasSensorHousing=True,
                 supportsWirelessCharging=True, hasRoundedDisplayCorners=True, cameras=1,
                 hasUSBCConnectivity=True, has5gSupport=True,
-                hasEsimSupport=True, hasDualEsimSupport=True),
+                hasEsimSupport=True, hasDualEsimSupport=True,
+                hasActionButton=True),
 
             # Identifiers: https://api.ipsw.me/v4/devices (verified 2026-09-21).
             # iPhone19,3 and iPhone19,7 are regional variants of iPhone 18 Pro Max.
@@ -1062,6 +1076,16 @@ public enum Device {
     /// Returns whether or not the device has the Dynamic Island.
     public var hasDynamicIsland: Bool {
       return isOneOf(Device.allDevicesWithDynamicIsland) || isOneOf(Device.allDevicesWithDynamicIsland.map(Device.simulator))
+    }
+
+    /// All devices that have an Action Button.
+    public static var allDevicesWithActionButton: [Device] {
+      return [${', '.join(list(map(lambda device: "." + device.caseName, list(filter(lambda device: device.hasActionButton == True, iOSDevices)))))}]
+    }
+
+    /// Returns whether or not the device has an Action Button.
+    public var hasActionButton: Bool {
+      return isOneOf(Device.allDevicesWithActionButton) || isOneOf(Device.allDevicesWithActionButton.map(Device.simulator))
     }
 
     /// All devices that have 3D Touch support.
