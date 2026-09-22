@@ -32,6 +32,7 @@ class Device:
       has5gSupport=False,
       hasEsimSupport=False,
       hasDualEsimSupport=False,
+      isFoldable=False,
   ):
     self.caseName = caseName
     self.comment = comment
@@ -61,6 +62,7 @@ class Device:
     self.has5gSupport = has5gSupport
     self.hasEsimSupport = hasEsimSupport
     self.hasDualEsimSupport = hasDualEsimSupport
+    self.isFoldable = isFoldable
 
 # iOS
 iPods = [
@@ -284,6 +286,10 @@ iPhones = [
                 hasDynamicIsland=True, cameras=123, hasLidarSensor=True, hasUSBCConnectivity=True,
                 has5gSupport=True,
                 hasEsimSupport=True, hasDualEsimSupport=True),
+
+            # Duo capabilities other than its chip and foldability are unconfirmed (false/empty defaults).
+            Device("iPhoneDuo", "Provisional iPhone Duo; display metrics and other capabilities await verification.", "", ["iPhone19,4"], -1, (-1, -1), "iPhone Duo", "iPhone Duo", "nil",
+                cpu="a20Pro", isFoldable=True),
           ]
 
 iPads = [
@@ -825,6 +831,23 @@ public enum Device {
       return unknown(identifier)
     #else
       return unknown(identifier)
+    #endif
+  }
+
+  /// Returns whether the device has a foldable display, including simulators.
+  public var isFoldable: Bool {
+    #if os(iOS)
+    switch self {
+% for device in iOSDevices:
+%   if device.isFoldable:
+    case .${device.caseName}: return true
+%   end
+% end
+    case .simulator(let model): return model.isFoldable
+    default: return false
+    }
+    #else
+    return false
     #endif
   }
 
