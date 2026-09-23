@@ -34,7 +34,7 @@ let package = Package(
             dependencies: [],
             path: "Source",
             exclude: ["Info.plist", "Device.swift.gyb"],
-            resources: [.process("PrivacyInfo.xcprivacy")],
+            resources: [.process("PrivacyInfo.xcprivacy")]
         ),
         .testTarget(
             name: "DeviceKitTests",
