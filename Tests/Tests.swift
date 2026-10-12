@@ -128,6 +128,36 @@ class DeviceKitTests: XCTestCase {
     #endif
   }
 
+  func testIsSimulatorForKnownAndUnknownDevices() {
+    for model in Device.allRealDevices + [.unknown("unrecognized")] {
+      XCTAssertFalse(model.isSimulator, model.description)
+      XCTAssertTrue(Device.simulator(model).isSimulator, model.description)
+    }
+  }
+
+  #if os(iOS) && targetEnvironment(simulator)
+  func testCurrentSimulatorWithKnownAndUnknownModels() {
+    let originalModelIdentifier = ProcessInfo.processInfo.environment["SIMULATOR_MODEL_IDENTIFIER"]
+    defer {
+      if let originalModelIdentifier = originalModelIdentifier {
+        setenv("SIMULATOR_MODEL_IDENTIFIER", originalModelIdentifier, 1)
+      } else {
+        unsetenv("SIMULATOR_MODEL_IDENTIFIER")
+      }
+    }
+
+    let models: [(String, Device)] = [
+      ("iPhone19,4", .iPhoneDuo),
+      ("iPhone999,1", .unknown("iPhone999,1"))
+    ]
+    for (identifier, model) in models {
+      setenv("SIMULATOR_MODEL_IDENTIFIER", identifier, 1)
+      XCTAssertEqual(Device.current, .simulator(model), identifier)
+      XCTAssertTrue(Device.current.isSimulator, identifier)
+    }
+  }
+  #endif
+
   func testDeviceDescription() {
     #if os(macOS)
     #else

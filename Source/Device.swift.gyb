@@ -1228,10 +1228,13 @@ public enum Device {
     return allRealDevices.map(Device.simulator)
   }
 
-  /// Returns whether the device is any of the simulator
+  /// Returns whether the device is a simulator, including simulators of unknown devices.
   /// Useful when there is a need to check and skip running a portion of code (location request or others)
   public var isSimulator: Bool {
-    return isOneOf(Device.allSimulators)
+    if case .simulator = self {
+      return true
+    }
+    return false
   }
 
   /**

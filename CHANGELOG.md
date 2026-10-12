@@ -7,6 +7,10 @@
 - Add `Device.iPhoneDuo` with the A20 Pro chip and `isFoldable`, true only for iPhone Duo and its simulator.
 - Recognize the `iPhone19,4` hardware identifier and omit the image. Display metrics remain unknown (`-1` for diagonal/ratio, `nil` for PPI); other unconfirmed capabilities use false/empty defaults.
 
+### Bug fixes
+
+- Make `isSimulator` return `true` for simulators of unknown devices, so detecting a simulator does not require support for its model.
+
 ## Version 5.9.0
 
 Releasedate: 2026-09-22
