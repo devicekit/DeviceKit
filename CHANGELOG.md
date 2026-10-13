@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Bug fixes
+
+- Correct portrait screen ratios, marketing names, and support links for later iPad Air and iPad Pro models. ([#457](https://github.com/devicekit/DeviceKit/issues/457))
+
 ## Version 5.9.0
 
 Releasedate: 2026-09-22

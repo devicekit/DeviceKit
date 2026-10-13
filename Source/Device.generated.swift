@@ -338,7 +338,7 @@ public enum Device {
     ///
     /// ![Image](https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/1000/IM1097/en_US/ipad-mini-6gen-240.png)
     case iPadMini6
-    /// Device is an [iPad mini (A17 Pro)](https://support.apple.com/en-us/121456)
+    /// Device is an [iPad mini (A17 Pro)](https://support.apple.com/121456)
     ///
     /// ![Image](https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/iPad_mini_A17_Pro_Wi-Fi_Lineup_Print__USEN.png)
     case iPadMiniA17Pro
@@ -390,19 +390,19 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP882/ipad-pro-4gen-mainimage_2x.png)
     case iPadPro12Inch6
-    /// Device is an [iPad Pro 11-inch (M4)](https://support.apple.com/en-us/119892)
+    /// Device is an [iPad Pro 11-inch (M4)](https://support.apple.com/119892)
     ///
     /// ![Image](https://cdsassets.apple.com/content/services/pub/image?productid=301031&size=240x240)
     case iPadPro11M4
-    /// Device is an [iPad Pro 13-inch (M4)](https://support.apple.com/en-us/119891)
+    /// Device is an [iPad Pro 13-inch (M4)](https://support.apple.com/119891)
     ///
     /// ![Image](https://cdsassets.apple.com/content/services/pub/image?productid=301033&size=240x240)
     case iPadPro13M4
-    /// Device is an [iPad Pro 11-inch (M5)](https://support.apple.com/en-us/125406)
+    /// Device is an [iPad Pro 11-inch (M5)](https://support.apple.com/125406)
     ///
     /// ![Image](https://cdsassets.apple.com/content/services/pub/image?productid=301271&size=240x240)
     case iPadPro11M5
-    /// Device is an [iPad Pro 13-inch (M5)](https://support.apple.com/en-us/125406)
+    /// Device is an [iPad Pro 13-inch (M5)](https://support.apple.com/125406)
     ///
     /// ![Image](https://cdsassets.apple.com/content/services/pub/image?productid=301273&size=240x240)
     case iPadPro13M5
@@ -985,11 +985,11 @@ public enum Device {
       case .iPadAir4: return (width: 41, height: 59)
       case .iPadAir5: return (width: 41, height: 59)
       case .iPadAir11M2: return (width: 41, height: 59)
-      case .iPadAir13M2: return (width: 683, height: 512)
-      case .iPadAir11M3: return (width: 59, height: 41)
-      case .iPadAir13M3: return (width: 683, height: 512)
-      case .iPadAir11M4: return (width: 59, height: 41)
-      case .iPadAir13M4: return (width: 683, height: 512)
+      case .iPadAir13M2: return (width: 512, height: 683)
+      case .iPadAir11M3: return (width: 41, height: 59)
+      case .iPadAir13M3: return (width: 512, height: 683)
+      case .iPadAir11M4: return (width: 41, height: 59)
+      case .iPadAir13M4: return (width: 512, height: 683)
       case .iPadMini: return (width: 3, height: 4)
       case .iPadMini2: return (width: 3, height: 4)
       case .iPadMini3: return (width: 3, height: 4)
@@ -1009,10 +1009,10 @@ public enum Device {
       case .iPadPro12Inch5: return (width: 512, height: 683)
       case .iPadPro11Inch4: return (width: 139, height: 199)
       case .iPadPro12Inch6: return (width: 512, height: 683)
-      case .iPadPro11M4: return (width: 605, height: 417)
-      case .iPadPro13M4: return (width: 4, height: 3)
-      case .iPadPro11M5: return (width: 605, height: 417)
-      case .iPadPro13M5: return (width: 4, height: 3)
+      case .iPadPro11M4: return (width: 417, height: 605)
+      case .iPadPro13M4: return (width: 3, height: 4)
+      case .iPadPro11M5: return (width: 417, height: 605)
+      case .iPadPro13M5: return (width: 3, height: 4)
       case .homePod: return (width: 4, height: 5)
       case .simulator(let model): return model.screenRatio
       case .unknown: return (width: -1, height: -1)
@@ -1749,12 +1749,12 @@ extension Device: CustomStringConvertible {
       case .iPadA16: return "iPad (A16)"
       case .iPadAir4: return "iPad Air (4th generation)"
       case .iPadAir5: return "iPad Air (5th generation)"
-      case .iPadAir11M2: return "iPad Air (11-inch) (M2)"
-      case .iPadAir13M2: return "iPad Air (13-inch) (M2)"
-      case .iPadAir11M3: return "iPad Air (11-inch) (M3)"
-      case .iPadAir13M3: return "iPad Air (13-inch) (M3)"
-      case .iPadAir11M4: return "iPad Air (11-inch) (M4)"
-      case .iPadAir13M4: return "iPad Air (13-inch) (M4)"
+      case .iPadAir11M2: return "iPad Air 11-inch (M2)"
+      case .iPadAir13M2: return "iPad Air 13-inch (M2)"
+      case .iPadAir11M3: return "iPad Air 11-inch (M3)"
+      case .iPadAir13M3: return "iPad Air 13-inch (M3)"
+      case .iPadAir11M4: return "iPad Air 11-inch (M4)"
+      case .iPadAir13M4: return "iPad Air 13-inch (M4)"
       case .iPadMini: return "iPad mini"
       case .iPadMini2: return "iPad mini 2"
       case .iPadMini3: return "iPad mini 3"
@@ -1774,10 +1774,10 @@ extension Device: CustomStringConvertible {
       case .iPadPro12Inch5: return "iPad Pro (12.9-inch) (5th generation)"
       case .iPadPro11Inch4: return "iPad Pro (11-inch) (4th generation)"
       case .iPadPro12Inch6: return "iPad Pro (12.9-inch) (6th generation)"
-      case .iPadPro11M4: return "iPad Pro (11-inch) (M4)"
-      case .iPadPro13M4: return "iPad Pro (13-inch) (M4)"
-      case .iPadPro11M5: return "iPad Pro (11-inch) (M5)"
-      case .iPadPro13M5: return "iPad Pro (13-inch) (M5)"
+      case .iPadPro11M4: return "iPad Pro 11-inch (M4)"
+      case .iPadPro13M4: return "iPad Pro 13-inch (M4)"
+      case .iPadPro11M5: return "iPad Pro 11-inch (M5)"
+      case .iPadPro13M5: return "iPad Pro 13-inch (M5)"
       case .homePod: return "HomePod"
       case .simulator(let model): return "Simulator (\(model.description))"
       case .unknown(let identifier): return identifier
@@ -1919,12 +1919,12 @@ extension Device: CustomStringConvertible {
       case .iPadA16: return "iPad (A16)"
       case .iPadAir4: return "iPad Air (4th generation)"
       case .iPadAir5: return "iPad Air (5th generation)"
-      case .iPadAir11M2: return "iPad Air (11-inch) (M2)"
-      case .iPadAir13M2: return "iPad Air (13-inch) (M2)"
-      case .iPadAir11M3: return "iPad Air (11-inch) (M3)"
-      case .iPadAir13M3: return "iPad Air (13-inch) (M3)"
-      case .iPadAir11M4: return "iPad Air (11-inch) (M4)"
-      case .iPadAir13M4: return "iPad Air (13-inch) (M4)"
+      case .iPadAir11M2: return "iPad Air 11-inch (M2)"
+      case .iPadAir13M2: return "iPad Air 13-inch (M2)"
+      case .iPadAir11M3: return "iPad Air 11-inch (M3)"
+      case .iPadAir13M3: return "iPad Air 13-inch (M3)"
+      case .iPadAir11M4: return "iPad Air 11-inch (M4)"
+      case .iPadAir13M4: return "iPad Air 13-inch (M4)"
       case .iPadMini: return "iPad mini"
       case .iPadMini2: return "iPad mini 2"
       case .iPadMini3: return "iPad mini 3"
@@ -1944,10 +1944,10 @@ extension Device: CustomStringConvertible {
       case .iPadPro12Inch5: return "iPad Pro (12.9-inch) (5th generation)"
       case .iPadPro11Inch4: return "iPad Pro (11-inch) (4th generation)"
       case .iPadPro12Inch6: return "iPad Pro (12.9-inch) (6th generation)"
-      case .iPadPro11M4: return "iPad Pro (11-inch) (M4)"
-      case .iPadPro13M4: return "iPad Pro (13-inch) (M4)"
-      case .iPadPro11M5: return "iPad Pro (11-inch) (M5)"
-      case .iPadPro13M5: return "iPad Pro (13-inch) (M5)"
+      case .iPadPro11M4: return "iPad Pro 11-inch (M4)"
+      case .iPadPro13M4: return "iPad Pro 13-inch (M4)"
+      case .iPadPro11M5: return "iPad Pro 11-inch (M5)"
+      case .iPadPro13M5: return "iPad Pro 13-inch (M5)"
       case .homePod: return "HomePod"
       case .simulator(let model): return "Simulator (\(model.safeDescription))"
       case .unknown(let identifier): return identifier
