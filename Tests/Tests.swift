@@ -346,6 +346,27 @@ class DeviceKitTests: XCTestCase {
     XCTAssertTrue(Device.iPadPro11Inch.screenRatio == (width: 139, height: 199))
     XCTAssertTrue(Device.iPadPro12Inch3.screenRatio == (width: 512, height: 683))
 
+    for model in [Device.iPadAir11M3, .iPadAir11M4] {
+      for variant in [model, .simulator(model)] {
+        XCTAssertTrue(variant.screenRatio == (width: 41, height: 59))
+      }
+    }
+    for model in [Device.iPadAir13M2, .iPadAir13M3, .iPadAir13M4] {
+      for variant in [model, .simulator(model)] {
+        XCTAssertTrue(variant.screenRatio == (width: 512, height: 683))
+      }
+    }
+    for model in [Device.iPadPro11M4, .iPadPro11M5] {
+      for variant in [model, .simulator(model)] {
+        XCTAssertTrue(variant.screenRatio == (width: 417, height: 605))
+      }
+    }
+    for model in [Device.iPadPro13M4, .iPadPro13M5] {
+      for variant in [model, .simulator(model)] {
+        XCTAssertTrue(variant.screenRatio == (width: 3, height: 4))
+      }
+    }
+
     XCTAssertTrue(Device.simulator(device).screenRatio == device.screenRatio)
     XCTAssertTrue(Device.unknown(UUID().uuidString).screenRatio == (width: -1, height: -1))
   }
@@ -439,6 +460,16 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.iPadPro10Inch.description, "iPad Pro (10.5-inch)")
     XCTAssertEqual(Device.iPadPro11Inch.description, "iPad Pro (11-inch)")
     XCTAssertEqual(Device.iPadPro12Inch3.description, "iPad Pro (12.9-inch) (3rd generation)")
+    XCTAssertEqual(Device.iPadAir11M2.description, "iPad Air 11-inch (M2)")
+    XCTAssertEqual(Device.iPadAir13M2.description, "iPad Air 13-inch (M2)")
+    XCTAssertEqual(Device.iPadAir11M3.description, "iPad Air 11-inch (M3)")
+    XCTAssertEqual(Device.iPadAir13M3.description, "iPad Air 13-inch (M3)")
+    XCTAssertEqual(Device.iPadAir11M4.description, "iPad Air 11-inch (M4)")
+    XCTAssertEqual(Device.iPadAir13M4.description, "iPad Air 13-inch (M4)")
+    XCTAssertEqual(Device.iPadPro11M4.description, "iPad Pro 11-inch (M4)")
+    XCTAssertEqual(Device.iPadPro13M4.description, "iPad Pro 13-inch (M4)")
+    XCTAssertEqual(Device.iPadPro11M5.description, "iPad Pro 11-inch (M5)")
+    XCTAssertEqual(Device.iPadPro13M5.description, "iPad Pro 13-inch (M5)")
     XCTAssertEqual(Device.simulator(Device.iPadPro10Inch).description, "Simulator (\(Device.iPadPro10Inch))")
     let uuid = UUID().uuidString
     XCTAssertEqual(Device.unknown(uuid).description, uuid)
