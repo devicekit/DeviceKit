@@ -15,7 +15,7 @@ import PackageDescription
 let package = Package(
     name: "DeviceKit",
     platforms: [
-        .iOS(.v13),
+        .iOS(.v15),
         .tvOS(.v13),
         .watchOS(.v4)
     ],
