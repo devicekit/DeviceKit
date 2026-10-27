@@ -412,8 +412,6 @@ public enum Device {
     ///
     /// ![Image](https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP773/homepod_space_gray_large_2x.jpg)
     case homePod
-    /// Device is a [HomePod mini 2](https://www.apple.com/homepod-mini/specs/)
-    case homePodMini2
   #elseif os(tvOS)
     /// Device is an [Apple TV HD](https://support.apple.com/kb/SP724) (Previously Apple TV (4th generation))
     ///
@@ -689,7 +687,6 @@ public enum Device {
       case "iPad17,1", "iPad17,2": return iPadPro11M5
       case "iPad17,3", "iPad17,4": return iPadPro13M5
       case "AudioAccessory1,1": return homePod
-      case "AudioAccessory11,1": return homePodMini2
       case "i386", "x86_64", "arm64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "iOS"))
       default: return unknown(identifier)
       }
@@ -871,7 +868,6 @@ public enum Device {
         case .iPadPro11M5: return 11.0
         case .iPadPro13M5: return 13.0
         case .homePod: return -1
-        case .homePodMini2: return -1
         case .simulator(let model): return model.diagonal
         case .unknown: return -1
       }
@@ -1024,7 +1020,6 @@ public enum Device {
       case .iPadPro11M5: return (width: 605, height: 417)
       case .iPadPro13M5: return (width: 4, height: 3)
       case .homePod: return (width: 4, height: 5)
-      case .homePodMini2: return (width: -1, height: -1)
       case .simulator(let model): return model.screenRatio
       case .unknown: return (width: -1, height: -1)
       }
@@ -1608,7 +1603,6 @@ public enum Device {
       case .iPadPro11M5: return 264
       case .iPadPro13M5: return 264
       case .homePod: return -1
-      case .homePodMini2: return -1
       case .simulator(let model): return model.ppi
       case .unknown: return nil
     }
@@ -1793,7 +1787,6 @@ extension Device: CustomStringConvertible {
       case .iPadPro11M5: return "iPad Pro (11-inch) (M5)"
       case .iPadPro13M5: return "iPad Pro (13-inch) (M5)"
       case .homePod: return "HomePod"
-      case .homePodMini2: return "HomePod mini 2"
       case .simulator(let model): return "Simulator (\(model.description))"
       case .unknown(let identifier): return identifier
       }
@@ -1966,7 +1959,6 @@ extension Device: CustomStringConvertible {
       case .iPadPro11M5: return "iPad Pro (11-inch) (M5)"
       case .iPadPro13M5: return "iPad Pro (13-inch) (M5)"
       case .homePod: return "HomePod"
-      case .homePodMini2: return "HomePod mini 2"
       case .simulator(let model): return "Simulator (\(model.safeDescription))"
       case .unknown(let identifier): return identifier
       }
@@ -2580,7 +2572,6 @@ extension Device {
     case m3
     case m4
     case m5
-    case s10
   #elseif os(watchOS)
     case s1
     case s1P
@@ -2702,7 +2693,6 @@ extension Device {
       case .iPadPro11M5: return .m5
       case .iPadPro13M5: return .m5
       case .homePod: return .a8
-      case .homePodMini2: return .s10
       case .simulator(let model): return model.cpu
       case .unknown: return .unknown
     }
@@ -2803,7 +2793,6 @@ extension Device.CPU: CustomStringConvertible {
       case .m3: return "M3"
       case .m4: return "M4"
       case .m5: return "M5"
-      case .s10: return "S10"
       case .unknown: return "unknown"
     }
   #elseif os(watchOS)

@@ -439,9 +439,6 @@ iPads = [
 homePods = [
             Device("homePod",        "Device is a [HomePod](https://support.apple.com/kb/SP773)",                              "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP773/homepod_space_gray_large_2x.jpg",        ["AudioAccessory1,1"],                        -1,   (4, 5),     "HomePod", "HomePod", -1,
                 cpu="a8"),
-            # Identifiers: https://api.ipsw.me/v4/devices (verified 2026-10-27).
-            Device("homePodMini2",   "Device is a [HomePod mini 2](https://www.apple.com/homepod-mini/specs/)",                 "",                                                                                                        ["AudioAccessory11,1"],                       -1,   (-1, -1),   "HomePod mini 2", "HomePod mini 2", -1,
-                cpu="s10"),
            ]
 # tvOS
 tvs = [
@@ -1934,7 +1931,6 @@ iOS_cpus = [
           CPU("m3", "M3"),
           CPU("m4", "M4"),
           CPU("m5", "M5"),
-          CPU("s10", "S10"),
       ]
 
 watchOS_cpus = [

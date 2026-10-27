@@ -78,12 +78,6 @@ class DeviceKitTests: XCTestCase {
   #if os(iOS) || os(tvOS)
   func testOctober2026Devices() {
     #if os(iOS)
-    // HomePod mini 2 has a verified identifier.
-    XCTAssertEqual(Device.mapToDevice(identifier: "AudioAccessory11,1"), .homePodMini2)
-    XCTAssertEqual(Device.homePodMini2.description, "HomePod mini 2")
-    XCTAssertEqual(Device.homePodMini2.cpu, .s10)
-    XCTAssertEqual(Device.CPU.s10.description, "S10")
-
     // iPad mini (A20 Pro) is provisional until its identifiers are public.
     let model = Device.iPadMiniA20Pro
     XCTAssertTrue(model.isPad)
@@ -114,7 +108,7 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(model.ppi, nil)
     #endif
     // Unannounced identifiers must remain unknown.
-    for identifier in ["AudioAccessory11,2", "iPad18,1", "iPad18,2", "AppleTV15,1", ""] {
+    for identifier in ["iPad18,1", "iPad18,2", "AppleTV15,1", ""] {
       XCTAssertEqual(Device.mapToDevice(identifier: identifier), .unknown(identifier))
     }
   }
