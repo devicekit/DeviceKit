@@ -2,6 +2,32 @@
 
 ## Unreleased
 
+## Version 5.10.0
+
+Releasedate: 2026-10-27
+
+```ruby
+pod 'DeviceKit', '~> 5.10'
+```
+
+### New devices
+
+This version adds support for iPhone Duo, including display metrics, the A20 Pro chip, Touch ID, wide and ultra-wide cameras, Dynamic Island, wireless charging, USB-C, 5G, dual eSIM, and Apple Pencil (USB-C) compatibility: ([#507](https://github.com/devicekit/DeviceKit/pull/507))
+
+| Device | Case value |
+| --- | --- |
+| iPhone Duo | `Device.iPhoneDuo` |
+
+Display metrics describe the outer display: 5.4 inches, a 233:339 aspect ratio (1398 × 2034 pixels), and 460 PPI.
+
+### New features
+
+- Add `isFoldable`, true for iPhone Duo and its simulator. ([#507](https://github.com/devicekit/DeviceKit/pull/507))
+
+### Bug fixes
+
+- Fix `isSimulator` returning `false` for simulators of unknown devices. ([#507](https://github.com/devicekit/DeviceKit/pull/507))
+
 ## Version 5.9.0
 
 Releasedate: 2026-09-22

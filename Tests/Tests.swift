@@ -16,6 +16,65 @@ class DeviceKitTests: XCTestCase {
 
   let device = Device.current
 
+  func testIsFoldable() {
+    for model in Device.allRealDevices {
+      #if os(iOS)
+      let expected = model == .iPhoneDuo
+      #else
+      let expected = false
+      #endif
+      XCTAssertEqual(model.isFoldable, expected, model.description)
+      XCTAssertEqual(Device.simulator(model).isFoldable, expected, model.description)
+    }
+    XCTAssertFalse(Device.unknown("unrecognized").isFoldable)
+    XCTAssertFalse(Device.simulator(.unknown("unrecognized")).isFoldable)
+  }
+
+  #if os(iOS)
+  func testIPhoneDuo() {
+    let model = Device.iPhoneDuo
+    XCTAssertEqual(Device.mapToDevice(identifier: "iPhone19,4"), model)
+    XCTAssertEqual(Device.mapToDevice(identifier: "placeholder:iPhoneDuo"), .unknown("placeholder:iPhoneDuo"))
+    XCTAssertEqual(model.description, "iPhone Duo")
+    XCTAssertEqual(model.safeDescription, "iPhone Duo")
+    XCTAssertTrue(Device.allPhones.contains(model))
+    XCTAssertTrue(Device.allRealDevices.contains(model))
+    XCTAssertTrue(Device.allSimulators.contains(.simulator(model)))
+    XCTAssertEqual(model.cameras, [.wide, .ultraWide])
+    XCTAssertTrue(model.hasCamera)
+    XCTAssertTrue(model.hasWideCamera)
+    XCTAssertTrue(model.hasUltraWideCamera)
+    XCTAssertFalse(model.hasTelephotoCamera)
+    XCTAssertTrue(Device.allDevicesWithWideCamera.contains(model))
+    XCTAssertTrue(Device.allDevicesWithUltraWideCamera.contains(model))
+    XCTAssertFalse(Device.allDevicesWithTelephotoCamera.contains(model))
+    for variant in [model, .simulator(model)] {
+      XCTAssertTrue(variant.isPhone)
+      XCTAssertFalse(variant.isPad)
+      XCTAssertTrue(variant.isFoldable)
+      XCTAssertEqual(variant.cpu, .a20Pro)
+      // The single-display properties describe the outer display, not the unfolded inner display.
+      XCTAssertEqual(variant.diagonal, 5.4)
+      XCTAssertEqual(variant.screenRatio.width, 233)
+      XCTAssertEqual(variant.screenRatio.height, 339)
+      XCTAssertEqual(variant.ppi, 460)
+      XCTAssertTrue(variant.isTouchIDCapable)
+      XCTAssertTrue(variant.hasBiometricSensor)
+      XCTAssertFalse(variant.isFaceIDCapable)
+      XCTAssertTrue(variant.hasSensorHousing)
+      XCTAssertTrue(variant.hasRoundedDisplayCorners)
+      XCTAssertTrue(variant.hasDynamicIsland)
+      XCTAssertTrue(variant.supportsWirelessCharging)
+      XCTAssertTrue(variant.hasUSBCConnectivity)
+      XCTAssertTrue(variant.has5gSupport)
+      XCTAssertTrue(variant.hasEsimSupport)
+      XCTAssertTrue(variant.hasDualEsimSupport)
+      XCTAssertFalse(variant.hasLidarSensor)
+      XCTAssertFalse(variant.has3dTouchSupport)
+    }
+  }
+  #endif
+
   #if os(iOS) || os(watchOS)
   func testSeptember2026Devices() {
     struct ExpectedDevice {
@@ -32,8 +91,8 @@ class DeviceKitTests: XCTestCase {
     ]
     let chip = Device.CPU.a20Pro
     XCTAssertEqual(chip.description, "A20 Pro")
-    // The deferred model and unverified identifiers must remain unknown.
-    for identifier in ["iPhone19,1", "iPhone19,4", "iPhone19,5", "iPhone19,6", "placeholder:iPhone18Pro", "placeholder:iPhone18ProMax"] {
+    // Unverified identifiers must remain unknown.
+    for identifier in ["iPhone19,1", "iPhone19,5", "iPhone19,6", "placeholder:iPhone18Pro", "placeholder:iPhone18ProMax"] {
       XCTAssertEqual(Device.mapToDevice(identifier: identifier), .unknown(identifier))
     }
     #else
@@ -90,6 +149,36 @@ class DeviceKitTests: XCTestCase {
     XCTAssertTrue(device.isSimulator)
     #endif
   }
+
+  func testIsSimulatorForKnownAndUnknownDevices() {
+    for model in Device.allRealDevices + [.unknown("unrecognized")] {
+      XCTAssertFalse(model.isSimulator, model.description)
+      XCTAssertTrue(Device.simulator(model).isSimulator, model.description)
+    }
+  }
+
+  #if os(iOS) && targetEnvironment(simulator)
+  func testCurrentSimulatorWithKnownAndUnknownModels() {
+    let originalModelIdentifier = ProcessInfo.processInfo.environment["SIMULATOR_MODEL_IDENTIFIER"]
+    defer {
+      if let originalModelIdentifier = originalModelIdentifier {
+        setenv("SIMULATOR_MODEL_IDENTIFIER", originalModelIdentifier, 1)
+      } else {
+        unsetenv("SIMULATOR_MODEL_IDENTIFIER")
+      }
+    }
+
+    let models: [(String, Device)] = [
+      ("iPhone19,4", .iPhoneDuo),
+      ("iPhone999,1", .unknown("iPhone999,1"))
+    ]
+    for (identifier, model) in models {
+      setenv("SIMULATOR_MODEL_IDENTIFIER", identifier, 1)
+      XCTAssertEqual(Device.current, .simulator(model), identifier)
+      XCTAssertTrue(Device.current.isSimulator, identifier)
+    }
+  }
+  #endif
 
   func testDeviceDescription() {
     #if os(macOS)
@@ -608,6 +697,7 @@ class DeviceKitTests: XCTestCase {
       .iPhone17ProMax,
       .iPhone18Pro,
       .iPhone18ProMax,
+      .iPhoneDuo,
       .iPhoneAir,
     ]
     for device in Device.allRealDevices {
@@ -644,6 +734,7 @@ class DeviceKitTests: XCTestCase {
       .iPhone17ProMax,
       .iPhone18Pro,
       .iPhone18ProMax,
+      .iPhoneDuo,
       .iPhoneAir,
       .iPhone17e,
       .iPad10,
@@ -822,6 +913,7 @@ class DeviceKitTests: XCTestCase {
       .iPhone17ProMax,
       .iPhone18Pro,
       .iPhone18ProMax,
+      .iPhoneDuo,
       .iPhoneAir,
       .iPhone17e,
       .iPad10,
@@ -855,6 +947,14 @@ class DeviceKitTests: XCTestCase {
   }
 
   func testApplePencilSupport() {
+    // iPhone Duo supports only Apple Pencil (USB-C), including its simulator representation.
+    XCTAssertTrue(Device.allApplePencilCapableDevices.contains(.iPhoneDuo))
+    for model in [Device.iPhoneDuo, .simulator(.iPhoneDuo)] {
+      XCTAssertEqual(model.applePencilSupport, [.firstGenerationUsbC])
+    }
+    XCTAssertFalse(Device.allApplePencilCapableDevices.contains(.iPhone18Pro))
+    XCTAssertTrue(Device.iPhone18Pro.applePencilSupport.isEmpty)
+
     // Test iPad (10th gen) - Supports Apple Pencil (1st gen) and Apple Pencil (USB-C)
     XCTAssertTrue(Device.iPad10.applePencilSupport.contains(.firstGeneration))
     XCTAssertTrue(Device.iPad10.applePencilSupport.contains(.firstGenerationUsbC))
