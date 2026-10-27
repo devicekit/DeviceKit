@@ -2294,7 +2294,7 @@ extension Device {
 
   /// All Apple Pencil Capable Devices
   public static var allApplePencilCapableDevices: [Device] {
-    return [.iPad6, .iPadAir3, .iPad7, .iPad8, .iPad9, .iPad10, .iPadA16, .iPadAir4, .iPadAir5, .iPadAir11M2, .iPadAir13M2, .iPadAir11M3, .iPadAir13M3, .iPadAir11M4, .iPadAir13M4, .iPadMini5, .iPadMini6, .iPadMiniA17Pro, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6, .iPadPro11M4, .iPadPro13M4, .iPadPro11M5, .iPadPro13M5]
+    return [.iPhoneDuo, .iPad6, .iPadAir3, .iPad7, .iPad8, .iPad9, .iPad10, .iPadA16, .iPadAir4, .iPadAir5, .iPadAir11M2, .iPadAir13M2, .iPadAir11M3, .iPadAir13M3, .iPadAir11M4, .iPadAir13M4, .iPadMini5, .iPadMini6, .iPadMiniA17Pro, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6, .iPadPro11M4, .iPadPro13M4, .iPadPro11M5, .iPadPro13M5]
   }
 
   /// Returns supported version of the Apple Pencil
@@ -2310,6 +2310,7 @@ extension Device {
       case .iPadPro12Inch: return .firstGeneration
       case .iPadPro12Inch2: return .firstGeneration
       case .iPadPro10Inch: return .firstGeneration
+      case .iPhoneDuo: return .firstGenerationUsbC
       case .iPad10: return [.firstGeneration, .firstGenerationUsbC]
       case .iPadA16: return [.firstGeneration, .firstGenerationUsbC]
       case .iPadAir4: return [.secondGeneration, .firstGenerationUsbC]

@@ -922,6 +922,14 @@ class DeviceKitTests: XCTestCase {
   }
 
   func testApplePencilSupport() {
+    // iPhone Duo supports only Apple Pencil (USB-C), including its simulator representation.
+    XCTAssertTrue(Device.allApplePencilCapableDevices.contains(.iPhoneDuo))
+    for model in [Device.iPhoneDuo, .simulator(.iPhoneDuo)] {
+      XCTAssertEqual(model.applePencilSupport, [.firstGenerationUsbC])
+    }
+    XCTAssertFalse(Device.allApplePencilCapableDevices.contains(.iPhone18Pro))
+    XCTAssertTrue(Device.iPhone18Pro.applePencilSupport.isEmpty)
+
     // Test iPad (10th gen) - Supports Apple Pencil (1st gen) and Apple Pencil (USB-C)
     XCTAssertTrue(Device.iPad10.applePencilSupport.contains(.firstGeneration))
     XCTAssertTrue(Device.iPad10.applePencilSupport.contains(.firstGenerationUsbC))

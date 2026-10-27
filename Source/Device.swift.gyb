@@ -287,9 +287,10 @@ iPhones = [
                 has5gSupport=True,
                 hasEsimSupport=True, hasDualEsimSupport=True),
 
-            # Duo capabilities other than its chip and foldability are unconfirmed (false/empty defaults).
+            # Duo capabilities other than its chip, foldability, and Apple Pencil support are unconfirmed (false/empty defaults).
+            # Apple Pencil (USB-C) only: https://www.apple.com/iphone-duo/specs/
             Device("iPhoneDuo", "Provisional iPhone Duo; display metrics and other capabilities await verification.", "", ["iPhone19,4"], -1, (-1, -1), "iPhone Duo", "iPhone Duo", "nil",
-                cpu="a20Pro", isFoldable=True),
+                cpu="a20Pro", applePencilSupport=3, isFoldable=True),
           ]
 
 iPads = [
