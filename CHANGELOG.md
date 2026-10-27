@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+## Version 5.10.0
+
+Releasedate: TBD
+
+```ruby
+pod 'DeviceKit', '~> 5.10'
+```
+
 ### Provisional iPhone Duo support
 
 - Add `Device.iPhoneDuo` with the A20 Pro chip and `isFoldable`, true only for iPhone Duo and its simulator.
