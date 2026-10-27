@@ -287,10 +287,13 @@ iPhones = [
                 has5gSupport=True,
                 hasEsimSupport=True, hasDualEsimSupport=True),
 
-            # Use the outer display's diagonal and 1398 x 2034 pixel aspect ratio (reduced by 6).
-            # Other unverified capabilities retain false/empty defaults. Apple Pencil (USB-C) only.
-            Device("iPhoneDuo", "Device is an [iPhone Duo](https://www.apple.com/iphone-duo/specs/). The diagonal and screen ratio describe the outer display.", "", ["iPhone19,4"], 5.4, (233, 339), "iPhone Duo", "iPhone Duo", "nil",
-                cpu="a20Pro", applePencilSupport=3, isFoldable=True),
+            # Display metrics and sensor housing describe the outer display (1398 x 2034 pixels).
+            # The 2x telephoto mode crops the main sensor; there is no separate telephoto camera.
+            Device("iPhoneDuo", "Device is an [iPhone Duo](https://www.apple.com/iphone-duo/specs/). Display metrics and sensor housing describe the outer display.", "https://www.apple.com/v/iphone-duo/e/images/overview/camera/hero_left__cpq2rhkwqzqu_large.jpg", ["iPhone19,4"], 5.4, (233, 339), "iPhone Duo", "iPhone Duo", 460,
+                cpu="a20Pro", isXSeries=True, hasTouchID=True, hasSensorHousing=True,
+                supportsWirelessCharging=True, hasRoundedDisplayCorners=True, hasDynamicIsland=True,
+                applePencilSupport=3, cameras=13, hasUSBCConnectivity=True, has5gSupport=True,
+                hasEsimSupport=True, hasDualEsimSupport=True, isFoldable=True),
           ]
 
 iPads = [

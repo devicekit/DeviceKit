@@ -12,13 +12,13 @@ pod 'DeviceKit', '~> 5.10'
 
 ### New devices
 
-This version adds support for iPhone Duo, including model identification, the A20 Pro chip, and Apple Pencil (USB-C) compatibility: ([#507](https://github.com/devicekit/DeviceKit/pull/507))
+This version adds support for iPhone Duo, including display metrics, the A20 Pro chip, Touch ID, wide and ultra-wide cameras, Dynamic Island, wireless charging, USB-C, 5G, dual eSIM, and Apple Pencil (USB-C) compatibility: ([#507](https://github.com/devicekit/DeviceKit/pull/507))
 
 | Device | Case value |
 | --- | --- |
 | iPhone Duo | `Device.iPhoneDuo` |
 
-The diagonal and screen ratio describe the outer display: 5.4 inches and 233:339 (1398 × 2034 pixels). PPI is not yet provided.
+Display metrics describe the outer display: 5.4 inches, a 233:339 aspect ratio (1398 × 2034 pixels), and 460 PPI.
 
 ### New features
 

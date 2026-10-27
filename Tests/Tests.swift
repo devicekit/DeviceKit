@@ -40,6 +40,14 @@ class DeviceKitTests: XCTestCase {
     XCTAssertTrue(Device.allPhones.contains(model))
     XCTAssertTrue(Device.allRealDevices.contains(model))
     XCTAssertTrue(Device.allSimulators.contains(.simulator(model)))
+    XCTAssertEqual(model.cameras, [.wide, .ultraWide])
+    XCTAssertTrue(model.hasCamera)
+    XCTAssertTrue(model.hasWideCamera)
+    XCTAssertTrue(model.hasUltraWideCamera)
+    XCTAssertFalse(model.hasTelephotoCamera)
+    XCTAssertTrue(Device.allDevicesWithWideCamera.contains(model))
+    XCTAssertTrue(Device.allDevicesWithUltraWideCamera.contains(model))
+    XCTAssertFalse(Device.allDevicesWithTelephotoCamera.contains(model))
     for variant in [model, .simulator(model)] {
       XCTAssertTrue(variant.isPhone)
       XCTAssertFalse(variant.isPad)
@@ -49,7 +57,20 @@ class DeviceKitTests: XCTestCase {
       XCTAssertEqual(variant.diagonal, 5.4)
       XCTAssertEqual(variant.screenRatio.width, 233)
       XCTAssertEqual(variant.screenRatio.height, 339)
-      XCTAssertNil(variant.ppi)
+      XCTAssertEqual(variant.ppi, 460)
+      XCTAssertTrue(variant.isTouchIDCapable)
+      XCTAssertTrue(variant.hasBiometricSensor)
+      XCTAssertFalse(variant.isFaceIDCapable)
+      XCTAssertTrue(variant.hasSensorHousing)
+      XCTAssertTrue(variant.hasRoundedDisplayCorners)
+      XCTAssertTrue(variant.hasDynamicIsland)
+      XCTAssertTrue(variant.supportsWirelessCharging)
+      XCTAssertTrue(variant.hasUSBCConnectivity)
+      XCTAssertTrue(variant.has5gSupport)
+      XCTAssertTrue(variant.hasEsimSupport)
+      XCTAssertTrue(variant.hasDualEsimSupport)
+      XCTAssertFalse(variant.hasLidarSensor)
+      XCTAssertFalse(variant.has3dTouchSupport)
     }
   }
   #endif
@@ -676,6 +697,7 @@ class DeviceKitTests: XCTestCase {
       .iPhone17ProMax,
       .iPhone18Pro,
       .iPhone18ProMax,
+      .iPhoneDuo,
       .iPhoneAir,
     ]
     for device in Device.allRealDevices {
@@ -712,6 +734,7 @@ class DeviceKitTests: XCTestCase {
       .iPhone17ProMax,
       .iPhone18Pro,
       .iPhone18ProMax,
+      .iPhoneDuo,
       .iPhoneAir,
       .iPhone17e,
       .iPad10,
@@ -890,6 +913,7 @@ class DeviceKitTests: XCTestCase {
       .iPhone17ProMax,
       .iPhone18Pro,
       .iPhone18ProMax,
+      .iPhoneDuo,
       .iPhoneAir,
       .iPhone17e,
       .iPad10,
