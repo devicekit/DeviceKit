@@ -372,6 +372,12 @@ iPads = [
                 cpu="a17Pro", isPadMiniFormFactor=True, hasTouchID=True, hasRoundedDisplayCorners=True,
                 applePencilSupport=34, cameras=1, hasUSBCConnectivity=True, has5gSupport=True,
                 hasEsimSupport=True),
+            # Specs: https://www.apple.com/ipad-mini/specs/ (verified 2026-10-27).
+            # Identifiers: https://theapplewiki.com/wiki/Firmware/iPad_mini/27.x (verified 2026-10-27).
+            Device("iPadMiniA20Pro", "Device is an [iPad mini (A20 Pro)](https://www.apple.com/ipad-mini/specs/)",             "",                                                                                                                ["iPad19,1", "iPad19,2"],                           8.5,  (756, 1158), "iPad mini (A20 Pro)", "iPad mini (A20 Pro)", 326,
+                cpu="a20Pro", isPadMiniFormFactor=True, hasTouchID=True, hasRoundedDisplayCorners=True,
+                applePencilSupport=34, cameras=1, hasUSBCConnectivity=True, has5gSupport=True,
+                hasEsimSupport=True),
             Device("iPadPro9Inch",   "Device is an [iPad Pro 9.7-inch](https://support.apple.com/kb/SP739)",                   "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP739/SP739.png",                                       ["iPad6,3", "iPad6,4"],                             9.7,  (3, 4),      "iPad Pro (9.7-inch)", "iPad Pro (9.7-inch)", 264,
                 cpu="a9X", isPro=True, hasTouchID=True, applePencilSupport=1, cameras=1),
             Device("iPadPro12Inch",  "Device is an [iPad Pro 12-inch](https://support.apple.com/kb/SP723)",                    "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP723/SP723-iPad_Pro_2x.png",                           ["iPad6,7", "iPad6,8"],                             12.9, (3, 4),      "iPad Pro (12.9-inch)", "iPad Pro (12.9-inch)", 264,
@@ -444,6 +450,10 @@ tvs = [
                 cpu="a12Bionic"),
             Device("appleTV4K3",     "Device is an [Apple TV 4K (3rd generation)](https://support.apple.com/kb/SP886)",                       "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP886/apple-tv-4k-3gen_2x.png",                           ["AppleTV14,1"], 0, (), "Apple TV 4K (3rd generation)", "Apple TV 4K (3rd generation)", -1,
                 cpu="a15Bionic"),
+            # Specs: https://www.apple.com/apple-tv-4k/specs/ (verified 2026-10-27).
+            # Identifiers: https://theapplewiki.com/wiki/Apple_TV_4K_(4th_generation) (verified 2026-10-27).
+            Device("appleTV4K4",     "Device is an [Apple TV 4K (4th generation)](https://www.apple.com/apple-tv-4k/specs/)",                 "",                                                                                                                  ["AppleTV18,1"], 0, (), "Apple TV 4K (4th generation)", "Apple TV 4K (4th generation)", -1,
+                cpu="a19"),
       ]
 
 # watchOS
