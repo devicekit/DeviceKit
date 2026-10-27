@@ -236,7 +236,7 @@ public enum Device {
     case iPhone18Pro
     /// Device is an [iPhone 18 Pro Max](https://support.apple.com/en-us/148591)
     case iPhone18ProMax
-    /// Provisional iPhone Duo; display metrics and other capabilities await verification.
+    /// Device is an [iPhone Duo](https://www.apple.com/iphone-duo/specs/). The diagonal and screen ratio describe the outer display.
     case iPhoneDuo
     /// Device is an [iPad 2](https://support.apple.com/kb/SP622)
     ///
@@ -834,7 +834,7 @@ public enum Device {
         case .iPhone17e: return 6.1
         case .iPhone18Pro: return 6.3
         case .iPhone18ProMax: return 6.9
-        case .iPhoneDuo: return -1
+        case .iPhoneDuo: return 5.4
         case .iPad2: return 9.7
         case .iPad3: return 9.7
         case .iPad4: return 9.7
@@ -986,7 +986,7 @@ public enum Device {
       case .iPhone17e: return (width: 9, height: 19.5)
       case .iPhone18Pro: return (width: 9, height: 19.5)
       case .iPhone18ProMax: return (width: 9, height: 19.5)
-      case .iPhoneDuo: return (width: -1, height: -1)
+      case .iPhoneDuo: return (width: 233, height: 339)
       case .iPad2: return (width: 3, height: 4)
       case .iPad3: return (width: 3, height: 4)
       case .iPad4: return (width: 3, height: 4)

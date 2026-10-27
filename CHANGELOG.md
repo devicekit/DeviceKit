@@ -18,7 +18,7 @@ This version adds support for iPhone Duo, including model identification, the A2
 | --- | --- |
 | iPhone Duo | `Device.iPhoneDuo` |
 
-Display metrics are not yet available for this model.
+The diagonal and screen ratio describe the outer display: 5.4 inches and 233:339 (1398 × 2034 pixels). PPI is not yet provided.
 
 ### New features
 

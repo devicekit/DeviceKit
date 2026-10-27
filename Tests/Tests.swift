@@ -31,7 +31,7 @@ class DeviceKitTests: XCTestCase {
   }
 
   #if os(iOS)
-  func testProvisionalIPhoneDuo() {
+  func testIPhoneDuo() {
     let model = Device.iPhoneDuo
     XCTAssertEqual(Device.mapToDevice(identifier: "iPhone19,4"), model)
     XCTAssertEqual(Device.mapToDevice(identifier: "placeholder:iPhoneDuo"), .unknown("placeholder:iPhoneDuo"))
@@ -45,9 +45,10 @@ class DeviceKitTests: XCTestCase {
       XCTAssertFalse(variant.isPad)
       XCTAssertTrue(variant.isFoldable)
       XCTAssertEqual(variant.cpu, .a20Pro)
-      XCTAssertEqual(variant.diagonal, -1)
-      XCTAssertEqual(variant.screenRatio.width, -1)
-      XCTAssertEqual(variant.screenRatio.height, -1)
+      // The single-display properties describe the outer display, not the unfolded inner display.
+      XCTAssertEqual(variant.diagonal, 5.4)
+      XCTAssertEqual(variant.screenRatio.width, 233)
+      XCTAssertEqual(variant.screenRatio.height, 339)
       XCTAssertNil(variant.ppi)
     }
   }
