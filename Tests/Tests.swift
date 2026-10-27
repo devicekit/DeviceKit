@@ -75,6 +75,51 @@ class DeviceKitTests: XCTestCase {
   }
   #endif
 
+  #if os(iOS) || os(tvOS)
+  func testOctober2026Devices() {
+    #if os(iOS)
+    // HomePod mini 2 has a verified identifier.
+    XCTAssertEqual(Device.mapToDevice(identifier: "AudioAccessory11,1"), .homePodMini2)
+    XCTAssertEqual(Device.homePodMini2.description, "HomePod mini 2")
+    XCTAssertEqual(Device.homePodMini2.cpu, .s10)
+    XCTAssertEqual(Device.CPU.s10.description, "S10")
+
+    // iPad mini (A20 Pro) is provisional until its identifiers are public.
+    let model = Device.iPadMiniA20Pro
+    XCTAssertTrue(model.isPad)
+    XCTAssertTrue(Device.allRealDevices.contains(model))
+    XCTAssertTrue(Device.allSimulators.contains(.simulator(model)))
+    XCTAssertTrue(Device.allMiniDevices.contains(model))
+    XCTAssertEqual(model.cameras, [.wide])
+    for variant in [model, .simulator(model)] {
+      XCTAssertEqual(variant.description, variant == model ? "iPad mini (A20 Pro)" : "Simulator (iPad mini (A20 Pro))")
+      XCTAssertEqual(variant.cpu, .a20Pro)
+      XCTAssertEqual(variant.diagonal, 8.5)
+      XCTAssertEqual(variant.screenRatio.width, 756)
+      XCTAssertEqual(variant.screenRatio.height, 1158)
+      XCTAssertEqual(variant.ppi, 326)
+      XCTAssertTrue(variant.isTouchIDCapable)
+      XCTAssertFalse(variant.isFaceIDCapable)
+      XCTAssertEqual(variant.applePencilSupport, [.firstGenerationUsbC, .pro])
+      XCTAssertTrue(variant.hasEsimSupport)
+      XCTAssertFalse(variant.hasDualEsimSupport)
+    }
+    #else
+    // Apple TV 4K (4th generation) is provisional until its identifiers are public.
+    let model = Device.appleTV4K4
+    XCTAssertTrue(Device.allRealDevices.contains(model))
+    XCTAssertTrue(Device.allSimulators.contains(.simulator(model)))
+    XCTAssertEqual(model.description, "Apple TV 4K (4th generation)")
+    XCTAssertEqual(model.cpu, .a19)
+    XCTAssertEqual(model.ppi, nil)
+    #endif
+    // Unannounced identifiers must remain unknown.
+    for identifier in ["AudioAccessory11,2", "iPad18,1", "iPad18,2", "AppleTV15,1", ""] {
+      XCTAssertEqual(Device.mapToDevice(identifier: identifier), .unknown(identifier))
+    }
+  }
+  #endif
+
   func testDeviceSimulator() {
     #if os(macOS)
     XCTAssertFalse(device.isOneOf(Device.allSimulators))
@@ -143,6 +188,7 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.iPadMini5.cpu, Device.CPU.a12Bionic)
     XCTAssertEqual(Device.iPadMini6.cpu, Device.CPU.a15Bionic)
     XCTAssertEqual(Device.iPadMiniA17Pro.cpu, Device.CPU.a17Pro)
+    XCTAssertEqual(Device.iPadMiniA20Pro.cpu, Device.CPU.a20Pro)
     XCTAssertEqual(Device.iPadPro11Inch.cpu, Device.CPU.a12XBionic)
     XCTAssertEqual(Device.iPadPro11Inch2.cpu, Device.CPU.a12ZBionic)
     XCTAssertEqual(Device.iPadPro11Inch3.cpu, Device.CPU.m1)
@@ -159,6 +205,7 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(Device.appleTV4K.cpu, Device.CPU.a10XFusion)
     XCTAssertEqual(Device.appleTV4K2.cpu, Device.CPU.a12Bionic)
     XCTAssertEqual(Device.appleTV4K3.cpu, Device.CPU.a15Bionic)
+    XCTAssertEqual(Device.appleTV4K4.cpu, Device.CPU.a19)
   #endif
   }
 
@@ -657,6 +704,7 @@ class DeviceKitTests: XCTestCase {
       .iPadAir13M4,
       .iPadMini6,
       .iPadMiniA17Pro,
+      .iPadMiniA20Pro,
       .iPadPro11Inch3,
       .iPadPro12Inch5,
       .iPadPro11Inch4,
@@ -693,7 +741,8 @@ class DeviceKitTests: XCTestCase {
                             .iPhone17, .iPhone17Pro, .iPhone17ProMax, .iPhoneAir, .iPhone17e]
     let pads: [Device] = [.iPadAir11M2, .iPadAir13M2, .iPadPro11M4, .iPadPro13M4,
                           .iPadMiniA17Pro, .iPadA16, .iPadAir11M3, .iPadAir13M3,
-                          .iPadPro11M5, .iPadPro13M5, .iPadAir11M4, .iPadAir13M4]
+                          .iPadPro11M5, .iPadPro13M5, .iPadAir11M4, .iPadAir13M4,
+                          .iPadMiniA20Pro]
     for model in phones + pads {
       for variant in [model, .simulator(model)] {
         XCTAssertTrue(variant.hasEsimSupport, "\(variant)")
@@ -836,6 +885,7 @@ class DeviceKitTests: XCTestCase {
       .iPadAir13M4,
       .iPadMini6,
       .iPadMiniA17Pro,
+      .iPadMiniA20Pro,
       .iPadPro11Inch,
       .iPadPro12Inch3,
       .iPadPro11Inch2,

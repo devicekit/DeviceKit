@@ -2,6 +2,18 @@
 
 ## Unreleased
 
+### New October 2026 devices
+
+This version adds support for HomePod mini 2, iPad mini (A20 Pro) and Apple TV 4K (4th generation), along with the `S10` CPU case on iOS and tvOS: (PR_LINK)
+
+| Device | Case value |
+| --- | --- |
+| HomePod mini 2 | `Device.homePodMini2` |
+| iPad mini (A20 Pro) | `Device.iPadMiniA20Pro` |
+| Apple TV 4K (4th generation) | `Device.appleTV4K4` |
+
+iPad mini (A20 Pro) and Apple TV 4K (4th generation) are provisional. Their hardware identifiers aren't public yet, so `Device.current` and `mapToDevice(identifier:)` won't return them until a later update adds the identifiers.
+
 ## Version 5.9.0
 
 Releasedate: 2026-09-22
