@@ -4,11 +4,10 @@
 
 ### New October 2026 devices
 
-This version adds support for HomePod mini 2, iPad mini (A20 Pro) and Apple TV 4K (4th generation), along with the `S10` CPU case on iOS and tvOS: ([#520](https://github.com/devicekit/DeviceKit/pull/520))
+This version adds support for iPad mini (A20 Pro) and Apple TV 4K (4th generation): ([#520](https://github.com/devicekit/DeviceKit/pull/520))
 
 | Device | Case value |
 | --- | --- |
-| HomePod mini 2 | `Device.homePodMini2` |
 | iPad mini (A20 Pro) | `Device.iPadMiniA20Pro` |
 | Apple TV 4K (4th generation) | `Device.appleTV4K4` |
 
