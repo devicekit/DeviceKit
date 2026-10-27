@@ -78,8 +78,10 @@ class DeviceKitTests: XCTestCase {
   #if os(iOS) || os(tvOS)
   func testOctober2026Devices() {
     #if os(iOS)
-    // iPad mini (A20 Pro) is provisional until its identifiers are public.
     let model = Device.iPadMiniA20Pro
+    for identifier in ["iPad19,1", "iPad19,2"] {
+      XCTAssertEqual(Device.mapToDevice(identifier: identifier), model, identifier)
+    }
     XCTAssertTrue(model.isPad)
     XCTAssertTrue(Device.allRealDevices.contains(model))
     XCTAssertTrue(Device.allSimulators.contains(.simulator(model)))
@@ -99,8 +101,8 @@ class DeviceKitTests: XCTestCase {
       XCTAssertFalse(variant.hasDualEsimSupport)
     }
     #else
-    // Apple TV 4K (4th generation) is provisional until its identifiers are public.
     let model = Device.appleTV4K4
+    XCTAssertEqual(Device.mapToDevice(identifier: "AppleTV18,1"), model)
     XCTAssertTrue(Device.allRealDevices.contains(model))
     XCTAssertTrue(Device.allSimulators.contains(.simulator(model)))
     XCTAssertEqual(model.description, "Apple TV 4K (4th generation)")
@@ -108,7 +110,7 @@ class DeviceKitTests: XCTestCase {
     XCTAssertEqual(model.ppi, nil)
     #endif
     // Unannounced identifiers must remain unknown.
-    for identifier in ["iPad18,1", "iPad18,2", "AppleTV15,1", ""] {
+    for identifier in ["iPad19,3", "iPad19,4", "AppleTV18,2", ""] {
       XCTAssertEqual(Device.mapToDevice(identifier: identifier), .unknown(identifier))
     }
   }

@@ -373,8 +373,8 @@ iPads = [
                 applePencilSupport=34, cameras=1, hasUSBCConnectivity=True, has5gSupport=True,
                 hasEsimSupport=True),
             # Specs: https://www.apple.com/ipad-mini/specs/ (verified 2026-10-27).
-            # Provisional: identifiers are not public yet (ships 2026-11-06), so this model does not map from any identifier.
-            Device("iPadMiniA20Pro", "Device is an [iPad mini (A20 Pro)](https://www.apple.com/ipad-mini/specs/)",             "",                                                                                                                [],                                                 8.5,  (756, 1158), "iPad mini (A20 Pro)", "iPad mini (A20 Pro)", 326,
+            # Identifiers: https://theapplewiki.com/wiki/Firmware/iPad_mini/27.x (verified 2026-10-27).
+            Device("iPadMiniA20Pro", "Device is an [iPad mini (A20 Pro)](https://www.apple.com/ipad-mini/specs/)",             "",                                                                                                                ["iPad19,1", "iPad19,2"],                           8.5,  (756, 1158), "iPad mini (A20 Pro)", "iPad mini (A20 Pro)", 326,
                 cpu="a20Pro", isPadMiniFormFactor=True, hasTouchID=True, hasRoundedDisplayCorners=True,
                 applePencilSupport=34, cameras=1, hasUSBCConnectivity=True, has5gSupport=True,
                 hasEsimSupport=True),
@@ -451,8 +451,8 @@ tvs = [
             Device("appleTV4K3",     "Device is an [Apple TV 4K (3rd generation)](https://support.apple.com/kb/SP886)",                       "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP886/apple-tv-4k-3gen_2x.png",                           ["AppleTV14,1"], 0, (), "Apple TV 4K (3rd generation)", "Apple TV 4K (3rd generation)", -1,
                 cpu="a15Bionic"),
             # Specs: https://www.apple.com/apple-tv-4k/specs/ (verified 2026-10-27).
-            # Provisional: identifiers are not public yet (ships 2026-11-13), so this model does not map from any identifier.
-            Device("appleTV4K4",     "Device is an [Apple TV 4K (4th generation)](https://www.apple.com/apple-tv-4k/specs/)",                 "",                                                                                                                  [], 0, (), "Apple TV 4K (4th generation)", "Apple TV 4K (4th generation)", -1,
+            # Identifiers: https://theapplewiki.com/wiki/Apple_TV_4K_(4th_generation) (verified 2026-10-27).
+            Device("appleTV4K4",     "Device is an [Apple TV 4K (4th generation)](https://www.apple.com/apple-tv-4k/specs/)",                 "",                                                                                                                  ["AppleTV18,1"], 0, (), "Apple TV 4K (4th generation)", "Apple TV 4K (4th generation)", -1,
                 cpu="a19"),
       ]
 
@@ -809,9 +809,7 @@ public enum Device {
     #if os(iOS)
       switch identifier {
 % for device in iOSDevices:
-% if device.identifiers:
       case ${', '.join(list(map(lambda device: "\"" + device + "\"", device.identifiers)))}: return ${device.caseName}
-% end
 % end
       case "i386", "x86_64", "arm64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "iOS"))
       default: return unknown(identifier)
@@ -819,9 +817,7 @@ public enum Device {
     #elseif os(tvOS)
       switch identifier {
 % for device in tvOSDevices:
-% if device.identifiers:
       case ${', '.join(list(map(lambda device: "\"" + device + "\"", device.identifiers)))}: return ${device.caseName}
-% end
 % end
       case "i386", "x86_64", "arm64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "tvOS"))
       default: return unknown(identifier)
@@ -829,9 +825,7 @@ public enum Device {
     #elseif os(watchOS)
     switch identifier {
 % for device in watchOSDevices:
-% if device.identifiers:
       case ${', '.join(list(map(lambda device: "\"" + device + "\"", device.identifiers)))}: return ${device.caseName}
-% end
 % end
       case "i386", "x86_64", "arm64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "watchOS"))
       default: return unknown(identifier)

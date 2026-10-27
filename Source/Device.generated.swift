@@ -670,6 +670,7 @@ public enum Device {
       case "iPad11,1", "iPad11,2": return iPadMini5
       case "iPad14,1", "iPad14,2": return iPadMini6
       case "iPad16,1", "iPad16,2": return iPadMiniA17Pro
+      case "iPad19,1", "iPad19,2": return iPadMiniA20Pro
       case "iPad6,3", "iPad6,4": return iPadPro9Inch
       case "iPad6,7", "iPad6,8": return iPadPro12Inch
       case "iPad7,1", "iPad7,2": return iPadPro12Inch2
@@ -696,6 +697,7 @@ public enum Device {
       case "AppleTV6,2": return appleTV4K
       case "AppleTV11,1": return appleTV4K2
       case "AppleTV14,1": return appleTV4K3
+      case "AppleTV18,1": return appleTV4K4
       case "i386", "x86_64", "arm64": return simulator(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "tvOS"))
       default: return unknown(identifier)
       }

@@ -4,14 +4,12 @@
 
 ### New October 2026 devices
 
-This version adds support for iPad mini (A20 Pro) and Apple TV 4K (4th generation): ([#520](https://github.com/devicekit/DeviceKit/pull/520))
+This version adds support for iPad mini (A20 Pro) and Apple TV 4K (4th generation), including hardware identifiers, display metrics and technical specification links: ([#520](https://github.com/devicekit/DeviceKit/pull/520))
 
 | Device | Case value |
 | --- | --- |
 | iPad mini (A20 Pro) | `Device.iPadMiniA20Pro` |
 | Apple TV 4K (4th generation) | `Device.appleTV4K4` |
-
-iPad mini (A20 Pro) and Apple TV 4K (4th generation) are provisional. Their hardware identifiers aren't public yet, so `Device.current` and `mapToDevice(identifier:)` won't return them until a later update adds the identifiers.
 
 ## Version 5.9.0
 
