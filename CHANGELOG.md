@@ -10,15 +10,23 @@ Releasedate: 2026-10-27
 pod 'DeviceKit', '~> 5.10'
 ```
 
-### iPhone Duo support
+### New devices
 
-- Add support for iPhone Duo (`Device.iPhoneDuo`, hardware identifier `iPhone19,4`) with the A20 Pro chip and `isFoldable`, true only for iPhone Duo and its simulator.
-- Report Apple Pencil (USB-C) support (`.firstGenerationUsbC`) for iPhone Duo and its simulator, and include Duo in `allApplePencilCapableDevices`. Other Apple Pencil models are not supported.
-- Display metrics are not yet provided (`-1` for diagonal/ratio, `nil` for PPI), and no device image is included. Other unconfirmed capabilities use false/empty defaults.
+This version adds support for iPhone Duo, including model identification, the A20 Pro chip, and Apple Pencil (USB-C) compatibility: ([#507](https://github.com/devicekit/DeviceKit/pull/507))
+
+| Device | Case value |
+| --- | --- |
+| iPhone Duo | `Device.iPhoneDuo` |
+
+Display metrics are not yet available for this model.
+
+### New features
+
+- Add `isFoldable`, true for iPhone Duo and its simulator. ([#507](https://github.com/devicekit/DeviceKit/pull/507))
 
 ### Bug fixes
 
-- Make `isSimulator` return `true` for simulators of unknown devices, so detecting a simulator does not require support for its model.
+- Fix `isSimulator` returning `false` for simulators of unknown devices. ([#507](https://github.com/devicekit/DeviceKit/pull/507))
 
 ## Version 5.9.0
 
