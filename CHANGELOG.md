@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+### New devices
+
+This version adds support for iPhone Duo, including hardware identifier, display metrics and technical specification link.
+
+| Device | Case value |
+| --- | --- |
+| iPhone Duo | `Device.iPhoneDuo` |
+
 ## Version 5.9.0
 
 Releasedate: 2026-09-22

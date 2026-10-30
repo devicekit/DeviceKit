@@ -24,16 +24,19 @@ class DeviceKitTests: XCTestCase {
       let diagonal: Double
       let ratio: (Double, Double)
       let ppi: Int
+      var supportsWirelessCharging = true
+      var hasDualEsimSupport = true
     }
     #if os(iOS)
     let models: [ExpectedDevice] = [
       ExpectedDevice(model: .iPhone18Pro, identifiers: ["iPhone19,2"], diagonal: 6.3, ratio: (9, 19.5), ppi: 460),
-      ExpectedDevice(model: .iPhone18ProMax, identifiers: ["iPhone19,3", "iPhone19,7"], diagonal: 6.9, ratio: (9, 19.5), ppi: 460)
+      ExpectedDevice(model: .iPhone18ProMax, identifiers: ["iPhone19,3", "iPhone19,7"], diagonal: 6.9, ratio: (9, 19.5), ppi: 460),
+      ExpectedDevice(model: .iPhoneDuo, identifiers: ["iPhone19,4"], diagonal: 7.6, ratio: (223, 317), ppi: 460, supportsWirelessCharging: false, hasDualEsimSupport: false)
     ]
     let chip = Device.CPU.a20Pro
     XCTAssertEqual(chip.description, "A20 Pro")
     // The deferred model and unverified identifiers must remain unknown.
-    for identifier in ["iPhone19,1", "iPhone19,4", "iPhone19,5", "iPhone19,6", "placeholder:iPhone18Pro", "placeholder:iPhone18ProMax"] {
+    for identifier in ["iPhone19,1", "iPhone19,5", "iPhone19,6", "placeholder:iPhone18Pro", "placeholder:iPhone18ProMax"] {
       XCTAssertEqual(Device.mapToDevice(identifier: identifier), .unknown(identifier))
     }
     #else
@@ -66,9 +69,9 @@ class DeviceKitTests: XCTestCase {
         XCTAssertEqual(variant.screenRatio.height, expected.ratio.1)
         XCTAssertEqual(variant.ppi, expected.ppi)
         #if os(iOS)
-        XCTAssertTrue(variant.supportsWirelessCharging)
+        XCTAssertEqual(variant.supportsWirelessCharging, expected.supportsWirelessCharging)
         XCTAssertTrue(variant.hasEsimSupport)
-        XCTAssertTrue(variant.hasDualEsimSupport)
+        XCTAssertEqual(variant.hasDualEsimSupport, expected.hasDualEsimSupport)
         #endif
       }
     }
@@ -646,6 +649,7 @@ class DeviceKitTests: XCTestCase {
       .iPhone18ProMax,
       .iPhoneAir,
       .iPhone17e,
+      .iPhoneDuo,
       .iPad10,
       .iPadA16,
       .iPadAir5,
@@ -824,6 +828,7 @@ class DeviceKitTests: XCTestCase {
       .iPhone18ProMax,
       .iPhoneAir,
       .iPhone17e,
+      .iPhoneDuo,
       .iPad10,
       .iPadA16,
       .iPadAir4,

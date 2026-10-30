@@ -284,6 +284,11 @@ iPhones = [
                 hasDynamicIsland=True, cameras=123, hasLidarSensor=True, hasUSBCConnectivity=True,
                 has5gSupport=True,
                 hasEsimSupport=True, hasDualEsimSupport=True),
+
+            # Diagonal, ratio and ppi refer to the inner display.
+            Device("iPhoneDuo", "Device is an [iPhone Duo](https://www.apple.com/iphone-duo/)", "", ["iPhone19,4"], 7.6, (223, 317), "iPhone Duo", "iPhone Duo", 460,
+                cpu="a20Pro", hasTouchID=True, cameras=13, hasUSBCConnectivity=True, has5gSupport=True,
+                hasEsimSupport=True),
           ]
 
 iPads = [
