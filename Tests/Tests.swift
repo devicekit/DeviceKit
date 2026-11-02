@@ -865,6 +865,20 @@ class DeviceKitTests: XCTestCase {
     }
   }
 
+  func testVariableAperture() {
+    let expectedDevices: [Device] = [.iPhone18Pro, .iPhone18ProMax]
+    XCTAssertEqual(Device.allDevicesWithVariableAperture, expectedDevices)
+
+    for model in Device.allRealDevices {
+      let expected = expectedDevices.contains(model)
+      XCTAssertEqual(model.hasVariableAperture, expected, model.description)
+      XCTAssertEqual(Device.simulator(model).hasVariableAperture, expected, model.description)
+    }
+
+    XCTAssertFalse(Device.unknown("unrecognized").hasVariableAperture)
+    XCTAssertFalse(Device.simulator(.unknown("unrecognized")).hasVariableAperture)
+  }
+
   func testLidarValues() {
     let lidarDevices: [Device] = [
       .iPhone12Pro,

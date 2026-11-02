@@ -2489,6 +2489,17 @@ extension Device {
     return [.iPhone11, .iPhone11Pro, .iPhone11ProMax, .iPhone12, .iPhone12Mini, .iPhone12Pro, .iPhone12ProMax, .iPhone13, .iPhone13Mini, .iPhone13Pro, .iPhone13ProMax, .iPhone14, .iPhone14Plus, .iPhone14Pro, .iPhone14ProMax, .iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax, .iPhone16, .iPhone16Plus, .iPhone16Pro, .iPhone16ProMax, .iPhone17, .iPhone17Pro, .iPhone17ProMax, .iPhone18Pro, .iPhone18ProMax, .iPhoneDuo, .iPadPro11Inch2, .iPadPro12Inch4, .iPadPro11Inch3, .iPadPro12Inch5, .iPadPro11Inch4, .iPadPro12Inch6]
   }
 
+  /// All device models that feature a camera with a variable aperture, excluding simulators.
+  public static var allDevicesWithVariableAperture: [Device] {
+    return [.iPhone18Pro, .iPhone18ProMax]
+  }
+
+  /// Returns whether the device model has a camera with a variable aperture.
+  /// Simulators use their simulated model's capability.
+  public var hasVariableAperture: Bool {
+    return isOneOf(Device.allDevicesWithVariableAperture) || isOneOf(Device.allDevicesWithVariableAperture.map(Device.simulator))
+  }
+
   /// Returns whether or not the current device has a camera
   public var hasCamera: Bool {
     return !self.cameras.isEmpty

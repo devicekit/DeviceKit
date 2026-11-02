@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### New features
+
+- Add `allDevicesWithVariableAperture` and `hasVariableAperture` for iPhone 18 Pro and iPhone 18 Pro Max. The instance property also supports their simulators. ([#516](https://github.com/devicekit/DeviceKit/issues/516))
+
 ## Version 5.10.0
 
 Releasedate: 2026-11-01
