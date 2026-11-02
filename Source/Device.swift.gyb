@@ -27,6 +27,7 @@ class Device:
       applePencilSupport=0,
       hasForce3dTouchSupport=False,
       cameras=0,
+      hasVariableAperture=False,
       hasLidarSensor=False,
       hasUSBCConnectivity=False,
       has5gSupport=False,
@@ -56,6 +57,7 @@ class Device:
     self.applePencilSupport = applePencilSupport
     self.hasForce3dTouchSupport = hasForce3dTouchSupport
     self.cameras = cameras
+    self.hasVariableAperture = hasVariableAperture
     self.hasLidarSensor = hasLidarSensor
     self.cpu = cpu
     self.hasUSBCConnectivity = hasUSBCConnectivity
@@ -277,11 +279,13 @@ iPhones = [
             # iPhone19,3 and iPhone19,7 are regional variants of iPhone 18 Pro Max.
             Device("iPhone18Pro", "Device is an [iPhone 18 Pro](https://support.apple.com/en-us/148590)", "", ["iPhone19,2"], 6.3, (9, 19.5), "iPhone 18 Pro", "iPhone 18 Pro", 460,
                 cpu="a20Pro", isPro=True, isXSeries=True, hasFaceID=True,
+                hasVariableAperture=True,
                 hasSensorHousing=True, supportsWirelessCharging=True, hasRoundedDisplayCorners=True, hasDynamicIsland=True,
                 cameras=123, hasLidarSensor=True, hasUSBCConnectivity=True, has5gSupport=True,
                 hasEsimSupport=True, hasDualEsimSupport=True),
             Device("iPhone18ProMax", "Device is an [iPhone 18 Pro Max](https://support.apple.com/en-us/148591)", "", ["iPhone19,3", "iPhone19,7"], 6.9, (9, 19.5), "iPhone 18 Pro Max", "iPhone 18 Pro Max", 460,
                 cpu="a20Pro", isPlusFormFactor=True, isPro=True, isXSeries=True,
+                hasVariableAperture=True,
                 hasFaceID=True, hasSensorHousing=True, supportsWirelessCharging=True, hasRoundedDisplayCorners=True,
                 hasDynamicIsland=True, cameras=123, hasLidarSensor=True, hasUSBCConnectivity=True,
                 has5gSupport=True,
@@ -1842,6 +1846,17 @@ extension Device {
   /// All devices that feature an ultra wide camera
   public static var allDevicesWithUltraWideCamera: [Device] {
     return [${', '.join(list(map(lambda device: "." + device.caseName, list(filter(lambda device: device.cameras == 3 or device.cameras == 13 or device.cameras == 123, iOSDevices)))))}]
+  }
+
+  /// All device models that feature a camera with a variable aperture, excluding simulators.
+  public static var allDevicesWithVariableAperture: [Device] {
+    return [${', '.join(list(map(lambda device: "." + device.caseName, list(filter(lambda device: device.hasVariableAperture == True, iOSDevices)))))}]
+  }
+
+  /// Returns whether the device model has a camera with a variable aperture.
+  /// Simulators use their simulated model's capability.
+  public var hasVariableAperture: Bool {
+    return isOneOf(Device.allDevicesWithVariableAperture) || isOneOf(Device.allDevicesWithVariableAperture.map(Device.simulator))
   }
 
   /// Returns whether or not the current device has a camera
